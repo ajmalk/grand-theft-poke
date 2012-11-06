@@ -114,7 +114,7 @@ public class StarterPokemon extends AbstractScreen {
 
 		ConfirmButton.addListener(new ClickListener() {
 			public void clicked(InputEvent event, float x, float y) {
-
+				game.setScreen(game.getMarketScreen());
 			}
 		});
 	}
