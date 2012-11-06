@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemTile;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
@@ -20,6 +21,7 @@ public class Market extends AbstractScreen {
 	private Image backgroundImage;
 	private	Table table;
 	private MarketPlace market;
+	private Backpack playerPack;
 	public Market(GTPoke game){
 		super(game);
 	}
@@ -35,6 +37,7 @@ public class Market extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 		
 		market = game.getCurrentTown().getMarket();
+		playerPack = game.getPlayer().getBackpack();
 		table = new Table();
 		//ItemTile tile = new ItemTile(game.getItems().getAgilityRoid(), new MarketPlaceItem(500, 500));
 		
@@ -49,6 +52,12 @@ public class Market extends AbstractScreen {
 		for(Iterator<Entry> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
 			Entry item = i.next();
 			table.add(new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue()));
+			if(col++ % 3 == 0)
+				table.row();
+		}
+		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
+			Entry item = i.next();
+			table.add(new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue()));
 			if(col++ % 3 == 0)
 				table.row();
 		}

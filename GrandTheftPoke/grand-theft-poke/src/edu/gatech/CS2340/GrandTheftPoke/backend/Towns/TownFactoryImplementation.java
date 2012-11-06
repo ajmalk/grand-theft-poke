@@ -19,23 +19,23 @@ public class TownFactoryImplementation implements TownFactory {
     @Override
     public Town makePalletTown() {
         HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
-        myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(500,50));
-        myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750, 0));
-        myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(850, 0));
-        myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(1000, 0));
-        myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500, 0));
-        myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600, 0));
-        myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250, 5));
+        myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10,10));
+        //myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750, 0));
+        //myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(850, 0));
+        //myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(1000, 0));
+        //myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500, 0));
+        //myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600, 0));
+        //myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250, 5));
         //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500, 0));
         myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000, 0));
-        myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500, 0));
-        myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500, 0));
-        myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000, 0));
-        myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750, 0));
-        myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500, 0));
-        myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000, 0));
-        myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000, 0));
+        //myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500, 0));
+        //myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500, 0));
+        //myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000, 0));
+        //myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750, 0));
+        //myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500, 0));
+        //myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000, 0));
+        //myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000, 0));
         //System.out.println(myStock.containsKey(itemsInstance.getHealthPotion()));
         MarketPlace myMarket = new MarketPlace(myStock);
         //System.out.println(myStock);

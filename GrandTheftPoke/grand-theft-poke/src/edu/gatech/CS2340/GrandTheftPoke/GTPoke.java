@@ -23,15 +23,15 @@ public class GTPoke extends Game {
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
 
-    @Override
-    public void create(){
-    	items = new GlobalItemReference();
-    	Pixmap map = new Pixmap(150, 200, Pixmap.Format.RGB565);
-    	map.setColor(Color.GRAY);
+	@Override
+	public void create() {
+		items = new GlobalItemReference();
+		Pixmap map = new Pixmap(150, 200, Pixmap.Format.RGB565);
+		map.setColor(Color.GRAY);
 		map.fillRectangle(0, 0, 150, 200);
-    	ButtonSprite = new Texture(map);
-        setScreen(getSplashScreen());
-    }
+		ButtonSprite = new Texture(map);
+		setScreen(getSplashScreen());
+	}
 
 	@Override
 	public void dispose() {
@@ -39,9 +39,9 @@ public class GTPoke extends Game {
 	}
 
 	@Override
-	public void render() {		
+	public void render() {
 		super.render();
-		
+
 	}
 
 	@Override
@@ -61,16 +61,19 @@ public class GTPoke extends Game {
 
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
-		
+
 	}
 
 	public void createPlayer(Integer strength, Integer trade, Integer agility,
 			Integer stamina) {
 		items = new GlobalItemReference();
 		GameMap theMap = GTPoke.makeMap(items);
-		thePlayer = new Player(playerName, strength, trade, agility, stamina, INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
+		thePlayer = new Player(playerName, strength, trade, agility, stamina,
+				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
+		System.out.println(thePlayer.buy(theMap.getCurrent().getMarket(), items.getHealthPotion(), 1));
+		System.out.println(thePlayer.getBackpack());
 	}
-	
+
 	public static GameMap makeMap(GlobalItemReference theReference) {
 		TownFactoryImplementation townGenerator = new TownFactoryImplementation(
 				theReference);
@@ -140,43 +143,49 @@ public class GTPoke extends Game {
 
 		return map;
 	}
-	
-	public Town getCurrentTown(){
-		//return thePlayer.getCurrent();
+
+	public Town getCurrentTown() {
+		// return thePlayer.getCurrent();
 		return new TownFactoryImplementation(items).makePalletTown();
 	}
-	
-	public static Texture getButtonSprite(){
+
+	public static Texture getButtonSprite() {
 		return ButtonSprite;
 	}
-	public GlobalItemReference getItems(){
+
+	public GlobalItemReference getItems() {
 		return items;
 	}
-	public Screen getSplashScreen(){
-        return new SplashScreen( this );
-    }
-	
-	public Screen getMainMenuScreen(){
-        return new MainMenu(this);
-    }
-	
-	public Screen getNameScreen(){
-        return new Name(this);
-    }
-	
-	public Screen getMarketPlaceDemoScreen(){
-        return new MarketPlaceItemDemo(this);
-    }
-	
-	public Screen getMarketScreen(){
-        return new Market(this);
-    }
-	
-	public Screen getSkillPointsScreen(){
-        return new SkillPoints(this);
-    }
-	
-	public Screen getStarterPokemonScreen(){
-        return new StarterPokemon(this);
-    }
+
+	public Screen getSplashScreen() {
+		return new SplashScreen(this);
+	}
+
+	public Screen getMainMenuScreen() {
+		return new MainMenu(this);
+	}
+
+	public Screen getNameScreen() {
+		return new Name(this);
+	}
+
+	public Screen getMarketPlaceDemoScreen() {
+		return new MarketPlaceItemDemo(this);
+	}
+
+	public Screen getMarketScreen() {
+		return new Market(this);
+	}
+
+	public Screen getSkillPointsScreen() {
+		return new SkillPoints(this);
+	}
+
+	public Screen getStarterPokemonScreen() {
+		return new StarterPokemon(this);
+	}
+
+	public Player getPlayer() {
+		return thePlayer;
+	}
 }
