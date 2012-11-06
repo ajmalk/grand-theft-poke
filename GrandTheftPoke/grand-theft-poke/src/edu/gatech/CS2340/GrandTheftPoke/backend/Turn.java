@@ -1,4 +1,4 @@
-package edu.gatech.CS2340.grandtheftpoke;
+package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 /**
  * TODO implement this class

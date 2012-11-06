@@ -38,7 +38,7 @@ public class MarketPlaceItemDemo extends AbstractScreen{
 			item.buy(2);
 		if(!Gdx.input.isKeyPressed(Keys.RIGHT) && !Gdx.input.isKeyPressed(Keys.LEFT))
 			item.update();
-		item.drawcurves();
+		//item.drawcurves();
 	}
 
 	@Override
