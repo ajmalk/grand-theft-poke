@@ -10,7 +10,6 @@ import java.util.Set;
  * @author Team Rocket
  */
 public class Backpack {
-//changed something
     private int capacity;
     private int maxRange;
     private HashMap<Item, Integer> contents;
@@ -108,6 +107,9 @@ public class Backpack {
      */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+    public HashMap<Item, Integer> getContents() {
+    	return contents;
     }
     @Override
     public String toString() {
