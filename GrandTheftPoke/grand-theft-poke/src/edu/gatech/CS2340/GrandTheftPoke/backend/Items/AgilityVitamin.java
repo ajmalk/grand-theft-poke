@@ -23,4 +23,16 @@ public class AgilityVitamin extends Item implements Usable {
         final AgilityVitamin other = (AgilityVitamin) obj;
         return true;
     }
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

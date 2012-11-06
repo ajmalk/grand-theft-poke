@@ -25,4 +25,16 @@ public class StaminaVitamin extends Item implements Usable {
         final StaminaVitamin other = (StaminaVitamin) obj;
         return true;
     }
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

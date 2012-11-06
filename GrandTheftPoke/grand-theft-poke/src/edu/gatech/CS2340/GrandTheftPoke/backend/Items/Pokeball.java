@@ -30,4 +30,9 @@ public class Pokeball extends Item{
         int hash = 5;
         return hash;
     }
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

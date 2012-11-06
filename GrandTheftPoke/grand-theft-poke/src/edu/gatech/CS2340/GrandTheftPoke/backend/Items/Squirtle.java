@@ -23,4 +23,18 @@ public class Squirtle extends Item {
 	public boolean Use(Person person){
 		return false;
 	}
+
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -29,4 +29,16 @@ public class HealthVitamin extends Vitamin {
         final HealthVitamin other = (HealthVitamin) obj;
         return true;
     }
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

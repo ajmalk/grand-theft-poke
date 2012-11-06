@@ -2,6 +2,9 @@ package edu.gatech.CS2340.GrandTheftPoke;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.Texture;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
@@ -14,38 +17,19 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.*;
 public class GTPoke extends Game {
 	private String playerName = "";
 	private Player thePlayer;
-	private GlobalItemReference theReference;
+	private GlobalItemReference items;
+	private static Texture ButtonSprite;
 	private static final int INITIAL_RANGE = 50;
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
 
-	public Screen getSplashScreen(){
-        return new SplashScreen( this );
-    }
-	
-	public Screen getMainMenuScreen(){
-        return new MainMenu(this);
-    }
-	
-	public Screen getNameScreen(){
-        return new Name(this);
-    }
-	
-	public Screen getMarketPlaceDemoScreen(){
-        return new MarketPlaceItemDemo(this);
-    }
-	
-	public Screen getSkillPointsScreen(){
-        return new SkillPoints(this);
-    }
-	
-	public Screen getStarterPokemonScreen(){
-        return new StarterPokemon(this);
-    }
-	
     @Override
     public void create(){
-    	theReference = new GlobalItemReference();
+    	items = new GlobalItemReference();
+    	Pixmap map = new Pixmap(150, 200, Pixmap.Format.RGB565);
+    	map.setColor(Color.GRAY);
+		map.fillRectangle(0, 0, 150, 200);
+    	ButtonSprite = new Texture(map);
         setScreen(getSplashScreen());
     }
 
@@ -82,8 +66,8 @@ public class GTPoke extends Game {
 
 	public void createPlayer(Integer strength, Integer trade, Integer agility,
 			Integer stamina) {
-		theReference = new GlobalItemReference();
-		GameMap theMap = GTPoke.makeMap(theReference);
+		items = new GlobalItemReference();
+		GameMap theMap = GTPoke.makeMap(items);
 		thePlayer = new Player(playerName, strength, trade, agility, stamina, INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
 	}
 	
@@ -156,4 +140,43 @@ public class GTPoke extends Game {
 
 		return map;
 	}
+	
+	public Town getCurrentTown(){
+		//return thePlayer.getCurrent();
+		return new TownFactoryImplementation(items).makePalletTown();
+	}
+	
+	public static Texture getButtonSprite(){
+		return ButtonSprite;
+	}
+	public GlobalItemReference getItems(){
+		return items;
+	}
+	public Screen getSplashScreen(){
+        return new SplashScreen( this );
+    }
+	
+	public Screen getMainMenuScreen(){
+        return new MainMenu(this);
+    }
+	
+	public Screen getNameScreen(){
+        return new Name(this);
+    }
+	
+	public Screen getMarketPlaceDemoScreen(){
+        return new MarketPlaceItemDemo(this);
+    }
+	
+	public Screen getMarketScreen(){
+        return new Market(this);
+    }
+	
+	public Screen getSkillPointsScreen(){
+        return new SkillPoints(this);
+    }
+	
+	public Screen getStarterPokemonScreen(){
+        return new StarterPokemon(this);
+    }
 }

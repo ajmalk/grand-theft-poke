@@ -26,4 +26,16 @@ public class StrengthRoid extends Item implements Usable{
         final StrengthRoid other = (StrengthRoid) obj;
         return true;
     }
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

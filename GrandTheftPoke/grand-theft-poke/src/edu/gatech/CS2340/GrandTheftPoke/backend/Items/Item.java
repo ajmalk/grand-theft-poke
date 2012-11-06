@@ -8,7 +8,8 @@ public abstract class Item {
     private int weight = 1;
     @Override
     public abstract int hashCode();
-
+    public abstract String toString();
+    public abstract String getDescription();
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

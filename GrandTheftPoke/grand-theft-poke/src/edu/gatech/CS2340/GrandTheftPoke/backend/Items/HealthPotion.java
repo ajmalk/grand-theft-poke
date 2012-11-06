@@ -32,4 +32,16 @@ public class HealthPotion extends Item implements Usable {
         final HealthPotion other = (HealthPotion) obj;
         return true;
     }
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

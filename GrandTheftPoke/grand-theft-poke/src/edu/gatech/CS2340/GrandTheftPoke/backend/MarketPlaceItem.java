@@ -35,8 +35,8 @@ public class MarketPlaceItem {
      *
      * @return the price truncated to 2 decimal places
      */
-    public float getPrice() {
-        return ((int) (price * 100)) / 100; //probably a better way to do this
+    public Float getPrice() {
+        return ((int) (price * 100)) / 100f; //probably a better way to do this
     }
 
     /**
@@ -45,15 +45,15 @@ public class MarketPlaceItem {
      * @param amount 
      * @return the price truncated to 2 decimal places
      */
-    public float getBuyingPrice(int amount) {
+    public Float getBuyingPrice(int amount) {
         if (amount < 0) {
-            return 0;
+            return 0f;
         }
         float price = 0;
         for (int i = 0; i < amount; i++) {
             price += getNewPrice(-1);
         }
-        return ((int) (price * 100)) / 100; //probably a better way to do this
+        return ((int) (price * 100)) / 100f; //probably a better way to do this
     }
 
     /**
@@ -62,22 +62,22 @@ public class MarketPlaceItem {
      * @param amount 
      * @return the price truncated to 2 decimal places
      */
-    public float getSellingPrice(int amount) {
+    public Float getSellingPrice(int amount) {
         if (amount < 0) {
-            return 0;
+            return 0f;
         }
         float price = 0;
         for (int i = 0; i < amount; i++) {
             price += getNewPrice(-1);
         }
-        return ((int) (price * 100)) / 100; //probably a better way to do this
+        return ((int) (price * 100)) / 100f; //probably a better way to do this
     }
 
     /**
      * The current stock level
      * @return 
      */
-    public int getStock() {
+    public Integer getStock() {
         return (int) stock;
     }
 
@@ -135,9 +135,9 @@ public class MarketPlaceItem {
      * @param amount 
      * @return the total price of the transaction
      */
-    public float buy(int amount) {
+    public Float buy(int amount) {
         if (amount < 0 || amount > stock) {
-            return 0;
+            return 0f;
         }
         float price = getBuyingPrice(amount);
         stock -= amount;
@@ -151,9 +151,9 @@ public class MarketPlaceItem {
      * @param amount 
      * @return the total price of the transaction
      */
-    public float sell(int amount) {
+    public Float sell(int amount) {
         if (amount < 0) {
-            return 0;
+            return 0f;
         }
         float price = getSellingPrice(amount);
         stock += amount;

@@ -25,4 +25,15 @@ public class AgilityRoid extends Item implements Usable{
         final AgilityRoid other = (AgilityRoid) obj;
         return true;
     }
+
+	@Override
+	public String toString() {
+		return "Agility Roid";
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
