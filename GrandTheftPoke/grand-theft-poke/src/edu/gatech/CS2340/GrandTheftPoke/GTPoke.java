@@ -3,6 +3,9 @@ package edu.gatech.CS2340.GrandTheftPoke;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 
+import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
@@ -42,7 +45,7 @@ public class GTPoke extends Game {
 	
     @Override
     public void create(){
-    	items = new GlobalItemReference();
+    	theReference = new GlobalItemReference();
         setScreen(getSplashScreen());
     }
 
