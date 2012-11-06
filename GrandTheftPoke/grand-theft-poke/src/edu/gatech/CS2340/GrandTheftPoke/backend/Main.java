@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         GlobalItemReference theReference = new GlobalItemReference();
         GameMap testMap = Main.makeMap(theReference);
-        //testMap.Dijkstras();
+        //testMap.Dijkstras(); ragequit
         testMarketPlace(testMap, theReference);
         testMovement(testMap);
     }
