@@ -20,6 +20,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Main;
 
 public class SkillPoints extends AbstractScreen {
 	private Texture background;
@@ -46,7 +47,7 @@ public class SkillPoints extends AbstractScreen {
 	
 	private Window nameWindow;
 	
-	private TextField name;
+	//private TextField name;
 	
 	private	Table table;
 	
@@ -99,6 +100,7 @@ public class SkillPoints extends AbstractScreen {
 		
 		ConfirmButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
+				game.createPlayer(strength, trade, agility, stamina);
 				game.setScreen(game.getStarterPokemonScreen());
 			}
 		});
@@ -141,9 +143,9 @@ public class SkillPoints extends AbstractScreen {
 			}
 		});	
 		
-		nameWindow = new Window("Enter Your Name: ", skin);
-		name = new TextField("", getSkin());
-		nameWindow.add(name);
+		//nameWindow = new Window("Enter Your Name: ", skin);
+		//name = new TextField("", getSkin());
+		//nameWindow.add(name);
 
 	}
 
@@ -195,7 +197,7 @@ public class SkillPoints extends AbstractScreen {
 		//table.drawDebug(stage);
 
 		stage.addActor(table);
-		stage.addActor(nameWindow);
+		//stage.addActor(nameWindow);
 
 		//stage.addActor(table);
 		stage.addActor(ConfirmButton);
