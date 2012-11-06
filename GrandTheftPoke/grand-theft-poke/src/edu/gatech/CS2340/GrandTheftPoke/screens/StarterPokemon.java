@@ -30,7 +30,7 @@ public class StarterPokemon extends AbstractScreen {
 	private Button ConfirmButton;
 	private int confirmX = 356;
 	private int confirmY = 10;
-	private int
+	//private int strength = 0, agility = 0, trade = 0, stamina = 0;
 
 	private Texture title;
 
