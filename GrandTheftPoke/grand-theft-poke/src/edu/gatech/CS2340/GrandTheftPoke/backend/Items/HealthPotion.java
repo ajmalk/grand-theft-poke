@@ -35,8 +35,7 @@ public class HealthPotion extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Health Potion";
 	}
 
 	@Override
