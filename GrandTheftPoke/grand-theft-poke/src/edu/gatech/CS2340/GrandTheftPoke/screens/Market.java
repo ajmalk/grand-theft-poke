@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -31,10 +32,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 public class Market extends AbstractScreen {
 	private Texture background;
 	private Image backgroundImage;
-	private	Table table;
+	private	Table markettable,
+					backpacktable;
 	private MarketPlace market;
 	private Backpack playerPack;
-	private ButtonGroup marketItemGroup;
+	private ButtonGroup marketItemGroup,
+						backPackItemGroup;
 	private ScrollPane 	marketStock,
 						backpackStock;
 	Button buy;
@@ -68,27 +71,25 @@ public class Market extends AbstractScreen {
 		
 		
 		
-		//playerPack = game.getPlayer().getBackpack();
-		table = new Table();
+		playerPack = game.getPlayer().getBackpack();
+		markettable = new Table();
+		backpacktable = new Table();
+		
 		marketItemGroup = new ButtonGroup();
-		marketStock = new ScrollPane(table);
+		backPackItemGroup = new ButtonGroup();
+		marketItemGroup.setMaxCheckCount(1);
+		backPackItemGroup.setMaxCheckCount(1);
+		
+		marketStock = new ScrollPane(markettable);
 		//ItemTile tile = new ItemTile(game.getItems().getAgilityRoid(), new MarketPlaceItem(500, 500));
 		marketStock.setPosition(0, 150);
 		marketStock.setSize(150	, 150);
 		//marketStock.setTouchable(Touchable.childrenOnly);
 		//marketStock.setScrollingDisabled(true, true);
-		marketItemGroup.setMaxCheckCount(1);
 		
 		
-		int col = 0;
-		for(Iterator<Entry> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
-			Entry item = i.next();
-			ItemTile tile = new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue());
-			table.add(tile);
-			marketItemGroup.add(tile);
-			if(col++ % 3 == 0)
-				table.row();
-		}
+		
+		update();
 		
 		buy = new Button(
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 0, 320, 70)),
@@ -101,31 +102,63 @@ public class Market extends AbstractScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				System.out.print(((ItemTile) (marketItemGroup.getChecked())).getItem());
 				System.out.print(market);
-				game.getPlayer().buy(market, ((ItemTile) (marketItemGroup.getChecked())).getItem(), 100);
+				game.getPlayer().buy(market, ((ItemTile) (marketItemGroup.getChecked())).getItem(), 1);
+				
+				update();
 			}
 		});
-//		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
-//			Entry item = i.next();
-//			table.add(new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue()));
-//			if(col++ % 3 == 0)
-//				table.row();
-//		}
+		
+		
 		
 		//stage.addActor(tile2);
-
+		
 		
 		
 		//stage.addActor(tile);
+	}
+	
+	public boolean update(){
+		int col = 1;
+		markettable.clear();
+		Button checked = marketItemGroup.getChecked();
+		for(Iterator<Entry> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
+			Entry item = i.next();
+			ItemTile tile = new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue());
+			markettable.add(tile);
+			marketItemGroup.add(tile);
+			if(col++ % 3 == 0)
+				markettable.row();
+		}
+		col = 1;
+		backpacktable.clear();
+		checked = marketItemGroup.getChecked();
+		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
+			Entry item = i.next();
+			ItemTile tile = new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue(), playerPack);
+			backpacktable.add(tile);
+			backPackItemGroup.add(tile);
+			if(col++ % 3 == 0)
+				backpacktable.row();
+		}
+		marketItemGroup.setMaxCheckCount(1);
+		backPackItemGroup.setMaxCheckCount(1);
+		return true;
 	}
 
 	@Override
 	public void render(float delta){
 		super.render(delta);
-		table.debug();
+		//markettable.debug();
 		//table.drawDebug(stage);
-		table.setPosition(500, 200);
+		markettable.setPosition(500, 100);
+		backpacktable.setPosition(800, 100);
 		//stage.addActor(marketStock);
-		stage.addActor(table);
+		for(Actor tile: markettable.getChildren())
+			((ItemTile) tile).update();
+		for(Actor tile: backpacktable.getChildren())
+			((ItemTile) tile).update();
+		stage.addActor(markettable);
+		stage.addActor(backpacktable);
 		stage.addActor(buy);
 	}
 
