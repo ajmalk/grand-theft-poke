@@ -15,7 +15,7 @@ public class Main {
 		GlobalItemReference theReference = new GlobalItemReference();
 		GameMap testMap = Main.makeMap(theReference);
 		//testMap.Dijkstras();
-		//testMarketPlace(testMap, theReference);
+		testMarketPlace(testMap, theReference);
 		//testMovement(testMap);
 	}
 
@@ -30,10 +30,10 @@ public class Main {
 		Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000, map);
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
-		testPlayer.buy(theMarket, theReference.getHealthPotion(), 50);
+		System.out.println(testPlayer.buy(theMarket, theReference.getCharizard(), 1));
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
-		testPlayer.sell(theMarket, theReference.getHealthPotion(), 2);
+		System.out.println(testPlayer.sell(theMarket, theReference.getHealthPotion(), 3));
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		testPlayer.buy(theMarket, theReference.getRepel(), 1);

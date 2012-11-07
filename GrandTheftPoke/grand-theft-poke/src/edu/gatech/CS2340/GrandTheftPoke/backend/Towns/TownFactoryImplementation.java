@@ -26,7 +26,7 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250, 5));
         //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500, 0));
-        myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000, 0));
+        myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000, 5));
         myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500, 0));
         myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500, 0));
         myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000, 0));

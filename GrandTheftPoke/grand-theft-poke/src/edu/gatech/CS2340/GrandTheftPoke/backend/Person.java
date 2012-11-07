@@ -211,10 +211,11 @@ public abstract class Person {
      * @return
      */
     public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
-        float price = theMarket.buy(desiredGood, quantity);
+    	float price = ((MarketPlaceItem)(theMarket.getStock().get(desiredGood))).getBuyingPrice(quantity);
         if (price != 0) {
             if (myWallet.checkAmount(price)) {
                 if (myBackpack.checkCapacity(desiredGood, quantity)) {
+                	theMarket.buy(desiredGood, quantity);
                     myWallet.updateMoney(-price);
                     myBackpack.place(desiredGood, quantity);
                     return true;
@@ -235,8 +236,9 @@ public abstract class Person {
      * @return
      */
     public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
-        float price = theMarket.sell(desiredGood, quantity);
+        
         if (myBackpack.checkContents(desiredGood, quantity)) {
+        	float price = theMarket.sell(desiredGood, quantity);
             myWallet.updateMoney(price);
             myBackpack.remove(desiredGood, quantity);
             return true;
