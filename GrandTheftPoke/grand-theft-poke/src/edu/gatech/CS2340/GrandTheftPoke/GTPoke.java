@@ -26,9 +26,13 @@ public class GTPoke extends Game {
 	@Override
 	public void create() {
 		items = new GlobalItemReference();
-		Pixmap map = new Pixmap(150, 200, Pixmap.Format.RGB565);
+		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
-		map.fillRectangle(0, 0, 150, 200);
+		map.fillRectangle(0, 0, 150, 600);
+		map.setColor(Color.BLACK);
+		map.fillRectangle(0, 200, 150, 200);
+		map.setColor(Color.RED);
+		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		setScreen(getSplashScreen());
 	}

@@ -138,7 +138,6 @@ public class StarterPokemon extends AbstractScreen {
 
 		// table.debug();
 		// table.drawDebug(stage);
-
 	}
 
 	@Override
