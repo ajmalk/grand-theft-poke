@@ -50,6 +50,7 @@ public class MapScreen extends AbstractScreen {
 	private TownTile saffronCityButton;
 	private TownTile cinnabarIslandButton;
 	private TownTile powerPlantButton;
+	private Button backButton;
 
 	private HashSet<TownTile> buttonSet;
 
@@ -72,8 +73,8 @@ public class MapScreen extends AbstractScreen {
 		stage.clear();
 		
 		theMap = game.getMap();
-		System.out.println(theMap.getCurrent());
 		theMap.Dijkstras();
+		System.out.println(theMap.getCurrent());
 
 		backgroundImage = new Image(background);
 		backgroundImage.getColor().a = 0f;
@@ -109,8 +110,7 @@ public class MapScreen extends AbstractScreen {
 			int range = game.getPlayer().getBackpack().getMaxRange();
 
 			if (distance > range) {
-				//System.out.println("disabling " + theTown);
-				//setDisabled(theTown);
+				setDisabled(theTown);
 			}
 		}
 
@@ -189,8 +189,8 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -215,8 +215,8 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -228,8 +228,8 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -241,7 +241,6 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
 
@@ -254,7 +253,6 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
 
@@ -267,7 +265,6 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
 
@@ -280,7 +277,6 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
 
@@ -293,7 +289,6 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile)(listenerActor)).getTown();
-				System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
 
@@ -301,29 +296,44 @@ public class MapScreen extends AbstractScreen {
 
 		stage.addActor(backgroundImage);
 		 stage.addActor(viridianCityButton);
-		 //stage.addActor(palletTownButton);
-		 //stage.addActor(powerPlantButton);
-		 //stage.addActor(pewterCityButton);
-		 //stage.addActor(ceruleanCityButton);
-		 //stage.addActor(saffronCityButton);
-		 //stage.addActor(cinnabarIslandButton);
-		 //stage.addActor(vermillionCityButton);
-		 //stage.addActor(lavenderTownButton);
-		 //stage.addActor(fuchsiaCityButton);
-		// remVal.setText(remainder.toString());
+		 viridianCityButton.setPosition(334, 391);
+		 stage.addActor(palletTownButton);
+		 palletTownButton.setPosition(337, 180);
+		 stage.addActor(powerPlantButton);
+		 powerPlantButton.setPosition(849, 693);
+		 stage.addActor(pewterCityButton);
+		 pewterCityButton.setPosition(346, 627);
+		 stage.addActor(ceruleanCityButton);
+		 ceruleanCityButton.setPosition(732,582);
+		 stage.addActor(saffronCityButton);
+		 saffronCityButton.setPosition(720,438);
+		 stage.addActor(cinnabarIslandButton);
+		 cinnabarIslandButton.setPosition(334,35);
+		 stage.addActor(vermillionCityButton);
+		 vermillionCityButton.setPosition(220, 309);
+		 stage.addActor(lavenderTownButton);
+		 lavenderTownButton.setPosition(888, 418);
+		 stage.addActor(fuchsiaCityButton);
+		 fuchsiaCityButton.setPosition(582, 132);
+//remVal.setText(remainder.toString());
 
 		// table.debug();
 		// table.drawDebug(stage);
 
 	}
 
-	public void setDisabled(Town theTown) {
-		for (Iterator<TownTile> i = buttonSet.iterator(); i.hasNext();) {
-			TownTile localButton = i.next();
-			if (localButton.getTown().toString() == theTown.toString()) {
-				localButton.setDisabled(true);
-				localButton.setTouchable(Touchable.disabled);
-			}
+	public void setDisabled(Town toBeDisabled) {
+		//Iterator<TownTile> i = buttonSet.iterator();
+		for(TownTile localButton : buttonSet) {
+			
+				//TownTile localButton = i.next();
+				//System.out.println(localButton);
+				if(localButton.getTown().toString().equals(toBeDisabled.toString())) {
+					System.out.println("Disabling" + toBeDisabled);
+					localButton.setDisabled(true);
+					localButton.setTouchable(Touchable.disabled);
+				}
+				
 		}
 	}
 
