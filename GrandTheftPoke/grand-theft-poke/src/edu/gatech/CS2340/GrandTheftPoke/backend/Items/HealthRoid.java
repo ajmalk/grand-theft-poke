@@ -32,13 +32,15 @@ public class HealthRoid extends Item implements Usable{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Health Steriod";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Health Steriods add 25 to your\n"+
+				"max health, then sets your current\n"+
+				"to the new max.\n"+
+				"Max Health + 25\n"+
+				"Restores health to new max.";
 	}
 }

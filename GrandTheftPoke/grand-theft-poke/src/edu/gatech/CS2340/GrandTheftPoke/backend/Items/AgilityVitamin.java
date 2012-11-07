@@ -26,13 +26,15 @@ public class AgilityVitamin extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Agility Vitamin";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "The Agiliy Steriod permently adds \n " +
+				"1 agility points to your current standings.\n" +
+				"This is useful because you can move further \n"+
+				"distances in 1 turn.\n"+
+				"+1 Agility Point";
 	}
 }

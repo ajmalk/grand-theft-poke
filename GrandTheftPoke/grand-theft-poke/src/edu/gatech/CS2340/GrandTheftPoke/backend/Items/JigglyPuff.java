@@ -23,8 +23,7 @@ public class JigglyPuff extends Item {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Jiggly Puff Pokemon";
 	}
 	@Override
 	public String getDescription() {

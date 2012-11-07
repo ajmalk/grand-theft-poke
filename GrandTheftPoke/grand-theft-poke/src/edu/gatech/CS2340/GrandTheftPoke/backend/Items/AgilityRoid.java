@@ -33,7 +33,10 @@ public class AgilityRoid extends Item implements Usable{
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "The Agiliy Steriod permently adds \n " +
+				"2 agility points to your current standings.\n" +
+				"This is useful because you can move further \n"+
+				"distances in 1 turn.\n"+
+				"+2 Agility Point";
 	}
 }

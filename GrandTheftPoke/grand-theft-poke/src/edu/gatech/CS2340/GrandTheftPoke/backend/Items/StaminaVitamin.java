@@ -28,13 +28,16 @@ public class StaminaVitamin extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Stamina Vitamin";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "The Stamina Steriod permently adds \n " +
+				"1 stamina points to your current standings.\n" +
+				"Increasing stamina allows you to move more\n"+
+				"more efficiently from town to town, therefore "+
+				"conserving health! \n"+
+				"+1 Stamina Point";
 	}
 }

@@ -27,13 +27,15 @@ public class StrengthVitamin extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Strength Vitamin";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "The Strength Steriod permently adds \n " +
+				"1 stamina points to your current standings.\n" +
+				"Increasing your strength will allow you to\n"+
+				"dominate your opponents! "+
+				"+1 Strengh Point";
 	}
 }

@@ -26,13 +26,11 @@ public class Repel extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Repel";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

@@ -32,8 +32,7 @@ public class HealthVitamin extends Vitamin {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Health Vitamin";
 	}
 
 	@Override
