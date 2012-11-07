@@ -29,9 +29,9 @@ public class ItemTile extends Button{
 	}
 	//private Table tile;
 	public ItemTile(Item item, MarketPlaceItem stock){
-		super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 150, 200)),
-				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 200, 150, 200)),
-				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 400, 150, 200)));
+		super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 200, 200)),
+				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 200, 200, 200)),
+				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 400, 200, 200)));
 		this.item = item;
 		this.stock = stock;
 		Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
@@ -68,9 +68,9 @@ public class ItemTile extends Button{
 	}
 	
 	public ItemTile(MarketPlace theMarket, Item item, int stock, Backpack pack) {
-		super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 150, 200)),
-				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 200, 150, 200)),
-				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 400, 150, 200)));
+		super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 200, 200)),
+				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 200, 200, 200)),
+				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 400, 200, 200)));
 		this.item = item;
 		this.stock = (MarketPlaceItem) theMarket.getStock().get(item);
 		backpackStock = stock;

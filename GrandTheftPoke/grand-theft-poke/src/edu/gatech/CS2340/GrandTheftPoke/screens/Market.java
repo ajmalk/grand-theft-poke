@@ -33,14 +33,15 @@ public class Market extends AbstractScreen {
 	private Texture background;
 	private Image backgroundImage;
 	private	Table markettable,
-					backpacktable;
+					backpacktable,
+					table;
 	private MarketPlace market;
 	private Backpack playerPack;
 	private ButtonGroup marketItemGroup,
 						backPackItemGroup;
 	private ScrollPane 	marketStock,
 						backpackStock;
-	Button buy;
+	Button buy, sell;
 	public Market(GTPoke game){
 		super(game);
 	}
@@ -103,11 +104,30 @@ public class Market extends AbstractScreen {
 				System.out.print(((ItemTile) (marketItemGroup.getChecked())).getItem());
 				System.out.print(market);
 				game.getPlayer().buy(market, ((ItemTile) (marketItemGroup.getChecked())).getItem(), 1);
+				update();
+			}
+		});
+		
+		sell = new Button(
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 0, 320, 70)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70)));
+		sell.setSkin(getSkin());
+		sell.add("Sell");
+		sell.setPosition(1024 - 400, 150);
+		
+		sell.addListener(new ClickListener() {
+			public void clicked(InputEvent event, float x, float y) {
+				System.out.print(((ItemTile) (marketItemGroup.getChecked())).getItem());
+				game.getPlayer().sell(market, ((ItemTile) (backPackItemGroup.getChecked())).getItem(), 1);
 				
 				update();
 			}
 		});
 		
+		table = new Table(); 
+		table.add(markettable);
+		table.add(backpacktable);
+
 		
 		
 		//stage.addActor(tile2);
@@ -157,9 +177,11 @@ public class Market extends AbstractScreen {
 			((ItemTile) tile).update();
 		for(Actor tile: backpacktable.getChildren())
 			((ItemTile) tile).update();
-		stage.addActor(markettable);
-		stage.addActor(backpacktable);
+		stage.addActor(table);
 		stage.addActor(buy);
+		stage.addActor(sell);
+		table.debug();
+		table.drawDebug(stage);
 	}
 
 	@Override
