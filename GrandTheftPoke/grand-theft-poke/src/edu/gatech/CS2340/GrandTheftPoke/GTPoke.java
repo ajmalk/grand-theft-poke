@@ -66,7 +66,8 @@ public class GTPoke extends Game {
 
 	public void createPlayer(Integer strength, Integer trade, Integer agility,
 			Integer stamina) {
-		items = new GlobalItemReference();
+		//items = new GlobalItemReference();
+		System.out.println(items.getHealthPotion());
 		GameMap theMap = GTPoke.makeMap(items);
 		thePlayer = new Player(playerName, strength, trade, agility, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
@@ -175,6 +176,10 @@ public class GTPoke extends Game {
 
 	public Screen getMarketScreen() {
 		return new Market(this);
+	}
+	
+	public Screen getCurrentTownScreen() {
+		return new PalletTown(this);
 	}
 
 	public Screen getSkillPointsScreen() {

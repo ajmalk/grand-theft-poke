@@ -38,7 +38,7 @@ public class TownFactoryImplementation implements TownFactory {
         //myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000, 0));
         //System.out.println(myStock.containsKey(itemsInstance.getHealthPotion()));
         MarketPlace myMarket = new MarketPlace(myStock);
-        //System.out.println(myStock);
+        System.out.println(myStock);
         Town myTown = new Town("Pallet Town", myMarket);
 
         return myTown;

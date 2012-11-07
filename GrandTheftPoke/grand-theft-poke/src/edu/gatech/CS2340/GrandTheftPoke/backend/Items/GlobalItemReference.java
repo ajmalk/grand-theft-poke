@@ -65,6 +65,7 @@ public class GlobalItemReference {
     }
 
     public Item getHealthPotion() {
+    	System.out.println("health potion");
         return myHealthPotion;
     }
 

@@ -16,11 +16,11 @@ public class Main {
 		GameMap testMap = Main.makeMap(theReference);
 		// testMap.Dijkstras(); ragequit
 		testMarketPlace(testMap, theReference);
-		testMovement(testMap);
+		//testMovement(testMap);
 	}
 
 	public static GameMap makeMap(GlobalItemReference theReference) {
-		theReference = new GlobalItemReference();
+		//theReference = new GlobalItemReference();
 		TownFactoryImplementation townGenerator = new TownFactoryImplementation(
 				theReference);
 
