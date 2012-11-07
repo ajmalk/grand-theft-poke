@@ -43,7 +43,6 @@ public class GlobalItemReference {
         myTradeVitamin = new TradeVitamin();
         myRepel = new Repel();
         
-        System.out.println(myHealthPotion);
     }
 
     public Item getArcanine() {

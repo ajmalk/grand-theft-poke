@@ -1,6 +1,9 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
+
 import java.util.*;
 
 /**
@@ -14,12 +17,81 @@ public class GameMap {
 
     public GameMap() {
         townSet = new HashSet<Town>();
+        
+        
     }
 
-    public GameMap(Town startTown) {
+    public GameMap(GlobalItemReference theReference) {
         townSet = new HashSet<Town>();
-        current = startTown;
+        
+        TownFactoryImplementation townGenerator = new TownFactoryImplementation(
+				theReference);
+
+		Town palletTown = townGenerator.makePalletTown();
+		Town viridianCity = townGenerator.makeViridianCity();
+		Town pewterCity = townGenerator.makePewterCity();
+		Town ceruleanCity = townGenerator.makeCeruleanCity();
+		Town vermillionCity = townGenerator.makeVermillionCity();
+		Town lavenderTown = townGenerator.makeLavenderTown();
+		Town celadonCity = townGenerator.makeCeladonCity();
+		Town fuchsiaCity = townGenerator.makeFuchsiaCity();
+		Town saffronCity = townGenerator.makeSaffronCity();
+		Town cinnabarIsland = townGenerator.makeCinnabarIsland();
+		Town powerPlant = townGenerator.makePowerPlant();
+
+		palletTown.addConnection(new Path(cinnabarIsland, 100));
+		palletTown.addConnection(new Path(viridianCity, 10));
+
+		viridianCity.addConnection(new Path(palletTown, 10));
+		viridianCity.addConnection(new Path(pewterCity, 20));
+
+		pewterCity.addConnection(new Path(viridianCity, 20));
+		pewterCity.addConnection(new Path(ceruleanCity, 50));
+
+		ceruleanCity.addConnection(new Path(pewterCity, 50));
+		ceruleanCity.addConnection(new Path(powerPlant, 30));
+		ceruleanCity.addConnection(new Path(saffronCity, 20));
+
+		powerPlant.addConnection(new Path(ceruleanCity, 30));
+
+		saffronCity.addConnection(new Path(ceruleanCity, 20));
+		saffronCity.addConnection(new Path(celadonCity, 10));
+		saffronCity.addConnection(new Path(lavenderTown, 20));
+		saffronCity.addConnection(new Path(vermillionCity, 20));
+
+		celadonCity.addConnection(new Path(saffronCity, 10));
+		celadonCity.addConnection(new Path(fuchsiaCity, 50));
+
+		lavenderTown.addConnection(new Path(saffronCity, 20));
+		lavenderTown.addConnection(new Path(vermillionCity, 40));
+		lavenderTown.addConnection(new Path(fuchsiaCity, 120));
+
+		vermillionCity.addConnection(new Path(saffronCity, 20));
+		vermillionCity.addConnection(new Path(lavenderTown, 40));
+		vermillionCity.addConnection(new Path(fuchsiaCity, 80));
+
+		fuchsiaCity.addConnection(new Path(celadonCity, 50));
+		fuchsiaCity.addConnection(new Path(lavenderTown, 120));
+		fuchsiaCity.addConnection(new Path(vermillionCity, 80));
+		fuchsiaCity.addConnection(new Path(cinnabarIsland, 100));
+
+		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));
+		cinnabarIsland.addConnection(new Path(palletTown, 100));
+		
+        current = palletTown;
         townSet.add(current);
+
+		this.addTown(viridianCity);
+		this.addTown(pewterCity);
+		this.addTown(ceruleanCity);
+		this.addTown(powerPlant);
+		this.addTown(saffronCity);
+		this.addTown(celadonCity);
+		this.addTown(lavenderTown);
+		this.addTown(vermillionCity);
+		this.addTown(fuchsiaCity);
+		this.addTown(cinnabarIsland);
+
     }
 
     public void addTown(Town toBeAdded) {
