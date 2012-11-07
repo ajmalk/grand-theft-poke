@@ -58,21 +58,12 @@ public class Market extends AbstractScreen {
 		
 		
 		market = game.getCurrentTown().getMarket();
-		Entry item2 = (Entry) market.getStock().entrySet().toArray()[0];
 
-		Button tile2 = new ItemTile((Item)item2.getKey(), (MarketPlaceItem) item2.getValue());
 		
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
-		tile2.addListener(new ClickListener(){
-			public void clicked(InputEvent event, float x, float y) {
-				System.out.print("CLicked");
-			}
-		});
-		
-		
-		
 		
 		playerPack = game.getPlayer().getBackpack();
+		
 		markettable = new Table();
 		backpacktable = new Table();
 		
@@ -81,10 +72,10 @@ public class Market extends AbstractScreen {
 		marketItemGroup.setMaxCheckCount(1);
 		backPackItemGroup.setMaxCheckCount(1);
 		
-		marketStock = new ScrollPane(markettable);
+		//marketStock = new ScrollPane(markettable);
 		//ItemTile tile = new ItemTile(game.getItems().getAgilityRoid(), new MarketPlaceItem(500, 500));
-		marketStock.setPosition(0, 150);
-		marketStock.setSize(150	, 150);
+		//marketStock.setPosition(0, 150);
+		//marketStock.setSize(150	, 150);
 		//marketStock.setTouchable(Touchable.childrenOnly);
 		//marketStock.setScrollingDisabled(true, true);
 		
@@ -127,14 +118,6 @@ public class Market extends AbstractScreen {
 		table = new Table(); 
 		table.add(markettable);
 		table.add(backpacktable);
-
-		
-		
-		//stage.addActor(tile2);
-		
-		
-		
-		//stage.addActor(tile);
 	}
 	
 	public boolean update(){
@@ -170,18 +153,20 @@ public class Market extends AbstractScreen {
 		super.render(delta);
 		//markettable.debug();
 		//table.drawDebug(stage);
-		markettable.setPosition(500, 100);
-		backpacktable.setPosition(800, 100);
+		//markettable.setPosition(500, 100);
+		//backpacktable.setPosition(800, 100);
 		//stage.addActor(marketStock);
 		for(Actor tile: markettable.getChildren())
 			((ItemTile) tile).update();
 		for(Actor tile: backpacktable.getChildren())
 			((ItemTile) tile).update();
+		table.setPosition(0, 0);
+		table.setBounds(0, 0, 768, 1024);
 		stage.addActor(table);
 		stage.addActor(buy);
 		stage.addActor(sell);
-		table.debug();
-		table.drawDebug(stage);
+		//table.debug();
+		//table.drawDebug(stage);
 	}
 
 	@Override
