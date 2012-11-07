@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
@@ -41,7 +42,8 @@ public class Market extends AbstractScreen {
 						backPackItemGroup;
 	private ScrollPane 	marketStock,
 						backpackStock;
-	Button buy, sell;
+	private Button buy, sell;
+	private Button backButton;
 	public Market(GTPoke game){
 		super(game);
 	}
@@ -129,7 +131,7 @@ public class Market extends AbstractScreen {
 			ItemTile tile = new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue());
 			markettable.add(tile);
 			marketItemGroup.add(tile);
-			if(col++ % 3 == 0)
+			if(col++ % 2 == 0)
 				markettable.row();
 		}
 		col = 1;
@@ -140,11 +142,28 @@ public class Market extends AbstractScreen {
 			ItemTile tile = new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue(), playerPack);
 			backpacktable.add(tile);
 			backPackItemGroup.add(tile);
-			if(col++ % 3 == 0)
+			if(col++ % 2 == 0)
 				backpacktable.row();
 		}
 		marketItemGroup.setMaxCheckCount(1);
 		backPackItemGroup.setMaxCheckCount(1);
+		
+		Texture ButtonSprite = new Texture("images//button-sprite.png");
+		ButtonStyle style = new ButtonStyle();
+		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 0, 320, 70));
+		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70));
+		style.disabled = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70));
+		backButton = new Button(style);
+		
+		backButton.setSkin(getSkin());
+		backButton.add("Back");
+		backButton.setPosition(10, 10);
+		
+		backButton.addListener(new ClickListener() {
+			public void clicked (InputEvent event, float x, float y) {
+				game.setScreen(game.getCurrentTownScreen());
+			}
+		});
 		return true;
 	}
 
@@ -160,11 +179,12 @@ public class Market extends AbstractScreen {
 			((ItemTile) tile).update();
 		for(Actor tile: backpacktable.getChildren())
 			((ItemTile) tile).update();
-		table.setPosition(0, 0);
+		table.setPosition(100, -400);
 		table.setBounds(0, 0, 768, 1024);
 		stage.addActor(table);
 		stage.addActor(buy);
 		stage.addActor(sell);
+		stage.addActor(backButton);
 		//table.debug();
 		//table.drawDebug(stage);
 	}
