@@ -55,12 +55,14 @@ public class Market extends AbstractScreen {
 			if(col++ % 3 == 0)
 				table.row();
 		}
+		
 		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
 			Entry item = i.next();
 			table.add(new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue()));
 			if(col++ % 3 == 0)
 				table.row();
 		}
+		
 		table.debug();
 		table.drawDebug(stage);
 		table.setPosition(500, 200);
