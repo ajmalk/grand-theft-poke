@@ -42,6 +42,8 @@ public class GlobalItemReference {
         myStrengthVitamin = new StrengthVitamin();
         myTradeVitamin = new TradeVitamin();
         myRepel = new Repel();
+        
+        System.out.println(myHealthPotion);
     }
 
     public Item getArcanine() {
@@ -65,7 +67,6 @@ public class GlobalItemReference {
     }
 
     public Item getHealthPotion() {
-    	System.out.println("health potion");
         return myHealthPotion;
     }
 
