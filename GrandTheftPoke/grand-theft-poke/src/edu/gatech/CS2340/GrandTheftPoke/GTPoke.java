@@ -74,8 +74,8 @@ public class GTPoke extends Game {
 		theMap = makeMap();
 		thePlayer = new Player(playerName, strength, trade, agility, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
-		System.out.println(thePlayer.buy(theMap.getCurrent().getMarket(), items.getHealthPotion(), 1));
-		System.out.println(thePlayer.getBackpack());
+		thePlayer.buy(theMap.getCurrent().getMarket(), items.getHealthPotion(), 1);
+		thePlayer.buy(theMap.getCurrent().getMarket(), items.getRepel(), 1);
 	}
 
 	public GameMap makeMap() {
