@@ -19,7 +19,7 @@ public class GTPoke extends Game {
 	private GlobalItemReference items;
 	private GameMap theMap;
 	private static Texture ButtonSprite;
-	private static final int INITIAL_RANGE = 50;
+	private static final int INITIAL_RANGE = 500;
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
 
