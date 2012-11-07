@@ -1,6 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
@@ -8,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -20,6 +22,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemTile;
+import edu.gatech.CS2340.GrandTheftPoke.GUI.TownTile;
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
@@ -35,13 +38,24 @@ public class MapScreen extends AbstractScreen {
 	private Image backgroundImage;
 	private Town current;
 	private GameMap theMap;
-	private Button mapButton;
-	private Button pokeCenterButton;
-	private Button marketPlaceButton;
-	private Button gymLeaderButton;
+	
+	private TownTile palletTownButton;
+	private TownTile viridianCityButton;
+	private TownTile pewterCityButton;
+	private TownTile ceruleanCityButton;
+	private TownTile vermillionCityButton;
+	private TownTile lavenderTownButton;
+	private TownTile celadonCityButton;
+	private TownTile fuchsiaCityButton;
+	private TownTile saffronCityButton;
+	private TownTile cinnabarIslandButton;
+	private TownTile powerPlantButton;
+	
+	private HashSet<TownTile> buttonSet;
 	
 	public MapScreen(GTPoke game){
 		super(game);
+		buttonSet = new HashSet<TownTile>();
 	}
 	@Override
 	public void show(){
@@ -52,70 +66,62 @@ public class MapScreen extends AbstractScreen {
 		
 		background = new Texture("images//map.png");
 		
-		Texture ButtonSprite = new Texture("images//icons//PalletTown.png");
 		stage.clear();
 	
-		backgroundImage = new Image(background);
-		//backgroundImage.setFillParent(true);
-		backgroundImage.getColor().a = 0f;
-		backgroundImage.addAction(fadeIn(0.75f));
+		//backgroundImage = new Image(background);
+		//backgroundImage.getColor().a = 0f;
+		//backgroundImage.addAction(fadeIn(0.75f));
 	
-	
-		mapButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 380, 265, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 1154, 265, 378)));
-		mapButton.addListener(new ClickListener() {
-			public void clicked (InputEvent event, float x, float y) {
-				//game.setScreen(game.getNameScreen());
-			}
-		});
-		pokeCenterButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 265, 380, 260, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 265, 1154, 260, 378)));
-		pokeCenterButton.addListener(new ClickListener() {
-			public void clicked (InputEvent event, float x, float y) {
-				//game.setScreen(game.getNameScreen());
-			}
-		});
-		marketPlaceButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 527, 380, 250, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 527, 1154, 250, 378)));
-		marketPlaceButton.addListener(new ClickListener() {
-			public void clicked (InputEvent event, float x, float y) {
-				//game.setScreen(game.getNameScreen());
-			}
-		});
-		gymLeaderButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 775, 380, 258, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 775, 1154, 258, 378)));
-		gymLeaderButton.addListener(new ClickListener() {
-			public void clicked (InputEvent event, float x, float y) {
-				//game.setScreen(game.getNameScreen());
-			}
-		});
-	
-	
-	
-	}
-	@Override
-	public void render(float delta){
-		super.render(delta);
-		
-		table.clear();
-		table.setPosition(0, -188);
-		table.add(mapButton);
-		table.add(pokeCenterButton);
-		table.add(marketPlaceButton);
-		table.add(gymLeaderButton);
-		
-		for(Iterator<Town> i =  theMap.getTownSet().iterator(); i.hasNext(); ){
-			Town toBeChecked = i.next();
-			int distance = theMap.Dijkstras(toBeChecked.toString());
-		}
+
+				for(Iterator<Town> i =  game.getMap().getTownSet().iterator(); i.hasNext(); ){
+					Town theTown = i.next();
+					
+					if(theTown.toString() == "Pallet Town") {
+						palletTownButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Viridian City") {
+						viridianCityButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Power Plant") {
+						powerPlantButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Pewter City") {
+						pewterCityButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Cerulean City") {
+						ceruleanCityButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Fuchsia City") {
+						fuchsiaCityButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Cinnabar Island") {
+						cinnabarIslandButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Saffron City") {
+						saffronCityButton = new TownTile(theTown);
+					} else if(theTown.toString() == "Vermillion City"){
+						vermillionCityButton = new TownTile(theTown);
+					} else {
+						lavenderTownButton = new TownTile(theTown);
+					}
+					
+					int distance = theMap.Dijkstras(theTown.toString());
+					int range = game.getPlayer().getBackpack().getMaxRange();
+					
+					if(distance > range) {
+						setDisabled(theTown);
+					}
+				}
+				
+				buttonSet.add(celadonCityButton);
+				buttonSet.add(palletTownButton);
+				buttonSet.add(viridianCityButton);
+				buttonSet.add(powerPlantButton);
+				buttonSet.add(pewterCityButton);
+				buttonSet.add(ceruleanCityButton);
+				buttonSet.add(fuchsiaCityButton);
+				buttonSet.add(cinnabarIslandButton);
+				buttonSet.add(saffronCityButton);
+				buttonSet.add(vermillionCityButton);
+				buttonSet.add(lavenderTownButton);
 		
 		
 		
-		stage.addActor(backgroundImage);
+		
+		//stage.addActor(backgroundImage);
 		//stage.addActor(table);
 
 		//remVal.setText(remainder.toString());
@@ -124,6 +130,16 @@ public class MapScreen extends AbstractScreen {
 		//table.drawDebug(stage);
 		
 		
+	}
+	
+	public void setDisabled(Town theTown) {
+		for(Iterator<TownTile> i = buttonSet.iterator(); i.hasNext(); ) {
+			TownTile localButton = i.next();
+			if(localButton.getTown().toString() == theTown.toString()) {
+				localButton.setDisabled(true);
+				localButton.setTouchable(Touchable.disabled);
+			}
+		}
 	}
 
 	@Override
@@ -135,5 +151,6 @@ public class MapScreen extends AbstractScreen {
 	public void dispose(){
 		super.dispose();
 	}
+	
 }
 

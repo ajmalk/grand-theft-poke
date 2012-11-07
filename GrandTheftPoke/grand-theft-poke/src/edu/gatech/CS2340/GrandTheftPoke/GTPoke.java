@@ -130,4 +130,8 @@ public class GTPoke extends Game {
 	public Player getPlayer() {
 		return thePlayer;
 	}
+
+	public GameMap getMap() {
+		return theMap;
+	}
 }
