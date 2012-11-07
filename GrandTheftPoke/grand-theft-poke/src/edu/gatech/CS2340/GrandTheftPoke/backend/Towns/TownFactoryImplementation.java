@@ -20,8 +20,8 @@ public class TownFactoryImplementation implements TownFactory {
     public Town makePalletTown() {
         HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
         myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10,10));
-        //myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750, 0));
-        //myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(850, 0));
+        myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750, 0));
+        myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(850, 0));
         //myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(1000, 0));
         //myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500, 0));
         //myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600, 0));
