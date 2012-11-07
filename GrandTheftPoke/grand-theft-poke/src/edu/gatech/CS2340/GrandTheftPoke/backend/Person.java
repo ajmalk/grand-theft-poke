@@ -197,7 +197,6 @@ public abstract class Person {
     public void move(Town destination) {
         int range = myBackpack.getMaxRange();
         int distance = theMap.Dijkstras(destination.toString());
-
         if (range >= distance) {
             theMap.setCurrent(destination);
             currentTown = destination;
