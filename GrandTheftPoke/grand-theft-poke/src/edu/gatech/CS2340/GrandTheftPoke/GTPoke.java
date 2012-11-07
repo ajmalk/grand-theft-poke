@@ -120,7 +120,7 @@ public class GTPoke extends Game {
 	}
 	
 	public Screen getCurrentTownScreen() {
-		return new PalletTown(this);
+		return new PalletTown(this, theMap.getCurrent().getImage());
 	}
 	
 	public Screen getMapScreen() {

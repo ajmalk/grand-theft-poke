@@ -31,9 +31,11 @@ public class PalletTown extends AbstractScreen {
 	private Button marketPlaceButton;
 	private Button gymLeaderButton;
 	private Button backPackButton;
+	private String strTown;
 	
-	public PalletTown(GTPoke game){
+	public PalletTown(GTPoke game, String str){
 		super(game);
+		strTown = str;
 	}
 	@Override
 	public void show(){
@@ -45,7 +47,7 @@ public class PalletTown extends AbstractScreen {
 		table.setFillParent(true);
 		bp.setFillParent(true);
 		
-		background = new Texture("images//icons//PalletTownBack.png");
+		background = new Texture(strTown);
 		
 		Texture ButtonSprite = new Texture("images//icons//PalletTown.png");
 		stage.clear();
