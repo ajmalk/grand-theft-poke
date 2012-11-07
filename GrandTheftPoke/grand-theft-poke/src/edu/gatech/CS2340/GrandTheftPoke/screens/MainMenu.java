@@ -54,7 +54,7 @@ public class MainMenu extends AbstractScreen {
 		});
 		LoadButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
-				game.setScreen(game.getMarketScreen());
+				game.setScreen(game.getCurrentTownScreen());
 			}
 		});
 		

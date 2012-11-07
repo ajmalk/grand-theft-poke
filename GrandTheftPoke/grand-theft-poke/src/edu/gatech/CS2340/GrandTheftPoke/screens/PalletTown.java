@@ -27,6 +27,9 @@ public class PalletTown extends AbstractScreen {
 	private Texture background;
 	private Image backgroundImage;
 	private Button mapButton;
+	private Button pokeCenterButton;
+	private Button marketPlaceButton;
+	private Button gymLeaderButton;
 	
 	public PalletTown(GTPoke game){
 		super(game);
@@ -50,9 +53,33 @@ public class PalletTown extends AbstractScreen {
 	
 	
 		mapButton = new Button(
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 356, 256, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 356, 256, 378)));
+		mapButton.addListener(new ClickListener() {
+			public void clicked (InputEvent event, float x, float y) {
+				//game.setScreen(game.getNameScreen());
+			}
+		});
+		pokeCenterButton = new Button(
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 257, 356, 256, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 257, 356, 256, 378)));
+		pokeCenterButton.addListener(new ClickListener() {
+			public void clicked (InputEvent event, float x, float y) {
+				//game.setScreen(game.getNameScreen());
+			}
+		});
+		marketPlaceButton = new Button(
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 512, 356, 258, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 512, 356, 258, 378)));
+		marketPlaceButton.addListener(new ClickListener() {
+			public void clicked (InputEvent event, float x, float y) {
+				//game.setScreen(game.getNameScreen());
+			}
+		});
+		gymLeaderButton = new Button(
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 510, 258, 380)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 510, 258, 380)));
-		mapButton.addListener(new ClickListener() {
+		gymLeaderButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
 			}
@@ -67,6 +94,10 @@ public class PalletTown extends AbstractScreen {
 		
 		table.clear();
 		table.add(mapButton);
+		table.add(pokeCenterButton);
+		table.add(marketPlaceButton);
+		table.add(gymLeaderButton);
+		
 		
 		
 		stage.addActor(backgroundImage);

@@ -58,7 +58,6 @@ public class Name extends AbstractScreen {
 		name.setTextFieldListener(new TextFieldListener() {
 			@Override
 			public void keyTyped(TextField name, char key) {
-				System.out.print(key);
 				if(key == '\b' && playerName.length() != 0) {
 					playerName = playerName.substring(0, playerName.length()- 1);
 				}
