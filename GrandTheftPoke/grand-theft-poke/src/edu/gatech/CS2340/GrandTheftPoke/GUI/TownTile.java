@@ -19,22 +19,21 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 public class TownTile extends Button{
 		private Town myTown;
-		private Image icon;
 
 		public TownTile(Town myTown){
-			super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 150, 200)),
+			super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 134, 0, 150, 200)),
 					new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 150, 200)));
 			this.myTown = myTown;
 			
 			
-			Texture confirmButtonSprite = new Texture("images//icons//pokeball.png");
+			/*Texture confirmButtonSprite = new Texture("images//icons//newball.png");
 			ButtonStyle style = new ButtonStyle();
-			style.up = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 0,
-					0, 320, 70));
+			style.up = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
+					16, 18, 18));
 			style.down = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite,
-					0, 69, 320, 70));
+					134, 64, 18, 18));
 			style.disabled = new TextureRegionDrawable(new TextureRegion(
-					confirmButtonSprite, 0, 69, 320, 70));
+					confirmButtonSprite, 134, 115, 18, 18));*/
 			
 		}
 
