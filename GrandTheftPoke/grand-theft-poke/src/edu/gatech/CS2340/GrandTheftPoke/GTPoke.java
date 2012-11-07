@@ -19,7 +19,7 @@ public class GTPoke extends Game {
 	private GlobalItemReference items;
 	private GameMap theMap;
 	private static Texture ButtonSprite;
-	private static final int INITIAL_RANGE = 500;
+	private static final int INITIAL_RANGE = 80;
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
 
@@ -83,8 +83,7 @@ public class GTPoke extends Game {
 	}
 
 	public Town getCurrentTown() {
-		// return thePlayer.getCurrent();
-		return new TownFactoryImplementation(items).makePalletTown();
+		return theMap.getCurrent();
 	}
 
 	public static Texture getButtonSprite() {
