@@ -61,7 +61,6 @@ public class MainMenu extends AbstractScreen {
 		Table table = new Table(getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
-		
 		table.add(GameButton);
 		table.row();
 		table.add(LoadButton);
