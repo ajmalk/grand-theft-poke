@@ -23,25 +23,31 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 public class PalletTown extends AbstractScreen {
 
 	private	Table table;
-	
+	private	Table bp;
 	private Texture background;
 	private Image backgroundImage;
 	private Button mapButton;
 	private Button pokeCenterButton;
 	private Button marketPlaceButton;
 	private Button gymLeaderButton;
+	private Button backPackButton;
+	private String strTown;
 	
-	public PalletTown(GTPoke game){
+	public PalletTown(GTPoke game, String str){
 		super(game);
+		strTown = str;
 	}
 	@Override
 	public void show(){
 		super.show();
 		
 		table = new Table(getSkin());
-		table.setFillParent(true);
+		bp = new Table(getSkin());
 		
-		background = new Texture("images//icons//PalletTown.png");
+		table.setFillParent(true);
+		bp.setFillParent(true);
+		
+		background = new Texture(strTown);
 		
 		Texture ButtonSprite = new Texture("images//icons//PalletTown.png");
 		stage.clear();
@@ -53,32 +59,40 @@ public class PalletTown extends AbstractScreen {
 	
 	
 		mapButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 356, 256, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 356, 256, 378)));
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 380, 265, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 1154, 265, 378)));
 		mapButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
-				//game.setScreen(game.getNameScreen());
+				game.setScreen(game.getMapScreen());
 			}
 		});
 		pokeCenterButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 257, 356, 256, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 257, 356, 256, 378)));
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 265, 380, 260, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 265, 1154, 260, 378)));
 		pokeCenterButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
 			}
 		});
 		marketPlaceButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 512, 356, 258, 378)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 512, 356, 258, 378)));
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 527, 380, 250, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 527, 1154, 250, 378)));
 		marketPlaceButton.addListener(new ClickListener() {
+			public void clicked (InputEvent event, float x, float y) {
+				game.setScreen(game.getMarketScreen());
+			}
+		});
+		backPackButton = new Button(
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 25, 267,88, 108)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 25, 1040, 88, 108)));
+		backPackButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
 			}
 		});
 		gymLeaderButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 510, 258, 380)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 510, 258, 380)));
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 775, 380, 258, 378)),
+				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 775, 1154, 258, 378)));
 		gymLeaderButton.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
@@ -93,6 +107,8 @@ public class PalletTown extends AbstractScreen {
 		super.render(delta);
 		
 		table.clear();
+		bp.clear();
+		table.setPosition(0, -188);
 		table.add(mapButton);
 		table.add(pokeCenterButton);
 		table.add(marketPlaceButton);
@@ -102,7 +118,13 @@ public class PalletTown extends AbstractScreen {
 		
 		stage.addActor(backgroundImage);
 		stage.addActor(table);
-
+		
+		bp.setPosition(-450, 60);
+		bp.add(backPackButton);
+		
+		
+		stage.addActor(bp);
+		
 		//remVal.setText(remainder.toString());
 		
 		//table.debug();

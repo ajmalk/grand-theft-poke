@@ -29,13 +29,16 @@ public class TradeRoid extends Item implements Usable{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Trade Steriod";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "The Trade Steriod permently adds \n " +
+				"2 stamina points to your current standings.\n" +
+				"Increasing trade ability allows you to become \n"+
+				"a master trader, thus allowing you to negociate the \n"+
+				"the most competive pricing!\n"+
+				"+2 Trade Point";
 	}
 }

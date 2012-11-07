@@ -14,6 +14,7 @@ public class Town implements Comparable {
     private Set<Path> adjacencies;
     private Town previous;
     protected MarketPlace myMarket;
+    private String filepath;
     
 
     public Town(String name, MarketPlace myMarket) {
@@ -70,4 +71,13 @@ public class Town implements Comparable {
     public MarketPlace getMarket() {
         return myMarket;
     }
+
+	public String getImage() {
+		
+		return filepath;
+	}
+	
+	public void setImage(String str){
+		filepath = str;
+	}
 }

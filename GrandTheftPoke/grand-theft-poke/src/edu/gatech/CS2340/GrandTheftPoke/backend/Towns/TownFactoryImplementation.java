@@ -38,6 +38,7 @@ public class TownFactoryImplementation implements TownFactory {
         MarketPlace myMarket = new MarketPlace(myStock);
         //System.out.println(myStock);
         Town myTown = new Town("Pallet Town", myMarket);
+        myTown.setImage("images//icons//PalletTownBack.png");
 
         return myTown;
     }
@@ -66,7 +67,7 @@ public class TownFactoryImplementation implements TownFactory {
         MarketPlace myMarket = new MarketPlace(myStock);
         //System.out.println(myStock);
         Town myTown = new Town("Viridian City", myMarket);
-
+        myTown.setImage("images//icons//ViridianCityBack.png");
 
         return myTown;
 
@@ -96,6 +97,7 @@ public class TownFactoryImplementation implements TownFactory {
         MarketPlace myMarket = new MarketPlace(myStock);
         //System.out.println(myStock);
         Town myTown = new Town("Pewter City", myMarket);
+        myTown.setImage("images//icons//PewterCityBack.png");
 
 
         return myTown;
@@ -125,6 +127,7 @@ public class TownFactoryImplementation implements TownFactory {
         MarketPlace myMarket = new MarketPlace(myStock);
         //System.out.println(myStock);
         Town myTown = new Town("Cerulean City", myMarket);
+        myTown.setImage("images//icons//CeruleanCityBack.png");
 
 
         return myTown;

@@ -22,8 +22,7 @@ public class Pikachu extends Item {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Pikachu Pokemon";
 	}
 	@Override
 	public String getDescription() {

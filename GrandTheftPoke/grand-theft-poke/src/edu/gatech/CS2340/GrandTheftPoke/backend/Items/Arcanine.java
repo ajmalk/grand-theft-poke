@@ -24,8 +24,7 @@ public class Arcanine extends Item {
     }
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Arcanine Pokemon";
 	}
 	@Override
 	public String getDescription() {

@@ -14,79 +14,13 @@ public class Main {
 	public static void main(String[] args) {
 		GlobalItemReference theReference = new GlobalItemReference();
 		GameMap testMap = Main.makeMap(theReference);
-		// testMap.Dijkstras(); ragequit
-		testMarketPlace(testMap, theReference);
+		//testMap.Dijkstras();
+		//testMarketPlace(testMap, theReference);
 		//testMovement(testMap);
 	}
 
 	public static GameMap makeMap(GlobalItemReference theReference) {
-		//theReference = new GlobalItemReference();
-		TownFactoryImplementation townGenerator = new TownFactoryImplementation(
-				theReference);
-
-		Town palletTown = townGenerator.makePalletTown();
-		Town viridianCity = townGenerator.makeViridianCity();
-		Town pewterCity = townGenerator.makePewterCity();
-		Town ceruleanCity = townGenerator.makeCeruleanCity();
-		Town vermillionCity = townGenerator.makeVermillionCity();
-		Town lavenderTown = townGenerator.makeLavenderTown();
-		Town celadonCity = townGenerator.makeCeladonCity();
-		Town fuchsiaCity = townGenerator.makeFuchsiaCity();
-		Town saffronCity = townGenerator.makeSaffronCity();
-		Town cinnabarIsland = townGenerator.makeCinnabarIsland();
-		Town powerPlant = townGenerator.makePowerPlant();
-
-		palletTown.addConnection(new Path(cinnabarIsland, 100));
-		palletTown.addConnection(new Path(viridianCity, 10));
-
-		viridianCity.addConnection(new Path(palletTown, 10));
-		viridianCity.addConnection(new Path(pewterCity, 20));
-
-		pewterCity.addConnection(new Path(viridianCity, 20));
-		pewterCity.addConnection(new Path(ceruleanCity, 50));
-
-		ceruleanCity.addConnection(new Path(pewterCity, 50));
-		ceruleanCity.addConnection(new Path(powerPlant, 30));
-		ceruleanCity.addConnection(new Path(saffronCity, 20));
-
-		powerPlant.addConnection(new Path(ceruleanCity, 30));
-
-		saffronCity.addConnection(new Path(ceruleanCity, 20));
-		saffronCity.addConnection(new Path(celadonCity, 10));
-		saffronCity.addConnection(new Path(lavenderTown, 20));
-		saffronCity.addConnection(new Path(vermillionCity, 20));
-
-		celadonCity.addConnection(new Path(saffronCity, 10));
-		celadonCity.addConnection(new Path(fuchsiaCity, 50));
-
-		lavenderTown.addConnection(new Path(saffronCity, 20));
-		lavenderTown.addConnection(new Path(vermillionCity, 40));
-		lavenderTown.addConnection(new Path(fuchsiaCity, 120));
-
-		vermillionCity.addConnection(new Path(saffronCity, 20));
-		vermillionCity.addConnection(new Path(lavenderTown, 40));
-		vermillionCity.addConnection(new Path(fuchsiaCity, 80));
-
-		fuchsiaCity.addConnection(new Path(celadonCity, 50));
-		fuchsiaCity.addConnection(new Path(lavenderTown, 120));
-		fuchsiaCity.addConnection(new Path(vermillionCity, 80));
-		fuchsiaCity.addConnection(new Path(cinnabarIsland, 100));
-
-		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));
-		cinnabarIsland.addConnection(new Path(palletTown, 100));
-
-		GameMap map = new GameMap(palletTown);
-		map.addTown(viridianCity);
-		map.addTown(pewterCity);
-		map.addTown(ceruleanCity);
-		map.addTown(powerPlant);
-		map.addTown(saffronCity);
-		map.addTown(celadonCity);
-		map.addTown(lavenderTown);
-		map.addTown(vermillionCity);
-		map.addTown(fuchsiaCity);
-		map.addTown(cinnabarIsland);
-
+		GameMap map = new GameMap(theReference);
 		return map;
 	}
 

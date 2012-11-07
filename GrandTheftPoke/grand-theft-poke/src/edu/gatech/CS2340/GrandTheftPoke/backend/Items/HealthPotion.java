@@ -40,7 +40,10 @@ public class HealthPotion extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Health Potion restores your health to \n"+
+				"to the maximum. This is allows you\n"+
+				"stay alive longer.\n"+
+				"Health = max";
+				
 	}
 }

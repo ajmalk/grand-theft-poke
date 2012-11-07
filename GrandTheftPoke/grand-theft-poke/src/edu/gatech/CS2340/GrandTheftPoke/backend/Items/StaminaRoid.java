@@ -10,7 +10,7 @@ public class StaminaRoid extends Item implements Usable{
 	
     @Override
 	public boolean Use(Person person) {
-		person.setStamina(1);
+		person.setStamina(2);
 		return false;
 	}
 
@@ -28,13 +28,16 @@ public class StaminaRoid extends Item implements Usable{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Stamina Steriod";
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "The Stamina Steriod permently adds \n " +
+				"2 stamina points to your current standings.\n" +
+				"Increasing stamina allows you to move more\n"+
+				"more efficiently from town to town, therefore "+
+				"conserving health! \n"+
+				"+2 Stamina Point";
 	}
 }
