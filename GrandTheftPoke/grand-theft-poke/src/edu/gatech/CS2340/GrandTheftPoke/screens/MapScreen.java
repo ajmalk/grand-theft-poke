@@ -157,7 +157,19 @@ public class MapScreen extends AbstractScreen {
 		ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 0, 320, 70));
 		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70));
-		style.disabled = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70)); 
+		style.disabled = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70));
+		
+		backButton = new Button(style);
+		
+		backButton.setSkin(getSkin());
+		backButton.add("Back");
+		backButton.setPosition(10, 10);
+		
+		backButton.addListener(new ClickListener() {
+			public void clicked (InputEvent event, float x, float y) {
+				game.setScreen(game.getCurrentTownScreen());
+			}
+		});
 		
 		viridianCityButton.setStyle(style);
 		palletTownButton.setStyle(style);
@@ -169,6 +181,19 @@ public class MapScreen extends AbstractScreen {
 		saffronCityButton.setStyle(style);
 		vermillionCityButton.setStyle(style);
 		lavenderTownButton.setStyle(style);
+		
+		viridianCityButton.setSkin(getSkin());
+		palletTownButton.setSkin(getSkin());
+		powerPlantButton.setSkin(getSkin());
+		pewterCityButton.setSkin(getSkin());
+		ceruleanCityButton.setSkin(getSkin());
+		fuchsiaCityButton.setSkin(getSkin());
+		cinnabarIslandButton.setSkin(getSkin());
+		saffronCityButton.setSkin(getSkin());
+		vermillionCityButton.setSkin(getSkin());
+		lavenderTownButton.setSkin(getSkin());
+		
+		
 		viridianCityButton.addListener(new ClickListener() {
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
@@ -295,26 +320,38 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		stage.addActor(backgroundImage);
+		viridianCityButton.add("Viridian City");
 		 stage.addActor(viridianCityButton);
 		 viridianCityButton.setPosition(334, 391);
+		 palletTownButton.add("Pallet Town");
 		 stage.addActor(palletTownButton);
 		 palletTownButton.setPosition(337, 180);
+		 powerPlantButton.add("Power Plant");
 		 stage.addActor(powerPlantButton);
 		 powerPlantButton.setPosition(849, 693);
+		 pewterCityButton.add("Pewter City");
 		 stage.addActor(pewterCityButton);
 		 pewterCityButton.setPosition(346, 627);
+		 ceruleanCityButton.add("Cerulean City");
 		 stage.addActor(ceruleanCityButton);
 		 ceruleanCityButton.setPosition(732,582);
+		 saffronCityButton.add("Saffron City");
 		 stage.addActor(saffronCityButton);
 		 saffronCityButton.setPosition(720,438);
+		 cinnabarIslandButton.add("Cinnabar Island");
 		 stage.addActor(cinnabarIslandButton);
 		 cinnabarIslandButton.setPosition(334,35);
+		 vermillionCityButton.add("Vermillion City");
 		 stage.addActor(vermillionCityButton);
 		 vermillionCityButton.setPosition(220, 309);
+		 lavenderTownButton.add("Lavender Town");
 		 stage.addActor(lavenderTownButton);
 		 lavenderTownButton.setPosition(888, 418);
+		 fuchsiaCityButton.add("Fuchsia City");
 		 stage.addActor(fuchsiaCityButton);
 		 fuchsiaCityButton.setPosition(582, 132);
+		 
+		 stage.addActor(backButton);
 //remVal.setText(remainder.toString());
 
 		// table.debug();
