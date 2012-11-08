@@ -4,23 +4,18 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField.TextFieldListener;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Main;
 
 public class Name extends AbstractScreen {
 	private Texture background;
@@ -58,21 +53,34 @@ public class Name extends AbstractScreen {
 		name.setTextFieldListener(new TextFieldListener() {
 			@Override
 			public void keyTyped(TextField name, char key) {
-				if(key == '\b' && playerName.length() != 0) {
-					playerName = playerName.substring(0, playerName.length()- 1);
+				if (!(key == 14 || key == 15 || key == 0)) {
+
+					if (key == '\b' && playerName.length() != 0) {
+						if (playerName.length() == 1) {
+							playerName = "";
+						}
+						else {
+							playerName = playerName.substring(0,
+									playerName.length() - 1);
+						}		
+					} else if (key != '\b' && key != 13) {
+						playerName += key;
+					}
+
+					if (checkName(playerName)) {
+						ConfirmButton.setDisabled(false);
+						ConfirmButton.setTouchable(Touchable.enabled);
+					} else {
+						ConfirmButton.setDisabled(true);
+						ConfirmButton.setTouchable(Touchable.disabled);
+					}
+
+					if (key == 13 && checkName(playerName)) {
+						game.setPlayerName(playerName);
+						game.setScreen(game.getSkillPointsScreen());
+					}
 				}
-				else if(key != '\b'){
-					playerName += key;
-				}
-				
-				if (playerName.length() != 0) {
-					ConfirmButton.setDisabled(false);
-					ConfirmButton.setTouchable(Touchable.enabled);
-				}
-				else {
-					ConfirmButton.setDisabled(true);
-					ConfirmButton.setTouchable(Touchable.disabled);
-				}
+				System.out.println(playerName);
 			}
 		});
 
@@ -91,10 +99,6 @@ public class Name extends AbstractScreen {
 		ConfirmButton.setSkin(getSkin());
 		ConfirmButton.add("Confirm");
 		ConfirmButton.setPosition(700, 10);
-		// ConfirmButton.setDisabled(true);
-		// ConfirmButton.setTouchable(Touchable.disabled);
-
-		ConfirmButton.setStyle(style);
 
 		ConfirmButton.addListener(new ClickListener() {
 			public void clicked(InputEvent event, float x, float y) {
@@ -109,8 +113,6 @@ public class Name extends AbstractScreen {
 	public void render(float delta) {
 		super.render(delta);
 
-		// remVal.setText(remainder.toString());
-
 		table.clear();
 
 		table.add("Name:").width(100);
@@ -119,8 +121,6 @@ public class Name extends AbstractScreen {
 
 		stage.addActor(table);
 		stage.addActor(ConfirmButton);
-		// table.debug();
-		// table.drawDebug(stage);
 
 	}
 
@@ -133,5 +133,23 @@ public class Name extends AbstractScreen {
 	public void dispose() {
 		super.dispose();
 		background.dispose();
+	}
+
+	private boolean checkName(String name) {
+		for (int index = 0; index < name.length(); index++) {
+			if ((name.charAt(index) < 32)
+					|| (name.charAt(index) > 32 && name.charAt(index) < 48)
+					|| (name.charAt(index) > 57 && name.charAt(index) < 65)
+					|| (name.charAt(index) > 90 && name.charAt(index) < 97)
+					|| (name.charAt(index) > 122)) {
+				return false;
+			}
+		}
+		
+		if (name.length() < 1) {
+			System.out.println("too short");
+			return false;
+		}
+		return true;
 	}
 }
