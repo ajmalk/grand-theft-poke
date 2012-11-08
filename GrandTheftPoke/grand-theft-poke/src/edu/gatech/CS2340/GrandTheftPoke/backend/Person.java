@@ -200,6 +200,7 @@ public abstract class Person {
         if (range >= distance) {
             theMap.setCurrent(destination);
             currentTown = destination;
+            setHealth(-10);
         }
     }
 

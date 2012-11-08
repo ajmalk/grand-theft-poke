@@ -36,6 +36,22 @@ public class TownTile extends Button{
 					confirmButtonSprite, 134, 115, 18, 18));*/
 			
 		}
+		
+		public TownTile(Town myTown, ButtonStyle myStyle){
+			super(myStyle);
+			this.myTown = myTown;
+			
+			
+			/*Texture confirmButtonSprite = new Texture("images//icons//newball.png");
+			ButtonStyle style = new ButtonStyle();
+			style.up = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
+					16, 18, 18));
+			style.down = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite,
+					134, 64, 18, 18));
+			style.disabled = new TextureRegionDrawable(new TextureRegion(
+					confirmButtonSprite, 134, 115, 18, 18));*/
+			
+		}
 
 		public Town getTown() {
 			return myTown;
