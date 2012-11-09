@@ -5,7 +5,6 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public abstract class Potion extends Item implements Usable{
     @Override
-	public boolean Use(Person person){
-		return false;
-	}
+	public abstract void use(Person person);
+    public abstract void unUse(Person person);
 }

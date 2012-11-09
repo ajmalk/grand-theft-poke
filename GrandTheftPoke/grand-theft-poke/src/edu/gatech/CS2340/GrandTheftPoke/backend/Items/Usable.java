@@ -10,8 +10,8 @@ public interface Usable {
     /**
      * 
      * @param person
-     * @return
      */
-    public boolean Use(Person person);
+    public void use(Person person);
+    public void unUse(Person person);
 
 }

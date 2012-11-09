@@ -10,9 +10,12 @@ public class TradeRoid extends Item implements Usable{
 	}
 	
     @Override
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setTrade(2);
-		return false;
+    }
+    
+    public void unUse(Person person) {
+		person.setTrade(-2);
 	}
 
     @Override
@@ -23,7 +26,6 @@ public class TradeRoid extends Item implements Usable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TradeRoid other = (TradeRoid) obj;
         return true;
     }
 

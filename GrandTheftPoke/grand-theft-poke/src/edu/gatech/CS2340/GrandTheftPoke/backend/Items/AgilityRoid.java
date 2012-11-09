@@ -4,14 +4,13 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class AgilityRoid extends Item implements Usable{
-    @Override
-	public int hashCode() {
-		return 14;
+	
+	public void use(Person person) {
+		person.setAgility(2);
 	}
 	
-	public boolean Use(Person person) {
-		person.setAgility(2);
-		return false;
+	public void unUse(Person person){
+		person.setAgility(-2);
 	}
 
     @Override
@@ -22,7 +21,6 @@ public class AgilityRoid extends Item implements Usable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final AgilityRoid other = (AgilityRoid) obj;
         return true;
     }
 

@@ -10,9 +10,12 @@ public class StrengthRoid extends Item implements Usable{
 	}
 	
     @Override
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setStrength(2);
-		return false;
+	}
+    
+    public void unUse(Person person) {
+		person.setStrength(-2);
 	}
 
     @Override
@@ -23,7 +26,6 @@ public class StrengthRoid extends Item implements Usable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final StrengthRoid other = (StrengthRoid) obj;
         return true;
     }
 

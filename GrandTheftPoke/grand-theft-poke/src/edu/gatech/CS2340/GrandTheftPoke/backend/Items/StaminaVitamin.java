@@ -9,9 +9,12 @@ public class StaminaVitamin extends Item implements Usable {
 		return 4;
 	}
 	
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setStamina(1);
-		return false;
+	}
+	
+	public void unUse(Person person) {
+		person.setStamina(-1);
 	}
 
     @Override
@@ -22,7 +25,6 @@ public class StaminaVitamin extends Item implements Usable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final StaminaVitamin other = (StaminaVitamin) obj;
         return true;
     }
 

@@ -15,14 +15,17 @@ public class Repel extends Item implements Usable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Repel other = (Repel) obj;
         return true;
     }
 
     @Override
-    public boolean Use(Person person) {
-        return false;
+    public void use(Person person) {
+       
     }
+    
+    public void unUse(Person person) {
+		
+	}
 
 	@Override
 	public String toString() {

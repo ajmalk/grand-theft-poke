@@ -8,9 +8,12 @@ public class StrengthVitamin extends Item implements Usable {
 		return 3;
 	}
 	
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setStrength(2);
-		return false;
+	}
+	
+	public void unUse(Person person) {
+		person.setStrength(-2);
 	}
 
     @Override

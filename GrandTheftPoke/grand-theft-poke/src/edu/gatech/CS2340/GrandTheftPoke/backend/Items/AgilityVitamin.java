@@ -3,13 +3,12 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class AgilityVitamin extends Item implements Usable {
-	public int hashCode() {
-		return 2;
-	}
 	
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setAgility(1);
-		return false;
+	}
+	public void unUse(Person person) {
+		person.setAgility(-1);
 	}
 
     @Override
@@ -20,7 +19,6 @@ public class AgilityVitamin extends Item implements Usable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final AgilityVitamin other = (AgilityVitamin) obj;
         return true;
     }
 

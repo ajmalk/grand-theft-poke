@@ -2,12 +2,10 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
  *
- * @author Ben Nuttle
+ * @author Team Rocket
  */
 public abstract class Item {
     private int weight = 1;
-    @Override
-    public abstract int hashCode();
     public abstract String toString();
     public abstract String getDescription();
     @Override
@@ -18,7 +16,6 @@ public abstract class Item {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Item other = (Item) obj;
         return true;
     }
     

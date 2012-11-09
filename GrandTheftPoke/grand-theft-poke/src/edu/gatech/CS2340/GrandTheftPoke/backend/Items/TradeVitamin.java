@@ -4,14 +4,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 
 public class TradeVitamin extends Item implements Usable {
-	public int hashCode() {
-		return 5;
-	}
 	
     @Override
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setTrade(1);
-		return false;
+	}
+    
+    public void unUse(Person person) {
+		person.setTrade(-1);
 	}
 
     @Override
@@ -22,7 +22,6 @@ public class TradeVitamin extends Item implements Usable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TradeVitamin other = (TradeVitamin) obj;
         return true;
     }
 

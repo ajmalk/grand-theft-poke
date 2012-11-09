@@ -2,13 +2,18 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
-public class Arcanine extends Item {
-    @Override
-	public int hashCode() {
-		return 12;
+public class Arcanine extends Pokemon implements Usable{
+	
+	public Arcanine() {
+		super(1,2,3,4);
 	}
-	public boolean Use(Person person){
-		return false;
+	
+	public void use(Person person){
+		super.use(person);
+	}
+	
+	public void unUse(Person person) {
+		super.use(person);
 	}
 
     @Override
@@ -19,7 +24,6 @@ public class Arcanine extends Item {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Arcanine other = (Arcanine) obj;
         return true;
     }
 	@Override

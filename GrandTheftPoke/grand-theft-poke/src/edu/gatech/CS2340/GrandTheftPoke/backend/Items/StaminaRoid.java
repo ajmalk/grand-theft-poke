@@ -4,14 +4,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 
 public class StaminaRoid extends Item implements Usable{
-	public int hashCode() {
-		return 16;
-	}
 	
     @Override
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		person.setStamina(2);
-		return false;
+	}
+    
+    public void unUse(Person person) {
+		person.setStamina(-2);
 	}
 
     @Override
@@ -22,7 +22,6 @@ public class StaminaRoid extends Item implements Usable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final StaminaRoid other = (StaminaRoid) obj;
         return true;
     }
 

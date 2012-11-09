@@ -9,16 +9,18 @@ public class HealthPotion extends Item implements Usable {
 		return 0;
 	}
 	
-	public boolean Use(Person person) {
+	public void use(Person person) {
 		int health = person.getHealth();
 		int maxHealth = person.getMaxHealth();
 		if(health<=(maxHealth-20)){
-			health +=20;
+			person.setHealth(health + 20);
 		}
 		else{
-			health = maxHealth;
+			person.setHealth(maxHealth);
 		}
-		return false;
+	}
+	
+	public void unUse(Person person) {
 	}
 
     @Override
@@ -29,7 +31,6 @@ public class HealthPotion extends Item implements Usable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final HealthPotion other = (HealthPotion) obj;
         return true;
     }
 
