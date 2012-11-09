@@ -80,7 +80,6 @@ public class Name extends AbstractScreen {
 						game.setScreen(game.getSkillPointsScreen());
 					}
 				}
-				System.out.println(playerName);
 			}
 		});
 
@@ -147,7 +146,6 @@ public class Name extends AbstractScreen {
 		}
 		
 		if (name.length() < 1) {
-			System.out.println("too short");
 			return false;
 		}
 		return true;

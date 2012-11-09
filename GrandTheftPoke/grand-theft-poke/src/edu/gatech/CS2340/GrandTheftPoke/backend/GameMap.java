@@ -8,12 +8,12 @@ import java.util.*;
 
 /**
  *
- * @author Ben Nuttle
+ * @author Team Rocket
  */
 public class GameMap {
 
-    private Town current; //test
-    private Set townSet;
+    private Town current;
+    private Set<Town> townSet;
 
     public GameMap() {
         townSet = new HashSet<Town>();
@@ -156,9 +156,6 @@ public class GameMap {
         for (Town x : (Set<Town>) townSet) {
             if (x.toString().equals(townName)) {
                 toBeReturned = x.getMinimumDistance();
-                //resetMinimumDistance(current);
-                //List<Town> path = getShortestPathTo(x);
-                //System.out.println("Path: " + path);
             }
             resetMinimumDistance(x);
         }
