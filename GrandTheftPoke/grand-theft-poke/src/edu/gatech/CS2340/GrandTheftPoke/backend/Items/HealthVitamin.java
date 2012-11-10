@@ -2,7 +2,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
-public class HealthVitamin extends Vitamin {
+public class HealthVitamin extends Item implements Usable {
 
     public void use(Person person) {
         int maxHealth = person.getMaxHealth();

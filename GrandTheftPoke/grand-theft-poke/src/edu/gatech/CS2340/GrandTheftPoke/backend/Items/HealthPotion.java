@@ -4,10 +4,6 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class HealthPotion extends Item implements Usable {
-    @Override
-	public int hashCode() {
-		return 0;
-	}
 	
 	public void use(Person person) {
 		int health = person.getHealth();

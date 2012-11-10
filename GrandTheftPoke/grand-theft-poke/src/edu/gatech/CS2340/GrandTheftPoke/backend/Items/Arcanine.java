@@ -13,7 +13,7 @@ public class Arcanine extends Pokemon implements Usable{
 	}
 	
 	public void unUse(Person person) {
-		super.use(person);
+		super.unUse(person);
 	}
 
     @Override
