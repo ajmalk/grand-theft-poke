@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MarketPlaceTest {
+public class MarketPlaceItemTest {
 	MarketPlace myMarket;
 	Person p;
 	@Before
@@ -81,6 +81,7 @@ public class MarketPlaceTest {
 	public void testBuyAndSellBackpack() {
 
 		//test buying 
+		//need to find out why this nullpointers
 		assertTrue(p.getBackpack().getContents().isEmpty());
 		p.buy(myMarket, new Charizard(), 1);
 		p.buy(myMarket, new HealthPotion(), 6);
