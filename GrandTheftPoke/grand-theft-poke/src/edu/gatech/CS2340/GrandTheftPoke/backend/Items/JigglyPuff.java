@@ -18,10 +18,12 @@ public class JigglyPuff extends Pokemon implements Usable {
         return true;
     }
 
+	@Override
 	public void use(Person person){
 		super.use(person);
 	}
 	
+	@Override
 	public void unUse(Person person) {
 		super.unUse(person);
 	}
