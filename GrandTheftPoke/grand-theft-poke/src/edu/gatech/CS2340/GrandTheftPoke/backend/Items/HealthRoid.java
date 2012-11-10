@@ -12,6 +12,7 @@ public class HealthRoid extends Item implements Usable {
 		person.setHealth(maxHealth);
 	}
 
+	@Override
 	public void unUse(Person person) {
 		int maxHealth = person.getMaxHealth();
 		person.setMaxHealth(maxHealth - 25);

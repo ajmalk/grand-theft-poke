@@ -100,6 +100,7 @@ public class Name extends AbstractScreen {
 		ConfirmButton.setPosition(700, 10);
 
 		ConfirmButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setPlayerName(playerName);
 				game.setScreen(game.getSkillPointsScreen());

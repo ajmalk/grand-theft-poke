@@ -8,7 +8,7 @@ public class HealthPotion extends Item implements Usable {
 	public int hashCode() {
 		return 0;
 	}
-	
+    @Override
 	public void use(Person person) {
 		int health = person.getHealth();
 		int maxHealth = person.getMaxHealth();
@@ -19,8 +19,9 @@ public class HealthPotion extends Item implements Usable {
 			person.setHealth(maxHealth);
 		}
 	}
-	
+    @Override
 	public void unUse(Person person) {
+    	//should be done
 	}
 
     @Override

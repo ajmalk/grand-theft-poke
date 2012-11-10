@@ -13,7 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
-import com.badlogic.gdx.scenes.scene2d.ui.Window;
+//import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -92,6 +92,7 @@ public class SkillPoints extends AbstractScreen {
 		ConfirmButton.setStyle(style);
 		
 		ConfirmButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				game.createPlayer(strength, trade, agility, stamina);
 				game.setScreen(game.getStarterPokemonScreen());

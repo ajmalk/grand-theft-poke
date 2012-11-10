@@ -148,6 +148,7 @@ public class MapScreen extends AbstractScreen {
 		backButton.setPosition(10, 10);
 
 		backButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -176,6 +177,7 @@ public class MapScreen extends AbstractScreen {
 		lavenderTownButton.setSkin(getSkin());
 
 		viridianCityButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 				//viridianCityButton.setStyle(STYLE WITH PLAYER ON IT);
@@ -190,6 +192,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		palletTownButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -203,6 +206,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		powerPlantButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -216,6 +220,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		pewterCityButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -229,6 +234,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		ceruleanCityButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -242,6 +248,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		fuchsiaCityButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -254,6 +261,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		cinnabarIslandButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -266,6 +274,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		saffronCityButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -278,6 +287,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		vermillionCityButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}
@@ -290,6 +300,7 @@ public class MapScreen extends AbstractScreen {
 		});
 
 		lavenderTownButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				move(event.getListenerActor());
 			}

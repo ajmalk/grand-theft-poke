@@ -4,12 +4,13 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class HealthVitamin extends Vitamin {
 
+	@Override
     public void use(Person person) {
         int maxHealth = person.getMaxHealth();
         person.setMaxHealth(maxHealth + 25);
     }
 
-    
+	@Override
     public void unUse(Person person) {
     	int maxHealth = person.getMaxHealth();
 		person.setMaxHealth(maxHealth - 25);

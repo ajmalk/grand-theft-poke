@@ -1,21 +1,24 @@
 package edu.gatech.CS2340.GrandTheftPoke.GUI;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
+//import com.badlogic.gdx.graphics.Color;
+//import com.badlogic.gdx.graphics.Pixmap;
+//import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
+//import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
+//import com.badlogic.gdx.scenes.scene2d.ui.Image;
+//import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+//import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+//import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
+//import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
+
+//those imports were apparently not used...but i didn't want to remove them
+//because the gui doesn't function on linux...if they're truly not used, 
+//get rid of them. otherwise, uncomment them
 
 public class TownTile extends Button{
 		private Town myTown;

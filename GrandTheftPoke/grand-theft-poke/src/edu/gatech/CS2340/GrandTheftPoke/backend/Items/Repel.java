@@ -3,6 +3,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class Repel extends Item implements Usable {
+	@Override
 	public int hashCode() {
 		return 6;
 	}
@@ -20,11 +21,12 @@ public class Repel extends Item implements Usable {
 
     @Override
     public void use(Person person) {
-       
+       //should be done
     }
     
-    public void unUse(Person person) {
-		
+    @Override
+	public void unUse(Person person) {
+		//should be done
 	}
 
 	@Override
