@@ -4,19 +4,19 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
+//import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+//import com.badlogic.gdx.scenes.scene2d.ui.Label;
+//import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
+//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
@@ -62,6 +62,7 @@ public class StarterPokemon extends AbstractScreen {
 				ButtonSprite, 0, 0, 335, 768)), new TextureRegionDrawable(
 				new TextureRegion(ButtonSprite, 0, 769, 335, 768)));
 		bulbasaur.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
 				confirmX = 25;
@@ -74,6 +75,7 @@ public class StarterPokemon extends AbstractScreen {
 				ButtonSprite, 335, 0, 338, 768)), new TextureRegionDrawable(
 				new TextureRegion(ButtonSprite, 335, 768, 338, 768)));
 		charmander.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
 				confirmX = 356;
@@ -86,6 +88,7 @@ public class StarterPokemon extends AbstractScreen {
 				ButtonSprite, 674, 0, 349, 768)), new TextureRegionDrawable(
 				new TextureRegion(ButtonSprite, 674, 768, 349, 768)));
 		squirtle.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
 				confirmX = 675;
@@ -113,6 +116,7 @@ public class StarterPokemon extends AbstractScreen {
 		ConfirmButton.setStyle(style);
 
 		ConfirmButton.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setScreen(game.getCurrentTownScreen());
 			}

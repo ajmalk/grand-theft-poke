@@ -1,8 +1,6 @@
 import edu.gatech.CS2340.GrandTheftPoke.backend.*;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.*;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.*;
-import edu.gatech.CS2340.*;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
@@ -81,6 +79,7 @@ public class MarketPlaceTest {
 	public void testBuyAndSellBackpack() {
 
 		//test buying 
+		//need to find out why this nullpointers
 		assertTrue(p.getBackpack().getContents().isEmpty());
 		p.buy(myMarket, new Charizard(), 1);
 		p.buy(myMarket, new HealthPotion(), 6);

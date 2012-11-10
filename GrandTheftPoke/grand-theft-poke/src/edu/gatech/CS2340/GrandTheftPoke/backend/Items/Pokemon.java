@@ -24,7 +24,8 @@ public abstract class Pokemon extends Item implements Usable{
 		person.setTrade(tradeBoost);
 	}
     
-    public void unUse(Person person) {
+    @Override
+	public void unUse(Person person) {
     	person.setStrength(-strengthBoost);
 		person.setAgility(-agilityBoost);
 		person.setStamina(-staminaBoost);

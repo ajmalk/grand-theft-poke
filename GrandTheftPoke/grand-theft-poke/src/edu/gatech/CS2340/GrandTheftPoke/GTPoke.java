@@ -10,7 +10,6 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 import edu.gatech.CS2340.GrandTheftPoke.screens.*;
 
 public class GTPoke extends Game {

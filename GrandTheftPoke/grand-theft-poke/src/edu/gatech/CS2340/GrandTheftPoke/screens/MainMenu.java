@@ -1,16 +1,18 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
-import com.badlogic.gdx.graphics.Color;
+//import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
+//import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
+//import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+
+//same story with imports here
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
@@ -48,11 +50,13 @@ public class MainMenu extends AbstractScreen {
 		LoadButton.add("Load Game");
 		
 		GameButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				game.setScreen(game.getNameScreen());
 			}
 		});
 		LoadButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				game.setScreen(game.getMarketScreen());
 			}

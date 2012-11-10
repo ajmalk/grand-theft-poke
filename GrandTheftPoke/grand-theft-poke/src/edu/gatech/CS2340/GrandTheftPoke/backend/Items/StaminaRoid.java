@@ -10,7 +10,8 @@ public class StaminaRoid extends Item implements Usable{
 		person.setStamina(2);
 	}
     
-    public void unUse(Person person) {
+    @Override
+	public void unUse(Person person) {
 		person.setStamina(-2);
 	}
 
