@@ -13,6 +13,7 @@ import java.util.*;
 public class GameMap {
 
     private Set<Town> townSet;
+    private Town startTown;
 
     public GameMap() {
         townSet = new HashSet<Town>();
@@ -90,19 +91,13 @@ public class GameMap {
 		this.addTown(vermillionCity);
 		this.addTown(fuchsiaCity);
 		this.addTown(cinnabarIsland);
+		
+		startTown = palletTown;
 
     }
 
     public void addTown(Town toBeAdded) {
         townSet.add(toBeAdded);
-    }
-
-    public void setCurrent(Town current) {
-        this.current = current;
-    }
-
-    public Town getCurrent() {
-        return current;
     }
 
     public Set<Town> getTownSet() {
@@ -147,6 +142,10 @@ public class GameMap {
             //List<Town> path = getShortestPathTo(x);
             //System.out.println("Path: " + path);
         }
+    }
+    
+    public Town getStartTown() {
+    	return startTown;
     }
 
     public int Dijkstras(Town source, String townName) {

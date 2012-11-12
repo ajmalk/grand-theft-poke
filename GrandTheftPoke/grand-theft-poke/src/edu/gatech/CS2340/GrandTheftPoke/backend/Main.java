@@ -25,8 +25,9 @@ public class Main {
 
 	public static void testMarketPlace(GameMap map,
 			GlobalItemReference theReference) {
-		MarketPlace theMarket = map.getCurrent().getMarket();
+		
 		Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000, map);
+		MarketPlace theMarket = testPlayer.getCurrent().getMarket();
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		System.out.println(testPlayer.buy(theMarket, theReference.getCharizard(), 1));
@@ -46,7 +47,7 @@ public class Main {
 		for (Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move((Town) it.next());
 			System.out.println(testPlayer.getCurrent());
-			map.Dijkstras();
+			map.Dijkstras(testPlayer.getCurrent());
 			System.out.println();
 		}
 	}

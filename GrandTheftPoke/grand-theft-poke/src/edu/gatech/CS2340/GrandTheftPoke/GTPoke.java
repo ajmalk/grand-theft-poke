@@ -75,8 +75,8 @@ public class GTPoke extends Game {
 		theMap = makeMap();
 		thePlayer = new Player(playerName, strength, trade, agility, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
-		thePlayer.buy(theMap.getCurrent().getMarket(), items.getHealthPotion(), 1);
-		thePlayer.buy(theMap.getCurrent().getMarket(), items.getRepel(), 1);
+		thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getHealthPotion(), 1);
+		thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getRepel(), 1);
 	}
 
 	public GameMap makeMap() {
@@ -84,7 +84,7 @@ public class GTPoke extends Game {
 	}
 
 	public Town getCurrentTown() {
-		return theMap.getCurrent();
+		return thePlayer.getCurrent();
 	}
 
 	public static Texture getButtonSprite() {
@@ -124,7 +124,7 @@ public class GTPoke extends Game {
 	}
 	
 	public Screen getCurrentTownScreen() {
-		return new PalletTown(this, theMap.getCurrent().getImage());
+		return new PalletTown(this, thePlayer.getCurrent().getImage());
 	}
 	
 	public Screen getMapScreen() {

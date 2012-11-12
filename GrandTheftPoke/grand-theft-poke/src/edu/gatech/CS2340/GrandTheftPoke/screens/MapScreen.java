@@ -53,7 +53,7 @@ public class MapScreen extends AbstractScreen {
 
 		theMap = game.getMap();
 		theMap.Dijkstras(game.getPlayer().getCurrent());
-		System.out.println(theMap.getCurrent());
+		//System.out.println(theMap.getCurrent());
 
 		backgroundImage = new Image(background);
 		backgroundImage.getColor().a = 0f;

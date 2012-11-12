@@ -44,7 +44,7 @@ public abstract class Person {
         myWallet = new Wallet(money);
 
         myBackpack = new Backpack(range, capacity);
-        currentTown = theMap.getCurrent();
+        currentTown = theMap.getStartTown();
         this.theMap = theMap;
     }
 
@@ -196,7 +196,7 @@ public abstract class Person {
      */
     public void move(Town destination) {
         int range = myBackpack.getMaxRange();
-        int distance = theMap.Dijkstras(destination.toString());
+        int distance = theMap.Dijkstras(currentTown, destination.toString());
         if (range >= distance) {
             theMap.setCurrent(destination);
             currentTown = destination;
