@@ -198,7 +198,6 @@ public abstract class Person {
         int range = myBackpack.getMaxRange();
         int distance = theMap.Dijkstras(currentTown, destination.toString());
         if (range >= distance) {
-            theMap.setCurrent(destination);
             currentTown = destination;
             setHealth(-10);
         }

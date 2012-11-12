@@ -20,7 +20,7 @@ public class Turn {
 	}
 	
 	public void useAll() {
-		for(Person individual : gameActors) {
+		/*for(Person individual : gameActors) {
 			Set<Item> myStuff = individual.getBackpack().getContents().keySet();
 			for(Item theItem : myStuff) {
 				if(theItem instanceof Usable) {
@@ -31,6 +31,6 @@ public class Turn {
 					}
 				}
 			}
-		}
+		}*/
 	}
 }
