@@ -90,8 +90,10 @@ public class MapScreen extends AbstractScreen {
 				saffronCityButton= new TownTile(theTown, townTileStyle);
 			} else if (theTown.toString() == "Vermillion City") {
 				vermillionCityButton= new TownTile(theTown, townTileStyle);
-			} else {
+			} else if (theTown.toString() == "Lavender Town"){
 				lavenderTownButton= new TownTile(theTown, townTileStyle);
+			} else {
+				
 			}
 
 			int distance = theMap.Dijkstras(game.getPlayer().getCurrent(), theTown.toString());
@@ -125,9 +127,11 @@ public class MapScreen extends AbstractScreen {
 				} else if (theTown.toString() == "Vermillion City") {
 					vermillionCityButton.setDisabled(true);
 					vermillionCityButton.setTouchable(Touchable.disabled);
-				} else {
+				} else if(theTown.toString() == "Lavender Town"){
 					lavenderTownButton.setDisabled(true);
 					lavenderTownButton.setTouchable(Touchable.disabled);
+				} else {
+					
 				}
 			}
 		}
@@ -256,6 +260,7 @@ public class MapScreen extends AbstractScreen {
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -269,6 +274,7 @@ public class MapScreen extends AbstractScreen {
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -282,6 +288,7 @@ public class MapScreen extends AbstractScreen {
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -295,6 +302,7 @@ public class MapScreen extends AbstractScreen {
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
@@ -308,6 +316,7 @@ public class MapScreen extends AbstractScreen {
 			private void move(Actor listenerActor) {
 				Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
+				game.setScreen(game.getCurrentTownScreen());
 			}
 
 		});
