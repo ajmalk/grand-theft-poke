@@ -200,7 +200,7 @@ public abstract class Person {
 		if (!(currentTown.toString().equals(destination.toString()))) {
 			int range = myBackpack.getMaxRange();
 			int distance = theMap.Dijkstras(currentTown, destination.toString());
-			if (range >= distance) {
+			if (range >= distance && health >= distance/5) {
 				currentTown = destination;
 				setHealth(-distance/5);
 				System.out.println(health);

@@ -98,8 +98,9 @@ public class MapScreen extends AbstractScreen {
 
 			int distance = theMap.Dijkstras(game.getPlayer().getCurrent(), theTown.toString());
 			int range = game.getPlayer().getBackpack().getMaxRange();
+			int playerHealth = game.getPlayer().getHealth();
 
-			if (distance > range) {
+			if (distance > range || playerHealth < distance/5) {
 				if (theTown.toString() == "Pallet Town") {
 					palletTownButton.setDisabled(true);
 					palletTownButton.setTouchable(Touchable.disabled);
