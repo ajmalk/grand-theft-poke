@@ -12,7 +12,7 @@ public class GameSerializer implements Serializer<GTPoke> {
 	@Override
 	public void write(Json json, GTPoke game, Class knownType) {
 		json.setSerializer(Player.class, new PlayerSerializer());
-		json.writeValue("thePlayer", game.getPlayer(), knownType);
+		json.writeValue(game.getPlayer(), knownType);
 	}
 
 	@Override
@@ -25,9 +25,9 @@ public class GameSerializer implements Serializer<GTPoke> {
 
 		@Override
 		public void write(Json json, Player player, Class knownType) {
-			//json.writeValue("Name", player.getName());
+			json.writeValue(player.getName());
 			json.setSerializer(Backpack.class, new BackpackSerializer());
-			//json.writeValue("Backpack", player.getBackpack());
+			json.writeValue(player.getBackpack());
 		}
 
 		@Override
