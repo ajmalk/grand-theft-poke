@@ -2,7 +2,6 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 import java.util.Iterator;
 import java.util.Set;
 

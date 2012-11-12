@@ -1,8 +1,6 @@
 import edu.gatech.CS2340.GrandTheftPoke.backend.*;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.*;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.*;
-import edu.gatech.CS2340.*;
 import java.util.HashMap;
 
 import static org.junit.Assert.*;
@@ -10,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MarketPlaceItemTest {
+public class MarketPlaceTest {
 	MarketPlace myMarket;
 	Person p;
 	@Before

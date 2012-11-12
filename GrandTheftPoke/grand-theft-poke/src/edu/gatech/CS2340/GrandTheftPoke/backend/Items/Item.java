@@ -6,7 +6,8 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  */
 public abstract class Item {
     private int weight = 1;
-    public abstract String toString();
+    @Override
+	public abstract String toString();
     public abstract String getDescription();
     @Override
     public boolean equals(Object obj) {

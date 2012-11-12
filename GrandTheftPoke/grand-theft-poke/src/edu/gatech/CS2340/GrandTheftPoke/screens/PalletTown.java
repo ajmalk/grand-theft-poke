@@ -4,19 +4,21 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
+//import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+//import com.badlogic.gdx.scenes.scene2d.ui.Label;
+//import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
+//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+
+//check imports
 
 
 
@@ -62,6 +64,7 @@ public class PalletTown extends AbstractScreen {
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 380, 265, 378)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 1154, 265, 378)));
 		mapButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				game.setScreen(game.getMapScreen());
 			}
@@ -70,6 +73,7 @@ public class PalletTown extends AbstractScreen {
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 265, 380, 260, 378)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 265, 1154, 260, 378)));
 		pokeCenterButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
 			}
@@ -78,6 +82,7 @@ public class PalletTown extends AbstractScreen {
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 527, 380, 250, 378)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 527, 1154, 250, 378)));
 		marketPlaceButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				game.setScreen(game.getMarketScreen());
 			}
@@ -86,6 +91,7 @@ public class PalletTown extends AbstractScreen {
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 25, 267,88, 108)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 25, 1040, 88, 108)));
 		backPackButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
 			}
@@ -94,6 +100,7 @@ public class PalletTown extends AbstractScreen {
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 775, 380, 258, 378)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 775, 1154, 258, 378)));
 		gymLeaderButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				//game.setScreen(game.getNameScreen());
 			}

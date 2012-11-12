@@ -19,6 +19,7 @@ public class Player extends Person {
 
     @Override
     public void postBattle(Person other) {
+    	//needs to be done
     }
     
     @Override

@@ -9,10 +9,12 @@ public class StaminaVitamin extends Item implements Usable {
 		return 4;
 	}
 	
+	@Override
 	public void use(Person person) {
 		person.setStamina(1);
 	}
 	
+	@Override
 	public void unUse(Person person) {
 		person.setStamina(-1);
 	}

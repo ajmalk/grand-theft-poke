@@ -14,7 +14,8 @@ public class StrengthRoid extends Item implements Usable{
 		person.setStrength(2);
 	}
     
-    public void unUse(Person person) {
+    @Override
+	public void unUse(Person person) {
 		person.setStrength(-2);
 	}
 

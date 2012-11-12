@@ -3,6 +3,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class Pikachu extends Item {
+	@Override
 	public int hashCode() {
 		return 10;
 	}

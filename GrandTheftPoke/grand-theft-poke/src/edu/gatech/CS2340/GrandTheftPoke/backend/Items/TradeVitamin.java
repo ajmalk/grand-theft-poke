@@ -10,7 +10,8 @@ public class TradeVitamin extends Item implements Usable {
 		person.setTrade(1);
 	}
     
-    public void unUse(Person person) {
+    @Override
+	public void unUse(Person person) {
 		person.setTrade(-1);
 	}
 

@@ -14,7 +14,8 @@ public class TradeRoid extends Item implements Usable{
 		person.setTrade(2);
     }
     
-    public void unUse(Person person) {
+    @Override
+	public void unUse(Person person) {
 		person.setTrade(-2);
 	}
 

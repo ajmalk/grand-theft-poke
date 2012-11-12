@@ -13,7 +13,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
+//import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -97,6 +97,7 @@ public class Market extends AbstractScreen {
 		buy.setPosition(1024 - 400, 50);
 		
 		buy.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				System.out.print(((ItemTile) (marketItemGroup.getChecked())).getItem());
 				System.out.print(market);
@@ -113,6 +114,7 @@ public class Market extends AbstractScreen {
 		sell.setPosition(1024 - 400, 150);
 		
 		sell.addListener(new ClickListener() {
+			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				System.out.print(((ItemTile) (marketItemGroup.getChecked())).getItem());
 				game.getPlayer().sell(market, ((ItemTile) (backPackItemGroup.getChecked())).getItem(), 1);
@@ -172,6 +174,7 @@ public class Market extends AbstractScreen {
 		backButton.setPosition(10, 10);
 		
 		backButton.addListener(new ClickListener() {
+			@Override
 			public void clicked (InputEvent event, float x, float y) {
 				game.setScreen(game.getCurrentTownScreen());
 			}

@@ -7,10 +7,12 @@ public class Charizard extends Pokemon implements Usable {
 	public Charizard() {
 		super(1,2,3,4);
 	}
+	@Override
 	public void use(Person person) {
 		super.use(person);
 	}
 	
+	@Override
 	public void unUse(Person person) {
 		super.unUse(person);
 	}

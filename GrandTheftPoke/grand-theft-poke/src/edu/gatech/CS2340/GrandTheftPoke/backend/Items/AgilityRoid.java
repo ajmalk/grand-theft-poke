@@ -5,10 +5,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
 public class AgilityRoid extends Item implements Usable{
 	
+	@Override
 	public void use(Person person) {
 		person.setAgility(2);
 	}
 	
+	@Override
 	public void unUse(Person person){
 		person.setAgility(-2);
 	}

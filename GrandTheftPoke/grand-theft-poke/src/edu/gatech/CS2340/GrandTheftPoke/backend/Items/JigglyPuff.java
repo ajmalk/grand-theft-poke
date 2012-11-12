@@ -2,9 +2,10 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
-public class JigglyPuff extends Item {
-	public int hashCode() {
-		return 11;
+public class JigglyPuff extends Pokemon implements Usable {
+
+	public JigglyPuff() {
+		super(1,2,3,4);
 	}
     @Override
     public boolean equals(Object obj) {
@@ -14,12 +15,17 @@ public class JigglyPuff extends Item {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final JigglyPuff other = (JigglyPuff) obj;
         return true;
     }
 
-	public boolean Use(Person person){
-		return false;
+	@Override
+	public void use(Person person){
+		super.use(person);
+	}
+	
+	@Override
+	public void unUse(Person person) {
+		super.unUse(person);
 	}
 	@Override
 	public String toString() {
