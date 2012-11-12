@@ -12,6 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
+import edu.gatech.CS2340.GrandTheftPoke.files.GameSerializer;
 import edu.gatech.CS2340.GrandTheftPoke.screens.*;
 
 public class GTPoke extends Game {
@@ -40,6 +41,9 @@ public class GTPoke extends Game {
 
 	@Override
 	public void dispose() {
+		Json json = new Json();
+		json.setSerializer(GTPoke.class, new GameSerializer());
+		System.out.println(json.prettyPrint(this));
 		super.dispose();
 	}
 
