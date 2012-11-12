@@ -43,6 +43,7 @@ public class GTPoke extends Game {
 	public void dispose() {
 		Json json = new Json();
 		json.setSerializer(GTPoke.class, new GameSerializer());
+		System.out.println(json);
 		System.out.println(json.prettyPrint(this));
 		super.dispose();
 	}
