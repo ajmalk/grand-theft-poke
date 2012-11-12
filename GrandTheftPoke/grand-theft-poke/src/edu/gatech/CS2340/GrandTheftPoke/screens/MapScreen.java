@@ -52,7 +52,7 @@ public class MapScreen extends AbstractScreen {
 		stage.clear();
 
 		theMap = game.getMap();
-		theMap.Dijkstras();
+		theMap.Dijkstras(game.getPlayer().getCurrent());
 		System.out.println(theMap.getCurrent());
 
 		backgroundImage = new Image(background);
@@ -94,7 +94,7 @@ public class MapScreen extends AbstractScreen {
 				lavenderTownButton= new TownTile(theTown, townTileStyle);
 			}
 
-			int distance = theMap.Dijkstras(theTown.toString());
+			int distance = theMap.Dijkstras(game.getPlayer().getCurrent(), theTown.toString());
 			int range = game.getPlayer().getBackpack().getMaxRange();
 
 			if (distance > range) {

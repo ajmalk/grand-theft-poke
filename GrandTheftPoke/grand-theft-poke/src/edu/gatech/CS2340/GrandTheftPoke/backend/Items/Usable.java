@@ -13,5 +13,8 @@ public interface Usable {
      */
     public void use(Person person);
     public void unUse(Person person);
+    //public boolean checkForUsage();
+    //public void stageForUsage();
+	//public int getTimer();
 
 }

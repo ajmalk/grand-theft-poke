@@ -12,7 +12,6 @@ import java.util.*;
  */
 public class GameMap {
 
-    private Town current;
     private Set<Town> townSet;
 
     public GameMap() {
@@ -78,8 +77,8 @@ public class GameMap {
 		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));
 		cinnabarIsland.addConnection(new Path(palletTown, 100));
 		
-        current = palletTown;
-        townSet.add(current);
+       // current = palletTown;
+        townSet.add(palletTown);
 
 		this.addTown(viridianCity);
 		this.addTown(pewterCity);
@@ -141,8 +140,8 @@ public class GameMap {
         return path;
     }
 
-    public void Dijkstras() {
-        computePaths(current);
+    public void Dijkstras(Town source) {
+        computePaths(source);
         for (Town x : (Set<Town>) townSet) {
             System.out.println("Distance to " + x + ": " + x.getMinimumDistance());
             //List<Town> path = getShortestPathTo(x);
@@ -150,8 +149,8 @@ public class GameMap {
         }
     }
 
-    public int Dijkstras(String townName) {
-        computePaths(current);
+    public int Dijkstras(Town source, String townName) {
+        computePaths(source);
         int toBeReturned = Integer.MAX_VALUE;
         for (Town x : (Set<Town>) townSet) {
             if (x.toString().equals(townName)) {

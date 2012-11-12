@@ -1,9 +1,36 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
+
 /**
  * TODO implement this class
  * @author Team Rocket
  */
 public class Turn {
-	// needs to be done
+	private GameMap theMap;
+	private ArrayList<Person> gameActors;
+	public Turn(GameMap theMap, ArrayList<Person> gameActors) {
+		this.theMap = theMap;
+		this.gameActors = gameActors;
+	}
+	
+	public void useAll() {
+		for(Person individual : gameActors) {
+			Set<Item> myStuff = individual.getBackpack().getContents().keySet();
+			for(Item theItem : myStuff) {
+				if(theItem instanceof Usable) {
+					if(((Usable) theItem).checkForUsage()) {
+						((Usable) theItem).use(individual);
+					} else if(((Usable) theItem).getTimer() <= 0) {
+						((Usable)theItem).unUse(individual);
+					}
+				}
+			}
+		}
+	}
 }
