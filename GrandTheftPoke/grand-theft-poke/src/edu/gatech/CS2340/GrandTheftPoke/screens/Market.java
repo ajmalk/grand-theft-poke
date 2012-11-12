@@ -4,7 +4,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
+//import java.util.Map.Entry;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -16,12 +16,16 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.ObjectMap.Entries;
+import com.badlogic.gdx.utils.ObjectMap.Entry;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemTile;
@@ -126,8 +130,8 @@ public class Market extends AbstractScreen {
 		int col = 1;
 		markettable.clear();
 		Button checked = marketItemGroup.getChecked();
-		for(Iterator<Entry> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
-			Entry item = i.next();
+		for(Iterator<Map.Entry> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
+			Map.Entry item = i.next();
 			ItemTile tile = new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue());
 			markettable.add(tile);
 			marketItemGroup.add(tile);
@@ -137,14 +141,22 @@ public class Market extends AbstractScreen {
 		col = 1;
 		backpacktable.clear();
 		checked = marketItemGroup.getChecked();
-		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
-			Entry item = i.next();
-			ItemTile tile = new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue(), playerPack);
+		for(Entries entries =  playerPack.getContents().entries(); entries.hasNext(); ){
+			Entry item = entries.next();
+			ItemTile tile = new ItemTile(market, (Item)item.key, (Integer)item.value, playerPack);
 			backpacktable.add(tile);
 			backPackItemGroup.add(tile);
 			if(col++ % 2 == 0)
 				backpacktable.row();
 		}
+//		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
+//			Entry item = i.next();
+//			ItemTile tile = new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue(), playerPack);
+//			backpacktable.add(tile);
+//			backPackItemGroup.add(tile);
+//			if(col++ % 2 == 0)
+//				backpacktable.row();
+//		}
 		marketItemGroup.setMaxCheckCount(1);
 		backPackItemGroup.setMaxCheckCount(1);
 		

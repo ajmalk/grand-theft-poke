@@ -5,12 +5,15 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.JsonWriter.OutputType;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
+import edu.gatech.CS2340.GrandTheftPoke.files.GameSerializer;
 import edu.gatech.CS2340.GrandTheftPoke.screens.*;
 
 public class GTPoke extends Game {
@@ -40,12 +43,16 @@ public class GTPoke extends Game {
 	@Override
 	public void dispose() {
 		super.dispose();
+		Json save = new Json(OutputType.minimal);
+		save.setSerializer(GTPoke.class, new GameSerializer());
+		System.out.println(save.toJson(this));
+		System.out.println(save);
 	}
 
 	@Override
 	public void render() {
 		super.render();
-
+		
 	}
 
 	@Override
