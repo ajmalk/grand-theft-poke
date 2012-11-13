@@ -58,11 +58,11 @@ public class ItemTile extends Button{
 	public boolean update(){
 		if(backpackStock == -1){
 			stockLabel.setText(stock.getStock().toString());
-			price.setText("$" + stock.getPrice().toString());
+			price.setText("$" + ((Float)(1.1f * stock.getPrice())).toString());
 		}
 		else{
 			stockLabel.setText(pack.getContents().get(item).toString());
-			price.setText("$" + stock.getPrice().toString());
+			price.setText("$" + ((Float)(0.9f * stock.getPrice())).toString());
 		}
 		return true;
 	}

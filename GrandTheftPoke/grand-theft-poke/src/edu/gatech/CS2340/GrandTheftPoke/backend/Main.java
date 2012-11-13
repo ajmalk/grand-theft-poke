@@ -14,8 +14,8 @@ public class Main {
 		GlobalItemReference theReference = new GlobalItemReference();
 		GameMap testMap = Main.makeMap(theReference);
 		//testMap.Dijkstras();
-		testMarketPlace(testMap, theReference);
-		//testMovement(testMap);
+		//testMarketPlace(testMap, theReference);
+		testMovement(testMap);
 	}
 
 	public static GameMap makeMap(GlobalItemReference theReference) {
@@ -42,7 +42,8 @@ public class Main {
 	}
 
 	public static void testMovement(GameMap map) {
-		Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
+		//Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
+		Rocket testPlayer = new Rocket("Rocket", 4, 4, 4, 4, 100, 80, 20, 50, map);
 		Set<Town> townSet = map.getTownSet();
 		for (Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move((Town) it.next());

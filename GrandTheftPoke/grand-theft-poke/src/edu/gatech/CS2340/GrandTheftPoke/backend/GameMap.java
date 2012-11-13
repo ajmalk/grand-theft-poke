@@ -7,24 +7,23 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 import java.util.*;
 
 /**
- *
+ * 
  * @author Team Rocket
  */
 public class GameMap {
 
-    private Set<Town> townSet;
-    private Town startTown;
+	private Set<Town> townSet;
+	private Town startTown;
 
-    public GameMap() {
-        townSet = new HashSet<Town>();
-        
-        
-    }
+	public GameMap() {
+		townSet = new HashSet<Town>();
 
-    public GameMap(GlobalItemReference theReference) {
-        townSet = new HashSet<Town>();
-        
-        TownFactoryImplementation townGenerator = new TownFactoryImplementation(
+	}
+
+	public GameMap(GlobalItemReference theReference) {
+		townSet = new HashSet<Town>();
+
+		TownFactoryImplementation townGenerator = new TownFactoryImplementation(
 				theReference);
 
 		Town palletTown = townGenerator.makePalletTown();
@@ -77,9 +76,9 @@ public class GameMap {
 
 		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));
 		cinnabarIsland.addConnection(new Path(palletTown, 100));
-		
-       // current = palletTown;
-        townSet.add(palletTown);
+
+		// current = palletTown;
+		townSet.add(palletTown);
 
 		this.addTown(viridianCity);
 		this.addTown(pewterCity);
@@ -91,76 +90,84 @@ public class GameMap {
 		this.addTown(vermillionCity);
 		this.addTown(fuchsiaCity);
 		this.addTown(cinnabarIsland);
-		
+
 		startTown = palletTown;
 
-    }
+	}
 
-    public void addTown(Town toBeAdded) {
-        townSet.add(toBeAdded);
-    }
+	public void addTown(Town toBeAdded) {
+		townSet.add(toBeAdded);
+	}
 
-    public Set<Town> getTownSet() {
-        return townSet;
-    }
+	public Set<Town> getTownSet() {
+		return townSet;
+	}
 
-    public static void computePaths(Town source) {
-        source.setMinimumDistance(0);
-        PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
-        vertexQueue.add(source);
+	public static void computePaths(Town source) {
+		source.setMinimumDistance(0);
+		PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
+		vertexQueue.add(source);
 
-        while (!vertexQueue.isEmpty()) {
-            Town u = vertexQueue.poll();
+		while (!vertexQueue.isEmpty()) {
+			Town u = vertexQueue.poll();
 
-            for (Path e : (Set<Path>) u.getAdjacencies()) {
-                Town v = e.getTarget();
-                int weight = e.getWeight();
-                int distanceThroughU = u.getMinimumDistance() + weight;
-                if (distanceThroughU < v.getMinimumDistance()) {
-                    vertexQueue.remove(v);
-                    v.setMinimumDistance(distanceThroughU);
-                    v.setPrevious(u);
-                    vertexQueue.add(v);
-                }
-            }
-        }
-    }
+			for (Path e : (Set<Path>) u.getAdjacencies()) {
+				Town v = e.getTarget();
+				int weight = e.getWeight();
+				int distanceThroughU = u.getMinimumDistance() + weight;
+				if (distanceThroughU < v.getMinimumDistance()) {
+					vertexQueue.remove(v);
+					v.setMinimumDistance(distanceThroughU);
+					v.setPrevious(u);
+					vertexQueue.add(v);
+				}
+			}
+		}
+	}
 
-    public static List<Town> getShortestPathTo(Town target) {
-        List<Town> path = new ArrayList<Town>();
-        for (Town vertex = target; vertex != null; vertex = vertex.getPrevious()) {
-            path.add(vertex);
-        }
-        Collections.reverse(path);
-        return path;
-    }
+	public static List<Town> getShortestPathTo(Town target) {
+		List<Town> path = new ArrayList<Town>();
+		for (Town vertex = target; vertex != null; vertex = vertex
+				.getPrevious()) {
+			path.add(vertex);
+		}
+		Collections.reverse(path);
+		return path;
+	}
 
-    public void Dijkstras(Town source) {
-        computePaths(source);
-        for (Town x : (Set<Town>) townSet) {
-            System.out.println("Distance to " + x + ": " + x.getMinimumDistance());
-            //List<Town> path = getShortestPathTo(x);
-            //System.out.println("Path: " + path);
-        }
-    }
-    
-    public Town getStartTown() {
-    	return startTown;
-    }
+	public void Dijkstras(Town source) {
+		computePaths(source);
+		for (Town x : (Set<Town>) townSet) {
+			System.out.println("Distance to " + x + ": "
+					+ x.getMinimumDistance());
+			// List<Town> path = getShortestPathTo(x);
+			// System.out.println("Path: " + path);
+		}
+	}
 
-    public int Dijkstras(Town source, String townName) {
-        computePaths(source);
-        int toBeReturned = Integer.MAX_VALUE;
-        for (Town x : (Set<Town>) townSet) {
-            if (x.toString().equals(townName)) {
-                toBeReturned = x.getMinimumDistance();
-            }
-            resetMinimumDistance(x);
-        }
-        return toBeReturned;
-    }
+	public Town getStartTown() {
+		return startTown;
+	}
 
-    private void resetMinimumDistance(Town toBeReset) {
-        toBeReset.setMinimumDistance(Integer.MAX_VALUE);
-    }
+	public Town getRandomTown() {
+		Random rand = new Random();
+		return (Town) townSet.toArray()[rand.nextInt(townSet.size())];
+
+	}
+
+	public int Dijkstras(Town source, String townName) {
+		computePaths(source);
+		int toBeReturned = Integer.MAX_VALUE;
+		for (Town x : (Set<Town>) townSet) {
+			if (x.toString().equals(townName)) {
+				toBeReturned = x.getMinimumDistance();
+			}
+			resetMinimumDistance(x);
+		}
+		return toBeReturned;
+	}
+
+	private void resetMinimumDistance(Town toBeReset) {
+		toBeReset.setMinimumDistance(Integer.MAX_VALUE);
+	}
 }
