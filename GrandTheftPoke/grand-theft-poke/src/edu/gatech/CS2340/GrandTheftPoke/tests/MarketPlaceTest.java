@@ -1,17 +1,24 @@
 package edu.gatech.CS2340.GrandTheftPoke.tests;
 
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.*;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.*;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.*;
-import edu.gatech.CS2340.*;
-import java.util.HashMap;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import static org.junit.Assert.*;
+import java.util.HashMap;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.Main;
+import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
+import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Charizard;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.HealthPotion;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Pikachu;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 
 public class MarketPlaceTest {
 	MarketPlace myMarket;

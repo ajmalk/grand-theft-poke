@@ -1,14 +1,19 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import java.util.HashMap;
+
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 /**
  * 
  * @author Team Rocket
  */
+@XStreamAlias("Market")
 public class MarketPlace {
-
+	@XStreamImplicit(itemFieldName="Item")
 	HashMap<Item, MarketPlaceItem> stock;
 
 	/**

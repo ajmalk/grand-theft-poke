@@ -1,22 +1,21 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 //import com.badlogic.gdx.graphics.Color;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-//import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
-//import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-//same story with imports here
-
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
-
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+//import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
+//import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
+//same story with imports here
 
 public class MainMenu extends AbstractScreen {
 	private Texture background;

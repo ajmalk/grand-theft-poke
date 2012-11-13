@@ -4,10 +4,14 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 //import com.badlogic.gdx.utils.ObjectMap.Entries;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
+
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 /**
  * Holds and operates on a person's supply of items.
@@ -15,10 +19,12 @@ import java.util.Set;
  * @author Team Rocket
  */
 public class Backpack {
-	private int capacity;
-	private int maxRange;
+	@XStreamAsAttribute
+	private Integer capacity, maxRange;
+	@XStreamImplicit(itemFieldName="item")
 	private HashMap<Item, Integer> contents;
 
+	
 	/**
 	 * Creates a backpack with specified maximum range and capacity
 	 * 

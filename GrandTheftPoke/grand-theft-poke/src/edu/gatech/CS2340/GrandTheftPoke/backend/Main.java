@@ -1,9 +1,13 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import java.util.Iterator;
 import java.util.Set;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 
 public class Main {
 

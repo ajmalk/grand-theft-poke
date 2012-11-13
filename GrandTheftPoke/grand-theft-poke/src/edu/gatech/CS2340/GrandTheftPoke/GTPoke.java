@@ -1,25 +1,26 @@
 package edu.gatech.CS2340.GrandTheftPoke;
 
-import java.io.StringWriter;
-import java.util.HashSet;
-
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.Json;
-import com.badlogic.gdx.utils.JsonWriter.OutputType;
-
 import com.thoughtworks.xstream.XStream;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-import edu.gatech.CS2340.GrandTheftPoke.files.GameSerializer;
-import edu.gatech.CS2340.GrandTheftPoke.screens.*;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
+import edu.gatech.CS2340.GrandTheftPoke.files.GameConverter;
+import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
+import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
+import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
+import edu.gatech.CS2340.GrandTheftPoke.screens.MarketPlaceItemDemo;
+import edu.gatech.CS2340.GrandTheftPoke.screens.Name;
+import edu.gatech.CS2340.GrandTheftPoke.screens.PalletTown;
+import edu.gatech.CS2340.GrandTheftPoke.screens.SkillPoints;
+import edu.gatech.CS2340.GrandTheftPoke.screens.SplashScreen;
+import edu.gatech.CS2340.GrandTheftPoke.screens.StarterPokemon;
 
 public class GTPoke extends Game {
 	private String playerName = "";
@@ -30,7 +31,8 @@ public class GTPoke extends Game {
 	private static final int INITIAL_RANGE = 80;
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
-
+	private XStream xstream;
+	
 	public GTPoke(){
 		
 	}
@@ -41,6 +43,7 @@ public class GTPoke extends Game {
 
 	@Override
 	public void create() {
+		xstream = new XStream();
 		items = new GlobalItemReference();
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
@@ -56,10 +59,8 @@ public class GTPoke extends Game {
 	@Override
 	public void dispose() {
 		super.dispose();
-		
-		XStream xstream = new XStream();
-		xstream.alias("Backpack", Backpack.class);
-		System.out.println(xstream.toXML(thePlayer.getBackpack()));
+		xstream.registerConverter(new GameConverter(xstream));
+		System.out.println(xstream.toXML(this));
 		//Json save = new Json(OutputType.minimal), save2 = new Json(OutputType.minimal);
 		//save.setSerializer(GTPoke.class, new GameSerializer());
 		//String jsonText = save.toJson(this);
@@ -162,5 +163,9 @@ public class GTPoke extends Game {
 
 	public GameMap getMap() {
 		return theMap;
+	}
+	
+	public XStream getSerializer(){
+		return xstream;
 	}
 }

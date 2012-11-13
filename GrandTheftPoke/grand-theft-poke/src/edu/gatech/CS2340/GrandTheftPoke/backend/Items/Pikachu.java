@@ -1,6 +1,6 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 public class Pikachu extends Item {
 	@Override

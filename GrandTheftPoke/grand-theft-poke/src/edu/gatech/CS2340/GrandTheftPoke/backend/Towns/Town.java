@@ -1,22 +1,38 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
 /**
  *
  * @author Ben Nuttle
  */
+@XStreamAlias("Town")
 public class Town implements Comparable {
-    
+	
+	@XStreamOmitField
     private int minimumDistance = Integer.MAX_VALUE;
+	
+	@XStreamAsAttribute
     private String name;
+    
+    @XStreamOmitField
     private Set<Path> adjacencies;
+    
+    @XStreamOmitField
     private Town previous;
+    
+    @XStreamOmitField
     protected MarketPlace myMarket;
+    
+    @XStreamOmitField
     private String filepath;
     
-
     public Town(String name, MarketPlace myMarket) {
         this.name = name;
         this.myMarket = myMarket;

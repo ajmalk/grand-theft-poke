@@ -1,11 +1,8 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * TODO implement this class

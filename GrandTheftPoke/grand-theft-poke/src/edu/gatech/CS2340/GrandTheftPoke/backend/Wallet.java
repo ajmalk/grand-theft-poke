@@ -1,10 +1,12 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+
 public class Wallet {
+	@XStreamAsAttribute
+    private Float money;
 
-    private float money;
-
-    public Wallet(int num) {
+    public Wallet(Float num) {
         this.money = num;
     }
 

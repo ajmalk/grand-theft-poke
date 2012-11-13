@@ -1,10 +1,13 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 /**
  *
  * @author Team Rocket
  */
 public abstract class Item {
+	@XStreamOmitField
     private int weight = 1;
     @Override
 	public abstract String toString();

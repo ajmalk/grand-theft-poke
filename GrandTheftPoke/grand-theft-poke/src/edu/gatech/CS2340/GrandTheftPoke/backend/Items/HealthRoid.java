@@ -1,7 +1,6 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 public class HealthRoid extends Item implements Usable {
 

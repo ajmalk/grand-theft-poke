@@ -1,10 +1,11 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
+import java.util.HashMap;
+
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
-import java.util.HashMap;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 public class TownFactoryImplementation implements TownFactory {
 

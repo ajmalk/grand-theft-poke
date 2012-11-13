@@ -1,18 +1,32 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Random;
+import java.util.Set;
+
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
-
-import java.util.*;
 
 /**
  * 
  * @author Team Rocket
  */
+@XStreamAlias("Map")
 public class GameMap {
-
+	
+	@XStreamImplicit(itemFieldName="Town")
 	private Set<Town> townSet;
+	
+	@XStreamOmitField
 	private Town startTown;
 
 	public GameMap() {
