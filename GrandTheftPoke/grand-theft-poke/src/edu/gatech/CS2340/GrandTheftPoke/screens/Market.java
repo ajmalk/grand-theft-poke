@@ -145,22 +145,22 @@ public class Market extends AbstractScreen {
 		col = 1;
 		backpacktable.clear();
 		checked = marketItemGroup.getChecked();
-		for(Entries entries =  playerPack.getContents().entries(); entries.hasNext(); ){
-			Entry item = entries.next();
-			ItemTile tile = new ItemTile(market, (Item)item.key, (Integer)item.value, playerPack);
+		//for(Entries entries =  playerPack.getContents().entries(); entries.hasNext(); ){
+			//Entry item = entries.next();
+			//ItemTile tile = new ItemTile(market, (Item)item.key, (Integer)item.value, playerPack);
+			//backpacktable.add(tile);
+			//backPackItemGroup.add(tile);
+			//if(col++ % 2 == 0)
+				//backpacktable.row();
+		//}
+		for(Iterator<java.util.Map.Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
+			java.util.Map.Entry<Item, Integer> item = i.next();
+			ItemTile tile = new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue(), playerPack);
 			backpacktable.add(tile);
 			backPackItemGroup.add(tile);
 			if(col++ % 2 == 0)
 				backpacktable.row();
 		}
-//		for(Iterator<Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
-//			Entry item = i.next();
-//			ItemTile tile = new ItemTile(market, (Item)item.getKey(), (Integer)item.getValue(), playerPack);
-//			backpacktable.add(tile);
-//			backPackItemGroup.add(tile);
-//			if(col++ % 2 == 0)
-//				backpacktable.row();
-//		}
 		marketItemGroup.setMaxCheckCount(1);
 		backPackItemGroup.setMaxCheckCount(1);
 		

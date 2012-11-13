@@ -94,7 +94,7 @@ public class SkillPoints extends AbstractScreen {
 		ConfirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked (InputEvent event, float x, float y) {
-				game.createPlayer(strength, trade, agility, stamina);
+				game.createPlayer(strength, agility, trade, stamina);
 				game.setScreen(game.getStarterPokemonScreen());
 			}
 		});

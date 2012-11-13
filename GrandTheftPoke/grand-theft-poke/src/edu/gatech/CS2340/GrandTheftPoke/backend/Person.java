@@ -1,6 +1,9 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+import java.util.Random;
+import java.util.Set;
+
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
@@ -11,7 +14,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 public abstract class Person {
 
 	private String name;
-	private int strength, agility, trade, stamina;
+	private int strength, agility, trade, stamina, currentStamina;
 	private int health, maxHealth;
 	private Backpack myBackpack;
 	private Town currentTown;
@@ -41,6 +44,7 @@ public abstract class Person {
 		this.agility = agility;
 		this.trade = trade;
 		this.stamina = stamina;
+		this.currentStamina = stamina;
 		this.health = health;
 		maxHealth = health;
 		myWallet = new Wallet(money);
@@ -182,14 +186,41 @@ public abstract class Person {
 	public Town getCurrent() {
 		return currentTown;
 	}
+	
+	public void setCurrent(Town newCurrent) {
+		currentTown = newCurrent;
+	}
 
 	/**
 	 * 
 	 * @param other
 	 * @return
 	 */
-	public Person battle(Person other) {
-		return null;
+	public int attack() {
+		float fatigue = currentStamina/stamina;
+		if(currentStamina > 0) {
+			currentStamina--;
+		}
+		return (int)fatigue*strength;
+		
+	}
+	
+	public void defend(int incomingDamage) {
+		float fatigue = currentStamina/stamina;
+		float dodge = agility/100;
+		
+		Random rand = new Random();
+		double chance = rand.nextDouble();
+		
+		if(chance > fatigue*dodge) {
+			return;
+		}
+		
+		setHealth(-incomingDamage);
+	}
+	
+	public boolean flee() {
+		return new Random().nextBoolean();
 	}
 
 	/**
@@ -216,8 +247,12 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
-		float price = ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
+		System.out.println("Buy " + myWallet.getMoney()+ " " + trade);
+		float price = (float)(1.15 - 0.0015 * trade) * ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
 				.getBuyingPrice(quantity);
+		System.out.println(((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
+				.getBuyingPrice(quantity));
+		System.out.println(price);
 		if (price != 0) {
 			if (myWallet.checkAmount(price)) {
 				if (myBackpack.checkCapacity(desiredGood, quantity)) {
@@ -241,9 +276,10 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
-
+			System.out.println("Sell " + myWallet.getMoney());
 		if (myBackpack.checkContents(desiredGood, quantity)) {
-			float price = theMarket.sell(desiredGood, quantity);
+			float price = (float)(0.85 + 0.0015 * trade) * theMarket.sell(desiredGood, quantity);
+			System.out.println(price);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);
 			return true;
@@ -255,5 +291,16 @@ public abstract class Person {
 	 * 
 	 * @param other
 	 */
-	public abstract void postBattle(Person other);
+	public void win(Person other) {
+		Set<Item> theirStuff = other.getBackpack().getContents().keySet();
+		for(Item theItem : theirStuff) {
+			int quantity = other.getBackpack().getContents().get(theItem);
+			if(myBackpack.place(theItem, quantity)) {
+				other.getBackpack().remove(theItem, quantity);
+			}
+			//myWallet.updateMoney(other.getWallet().getMoney());
+			
+		}
+		
+	}
 }
