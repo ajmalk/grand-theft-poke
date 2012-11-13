@@ -2,6 +2,8 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import java.util.Random;
+import java.util.Set;
+
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
@@ -245,9 +247,11 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
-		System.out.println("Buy " + myWallet.getMoney());
+		System.out.println("Buy " + myWallet.getMoney()+ " " + trade);
 		float price = (float)(1.15 - 0.0015 * trade) * ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
 				.getBuyingPrice(quantity);
+		System.out.println(((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
+				.getBuyingPrice(quantity));
 		System.out.println(price);
 		if (price != 0) {
 			if (myWallet.checkAmount(price)) {
@@ -288,6 +292,15 @@ public abstract class Person {
 	 * @param other
 	 */
 	public void win(Person other) {
+		Set<Item> theirStuff = other.getBackpack().getContents().keySet();
+		for(Item theItem : theirStuff) {
+			int quantity = other.getBackpack().getContents().get(theItem);
+			if(myBackpack.place(theItem, quantity)) {
+				other.getBackpack().remove(theItem, quantity);
+			}
+			//myWallet.updateMoney(other.getWallet().getMoney());
+			
+		}
 		
 	}
 }
