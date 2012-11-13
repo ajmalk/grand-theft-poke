@@ -132,13 +132,15 @@ public class Market extends AbstractScreen {
 		int col = 1;
 		markettable.clear();
 		Button checked = marketItemGroup.getChecked();
-		for(Iterator<Map.Entry> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
-			Map.Entry item = i.next();
-			ItemTile tile = new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue());
-			markettable.add(tile);
-			marketItemGroup.add(tile);
-			if(col++ % 2 == 0)
-				markettable.row();
+		for(Iterator<Map.Entry<Item, MarketPlaceItem>> i =  market.getStock().entrySet().iterator(); i.hasNext(); ){
+			Map.Entry<Item, MarketPlaceItem> item = i.next();
+			if(item.getValue().getStock() != 0){
+				ItemTile tile = new ItemTile((Item)item.getKey(), (MarketPlaceItem) item.getValue());
+				markettable.add(tile);
+				marketItemGroup.add(tile);
+				if(col++ % 2 == 0)
+					markettable.row();
+			}
 		}
 		col = 1;
 		backpacktable.clear();

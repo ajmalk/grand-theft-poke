@@ -1,5 +1,8 @@
 package edu.gatech.CS2340.GrandTheftPoke;
 
+import java.io.StringWriter;
+import java.util.HashSet;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -7,6 +10,8 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonWriter.OutputType;
+
+import com.thoughtworks.xstream.XStream;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
@@ -25,6 +30,14 @@ public class GTPoke extends Game {
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
 
+	public GTPoke(){
+		
+	}
+	
+	public GTPoke(Player player) {
+		this.thePlayer = player;
+	}
+
 	@Override
 	public void create() {
 		items = new GlobalItemReference();
@@ -41,11 +54,16 @@ public class GTPoke extends Game {
 
 	@Override
 	public void dispose() {
-		Json json = new Json();
-		json.setSerializer(GTPoke.class, new GameSerializer());
-		System.out.println(json);
-		System.out.println(json.prettyPrint(this));
 		super.dispose();
+		
+		XStream xstream = new XStream();
+		System.out.println(xstream.toXML(thePlayer.getBackpack()));
+		//Json save = new Json(OutputType.minimal), save2 = new Json(OutputType.minimal);
+		//save.setSerializer(GTPoke.class, new GameSerializer());
+		//String jsonText = save.toJson(this);
+		//System.out.println(jsonText);
+		//save.setSerializer(GTPoke.class, new GameSerializer());
+		//save.fromJson(GTPoke.class, jsonText);
 	}
 
 	@Override

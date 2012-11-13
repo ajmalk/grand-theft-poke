@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.JsonWriter.OutputType;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
+import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 
 public class GameSerializer implements Serializer<GTPoke> {
@@ -17,14 +18,15 @@ public class GameSerializer implements Serializer<GTPoke> {
 
 	@Override
 	public GTPoke read(Json json, Object jsonData, Class type) {
-		// TODO Auto-generated method stub
-		return null;
+		json.setSerializer(Player.class, new PlayerSerializer());
+		return new GTPoke(json.readValue(Player.class, jsonData));
 	}
 
 	private class PlayerSerializer implements Serializer<Player> {
 
 		@Override
 		public void write(Json json, Player player, Class knownType) {
+			json.writeValue("Health", player.getHealth());
 			json.writeValue(player.getName());
 			json.setSerializer(Backpack.class, new BackpackSerializer());
 			json.writeValue(player.getBackpack());
@@ -32,8 +34,9 @@ public class GameSerializer implements Serializer<GTPoke> {
 
 		@Override
 		public Player read(Json json, Object jsonData, Class type) {
-			// TODO Auto-generated method stub
-			return null;
+			String name = json.readValue(String.class, jsonData);
+			json.setSerializer(Backpack.class, new BackpackSerializer());
+			return new Player(name,5,5,5,5,5,5,5,new GameMap());//json.readValue(type, jsonData);
 		}
 		
 		private class BackpackSerializer implements Serializer<Backpack> {
@@ -46,8 +49,7 @@ public class GameSerializer implements Serializer<GTPoke> {
 
 			@Override
 			public Backpack read(Json json, Object jsonData, Class type) {
-				// TODO Auto-generated method stub
-				return null;
+				return new Backpack(100, 20);
 			}
 			
 		}
