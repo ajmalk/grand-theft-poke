@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.JsonWriter.OutputType;
 
 import com.thoughtworks.xstream.XStream;
 
+import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
@@ -57,6 +58,7 @@ public class GTPoke extends Game {
 		super.dispose();
 		
 		XStream xstream = new XStream();
+		xstream.alias("Backpack", Backpack.class);
 		System.out.println(xstream.toXML(thePlayer.getBackpack()));
 		//Json save = new Json(OutputType.minimal), save2 = new Json(OutputType.minimal);
 		//save.setSerializer(GTPoke.class, new GameSerializer());
