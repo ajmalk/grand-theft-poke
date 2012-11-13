@@ -287,5 +287,7 @@ public abstract class Person {
 	 * 
 	 * @param other
 	 */
-	public abstract void postBattle(Person other);
+	public void win(Person other) {
+		
+	}
 }

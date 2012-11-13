@@ -12,16 +12,6 @@ public class Player extends Person {
             super(name, strength, agility, trade, stamina, health, range, capacity, START_MONEY, theMap);
     }
 
-    
-    public static boolean checkStart(int strength, int agility, int trade, int stamina){
-        return strength + agility + trade + stamina == START_SKILLS;
-    }
-
-    @Override
-    public void postBattle(Person other) {
-    	//needs to be done
-    }
-    
     @Override
     public String toString() {
         return "Name:" + getName() + " Strength:" + getStrength() + " Agility:" + getAgility() + " Trade:" + getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();

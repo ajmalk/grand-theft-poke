@@ -1,7 +1,8 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
-import com.badlogic.gdx.utils.ObjectMap;
-import com.badlogic.gdx.utils.ObjectMap.Entries;
+//import com.badlogic.gdx.utils.ObjectMap;
+
+//import com.badlogic.gdx.utils.ObjectMap.Entries;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import java.util.Set;
 public class Backpack {
     private int capacity;
     private int maxRange;
-    private ObjectMap<Item, Integer> contents;
+    private HashMap<Item, Integer> contents;
 
     /**
      * Creates a backpack with specified maximum range and capacity
@@ -24,7 +25,7 @@ public class Backpack {
      */
     public Backpack(int range, int capacity) {
         this.capacity = capacity;
-        contents = new ObjectMap<Item, Integer>();
+        contents = new HashMap<Item, Integer>();
         maxRange = range;
     }
 
@@ -111,19 +112,16 @@ public class Backpack {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-    public ObjectMap<Item, Integer> getContents() {
+    public HashMap<Item, Integer> getContents() {
     	return contents;
     }
     @Override
     public String toString() {
         String toBeReturned = "Backpack Contents: \n";
-        //Set keys = contents.entrySet();
-        for (Entries entries = contents.entries(); entries.hasNext();) {
-            toBeReturned += entries.next() + "\n";
+        Set keys = contents.entrySet();
+        for (Iterator it = keys.iterator(); it.hasNext();) {
+            toBeReturned += it.next() + "\n";
         }
-        //for (Iterator it = keys.iterator(); it.hasNext();) {
-        //    toBeReturned += it.next() + "\n";
-        //}
        return toBeReturned;
     }
 
