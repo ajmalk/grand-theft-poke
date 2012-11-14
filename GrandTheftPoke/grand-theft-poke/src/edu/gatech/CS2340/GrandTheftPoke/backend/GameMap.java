@@ -152,8 +152,8 @@ public class GameMap {
 	public void Dijkstras(Town source) {
 		computePaths(source);
 		for (Town x : (Set<Town>) townSet) {
-			System.out.println("Distance to " + x + ": "
-					+ x.getMinimumDistance());
+			//System.out.println("Distance to " + x + ": "
+				//	+ x.getMinimumDistance());
 			// List<Town> path = getShortestPathTo(x);
 			// System.out.println("Path: " + path);
 		}

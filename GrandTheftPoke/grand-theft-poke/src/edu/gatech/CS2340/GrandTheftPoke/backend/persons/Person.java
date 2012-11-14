@@ -250,7 +250,6 @@ public abstract class Person {
 			if (range >= distance && health >= distance/5) {
 				currentTown = destination;
 				setHealth(-distance/5);
-				System.out.println(health);
 			}
 		}
 	}
@@ -313,4 +312,8 @@ public abstract class Person {
 		}
 		
 	}
+	@Override
+    public String toString() {
+        return this.getClass() + "Name:" + getName() + " Strength:" + getStrength() + " Agility:" + getAgility() + " Trade:" + getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();
+    }
 }
