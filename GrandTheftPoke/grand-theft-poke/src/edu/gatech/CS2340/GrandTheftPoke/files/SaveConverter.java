@@ -73,7 +73,8 @@ public class SaveConverter implements Converter{
 		@Override
 		public Object unmarshal(HierarchicalStreamReader reader,
 				UnmarshallingContext arg1) {
-			reader.getAttribute("capacity");
+			int capacity = Integer.parseInt(reader.getAttribute("capacity"));
+			int range = Integer.parseInt(reader.getAttribute("range"));
 			return null;
 		}
 	}
