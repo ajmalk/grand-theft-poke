@@ -37,6 +37,10 @@ public abstract class Person {
 	@XStreamOmitField
 	private GameMap theMap;
 
+	
+	public Person(){
+		
+	}
 	/**
 	 * Constructs a person with the specified parameters.
 	 * 

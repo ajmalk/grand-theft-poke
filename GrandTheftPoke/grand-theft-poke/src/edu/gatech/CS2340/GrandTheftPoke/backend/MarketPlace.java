@@ -13,7 +13,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 @XStreamAlias("Market")
 public class MarketPlace {
-	@XStreamImplicit(itemFieldName="Item")
+	//@XStreamImplicit(itemFieldName="Item")
 	HashMap<Item, MarketPlaceItem> stock;
 
 	/**

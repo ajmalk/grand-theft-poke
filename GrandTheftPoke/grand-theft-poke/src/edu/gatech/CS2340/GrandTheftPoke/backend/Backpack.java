@@ -10,6 +10,7 @@ import java.util.Set;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
@@ -19,9 +20,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * @author Team Rocket
  */
 public class Backpack {
+	
 	@XStreamAsAttribute
 	private Integer capacity, maxRange;
-	@XStreamImplicit(itemFieldName="item")
+	
+	//@XStreamImplicit(itemFieldName="item")
+	@XStreamOmitField
 	private HashMap<Item, Integer> contents;
 
 	
@@ -114,8 +118,12 @@ public class Backpack {
 	 * 
 	 * @return the maximum range
 	 */
-	public int getMaxRange() {
+	public Integer getMaxRange() {
 		return maxRange;
+	}
+	
+	public Integer getCapacity() {
+		return capacity;
 	}
 
 	/**

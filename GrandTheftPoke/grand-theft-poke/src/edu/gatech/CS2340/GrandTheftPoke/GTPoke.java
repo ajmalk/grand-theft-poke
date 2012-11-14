@@ -1,5 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -12,6 +14,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 import edu.gatech.CS2340.GrandTheftPoke.files.GameConverter;
+import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
@@ -32,18 +35,16 @@ public class GTPoke extends Game {
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 500;
 	private XStream xstream;
+	private ArrayList<SaveGame> saves;
 	
-	public GTPoke(){
-		
-	}
-	
-	public GTPoke(Player player) {
-		this.thePlayer = player;
+	public GTPoke() {
+		super();
 	}
 
 	@Override
 	public void create() {
 		xstream = new XStream();
+		saves = new ArrayList();
 		items = new GlobalItemReference();
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
@@ -56,6 +57,27 @@ public class GTPoke extends Game {
 		setScreen(getSplashScreen());
 	}
 
+	public void save(){
+		saves.add(new SaveGame(thePlayer, theMap));
+	}
+	
+	public void load(int index){
+		saves.get(index).load(this);
+	}
+	
+	public void setPlayer(Player player){
+		thePlayer = player;
+	}
+	
+	public void setMap(GameMap map){
+		theMap = map;
+	}
+	
+	public void clear(){
+		theMap = null;
+		thePlayer = null;
+	}
+	
 	@Override
 	public void dispose() {
 		super.dispose();
