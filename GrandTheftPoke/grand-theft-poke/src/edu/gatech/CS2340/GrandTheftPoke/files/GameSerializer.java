@@ -8,8 +8,8 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 
-public class GameSerializer implements Serializer<GTPoke> {
-	@Override
+public abstract class GameSerializer implements Serializer<GTPoke> {
+	/*@Override
 	public void write(Json json, GTPoke game, Class knownType) {
 		json.setSerializer(Player.class, new PlayerSerializer());
 		json.writeValue(game.getPlayer(), knownType);
@@ -52,5 +52,5 @@ public class GameSerializer implements Serializer<GTPoke> {
 			}
 			
 		}
-	}
+	}*/
 }
