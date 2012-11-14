@@ -34,9 +34,9 @@ public class Trader extends Person {
 		for(Item i : marketStock) {
 			MarketPlaceItem townModel = (MarketPlaceItem)getCurrent().getMarket().getStock().get(i);
 			if(townModel != null) {
-				stock.put(i, new MarketPlaceItem((townModel.getPrice()), getBackpack().getContents().get(i)));
+				stock.put(i, new MarketPlaceItem((townModel.getPrice()), (float)getBackpack().getContents().get(i)));
 			} else {
-				stock.put(i, new MarketPlaceItem(100f, getBackpack().getContents().get(i)));
+				stock.put(i, new MarketPlaceItem(100f, (float)getBackpack().getContents().get(i)));
 			}
 		}
 		

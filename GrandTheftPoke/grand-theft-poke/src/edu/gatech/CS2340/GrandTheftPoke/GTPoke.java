@@ -15,7 +15,8 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.*;
-import edu.gatech.CS2340.GrandTheftPoke.files.GameConverter;
+import edu.gatech.CS2340.GrandTheftPoke.files.BackpackConverter;
+import edu.gatech.CS2340.GrandTheftPoke.files.MarketConverter;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveConverter;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
@@ -27,8 +28,6 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.PalletTown;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SkillPoints;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SplashScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.StarterPokemon;
-
-import java.util.ArrayList;
 
 public class GTPoke extends Game {
 	private String playerName = "";
@@ -66,9 +65,8 @@ public class GTPoke extends Game {
 
 	@Override
 	public void create() {
-		xstream = new XStream();
-		//xstream.processAnnotations(Player.class);
-		xstream.registerConverter(new SaveConverter(xstream));
+		xstream = new XStream();	
+		xstream.processAnnotations(SaveGame.class);
 		saves = new ArrayList<SaveGame>();
 		savestrs = new ArrayList<String>();
 		items = new GlobalItemReference();
@@ -92,7 +90,8 @@ public class GTPoke extends Game {
 	}
 	
 	public void load(int index){
-		System.out.println(xstream.toXML(xstream.fromXML(savestrs.get(index))));
+		SaveGame game = (SaveGame) xstream.fromXML(savestrs.get(index));
+		System.out.println(xstream.toXML(game));
 		saves.get(index).load(this);
 	}
 	

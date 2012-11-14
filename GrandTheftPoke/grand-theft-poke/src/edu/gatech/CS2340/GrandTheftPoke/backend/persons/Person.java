@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Set;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
@@ -13,7 +14,8 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Wallet;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-
+import edu.gatech.CS2340.GrandTheftPoke.files.TownConverter;
+import edu.gatech.CS2340.GrandTheftPoke.files.BackpackConverter;
 /**
  * Contains shared data and methods for players and NPCs.
  * 
@@ -28,15 +30,16 @@ public abstract class Person {
 	@XStreamAsAttribute
 	private Integer health;
 	
-	private Backpack myBackpack;
-
-	private Town currentTown;
-	
 	private Wallet myWallet;
 	
+	@XStreamConverter(TownConverter.class)
+	private Town currentTown;
+	
+	@XStreamConverter(BackpackConverter.class)
+	private Backpack myBackpack;
+
 	@XStreamOmitField
 	private GameMap theMap;
-
 	
 	public Person(){
 		
@@ -321,6 +324,8 @@ public abstract class Person {
 	}
 	@Override
     public String toString() {
-        return this.getClass() + "Name:" + getName() + " Strength:" + getStrength() + " Agility:" + getAgility() + " Trade:" + getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();
+        return this.getClass() + "Name:" + getName() + " Strength:" + 
+        			getStrength() + " Agility:" + getAgility() + " Trade:" + 
+        		getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();
     }
 }

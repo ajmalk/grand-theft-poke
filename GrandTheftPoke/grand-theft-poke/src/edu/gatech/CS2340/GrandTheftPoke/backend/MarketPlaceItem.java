@@ -27,7 +27,7 @@ public class MarketPlaceItem {
      * @param price the equilibrium price of the item in this marketplace
      * @param stock  
      */
-    public MarketPlaceItem(Float price, int stock) {
+    public MarketPlaceItem(Float price, Float stock) {
         EQIL_PRICE = this.price = price;
         EQIL_STOCK = this.stock = stock;
         CONS_ELASTICITY = -1;

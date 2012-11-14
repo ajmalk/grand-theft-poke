@@ -26,6 +26,7 @@ public class MarketPlace {
 		this.stock = stock;
 	}
 
+
 	/**
 	 * 
 	 * @param good
