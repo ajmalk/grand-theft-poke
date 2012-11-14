@@ -254,7 +254,6 @@ public abstract class Person {
 			if (range >= distance && health >= distance/5) {
 				currentTown = destination;
 				setHealth(-distance/5);
-				System.out.println(health);
 			}
 		}
 	}
@@ -267,12 +266,8 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
-		System.out.println("Buy " + myWallet.getMoney()+ " " + trade);
 		float price = (float)(1.15 - 0.0015 * trade) * ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
 				.getBuyingPrice(quantity);
-		System.out.println(((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
-				.getBuyingPrice(quantity));
-		System.out.println(price);
 		if (price != 0) {
 			if (myWallet.checkAmount(price)) {
 				if (myBackpack.checkCapacity(desiredGood, quantity)) {
@@ -296,10 +291,8 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
-			System.out.println("Sell " + myWallet.getMoney());
 		if (myBackpack.checkContents(desiredGood, quantity)) {
 			float price = (float)(0.85 + 0.0015 * trade) * theMarket.sell(desiredGood, quantity);
-			System.out.println(price);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);
 			return true;
@@ -323,4 +316,8 @@ public abstract class Person {
 		}
 		
 	}
+	@Override
+    public String toString() {
+        return this.getClass() + "Name:" + getName() + " Strength:" + getStrength() + " Agility:" + getAgility() + " Trade:" + getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();
+    }
 }

@@ -21,9 +21,4 @@ public class Player extends Person {
     public Player(String name, int strength, int agility, int trade, int stamina, int health, int range, int capacity, GameMap theMap) {
             super(name, strength, agility, trade, stamina, health, range, capacity, START_MONEY, theMap);
     }
-
-    @Override
-    public String toString() {
-        return "Name:" + getName() + " Strength:" + getStrength() + " Agility:" + getAgility() + " Trade:" + getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();
-    }
 }
