@@ -266,18 +266,21 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
-		float price = (float)(1.15 - 0.0015 * trade) * ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
-				.getBuyingPrice(quantity);
-		if (price != 0) {
-			if (myWallet.checkAmount(price)) {
-				if (myBackpack.checkCapacity(desiredGood, quantity)) {
-					theMarket.buy(desiredGood, quantity);
-					myWallet.updateMoney(-price);
-					myBackpack.place(desiredGood, quantity);
-					return true;
+		if(theMarket.getStock().containsKey(desiredGood)) {
+			float price = (float)(1.15 - 0.0015 * trade) * ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
+					.getBuyingPrice(quantity);
+			if (price != 0) {
+				if (myWallet.checkAmount(price)) {
+					if (myBackpack.checkCapacity(desiredGood, quantity)) {
+						theMarket.buy(desiredGood, quantity);
+						myWallet.updateMoney(-price);
+						myBackpack.place(desiredGood, quantity);
+						return true;
+					}
 				}
 			}
 		}
+		
 
 		return false;
 
