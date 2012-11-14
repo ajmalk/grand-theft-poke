@@ -2,8 +2,6 @@ package edu.gatech.CS2340.GrandTheftPoke.files;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -14,22 +12,18 @@ import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.mapper.Mapper;
 
-import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Repel;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
-import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
 
-public class GameConverter implements Converter{
+public class SaveConverter implements Converter{
 	XStream xstream;
-	public GameConverter(XStream xstream){
-		xstream.alias("Game", GTPoke.class);
+	public SaveConverter(XStream xstream){
+		xstream.alias("Game", SaveGame.class);
 		xstream.processAnnotations(Player.class);
 		xstream.aliasPackage("", "edu.gatech.CS2340.GrandTheftPoke.backend.Items");
 		xstream.registerConverter(new BackpackConverter());
@@ -39,22 +33,14 @@ public class GameConverter implements Converter{
 	}
 	@Override
 	public boolean canConvert(Class c) {
-		return c.equals(GTPoke.class);
+		return c.equals(SaveGame.class);
 	}
 
 	@Override
 	public void marshal(Object game, HierarchicalStreamWriter writer,
 			MarshallingContext context) {
-		//xstream.autodetectAnnotations(true);
-		//xstream.registerConverter(new ItemConverter());
-		//xstream.registerConverter(new BackpackItemsConverter<Item, Integer>("type"));
-		
-		//xstream.addImplicitMap(Backpack.class, "contents", "item", Repel.class, "stock");
-		//xstream.addImplicitMap(Backpack.class, "contents", Repel.class, "stock");
-		//context.convertAnother(((GTPoke)game).getPlayer());
-		xstream.marshal(((GTPoke)game).getPlayer(), writer);
-		xstream.marshal(((GTPoke)game).getMap(), writer);
-		//xstream.marshal(((GTPoke)game).getMap().getTownSet().toArray()[0], writer);
+		xstream.marshal(((SaveGame)game).getPlayer(), writer);
+		xstream.marshal(((SaveGame)game).getMap(), writer);
 	}
 
 	@Override
@@ -66,38 +52,34 @@ public class GameConverter implements Converter{
 		xstream.unmarshal(reader, player);
 		xstream.unmarshal(reader, map);
 		reader.moveUp();
-		return null;
+		return new SaveGame(player, map);
 	}
 	
 	private class BackpackConverter implements Converter {
+		public BackpackConverter(){
+			xstream.registerConverter(new BackpackMapConverter<Item, Integer>(xstream.getMapper(), "type"));
+		}
 		@Override
 		public boolean canConvert(Class c) {
-			//System.out.println(c.getGenericSuperclass().equals(Backpack.class) + "   " + c);
 			return c.equals(Backpack.class);
 		}
-
 		@Override
 		public void marshal(Object backpack, HierarchicalStreamWriter writer,
 				MarshallingContext context) {
-			xstream.registerConverter(new BackpackMapConverter<Item, Integer>(xstream.getMapper(), "type"));
 			writer.addAttribute("capacity", ((Backpack)backpack).getCapacity().toString());
 			writer.addAttribute("range", ((Backpack)backpack).getMaxRange().toString());
 			context.convertAnother(((Backpack)backpack).getContents());
 		}
-
 		@Override
-		public Object unmarshal(HierarchicalStreamReader arg0,
+		public Object unmarshal(HierarchicalStreamReader reader,
 				UnmarshallingContext arg1) {
-			// TODO Auto-generated method stub
+			reader.getAttribute("capacity");
 			return null;
 		}
-
 	}
-	
 	private class MarketConverter implements Converter {
 		@Override
 		public boolean canConvert(Class c) {
-			//System.out.println(c.getGenericSuperclass().equals(Backpack.class) + "   " + c);
 			return c.equals(MarketPlace.class);
 		}
 
@@ -107,89 +89,46 @@ public class GameConverter implements Converter{
 			xstream.registerConverter(new MarketMapConverter(xstream.getMapper(), "type"));
 			context.convertAnother(((MarketPlace)market).getStock());
 		}
-
 		@Override
 		public Object unmarshal(HierarchicalStreamReader arg0,
 				UnmarshallingContext arg1) {
 			// TODO Auto-generated method stub
 			return null;
 		}
-
 	}
-	
 	private class TownConverter implements Converter {
 		@Override
 		public boolean canConvert(Class c) {
 			return c.equals(Town.class);
 		}
-
 		@Override
 		public void marshal(Object town, HierarchicalStreamWriter writer,
 				MarshallingContext arg2) {
-			//writer.startNode(((Town)town).toString());
 			writer.addAttribute("town", ((Town)town).toString());
-			//xstream.marshal(((Town)town).toString(), writer);
 			xstream.registerConverter(new ItemConverter());
 			xstream.marshal(((Town)town).getMarket(), writer);
-			//writer.close();
 		}
-
 		@Override
 		public Object unmarshal(HierarchicalStreamReader arg0,
 				UnmarshallingContext arg1) {
 			return null;
 		}
-
 	}
-	
 	private class ItemConverter implements SingleValueConverter {
 		@Override
 		public boolean canConvert(Class c) {
-			//return c.getGenericSuperclass().equals(Item.class);
-			//System.out.println(c);
 			return c.getPackage().equals(Package.getPackage("edu.gatech.CS2340.GrandTheftPoke.backend.Items"));
 		}
-
 		@Override
 		public Object fromString(String arg0) {
 			// TODO Auto-generated method stub
 			return null;
 		}
-
 		@Override
 		public String toString(Object item) {
 			return "";
 		}
-
 	}
-	
-	private class BackPackEntry implements SingleValueConverter {
-		@Override
-		public boolean canConvert(Class c) {
-			//return c.getGenericSuperclass().equals(Item.class);
-			return c.equals(new Entry<Item, Integer>() {
-				@Override
-				public Item getKey() {	return null;	}
-				@Override
-				public Integer getValue() {		return null;	}
-				@Override
-				public Integer setValue(Integer value) {	return null;	}
-			}.getClass());
-		}
-
-		@Override
-		public Object fromString(String arg0) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public String toString(Object entry) {
-			return ((Entry)entry).getValue().toString();
-		}
-
-	}
-	
 	class BackpackMapConverter<K,V> extends MapConverter {
 		private final String attributename;
 
@@ -201,7 +140,6 @@ public class GameConverter implements Converter{
 		public boolean canConvert(Class type) {
 			return type.equals(HashMap.class);
 		}
-
 		public void marshal(Object source, HierarchicalStreamWriter writer,
 				MarshallingContext context) {
 			Map<K, V> map = (Map<K, V>) source;
@@ -212,7 +150,6 @@ public class GameConverter implements Converter{
 				writer.endNode();
 			}
 		}
-
 		public Object unmarshal(HierarchicalStreamReader reader,
 				UnmarshallingContext context) {
 			Map<K, V> map = new HashMap<K, V>();

@@ -3,7 +3,6 @@ package edu.gatech.CS2340.GrandTheftPoke;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Game;
-
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -14,8 +13,10 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Turn;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
+
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.*;
 import edu.gatech.CS2340.GrandTheftPoke.files.GameConverter;
+import edu.gatech.CS2340.GrandTheftPoke.files.SaveConverter;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
@@ -42,6 +43,7 @@ public class GTPoke extends Game {
 	private static final int INITIAL_HEALTH = 500;
 	private XStream xstream;
 	private ArrayList<SaveGame> saves;
+	private ArrayList<String> savestrs;
 	
 	public GTPoke(){
 		System.out.println("I'm getting called");
@@ -61,15 +63,14 @@ public class GTPoke extends Game {
 		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
 		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
 	}
-	
-	public GTPoke(Player player) {
-		
-	}
 
 	@Override
 	public void create() {
 		xstream = new XStream();
-		saves = new ArrayList();
+		//xstream.processAnnotations(Player.class);
+		xstream.registerConverter(new SaveConverter(xstream));
+		saves = new ArrayList<SaveGame>();
+		savestrs = new ArrayList<String>();
 		items = new GlobalItemReference();
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
@@ -83,10 +84,15 @@ public class GTPoke extends Game {
 	}
 
 	public void save(){
-		saves.add(new SaveGame(thePlayer, theMap));
+		SaveGame save  = new SaveGame(thePlayer, theMap);
+		saves.add(save);
+		String savestr = xstream.toXML(save);
+		savestrs.add(savestr);
+		System.out.println(savestr);
 	}
 	
 	public void load(int index){
+		System.out.println(xstream.toXML(xstream.fromXML(savestrs.get(index))));
 		saves.get(index).load(this);
 	}
 	
@@ -106,14 +112,6 @@ public class GTPoke extends Game {
 	@Override
 	public void dispose() {
 		super.dispose();
-		xstream.registerConverter(new GameConverter(xstream));
-		System.out.println(xstream.toXML(this));
-		//Json save = new Json(OutputType.minimal), save2 = new Json(OutputType.minimal);
-		//save.setSerializer(GTPoke.class, new GameSerializer());
-		//String jsonText = save.toJson(this);
-		//System.out.println(jsonText);
-		//save.setSerializer(GTPoke.class, new GameSerializer());
-		//save.fromJson(GTPoke.class, jsonText);
 	}
 
 	@Override

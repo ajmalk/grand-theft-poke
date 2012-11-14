@@ -16,4 +16,12 @@ public class SaveGame {
 		game.setMap(map);
 		return true;
 	}
+	
+	public Player getPlayer(){
+		return player;
+	}
+	
+	public GameMap getMap(){
+		return map;
+	}
 }
