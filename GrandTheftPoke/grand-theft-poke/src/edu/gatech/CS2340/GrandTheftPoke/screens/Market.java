@@ -43,6 +43,12 @@ public class Market extends AbstractScreen {
 	private Button backButton;
 	public Market(GTPoke game){
 		super(game);
+		market = game.getCurrentTown().getMarket();
+	}
+	
+	public Market(GTPoke game, MarketPlace theMarket) {
+		super(game);
+		market = theMarket;
 	}
 	
 	@Override
@@ -56,7 +62,7 @@ public class Market extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 		
 		
-		market = game.getCurrentTown().getMarket();
+		//market = game.getCurrentTown().getMarket();
 
 		
 		Texture ButtonSprite = new Texture("images//button-sprite.png");

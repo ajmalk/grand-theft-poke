@@ -10,14 +10,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.thoughtworks.xstream.XStream;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
+import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Turn;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.*;
-import edu.gatech.CS2340.GrandTheftPoke.files.GameConverter;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveConverter;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
+import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
@@ -46,7 +47,6 @@ public class GTPoke extends Game {
 	private ArrayList<String> savestrs;
 	
 	public GTPoke(){
-		System.out.println("I'm getting called");
 		gameActors = new ArrayList<Person>();
 		items = new GlobalItemReference();
 		theMap = makeMap();
@@ -68,7 +68,7 @@ public class GTPoke extends Game {
 	public void create() {
 		xstream = new XStream();
 		//xstream.processAnnotations(Player.class);
-		xstream.registerConverter(new SaveConverter(xstream));
+		//xstream.registerConverter(new SaveConverter(xstream));
 		saves = new ArrayList<SaveGame>();
 		savestrs = new ArrayList<String>();
 		items = new GlobalItemReference();
@@ -186,6 +186,9 @@ public class GTPoke extends Game {
 	public Screen getMarketScreen() {
 		return new Market(this);
 	}
+	public Screen getMarketScreen(MarketPlace theMarket) {
+		return new Market(this, theMarket);
+	}
 
 	public Screen getSkillPointsScreen() {
 		return new SkillPoints(this);
@@ -196,7 +199,10 @@ public class GTPoke extends Game {
 	}
 	
 	public Screen getCurrentTownScreen() {
-		turnController.takeATurn();
+		Person potentialEncounter = turnController.takeATurn();
+		if(potentialEncounter != null) {
+			return new EncounterScreen(this, potentialEncounter);
+		}
 		return new PalletTown(this, thePlayer.getCurrent().getImage());
 	}
 	
