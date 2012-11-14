@@ -31,7 +31,6 @@ public class GameMap {
 
 	public GameMap() {
 		townSet = new HashSet<Town>();
-
 	}
 
 	public GameMap(GlobalItemReference theReference) {
