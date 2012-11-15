@@ -25,7 +25,7 @@ public class Trader extends Person {
 	
 	public void compareTrade(Person other) {
 		int theirTrade = other.getTrade();
-		tradeMultiplier = getTrade()/theirTrade;
+		tradeMultiplier = (float)(getTrade())/theirTrade;
 	}
 	
 	public void initializeMarket() {

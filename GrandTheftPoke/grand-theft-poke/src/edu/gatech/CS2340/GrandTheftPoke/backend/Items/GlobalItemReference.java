@@ -1,7 +1,6 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import java.util.HashMap;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.*;
 /**
  *
  * @author Ben Nuttle
@@ -24,7 +23,6 @@ public class GlobalItemReference{
     private StrengthVitamin myStrengthVitamin;
     private TradeVitamin myTradeVitamin;
     private Repel myRepel;
-	private HashMap map;
     
     public GlobalItemReference() {
         myArcanine = new Arcanine();
