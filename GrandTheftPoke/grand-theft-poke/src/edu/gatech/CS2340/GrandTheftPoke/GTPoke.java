@@ -17,9 +17,6 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.*;
-import edu.gatech.CS2340.GrandTheftPoke.files.BackpackConverter;
-import edu.gatech.CS2340.GrandTheftPoke.files.MarketConverter;
-import edu.gatech.CS2340.GrandTheftPoke.files.SaveConverter;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
@@ -69,7 +66,6 @@ public class GTPoke extends Game {
 	@Override
 	public void create() {
 		xstream = new XStream();	
-		xstream.processAnnotations(SaveGame.class);
 		saves = new ArrayList<SaveGame>();
 		savestrs = new ArrayList<String>();
 		items = new GlobalItemReference();
@@ -95,7 +91,7 @@ public class GTPoke extends Game {
 	public void load(int index){
 		SaveGame game = (SaveGame) xstream.fromXML(savestrs.get(index));
 		System.out.println(xstream.toXML(game));
-		saves.get(index).load(this);
+		game.load(this);
 	}
 	
 	public void setPlayer(Player player){
@@ -202,9 +198,9 @@ public class GTPoke extends Game {
 	
 	public Screen getCurrentTownScreen() {
 		Person potentialEncounter = turnController.takeATurn();
-		if(potentialEncounter != null) {
-			return new EncounterScreen(this, potentialEncounter);
-		}
+		//if(potentialEncounter != null) {
+		//	return new EncounterScreen(this, potentialEncounter);
+		//}
 		return new PalletTown(this, thePlayer.getCurrent().getImage());
 	}
 	

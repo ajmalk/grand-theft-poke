@@ -9,7 +9,6 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
-import edu.gatech.CS2340.GrandTheftPoke.files.MarketConverter;
 /**
  *
  * @author Ben Nuttle
@@ -29,7 +28,6 @@ public class Town implements Comparable {
     @XStreamOmitField
     private Town previous;
     
-    @XStreamConverter(MarketConverter.class)
     protected MarketPlace myMarket;
     
     @XStreamOmitField
