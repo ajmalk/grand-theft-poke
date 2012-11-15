@@ -14,7 +14,6 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Wallet;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-import edu.gatech.CS2340.GrandTheftPoke.files.TownConverter;
 /**
  * Contains shared data and methods for players and NPCs.
  * 
@@ -31,7 +30,6 @@ public abstract class Person {
 	
 	private Wallet myWallet;
 	
-	@XStreamConverter(TownConverter.class)
 	private Town currentTown;
 	
 	private Backpack myBackpack;
