@@ -35,7 +35,7 @@ public class MarketPlace {
 	 */
 	public float buy(Item good, int quantity) {
 		if (stock.containsKey(good)) {
-			MarketPlaceItem model = (MarketPlaceItem) stock.get(good);
+			MarketPlaceItem model = stock.get(good);
 			return model.buy(quantity);
 		}
 		return 0;
@@ -49,7 +49,7 @@ public class MarketPlace {
 	 */
 	public float sell(Item good, int quantity) {
 		if (stock.containsKey(good)) {
-			MarketPlaceItem model = (MarketPlaceItem) stock.get(good);
+			MarketPlaceItem model = stock.get(good);
 			return model.sell(quantity);
 		}
 		return 0;

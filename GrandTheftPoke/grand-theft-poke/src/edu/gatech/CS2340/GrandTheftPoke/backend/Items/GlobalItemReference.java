@@ -1,6 +1,4 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
-
-import java.util.HashMap;
 /**
  *
  * @author Ben Nuttle

@@ -50,10 +50,10 @@ public class Trader extends Person {
 	public boolean buy(Person other, Item desiredGood, int quantity) {
 		float price;
 		if((personalMarket.getStock().containsKey(desiredGood)) && other.getBackpack().getContents().containsKey(desiredGood)) {
-			price = (float)(1/tradeMultiplier) * ((MarketPlaceItem) (personalMarket.getStock().get(desiredGood)))
+			price = (1/tradeMultiplier) * ((MarketPlaceItem) (personalMarket.getStock().get(desiredGood)))
 					.getBuyingPrice(quantity);
 		} else if(other.getBackpack().getContents().containsKey(desiredGood)){
-			price = (float)(1/tradeMultiplier) * 100f;
+			price = (1/tradeMultiplier) * 100f;
 		} else {
 			price = 0f;
 		}
@@ -76,7 +76,7 @@ public class Trader extends Person {
 
 	public boolean sell(Person other, Item desiredGood, int quantity) {
 		if (getBackpack().checkContents(desiredGood, quantity)) {
-			float price = (float)(tradeMultiplier) * personalMarket.sell(desiredGood, quantity);
+			float price = (tradeMultiplier) * personalMarket.sell(desiredGood, quantity);
 			getWallet().updateMoney(price);
 			getBackpack().remove(desiredGood, quantity);
 			other.getBackpack().place(desiredGood, quantity);

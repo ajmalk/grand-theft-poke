@@ -50,7 +50,7 @@ public class Main {
 		Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20, 50f, map);
 		Set<Town> townSet = map.getTownSet();
 		for (Iterator<Town> it = townSet.iterator(); it.hasNext();) {
-			testPlayer.move((Town) it.next());
+			testPlayer.move(it.next());
 			System.out.println(testPlayer.getCurrent());
 			map.Dijkstras(testPlayer.getCurrent());
 			System.out.println();

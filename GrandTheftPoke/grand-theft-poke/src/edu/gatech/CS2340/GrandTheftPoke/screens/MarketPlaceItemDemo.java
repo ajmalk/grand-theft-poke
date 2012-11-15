@@ -1,12 +1,10 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 
 public class MarketPlaceItemDemo extends AbstractScreen{
 	//MarketPlaceItem item = new MarketPlaceItem(5000, 5000);

@@ -154,7 +154,7 @@ public class Market extends AbstractScreen {
 		//}
 		for(Iterator<java.util.Map.Entry<Item, Integer>> i =  playerPack.getContents().entrySet().iterator(); i.hasNext(); ){
 			java.util.Map.Entry<Item, Integer> item = i.next();
-			ItemTile tile = new ItemTile(market, item.getKey(), (Integer)item.getValue(), playerPack);
+			ItemTile tile = new ItemTile(market, item.getKey(), item.getValue(), playerPack);
 			backpacktable.add(tile);
 			backPackItemGroup.add(tile);
 			if(col++ % 2 == 0)
