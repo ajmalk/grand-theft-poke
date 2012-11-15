@@ -1,12 +1,9 @@
 package edu.gatech.CS2340.GrandTheftPoke.files;
 
-import com.badlogic.gdx.utils.Json;
-import com.badlogic.gdx.utils.Json.Serializer;
+
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
-import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
+
 
 public abstract class GameSerializer implements Serializer<GTPoke> {
 	/*@Override

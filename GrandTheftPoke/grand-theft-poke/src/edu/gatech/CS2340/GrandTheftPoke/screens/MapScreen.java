@@ -72,25 +72,25 @@ public class MapScreen extends AbstractScreen {
 		while (i.hasNext()) {
 			Town theTown = i.next();
 
-			if (theTown.toString() == "Pallet Town") {
+			if (theTown.toString().equals("Pallet Town")) {
 				palletTownButton = new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Viridian City") {
+			} else if (theTown.toString().equals("Viridian City")) {
 				viridianCityButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Power Plant") {
+			} else if (theTown.toString().equals("Power Plant")) {
 				powerPlantButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Pewter City") {
+			} else if (theTown.toString().equals("Pewter City")) {
 				pewterCityButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Cerulean City") {
+			} else if (theTown.toString().equals("Cerulean City")) {
 				ceruleanCityButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Fuchsia City") {
+			} else if (theTown.toString().equals("Fuchsia City")) {
 				fuchsiaCityButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Cinnabar Island") {
+			} else if (theTown.toString().equals("Cinnabar Island")) {
 				cinnabarIslandButton = new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Saffron City") {
+			} else if (theTown.toString().equals("Saffron City")) {
 				saffronCityButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Vermillion City") {
+			} else if (theTown.toString().equals("Vermillion City")) {
 				vermillionCityButton= new TownTile(theTown, townTileStyle);
-			} else if (theTown.toString() == "Lavender Town"){
+			} else if (theTown.toString().equals("Lavender Town")){
 				lavenderTownButton= new TownTile(theTown, townTileStyle);
 			} else {
 				
@@ -101,34 +101,34 @@ public class MapScreen extends AbstractScreen {
 			int playerHealth = game.getPlayer().getHealth();
 
 			if (distance > range || playerHealth < distance/5) {
-				if (theTown.toString() == "Pallet Town") {
+				if (theTown.toString().equals("Pallet Town")) {
 					palletTownButton.setDisabled(true);
 					palletTownButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Viridian City") {
+				} else if (theTown.toString().equals("Viridian City")) {
 					viridianCityButton.setDisabled(true);
 					viridianCityButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Power Plant") {
+				} else if (theTown.toString().equals("Power Plant")) {
 					powerPlantButton.setDisabled(true);
 					powerPlantButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Pewter City") {
+				} else if (theTown.toString().equals("Pewter City")) {
 					pewterCityButton.setDisabled(true);
 					pewterCityButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Cerulean City") {
+				} else if (theTown.toString().equals("Cerulean City")) {
 					ceruleanCityButton.setDisabled(true);
 					ceruleanCityButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Fuchsia City") {
+				} else if (theTown.toString().equals("Fuchsia City")) {
 					fuchsiaCityButton.setDisabled(true);
 					fuchsiaCityButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Cinnabar Island") {
+				} else if (theTown.toString().equals("Cinnabar Island")) {
 					cinnabarIslandButton.setDisabled(true);
 					cinnabarIslandButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Saffron City") {
+				} else if (theTown.toString().equals("Saffron City")) {
 					saffronCityButton.setDisabled(true);
 					saffronCityButton.setTouchable(Touchable.disabled);
-				} else if (theTown.toString() == "Vermillion City") {
+				} else if (theTown.toString().equals("Vermillion City")) {
 					vermillionCityButton.setDisabled(true);
 					vermillionCityButton.setTouchable(Touchable.disabled);
-				} else if(theTown.toString() == "Lavender Town"){
+				} else if(theTown.toString().equals("Lavender Town")){
 					lavenderTownButton.setDisabled(true);
 					lavenderTownButton.setTouchable(Touchable.disabled);
 				} else {

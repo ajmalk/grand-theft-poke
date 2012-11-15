@@ -2,20 +2,10 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
-public class Arcanine extends Pokemon implements Usable{
+public class Arcanine extends Pokemon {
 	
 	public Arcanine() {
 		super(1,2,3,4);
-	}
-	
-	@Override
-	public void use(Person person){
-		super.use(person);
-	}
-	
-	@Override
-	public void unUse(Person person) {
-		super.unUse(person);
 	}
 
     @Override

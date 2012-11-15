@@ -3,7 +3,6 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 import java.util.HashMap;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
