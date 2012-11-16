@@ -115,7 +115,6 @@ public class Market extends AbstractScreen {
 		sell.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				System.out.print(((ItemTile) (marketItemGroup.getChecked())).getItem());
 				game.getPlayer().sell(market, ((ItemTile) (backPackItemGroup.getChecked())).getItem(), 1);
 				
 				update();
