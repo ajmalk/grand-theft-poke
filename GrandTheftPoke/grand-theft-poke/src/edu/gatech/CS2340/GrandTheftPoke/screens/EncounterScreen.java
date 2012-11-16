@@ -34,6 +34,9 @@ public class EncounterScreen extends AbstractScreen {
 		super(game);
 		this.game = game;
 		myPerson = encounteredPerson;
+		if(myPerson instanceof Trader) {
+			((Trader) myPerson).initializeMarket();
+		}
 	}
 	
 	public void show() {
@@ -69,27 +72,39 @@ public class EncounterScreen extends AbstractScreen {
 		
 
 		fight = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 335, 0, 338, 768)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 335, 768, 338, 768)));
+				ButtonSprite, 358, 97, 283, 555)), new TextureRegionDrawable(
+				new TextureRegion(ButtonSprite, 358, 96, 283, 555)));
 		fight.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
+				
 			}
 		});
 
 		flee = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 674, 0, 349, 768)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 674, 768, 349, 768)));
+				ButtonSprite, 641, 97, 283, 555)), new TextureRegionDrawable(
+				new TextureRegion(ButtonSprite, 641, 96, 283, 555)));
 		flee.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				
+				if(myPerson instanceof Trader) {
+					game.setScreen(game.getCurrentTownScreenFromEncounter());
+				}
+				if(game.getPlayer().flee()) {
+					System.out.println("true");
+					game.setScreen(game.getCurrentTownScreenFromEncounter());
+				}
 			}
 		});
 		stage.addActor(backgroundImage);
 		
 		trade.setPosition(75, 116);
 		stage.addActor(trade);
+		
+		fight.setPosition(358, 116);
+		stage.addActor(fight);
+		
+		flee.setPosition(641, 116);
+		stage.addActor(flee);
 	}
 }

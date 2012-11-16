@@ -72,7 +72,12 @@ public class ItemTile extends Button{
 				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 200, 200, 200)),
 				new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 400, 200, 200)));
 		this.item = item;
-		this.stock = (MarketPlaceItem) theMarket.getStock().get(item);
+		if(theMarket.getStock().containsKey(item)) {
+			this.stock = (MarketPlaceItem) theMarket.getStock().get(item);
+		}
+		else {
+			this.stock = new MarketPlaceItem((float)stock, 1000f);
+		}
 		backpackStock = stock;
 		this.pack = pack;
 		Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);

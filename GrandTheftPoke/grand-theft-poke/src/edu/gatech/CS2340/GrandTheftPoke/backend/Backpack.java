@@ -30,6 +30,14 @@ public class Backpack {
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
 	}
+	
+	public int getAmount(Item toBeRetrieved) {
+		if(contents.containsKey(toBeRetrieved)) {
+			return contents.get(toBeRetrieved);
+		}
+		
+		return 0;
+	}
 	/**
 	 * Creates a backpack with specified maximum range and capacity
 	 * 

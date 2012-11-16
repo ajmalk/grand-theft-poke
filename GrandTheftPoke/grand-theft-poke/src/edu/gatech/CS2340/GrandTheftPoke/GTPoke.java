@@ -49,14 +49,14 @@ public class GTPoke extends Game {
 		gameActors = new ArrayList<Person>();
 		items = new GlobalItemReference();
 		theMap = makeMap();
-		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
+		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap, items));
 		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
 		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
 		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
@@ -140,12 +140,8 @@ public class GTPoke extends Game {
 
 	public void createPlayer(Integer strength, Integer agility, Integer trade,
 			Integer stamina) {
-		//items = new GlobalItemReference();
-		//theMap = makeMap();
 		thePlayer = new Player(playerName, strength, agility, trade, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
-		//thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getHealthPotion(), 1);
-		//thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getRepel(), 1);
 		turnController = new Turn(theMap, gameActors, thePlayer);
 	}
 
@@ -198,9 +194,13 @@ public class GTPoke extends Game {
 	
 	public Screen getCurrentTownScreen() {
 		Person potentialEncounter = turnController.takeATurn();
-		//if(potentialEncounter != null) {
-		//	return new EncounterScreen(this, potentialEncounter);
-		//}
+		if(potentialEncounter != null) {
+			return new EncounterScreen(this, potentialEncounter);
+		}
+		return new PalletTown(this, thePlayer.getCurrent().getImage());
+	}
+	
+	public Screen getCurrentTownScreenFromEncounter() {
 		return new PalletTown(this, thePlayer.getCurrent().getImage());
 	}
 	

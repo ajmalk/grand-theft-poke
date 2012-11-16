@@ -25,7 +25,6 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500f, 0f));
         myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f, 0f));
         myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));
-        //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));
         myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f, 5f));
         myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));
@@ -164,7 +163,6 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500f, 20f));
         myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f, 20f));
         myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
-        //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 10f));
         myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f, 10f));
         myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
@@ -174,9 +172,7 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f, 10f));
         myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f, 10f));
         myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f, 10f));
-        //System.out.println(myStock.containsKey(itemsInstance.getHealthPotion()));
         MarketPlace myMarket = new MarketPlace(myStock);
-        //System.out.println(myStock);
         Town myTown = new Town("Celadon City", myMarket);
         myTown.setImage("images//icons//CeladonCityBack.png");
         return myTown;
@@ -192,7 +188,6 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500f, 0f));
         myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f, 0f));
         myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));
-        //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));
         myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f, 0f));
         myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));
@@ -204,7 +199,6 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f, 0f));
         System.out.println(myStock.containsKey(itemsInstance.getHealthPotion()));
         MarketPlace myMarket = new MarketPlace(myStock);
-        //System.out.println(myStock);
         Town myTown = new Town("Lavender Town", myMarket);
         myTown.setImage("images//icons//LavenderTownBack.png");
 
@@ -222,7 +216,6 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500f, 20f));
         myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f, 20f));
         myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
-        //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 10f));
         myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f, 10f));
         myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
@@ -250,7 +243,6 @@ public class TownFactoryImplementation implements TownFactory {
         myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500f, 20f));
         myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f, 20f));
         myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
-        //myStock.put(new Pokeball(), new MarketPlaceItem());
         myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 10f));
         myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f, 10f));
         myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
