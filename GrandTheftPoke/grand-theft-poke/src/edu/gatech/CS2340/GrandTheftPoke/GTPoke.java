@@ -18,6 +18,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.*;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
+import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
@@ -218,5 +219,9 @@ public class GTPoke extends Game {
 	
 	public XStream getSerializer(){
 		return xstream;
+	}
+
+	public Screen getBattleScreen(Person myPerson) {
+		return new Battle(this, myPerson);
 	}
 }

@@ -77,7 +77,7 @@ public class EncounterScreen extends AbstractScreen {
 		fight.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				
+				game.setScreen(game.getBattleScreen(myPerson));
 			}
 		});
 
