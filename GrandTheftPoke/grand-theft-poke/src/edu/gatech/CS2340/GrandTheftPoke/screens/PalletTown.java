@@ -50,6 +50,7 @@ public class PalletTown extends AbstractScreen {
 		bp = new Table(getSkin());
 		
 		table.setFillParent(true);
+		healthTable.setFillParent(true);
 		bp.setFillParent(true);
 		
 		background = new Texture(strTown);
@@ -59,7 +60,7 @@ public class PalletTown extends AbstractScreen {
 		stage.clear();
 	
 		backgroundImage = new Image(background);
-		healthImage = new
+		healthImage = new Image(new TextureRegionDrawable(new TextureRegion(ButtonSprite, 177, 701, 667, 63)));
 		//backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
@@ -126,10 +127,13 @@ public class PalletTown extends AbstractScreen {
 		table.add(marketPlaceButton);
 		table.add(gymLeaderButton);
 		
+		healthTable.add(healthImage);
+		
 		
 		
 		stage.addActor(backgroundImage);
-		stage.addActor(table);
+		//stage.addActor(table);
+		stage.addActor(healthTable);
 		
 		bp.setPosition(-450, 60);
 		bp.add(backPackButton);
