@@ -1,17 +1,12 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Person;
 
-public class FlameOrb extends Item implements Usable{
+public class FlameOrb extends Item{
 	 @Override
 		public int hashCode() {
 			return 19;
 		}
 
-		public boolean Use(Person person) {
-			return false;
-		}
 	    @Override
 	    public boolean equals(Object obj) {
 	        if (obj == null) {
