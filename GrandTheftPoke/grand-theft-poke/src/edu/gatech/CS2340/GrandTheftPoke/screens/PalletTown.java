@@ -29,6 +29,7 @@ public class PalletTown extends AbstractScreen {
 	private	Table bp;
 	private Texture background;
 	private Image backgroundImage;
+	private Image healthImage;
 	private Button mapButton;
 	private Button pokeCenterButton;
 	private Button marketPlaceButton;
@@ -58,6 +59,7 @@ public class PalletTown extends AbstractScreen {
 		stage.clear();
 	
 		backgroundImage = new Image(background);
+		healthImage = new
 		//backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
@@ -91,7 +93,7 @@ public class PalletTown extends AbstractScreen {
 			}
 		});
 		backPackButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(BackpackSprite, 0, 0,1700, 1214)),
+				new TextureRegionDrawable(new TextureRegion(BackpackSprite, 408, 270,99,117 )),
 				new TextureRegionDrawable(new TextureRegion(BackpackSprite, 638, 418, 142, 163)));
 		backPackButton.addListener(new ClickListener() {
 			@Override
@@ -129,7 +131,7 @@ public class PalletTown extends AbstractScreen {
 		stage.addActor(backgroundImage);
 		stage.addActor(table);
 		
-		//bp.setPosition(-450, 60);
+		bp.setPosition(-450, 60);
 		bp.add(backPackButton);
 		
 		
