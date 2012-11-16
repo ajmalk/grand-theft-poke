@@ -27,7 +27,7 @@ public class MetalCoat extends Item implements Usable{
 		public String toString() {
 			return "Metal Jacket";
 		}
-		//TODO finish the description
+		
 		@Override
 		public String getDescription() {
 			return "The Metal Jacket is an amulet commonly \n"+
