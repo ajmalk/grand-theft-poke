@@ -40,11 +40,13 @@ public class Town implements Comparable {
 
     @Override
     public boolean equals(Object o) {
-        if (o != null && o instanceof Town) {
-            return toString().equals(((Town) o).toString());
-        } else {
-            return false;
-        }
+        if (o == null || !(o instanceof Town)) 
+        	return false;
+        if(!toString().equals(((Town) o).toString()))
+        	return false;
+        if(myMarket.equals(((Town)o).getMarket()))
+        	return false;
+        return true;
     }
 
     public void addConnection(Path toBeAdded) {

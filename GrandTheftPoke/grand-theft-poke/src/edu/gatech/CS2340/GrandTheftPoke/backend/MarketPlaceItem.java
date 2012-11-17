@@ -101,7 +101,18 @@ public class MarketPlaceItem {
     private float production() {
         return production(price);
     }
-
+    
+    public boolean equals(MarketPlaceItem item){
+    	if(item.CONS_ELASTICITY == CONS_ELASTICITY &&
+    			item.EQIL_PRICE == EQIL_PRICE &&
+    			item.EQIL_STOCK == EQIL_STOCK &&
+    			item.price == price &&
+    			item.PROD_ELASTICITY == PROD_ELASTICITY &&
+    			item.stock == stock)
+    		return true;
+    	return false;
+    }
+    
     private float getNewPrice(float amount) {
         float temp, price = this.price;
         amount += stock - EQIL_STOCK;

@@ -37,6 +37,21 @@ public abstract class Person {
 	@XStreamOmitField
 	private GameMap theMap;
 	
+	public boolean equals(Person person){
+		if(name.equals(person.name) &&
+				person.strength == strength &&
+				person.agility == agility &&
+				person.trade == trade &&
+				person.stamina == stamina &&
+				person.currentStamina == currentStamina &&
+				person.maxHealth == maxHealth &&
+				person.health.equals(health) &&
+				person.myWallet.equals(myWallet) &&
+				person.myBackpack.equals(myBackpack))
+			return true;
+		return false;
+	}
+	
 	public Person(){
 		
 	}

@@ -107,7 +107,14 @@ public class GameMap {
 		startTown = palletTown;
 
 	}
-
+	public boolean equals(Town town){
+		if(!startTown.equals(town))
+			return false;
+		for(Town t: townSet)
+			if(!town.equals(t))
+				return false;
+		return true;
+	}
 	public void addTown(Town toBeAdded) {
 		townSet.add(toBeAdded);
 	}

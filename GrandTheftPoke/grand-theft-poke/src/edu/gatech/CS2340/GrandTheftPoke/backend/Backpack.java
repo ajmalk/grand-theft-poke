@@ -6,6 +6,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
@@ -29,6 +30,16 @@ public class Backpack {
 
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
+	}
+	
+	public boolean equals(Backpack pack){
+		if(pack.capacity != capacity || pack.maxRange != maxRange)
+			return false;
+		for(Entry<Item, Integer> entry: pack.contents.entrySet())
+			if(!(contents.containsKey(entry.getKey()) && 
+					contents.get(entry.getKey()).equals(entry.getValue())))
+				return false;
+		return true;
 	}
 	/**
 	 * Creates a backpack with specified maximum range and capacity

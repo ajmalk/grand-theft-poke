@@ -49,6 +49,10 @@ public class GTPoke extends Game {
 		gameActors = new ArrayList<Person>();
 		items = new GlobalItemReference();
 		theMap = makeMap();
+		xstream = new XStream();	
+		saves = new ArrayList<SaveGame>();
+		savestrs = new ArrayList<String>();
+		items = new GlobalItemReference();
 		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
 		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
 		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
@@ -65,10 +69,6 @@ public class GTPoke extends Game {
 
 	@Override
 	public void create() {
-		xstream = new XStream();	
-		saves = new ArrayList<SaveGame>();
-		savestrs = new ArrayList<String>();
-		items = new GlobalItemReference();
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
 		map.fillRectangle(0, 0, 150, 600);
@@ -80,16 +80,22 @@ public class GTPoke extends Game {
 		setScreen(getSplashScreen());
 	}
 
-	public void save(){
+	public String save(){
 		SaveGame save  = new SaveGame(thePlayer, theMap);
-		saves.add(save);
 		String savestr = xstream.toXML(save);
 		savestrs.add(savestr);
 		System.out.println(savestr);
+		return savestr;
 	}
 	
 	public void load(int index){
 		SaveGame game = (SaveGame) xstream.fromXML(savestrs.get(index));
+		System.out.println(xstream.toXML(game));
+		game.load(this);
+	}
+	
+	public void load(String gamestr){
+		SaveGame game = (SaveGame) xstream.fromXML(gamestr);
 		System.out.println(xstream.toXML(game));
 		game.load(this);
 	}
@@ -148,7 +154,10 @@ public class GTPoke extends Game {
 		//thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getRepel(), 1);
 		turnController = new Turn(theMap, gameActors, thePlayer);
 	}
-
+	public boolean equals(GTPoke game){
+		return theMap.equals(game.getMap()) && thePlayer.equals(game.thePlayer);
+			
+	}
 	public GameMap makeMap() {
 		return new GameMap(items);
 	}

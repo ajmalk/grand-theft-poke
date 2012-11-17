@@ -1,7 +1,9 @@
 package edu.gatech.CS2340.GrandTheftPoke.tests;
 
-import static org.junit.Assert.*;
+import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,9 +14,32 @@ public class SaveLoadTest {
 		
 	}
 
-	@Test
-	public final void save() {
-		
+	public GTPoke makeNewGame(String name, Integer strength, Integer agility, 
+			Integer trade, Integer stamina){
+		GTPoke game = new GTPoke();
+		game.setPlayerName(name);
+		game.createPlayer(strength, agility, trade, stamina);
+		return game;
 	}
-
+	
+	@Test
+	public final void saveloadbasic() {
+		GTPoke game1 = makeNewGame("Ajmal", 5, 5, 5, 5),
+				game2 = makeNewGame("Ben", 2, 7, 6, 5);
+		assertFalse(game1.equals(game2));
+		SaveGame save = new SaveGame(game1.getPlayer(), game1.getMap());
+		save.load(game2);
+		assertTrue(game1.equals(game2));
+	}
+	
+	@Test
+	public final void saveloadserialized() {
+		GTPoke game1 = makeNewGame("Ajmal", 5, 5, 5, 5),
+				game2 = makeNewGame("Ben", 2, 7, 6, 5);
+		String gamestr1 = game1.save(),
+				gamestr2 = game2.save();
+		assertFalse(gamestr1.equals(gamestr2));
+		game1.load(gamestr2);
+		assertTrue(game1.equals(game2));
+	}
 }

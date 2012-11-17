@@ -6,10 +6,15 @@ public class Wallet {
 	@XStreamAsAttribute
     private Float money;
 
+	
+	
     public Wallet(Float num) {
         this.money = num;
     }
 
+    public boolean equals(Wallet wallet){
+    	return money == wallet.money;
+    }
     public void updateMoney(float num) {
         money += num;
     }
