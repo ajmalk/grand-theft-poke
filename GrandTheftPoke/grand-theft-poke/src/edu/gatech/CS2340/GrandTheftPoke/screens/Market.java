@@ -20,11 +20,12 @@ public class Market extends AbstractScreen {
 	private Table markettable, backpacktable, table;
 	private ButtonGroup marketItemGroup, backPackItemGroup;
 	private ScrollPane marketStock, backpackStock;
-	
+
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
 		this.market = market;
 		playerPack = game.getPlayer().getBackpack();
+		table = new Table();
 		markettable = new Table();
 		backpacktable = new Table();
 		marketItemGroup = new ButtonGroup();
@@ -58,7 +59,7 @@ public class Market extends AbstractScreen {
 			ItemTile tile = new ItemTile(market, item.getKey(),
 					item.getValue(), playerPack);
 			backpacktable.add(tile);
-			backPackItemGroup.add(tile);
+			marketItemGroup.add(tile);
 			if (col++ % 2 == 1)
 				backpacktable.row();
 		}
@@ -68,6 +69,7 @@ public class Market extends AbstractScreen {
 		backpacktable.setWidth(markettable.getPrefWidth());
 		backpacktable.setHeight(markettable.getPrefWidth());
 		
+		markettable.top();
 		backpacktable.top();
 		
 		marketStock.setScrollingDisabled(true, false);
@@ -75,17 +77,30 @@ public class Market extends AbstractScreen {
 		backpackStock.setScrollingDisabled(true, false);
 		backpackStock.setPosition(450, 50);
 		
+		backpackStock.setWidth(backpacktable.getWidth());
+		backpackStock.setHeight(stage.getHeight() - 200);
+		marketStock.setWidth(markettable.getWidth());
+		marketStock.setHeight(stage.getHeight() - 200);
+		
+		table.add(marketStock).top();
+		table.add(backpackStock).top().padLeft(25);
+		table.left().setPosition(25, 100);
 	}
 	
 	public void render(float delta) {
 		super.render(delta);
 
-		backpackStock.setWidth(backpacktable.getWidth());
-		backpackStock.setHeight(stage.getHeight() - 200);
-		marketStock.setWidth(markettable.getWidth());
-		marketStock.setHeight(stage.getHeight() - 200);
-		stage.addActor(marketStock);
-		stage.addActor(backpackStock);
+//		for(int i= 0; i< marketItemGroup.getButtons().size; i++)
+//			marketItemGroup.getButtons().get(i).debug().drawDebug(stage);
 		
+		
+		
+		
+		table.setSize(1024, 525);
+		
+		//stage.addActor(marketStock);
+		//stage.addActor(backpackStock);
+		stage.addActor(table);
+		//stage.addActor(backpacktable);
 	}
 }
