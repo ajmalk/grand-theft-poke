@@ -20,43 +20,45 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 //because the gui doesn't function on linux...if they're truly not used, 
 //get rid of them. otherwise, uncomment them
 
-public class TownTile extends Button{
-		private Town myTown;
+public class TownTile extends Button {
+	private Town myTown;
 
-		public TownTile(Town myTown){
-			super(	new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 134, 0, 150, 200)),
-					new TextureRegionDrawable(new TextureRegion(GTPoke.getButtonSprite(), 0, 0, 150, 200)));
-			this.myTown = myTown;
-			
-			
-			/*Texture confirmButtonSprite = new Texture("images//icons//newball.png");
-			ButtonStyle style = new ButtonStyle();
-			style.up = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
-					16, 18, 18));
-			style.down = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite,
-					134, 64, 18, 18));
-			style.disabled = new TextureRegionDrawable(new TextureRegion(
-					confirmButtonSprite, 134, 115, 18, 18));*/
-			
-		}
-		
-		public TownTile(Town myTown, ButtonStyle myStyle){
-			super(myStyle);
-			this.myTown = myTown;
-			
-			
-			/*Texture confirmButtonSprite = new Texture("images//icons//newball.png");
-			ButtonStyle style = new ButtonStyle();
-			style.up = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
-					16, 18, 18));
-			style.down = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite,
-					134, 64, 18, 18));
-			style.disabled = new TextureRegionDrawable(new TextureRegion(
-					confirmButtonSprite, 134, 115, 18, 18));*/
-			
-		}
+	public TownTile(Town myTown) {
+		super(new TextureRegionDrawable(new TextureRegion(
+				GTPoke.getButtonSprite(), 134, 0, 150, 200)),
+				new TextureRegionDrawable(new TextureRegion(
+						GTPoke.getButtonSprite(), 0, 0, 150, 200)));
+		this.myTown = myTown;
 
-		public Town getTown() {
-			return myTown;
-		}
+		/*
+		 * Texture confirmButtonSprite = new
+		 * Texture("images//icons//newball.png"); ButtonStyle style = new
+		 * ButtonStyle(); style.up = new TextureRegionDrawable(new
+		 * TextureRegion(confirmButtonSprite, 134, 16, 18, 18)); style.down =
+		 * new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
+		 * 64, 18, 18)); style.disabled = new TextureRegionDrawable(new
+		 * TextureRegion( confirmButtonSprite, 134, 115, 18, 18));
+		 */
+
+	}
+
+	public TownTile(Town myTown, ButtonStyle myStyle) {
+		super(myStyle);
+		this.myTown = myTown;
+
+		/*
+		 * Texture confirmButtonSprite = new
+		 * Texture("images//icons//newball.png"); ButtonStyle style = new
+		 * ButtonStyle(); style.up = new TextureRegionDrawable(new
+		 * TextureRegion(confirmButtonSprite, 134, 16, 18, 18)); style.down =
+		 * new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
+		 * 64, 18, 18)); style.disabled = new TextureRegionDrawable(new
+		 * TextureRegion( confirmButtonSprite, 134, 115, 18, 18));
+		 */
+
+	}
+
+	public Town getTown() {
+		return myTown;
+	}
 }

@@ -97,10 +97,10 @@ public class StarterPokemon extends AbstractScreen {
 
 		Texture confirmButtonSprite = new Texture("images//button-sprite.png");
 		ButtonStyle style = new ButtonStyle();
-		style.up = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 0,
-				0, 320, 70));
-		style.down = new TextureRegionDrawable(new TextureRegion(confirmButtonSprite,
-				0, 69, 320, 70));
+		style.up = new TextureRegionDrawable(new TextureRegion(
+				confirmButtonSprite, 0, 0, 320, 70));
+		style.down = new TextureRegionDrawable(new TextureRegion(
+				confirmButtonSprite, 0, 69, 320, 70));
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				confirmButtonSprite, 0, 69, 320, 70));
 

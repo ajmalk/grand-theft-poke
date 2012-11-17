@@ -12,22 +12,26 @@ public class SaveGame {
 	Player player;
 	@XStreamOmitField
 	GameMap map;
-	public SaveGame(){}
-	public SaveGame(Player player, GameMap map){
+
+	public SaveGame() {
+	}
+
+	public SaveGame(Player player, GameMap map) {
 		this.player = player;
 		this.map = map;
 	}
-	public boolean load(GTPoke game){
+
+	public boolean load(GTPoke game) {
 		game.setPlayer(player);
 		game.setMap(map);
 		return true;
 	}
-	
-	public Player getPlayer(){
+
+	public Player getPlayer() {
 		return player;
 	}
-	
-	public GameMap getMap(){
+
+	public GameMap getMap() {
 		return map;
 	}
 }

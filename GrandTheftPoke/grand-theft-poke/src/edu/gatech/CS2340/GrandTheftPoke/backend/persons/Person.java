@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Set;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
@@ -14,6 +13,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Wallet;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
+
 /**
  * Contains shared data and methods for players and NPCs.
  * 
@@ -22,39 +22,38 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 public abstract class Person {
 	@XStreamAsAttribute
 	private String name;
-	
+
 	private int strength, agility, trade, stamina, currentStamina, maxHealth;
-	
+
 	@XStreamAsAttribute
 	private Integer health;
-	
+
 	private Wallet myWallet;
-	
+
 	private Town currentTown;
-	
+
 	private Backpack myBackpack;
 
 	@XStreamOmitField
 	private GameMap theMap;
-	
-	public boolean equals(Person person){
-		if(name.equals(person.name) &&
-				person.strength == strength &&
-				person.agility == agility &&
-				person.trade == trade &&
-				person.stamina == stamina &&
-				person.currentStamina == currentStamina &&
-				person.maxHealth == maxHealth &&
-				person.health.equals(health) &&
-				person.myWallet.equals(myWallet) &&
-				person.myBackpack.equals(myBackpack))
+
+	public boolean equals(Person person) {
+		if (name.equals(person.name) && person.strength == strength
+				&& person.agility == agility && person.trade == trade
+				&& person.stamina == stamina
+				&& person.currentStamina == currentStamina
+				&& person.maxHealth == maxHealth
+				&& person.health.equals(health)
+				&& person.myWallet.equals(myWallet)
+				&& person.myBackpack.equals(myBackpack))
 			return true;
 		return false;
 	}
-	
-	public Person(){
-		
+
+	public Person() {
+
 	}
+
 	/**
 	 * Constructs a person with the specified parameters.
 	 * 
@@ -220,7 +219,7 @@ public abstract class Person {
 	public Town getCurrent() {
 		return currentTown;
 	}
-	
+
 	public void setCurrent(Town newCurrent) {
 		currentTown = newCurrent;
 	}
@@ -231,28 +230,28 @@ public abstract class Person {
 	 * @return
 	 */
 	public int attack(int turnCount) {
-		float fatigue = (float)currentStamina/stamina;
-		if(currentStamina > 1 && turnCount % 5 == 0) {
+		float fatigue = (float) currentStamina / stamina;
+		if (currentStamina > 1 && turnCount % 5 == 0) {
 			currentStamina--;
 		}
-		return (int)(fatigue*strength);
-		
+		return (int) (fatigue * strength);
+
 	}
-	
+
 	public void defend(int incomingDamage) {
-		float fatigue = (float)currentStamina/stamina;
-		float dodge = agility/100;
-		
+		float fatigue = (float) currentStamina / stamina;
+		float dodge = agility / 100;
+
 		Random rand = new Random();
 		double chance = rand.nextDouble();
-		
-		if(chance < fatigue*dodge) {
+
+		if (chance < fatigue * dodge) {
 			return;
 		}
-		
+
 		setHealth(-incomingDamage);
 	}
-	
+
 	public boolean flee() {
 		return new Random().nextBoolean();
 	}
@@ -264,10 +263,11 @@ public abstract class Person {
 	public void move(Town destination) {
 		if (!(currentTown.toString().equals(destination.toString()))) {
 			int range = myBackpack.getMaxRange();
-			int distance = theMap.Dijkstras(currentTown, destination.toString());
-			if (range >= distance && health >= distance/5) {
+			int distance = theMap
+					.Dijkstras(currentTown, destination.toString());
+			if (range >= distance && health >= distance / 5) {
 				currentTown = destination;
-				setHealth(-distance/5);
+				setHealth(-distance / 5);
 			}
 		}
 	}
@@ -280,9 +280,10 @@ public abstract class Person {
 	 * @return
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
-		if(theMarket.getStock().containsKey(desiredGood)) {
-			float price = (float)(1.15 - 0.0015 * trade) * ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
-					.getBuyingPrice(quantity);
+		if (theMarket.getStock().containsKey(desiredGood)) {
+			float price = (float) (1.15 - 0.0015 * trade)
+					* ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
+							.getBuyingPrice(quantity);
 			if (price != 0) {
 				if (myWallet.checkAmount(price)) {
 					if (myBackpack.checkCapacity(desiredGood, quantity)) {
@@ -294,7 +295,6 @@ public abstract class Person {
 				}
 			}
 		}
-		
 
 		return false;
 
@@ -309,7 +309,8 @@ public abstract class Person {
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (myBackpack.checkContents(desiredGood, quantity)) {
-			float price = (float)(0.85 + 0.0015 * trade) * theMarket.sell(desiredGood, quantity);
+			float price = (float) (0.85 + 0.0015 * trade)
+					* theMarket.sell(desiredGood, quantity);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);
 			return true;
@@ -323,20 +324,22 @@ public abstract class Person {
 	 */
 	public void win(Person other) {
 		Set<Item> theirStuff = other.getBackpack().getContents().keySet();
-		for(Item theItem : theirStuff) {
+		for (Item theItem : theirStuff) {
 			int quantity = other.getBackpack().getContents().get(theItem);
-			if(myBackpack.place(theItem, quantity)) {
+			if (myBackpack.place(theItem, quantity)) {
 				other.getBackpack().remove(theItem, quantity);
 			}
-			//myWallet.updateMoney(other.getWallet().getMoney());
-			
+			// myWallet.updateMoney(other.getWallet().getMoney());
+
 		}
-		
+
 	}
+
 	@Override
-    public String toString() {
-        return this.getClass() + "Name:" + getName() + " Strength:" + 
-        			getStrength() + " Agility:" + getAgility() + " Trade:" + 
-        		getTrade() + " Stamina:" + getStamina() + " Health:" + getHealth();
-    }
+	public String toString() {
+		return this.getClass() + "Name:" + getName() + " Strength:"
+				+ getStrength() + " Agility:" + getAgility() + " Trade:"
+				+ getTrade() + " Stamina:" + getStamina() + " Health:"
+				+ getHealth();
+	}
 }

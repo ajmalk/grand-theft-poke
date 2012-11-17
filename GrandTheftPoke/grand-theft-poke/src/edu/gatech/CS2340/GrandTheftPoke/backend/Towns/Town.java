@@ -1,4 +1,5 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,93 +9,94 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
+
 /**
- *
+ * 
  * @author Ben Nuttle
  */
 @XStreamAlias("Town")
 public class Town implements Comparable {
-	
+
 	@XStreamOmitField
-    private int minimumDistance = Integer.MAX_VALUE;
-	
+	private int minimumDistance = Integer.MAX_VALUE;
+
 	@XStreamAsAttribute
-    private String name;
-    
-    @XStreamOmitField
-    private Set<Path> adjacencies;
-    
-    @XStreamOmitField
-    private Town previous;
-    
-    protected MarketPlace myMarket;
-    
-    @XStreamOmitField
-    private String filepath;
-    
-    public Town(String name, MarketPlace myMarket) {
-        this.name = name;
-        this.myMarket = myMarket;
-        adjacencies = new HashSet<Path>();
-    }
+	private String name;
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || !(o instanceof Town)) 
-        	return false;
-        if(!toString().equals(((Town) o).toString()))
-        	return false;
-        if(myMarket.equals(((Town)o).getMarket()))
-        	return false;
-        return true;
-    }
+	@XStreamOmitField
+	private Set<Path> adjacencies;
 
-    public void addConnection(Path toBeAdded) {
-        if (toBeAdded != null && !adjacencies.contains(toBeAdded)) {
-            adjacencies.add(toBeAdded);
-        }
-    }
+	@XStreamOmitField
+	private Town previous;
 
-    public Set getAdjacencies() {
-        return adjacencies;
-    }
+	protected MarketPlace myMarket;
 
-    public int getMinimumDistance() {
-        return minimumDistance;
-    }
+	@XStreamOmitField
+	private String filepath;
 
-    public void setMinimumDistance(int minimumDistance) {
-        this.minimumDistance = minimumDistance;
-    }
+	public Town(String name, MarketPlace myMarket) {
+		this.name = name;
+		this.myMarket = myMarket;
+		adjacencies = new HashSet<Path>();
+	}
 
-    public Town getPrevious() {
-        return previous;
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (o == null || !(o instanceof Town))
+			return false;
+		if (!toString().equals(((Town) o).toString()))
+			return false;
+		if (myMarket.equals(((Town) o).getMarket()))
+			return false;
+		return true;
+	}
 
-    public void setPrevious(Town previous) {
-        this.previous = previous;
-    }
+	public void addConnection(Path toBeAdded) {
+		if (toBeAdded != null && !adjacencies.contains(toBeAdded)) {
+			adjacencies.add(toBeAdded);
+		}
+	}
 
-    @Override
-    public int compareTo(Object other) {
-        return getMinimumDistance() - ((Town) other).getMinimumDistance();
-    }
-    
-    @Override
-    public String toString() {
-        return name;
-    }
-    
-    public MarketPlace getMarket() {
-        return myMarket;
-    }
+	public Set getAdjacencies() {
+		return adjacencies;
+	}
+
+	public int getMinimumDistance() {
+		return minimumDistance;
+	}
+
+	public void setMinimumDistance(int minimumDistance) {
+		this.minimumDistance = minimumDistance;
+	}
+
+	public Town getPrevious() {
+		return previous;
+	}
+
+	public void setPrevious(Town previous) {
+		this.previous = previous;
+	}
+
+	@Override
+	public int compareTo(Object other) {
+		return getMinimumDistance() - ((Town) other).getMinimumDistance();
+	}
+
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	public MarketPlace getMarket() {
+		return myMarket;
+	}
 
 	public String getImage() {
-		
+
 		return filepath;
 	}
-	
-	public void setImage(String str){
+
+	public void setImage(String str) {
 		filepath = str;
 	}
 }

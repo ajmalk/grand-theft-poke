@@ -22,10 +22,10 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
  */
 @XStreamAlias("Map")
 public class GameMap {
-	
-	@XStreamImplicit(itemFieldName="Town")
+
+	@XStreamImplicit(itemFieldName = "Town")
 	private Set<Town> townSet;
-	
+
 	@XStreamOmitField
 	private Town startTown;
 
@@ -107,14 +107,16 @@ public class GameMap {
 		startTown = palletTown;
 
 	}
-	public boolean equals(Town town){
-		if(!startTown.equals(town))
+
+	public boolean equals(Town town) {
+		if (!startTown.equals(town))
 			return false;
-		for(Town t: townSet)
-			if(!town.equals(t))
+		for (Town t : townSet)
+			if (!town.equals(t))
 				return false;
 		return true;
 	}
+
 	public void addTown(Town toBeAdded) {
 		townSet.add(toBeAdded);
 	}
@@ -122,7 +124,7 @@ public class GameMap {
 	public Set<Town> getTownSet() {
 		return townSet;
 	}
-	
+
 	public void setStartTown(Town startTown) {
 		this.startTown = startTown;
 	}
@@ -162,8 +164,8 @@ public class GameMap {
 	public void Dijkstras(Town source) {
 		computePaths(source);
 		for (Town x : townSet) {
-			//System.out.println("Distance to " + x + ": "
-				//	+ x.getMinimumDistance());
+			// System.out.println("Distance to " + x + ": "
+			// + x.getMinimumDistance());
 			// List<Town> path = getShortestPathTo(x);
 			// System.out.println("Path: " + path);
 		}

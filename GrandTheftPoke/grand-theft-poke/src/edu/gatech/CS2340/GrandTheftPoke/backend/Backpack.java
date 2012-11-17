@@ -20,36 +20,36 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * @author Team Rocket
  */
 public class Backpack {
-	
+
 	@XStreamAsAttribute
 	private Integer capacity, maxRange;
-	
-	//@XStreamImplicit(itemFieldName="item")
+
+	// @XStreamImplicit(itemFieldName="item")
 	@XStreamOmitField
 	private HashMap<Item, Integer> contents;
 
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
 	}
-	
 
-	public boolean equals(Backpack pack){
-		if(pack.capacity != capacity || pack.maxRange != maxRange)
+	public boolean equals(Backpack pack) {
+		if (pack.capacity != capacity || pack.maxRange != maxRange)
 			return false;
-		for(Entry<Item, Integer> entry: pack.contents.entrySet())
-			if(!(contents.containsKey(entry.getKey()) && 
-					contents.get(entry.getKey()).equals(entry.getValue())))
+		for (Entry<Item, Integer> entry : pack.contents.entrySet())
+			if (!(contents.containsKey(entry.getKey()) && contents.get(
+					entry.getKey()).equals(entry.getValue())))
 				return false;
 		return true;
-}
+	}
 
 	public int getAmount(Item toBeRetrieved) {
-		if(contents.containsKey(toBeRetrieved)) {
+		if (contents.containsKey(toBeRetrieved)) {
 			return contents.get(toBeRetrieved);
 		}
-		
+
 		return 0;
 	}
+
 	/**
 	 * Creates a backpack with specified maximum range and capacity
 	 * 
@@ -61,9 +61,9 @@ public class Backpack {
 		contents = new HashMap<Item, Integer>();
 		maxRange = range;
 	}
-	
+
 	public Backpack(int range, int capacity, HashMap<Item, Integer> contents) {
-		this(range,capacity);
+		this(range, capacity);
 		this.contents = contents;
 	}
 
@@ -147,7 +147,7 @@ public class Backpack {
 	public Integer getMaxRange() {
 		return maxRange;
 	}
-	
+
 	public Integer getCapacity() {
 		return capacity;
 	}

@@ -12,54 +12,56 @@ import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+
 //import com.badlogic.gdx.math.Rectangle;
 
-public class SplashScreen extends AbstractScreen{
-	 private Texture splashTexture;
-	 public SplashScreen(GTPoke game){
-		 super(game);
-	 }
-	 @Override
-	 public void show(){
-		 super.show();
-		 
-		 splashTexture = new Texture("images//splash.jpg");
-		 stage.clear();
-		 Image splashImage = new Image(splashTexture);
-		 splashImage.setFillParent( true );
+public class SplashScreen extends AbstractScreen {
+	private Texture splashTexture;
 
-		 splashImage.getColor().a = 0f;
+	public SplashScreen(GTPoke game) {
+		super(game);
+	}
 
-		 splashImage.addAction( sequence( fadeIn( 1f ), delay( 1f ), fadeOut( .2f ),
-				 new Action() {
-			 @Override
-			 public boolean act(float delta){
-				 game.setScreen(game.getMainMenuScreen());
-				 return true;
-			 }
-		 } ) );
-		 
-		 stage.addActor( splashImage );
-		 //stage.addActor(new Rectangle(0, 0, 200, 200));
-	 }
+	@Override
+	public void show() {
+		super.show();
 
-	 @Override
-	 public void render(float delta ){
-		 Gdx.gl.glClearColor( 1f, 1f, 1f, 1f );
-		 Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT );
-		 stage.act( delta );
-		 stage.draw();
-	 }
-	 
-	 
-	 @Override
-	    public void resize(int width, int height ){
-	        super.resize( width, height );
-	    }
+		splashTexture = new Texture("images//splash.jpg");
+		stage.clear();
+		Image splashImage = new Image(splashTexture);
+		splashImage.setFillParent(true);
 
-	 @Override
-	 public void dispose(){
-		 super.dispose();
-		 splashTexture.dispose();
-	 }
+		splashImage.getColor().a = 0f;
+
+		splashImage.addAction(sequence(fadeIn(1f), delay(1f), fadeOut(.2f),
+				new Action() {
+					@Override
+					public boolean act(float delta) {
+						game.setScreen(game.getMainMenuScreen());
+						return true;
+					}
+				}));
+
+		stage.addActor(splashImage);
+		// stage.addActor(new Rectangle(0, 0, 200, 200));
+	}
+
+	@Override
+	public void render(float delta) {
+		Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		stage.act(delta);
+		stage.draw();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		super.resize(width, height);
+	}
+
+	@Override
+	public void dispose() {
+		super.dispose();
+		splashTexture.dispose();
+	}
 }

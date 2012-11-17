@@ -13,7 +13,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 @XStreamAlias("Market")
 public class MarketPlace {
-	//@XStreamImplicit(itemFieldName="Item")
+	// @XStreamImplicit(itemFieldName="Item")
 	HashMap<Item, MarketPlaceItem> stock;
 
 	/**
@@ -26,15 +26,16 @@ public class MarketPlace {
 		this.stock = stock;
 	}
 
-	public boolean equals(MarketPlace market){
-		if(market == null)
+	public boolean equals(MarketPlace market) {
+		if (market == null)
 			return false;
-		for(Entry<Item, MarketPlaceItem> entry: stock.entrySet())
-			if(!(market.stock.containsKey(entry.getKey()) && 
-					market.stock.get(entry.getKey()).equals(entry.getValue())))
+		for (Entry<Item, MarketPlaceItem> entry : stock.entrySet())
+			if (!(market.stock.containsKey(entry.getKey()) && market.stock.get(
+					entry.getKey()).equals(entry.getValue())))
 				return false;
 		return true;
 	}
+
 	/**
 	 * 
 	 * @param good

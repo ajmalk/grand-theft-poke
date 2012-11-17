@@ -10,22 +10,24 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 public abstract class AbstractScreen implements Screen {
-	protected final GTPoke game;//askjdbaskndkjnaskdjn
+	protected final GTPoke game;// askjdbaskndkjnaskdjn
 	protected final Stage stage;
 	private final SpriteBatch batch;
 	protected Skin skin;
-	public AbstractScreen(GTPoke game){
+
+	public AbstractScreen(GTPoke game) {
 		this.game = game;
 		this.batch = new SpriteBatch();
-		this.stage = new Stage( 0, 0, true );
+		this.stage = new Stage(0, 0, true);
 		Gdx.input.setInputProcessor(stage);
 	}
+
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor( 1f, 1f, 1f, 1f );
-        Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT );
-        stage.act( delta );
-        stage.draw();
+		Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		stage.act(delta);
+		stage.draw();
 	}
 
 	@Override
@@ -35,22 +37,22 @@ public abstract class AbstractScreen implements Screen {
 
 	@Override
 	public void show() {
-		//should be done
+		// should be done
 	}
 
 	@Override
 	public void hide() {
-		//should be done
+		// should be done
 	}
 
 	@Override
 	public void pause() {
-		//should be done
+		// should be done
 	}
 
 	@Override
 	public void resume() {
-		//should be done
+		// should be done
 	}
 
 	@Override
@@ -58,11 +60,11 @@ public abstract class AbstractScreen implements Screen {
 		stage.dispose();
 		batch.dispose();
 	}
-	protected Skin getSkin()
-    {
-        if( skin == null ){
-            skin = new Skin(Gdx.files.internal( "skins//uiskin.json" ));
-        }
-        return skin;
-    }
+
+	protected Skin getSkin() {
+		if (skin == null) {
+			skin = new Skin(Gdx.files.internal("skins//uiskin.json"));
+		}
+		return skin;
+	}
 }

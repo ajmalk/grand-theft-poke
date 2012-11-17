@@ -58,11 +58,10 @@ public class Name extends AbstractScreen {
 					if (key == '\b' && playerName.length() != 0) {
 						if (playerName.length() == 1) {
 							playerName = "";
-						}
-						else {
+						} else {
 							playerName = playerName.substring(0,
 									playerName.length() - 1);
-						}		
+						}
 					} else if (key != '\b' && key != 13) {
 						playerName += key;
 					}
@@ -145,7 +144,7 @@ public class Name extends AbstractScreen {
 				return false;
 			}
 		}
-		
+
 		if (name.length() < 1) {
 			return false;
 		}

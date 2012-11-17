@@ -7,28 +7,28 @@ public class HealthPotion extends Item implements Usable {
 	public void use(Person person) {
 		int health = person.getHealth();
 		int maxHealth = person.getMaxHealth();
-		if(health<=(maxHealth-20)){
+		if (health <= (maxHealth - 20)) {
 			person.setHealth(health + 20);
-		}
-		else{
+		} else {
 			person.setHealth(maxHealth);
 		}
 	}
-    @Override
+
+	@Override
 	public void unUse(Person person) {
-    	//should be done
+		// should be done
 	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        return true;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		return true;
+	}
 
 	@Override
 	public String toString() {
@@ -37,10 +37,9 @@ public class HealthPotion extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "Health Potion restores your health to \n"+
-				"to the maximum. This is allows you\n"+
-				"stay alive longer.\n"+
-				"Health = max";
-				
+		return "Health Potion restores your health to \n"
+				+ "to the maximum. This is allows you\n"
+				+ "stay alive longer.\n" + "Health = max";
+
 	}
 }

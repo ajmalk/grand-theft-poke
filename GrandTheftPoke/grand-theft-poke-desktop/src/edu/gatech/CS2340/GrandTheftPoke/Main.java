@@ -10,7 +10,7 @@ public class Main {
 		cfg.useGL20 = true;
 		cfg.width = 1024;
 		cfg.height = 768;
-		
+
 		new LwjglApplication(new GTPoke(), cfg);
 	}
 }

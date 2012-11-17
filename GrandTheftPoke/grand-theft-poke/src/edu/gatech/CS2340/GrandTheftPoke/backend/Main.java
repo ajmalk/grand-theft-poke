@@ -17,8 +17,8 @@ public class Main {
 	public static void main(String[] args) {
 		GlobalItemReference theReference = new GlobalItemReference();
 		GameMap testMap = Main.makeMap(theReference);
-		//testMap.Dijkstras();
-		//testMarketPlace(testMap, theReference);
+		// testMap.Dijkstras();
+		// testMarketPlace(testMap, theReference);
 		testMovement(testMap);
 	}
 
@@ -29,15 +29,17 @@ public class Main {
 
 	public static void testMarketPlace(GameMap map,
 			GlobalItemReference theReference) {
-		
+
 		Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000, map);
 		MarketPlace theMarket = testPlayer.getCurrent().getMarket();
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
-		System.out.println(testPlayer.buy(theMarket, theReference.getCharizard(), 1));
+		System.out.println(testPlayer.buy(theMarket,
+				theReference.getCharizard(), 1));
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
-		System.out.println(testPlayer.sell(theMarket, theReference.getHealthPotion(), 3));
+		System.out.println(testPlayer.sell(theMarket,
+				theReference.getHealthPotion(), 3));
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		testPlayer.buy(theMarket, theReference.getRepel(), 1);
@@ -46,8 +48,9 @@ public class Main {
 	}
 
 	public static void testMovement(GameMap map) {
-		//Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
-		Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20, 50f, map);
+		// Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
+		Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20,
+				50f, map);
 		Set<Town> townSet = map.getTownSet();
 		for (Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move(it.next());

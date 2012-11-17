@@ -18,42 +18,32 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+
 //import com.badlogic.gdx.scenes.scene2d.ui.Window;
 
 public class SkillPoints extends AbstractScreen {
 	private Texture background;
-	
-	private Integer	remainder, 
-					strength, 
-					agility,
-					trade,
-					stamina,
-					max;
-	
-	private Label	strengthVal,
-					agilityVal,
-					tradeVal,
-					staminaVal,
-					remVal;
-	
-	private Slider 	strengthSlider, 
-					staminaSlider,
-					agilitySlider,
-					tradeSlider;
-	
+
+	private Integer remainder, strength, agility, trade, stamina, max;
+
+	private Label strengthVal, agilityVal, tradeVal, staminaVal, remVal;
+
+	private Slider strengthSlider, staminaSlider, agilitySlider, tradeSlider;
+
 	private Button ConfirmButton;
-	private	Table table;
-	
-	public SkillPoints(GTPoke game){
+	private Table table;
+
+	public SkillPoints(GTPoke game) {
 		super(game);
 	}
+
 	@Override
-	public void show(){
+	public void show() {
 		super.show();
 		table = new Table(getSkin());
 		table.setFillParent(true);
 		strength = stamina = agility = trade = 0;
-		
+
 		remainder = max = 20;
 		strengthVal = new Label(strength.toString(), getSkin());
 		agilityVal = new Label(agility.toString(), getSkin());
@@ -61,7 +51,7 @@ public class SkillPoints extends AbstractScreen {
 		staminaVal = new Label(agility.toString(), getSkin());
 		remVal = new Label(agility.toString(), getSkin());
 		background = new Texture("images//skillpoint.png");
-		
+
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
@@ -69,105 +59,107 @@ public class SkillPoints extends AbstractScreen {
 		backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
-		stage.addActor( backgroundImage );
+		stage.addActor(backgroundImage);
 
-		strengthSlider = new Slider(0,10,1,false,getSkin()); 
-		staminaSlider = new Slider(0,10,1,false,getSkin());
-		agilitySlider = new Slider(0,10,1,false,getSkin());	
-		tradeSlider = new Slider(0,10,1,false,getSkin());
-		
+		strengthSlider = new Slider(0, 10, 1, false, getSkin());
+		staminaSlider = new Slider(0, 10, 1, false, getSkin());
+		agilitySlider = new Slider(0, 10, 1, false, getSkin());
+		tradeSlider = new Slider(0, 10, 1, false, getSkin());
+
 		ButtonStyle style = new ButtonStyle();
-		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 0, 320, 70));
-		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70));
-		style.disabled = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0, 69, 320, 70)); 
-		
+		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
+				0, 320, 70));
+		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite,
+				0, 69, 320, 70));
+		style.disabled = new TextureRegionDrawable(new TextureRegion(
+				ButtonSprite, 0, 69, 320, 70));
+
 		ConfirmButton = new Button(style);
-		
+
 		ConfirmButton.setSkin(getSkin());
 		ConfirmButton.add("Confirm");
 		ConfirmButton.setPosition(700, 10);
 		ConfirmButton.setDisabled(true);
 		ConfirmButton.setTouchable(Touchable.disabled);
-		
+
 		ConfirmButton.setStyle(style);
-		
+
 		ConfirmButton.addListener(new ClickListener() {
 			@Override
-			public void clicked (InputEvent event, float x, float y) {
+			public void clicked(InputEvent event, float x, float y) {
 				game.createPlayer(strength, agility, trade, stamina);
 				game.setScreen(game.getStarterPokemonScreen());
 			}
 		});
-		
+
 		remVal.setText(remainder.toString());
-		
+
 		strengthSlider.addListener(new ChangeListener() {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
-				strength = (int) ((Slider)actor).getValue();
+				strength = (int) ((Slider) actor).getValue();
 				updateRemainder((Slider) actor, strength);
 				strengthVal.setText(strength.toString());
 			}
-		});	
-		
+		});
+
 		staminaSlider.addListener(new ChangeListener() {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
-				stamina = (int) ((Slider)actor).getValue();
+				stamina = (int) ((Slider) actor).getValue();
 				updateRemainder((Slider) actor, stamina);
 				staminaVal.setText(stamina.toString());
 			}
-		});	
-		
+		});
+
 		agilitySlider.addListener(new ChangeListener() {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
-				agility = (int) ((Slider)actor).getValue();
+				agility = (int) ((Slider) actor).getValue();
 				updateRemainder((Slider) actor, agility);
 				agilityVal.setText(agility.toString());
 			}
-		});	
-		
+		});
+
 		tradeSlider.addListener(new ChangeListener() {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
-				trade = (int) ((Slider)actor).getValue();
+				trade = (int) ((Slider) actor).getValue();
 				updateRemainder((Slider) actor, trade);
 				tradeVal.setText(trade.toString());
 			}
-		});	
-		
-		//nameWindow = new Window("Enter Your Name: ", skin);
-		//name = new TextField("", getSkin());
-		//nameWindow.add(name);
+		});
+
+		// nameWindow = new Window("Enter Your Name: ", skin);
+		// name = new TextField("", getSkin());
+		// nameWindow.add(name);
 
 	}
 
-	private void updateRemainder(Slider slider, Integer value){
+	private void updateRemainder(Slider slider, Integer value) {
 		ConfirmButton.setDisabled(true);
 		ConfirmButton.setTouchable(Touchable.disabled);
 		remainder = max - strength - stamina - agility - trade;
 		remVal.setText(remainder.toString());
-		if(remainder <= 0){
+		if (remainder <= 0) {
 			value += remainder;
 			ConfirmButton.setDisabled(false);
 			ConfirmButton.setTouchable(Touchable.enabled);
 		}
 		slider.setValue(value);
 	}
+
 	@Override
-	public void render(float delta){
+	public void render(float delta) {
 		super.render(delta);
 
-		//remVal.setText(remainder.toString());
-		
-		
+		// remVal.setText(remainder.toString());
+
 		trade = (int) tradeSlider.getValue();
 		tradeVal.setText(trade.toString());
-		
+
 		table.clear();
-		
-		
+
 		table.defaults().height(115);
 		table.columnDefaults(0).width(40);
 		table.columnDefaults(1).width(500).spaceLeft(250).top().height(30);
@@ -186,26 +178,25 @@ public class SkillPoints extends AbstractScreen {
 		table.row();
 		table.add(staminaVal);
 		table.add(staminaSlider);
-		
-		//table.debug();
-		//table.drawDebug(stage);
+
+		// table.debug();
+		// table.drawDebug(stage);
 
 		stage.addActor(table);
-		//stage.addActor(nameWindow);
+		// stage.addActor(nameWindow);
 
-		//stage.addActor(table);
+		// stage.addActor(table);
 		stage.addActor(ConfirmButton);
-		
 
 	}
 
 	@Override
-	public void resize(int width, int height){
+	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
 	@Override
-	public void dispose(){
+	public void dispose() {
 		super.dispose();
 		background.dispose();
 	}

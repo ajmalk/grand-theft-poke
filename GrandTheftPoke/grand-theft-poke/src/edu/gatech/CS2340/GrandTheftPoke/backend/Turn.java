@@ -32,7 +32,7 @@ public class Turn {
 		useAll();
 		moveAll();
 		trade();
-		 return encounter(thePlayer);
+		return encounter(thePlayer);
 	}
 
 	public void useAll() {
@@ -58,7 +58,7 @@ public class Turn {
 		Item[] possibleItems = new Item[17];
 		for (Person individual : gameActors) {
 			if (individual instanceof Trader) {
-				
+
 				if (rand.nextBoolean()) {
 					currentMarket = individual.getCurrent().getMarket(); // BUY
 																			// SOMETHING
@@ -69,7 +69,8 @@ public class Turn {
 					int randomNum = rand.nextInt(10);
 
 					if (((MarketPlaceItem) (currentMarket.getStock()
-							.get(possibleItems[randomNum]))).getStock() != 0 && randomNum != 0) {
+							.get(possibleItems[randomNum]))).getStock() != 0
+							&& randomNum != 0) {
 						individual.buy(currentMarket,
 								possibleItems[randomIndex], randomNum);
 						System.out.println(individual + " bought " + randomNum
@@ -94,9 +95,10 @@ public class Turn {
 						if (individual.getBackpack().checkContents(toBeSold,
 								quantity)) {
 							individual.sell(currentMarket, toBeSold, quantity);
-							System.out.println(individual + " sold " + quantity + " " + toBeSold
-									+ " in " + individual.getCurrent());
-							
+							System.out.println(individual + " sold " + quantity
+									+ " " + toBeSold + " in "
+									+ individual.getCurrent());
+
 							System.out.println(individual.getBackpack());
 						}
 					}
@@ -111,13 +113,13 @@ public class Turn {
 			if (individual.getCurrent().toString()
 					.equals(thePlayer.getCurrent().toString())) {
 				if (individual instanceof Trader) {
-						//&& rand.nextDouble() <= thePlayer.getAgility() / 100) {
+					// && rand.nextDouble() <= thePlayer.getAgility() / 100) {
 					System.out.println("ENCOUNTER A TRADER"
 							+ individual.toString());
 					return individual;
 				} else if (individual instanceof Rocket) {
-						//&& rand.nextDouble() >= thePlayer.getAgility() / 100) {
-					
+					// && rand.nextDouble() >= thePlayer.getAgility() / 100) {
+
 					System.out.println("ENCOUNTER A ROCKET"
 							+ individual.toString());
 					return individual;

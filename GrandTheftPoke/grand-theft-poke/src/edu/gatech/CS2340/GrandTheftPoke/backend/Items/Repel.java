@@ -11,25 +11,25 @@ public class Repel extends Item implements Usable {
 		return 6;
 	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        return true;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		return true;
+	}
 
-    @Override
-    public void use(Person person) {
-       //should be done
-    }
-    
-    @Override
+	@Override
+	public void use(Person person) {
+		// should be done
+	}
+
+	@Override
 	public void unUse(Person person) {
-		//should be done
+		// should be done
 	}
 
 	@Override

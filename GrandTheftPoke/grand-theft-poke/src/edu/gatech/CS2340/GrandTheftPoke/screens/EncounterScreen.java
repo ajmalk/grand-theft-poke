@@ -30,15 +30,17 @@ public class EncounterScreen extends AbstractScreen {
 	private Person myPerson;
 
 	private Table table;
+
 	public EncounterScreen(GTPoke game, Person encounteredPerson) {
 		super(game);
 		this.game = game;
 		myPerson = encounteredPerson;
-		if(myPerson instanceof Trader) {
+		if (myPerson instanceof Trader) {
 			((Trader) myPerson).initializeMarket();
 		}
 	}
-	
+
+	@Override
 	public void show() {
 		super.show();
 
@@ -58,18 +60,18 @@ public class EncounterScreen extends AbstractScreen {
 		trade = new Button(new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 75, 97, 283, 555)), new TextureRegionDrawable(
 				new TextureRegion(ButtonSprite, 75, 96, 283, 555)));
-		if(myPerson instanceof Trader) {
+		if (myPerson instanceof Trader) {
 			trade.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
-					game.setScreen(game.getMarketScreen(((Trader)myPerson).getMarket()));
+					game.setScreen(game.getMarketScreen(((Trader) myPerson)
+							.getMarket()));
 				}
 			});
 		} else {
 			trade.setDisabled(false);
 			trade.setTouchable(Touchable.enabled);
 		}
-		
 
 		fight = new Button(new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 358, 97, 283, 555)), new TextureRegionDrawable(
@@ -87,23 +89,23 @@ public class EncounterScreen extends AbstractScreen {
 		flee.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				if(myPerson instanceof Trader) {
+				if (myPerson instanceof Trader) {
 					game.setScreen(game.getCurrentTownScreenFromEncounter());
 				}
-				if(game.getPlayer().flee()) {
+				if (game.getPlayer().flee()) {
 					System.out.println("true");
 					game.setScreen(game.getCurrentTownScreenFromEncounter());
 				}
 			}
 		});
 		stage.addActor(backgroundImage);
-		
+
 		trade.setPosition(75, 116);
 		stage.addActor(trade);
-		
+
 		fight.setPosition(358, 116);
 		stage.addActor(fight);
-		
+
 		flee.setPosition(641, 116);
 		stage.addActor(flee);
 	}
