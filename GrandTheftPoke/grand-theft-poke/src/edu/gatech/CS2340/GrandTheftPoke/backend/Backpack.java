@@ -177,8 +177,8 @@ public class Backpack {
 	@Override
 	public String toString() {
 		String toBeReturned = "Backpack Contents: \n";
-		Set keys = contents.entrySet();
-		for (Iterator it = keys.iterator(); it.hasNext();) {
+		Set<?> keys = contents.entrySet();
+		for (Iterator<?> it = keys.iterator(); it.hasNext();) {
 			toBeReturned += it.next() + "\n";
 		}
 		return toBeReturned;

@@ -240,7 +240,7 @@ public class GTPoke extends Game {
 		return xstream;
 	}
 
-	public Screen getBattleScreen(Person myPerson) {
-		return new Battle(this, myPerson);
-	}
+//	public Screen getBattleScreen(Person myPerson) {
+//		return new Battle(this, myPerson);
+//	}
 }
