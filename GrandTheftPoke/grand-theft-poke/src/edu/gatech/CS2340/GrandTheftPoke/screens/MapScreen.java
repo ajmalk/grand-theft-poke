@@ -400,7 +400,7 @@ public class MapScreen extends AbstractScreen {
 
 	vermillionCityButton.add("Vermillion City");
 	stage.addActor(vermillionCityButton);
-	vermillionCityButton.setPosition(180, 299);
+	vermillionCityButton.setPosition(730, 299);
 
 	lavenderTownButton.add("Lavender Town");
 	stage.addActor(lavenderTownButton);
