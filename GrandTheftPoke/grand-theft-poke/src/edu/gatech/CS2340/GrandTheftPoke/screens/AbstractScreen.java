@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 public abstract class AbstractScreen implements Screen {
-	protected final GTPoke game;// askjdbaskndkjnaskdjn
+	protected final GTPoke game;
 	protected final Stage stage;
 	private final SpriteBatch batch;
 	protected Skin skin;
@@ -37,22 +37,22 @@ public abstract class AbstractScreen implements Screen {
 
 	@Override
 	public void show() {
-		// should be done
+		
 	}
 
 	@Override
 	public void hide() {
-		// should be done
+		
 	}
 
 	@Override
 	public void pause() {
-		// should be done
+		
 	}
 
 	@Override
 	public void resume() {
-		// should be done
+		
 	}
 
 	@Override

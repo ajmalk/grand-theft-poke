@@ -1,6 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map.Entry;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -71,5 +72,10 @@ public class MarketPlace {
 	 */
 	public HashMap getStock() {
 		return stock;
+	}
+	
+	public Iterator iterator(){
+		return stock.entrySet().iterator();
+		
 	}
 }

@@ -24,19 +24,18 @@ public class ItemTile extends Button {
 	private Image icon;
 	private Label stockLabel, price;
 	private Backpack pack;
-
 	public Item getItem() {
 		return item;
 	}
 
 	// private Table tile;
 	public ItemTile(Item item, MarketPlaceItem stock) {
-		super(new TextureRegionDrawable(new TextureRegion(
-				GTPoke.getButtonSprite(), 0, 0, 200, 200)),
+		super(	new TextureRegionDrawable(new TextureRegion(
+						GTPoke.getButtonSprite(), 0, 0, 150, 150)),
 				new TextureRegionDrawable(new TextureRegion(
-						GTPoke.getButtonSprite(), 0, 200, 200, 200)),
+						GTPoke.getButtonSprite(), 0, 200, 150, 150)),
 				new TextureRegionDrawable(new TextureRegion(
-						GTPoke.getButtonSprite(), 0, 400, 200, 200)));
+						GTPoke.getButtonSprite(), 0, 400, 150, 150)));
 		this.item = item;
 		this.stock = stock;
 		Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
@@ -57,7 +56,7 @@ public class ItemTile extends Button {
 		row();
 		add(price);
 		update();
-		setSize(150, 200);
+		setSize(150, 150);
 		pad(12);
 
 	}
@@ -104,7 +103,7 @@ public class ItemTile extends Button {
 		add(item.toString());
 		row();
 		add(price);
-		setSize(150, 200);
+		setSize(400, 200);
 		pad(12);
 		update();
 	}

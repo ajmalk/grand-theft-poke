@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
@@ -21,10 +22,42 @@ public class Turn {
 	private Player thePlayer;
 	private Random rand;
 
+	
 	public Turn(GameMap theMap, ArrayList<Person> gameActors, Player thePlayer) {
 		this.theMap = theMap;
 		this.gameActors = gameActors;
 		this.thePlayer = thePlayer;
+		rand = new Random();
+	}
+	
+	public Turn(GameMap theMap, Player player, GlobalItemReference items){
+		gameActors = new ArrayList<Person>();
+		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f,
+				theMap, items));
+		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100, //lol - Ajmal
+				20, 1000f, theMap, items));
+		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 100, 100, 20,
+				1000f, theMap));
+		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f,
+				theMap));
+		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f,
+				theMap));
+		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20,
+				1000f, theMap));
+		this.theMap = theMap;
+		this.thePlayer = player;
 		rand = new Random();
 	}
 

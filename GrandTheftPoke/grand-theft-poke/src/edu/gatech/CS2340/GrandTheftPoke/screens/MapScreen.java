@@ -422,5 +422,4 @@ public class MapScreen extends AbstractScreen {
 	public void dispose() {
 		super.dispose();
 	}
-
 }

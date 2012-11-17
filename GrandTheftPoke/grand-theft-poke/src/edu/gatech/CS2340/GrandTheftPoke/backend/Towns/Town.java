@@ -24,15 +24,15 @@ public class Town implements Comparable {
 	private String name;
 
 	@XStreamOmitField
-	private Set<Path> adjacencies;
-
-	@XStreamOmitField
 	private Town previous;
 
 	protected MarketPlace myMarket;
 
 	@XStreamOmitField
 	private String filepath;
+	
+	@XStreamOmitField
+	private Set<Path> adjacencies;
 
 	public Town(String name, MarketPlace myMarket) {
 		this.name = name;
