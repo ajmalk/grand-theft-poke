@@ -30,7 +30,6 @@ public class StarterPokemon extends AbstractScreen {
 	private Button ConfirmButton;
 	private int confirmX = 356;
 	private int confirmY = 10;
-	//private int strength = 0, agility = 0, trade = 0, stamina = 0;
 
 	private Texture title;
 
@@ -53,7 +52,6 @@ public class StarterPokemon extends AbstractScreen {
 		stage.clear();
 
 		backgroundImage = new Image(background);
-		// backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.setPosition(60, 600);
 		backgroundImage.addAction(fadeIn(0.75f));
@@ -118,7 +116,7 @@ public class StarterPokemon extends AbstractScreen {
 		ConfirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(game.getCurrentTownScreen());
+				game.setScreen(game.getCurrentTownScreenFromEncounter());
 			}
 		});
 	}
@@ -126,8 +124,6 @@ public class StarterPokemon extends AbstractScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-
-		// remVal.setText(remainder.toString());
 
 		table.clear();
 
@@ -139,9 +135,6 @@ public class StarterPokemon extends AbstractScreen {
 		stage.addActor(backgroundImage);
 		ConfirmButton.setPosition(confirmX, confirmY);
 		stage.addActor(ConfirmButton);
-
-		// table.debug();
-		// table.drawDebug(stage);
 	}
 
 	@Override

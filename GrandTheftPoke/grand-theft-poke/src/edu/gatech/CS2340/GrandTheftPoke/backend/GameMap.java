@@ -122,6 +122,10 @@ public class GameMap {
 	public Set<Town> getTownSet() {
 		return townSet;
 	}
+	
+	public void setStartTown(Town startTown) {
+		this.startTown = startTown;
+	}
 
 	public static void computePaths(Town source) {
 		source.setMinimumDistance(0);

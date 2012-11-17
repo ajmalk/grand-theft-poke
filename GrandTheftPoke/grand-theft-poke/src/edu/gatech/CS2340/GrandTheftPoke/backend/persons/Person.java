@@ -230,23 +230,23 @@ public abstract class Person {
 	 * @param other
 	 * @return
 	 */
-	public int attack() {
-		float fatigue = currentStamina/stamina;
-		if(currentStamina > 0) {
+	public int attack(int turnCount) {
+		float fatigue = (float)currentStamina/stamina;
+		if(currentStamina > 1 && turnCount % 5 == 0) {
 			currentStamina--;
 		}
-		return (int)fatigue*strength;
+		return (int)(fatigue*strength);
 		
 	}
 	
 	public void defend(int incomingDamage) {
-		float fatigue = currentStamina/stamina;
+		float fatigue = (float)currentStamina/stamina;
 		float dodge = agility/100;
 		
 		Random rand = new Random();
 		double chance = rand.nextDouble();
 		
-		if(chance > fatigue*dodge) {
+		if(chance < fatigue*dodge) {
 			return;
 		}
 		

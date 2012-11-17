@@ -32,6 +32,7 @@ public class Backpack {
 		contents = new HashMap<Item, Integer>();
 	}
 	
+
 	public boolean equals(Backpack pack){
 		if(pack.capacity != capacity || pack.maxRange != maxRange)
 			return false;
@@ -40,6 +41,14 @@ public class Backpack {
 					contents.get(entry.getKey()).equals(entry.getValue())))
 				return false;
 		return true;
+}
+
+	public int getAmount(Item toBeRetrieved) {
+		if(contents.containsKey(toBeRetrieved)) {
+			return contents.get(toBeRetrieved);
+		}
+		
+		return 0;
 	}
 	/**
 	 * Creates a backpack with specified maximum range and capacity

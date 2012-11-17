@@ -25,9 +25,11 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 public class PalletTown extends AbstractScreen {
 
 	private	Table table;
+	private Table healthTable;
 	private	Table bp;
 	private Texture background;
 	private Image backgroundImage;
+	private Image healthImage;
 	private Button mapButton;
 	private Button pokeCenterButton;
 	private Button marketPlaceButton;
@@ -44,17 +46,22 @@ public class PalletTown extends AbstractScreen {
 		super.show();
 		
 		table = new Table(getSkin());
+		healthTable = new Table(getSkin());
 		bp = new Table(getSkin());
 		
 		table.setFillParent(true);
+		healthTable.setFillParent(true);
 		bp.setFillParent(true);
 		
 		background = new Texture(strTown);
 		
 		Texture ButtonSprite = new Texture("images//icons//PalletTown.png");
+		Texture BackpackSprite = new Texture("images//icons//backpackIcon.png");
 		stage.clear();
 	
 		backgroundImage = new Image(background);
+		healthImage = new Image(new TextureRegionDrawable(new TextureRegion(ButtonSprite, 183, 707, 667, 63)));
+		
 		//backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
@@ -88,8 +95,8 @@ public class PalletTown extends AbstractScreen {
 			}
 		});
 		backPackButton = new Button(
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 25, 267,88, 108)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 25, 1040, 88, 108)));
+				new TextureRegionDrawable(new TextureRegion(BackpackSprite, 408, 270,99,117 )),
+				new TextureRegionDrawable(new TextureRegion(BackpackSprite, 638, 418, 142, 163)));
 		backPackButton.addListener(new ClickListener() {
 			@Override
 			public void clicked (InputEvent event, float x, float y) {
@@ -115,23 +122,28 @@ public class PalletTown extends AbstractScreen {
 		
 		table.clear();
 		bp.clear();
+		healthTable.clear();
 		table.setPosition(0, -188);
 		table.add(mapButton);
 		table.add(pokeCenterButton);
 		table.add(marketPlaceButton);
 		table.add(gymLeaderButton);
 		
+		healthTable.setPosition(0, -350);
+		healthTable.add(healthImage);
+		
 		
 		
 		stage.addActor(backgroundImage);
 		stage.addActor(table);
+	
 		
 		bp.setPosition(-450, 60);
 		bp.add(backPackButton);
 		
 		
 		stage.addActor(bp);
-		
+		stage.addActor(healthTable);
 		//remVal.setText(remainder.toString());
 		
 		//table.debug();

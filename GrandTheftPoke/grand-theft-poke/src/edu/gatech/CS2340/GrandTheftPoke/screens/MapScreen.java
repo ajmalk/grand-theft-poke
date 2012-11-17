@@ -36,6 +36,8 @@ public class MapScreen extends AbstractScreen {
 	private TownTile saffronCityButton;
 	private TownTile cinnabarIslandButton;
 	private TownTile powerPlantButton;
+	private TownTile celadonCityButton;
+	private Button saveButton;
 	private Button backButton;
 
 
@@ -58,7 +60,7 @@ public class MapScreen extends AbstractScreen {
 		backgroundImage = new Image(background);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
-		
+
 		Texture townTileSprite = new Texture("images//icons//newball.png");
 		ButtonStyle townTileStyle = new ButtonStyle();
 		townTileStyle.up = new TextureRegionDrawable(new TextureRegion(townTileSprite, 0,
@@ -92,8 +94,10 @@ public class MapScreen extends AbstractScreen {
 				vermillionCityButton= new TownTile(theTown, townTileStyle);
 			} else if (theTown.toString().equals("Lavender Town")){
 				lavenderTownButton= new TownTile(theTown, townTileStyle);
+			} else if(theTown.toString().equals("Celadon City")) {
+				celadonCityButton = new TownTile(theTown, townTileStyle);
 			} else {
-				
+
 			}
 
 			int distance = theMap.Dijkstras(game.getPlayer().getCurrent(), theTown.toString());
@@ -131,8 +135,11 @@ public class MapScreen extends AbstractScreen {
 				} else if(theTown.toString().equals("Lavender Town")){
 					lavenderTownButton.setDisabled(true);
 					lavenderTownButton.setTouchable(Touchable.disabled);
+				} else if(theTown.toString().equals("Celadon City")) {
+					celadonCityButton.setDisabled(true);
+					celadonCityButton.setTouchable(Touchable.disabled);
 				} else {
-					
+
 				}
 			}
 		}
@@ -146,13 +153,13 @@ public class MapScreen extends AbstractScreen {
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 0, 69, 320, 70));
 
-		backButton = new Button(style);
+		saveButton = new Button(style);
 
-		backButton.setSkin(getSkin());
-		backButton.add("Back");
-		backButton.setPosition(10, 10);
+		saveButton.setSkin(getSkin());
+		saveButton.add("Save");
+		saveButton.setPosition(10, 10);
 
-		backButton.addListener(new ClickListener() {
+		saveButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.save();
@@ -161,223 +168,261 @@ public class MapScreen extends AbstractScreen {
 			}
 		});
 
-		viridianCityButton.setStyle(style);
-		palletTownButton.setStyle(style);
-		powerPlantButton.setStyle(style);
-		pewterCityButton.setStyle(style);
-		ceruleanCityButton.setStyle(style);
-		fuchsiaCityButton.setStyle(style);
-		cinnabarIslandButton.setStyle(style);
-		saffronCityButton.setStyle(style);
-		vermillionCityButton.setStyle(style);
-		lavenderTownButton.setStyle(style);
+		backButton = new Button(style);
 
-		viridianCityButton.setSkin(getSkin());
-		palletTownButton.setSkin(getSkin());
-		powerPlantButton.setSkin(getSkin());
-		pewterCityButton.setSkin(getSkin());
-		ceruleanCityButton.setSkin(getSkin());
-		fuchsiaCityButton.setSkin(getSkin());
-		cinnabarIslandButton.setSkin(getSkin());
-		saffronCityButton.setSkin(getSkin());
-		vermillionCityButton.setSkin(getSkin());
-		lavenderTownButton.setSkin(getSkin());
+		backButton.setSkin(getSkin());
+		backButton.add("Back");
+		backButton.setPosition(10, 70);
 
-		viridianCityButton.addListener(new ClickListener() {
+		backButton.addListener(new ClickListener() {
 			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-				//viridianCityButton.setStyle(STYLE WITH PLAYER ON IT);
-			}
-
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
+			public void clicked (InputEvent event, float x, float y) {
 				game.setScreen(game.getCurrentTownScreen());
 			}
-
 		});
+		//return true;
+	
 
-		palletTownButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	viridianCityButton.setStyle(style);
+	palletTownButton.setStyle(style);
+	powerPlantButton.setStyle(style);
+	pewterCityButton.setStyle(style);
+	ceruleanCityButton.setStyle(style);
+	fuchsiaCityButton.setStyle(style);
+	cinnabarIslandButton.setStyle(style);
+	saffronCityButton.setStyle(style);
+	vermillionCityButton.setStyle(style);
+	lavenderTownButton.setStyle(style);
+	celadonCityButton.setStyle(style);
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+	viridianCityButton.setSkin(getSkin());
+	palletTownButton.setSkin(getSkin());
+	powerPlantButton.setSkin(getSkin());
+	pewterCityButton.setSkin(getSkin());
+	ceruleanCityButton.setSkin(getSkin());
+	fuchsiaCityButton.setSkin(getSkin());
+	cinnabarIslandButton.setSkin(getSkin());
+	saffronCityButton.setSkin(getSkin());
+	vermillionCityButton.setSkin(getSkin());
+	lavenderTownButton.setSkin(getSkin());
+	celadonCityButton.setSkin(getSkin());
 
-		});
+	viridianCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+			//viridianCityButton.setStyle(STYLE WITH PLAYER ON IT);
+		}
 
-		powerPlantButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				System.out.println(destination);
-				game.getPlayer().move(destination);
-			}
+	});
+	
+	celadonCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+			//viridianCityButton.setStyle(STYLE WITH PLAYER ON IT);
+		}
 
-		});
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		pewterCityButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	});
+	
+	
+	palletTownButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		});
+	});
 
-		ceruleanCityButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	powerPlantButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			System.out.println(destination);
+			game.getPlayer().move(destination);
+		}
 
-		});
+	});
 
-		fuchsiaCityButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	pewterCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		});
+	});
 
-		cinnabarIslandButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	ceruleanCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		});
+	});
 
-		saffronCityButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	fuchsiaCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		});
+	});
 
-		vermillionCityButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	cinnabarIslandButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		});
+	});
 
-		lavenderTownButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				move(event.getListenerActor());
-			}
+	saffronCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
-				game.getPlayer().move(destination);
-				game.setScreen(game.getCurrentTownScreen());
-			}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-		});
+	});
 
-		stage.addActor(backgroundImage);
-		
-		viridianCityButton.add("Viridian City");
-		stage.addActor(viridianCityButton);
-		viridianCityButton.setPosition(334, 391);
-		
-		palletTownButton.add("Pallet Town");
-		stage.addActor(palletTownButton);
-		palletTownButton.setPosition(337, 180);
-		
-		powerPlantButton.add("Power Plant");
-		stage.addActor(powerPlantButton);
-		powerPlantButton.setPosition(849, 693);
-		
-		pewterCityButton.add("Pewter City");
-		stage.addActor(pewterCityButton);
-		pewterCityButton.setPosition(346, 627);
-		
-		ceruleanCityButton.add("Cerulean City");
-		stage.addActor(ceruleanCityButton);
-		ceruleanCityButton.setPosition(732, 582);
-		
-		saffronCityButton.add("Saffron City");
-		stage.addActor(saffronCityButton);
-		saffronCityButton.setPosition(720, 438);
-		
-		cinnabarIslandButton.add("Cinnabar Island");
-		stage.addActor(cinnabarIslandButton);
-		cinnabarIslandButton.setPosition(334, 35);
-		
-		vermillionCityButton.add("Vermillion City");
-		stage.addActor(vermillionCityButton);
-		vermillionCityButton.setPosition(220, 309);
-		
-		lavenderTownButton.add("Lavender Town");
-		stage.addActor(lavenderTownButton);
-		lavenderTownButton.setPosition(888, 418);
-		
-		fuchsiaCityButton.add("Fuchsia City");
-		stage.addActor(fuchsiaCityButton);
-		fuchsiaCityButton.setPosition(582, 132);
+	vermillionCityButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-		stage.addActor(backButton);
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
 
-	}
+	});
 
-	@Override
-	public void resize(int width, int height) {
-		super.resize(width, height);
-	}
+	lavenderTownButton.addListener(new ClickListener() {
+		@Override
+		public void clicked(InputEvent event, float x, float y) {
+			move(event.getListenerActor());
+		}
 
-	@Override
-	public void dispose() {
-		super.dispose();
-	}
+		private void move(Actor listenerActor) {
+			Town destination = ((TownTile) (listenerActor)).getTown();
+			game.getPlayer().move(destination);
+			game.setScreen(game.getCurrentTownScreen());
+		}
+
+	});
+
+	stage.addActor(backgroundImage);
+
+	viridianCityButton.add("Viridian City");
+	stage.addActor(viridianCityButton);
+	viridianCityButton.setPosition(355, 391);
+
+	palletTownButton.add("Pallet Town");
+	stage.addActor(palletTownButton);
+	palletTownButton.setPosition(355, 210);
+
+	powerPlantButton.add("Power Plant");
+	stage.addActor(powerPlantButton);
+	powerPlantButton.setPosition(849, 693);
+
+	pewterCityButton.add("Pewter City");
+	stage.addActor(pewterCityButton);
+	pewterCityButton.setPosition(375, 607);
+
+	ceruleanCityButton.add("Cerulean City");
+	stage.addActor(ceruleanCityButton);
+	ceruleanCityButton.setPosition(742, 562);
+
+	saffronCityButton.add("Saffron City");
+	stage.addActor(saffronCityButton);
+	saffronCityButton.setPosition(730, 418);
+	
+	celadonCityButton.add("Celadon City");
+	stage.addActor(celadonCityButton);
+	celadonCityButton.setPosition(610, 393);
+
+	cinnabarIslandButton.add("Cinnabar Island");
+	stage.addActor(cinnabarIslandButton);
+	cinnabarIslandButton.setPosition(365, 25);
+
+	vermillionCityButton.add("Vermillion City");
+	stage.addActor(vermillionCityButton);
+	vermillionCityButton.setPosition(730, 299);
+
+	lavenderTownButton.add("Lavender Town");
+	stage.addActor(lavenderTownButton);
+	lavenderTownButton.setPosition(898, 408);
+
+	fuchsiaCityButton.add("Fuchsia City");
+	stage.addActor(fuchsiaCityButton);
+	fuchsiaCityButton.setPosition(602, 122);
+
+	stage.addActor(saveButton);
+	stage.addActor(backButton);
+
+}
+
+@Override
+public void resize(int width, int height) {
+	super.resize(width, height);
+}
+
+@Override
+public void dispose() {
+	super.dispose();
+}
 
 }

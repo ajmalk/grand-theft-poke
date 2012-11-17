@@ -18,6 +18,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.*;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
+import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
@@ -39,32 +40,27 @@ public class GTPoke extends Game {
 	private static Texture ButtonSprite;
 	private static final int INITIAL_RANGE = 80;
 	private static final int INITIAL_CARRY = 30;
-	private static final int INITIAL_HEALTH = 500;
+	private static final int INITIAL_HEALTH = 100;
 	private XStream xstream;
 	private ArrayList<SaveGame> saves;
 	private ArrayList<String> savestrs;
 	
 	public GTPoke(){
-		System.out.println("I'm getting called");
 		gameActors = new ArrayList<Person>();
 		items = new GlobalItemReference();
 		theMap = makeMap();
-		xstream = new XStream();	
-		saves = new ArrayList<SaveGame>();
-		savestrs = new ArrayList<String>();
-		items = new GlobalItemReference();
-		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
+		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
+		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 100, 100, 20, 1000f, theMap));
 		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
+		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f, theMap));
+		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20, 1000f, theMap));
 	}
 
 	@Override
@@ -146,12 +142,8 @@ public class GTPoke extends Game {
 
 	public void createPlayer(Integer strength, Integer agility, Integer trade,
 			Integer stamina) {
-		//items = new GlobalItemReference();
-		//theMap = makeMap();
 		thePlayer = new Player(playerName, strength, agility, trade, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
-		//thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getHealthPotion(), 1);
-		//thePlayer.buy(thePlayer.getCurrent().getMarket(), items.getRepel(), 1);
 		turnController = new Turn(theMap, gameActors, thePlayer);
 	}
 	public boolean equals(GTPoke game){
@@ -207,9 +199,13 @@ public class GTPoke extends Game {
 	
 	public Screen getCurrentTownScreen() {
 		Person potentialEncounter = turnController.takeATurn();
-		//if(potentialEncounter != null) {
-		//	return new EncounterScreen(this, potentialEncounter);
-		//}
+		if(potentialEncounter != null) {
+			return new EncounterScreen(this, potentialEncounter);
+		}
+		return new PalletTown(this, thePlayer.getCurrent().getImage());
+	}
+	
+	public Screen getCurrentTownScreenFromEncounter() {
 		return new PalletTown(this, thePlayer.getCurrent().getImage());
 	}
 	
@@ -227,5 +223,9 @@ public class GTPoke extends Game {
 	
 	public XStream getSerializer(){
 		return xstream;
+	}
+
+	public Screen getBattleScreen(Person myPerson) {
+		return new Battle(this, myPerson);
 	}
 }

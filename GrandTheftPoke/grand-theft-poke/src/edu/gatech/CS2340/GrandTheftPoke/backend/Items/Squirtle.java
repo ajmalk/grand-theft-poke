@@ -1,39 +1,19 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
-
-public class Squirtle extends Item {
-    @Override
-	public int hashCode() {
-		return 8;
-	}
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Squirtle other = (Squirtle) obj;
-        return true;
+public class Squirtle extends Pokemon {
+    public Squirtle() {
+    	super(3, 3, 2, 2);
     }
-	public boolean Use(Person person){
-		return false;
-	}
 
 
 	@Override
 	public String toString() {
-		return "Squirtle Pokemon";
+		return "Squirtle";
 	}
 
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "I'm a squirtle";
 	}
 }
