@@ -27,8 +27,8 @@ public class MarketPlaceItem {
 	public MarketPlaceItem(Float price, Float stock) {
 		EQIL_PRICE = this.price = price;
 		EQIL_STOCK = this.stock = stock + 500;
-		CONS_ELASTICITY = -1.5f;
-		PROD_ELASTICITY = 3f;
+		CONS_ELASTICITY = -1f;
+		PROD_ELASTICITY = 2f;
 		STOCK_RATIO = 0.1f;
 	}
 
