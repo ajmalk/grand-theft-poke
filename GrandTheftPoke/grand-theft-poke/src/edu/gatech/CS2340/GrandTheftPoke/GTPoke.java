@@ -221,7 +221,7 @@ public class GTPoke extends Game {
 	}
 
 	public Screen getMarketScreen(MarketPlace theMarket) {
-		return new MarketOld(this, theMarket);
+		return new Market(this, theMarket);
 	}
 
 	public Screen getSkillPointsScreen() {
