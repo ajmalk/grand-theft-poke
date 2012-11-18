@@ -1,5 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
@@ -36,6 +39,7 @@ public class Market extends AbstractScreen {
 	private ItemDescTile description;
 	private Button backButton;
 	private Map<Item, ItemTile> backpack, marketplace;
+	private Image background;
 
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
@@ -58,6 +62,12 @@ public class Market extends AbstractScreen {
 	
 	@Override
 	public void show() {
+		background = new Image(game.getTextures().findRegion("market-place"));
+		background.setFillParent(true);
+		background.getColor().a = 0f;
+		background.addAction(fadeIn(0.75f));
+		stage.addActor(background);
+		
 		updatetables();
 		
 		addItems();
@@ -107,58 +117,15 @@ public class Market extends AbstractScreen {
 		table.left().setPosition(33, 100);
 	}
 	
-//	public void updateMarket(ItemTile tile){
-//		//if(markettable.isAscendantOf(tile))
-//		if(((MarketPlaceItem)market.getStock().get(tile.getItem())).getStock() == 0){
-//			//markettable.getCell(tile).ignore();
-//			//markettable.removeActor(tile);
-//		}
-//		else {
-//			//ItemTile newTile = new ItemTile(tile.getItem(), tile.getStockInfo());
-//			//backpacktable.add(newTile);
-//			//marketItemGroup.add(newTile);
-//		}
-//	}
-	
-//	public void updateBackpack(final ItemTile tile){
-//		//if(markettable.isAscendantOf(tile))
-////		if(game.getPlayer().getBackpack().getContents().get(tile.getItem()) == 0){
-////			backpacktable.getCell(tile).ignore();
-////			backpacktable.removeActor(tile);
-////			((ItemTile)markettable.getCell(tile).getWidget()).setChecked(true);
-////		}
-////		else {
-////			ItemTile newTile = new ItemTile(market, tile.getItem(), 1, playerPack);
-////			newTile.addListener(new ClickListener() {
-////				@Override
-////				public void clicked(InputEvent event, float x, float y) {
-////					description.update(tile.getItem(), 
-////							(MarketPlaceItem) market.getStock().get(tile.getItem()), 1, game.getPlayer());
-////				}
-////			});
-////			backpacktable.add(newTile);
-////			marketItemGroup.add(newTile);
-////			//((ClickListener)newTile.getListeners().first()).clicked(new InputEvent(), 0, 0);
-////			newTile.setChecked(true);
-////		}
-//	}
-	
 	public void addItems(){
 		int col = 0;
 		markettable.clear();
-		//marketplace.clear();
 		marketItemGroup = new ButtonGroup();
 		for (Iterator<Map.Entry<Item, ItemTile>> i = marketplace.entrySet().iterator(); i.hasNext();) {
 			final Map.Entry<Item, ItemTile> item = i.next();
 			if (item.getValue().getStock() != 0) {
 				markettable.add(item.getValue());
 				marketItemGroup.add(item.getValue());
-//				tile.addListener(new ClickListener() {
-//					@Override
-//					public void clicked(InputEvent event, float x, float y) {
-//						//description.update(item.getKey(), item.getValue(), game.getPlayer(), tile);
-//					}
-//				});
 				if (col++ % 2 == 1)
 					markettable.row();
 			}
@@ -166,7 +133,7 @@ public class Market extends AbstractScreen {
 		
 		col = 0;
 		backpacktable.clear();
-		//backpack.clear();
+		
 		for (Iterator<java.util.Map.Entry<Item, ItemTile>> i = backpack.entrySet().iterator(); i.hasNext();) {
 			final Entry<Item, ItemTile> item = i.next();
 			if (item.getValue().getStock() != null) {
@@ -181,21 +148,11 @@ public class Market extends AbstractScreen {
 	void updatetables(){
 		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = market.iterator(); i.hasNext();) {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();
-			//if (item.getValue().getStock() != 0) {
 				final ItemTile markettile = new ItemTile(item.getKey(), item.getValue());
 				Integer pack = playerPack.getContents().get(item.getKey());
 				ItemTile backpacktile;
-				//if(pack == null)
 					backpacktile = new ItemTile(market, item.getKey(), pack, playerPack);
 				marketplace.put(item.getKey(), markettile);
-				//backpack.put(item.getKey(), backpacktile);
-//				tile.addListener(new ClickListener() {
-//					@Override
-//					public void clicked(InputEvent event, float x, float y) {
-//						//description.update(item.getKey(), item.getValue(), game.getPlayer(), tile);
-//					}
-//				});
-			//}
 		}
 		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
 				.getContents().entrySet().iterator(); i.hasNext();) {
@@ -203,13 +160,7 @@ public class Market extends AbstractScreen {
 			ItemTile tile = new ItemTile(market, item.getKey(),
 					item.getValue(), playerPack);
 			backpack.put(item.getKey(), tile);
-//			tile.addListener(new ClickListener() {
-//				@Override
-//				public void clicked(InputEvent event, float x, float y) {
-//					//description.update(item.getKey(), 
-//					//		(MarketPlaceItem) market.getStock().get(item.getKey()), item.getValue(), game.getPlayer());
-//				}
-//			});
+
 		}
 	}
 	
@@ -226,12 +177,7 @@ public class Market extends AbstractScreen {
 			if(item.getValue().getStock() == 0){
 				iter.remove();
 				addItems();
-				//marketItemGroup.uncheckAll();
-				//markettable.getCell(item.getValue()).ignore();
-				//backpack.get(((ItemTile) tile).getItem()).setChecked(true);
 			}
-			
-			//else markettable.getCell(item.getValue()).ignore(false);
 		}
 		iter = backpack.entrySet().iterator();
 		for (; iter.hasNext(); ) {
@@ -244,21 +190,9 @@ public class Market extends AbstractScreen {
 			if(item.getValue().getStock() == null){
 				iter.remove();
 				addItems();
-				//marketItemGroup.uncheckAll();
-//				if(item.getValue().getStock() == 1){
-//					
-//				}
-				//markettable.getCell(item.getValue()).ignore();
-				//backpack.get(((ItemTile) tile).getItem()).setChecked(true);
 			}
-			//else markettable.getCell(item.getValue()).ignore(false);
 		}
-		//if(backpack.size() != playerPack.getContents().)
 		description.update(((ItemTile)marketItemGroup.getChecked()), game.getPlayer());
-		//for(Actor tile : backpacktable.getChildren())
-		//	((Table)tile).debug().drawDebug(stage);
-		//backpacktable.debug().drawDebug(stage);
-		//table.debug().drawDebug(stage);
 		table.setSize(1024, 525);
 		stage.addActor(table);
 		stage.addActor(backButton);

@@ -12,13 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-//import com.badlogic.gdx.scenes.scene2d.Actor;
-//import com.badlogic.gdx.scenes.scene2d.ui.Label;
-//import com.badlogic.gdx.scenes.scene2d.ui.Slider;
-//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 
-//check imports
 
 public class TownScreen extends AbstractScreen {
 

@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.thoughtworks.xstream.XStream;
 
@@ -54,6 +55,7 @@ public class GTPoke extends Game {
 	private ArrayList<SaveGame> saves;
 	private ArrayList<String> savestrs;
 	private Screen nextScreen, prevScreen;
+	private Table statusBar;
 
 	@Override
 	public void create() {
@@ -69,11 +71,16 @@ public class GTPoke extends Game {
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
+		statusBar = new Table();
 		
 		gameActors = new ArrayList<Person>();
 		theMap = makeMap();
 		
 		setScreen(getSplashScreen());
+	}
+	
+	public Table getStatusBar(){
+		return statusBar;
 	}
 	
 	public TextureAtlas getTextures(){
