@@ -27,8 +27,8 @@ public class MarketPlaceItem {
 	public MarketPlaceItem(Float price, Float stock) {
 		EQIL_PRICE = this.price = price;
 		EQIL_STOCK = this.stock = stock;
-		CONS_ELASTICITY = -1;
-		PROD_ELASTICITY = 2;
+		CONS_ELASTICITY = -1.5f;
+		PROD_ELASTICITY = 3f;
 		STOCK_RATIO = 0.1f;
 	}
 
@@ -84,12 +84,12 @@ public class MarketPlaceItem {
 		return (int) stock;
 	}
 
-	private float consumption(float price) {
+	public float consumption(float price) {
 		return (float) Math.pow((price / EQIL_PRICE), CONS_ELASTICITY)
 				* EQIL_STOCK;
 	}
 
-	private float production(float price) {
+	public float production(float price) {
 		return (float) Math.pow((price / EQIL_PRICE), PROD_ELASTICITY)
 				* EQIL_STOCK;
 	}
@@ -122,7 +122,7 @@ public class MarketPlaceItem {
 					* Math.pow(EQIL_PRICE, CONS_ELASTICITY)
 					* Math.pow(price, PROD_ELASTICITY - 1);
 			temp += price;
-			if (Math.abs(price - temp) < 0.001) {
+			if (Math.abs(price - temp) < 0.00001) {
 				break;
 			}
 			price = temp;

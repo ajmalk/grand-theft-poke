@@ -78,7 +78,7 @@ public class MainMenu extends AbstractScreen {
 		DebugButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(new Market(game, ((Town) (new GameMap(game.getItems())).getTownSet().toArray()[1]).getMarket() ));
+				game.setScreen(new MarketPlaceItemDemo(game));
 			}
 		});
 		
