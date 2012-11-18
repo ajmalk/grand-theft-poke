@@ -44,7 +44,7 @@ public class Battle extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		table = new Table(getSkin());
+		table = new Table(game.getSkin());
 		table.setFillParent(true);
 		
 		Texture ButtonSprite = new Texture("images//icons//battle.png");

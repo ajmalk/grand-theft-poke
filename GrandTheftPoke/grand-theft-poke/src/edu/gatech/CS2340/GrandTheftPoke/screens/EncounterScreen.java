@@ -44,7 +44,7 @@ public class EncounterScreen extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		table = new Table(getSkin());
+		table = new Table(game.getSkin());
 		table.setFillParent(true);
 
 		background = new Texture("images//icons//encounter.png");

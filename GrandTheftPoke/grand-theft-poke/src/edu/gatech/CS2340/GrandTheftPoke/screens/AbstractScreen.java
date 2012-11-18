@@ -13,7 +13,6 @@ public abstract class AbstractScreen implements Screen {
 	protected final GTPoke game;
 	protected final Stage stage;
 	private final SpriteBatch batch;
-	protected Skin skin;
 
 	public AbstractScreen(GTPoke game) {
 		this.game = game;
@@ -61,10 +60,5 @@ public abstract class AbstractScreen implements Screen {
 		batch.dispose();
 	}
 
-	protected Skin getSkin() {
-		if (skin == null) {
-			skin = new Skin(Gdx.files.internal("skins//uiskin.json"));
-		}
-		return skin;
-	}
+	
 }

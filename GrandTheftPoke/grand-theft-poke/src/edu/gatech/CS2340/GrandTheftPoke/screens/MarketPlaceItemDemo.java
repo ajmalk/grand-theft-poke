@@ -14,7 +14,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 
 public class MarketPlaceItemDemo extends AbstractScreen {
 	MarketPlaceItem item = new MarketPlaceItem(500f, 500f);
-	Table table = new Table(getSkin());
+	Table table = new Table(game.getSkin());
 	boolean lastLeft = false, lastRight = false, lastDown = false;
 	private Vector3 touchPos;
 	ShapeRenderer renderer;

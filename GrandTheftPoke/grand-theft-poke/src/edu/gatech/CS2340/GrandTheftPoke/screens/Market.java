@@ -100,7 +100,7 @@ public class Market extends AbstractScreen {
 				ButtonSprite, 0, 69, 320, 70));
 		backButton = new Button(style);
 
-		backButton.setSkin(getSkin());
+		backButton.setSkin(game.getSkin());
 		backButton.add("Back");
 		backButton.setPosition(22, 0);
 

@@ -37,9 +37,9 @@ public class TownScreen extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		table = new Table(getSkin());
-		healthTable = new Table(getSkin());
-		bp = new Table(getSkin());
+		table = new Table(game.getSkin());
+		healthTable = new Table(game.getSkin());
+		bp = new Table(game.getSkin());
 
 		table.setFillParent(true);
 		healthTable.setFillParent(true);
@@ -120,8 +120,8 @@ public class TownScreen extends AbstractScreen {
 		table.add(marketPlaceButton);
 		table.add(gymLeaderButton);
 
-		healthTable.setPosition(0, -350);
-		healthTable.add(healthImage);
+		//healthTable.setPosition(0, -350);
+		//healthTable.add(healthImage);
 
 		//stage.addActor(backgroundImage);
 		stage.addActor(table);
@@ -130,7 +130,7 @@ public class TownScreen extends AbstractScreen {
 		bp.add(backPackButton);
 
 		stage.addActor(bp);
-		stage.addActor(healthTable);
+		stage.addActor(game.getStatusBar());
 		// remVal.setText(remainder.toString());
 
 		// table.debug();
