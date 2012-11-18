@@ -26,7 +26,7 @@ public class MarketPlaceItem {
 	 */
 	public MarketPlaceItem(Float price, Float stock) {
 		EQIL_PRICE = this.price = price;
-		EQIL_STOCK = this.stock = stock;
+		EQIL_STOCK = this.stock = stock + 500;
 		CONS_ELASTICITY = -1.5f;
 		PROD_ELASTICITY = 3f;
 		STOCK_RATIO = 0.1f;
@@ -81,7 +81,7 @@ public class MarketPlaceItem {
 	 * @return
 	 */
 	public Integer getStock() {
-		return (int) stock;
+		return (int) stock - 500;
 	}
 
 	public float consumption(float price) {
@@ -153,7 +153,7 @@ public class MarketPlaceItem {
 	 * @return the total price of the transaction
 	 */
 	public Float buy(int amount) {
-		if (amount < 0 || amount > stock) {
+		if (amount < 0 || amount > stock - 500) {
 			return 0f;
 		}
 		float price = getBuyingPrice(amount);

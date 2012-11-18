@@ -332,8 +332,6 @@ public abstract class Person {
 			if (myBackpack.place(theItem, quantity)) {
 				other.getBackpack().remove(theItem, quantity);
 			}
-			// myWallet.updateMoney(other.getWallet().getMoney());
-
 		}
 
 	}
