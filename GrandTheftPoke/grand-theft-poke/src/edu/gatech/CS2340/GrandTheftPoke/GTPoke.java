@@ -37,7 +37,11 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.SkillPoints;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SplashScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.StarterPokemon;
 import edu.gatech.CS2340.GrandTheftPoke.screens.TownScreen;
-
+/**
+ * 
+ * @author Team Rocket
+ *
+ */
 public class GTPoke extends Game {
 	private String playerName = "";
 	private Player thePlayer;
