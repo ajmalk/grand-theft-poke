@@ -93,9 +93,7 @@ public class Turn {
 			if (individual instanceof Trader) {
 
 				if (rand.nextBoolean()) {
-					currentMarket = individual.getCurrent().getMarket(); // BUY
-																			// SOMETHING
-																			// RANDOM
+					currentMarket = individual.getCurrent().getMarket();
 					currentStock = currentMarket.getStock().keySet();
 					currentStock.toArray(possibleItems);
 					int randomIndex = rand.nextInt(possibleItems.length);
@@ -106,16 +104,10 @@ public class Turn {
 							&& randomNum != 0) {
 						individual.buy(currentMarket,
 								possibleItems[randomIndex], randomNum);
-						System.out.println(individual + " bought " + randomNum
-								+ " " + possibleItems[randomIndex] + " in "
-								+ individual.getCurrent());
-						System.out.println(individual.getBackpack());
 					}
 
 				} else {
-					currentMarket = individual.getCurrent().getMarket(); // SELL
-																			// SOMETHING
-																			// RANDOM
+					currentMarket = individual.getCurrent().getMarket();
 					currentStock = individual.getBackpack().getContents()
 							.keySet();
 					currentStock.toArray(possibleItems);
@@ -128,11 +120,6 @@ public class Turn {
 						if (individual.getBackpack().checkContents(toBeSold,
 								quantity)) {
 							individual.sell(currentMarket, toBeSold, quantity);
-							System.out.println(individual + " sold " + quantity
-									+ " " + toBeSold + " in "
-									+ individual.getCurrent());
-
-							System.out.println(individual.getBackpack());
 						}
 					}
 				}
@@ -145,16 +132,11 @@ public class Turn {
 		for (Person individual : gameActors) {
 			if (individual.getCurrent().toString()
 					.equals(thePlayer.getCurrent().toString())) {
-				if (individual instanceof Trader) {
-					// && rand.nextDouble() <= thePlayer.getAgility() / 100) {
-					System.out.println("ENCOUNTER A TRADER"
-							+ individual.toString());
+				if (individual instanceof Trader
+					 && rand.nextDouble() <= thePlayer.getAgility() / 100) {
 					return individual;
-				} else if (individual instanceof Rocket) {
-					// && rand.nextDouble() >= thePlayer.getAgility() / 100) {
-
-					System.out.println("ENCOUNTER A ROCKET"
-							+ individual.toString());
+				} else if (individual instanceof Rocket
+					&& rand.nextDouble() >= thePlayer.getAgility() / 100) {
 					return individual;
 				}
 			}

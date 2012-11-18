@@ -24,6 +24,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Rocket;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
+import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
@@ -60,7 +61,6 @@ public class GTPoke extends Game {
 		xstream = new XStream();
 		saveFile = Gdx.files.local("saves\\savegame.xml");
 		atlas = new TextureAtlas(Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
-		///ignore 
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
 		map.fillRectangle(0, 0, 150, 600);
@@ -69,6 +69,9 @@ public class GTPoke extends Game {
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
+		
+		gameActors = new ArrayList<Person>();
+		theMap = makeMap();
 		
 		setScreen(getSplashScreen());
 	}
@@ -107,14 +110,12 @@ public class GTPoke extends Game {
 		String savestr = saveFile.readString();
 		System.out.println(savestr);
 		SaveGame game = (SaveGame) xstream.fromXML(savestr);
-		System.out.println(xstream.toXML(game));
 		game.load(this);
-		setScreen(getCurrentTownScreen());
+		setScreen(getCurrentTownScreenFromEncounter());
 	}
 
 	public void load(String gamestr) {
 		SaveGame game = (SaveGame) xstream.fromXML(gamestr);
-		System.out.println(xstream.toXML(game));
 		game.load(this);
 	}
 
@@ -161,7 +162,6 @@ public class GTPoke extends Game {
 
 	public void setPlayerName(String playerName) {
 		thePlayer.setName(playerName);
-		//this.playerName = playerName;
 
 	}
 
@@ -169,7 +169,7 @@ public class GTPoke extends Game {
 			Integer stamina) {
 		thePlayer = new Player(playerName, strength, agility, trade, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
-		controller = new Turn(theMap, gameActors, thePlayer);
+		controller = new Turn(theMap, thePlayer, items);
 	}
 
 	public boolean equals(GTPoke game) {
@@ -226,10 +226,10 @@ public class GTPoke extends Game {
 	}
 
 	public Screen getCurrentTownScreen() {
-		//Person potentialEncounter = controller.takeATurn();
-		//if (potentialEncounter != null) {
-		//	return new EncounterScreen(this, potentialEncounter);
-		//}
+		Person potentialEncounter = controller.takeATurn();
+		if (potentialEncounter != null) {
+			return new EncounterScreen(this, potentialEncounter);
+		}
 		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
 	
@@ -258,7 +258,7 @@ public class GTPoke extends Game {
 		return xstream;
 	}
 
-//	public Screen getBattleScreen(Person myPerson) {
-//		return new Battle(this, myPerson);
-//	}
+	public Screen getBattleScreen(Person myPerson) {
+		return new Battle(this, myPerson);
+	}
 }
