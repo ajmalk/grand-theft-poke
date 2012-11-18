@@ -73,6 +73,15 @@ public class TownScreen extends AbstractScreen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
+				System.out.println("health is: "+game.getPlayer().getHealth());
+				System.out.println("money is: "+game.getPlayer().getWallet().getMoney());
+				if(game.getPlayer().getWallet().getMoney() > 300 && game.getPlayer().getHealth() != game.getPlayer().getMaxHealth()) {
+					game.getPlayer().setHealth(game.getPlayer().getMaxHealth() - game.getPlayer().getHealth());
+					game.getPlayer().getWallet().updateMoney(-300);
+				}
+				System.out.println("health is now: "+game.getPlayer().getHealth());
+				System.out.println("money is now: "+game.getPlayer().getWallet().getMoney());
+				
 			}
 		});
 		marketPlaceButton = game.getButton("town/marketplace");
