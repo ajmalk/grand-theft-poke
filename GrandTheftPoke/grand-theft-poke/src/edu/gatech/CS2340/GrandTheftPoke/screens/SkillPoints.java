@@ -40,16 +40,16 @@ public class SkillPoints extends AbstractScreen {
 	@Override
 	public void show() {
 		super.show();
-		table = new Table(getSkin());
+		table = new Table(game.getSkin());
 		table.setFillParent(true);
 		strength = stamina = agility = trade = 0;
 
 		remainder = max = 20;
-		strengthVal = new Label(strength.toString(), getSkin());
-		agilityVal = new Label(agility.toString(), getSkin());
-		tradeVal = new Label(agility.toString(), getSkin());
-		staminaVal = new Label(agility.toString(), getSkin());
-		remVal = new Label(agility.toString(), getSkin());
+		strengthVal = new Label(strength.toString(), game.getSkin());
+		agilityVal = new Label(agility.toString(), game.getSkin());
+		tradeVal = new Label(agility.toString(), game.getSkin());
+		staminaVal = new Label(agility.toString(), game.getSkin());
+		remVal = new Label(agility.toString(), game.getSkin());
 		background = new Texture("images//skillpoint.png");
 
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
@@ -61,10 +61,10 @@ public class SkillPoints extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 		stage.addActor(backgroundImage);
 
-		strengthSlider = new Slider(0, 10, 1, false, getSkin());
-		staminaSlider = new Slider(0, 10, 1, false, getSkin());
-		agilitySlider = new Slider(0, 10, 1, false, getSkin());
-		tradeSlider = new Slider(0, 10, 1, false, getSkin());
+		strengthSlider = new Slider(0, 10, 1, false, game.getSkin());
+		staminaSlider = new Slider(0, 10, 1, false, game.getSkin());
+		agilitySlider = new Slider(0, 10, 1, false, game.getSkin());
+		tradeSlider = new Slider(0, 10, 1, false, game.getSkin());
 
 		ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
@@ -76,7 +76,7 @@ public class SkillPoints extends AbstractScreen {
 
 		ConfirmButton = new Button(style);
 
-		ConfirmButton.setSkin(getSkin());
+		ConfirmButton.setSkin(game.getSkin());
 		ConfirmButton.add("Confirm");
 		ConfirmButton.setPosition(700, 10);
 		ConfirmButton.setDisabled(true);

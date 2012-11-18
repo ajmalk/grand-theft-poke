@@ -155,7 +155,7 @@ public class MapScreen extends AbstractScreen {
 
 		saveButton = new Button(style);
 
-		saveButton.setSkin(getSkin());
+		saveButton.setSkin(game.getSkin());
 		saveButton.add("Save");
 		saveButton.setPosition(10, 10);
 
@@ -170,7 +170,7 @@ public class MapScreen extends AbstractScreen {
 
 		backButton = new Button(style);
 
-		backButton.setSkin(getSkin());
+		backButton.setSkin(game.getSkin());
 		backButton.add("Back");
 		backButton.setPosition(10, 70);
 
@@ -194,17 +194,17 @@ public class MapScreen extends AbstractScreen {
 		lavenderTownButton.setStyle(style);
 		celadonCityButton.setStyle(style);
 
-		viridianCityButton.setSkin(getSkin());
-		palletTownButton.setSkin(getSkin());
-		powerPlantButton.setSkin(getSkin());
-		pewterCityButton.setSkin(getSkin());
-		ceruleanCityButton.setSkin(getSkin());
-		fuchsiaCityButton.setSkin(getSkin());
-		cinnabarIslandButton.setSkin(getSkin());
-		saffronCityButton.setSkin(getSkin());
-		vermillionCityButton.setSkin(getSkin());
-		lavenderTownButton.setSkin(getSkin());
-		celadonCityButton.setSkin(getSkin());
+		viridianCityButton.setSkin(game.getSkin());
+		palletTownButton.setSkin(game.getSkin());
+		powerPlantButton.setSkin(game.getSkin());
+		pewterCityButton.setSkin(game.getSkin());
+		ceruleanCityButton.setSkin(game.getSkin());
+		fuchsiaCityButton.setSkin(game.getSkin());
+		cinnabarIslandButton.setSkin(game.getSkin());
+		saffronCityButton.setSkin(game.getSkin());
+		vermillionCityButton.setSkin(game.getSkin());
+		lavenderTownButton.setSkin(game.getSkin());
+		celadonCityButton.setSkin(game.getSkin());
 
 		viridianCityButton.addListener(new ClickListener() {
 			@Override

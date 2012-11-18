@@ -23,7 +23,7 @@ public abstract class Person {
 	@XStreamAsAttribute
 	private String name;
 
-	private int strength, agility, trade, stamina, currentStamina, maxHealth;
+	private Integer strength, agility, trade, stamina, currentStamina, maxHealth;
 
 	@XStreamAsAttribute
 	private Integer health;
@@ -103,7 +103,7 @@ public abstract class Person {
 	 * 
 	 * @return
 	 */
-	public int getStrength() {
+	public Integer getStrength() {
 		return this.strength;
 	}
 
@@ -119,7 +119,7 @@ public abstract class Person {
 	 * 
 	 * @return
 	 */
-	public int getAgility() {
+	public Integer getAgility() {
 		return this.agility;
 	}
 
@@ -135,7 +135,7 @@ public abstract class Person {
 	 * 
 	 * @return
 	 */
-	public int getTrade() {
+	public Integer getTrade() {
 		return this.trade;
 	}
 
@@ -151,7 +151,7 @@ public abstract class Person {
 	 * 
 	 * @return
 	 */
-	public int getStamina() {
+	public Integer getStamina() {
 		return this.stamina;
 	}
 
@@ -159,7 +159,7 @@ public abstract class Person {
 	 * 
 	 * @return
 	 */
-	public int getMaxHealth() {
+	public Integer getMaxHealth() {
 		return maxHealth;
 	}
 
@@ -167,7 +167,7 @@ public abstract class Person {
 	 * 
 	 * @return
 	 */
-	public int getHealth() {
+	public Integer getHealth() {
 		return health;
 	}
 

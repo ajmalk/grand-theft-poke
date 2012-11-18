@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.thoughtworks.xstream.XStream;
@@ -22,15 +23,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Rocket;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
-import edu.gatech.CS2340.GrandTheftPoke.screens.MarketOld;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MarketPlaceItemDemo;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Name;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SkillPoints;
@@ -56,6 +54,7 @@ public class GTPoke extends Game {
 	private ArrayList<String> savestrs;
 	private Screen nextScreen, prevScreen;
 	private Table statusBar;
+	protected Skin skin;
 
 	@Override
 	public void create() {
@@ -71,7 +70,7 @@ public class GTPoke extends Game {
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
-		statusBar = new Table();
+		statusBar = new Table(skin);
 		
 		gameActors = new ArrayList<Person>();
 		theMap = makeMap();
@@ -80,7 +79,17 @@ public class GTPoke extends Game {
 	}
 	
 	public Table getStatusBar(){
+		statusBar.clear();
+		statusBar.setSkin(skin);
+		statusBar.add(thePlayer.getHealth().toString());
 		return statusBar;
+	}
+	
+	public Skin getSkin() {
+		if (skin == null) {
+			skin = new Skin(Gdx.files.internal("skins//uiskin.json"));
+		}
+		return skin;
 	}
 	
 	public TextureAtlas getTextures(){

@@ -32,7 +32,7 @@ public class Name extends AbstractScreen {
 	public void show() {
 		super.show();
 		//stage.clear();
-		table = new Table(getSkin());
+		table = new Table(game.getSkin());
 		table.setFillParent(true);
 
 		background = new Image(game.getTextures().findRegion("intro/main-menu"));
@@ -44,7 +44,7 @@ public class Name extends AbstractScreen {
 		background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
-		name = new TextField("", getSkin());
+		name = new TextField("", game.getSkin());
 		name.setTextFieldListener(new TextFieldListener() {
 			@Override
 			public void keyTyped(TextField name, char key) {
@@ -89,7 +89,7 @@ public class Name extends AbstractScreen {
 		ConfirmButton.setDisabled(true);
 		ConfirmButton.setTouchable(Touchable.disabled);
 
-		ConfirmButton.setSkin(getSkin());
+		ConfirmButton.setSkin(game.getSkin());
 		ConfirmButton.add("Confirm");
 		ConfirmButton.setPosition(700, 10);
 

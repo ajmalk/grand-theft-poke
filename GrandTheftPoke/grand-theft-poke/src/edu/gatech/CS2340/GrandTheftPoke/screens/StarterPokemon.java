@@ -33,7 +33,7 @@ public class StarterPokemon extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		table = new Table(getSkin());
+		table = new Table();
 		table.setFillParent(true);
 
 		title = new Image(game.getTextures().findRegion("intro/starter-title"));
@@ -88,7 +88,7 @@ public class StarterPokemon extends AbstractScreen {
 				confirmButtonSprite, 0, 69, 320, 70));
 
 		ConfirmButton = new Button(style);
-		ConfirmButton.setSkin(getSkin());
+		ConfirmButton.setSkin(game.getSkin());
 		ConfirmButton.add("Confirm");
 		ConfirmButton.setPosition(confirmX, confirmY);
 		ConfirmButton.setDisabled(true);
