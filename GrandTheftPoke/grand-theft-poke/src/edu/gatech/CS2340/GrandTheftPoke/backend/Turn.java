@@ -132,8 +132,10 @@ public class Turn {
 		for (Person individual : gameActors) {
 			if (individual.getCurrent().toString()
 					.equals(thePlayer.getCurrent().toString())) {
-				if (individual instanceof Trader
-					 && rand.nextDouble() <= thePlayer.getAgility() / 100) {
+				if (individual instanceof Trader) {
+					 //&& rand.nextDouble() <= thePlayer.getAgility() / 100) {
+					System.out.println(individual);
+					System.out.println(individual.getBackpack());
 					return individual;
 				} else if (individual instanceof Rocket
 					&& rand.nextDouble() >= thePlayer.getAgility() / 100) {
