@@ -17,7 +17,6 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 	Table table = new Table(getSkin());
 	boolean lastLeft = false, lastRight = false, lastDown = false;
 	private Vector3 touchPos;
-	private Mesh mesh;
 	ShapeRenderer renderer;
 
 	public MarketPlaceItemDemo(GTPoke game) {

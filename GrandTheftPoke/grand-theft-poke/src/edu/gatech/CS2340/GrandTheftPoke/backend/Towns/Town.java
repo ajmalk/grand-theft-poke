@@ -29,7 +29,7 @@ public class Town implements Comparable {
 	protected MarketPlace myMarket;
 
 	@XStreamOmitField
-	private String filepath;
+	private String filename;
 	
 	@XStreamOmitField
 	private Set<Path> adjacencies;
@@ -92,11 +92,10 @@ public class Town implements Comparable {
 	}
 
 	public String getImage() {
-
-		return filepath;
+		return filename;
 	}
 
 	public void setImage(String str) {
-		filepath = str;
+		filename = str;
 	}
 }

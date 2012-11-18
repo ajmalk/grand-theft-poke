@@ -48,7 +48,7 @@ public class TownFactoryImplementation implements TownFactory {
 				new MarketPlaceItem(2000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Pallet Town", myMarket);
-		myTown.setImage("images//icons//PalletTownBack.png");
+		myTown.setImage("pallet-town");
 
 		return myTown;
 	}
@@ -89,7 +89,7 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Viridian City", myMarket);
-		myTown.setImage("images//icons//ViridianCityBack.png");
+		myTown.setImage("viridian-city");
 
 		return myTown;
 
@@ -131,7 +131,7 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Pewter City", myMarket);
-		myTown.setImage("images//icons//PewterCityBack.png");
+		myTown.setImage("pewter-city");
 
 		return myTown;
 	}
@@ -172,7 +172,7 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Cerulean City", myMarket);
-		myTown.setImage("images//icons//CeruleanCityBack.png");
+		myTown.setImage("cerulean-city");
 
 		return myTown;
 	}
@@ -213,7 +213,7 @@ public class TownFactoryImplementation implements TownFactory {
 				15f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Saffron City", myMarket);
-		myTown.setImage("images//icons//SaffronCityBack.png");
+		myTown.setImage("saffron-city");
 
 		return myTown;
 	}
@@ -253,7 +253,7 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Celadon City", myMarket);
-		myTown.setImage("images//icons//CeladonCityBack.png");
+		myTown.setImage("celadon-city");
 		return myTown;
 	}
 
@@ -292,7 +292,7 @@ public class TownFactoryImplementation implements TownFactory {
 				.println(myStock.containsKey(itemsInstance.getHealthPotion()));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Lavender Town", myMarket);
-		myTown.setImage("images//icons//LavenderTownBack.png");
+		myTown.setImage("lavender-town");
 
 		return myTown;
 	}
@@ -332,7 +332,7 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Vermillion City", myMarket);
-		myTown.setImage("images//icons//VermillionCityBack.png");
+		myTown.setImage("vermillion-city");
 
 		return myTown;
 	}
@@ -372,7 +372,7 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Fuchsia City", myMarket);
-		myTown.setImage("images//icons//FuchsiaCityBack.png");
+		myTown.setImage("fuchsia-city");
 
 		return myTown;
 	}
@@ -411,7 +411,7 @@ public class TownFactoryImplementation implements TownFactory {
 				new MarketPlaceItem(2000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Cinnabar Island", myMarket);
-		myTown.setImage("images//icons//CinnabarIslandBack.png");
+		myTown.setImage("cinnabar-island.png");
 
 		return myTown;
 	}

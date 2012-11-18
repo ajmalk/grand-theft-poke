@@ -20,7 +20,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 public class MainMenu extends AbstractScreen {
-	private Texture background;
+	private Image background;
 
 	public MainMenu(GTPoke game) {
 		super(game);
@@ -29,16 +29,15 @@ public class MainMenu extends AbstractScreen {
 	@Override
 	public void show() {
 		super.show();
-
-		background = new Texture("images//main-menu.png");
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
-		Image backgroundImage = new Image(background);
-		backgroundImage.setFillParent(true);
-		backgroundImage.getColor().a = 0f;
-		backgroundImage.addAction(fadeIn(0.75f));
-		stage.addActor(backgroundImage);
+		//Image backgroundImage = new Image(background);
+		background = new Image(game.getTextures().findRegion("intro/main-menu"));
+		background.setFillParent(true);
+		background.getColor().a = 0f;
+		background.addAction(fadeIn(0.75f));
+		stage.addActor(background);
 
 		Button GameButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(ButtonSprite, 0, 0, 320, 70)),
@@ -107,6 +106,5 @@ public class MainMenu extends AbstractScreen {
 	@Override
 	public void dispose() {
 		super.dispose();
-		background.dispose();
 	}
 }

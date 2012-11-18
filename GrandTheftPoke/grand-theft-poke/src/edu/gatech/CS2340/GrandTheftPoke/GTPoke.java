@@ -9,6 +9,9 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.thoughtworks.xstream.XStream;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
@@ -28,10 +31,10 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MarketOld;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MarketPlaceItemDemo;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Name;
-import edu.gatech.CS2340.GrandTheftPoke.screens.PalletTown;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SkillPoints;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SplashScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.StarterPokemon;
+import edu.gatech.CS2340.GrandTheftPoke.screens.TownScreen;
 
 public class GTPoke extends Game {
 	private String playerName = "";
@@ -40,6 +43,7 @@ public class GTPoke extends Game {
 	private GameMap theMap;
 	private Turn controller;
 	private ArrayList<Person> gameActors;
+	private TextureAtlas atlas;
 	private static Texture ButtonSprite;
 	private static final int INITIAL_RANGE = 80;
 	private static final int INITIAL_CARRY = 30;
@@ -55,9 +59,7 @@ public class GTPoke extends Game {
 		items = new GlobalItemReference();
 		xstream = new XStream();
 		saveFile = Gdx.files.local("saves\\savegame.xml");
-		
-		
-		
+		atlas = new TextureAtlas(Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
 		///ignore 
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
@@ -69,6 +71,10 @@ public class GTPoke extends Game {
 		ButtonSprite = new Texture(map);
 		
 		setScreen(getSplashScreen());
+	}
+	
+	public TextureAtlas getTextures(){
+		return atlas;
 	}
 	
 	public Screen getNextScreen(){
@@ -224,11 +230,16 @@ public class GTPoke extends Game {
 		//if (potentialEncounter != null) {
 		//	return new EncounterScreen(this, potentialEncounter);
 		//}
-		return new PalletTown(this, thePlayer.getCurrent().getImage());
+		return new TownScreen(this, thePlayer.getCurrent().getImage());
+	}
+	
+	public Button getButton(String button){
+		return new Button(	new TextureRegionDrawable(atlas.findRegion(button)), 
+							new TextureRegionDrawable(atlas.findRegion(button + "-down")));
 	}
 
 	public Screen getCurrentTownScreenFromEncounter() {
-		return new PalletTown(this, thePlayer.getCurrent().getImage());
+		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
 
 	public Screen getMapScreen() {

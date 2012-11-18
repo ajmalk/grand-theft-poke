@@ -14,25 +14,15 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-//import com.badlogic.gdx.scenes.scene2d.Actor;
-//import com.badlogic.gdx.scenes.scene2d.ui.Label;
-//import com.badlogic.gdx.scenes.scene2d.ui.Slider;
-//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-//import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent;
 
 public class StarterPokemon extends AbstractScreen {
-	private Texture background;
-	private Image backgroundImage;
-
+	private Image title;
 	private Button bulbasaur;
 	private Button charmander;
 	private Button squirtle;
 	private Button ConfirmButton;
 	private int confirmX = 356;
 	private int confirmY = 10;
-
-	private Texture title;
-
 	private Table table;
 
 	public StarterPokemon(GTPoke game) {
@@ -46,19 +36,14 @@ public class StarterPokemon extends AbstractScreen {
 		table = new Table(getSkin());
 		table.setFillParent(true);
 
-		background = new Texture("images//icons//chooseStarterTitle.png");
+		title = new Image(game.getTextures().findRegion("intro/starter-title"));
+		title.getColor().a = 0f;
+		title.setPosition(60, 600);
+		title.addAction(fadeIn(0.75f));
 
-		Texture ButtonSprite = new Texture("images//icons//starterbuttons.png");
-		stage.clear();
-
-		backgroundImage = new Image(background);
-		backgroundImage.getColor().a = 0f;
-		backgroundImage.setPosition(60, 600);
-		backgroundImage.addAction(fadeIn(0.75f));
-
-		bulbasaur = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 0, 0, 335, 768)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 0, 769, 335, 768)));
+		bulbasaur = new Button(new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-1"))
+				, new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-1-down")));
+		
 		bulbasaur.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -69,9 +54,8 @@ public class StarterPokemon extends AbstractScreen {
 			}
 		});
 
-		charmander = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 335, 0, 338, 768)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 335, 768, 338, 768)));
+		charmander = new Button(new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-2"))
+		, new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-2-down")));
 		charmander.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -82,9 +66,8 @@ public class StarterPokemon extends AbstractScreen {
 			}
 		});
 
-		squirtle = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 674, 0, 349, 768)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 674, 768, 349, 768)));
+		squirtle = new Button(new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-3"))
+		, new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-3-down")));
 		squirtle.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -132,7 +115,7 @@ public class StarterPokemon extends AbstractScreen {
 		table.add(squirtle);
 
 		stage.addActor(table);
-		stage.addActor(backgroundImage);
+		stage.addActor(title);
 		ConfirmButton.setPosition(confirmX, confirmY);
 		stage.addActor(ConfirmButton);
 	}
@@ -145,6 +128,5 @@ public class StarterPokemon extends AbstractScreen {
 	@Override
 	public void dispose() {
 		super.dispose();
-		background.dispose();
 	}
 }

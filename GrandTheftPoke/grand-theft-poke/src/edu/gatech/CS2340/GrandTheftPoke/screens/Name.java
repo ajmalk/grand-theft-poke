@@ -18,13 +18,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 public class Name extends AbstractScreen {
-	private Texture background;
-
+	private Image background;
 	private Button ConfirmButton;
-
-	TextField name;
+	private TextField name;
 	private String playerName = "";
-
 	private Table table;
 
 	public Name(GTPoke game) {
@@ -34,20 +31,18 @@ public class Name extends AbstractScreen {
 	@Override
 	public void show() {
 		super.show();
-
+		//stage.clear();
 		table = new Table(getSkin());
 		table.setFillParent(true);
 
-		background = new Texture("images//main-menu.png");
+		background = new Image(game.getTextures().findRegion("intro/main-menu"));
 
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
-		stage.clear();
-
-		Image backgroundImage = new Image(background);
-		backgroundImage.setFillParent(true);
-		backgroundImage.getColor().a = 0f;
-		backgroundImage.addAction(fadeIn(0.75f));
-		stage.addActor(backgroundImage);
+		
+		background.setFillParent(true);
+		background.getColor().a = 0f;
+		background.addAction(fadeIn(0.75f));
+		stage.addActor(background);
 
 		name = new TextField("", getSkin());
 		name.setTextFieldListener(new TextFieldListener() {
@@ -131,7 +126,6 @@ public class Name extends AbstractScreen {
 	@Override
 	public void dispose() {
 		super.dispose();
-		background.dispose();
 	}
 
 	private boolean checkName(String name) {
