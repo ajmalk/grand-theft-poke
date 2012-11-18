@@ -193,11 +193,6 @@ public class MarketOld extends AbstractScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		// markettable.debug();
-		// table.drawDebug(stage);
-		// markettable.setPosition(500, 100);
-		// backpacktable.setPosition(800, 100);
-		// stage.addActor(marketStock);
 		for (Actor tile : markettable.getChildren())
 			((ItemTile) tile).update();
 		for (Actor tile : backpacktable.getChildren())

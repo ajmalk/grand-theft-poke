@@ -1,13 +1,26 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Event;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemDescTile;
 import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemTile;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
@@ -20,6 +33,9 @@ public class Market extends AbstractScreen {
 	private Table markettable, backpacktable, table;
 	private ButtonGroup marketItemGroup, backPackItemGroup;
 	private ScrollPane marketStock, backpackStock;
+	private ItemDescTile description;
+	private Button backButton;
+	private Map<Item, ItemTile> backpack, marketplace;
 
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
@@ -32,6 +48,8 @@ public class Market extends AbstractScreen {
 		backPackItemGroup = new ButtonGroup();
 		marketStock = new ScrollPane(markettable);
 		backpackStock = new ScrollPane(backpacktable);
+		backpack = new HashMap<Item, ItemTile>();
+		marketplace = new HashMap<Item, ItemTile>();
 	}
 	
 	public Market(GTPoke game) {
@@ -40,67 +58,209 @@ public class Market extends AbstractScreen {
 	
 	@Override
 	public void show() {
-		int col = 0;
-		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = market.iterator(); i.hasNext();) {
-			Map.Entry<Item, MarketPlaceItem> item = i.next();
-			if (item.getValue().getStock() != 0) {
-				ItemTile tile = new ItemTile(item.getKey(), item.getValue());
-				markettable.add(tile);
-				marketItemGroup.add(tile);
-				if (col++ % 2 == 1)
-					markettable.row();
-			}
-		}
+		updatetables();
 		
-		col = 0;
-		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
-				.getContents().entrySet().iterator(); i.hasNext();) {
-			java.util.Map.Entry<Item, Integer> item = i.next();
-			ItemTile tile = new ItemTile(market, item.getKey(),
-					item.getValue(), playerPack);
-			backpacktable.add(tile);
-			marketItemGroup.add(tile);
-			if (col++ % 2 == 1)
-				backpacktable.row();
-		}
+		addItems();
 		
-		markettable.setWidth(markettable.getPrefWidth());
-		markettable.setHeight(markettable.getPrefWidth());
-		backpacktable.setWidth(markettable.getPrefWidth());
-		backpacktable.setHeight(markettable.getPrefWidth());
+		marketItemGroup.setMaxCheckCount(1);
+		marketItemGroup.setMinCheckCount(1);
 		
-		markettable.top();
-		backpacktable.top();
+		markettable.top().left();
+		backpacktable.top().left();
 		
 		marketStock.setScrollingDisabled(true, false);
-		marketStock.setPosition(25, 50);
 		backpackStock.setScrollingDisabled(true, false);
-		backpackStock.setPosition(450, 50);
 		
 		backpackStock.setWidth(backpacktable.getWidth());
 		backpackStock.setHeight(stage.getHeight() - 200);
 		marketStock.setWidth(markettable.getWidth());
 		marketStock.setHeight(stage.getHeight() - 200);
 		
-		table.add(marketStock).top();
-		table.add(backpackStock).top().padLeft(25);
-		table.left().setPosition(25, 100);
+		description = new ItemDescTile(((ItemTile)marketItemGroup.getChecked()).getItem(), 
+				((ItemTile)(marketItemGroup.getChecked())).getStockInfo(), game.getPlayer(), 
+				market, this ,(ItemTile) marketItemGroup.getChecked());
+		
+		Texture ButtonSprite = new Texture("images//button-sprite.png");
+		ButtonStyle style = new ButtonStyle();
+		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
+				0, 320, 70));
+		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite,
+				0, 69, 320, 70));
+		style.disabled = new TextureRegionDrawable(new TextureRegion(
+				ButtonSprite, 0, 69, 320, 70));
+		backButton = new Button(style);
+
+		backButton.setSkin(getSkin());
+		backButton.add("Back");
+		backButton.setPosition(22, 0);
+
+		backButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				game.setScreen(game.getCurrentTownScreenFromEncounter());
+			}
+		});
+		
+		table.add(marketStock).top().width(300);
+		table.add(backpackStock).top().padLeft(25).width(300);
+		table.add(description).padLeft(33).width(300);
+		table.left().setPosition(33, 100);
+	}
+	
+//	public void updateMarket(ItemTile tile){
+//		//if(markettable.isAscendantOf(tile))
+//		if(((MarketPlaceItem)market.getStock().get(tile.getItem())).getStock() == 0){
+//			//markettable.getCell(tile).ignore();
+//			//markettable.removeActor(tile);
+//		}
+//		else {
+//			//ItemTile newTile = new ItemTile(tile.getItem(), tile.getStockInfo());
+//			//backpacktable.add(newTile);
+//			//marketItemGroup.add(newTile);
+//		}
+//	}
+	
+//	public void updateBackpack(final ItemTile tile){
+//		//if(markettable.isAscendantOf(tile))
+////		if(game.getPlayer().getBackpack().getContents().get(tile.getItem()) == 0){
+////			backpacktable.getCell(tile).ignore();
+////			backpacktable.removeActor(tile);
+////			((ItemTile)markettable.getCell(tile).getWidget()).setChecked(true);
+////		}
+////		else {
+////			ItemTile newTile = new ItemTile(market, tile.getItem(), 1, playerPack);
+////			newTile.addListener(new ClickListener() {
+////				@Override
+////				public void clicked(InputEvent event, float x, float y) {
+////					description.update(tile.getItem(), 
+////							(MarketPlaceItem) market.getStock().get(tile.getItem()), 1, game.getPlayer());
+////				}
+////			});
+////			backpacktable.add(newTile);
+////			marketItemGroup.add(newTile);
+////			//((ClickListener)newTile.getListeners().first()).clicked(new InputEvent(), 0, 0);
+////			newTile.setChecked(true);
+////		}
+//	}
+	
+	public void addItems(){
+		int col = 0;
+		markettable.clear();
+		//marketplace.clear();
+		marketItemGroup = new ButtonGroup();
+		for (Iterator<Map.Entry<Item, ItemTile>> i = marketplace.entrySet().iterator(); i.hasNext();) {
+			final Map.Entry<Item, ItemTile> item = i.next();
+			if (item.getValue().getStock() != 0) {
+				markettable.add(item.getValue());
+				marketItemGroup.add(item.getValue());
+//				tile.addListener(new ClickListener() {
+//					@Override
+//					public void clicked(InputEvent event, float x, float y) {
+//						//description.update(item.getKey(), item.getValue(), game.getPlayer(), tile);
+//					}
+//				});
+				if (col++ % 2 == 1)
+					markettable.row();
+			}
+		}
+		
+		col = 0;
+		backpacktable.clear();
+		//backpack.clear();
+		for (Iterator<java.util.Map.Entry<Item, ItemTile>> i = backpack.entrySet().iterator(); i.hasNext();) {
+			final Entry<Item, ItemTile> item = i.next();
+			if (item.getValue().getStock() != null) {
+				backpacktable.add(item.getValue());
+				marketItemGroup.add(item.getValue());
+				if (col++ % 2 == 1)
+					backpacktable.row();
+			}
+		}
+	}
+	
+	void updatetables(){
+		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = market.iterator(); i.hasNext();) {
+			final Map.Entry<Item, MarketPlaceItem> item = i.next();
+			//if (item.getValue().getStock() != 0) {
+				final ItemTile markettile = new ItemTile(item.getKey(), item.getValue());
+				Integer pack = playerPack.getContents().get(item.getKey());
+				ItemTile backpacktile;
+				//if(pack == null)
+					backpacktile = new ItemTile(market, item.getKey(), pack, playerPack);
+				marketplace.put(item.getKey(), markettile);
+				//backpack.put(item.getKey(), backpacktile);
+//				tile.addListener(new ClickListener() {
+//					@Override
+//					public void clicked(InputEvent event, float x, float y) {
+//						//description.update(item.getKey(), item.getValue(), game.getPlayer(), tile);
+//					}
+//				});
+			//}
+		}
+		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
+				.getContents().entrySet().iterator(); i.hasNext();) {
+			final java.util.Map.Entry<Item, Integer> item = i.next();
+			ItemTile tile = new ItemTile(market, item.getKey(),
+					item.getValue(), playerPack);
+			backpack.put(item.getKey(), tile);
+//			tile.addListener(new ClickListener() {
+//				@Override
+//				public void clicked(InputEvent event, float x, float y) {
+//					//description.update(item.getKey(), 
+//					//		(MarketPlaceItem) market.getStock().get(item.getKey()), item.getValue(), game.getPlayer());
+//				}
+//			});
+		}
 	}
 	
 	public void render(float delta) {
 		super.render(delta);
-
-//		for(int i= 0; i< marketItemGroup.getButtons().size; i++)
-//			marketItemGroup.getButtons().get(i).debug().drawDebug(stage);
-		
-		
-		
-		
+		Iterator<Entry <Item, ItemTile>> iter = marketplace.entrySet().iterator();
+		for (Entry<Item, ItemTile> item = iter.next(); iter.hasNext(); item = iter.next()) {
+			item.getValue().update();
+			if(playerPack.getContents().containsKey(item.getKey()) && !backpack.containsKey(item.getKey())){
+				backpack.put(item.getKey(), new ItemTile(market, item.getKey(),
+						playerPack.getContents().get(item.getKey()), playerPack));
+				addItems();
+			}
+			if(item.getValue().getStock() == 0){
+				iter.remove();
+				addItems();
+				//marketItemGroup.uncheckAll();
+				//markettable.getCell(item.getValue()).ignore();
+				//backpack.get(((ItemTile) tile).getItem()).setChecked(true);
+			}
+			
+			//else markettable.getCell(item.getValue()).ignore(false);
+		}
+		iter = backpack.entrySet().iterator();
+		for (; iter.hasNext(); ) {
+			Entry<Item, ItemTile> item = iter.next();
+			item.getValue().update();
+			if(((MarketPlaceItem)market.getStock().get(item.getKey())).getStock() != 0 && !marketplace.containsKey(item.getKey())){
+				marketplace.put(item.getKey(), new ItemTile(item.getKey(), item.getValue().getStockInfo()));
+				addItems();
+			}
+			if(item.getValue().getStock() == null){
+				iter.remove();
+				addItems();
+				//marketItemGroup.uncheckAll();
+//				if(item.getValue().getStock() == 1){
+//					
+//				}
+				//markettable.getCell(item.getValue()).ignore();
+				//backpack.get(((ItemTile) tile).getItem()).setChecked(true);
+			}
+			//else markettable.getCell(item.getValue()).ignore(false);
+		}
+		//if(backpack.size() != playerPack.getContents().)
+		description.update(((ItemTile)marketItemGroup.getChecked()), game.getPlayer());
+		//for(Actor tile : backpacktable.getChildren())
+		//	((Table)tile).debug().drawDebug(stage);
+		//backpacktable.debug().drawDebug(stage);
+		//table.debug().drawDebug(stage);
 		table.setSize(1024, 525);
-		
-		//stage.addActor(marketStock);
-		//stage.addActor(backpackStock);
 		stage.addActor(table);
-		//stage.addActor(backpacktable);
+		stage.addActor(backButton);
 	}
 }
