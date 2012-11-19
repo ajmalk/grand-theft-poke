@@ -38,6 +38,21 @@ public abstract class Item {
 		}
 		return true;
 	}
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		super.finalize();
+	}
+
+	@Override
+	public int hashCode() {
+		return getFileName().hashCode();
+	}
 
 	/**
 	 * returns the weight

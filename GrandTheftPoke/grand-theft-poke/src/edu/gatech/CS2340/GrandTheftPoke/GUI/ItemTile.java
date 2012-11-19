@@ -25,6 +25,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * 
  */
 public class ItemTile extends Button {
+	@Override
+	public String toString() {
+		return "ItemTile [item=" + item + ", stock=" + stock
+				+ ", backpackStock=" + backpackStock + ", icon=" + icon
+				+ ", stockLabel=" + stockLabel + ", price=" + price + ", pack="
+				+ pack + "]";
+	}
+
 	private Item item;
 	private MarketPlaceItem stock;
 	private Integer backpackStock;

@@ -29,7 +29,7 @@ public class SaveLoadTest {
 		GTPoke game1 = makeNewGame("Ajmal", 5, 5, 5, 5), game2 = makeNewGame(
 				"Ben", 2, 7, 6, 5);
 		assertFalse(game1.equals(game2));
-		SaveGame save = new SaveGame(game1.getPlayer(), game1.getMap());
+		SaveGame save = new SaveGame(game1.getPlayer(), game1.getMap(), null);
 		save.load(game2);
 		assertTrue(game1.equals(game2));
 	}

@@ -11,9 +11,6 @@ public class Pokeball extends Item {
 	/**
 	 * empty constructor
 	 */
-	public Pokeball() {
-		// setWeight(1);
-	}
 
 	@Override
 	public boolean equals(Object obj) {

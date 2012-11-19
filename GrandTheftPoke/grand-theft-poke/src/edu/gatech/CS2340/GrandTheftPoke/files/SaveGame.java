@@ -16,6 +16,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
  */
 @XStreamAlias("Game")
 public class SaveGame {
+	@Override
+	public String toString() {
+		return "SaveGame [map=" + map + ", player=" + player + ", controller="
+				+ controller + "]";
+	}
+
 	private GameMap map;
 	private Player player;
 	@XStreamOmitField

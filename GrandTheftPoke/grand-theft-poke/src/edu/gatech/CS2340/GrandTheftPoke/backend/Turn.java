@@ -17,6 +17,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  * @author Team Rocket
  */
 public class Turn {
+	@Override
+	public String toString() {
+		return "Turn [theMap=" + theMap + ", gameActors=" + gameActors
+				+ ", thePlayer=" + thePlayer + ", rand=" + rand + "]";
+	}
+
 	private GameMap theMap;
 	private ArrayList<Person> gameActors;
 	private Player thePlayer;

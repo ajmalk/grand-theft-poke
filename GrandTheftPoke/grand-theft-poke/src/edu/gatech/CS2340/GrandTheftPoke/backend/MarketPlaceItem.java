@@ -12,6 +12,14 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 @XStreamAlias("Stock")
 public class MarketPlaceItem {
 
+	@Override
+	public String toString() {
+		return "MarketPlaceItem [price=" + price + ", stock=" + stock
+				+ ", EQIL_PRICE=" + EQIL_PRICE + ", EQIL_STOCK=" + EQIL_STOCK
+				+ ", CONS_ELASTICITY=" + CONS_ELASTICITY + ", PROD_ELASTICITY="
+				+ PROD_ELASTICITY + ", STOCK_RATIO=" + STOCK_RATIO + "]";
+	}
+
 	private float price, stock;
 	@XStreamOmitField
 	private final float EQIL_PRICE, EQIL_STOCK, CONS_ELASTICITY,

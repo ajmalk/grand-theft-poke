@@ -15,6 +15,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 @XStreamAlias("Market")
 public class MarketPlace {
+	@Override
+	public String toString() {
+		return "MarketPlace [stock=" + stock + "]";
+	}
+
 	// @XStreamImplicit(itemFieldName="Item")
 	HashMap<Item, MarketPlaceItem> stock;
 

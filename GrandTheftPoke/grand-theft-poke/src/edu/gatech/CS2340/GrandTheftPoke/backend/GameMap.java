@@ -25,6 +25,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 @XStreamAlias("Map")
 public class GameMap {
 
+	@Override
+	public String toString() {
+		return "GameMap [townSet=" + townSet + ", startTown=" + startTown + "]";
+	}
+
 	@XStreamImplicit(itemFieldName = "Town")
 	private Set<Town> townSet;
 

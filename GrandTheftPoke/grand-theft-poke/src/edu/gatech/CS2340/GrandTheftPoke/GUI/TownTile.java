@@ -27,6 +27,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * 
  */
 public class TownTile extends Button {
+	@Override
+	public String toString() {
+		return "TownTile [myTown=" + myTown + "]";
+	}
+
 	private Town myTown;
 
 	/**

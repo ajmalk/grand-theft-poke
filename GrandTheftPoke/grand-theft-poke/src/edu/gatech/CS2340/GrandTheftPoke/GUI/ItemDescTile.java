@@ -30,6 +30,19 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
  * 
  */
 public class ItemDescTile extends Table {
+	@Override
+	public String toString() {
+		return "ItemDescTile [item=" + item + ", stockInfo=" + stockInfo
+				+ ", pack=" + pack + ", backpackStock=" + backpackStock
+				+ ", icon=" + icon + ", name=" + name + ", description="
+				+ description + ", stock=" + stock + ", price=" + price
+				+ ", buy=" + buy + ", sell=" + sell + ", buyListener="
+				+ buyListener + ", sellListener=" + sellListener + ", buysell="
+				+ buysell + ", customer=" + customer + ", otherTrader="
+				+ otherTrader + ", market=" + market + ", screen=" + screen
+				+ ", tile=" + tile + "]";
+	}
+
 	private Item item;
 	private MarketPlaceItem stockInfo;
 	private Backpack pack;

@@ -9,6 +9,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  */
 public class Path {
 
+	@Override
+	public String toString() {
+		return "Path [target=" + target + ", weight=" + weight + "]";
+	}
+
 	private final Town target;
 	private final int weight;
 
