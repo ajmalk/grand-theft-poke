@@ -29,31 +29,31 @@ public class MarketPlaceTest {
 
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(),
-				new MarketPlaceItem(20, 20));
-		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750,
-				20));
-		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(850,
-				20));
+				new MarketPlaceItem(20f, 20f));
+		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
+				20f));
+		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(850f,
+				20f));
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000, 20));
-		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500,
-				20));
-		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600,
-				20));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350, 10));
+				1000f, 20f));
+		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(500f,
+				20f));
+		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
+				20f));
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
-		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500, 10));
-		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000, 10));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500, 10));
-		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500, 10));
-		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000, 10));
+		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 10f));
+		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f, 10f));
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f, 10f));
+		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 10f));
 		myStock.put(itemsInstance.getHealthRoid(),
-				new MarketPlaceItem(2750, 10));
-		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500,
-				10));
-		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000,
-				10));
-		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000, 10));
+				new MarketPlaceItem(2750f, 10f));
+		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
+				10f));
+		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
+				10f));
+		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f, 10f));
 		// System.out.println(myStock.containsKey(itemsInstance.getHealthPotion()));
 		myMarket = new MarketPlace(myStock);
 		p = new Player("Sagar", 4, 4, 4, 4, 100, 100, 10,

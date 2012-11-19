@@ -25,6 +25,11 @@ public class JigglyPuff extends Pokemon {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return "I'm a Jigglypuff!";
+	}
+
+	@Override
+	public String getFileName() {
+		return "jigglypuff";
 	}
 }

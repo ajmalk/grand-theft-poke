@@ -33,13 +33,19 @@ public class HealthRoid extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		return "Health Steriod";
+		return "Health Steroid";
 	}
 
 	@Override
 	public String getDescription() {
-		return "Health Steriods add 25 to your\n"
+		return "Health Steroids add 25 to your\n"
 				+ "max health, then sets your current\n" + "to the new max.\n"
 				+ "Max Health + 25\n" + "Restores health to new max.";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "steroid2";
 	}
 }

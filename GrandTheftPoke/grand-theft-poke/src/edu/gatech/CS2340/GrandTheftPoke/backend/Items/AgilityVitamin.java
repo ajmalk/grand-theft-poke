@@ -32,9 +32,15 @@ public class AgilityVitamin extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "The Agiliy Steriod permently adds \n "
-				+ "1 agility points to your current standings.\n"
+		return "The Agiliy Vitamin permanently adds \n "
+				+ "1 agility point to your current standings.\n"
 				+ "This is useful because you can move further \n"
 				+ "distances in 1 turn.\n" + "+1 Agility Point";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "vitamin1";
 	}
 }

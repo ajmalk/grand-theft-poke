@@ -29,4 +29,12 @@ public class DestinyKnot extends Item {
 				+ "found in large cities but covetted by the \n"
 				+ "small villages.";
 	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "destinyknot";
+	}
+	
+	
 }

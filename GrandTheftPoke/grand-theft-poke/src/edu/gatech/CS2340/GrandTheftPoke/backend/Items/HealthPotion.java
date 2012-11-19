@@ -42,4 +42,9 @@ public class HealthPotion extends Item implements Usable {
 				+ "stay alive longer.\n" + "Health = max";
 
 	}
+
+	@Override
+	public String getFileName() {
+		return "potion1";
+	}
 }

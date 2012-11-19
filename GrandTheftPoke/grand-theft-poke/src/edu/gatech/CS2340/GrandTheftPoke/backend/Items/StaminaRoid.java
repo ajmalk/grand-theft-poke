@@ -27,15 +27,21 @@ public class StaminaRoid extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		return "Stamina Steriod";
+		return "Stamina Steroid";
 	}
 
 	@Override
 	public String getDescription() {
-		return "The Stamina Steriod permently adds \n "
+		return "The Stamina Steroid permanently adds \n "
 				+ "2 stamina points to your current standings.\n"
 				+ "Increasing stamina allows you to move more\n"
 				+ "more efficiently from town to town, therefore "
 				+ "conserving health! \n" + "+2 Stamina Point";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "steroid3";
 	}
 }

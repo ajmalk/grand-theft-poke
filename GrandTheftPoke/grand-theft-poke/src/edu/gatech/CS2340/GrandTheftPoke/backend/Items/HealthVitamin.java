@@ -38,6 +38,12 @@ public class HealthVitamin extends Item implements Usable {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Health Vitamin";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "vitamin2";
 	}
 }
