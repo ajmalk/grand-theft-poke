@@ -85,6 +85,13 @@ market-place
   orig: 1024, 768
   offset: 0, 0
   index: -1
+status-bar
+  rotate: false
+  xy: 2053, 705
+  size: 678, 64
+  orig: 678, 64
+  offset: 0, 0
+  index: -1
 
 gtpoke3.png
 format: RGBA8888

@@ -419,7 +419,13 @@ public class MapScreen extends AbstractScreen {
 
 		stage.addActor(saveButton);
 		stage.addActor(backButton);
-
+		
+		stage.addActor(game.getStatusBar());
+	}
+	@Override
+	public void render(float delta) {
+		super.render(delta);
+		game.update();
 	}
 
 

@@ -118,5 +118,12 @@ public class EncounterScreen extends AbstractScreen {
 
 		flee.setPosition(641, 116);
 		stage.addActor(flee);
+		
+		stage.addActor(game.getStatusBar());
+	}
+	@Override
+	public void render(float delta) {
+		super.render(delta);
+		game.update();
 	}
 }

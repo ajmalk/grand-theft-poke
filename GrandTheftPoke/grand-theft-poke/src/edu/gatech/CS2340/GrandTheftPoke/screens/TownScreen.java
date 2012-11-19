@@ -144,7 +144,7 @@ public class TownScreen extends AbstractScreen {
 
 		stage.addActor(bp);
 		stage.addActor(game.getStatusBar());
-		game.getStatusBar().debug().drawDebug(stage);
+		//game.getStatusBar().debug().drawDebug(stage);
 		// remVal.setText(remainder.toString());
 
 		// table.debug();

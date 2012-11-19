@@ -132,8 +132,13 @@ public class Battle extends AbstractScreen {
 		
 		attack.setPosition(480, 212);
 		stage.addActor(attack);
-
+		stage.addActor(game.getStatusBar());
 		
 	}
 	
+	@Override
+	public void render(float delta) {
+		super.render(delta);
+		game.update();
+	}
 }

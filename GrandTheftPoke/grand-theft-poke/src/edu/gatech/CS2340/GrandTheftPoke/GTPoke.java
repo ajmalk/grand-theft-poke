@@ -43,25 +43,23 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.TownScreen;
  *
  */
 public class GTPoke extends Game {
+	private static final int INITIAL_RANGE = 80;
+	private static final int INITIAL_CARRY = 30;
+	private static final int INITIAL_HEALTH = 100;
+	
 	private String playerName = "";
 	private Player thePlayer;
 	private GlobalItemReference items;
 	private GameMap theMap;
 	private Turn controller;
-	private ArrayList<Person> gameActors;
 	private TextureAtlas atlas;
-	private static Texture ButtonSprite;
-	private static final int INITIAL_RANGE = 80;
-	private static final int INITIAL_CARRY = 30;
-	private static final int INITIAL_HEALTH = 100;
 	private XStream xstream;
 	private FileHandle saveFile;
-	private ArrayList<SaveGame> saves;
-	private ArrayList<String> savestrs;
-	private Screen nextScreen, prevScreen;
 	private Table statusBar;
-	protected Skin skin;
-
+	private Skin skin;
+	private static Texture ButtonSprite;
+	private Screen nextScreen, prevScreen;
+	
 	@Override
 	public void create() {
 		items = new GlobalItemReference();
@@ -77,9 +75,9 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
-		statusBar.setSize(Gdx.graphics.getWidth(), 65);
 		
-		gameActors = new ArrayList<Person>();
+		
+		new ArrayList<Person>();
 		theMap = makeMap();
 		
 		setScreen(getSplashScreen());
@@ -91,9 +89,15 @@ public class GTPoke extends Game {
 	public boolean update(){
 		statusBar.clear();
 		statusBar.setSkin(skin);
+		statusBar.setBackground(new TextureRegionDrawable(atlas.findRegion("status-bar")));
+		//statusBar.setSize(678, 64);
+		statusBar.pack();
+		statusBar.pad(25);
+		statusBar.setPosition((Gdx.graphics.getWidth() - statusBar.getWidth())/2, 0);
 		Label health = new Label("Health: " + thePlayer.getHealth().toString(), skin);
 		Label money = new Label(" Money: $" + thePlayer.getWallet().getMoney(), skin);
-		health.setColor(Color.RED);
+		health.setColor(Color.BLUE);
+		money.setColor(Color.BLUE);
 		statusBar.add(health).left().expand();
 		statusBar.add(money).right().expand();
 		//statusBar.center();
