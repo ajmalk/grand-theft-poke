@@ -15,20 +15,37 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  * Represents a Turn
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 public class Turn {
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Turn [theMap=" + theMap + ", gameActors=" + gameActors
 				+ ", thePlayer=" + thePlayer + ", rand=" + rand + "]";
 	}
 
+	/**
+	 * Field theMap.
+	 */
 	private GameMap theMap;
 	
+	/**
+	 * Field gameActors.
+	 */
 	private ArrayList<Person> gameActors;
 	
+	/**
+	 * Field thePlayer.
+	 */
 	private Player thePlayer;
 	
+	/**
+	 * Field rand.
+	 */
 	private Random rand;
 
 	/**
@@ -95,8 +112,7 @@ public class Turn {
 	/**
 	 * runs a turn using the person
 	 * 
-	 * @return encounter
-	 */
+	 * @return encounter */
 	public Person takeATurn() {
 		useAll();
 		moveAll();
@@ -178,8 +194,8 @@ public class Turn {
 	 * 
 	 * @param thePlayer
 	 *            the current player
-	 * @return Person who wins
-	 */
+	
+	 * @return Person who wins */
 	public Person encounter(Player thePlayer) {
 		for (Person individual : gameActors) {
 			if (individual.getCurrent().toString()

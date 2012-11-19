@@ -11,17 +11,35 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * Holds and operates on a person's supply of items.
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 public class Backpack {
 
+	/**
+	 * Field maxRange.
+	 */
+	/**
+	 * Field capacity.
+	 */
 	private Integer capacity, maxRange;
 
+	/**
+	 * Field contents.
+	 */
 	private Map<Item, Integer> contents;
 
+	/**
+	 * Constructor for Backpack.
+	 */
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
 	}
 
+	/**
+	 * Method getAmount.
+	 * @param toBeRetrieved Item
+	 * @return int
+	 */
 	public int getAmount(Item toBeRetrieved) {
 		if (contents.containsKey(toBeRetrieved)) {
 			return contents.get(toBeRetrieved);
@@ -30,6 +48,10 @@ public class Backpack {
 		return 0;
 	}
 
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -43,6 +65,11 @@ public class Backpack {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -91,6 +118,12 @@ public class Backpack {
 		maxRange = range;
 	}
 
+	/**
+	 * Constructor for Backpack.
+	 * @param range int
+	 * @param capacity int
+	 * @param contents Map<Item,Integer>
+	 */
 	public Backpack(int range, int capacity, Map<Item, Integer> contents) {
 		this(range, capacity);
 		this.contents = contents;
@@ -102,6 +135,7 @@ public class Backpack {
 	 * 
 	 * @param placedItem
 	 * @param quantity
+	 * @return boolean
 	 */
 	public boolean place(Item placedItem, int quantity) {
 		final int weightDiff = placedItem.getWeight() * quantity;
@@ -126,8 +160,8 @@ public class Backpack {
 	 *            , the item to be placed
 	 * @param quantity
 	 *            , the number of items to be placed
-	 * @return whether or not there is sufficient space
-	 */
+	
+	 * @return whether or not there is sufficient space */
 	public boolean checkCapacity(Item placedItem, int quantity) {
 		if (!(contents.containsKey(placedItem))) {
 			return capacity - (placedItem.getWeight() * quantity) >= 0;
@@ -161,8 +195,8 @@ public class Backpack {
 	 * 
 	 * @param retrievedItem
 	 * @param quantity
-	 * @return whether the backpack has the specified number of the given item
-	 */
+	
+	 * @return whether the backpack has the specified number of the given item */
 	public boolean checkContents(Item retrievedItem, int quantity) {
 		if (!(contents.containsKey(retrievedItem))) {
 			return false;
@@ -173,12 +207,16 @@ public class Backpack {
 
 	/**
 	 * 
-	 * @return the maximum range
-	 */
+	
+	 * @return the maximum range */
 	public Integer getMaxRange() {
 		return maxRange;
 	}
 
+	/**
+	 * Method getCapacity.
+	 * @return Integer
+	 */
 	public Integer getCapacity() {
 		return capacity;
 	}
@@ -201,10 +239,18 @@ public class Backpack {
 		this.capacity = capacity;
 	}
 
+	/**
+	 * Method getContents.
+	 * @return Map<Item,Integer>
+	 */
 	public Map<Item, Integer> getContents() {
 		return contents;
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		String toBeReturned = "Backpack Contents: \n";
