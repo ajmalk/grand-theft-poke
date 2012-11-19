@@ -219,8 +219,9 @@ public class ItemDescTile extends Table {
 		buysell.clear();
 		if (tile.isMarketItem()) {
 			buysell.add(buy);
-		} else
+		} else {
 			buysell.add(sell);
+		}
 	}
 
 	/**

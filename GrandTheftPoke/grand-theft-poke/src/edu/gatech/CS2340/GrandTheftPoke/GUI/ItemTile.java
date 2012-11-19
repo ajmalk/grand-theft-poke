@@ -160,8 +160,9 @@ public class ItemTile extends Button {
 	 * @return stock of item
 	 */
 	public Integer getStock() {
-		if (backpackStock != null && backpackStock == -1)
+		if (backpackStock != null && backpackStock == -1) {
 			return stock.getStock();
+		}
 		return pack.getContents().get(item);
 	}
 

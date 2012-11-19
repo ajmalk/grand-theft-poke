@@ -20,7 +20,7 @@ public class Player extends Person {
 	 * empty constructor
 	 */
 	public Player() {
-		super();
+		
 	}
 
 	/**
