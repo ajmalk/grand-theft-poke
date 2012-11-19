@@ -99,7 +99,7 @@ public class GameMapTest extends junit.framework.TestCase {
 		fixture.addTown(new Town("", new MarketPlace(new HashMap())));
 		Town source = new Town("", new MarketPlace(new HashMap()));
 
-		fixture.Dijkstras(source);
+		fixture.dijkstras(source);
 	}
 
 	/**

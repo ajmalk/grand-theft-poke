@@ -15,6 +15,7 @@ public class Path {
 	}
 
 	private final Town target;
+	
 	private final int weight;
 
 	/**

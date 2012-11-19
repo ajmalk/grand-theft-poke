@@ -2,5 +2,5 @@
 package edu.gatech.CS2340.GrandTheftPoke;
 
 public final class BuildConfig {
-	public final static boolean DEBUG = true;
+    public final static boolean DEBUG = true;
 }
