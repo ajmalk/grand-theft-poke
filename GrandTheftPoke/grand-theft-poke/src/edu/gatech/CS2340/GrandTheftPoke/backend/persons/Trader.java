@@ -8,6 +8,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
+/**
+ * Represents a Trader
+ * @author Team Rocket
+ *
+ */
 public class Trader extends Person {
 
 	private MarketPlace personalMarket;
@@ -15,6 +20,19 @@ public class Trader extends Person {
 	float tradeMultiplier;
 	private GlobalItemReference itemsInstance;
 
+	/**
+	 * @param name
+	 * @param strength
+	 * @param agility
+	 * @param trade
+	 * @param stamina
+	 * @param health
+	 * @param range
+	 * @param capacity
+	 * @param money
+	 * @param theMap
+	 * @param itemsInstance
+	 */
 	public Trader(String name, int strength, int agility, int trade,
 			int stamina, int health, int range, int capacity, Float money,
 			GameMap theMap, GlobalItemReference itemsInstance) {
@@ -26,11 +44,17 @@ public class Trader extends Person {
 		this.itemsInstance = itemsInstance;
 	}
 
+	/**
+	 * @param other
+	 */
 	public void compareTrade(Person other) {
 		int theirTrade = other.getTrade();
 		tradeMultiplier = ((float) (getTrade())) / theirTrade;
 	}
 
+	/**
+	 * initializes market
+	 */
 	public void initializeMarket() {
 		/*
 		 * Set<Item> marketStock = getBackpack().getContents().keySet();
@@ -107,16 +131,29 @@ public class Trader extends Person {
 		personalMarket = myMarket;
 	}
 
+	/**
+	 * @return personalMarket
+	 */
 	public MarketPlace getMarket() {
 		return personalMarket;
 	}
 
+	/**
+	 * @param other other person
+	 * @param desiredGood 
+	 * @param quantity 
+	 */
 	public void buy(Person other, Item desiredGood, int quantity) {
 		//super.buy(personalMarket, desiredGood, quantity);
 		other.sell(personalMarket, desiredGood, quantity);
 
 	}
 
+	/**
+	 * @param other other person
+	 * @param desiredGood
+	 * @param quantity
+	 */
 	public void sell(Person other, Item desiredGood, int quantity) {
 		//super.sell(personalMarket, desiredGood, quantity);
 		other.buy(personalMarket, desiredGood, quantity);
