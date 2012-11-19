@@ -31,6 +31,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
+/**
+ * The Market
+ * @author Team Rocket
+ *
+ */
 public class Market extends AbstractScreen {
 	private MarketPlace market;
 	private Backpack playerPack;
@@ -43,6 +48,10 @@ public class Market extends AbstractScreen {
 	private Image background;
 	private Trader otherTrader;
 
+	/**
+	 * @param game the game being played
+	 * @param market the market being traded within
+	 */
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
 		this.market = market;
@@ -57,10 +66,18 @@ public class Market extends AbstractScreen {
 		marketplace = new HashMap<Item, ItemTile>();
 	}
 	
+	/**
+	 * @param game the game being played
+	 */
 	public Market(GTPoke game) {
 		this(game, game.getCurrentTown().getMarket());
 	}
 	
+	/**
+	 * @param game the game being played
+	 * @param market the market being traded in 
+	 * @param other the other trader
+	 */
 	public Market(GTPoke game, MarketPlace market, Trader other) {
 		super(game);
 		this.market = market;
@@ -76,6 +93,7 @@ public class Market extends AbstractScreen {
 		otherTrader = other;
 	}
 	
+
 	@Override
 	public void show() {
 		background = new Image(game.getTextures().findRegion("market-place"));
@@ -133,6 +151,9 @@ public class Market extends AbstractScreen {
 		table.left().setPosition(33, 100);
 	}
 	
+	/**
+	 * adds items to the market
+	 */
 	public void addItems(){
 		int col = 0;
 		markettable.clear();
@@ -161,6 +182,9 @@ public class Market extends AbstractScreen {
 		}
 	}
 	
+	/**
+	 * updates items in the market
+	 */
 	void updatetables(){
 		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = market.iterator(); i.hasNext();) {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();
@@ -180,6 +204,9 @@ public class Market extends AbstractScreen {
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see edu.gatech.CS2340.GrandTheftPoke.screens.AbstractScreen#render(float)
+	 */
 	public void render(float delta) {
 		super.render(delta);
 		

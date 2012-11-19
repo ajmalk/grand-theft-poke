@@ -1,74 +1,74 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 
 /**
- * 
- * @author Ben_2
+ * Town Factory
+ * @author Team Rocket
  */
 public interface TownFactory {
 
 	/**
 	 * 
-	 * @return
+	 * @return PalletTown
 	 */
 	public Town makePalletTown();
 
 	/**
 	 * 
-	 * @return
+	 * @return ViridianCity
 	 */
 	public Town makeViridianCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return PewterCity
 	 */
 	public Town makePewterCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return CeruleanCity
 	 */
 	public Town makeCeruleanCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return SaffronCity
 	 */
 	public Town makeSaffronCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return CeladonCity
 	 */
 	public Town makeCeladonCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return LavenderTown
 	 */
 	public Town makeLavenderTown();
 
 	/**
 	 * 
-	 * @return
+	 * @return VermillionCity
 	 */
 	public Town makeVermillionCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return FuchsiaCity
 	 */
 	public Town makeFuchsiaCity();
 
 	/**
 	 * 
-	 * @return
+	 * @return CinnibarIsland
 	 */
 	public Town makeCinnabarIsland();
 
 	/**
 	 * 
-	 * @return
+	 * @return PowerPlant
 	 */
 	public Town makePowerPlant();
 }

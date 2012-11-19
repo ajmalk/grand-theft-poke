@@ -20,6 +20,11 @@ import edu.gatech.CS2340.GrandTheftPoke.GUI.TownTile;
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
+/**
+ * Map Screen
+ * @author Team Rocket
+ *
+ */
 public class MapScreen extends AbstractScreen {
 
 	private Texture background;
@@ -40,9 +45,13 @@ public class MapScreen extends AbstractScreen {
 	private Button saveButton;
 	private Button backButton;
 
+	/**
+	 * @param game the game being played
+	 */
 	public MapScreen(GTPoke game) {
 		super(game);
 	}
+
 
 	@Override
 	public void show() {
@@ -413,10 +422,12 @@ public class MapScreen extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {

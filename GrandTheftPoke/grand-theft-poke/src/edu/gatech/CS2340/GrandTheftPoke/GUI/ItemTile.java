@@ -19,6 +19,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
+/**
+ * an item tile
+ * @author Team Rocket
+ *
+ */
 public class ItemTile extends Button {
 	private Item item;
 	private MarketPlaceItem stock;
@@ -26,11 +31,18 @@ public class ItemTile extends Button {
 	private Image icon;
 	private Label stockLabel, price;
 	private Backpack pack;
+	/**
+	 * @return item
+	 */
 	public Item getItem() {
 		return item;
 	}
 
 	// private Table tile;
+	/**
+	 * @param item the item to put in the tile
+	 * @param stock the stock of the item in the marketplace
+	 */
 	public ItemTile(Item item, MarketPlaceItem stock) {
 		super(	new TextureRegionDrawable(new TextureRegion(
 				GTPoke.getButtonSprite(), 0, 0, 150, 175)),
@@ -67,6 +79,12 @@ public class ItemTile extends Button {
 		update();
 	}
 
+	/**
+	 * @param theMarket the current market
+	 * @param item the item being referred to
+	 * @param stock the stock of the item
+	 * @param pack the player's backpack
+	 */
 	public ItemTile(MarketPlace theMarket, Item item, Integer stock, Backpack pack) {
 		super(	new TextureRegionDrawable(new TextureRegion(
 				GTPoke.getButtonSprite(), 0, 0, 150, 170)),
@@ -108,20 +126,32 @@ public class ItemTile extends Button {
 		update();
 	}
 	
+	/**
+	 * @return stock
+	 */
 	public MarketPlaceItem getStockInfo(){
 		return stock;
 	}
 	
+	/**
+	 * @return boolean 
+	 */
 	public boolean isMarketItem(){
 		return backpackStock == -1;
 	}
 	
+	/**
+	 * @return stock of item
+	 */
 	public Integer getStock(){
 		if (backpackStock != null && backpackStock == -1)
 			return stock.getStock();
 		return pack.getContents().get(item);
 	}
 	
+	/**
+	 * @return update item stock
+	 */
 	public boolean update() {
 		if (backpackStock != null && backpackStock == -1) {
 			stockLabel.setText(stock.getStock().toString());

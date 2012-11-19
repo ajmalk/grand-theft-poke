@@ -14,6 +14,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 
+/**
+ * Town/Navigation screen
+ * @author Team Rocket
+ *
+ */
 public class TownScreen extends AbstractScreen {
 
 	private Table table;
@@ -28,10 +33,15 @@ public class TownScreen extends AbstractScreen {
 	private Button backPackButton;
 	private String town;
 
+	/**
+	 * @param game the game being played
+	 * @param town the town one is in
+	 */
 	public TownScreen(GTPoke game, String town) {
 		super(game);
 		this.town = town;
 	}
+
 
 	@Override
 	public void show() {
@@ -106,6 +116,7 @@ public class TownScreen extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -139,10 +150,12 @@ public class TownScreen extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {

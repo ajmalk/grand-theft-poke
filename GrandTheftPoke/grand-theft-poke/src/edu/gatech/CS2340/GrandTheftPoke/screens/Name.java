@@ -17,6 +17,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
+/**
+ * Initial input screen
+ * @author Team Rocket
+ *
+ */
 public class Name extends AbstractScreen {
 	private Image background;
 	private Button ConfirmButton;
@@ -24,9 +29,13 @@ public class Name extends AbstractScreen {
 	private String playerName = "";
 	private Table table;
 
+	/**
+	 * @param game the game being played
+	 */
 	public Name(GTPoke game) {
 		super(game);
 	}
+
 
 	@Override
 	public void show() {
@@ -103,6 +112,7 @@ public class Name extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -118,10 +128,12 @@ public class Name extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {

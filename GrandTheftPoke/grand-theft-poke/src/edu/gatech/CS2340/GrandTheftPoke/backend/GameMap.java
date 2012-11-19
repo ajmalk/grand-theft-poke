@@ -17,7 +17,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 
 /**
- * 
+ * This class represents a GameMap
  * @author Team Rocket
  */
 @XStreamAlias("Map")

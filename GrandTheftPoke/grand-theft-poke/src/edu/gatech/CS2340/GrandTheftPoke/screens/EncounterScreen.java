@@ -16,6 +16,11 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
+/**
+ * Encounter Screen
+ * @author Team Rocket
+ *
+ */
 public class EncounterScreen extends AbstractScreen {
 
 	private Texture background;
@@ -31,6 +36,10 @@ public class EncounterScreen extends AbstractScreen {
 
 	private Table table;
 
+	/**
+	 * @param game the game being played
+	 * @param encounteredPerson the person who is encountered
+	 */
 	public EncounterScreen(GTPoke game, Person encounteredPerson) {
 		super(game);
 		this.game = game;
@@ -39,6 +48,7 @@ public class EncounterScreen extends AbstractScreen {
 			((Trader) myPerson).initializeMarket();
 		}
 	}
+
 
 	@Override
 	public void show() {

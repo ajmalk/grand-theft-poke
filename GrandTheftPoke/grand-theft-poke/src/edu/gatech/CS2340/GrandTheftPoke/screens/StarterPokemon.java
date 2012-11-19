@@ -15,6 +15,11 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
+/**
+ * Starter screen
+ * @author Team Rocket
+ *
+ */
 public class StarterPokemon extends AbstractScreen {
 	private Image title;
 	private Button bulbasaur;
@@ -25,9 +30,13 @@ public class StarterPokemon extends AbstractScreen {
 	private int confirmY = 10;
 	private Table table;
 
+	/**
+	 * @param game the game being played
+	 */
 	public StarterPokemon(GTPoke game) {
 		super(game);
 	}
+
 
 	@Override
 	public void show() {
@@ -104,6 +113,7 @@ public class StarterPokemon extends AbstractScreen {
 		});
 	}
 
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -120,10 +130,12 @@ public class StarterPokemon extends AbstractScreen {
 		stage.addActor(ConfirmButton);
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {
