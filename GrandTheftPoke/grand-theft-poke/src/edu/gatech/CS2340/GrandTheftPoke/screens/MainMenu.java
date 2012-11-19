@@ -13,21 +13,20 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 //import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 //import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
 //same story with imports here
-import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
  * @author Team Rocket
- *
+ * 
  */
 public class MainMenu extends AbstractScreen {
 	private Image background;
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 */
 	public MainMenu(GTPoke game) {
 		super(game);
@@ -39,7 +38,7 @@ public class MainMenu extends AbstractScreen {
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
-		//Image backgroundImage = new Image(background);
+		// Image backgroundImage = new Image(background);
 		background = new Image(game.getTextures().findRegion("intro/main-menu"));
 		background.setFillParent(true);
 		background.getColor().a = 0f;
@@ -64,7 +63,7 @@ public class MainMenu extends AbstractScreen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.newGame();
-				
+
 			}
 		});
 		LoadButton.addListener(new ClickListener() {
@@ -73,7 +72,7 @@ public class MainMenu extends AbstractScreen {
 				game.load(0);
 			}
 		});
-		
+
 		Button DebugButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(ButtonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
@@ -87,8 +86,7 @@ public class MainMenu extends AbstractScreen {
 				game.setScreen(new MarketPlaceItemDemo(game));
 			}
 		});
-		
-		
+
 		Table table = new Table(game.getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
@@ -100,18 +98,15 @@ public class MainMenu extends AbstractScreen {
 
 	}
 
-
 	@Override
 	public void render(float delta) {
 		super.render(delta);
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
-
 
 	@Override
 	public void dispose() {

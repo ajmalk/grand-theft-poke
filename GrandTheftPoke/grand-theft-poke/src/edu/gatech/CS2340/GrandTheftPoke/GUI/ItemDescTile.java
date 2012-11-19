@@ -25,8 +25,9 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
 
 /**
  * Represents item tile
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class ItemDescTile extends Table {
 	private Item item;
@@ -43,7 +44,7 @@ public class ItemDescTile extends Table {
 	private MarketPlace market;
 	private Market screen;
 	private ItemTile tile;
-	
+
 	/**
 	 * @return item
 	 */
@@ -53,22 +54,30 @@ public class ItemDescTile extends Table {
 
 	// private Table tile;
 	/**
-	 * @param item item to represent
-	 * @param stockInfo information about stock
-	 * @param customer person buying item
-	 * @param market market in which item exists
-	 * @param screen screen to show to
-	 * @param tile tile containing item
-	 * @param other other trader
+	 * @param item
+	 *            item to represent
+	 * @param stockInfo
+	 *            information about stock
+	 * @param customer
+	 *            person buying item
+	 * @param market
+	 *            market in which item exists
+	 * @param screen
+	 *            screen to show to
+	 * @param tile
+	 *            tile containing item
+	 * @param other
+	 *            other trader
 	 */
-	public ItemDescTile(Item item, MarketPlaceItem stockInfo, Person customer, MarketPlace market, Market screen, ItemTile tile, Trader other) {
+	public ItemDescTile(Item item, MarketPlaceItem stockInfo, Person customer,
+			MarketPlace market, Market screen, ItemTile tile, Trader other) {
 		this.item = item;
 		this.stockInfo = stockInfo;
 		this.customer = customer;
 		this.market = market;
 		this.screen = screen;
 		this.otherTrader = other;
-		
+
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
 		buy = new Button(new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
@@ -77,7 +86,6 @@ public class ItemDescTile extends Table {
 		buy.add("Buy");
 		buyListener = new BuyListener();
 		buy.addListener(buyListener);
-		
 
 		sell = new Button(new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
@@ -86,65 +94,66 @@ public class ItemDescTile extends Table {
 		sell.add("Sell");
 		sellListener = new SellListener();
 		sell.addListener(sellListener);
-		
+
 		buysell = new Table();
-		
+
 		Pixmap map = new Pixmap(200, 200, Pixmap.Format.RGB565);
 		map.setColor(Color.BLUE);
 		map.fillRectangle(0, 0, 200, 200);
-		
+
 		Pixmap map2 = new Pixmap(200, 200, Pixmap.Format.RGB565);
 		map2.setColor(Color.GRAY);
 		map2.fillRectangle(0, 0, 200, 200);
-		
+
 		backpackStock = -1;
-		name = new Label("",
-				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		description = new Label("",
-				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		stock = new Label("", new Skin(
+		name = new Label("", new Skin(Gdx.files.internal("skins//uiskin.json")));
+		description = new Label("", new Skin(
 				Gdx.files.internal("skins//uiskin.json")));
+		stock = new Label("",
+				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		icon = new Image(new Texture(map));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
-		
+
 		add(stock).right().pad(10);
 		row();
 		add(icon).expandX();
 		row();
-		
+
 		name.setWrap(true);
 		name.setAlignment(Align.center);
 		add(name).width(250).padTop(5);
 		row();
-		
+
 		description.setWrap(true);
-		//description.setAlignment(Align.center);
+		// description.setAlignment(Align.center);
 		add(description).width(250).padTop(5).expand().top();
-		row();		
+		row();
 		add(price).bottom().pad(10);
 		row();
 		add(buysell).width(150);
-		
+
 		top();
 		setSize(300, 525);
-		
-		setBackground(new TextureRegionDrawable(new TextureRegion(new Texture(map2), 0, 0, 300, 525)));
-		
+
+		setBackground(new TextureRegionDrawable(new TextureRegion(new Texture(
+				map2), 0, 0, 300, 525)));
+
 		update(item, stockInfo, customer, tile);
 	}
-	
+
 	/**
 	 * Listener for things being bought
+	 * 
 	 * @author Team Rocket
-	 *
+	 * 
 	 */
-	private class BuyListener extends ClickListener{
+	private class BuyListener extends ClickListener {
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
-			if(otherTrader != null) {
-				if(otherTrader.getBackpack().checkContents(item, 1)) {
+			if (otherTrader != null) {
+				if (otherTrader.getBackpack().checkContents(item, 1)) {
 					customer.buy(otherTrader.getMarket(), item, 1);
 					otherTrader.getBackpack().remove(item, 1);
 					System.out.println(otherTrader.getBackpack());
@@ -154,17 +163,20 @@ public class ItemDescTile extends Table {
 			}
 		}
 	}
-	
+
 	/**
 	 * Listener for sale
+	 * 
 	 * @author Team Rocket
-	 *
+	 * 
 	 */
-	private class SellListener extends ClickListener{
+	private class SellListener extends ClickListener {
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
-			if(otherTrader != null) {
-				if(otherTrader.getWallet().checkAmount(((MarketPlaceItem)(otherTrader.getMarket().getStock().get(item))).getBuyingPrice(1))) {
+			if (otherTrader != null) {
+				if (otherTrader.getWallet().checkAmount(
+						((MarketPlaceItem) (otherTrader.getMarket().getStock()
+								.get(item))).getBuyingPrice(1))) {
 					customer.sell(otherTrader.getMarket(), item, 1);
 					otherTrader.getBackpack().place(item, 1);
 					System.out.println(otherTrader.getBackpack());
@@ -175,12 +187,14 @@ public class ItemDescTile extends Table {
 			}
 		}
 	}
-	
+
 	/**
-	 * @param tile the tile that represents the item
-	 * @param customer the person buying the item
+	 * @param tile
+	 *            the tile that represents the item
+	 * @param customer
+	 *            the person buying the item
 	 */
-	public void update(ItemTile tile, Person customer){
+	public void update(ItemTile tile, Person customer) {
 		this.item = tile.getItem();
 		this.stockInfo = tile.getStockInfo();
 		this.customer = customer;
@@ -190,18 +204,24 @@ public class ItemDescTile extends Table {
 		price.setText("$" + ((Float) (1.1f * stockInfo.getPrice())).toString());
 		stock.setText(tile.getStock().toString());
 		buysell.clear();
-		if(tile.isMarketItem())
+		if (tile.isMarketItem())
 			buysell.add(buy);
-		else buysell.add(sell);
+		else
+			buysell.add(sell);
 	}
-	
+
 	/**
-	 * @param item the item to be updated
-	 * @param stockInfo the item in the marketplace
-	 * @param customerthe person with which the item is to be updated
-	 * @param tile the tile that represents the item
+	 * @param item
+	 *            the item to be updated
+	 * @param stockInfo
+	 *            the item in the marketplace
+	 * @param customerthe
+	 *            person with which the item is to be updated
+	 * @param tile
+	 *            the tile that represents the item
 	 */
-	public void update(Item item, MarketPlaceItem stockInfo, Person customer, ItemTile tile){
+	public void update(Item item, MarketPlaceItem stockInfo, Person customer,
+			ItemTile tile) {
 		this.item = item;
 		this.stockInfo = stockInfo;
 		this.customer = customer;
@@ -210,21 +230,26 @@ public class ItemDescTile extends Table {
 		description.setText(item.getDescription());
 		stock.setText(stockInfo.getStock().toString());
 		price.setText("$" + ((Float) (1.1f * stockInfo.getPrice())).toString());
-		//((BuyListener) buyListener).update(item, stockInfo, customer);
+		// ((BuyListener) buyListener).update(item, stockInfo, customer);
 		buysell.clear();
 		buysell.add(buy);
-		//sell.remove();
-		//addActorAfter(description, buy);
-		
+		// sell.remove();
+		// addActorAfter(description, buy);
+
 	}
-	
+
 	/**
-	 * @param item to be put in marketplace
-	 * @param stockInfo MarketPlaceItem representing the stock
-	 * @param backpackStock the stock of the backpack
-	 * @param customer the person with whom to trade
+	 * @param item
+	 *            to be put in marketplace
+	 * @param stockInfo
+	 *            MarketPlaceItem representing the stock
+	 * @param backpackStock
+	 *            the stock of the backpack
+	 * @param customer
+	 *            the person with whom to trade
 	 */
-	public void update(Item item, MarketPlaceItem stockInfo, Integer backpackStock, Person customer){
+	public void update(Item item, MarketPlaceItem stockInfo,
+			Integer backpackStock, Person customer) {
 		this.item = item;
 		this.stockInfo = stockInfo;
 		this.customer = customer;
@@ -234,8 +259,7 @@ public class ItemDescTile extends Table {
 		price.setText("$" + ((Float) (1.1f * stockInfo.getPrice())).toString());
 		buysell.clear();
 		buysell.add(sell);
-		//sell.setVisible(true);
-		//buy.setVisible(false);
+		// sell.setVisible(true);
+		// buy.setVisible(false);
 	}
 }
-

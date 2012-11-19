@@ -22,14 +22,16 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
  * Town Tile
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class TownTile extends Button {
 	private Town myTown;
 
 	/**
-	 * @param myTown the town the player is in
+	 * @param myTown
+	 *            the town the player is in
 	 */
 	public TownTile(Town myTown) {
 		super(new TextureRegionDrawable(new TextureRegion(
@@ -51,8 +53,10 @@ public class TownTile extends Button {
 	}
 
 	/**
-	 * @param myTown the town the player is in
-	 * @param myStyle the style of the button
+	 * @param myTown
+	 *            the town the player is in
+	 * @param myStyle
+	 *            the style of the button
 	 */
 	public TownTile(Town myTown, ButtonStyle myStyle) {
 		super(myStyle);

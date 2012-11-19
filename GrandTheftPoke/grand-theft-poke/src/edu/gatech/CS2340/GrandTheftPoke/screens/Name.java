@@ -19,8 +19,9 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 /**
  * Initial input screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Name extends AbstractScreen {
 	private Image background;
@@ -30,24 +31,24 @@ public class Name extends AbstractScreen {
 	private Table table;
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 */
 	public Name(GTPoke game) {
 		super(game);
 	}
 
-
 	@Override
 	public void show() {
 		super.show();
-		//stage.clear();
+		// stage.clear();
 		table = new Table(game.getSkin());
 		table.setFillParent(true);
 
 		background = new Image(game.getTextures().findRegion("intro/main-menu"));
 
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
-		
+
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
@@ -112,7 +113,6 @@ public class Name extends AbstractScreen {
 
 	}
 
-
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -128,12 +128,10 @@ public class Name extends AbstractScreen {
 
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
-
 
 	@Override
 	public void dispose() {

@@ -17,8 +17,9 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 /**
  * Starter screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class StarterPokemon extends AbstractScreen {
 	private Image title;
@@ -31,12 +32,12 @@ public class StarterPokemon extends AbstractScreen {
 	private Table table;
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 */
 	public StarterPokemon(GTPoke game) {
 		super(game);
 	}
-
 
 	@Override
 	public void show() {
@@ -50,9 +51,10 @@ public class StarterPokemon extends AbstractScreen {
 		title.setPosition(60, 600);
 		title.addAction(fadeIn(0.75f));
 
-		bulbasaur = new Button(new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-1"))
-				, new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-1-down")));
-		
+		bulbasaur = new Button(new TextureRegionDrawable(game.getTextures()
+				.findRegion("intro/starter-1")), new TextureRegionDrawable(game
+				.getTextures().findRegion("intro/starter-1-down")));
+
 		bulbasaur.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -63,8 +65,9 @@ public class StarterPokemon extends AbstractScreen {
 			}
 		});
 
-		charmander = new Button(new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-2"))
-		, new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-2-down")));
+		charmander = new Button(new TextureRegionDrawable(game.getTextures()
+				.findRegion("intro/starter-2")), new TextureRegionDrawable(game
+				.getTextures().findRegion("intro/starter-2-down")));
 		charmander.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -75,8 +78,9 @@ public class StarterPokemon extends AbstractScreen {
 			}
 		});
 
-		squirtle = new Button(new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-3"))
-		, new TextureRegionDrawable(game.getTextures().findRegion("intro/starter-3-down")));
+		squirtle = new Button(new TextureRegionDrawable(game.getTextures()
+				.findRegion("intro/starter-3")), new TextureRegionDrawable(game
+				.getTextures().findRegion("intro/starter-3-down")));
 		squirtle.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -113,7 +117,6 @@ public class StarterPokemon extends AbstractScreen {
 		});
 	}
 
-
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -130,12 +133,10 @@ public class StarterPokemon extends AbstractScreen {
 		stage.addActor(ConfirmButton);
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
-
 
 	@Override
 	public void dispose() {

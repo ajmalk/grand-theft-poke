@@ -17,19 +17,20 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 /**
  * The initial splash screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class SplashScreen extends AbstractScreen {
 	private Texture splashTexture;
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 */
 	public SplashScreen(GTPoke game) {
 		super(game);
 	}
-
 
 	@Override
 	public void show() {
@@ -55,7 +56,6 @@ public class SplashScreen extends AbstractScreen {
 		// stage.addActor(new Rectangle(0, 0, 200, 200));
 	}
 
-
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
@@ -64,12 +64,10 @@ public class SplashScreen extends AbstractScreen {
 		stage.draw();
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
-
 
 	@Override
 	public void dispose() {

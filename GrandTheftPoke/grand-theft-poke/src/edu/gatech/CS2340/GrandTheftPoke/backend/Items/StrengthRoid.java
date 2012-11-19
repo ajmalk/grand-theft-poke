@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Represents a StrengthRoid
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class StrengthRoid extends Item implements Usable {
 	@Override

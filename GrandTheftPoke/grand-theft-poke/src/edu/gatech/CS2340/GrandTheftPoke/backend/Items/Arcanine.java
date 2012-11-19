@@ -1,10 +1,10 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-
 /**
  * Represents an arcanine
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Arcanine extends Pokemon {
 
@@ -40,6 +40,5 @@ public class Arcanine extends Pokemon {
 	public String getFileName() {
 		return "arcanine";
 	}
-	
-	
+
 }

@@ -38,7 +38,8 @@ public class MarketPlaceItem {
 	 * @return the price truncated to 2 decimal places
 	 */
 	public Float getPrice() {
-		return ((int) (price * 100)) / 10000f; // probably a better way to do this
+		return ((int) (price * 100)) / 10000f; // probably a better way to do
+												// this
 	}
 
 	/**
@@ -55,7 +56,8 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return ((int) (price * 100)) / 10000f; // probably a better way to do this
+		return ((int) (price * 100)) / 10000f; // probably a better way to do
+												// this
 	}
 
 	/**
@@ -72,7 +74,8 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return ((int) (price * 100)) / 10000f; // probably a better way to do this
+		return ((int) (price * 100)) / 10000f; // probably a better way to do
+												// this
 	}
 
 	/**
@@ -86,7 +89,9 @@ public class MarketPlaceItem {
 
 	/**
 	 * checks consumption
-	 * @param price the price
+	 * 
+	 * @param price
+	 *            the price
 	 * @return float
 	 */
 	public float consumption(float price) {
@@ -96,7 +101,9 @@ public class MarketPlaceItem {
 
 	/**
 	 * checks production
-	 * @param price the price
+	 * 
+	 * @param price
+	 *            the price
 	 * @return float
 	 */
 	public float production(float price) {
@@ -106,6 +113,7 @@ public class MarketPlaceItem {
 
 	/**
 	 * checks consumption
+	 * 
 	 * @return float
 	 */
 	private float consumption() {
@@ -114,6 +122,7 @@ public class MarketPlaceItem {
 
 	/**
 	 * checks production
+	 * 
 	 * @return float
 	 */
 	private float production() {
@@ -122,7 +131,9 @@ public class MarketPlaceItem {
 
 	/**
 	 * checks to see if two items are equal
-	 * @param item item to be checked
+	 * 
+	 * @param item
+	 *            item to be checked
 	 * @return boolean
 	 */
 	public boolean equals(MarketPlaceItem item) {
@@ -137,7 +148,9 @@ public class MarketPlaceItem {
 
 	/**
 	 * gets new price of item
-	 * @param amount price of item
+	 * 
+	 * @param amount
+	 *            price of item
 	 * @return float
 	 */
 	private float getNewPrice(float amount) {

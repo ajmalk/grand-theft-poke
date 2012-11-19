@@ -10,6 +10,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 /**
  * represents a marketPlace
+ * 
  * @author Team Rocket
  */
 @XStreamAlias("Market")
@@ -20,7 +21,8 @@ public class MarketPlace {
 	/**
 	 * Constructor that creates the market place for each town
 	 * 
-	 * @param stock a hashmap of Items to their MarketPlaceItem economic models
+	 * @param stock
+	 *            a hashmap of Items to their MarketPlaceItem economic models
 	 */
 	public MarketPlace(HashMap<Item, MarketPlaceItem> stock) {
 		this.stock = stock;
@@ -28,7 +30,9 @@ public class MarketPlace {
 
 	/**
 	 * checks if two markets are equal
-	 * @param market the current market
+	 * 
+	 * @param market
+	 *            the current market
 	 * @return boolean
 	 */
 	public boolean equals(MarketPlace market) {
@@ -43,8 +47,11 @@ public class MarketPlace {
 
 	/**
 	 * buys an item
-	 * @param good the good to be bought
-	 * @param quantity quantity to be bought
+	 * 
+	 * @param good
+	 *            the good to be bought
+	 * @param quantity
+	 *            quantity to be bought
 	 * @return float
 	 */
 	public float buy(Item good, int quantity) {
@@ -57,8 +64,11 @@ public class MarketPlace {
 
 	/**
 	 * sells an item
-	 * @param good good to be sold
-	 * @param quantity quantity to be sold
+	 * 
+	 * @param good
+	 *            good to be sold
+	 * @param quantity
+	 *            quantity to be sold
 	 * @return float
 	 */
 	public float sell(Item good, int quantity) {
@@ -72,18 +82,20 @@ public class MarketPlace {
 
 	/**
 	 * getsStock
+	 * 
 	 * @return stock the stock of the market
 	 */
 	public HashMap getStock() {
 		return stock;
 	}
-	
+
 	/**
 	 * marketPlace Iterator
+	 * 
 	 * @return Iterator iterator
 	 */
-	public Iterator iterator(){
+	public Iterator iterator() {
 		return stock.entrySet().iterator();
-		
+
 	}
 }

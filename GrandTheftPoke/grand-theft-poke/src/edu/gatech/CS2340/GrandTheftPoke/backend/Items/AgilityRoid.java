@@ -4,12 +4,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Represents an AgilitySteroid
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class AgilityRoid extends Item implements Usable {
 
-	
 	@Override
 	public void use(Person person) {
 		person.setAgility(2);

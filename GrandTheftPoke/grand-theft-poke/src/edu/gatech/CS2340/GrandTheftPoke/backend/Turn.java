@@ -24,9 +24,13 @@ public class Turn {
 
 	/**
 	 * Constructor
-	 * @param theMap the current map
-	 * @param gameActors the gameActors
-	 * @param thePlayer the currentPlayer
+	 * 
+	 * @param theMap
+	 *            the current map
+	 * @param gameActors
+	 *            the gameActors
+	 * @param thePlayer
+	 *            the currentPlayer
 	 */
 	public Turn(GameMap theMap, ArrayList<Person> gameActors, Player thePlayer) {
 		this.theMap = theMap;
@@ -34,28 +38,46 @@ public class Turn {
 		this.thePlayer = thePlayer;
 		rand = new Random();
 	}
-	
+
 	/**
 	 * Constructor
-	 * @param theMap the current map
-	 * @param player the current player
-	 * @param items the globalItemReference
+	 * 
+	 * @param theMap
+	 *            the current map
+	 * @param player
+	 *            the current player
+	 * @param items
+	 *            the globalItemReference
 	 */
-	public Turn(GameMap theMap, Player player, GlobalItemReference items){
+	public Turn(GameMap theMap, Player player, GlobalItemReference items) {
 		gameActors = new ArrayList<Person>();
-		//String name, int strength, int agility, int trade, int stamina, int health, int range, int capacity, Float money, GameMap theMap, GlobalItemReference itemsInstance
-		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100, 20, 1000f, theMap, items));
-		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 100, 100, 20, 1000f, theMap));
-		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f, theMap));
-		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f, theMap));
-		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20, 1000f, theMap));
+		// String name, int strength, int agility, int trade, int stamina, int
+		// health, int range, int capacity, Float money, GameMap theMap,
+		// GlobalItemReference itemsInstance
+		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 100, 100, 20,
+				1000f, theMap, items));
+		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f,
+				theMap, items));
+		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100,
+				20, 1000f, theMap, items));
+		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 100, 100, 20,
+				1000f, theMap));
+		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f,
+				theMap));
+		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f,
+				theMap));
+		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20,
+				1000f, theMap));
 		this.theMap = theMap;
 		this.thePlayer = player;
 		rand = new Random();
@@ -63,6 +85,7 @@ public class Turn {
 
 	/**
 	 * runs a turn using the person
+	 * 
 	 * @return encounter
 	 */
 	public Person takeATurn() {
@@ -143,7 +166,9 @@ public class Turn {
 
 	/**
 	 * represents an encounter
-	 * @param thePlayer the current player
+	 * 
+	 * @param thePlayer
+	 *            the current player
 	 * @return Person who wins
 	 */
 	public Person encounter(Player thePlayer) {
@@ -151,12 +176,12 @@ public class Turn {
 			if (individual.getCurrent().toString()
 					.equals(thePlayer.getCurrent().toString())) {
 				if (individual instanceof Trader) {
-					 //&& rand.nextDouble() <= thePlayer.getAgility() / 100) {
+					// && rand.nextDouble() <= thePlayer.getAgility() / 100) {
 					System.out.println(individual);
 					System.out.println(individual.getBackpack());
 					return individual;
 				} else if (individual instanceof Rocket
-					&& rand.nextDouble() >= thePlayer.getAgility() / 100) {
+						&& rand.nextDouble() >= thePlayer.getAgility() / 100) {
 					return individual;
 				}
 			}

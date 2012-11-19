@@ -22,8 +22,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
  * Map Screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class MapScreen extends AbstractScreen {
 
@@ -46,12 +47,12 @@ public class MapScreen extends AbstractScreen {
 	private Button backButton;
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 */
 	public MapScreen(GTPoke game) {
 		super(game);
 	}
-
 
 	@Override
 	public void show() {
@@ -403,9 +404,10 @@ public class MapScreen extends AbstractScreen {
 
 		stage.addActor(saveButton);
 		stage.addActor(backButton);
-		
+
 		stage.addActor(game.getStatusBar());
 	}
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -413,12 +415,10 @@ public class MapScreen extends AbstractScreen {
 		game.update();
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
-
 
 	@Override
 	public void dispose() {

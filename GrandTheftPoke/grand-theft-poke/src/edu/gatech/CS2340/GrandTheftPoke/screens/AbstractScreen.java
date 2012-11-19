@@ -5,14 +5,14 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 /**
  * An Abstract Screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public abstract class AbstractScreen implements Screen {
 	protected final GTPoke game;
@@ -20,7 +20,8 @@ public abstract class AbstractScreen implements Screen {
 	private final SpriteBatch batch;
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 */
 	public AbstractScreen(GTPoke game) {
 		this.game = game;
@@ -28,7 +29,6 @@ public abstract class AbstractScreen implements Screen {
 		this.stage = new Stage(0, 0, true);
 		Gdx.input.setInputProcessor(stage);
 	}
-
 
 	@Override
 	public void render(float delta) {
@@ -43,30 +43,25 @@ public abstract class AbstractScreen implements Screen {
 		stage.setViewport(width, height, true);
 	}
 
-
 	@Override
 	public void show() {
-		
-	}
 
+	}
 
 	@Override
 	public void hide() {
-		
-	}
 
+	}
 
 	@Override
 	public void pause() {
-		
-	}
 
+	}
 
 	@Override
 	public void resume() {
-		
-	}
 
+	}
 
 	@Override
 	public void dispose() {
@@ -74,5 +69,4 @@ public abstract class AbstractScreen implements Screen {
 		batch.dispose();
 	}
 
-	
 }

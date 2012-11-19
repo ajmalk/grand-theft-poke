@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Represents Agility Vitamin
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class AgilityVitamin extends Item implements Usable {
 

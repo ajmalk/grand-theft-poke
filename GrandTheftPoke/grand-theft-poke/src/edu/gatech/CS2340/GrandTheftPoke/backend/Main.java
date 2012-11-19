@@ -11,8 +11,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 
 /**
  * represents the Main class
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Main {
 
@@ -29,7 +30,9 @@ public class Main {
 
 	/**
 	 * creates the game map
-	 * @param theReference the globalItemReference
+	 * 
+	 * @param theReference
+	 *            the globalItemReference
 	 * @return a gameMap to be used
 	 */
 	public static GameMap makeMap(GlobalItemReference theReference) {
@@ -39,8 +42,11 @@ public class Main {
 
 	/**
 	 * tests marketPlace
-	 * @param map the current gameMap
-	 * @param theReference the globalItemReference
+	 * 
+	 * @param map
+	 *            the current gameMap
+	 * @param theReference
+	 *            the globalItemReference
 	 */
 	public static void testMarketPlace(GameMap map,
 			GlobalItemReference theReference) {
@@ -64,7 +70,9 @@ public class Main {
 
 	/**
 	 * tests valid movement
-	 * @param map the current gameMap
+	 * 
+	 * @param map
+	 *            the current gameMap
 	 */
 	public static void testMovement(GameMap map) {
 		// Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);

@@ -2,8 +2,9 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
  * Represents a JigglyPuff
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class JigglyPuff extends Pokemon {
 

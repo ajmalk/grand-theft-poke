@@ -83,7 +83,7 @@ public class Backpack {
 				int currentItems = contents.get(placedItem);
 				contents.put(placedItem, currentItems + quantity);
 			}
-		capacity-= weightDiff;
+			capacity -= weightDiff;
 			return true;
 		}
 		return false;

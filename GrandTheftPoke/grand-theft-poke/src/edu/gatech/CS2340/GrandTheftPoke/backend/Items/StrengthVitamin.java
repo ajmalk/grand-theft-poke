@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Represents a StrengthVitamin
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class StrengthVitamin extends Item implements Usable {
 	@Override

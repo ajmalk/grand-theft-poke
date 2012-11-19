@@ -18,8 +18,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
 /**
  * Encounter Screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class EncounterScreen extends AbstractScreen {
 
@@ -37,8 +38,10 @@ public class EncounterScreen extends AbstractScreen {
 	private Table table;
 
 	/**
-	 * @param game the game being played
-	 * @param encounteredPerson the person who is encountered
+	 * @param game
+	 *            the game being played
+	 * @param encounteredPerson
+	 *            the person who is encountered
 	 */
 	public EncounterScreen(GTPoke game, Person encounteredPerson) {
 		super(game);
@@ -48,7 +51,6 @@ public class EncounterScreen extends AbstractScreen {
 			((Trader) myPerson).initializeMarket();
 		}
 	}
-
 
 	@Override
 	public void show() {
@@ -74,8 +76,8 @@ public class EncounterScreen extends AbstractScreen {
 			trade.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
-					game.setScreen(game.getMarketScreen(((Trader) myPerson)
-							.getMarket(), (Trader)myPerson));
+					game.setScreen(game.getMarketScreen(
+							((Trader) myPerson).getMarket(), (Trader) myPerson));
 				}
 			});
 		} else {
@@ -118,9 +120,10 @@ public class EncounterScreen extends AbstractScreen {
 
 		flee.setPosition(641, 116);
 		stage.addActor(flee);
-		
+
 		stage.addActor(game.getStatusBar());
 	}
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);

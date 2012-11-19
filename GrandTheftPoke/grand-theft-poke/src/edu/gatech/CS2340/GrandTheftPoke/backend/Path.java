@@ -4,6 +4,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
  * The path
+ * 
  * @author Team Rocket
  */
 public class Path {
@@ -13,8 +14,11 @@ public class Path {
 
 	/**
 	 * Checks for efficiency
-	 * @param argTarget town that is the target
-	 * @param argWeight target weight
+	 * 
+	 * @param argTarget
+	 *            town that is the target
+	 * @param argWeight
+	 *            target weight
 	 */
 	public Path(Town argTarget, int argWeight) {
 		target = argTarget;
@@ -23,6 +27,7 @@ public class Path {
 
 	/**
 	 * returns the target
+	 * 
 	 * @return target the target
 	 */
 	public Town getTarget() {
@@ -31,6 +36,7 @@ public class Path {
 
 	/**
 	 * returns the weight
+	 * 
 	 * @return weight the weight
 	 */
 	public int getWeight() {

@@ -4,13 +4,16 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
  * Represents an item
+ * 
  * @author Team Rocket
  */
 public abstract class Item {
 	@XStreamOmitField
 	private int weight = 1;
+
 	/**
 	 * returns a string to use to find the corresponding image
+	 * 
 	 * @return String imageName
 	 */
 	public abstract String getFileName();
@@ -20,6 +23,7 @@ public abstract class Item {
 
 	/**
 	 * returns a description of the item
+	 * 
 	 * @return a description
 	 */
 	public abstract String getDescription();
@@ -37,6 +41,7 @@ public abstract class Item {
 
 	/**
 	 * returns the weight
+	 * 
 	 * @return the weight
 	 */
 	public int getWeight() {
@@ -45,7 +50,9 @@ public abstract class Item {
 
 	/**
 	 * sets the weight
-	 * @param weight the weight to be set
+	 * 
+	 * @param weight
+	 *            the weight to be set
 	 */
 	public void setWeight(int weight) {
 		this.weight = weight;

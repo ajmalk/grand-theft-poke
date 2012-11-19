@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Represents a TradeVitamin
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class TradeVitamin extends Item implements Usable {
 

@@ -1,23 +1,19 @@
 package edu.gatech.CS2340.GrandTheftPoke.tests;
 
 import java.util.HashMap;
-
-import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import org.junit.*;
-import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
+import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
-import static org.junit.Assert.*;
 
 /**
  * The class <code>GameMapTest</code> contains tests for the class
@@ -85,7 +81,7 @@ public class GameMapTest extends junit.framework.TestCase {
 
 		distance = fixture.Dijkstras(fixture.getStartTown(), "Cerulean City");
 		assertEquals(distance, 80);
-		
+
 		distance = fixture.Dijkstras(fixture.getStartTown(), "Power Plant");
 		assertEquals(distance, 110);
 	}
@@ -243,6 +239,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * 
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
+	@Override
 	@Before
 	public void setUp() throws Exception {
 		// add additional set up code here
@@ -256,6 +253,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * 
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
+	@Override
 	@After
 	public void tearDown() throws Exception {
 		// Add additional tear down code here

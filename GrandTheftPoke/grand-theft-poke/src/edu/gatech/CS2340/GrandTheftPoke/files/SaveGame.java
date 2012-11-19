@@ -10,8 +10,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 
 /**
  * The game saving algorithm
+ * 
  * @author Team Rocket
- *
+ * 
  */
 @XStreamAlias("Game")
 public class SaveGame {
@@ -27,9 +28,12 @@ public class SaveGame {
 	}
 
 	/**
-	 * @param player the player in the game
-	 * @param map the map for the game
-	 * @param controller the turn controlling the game
+	 * @param player
+	 *            the player in the game
+	 * @param map
+	 *            the map for the game
+	 * @param controller
+	 *            the turn controlling the game
 	 */
 	public SaveGame(Player player, GameMap map, Turn controller) {
 		this.player = player;
@@ -38,7 +42,8 @@ public class SaveGame {
 	}
 
 	/**
-	 * @param game the game being played
+	 * @param game
+	 *            the game being played
 	 * @return boolean
 	 */
 	public boolean load(GTPoke game) {

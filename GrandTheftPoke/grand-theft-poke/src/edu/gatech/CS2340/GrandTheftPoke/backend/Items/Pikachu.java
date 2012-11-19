@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Reprsents a Pikachu
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Pikachu extends Item {
 	@Override

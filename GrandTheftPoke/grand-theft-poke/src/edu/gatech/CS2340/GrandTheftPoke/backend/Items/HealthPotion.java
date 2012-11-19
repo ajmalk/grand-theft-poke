@@ -1,10 +1,12 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
+
 /**
  * Represents a HealthPotion
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class HealthPotion extends Item implements Usable {
 	@Override

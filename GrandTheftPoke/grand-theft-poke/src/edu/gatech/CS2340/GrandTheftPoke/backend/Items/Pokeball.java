@@ -3,8 +3,9 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 //import edu.gatech.CS2340.grandtheftpoke.Person;
 /**
  * Represents a Pokeball
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Pokeball extends Item {
 	/**

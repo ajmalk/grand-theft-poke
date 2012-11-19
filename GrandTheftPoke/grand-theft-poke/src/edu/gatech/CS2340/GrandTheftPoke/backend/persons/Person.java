@@ -23,7 +23,8 @@ public abstract class Person {
 	@XStreamAsAttribute
 	private String name;
 
-	private Integer strength, agility, trade, stamina, currentStamina, maxHealth;
+	private Integer strength, agility, trade, stamina, currentStamina,
+			maxHealth;
 
 	@XStreamAsAttribute
 	private Integer health;
@@ -100,7 +101,7 @@ public abstract class Person {
 	public String getName() {
 		return this.name;
 	}
-	
+
 	/**
 	 * 
 	 * @param name
@@ -108,6 +109,7 @@ public abstract class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	/**
 	 * 
 	 * @return strength
@@ -353,9 +355,10 @@ public abstract class Person {
 			int quantity = other.getBackpack().getContents().get(theItem);
 			if (myBackpack.place(theItem, quantity)) {
 				other.getBackpack().remove(theItem, quantity);
-			}		
+			}
 		}
-		float temp = Math.min(other.getWallet().getMoney(), getWallet().getMoney());
+		float temp = Math.min(other.getWallet().getMoney(), getWallet()
+				.getMoney());
 		getWallet().updateMoney(temp);
 		other.getWallet().updateMoney(-temp);
 

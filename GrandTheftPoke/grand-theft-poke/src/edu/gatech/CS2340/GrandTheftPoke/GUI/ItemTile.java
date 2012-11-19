@@ -9,7 +9,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
@@ -21,8 +20,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 /**
  * an item tile
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class ItemTile extends Button {
 	private Item item;
@@ -31,6 +31,7 @@ public class ItemTile extends Button {
 	private Image icon;
 	private Label stockLabel, price;
 	private Backpack pack;
+
 	/**
 	 * @return item
 	 */
@@ -40,16 +41,18 @@ public class ItemTile extends Button {
 
 	// private Table tile;
 	/**
-	 * @param item the item to put in the tile
-	 * @param stock the stock of the item in the marketplace
+	 * @param item
+	 *            the item to put in the tile
+	 * @param stock
+	 *            the stock of the item in the marketplace
 	 */
 	public ItemTile(Item item, MarketPlaceItem stock) {
-		super(	new TextureRegionDrawable(new TextureRegion(
+		super(new TextureRegionDrawable(new TextureRegion(
 				GTPoke.getButtonSprite(), 0, 0, 150, 175)),
 				new TextureRegionDrawable(new TextureRegion(
 						GTPoke.getButtonSprite(), 0, 200, 150, 175)),
-						new TextureRegionDrawable(new TextureRegion(
-								GTPoke.getButtonSprite(), 0, 400, 150, 175)));
+				new TextureRegionDrawable(new TextureRegion(
+						GTPoke.getButtonSprite(), 0, 400, 150, 175)));
 		this.item = item;
 		this.stock = stock;
 		Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
@@ -62,13 +65,13 @@ public class ItemTile extends Button {
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		icon = new Image(new Texture(map));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
-		
+
 		add(stockLabel).right();
 		row();
 		add(icon).expandX();
 		row();
-		Label name = new Label(item.toString(),
-				new Skin(Gdx.files.internal("skins//uiskin.json")));
+		Label name = new Label(item.toString(), new Skin(
+				Gdx.files.internal("skins//uiskin.json")));
 		name.setWrap(true);
 		name.setAlignment(Align.center);
 		add(name).width(130).padTop(5);
@@ -80,18 +83,23 @@ public class ItemTile extends Button {
 	}
 
 	/**
-	 * @param theMarket the current market
-	 * @param item the item being referred to
-	 * @param stock the stock of the item
-	 * @param pack the player's backpack
+	 * @param theMarket
+	 *            the current market
+	 * @param item
+	 *            the item being referred to
+	 * @param stock
+	 *            the stock of the item
+	 * @param pack
+	 *            the player's backpack
 	 */
-	public ItemTile(MarketPlace theMarket, Item item, Integer stock, Backpack pack) {
-		super(	new TextureRegionDrawable(new TextureRegion(
+	public ItemTile(MarketPlace theMarket, Item item, Integer stock,
+			Backpack pack) {
+		super(new TextureRegionDrawable(new TextureRegion(
 				GTPoke.getButtonSprite(), 0, 0, 150, 170)),
 				new TextureRegionDrawable(new TextureRegion(
 						GTPoke.getButtonSprite(), 0, 200, 150, 170)),
-						new TextureRegionDrawable(new TextureRegion(
-								GTPoke.getButtonSprite(), 0, 400, 150, 170)));
+				new TextureRegionDrawable(new TextureRegion(
+						GTPoke.getButtonSprite(), 0, 400, 150, 170)));
 		this.item = item;
 		if (theMarket.getStock().containsKey(item)) {
 			this.stock = (MarketPlaceItem) theMarket.getStock().get(item);
@@ -109,13 +117,13 @@ public class ItemTile extends Button {
 		map.fillRectangle(0, 0, 50, 50);
 		icon = new Image(new Texture(map));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
-		
+
 		add(stockLabel).right();
 		row();
 		add(icon).expandX();
 		row();
-		Label name = new Label(item.toString(),
-				new Skin(Gdx.files.internal("skins//uiskin.json")));
+		Label name = new Label(item.toString(), new Skin(
+				Gdx.files.internal("skins//uiskin.json")));
 		name.setWrap(true);
 		name.setAlignment(Align.center);
 		add(name).width(130).padTop(5);
@@ -125,30 +133,30 @@ public class ItemTile extends Button {
 		top();
 		update();
 	}
-	
+
 	/**
 	 * @return stock
 	 */
-	public MarketPlaceItem getStockInfo(){
+	public MarketPlaceItem getStockInfo() {
 		return stock;
 	}
-	
+
 	/**
-	 * @return boolean 
+	 * @return boolean
 	 */
-	public boolean isMarketItem(){
+	public boolean isMarketItem() {
 		return backpackStock == -1;
 	}
-	
+
 	/**
 	 * @return stock of item
 	 */
-	public Integer getStock(){
+	public Integer getStock() {
 		if (backpackStock != null && backpackStock == -1)
 			return stock.getStock();
 		return pack.getContents().get(item);
 	}
-	
+
 	/**
 	 * @return update item stock
 	 */
@@ -156,7 +164,7 @@ public class ItemTile extends Button {
 		if (backpackStock != null && backpackStock == -1) {
 			stockLabel.setText(stock.getStock().toString());
 			price.setText("$" + ((Float) (1.1f * stock.getPrice())).toString());
-		} else if(pack.getContents().get(item) != null){
+		} else if (pack.getContents().get(item) != null) {
 			stockLabel.setText(pack.getContents().get(item).toString());
 			price.setText("$" + ((Float) (0.9f * stock.getPrice())).toString());
 		}

@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 
 /**
  * The GymLeader
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class GymLeader extends Person {
 	private int stake;
@@ -33,8 +34,10 @@ public class GymLeader extends Person {
 	}
 
 	/**
-	 * @param other other person
-	 * @param stake wager
+	 * @param other
+	 *            other person
+	 * @param stake
+	 *            wager
 	 */
 	public void stake(Person other, int stake) {
 		if (getWallet().checkAmount(stake)
@@ -46,7 +49,8 @@ public class GymLeader extends Person {
 	}
 
 	/**
-	 * @param other other person
+	 * @param other
+	 *            other person
 	 */
 	public void lose(Person other) {
 		getWallet().updateMoney(-2 * stake);

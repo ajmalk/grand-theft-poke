@@ -1,7 +1,5 @@
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -12,14 +10,13 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
-
 
 /**
  * Town/Navigation screen
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class TownScreen extends AbstractScreen {
 
@@ -36,14 +33,15 @@ public class TownScreen extends AbstractScreen {
 	private String town;
 
 	/**
-	 * @param game the game being played
-	 * @param town the town one is in
+	 * @param game
+	 *            the game being played
+	 * @param town
+	 *            the town one is in
 	 */
 	public TownScreen(GTPoke game, String town) {
 		super(game);
 		this.town = town;
 	}
-
 
 	@Override
 	public void show() {
@@ -79,15 +77,19 @@ public class TownScreen extends AbstractScreen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
-				//System.out.println("health is: "+game.getPlayer().getHealth());
-				//System.out.println("money is: "+game.getPlayer().getWallet().getMoney());
-				if(game.getPlayer().getHealth() != game.getPlayer().getMaxHealth() && game.getPlayer().getWallet().getMoney() >=300) {
-					game.getPlayer().setHealth(game.getPlayer().getMaxHealth() - game.getPlayer().getHealth());
+				// System.out.println("health is: "+game.getPlayer().getHealth());
+				// System.out.println("money is: "+game.getPlayer().getWallet().getMoney());
+				if (game.getPlayer().getHealth() != game.getPlayer()
+						.getMaxHealth()
+						&& game.getPlayer().getWallet().getMoney() >= 300) {
+					game.getPlayer().setHealth(
+							game.getPlayer().getMaxHealth()
+									- game.getPlayer().getHealth());
 					game.getPlayer().getWallet().updateMoney(-300);
 				}
-				//System.out.println("health is now: "+game.getPlayer().getHealth());
-				//System.out.println("money is now: "+game.getPlayer().getWallet().getMoney());
-				
+				// System.out.println("health is now: "+game.getPlayer().getHealth());
+				// System.out.println("money is now: "+game.getPlayer().getWallet().getMoney());
+
 			}
 		});
 		marketPlaceButton = game.getButton("town/marketplace");
@@ -108,12 +110,12 @@ public class TownScreen extends AbstractScreen {
 		gymLeaderButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(game.getBattleScreen(new GymLeader("Brock", 8, 8, 0, 8, 200, 0, 0, 1000f, game.getMap())));
+				game.setScreen(game.getBattleScreen(new GymLeader("Brock", 8,
+						8, 0, 8, 200, 0, 0, 1000f, game.getMap())));
 			}
 		});
 
 	}
-
 
 	@Override
 	public void render(float delta) {
@@ -129,10 +131,10 @@ public class TownScreen extends AbstractScreen {
 		table.add(marketPlaceButton);
 		table.add(gymLeaderButton);
 
-		//healthTable.setPosition(0, -350);
-		//healthTable.add(healthImage);
+		// healthTable.setPosition(0, -350);
+		// healthTable.add(healthImage);
 
-		//stage.addActor(backgroundImage);
+		// stage.addActor(backgroundImage);
 		stage.addActor(table);
 
 		bp.setPosition(-450, 60);
@@ -140,7 +142,7 @@ public class TownScreen extends AbstractScreen {
 
 		stage.addActor(bp);
 		stage.addActor(game.getStatusBar());
-		//game.getStatusBar().debug().drawDebug(stage);
+		// game.getStatusBar().debug().drawDebug(stage);
 		// remVal.setText(remainder.toString());
 
 		// table.debug();
@@ -148,12 +150,10 @@ public class TownScreen extends AbstractScreen {
 
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
-
 
 	@Override
 	public void dispose() {

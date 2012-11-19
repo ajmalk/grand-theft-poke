@@ -12,6 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
 
 /**
  * The town
+ * 
  * @author Team Rocket
  */
 @XStreamAlias("Town")
@@ -30,20 +31,21 @@ public class Town implements Comparable {
 
 	@XStreamOmitField
 	private String filename;
-	
+
 	@XStreamOmitField
 	private Set<Path> adjacencies;
 
 	/**
-	 * @param name the name of the town
-	 * @param myMarket the market being used
+	 * @param name
+	 *            the name of the town
+	 * @param myMarket
+	 *            the market being used
 	 */
 	public Town(String name, MarketPlace myMarket) {
 		this.name = name;
 		this.myMarket = myMarket;
 		adjacencies = new HashSet<Path>();
 	}
-
 
 	@Override
 	public boolean equals(Object o) {
@@ -57,7 +59,8 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * @param toBeAdded the connection to be added
+	 * @param toBeAdded
+	 *            the connection to be added
 	 */
 	public void addConnection(Path toBeAdded) {
 		if (toBeAdded != null && !adjacencies.contains(toBeAdded)) {
@@ -80,7 +83,8 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * @param minimumDistance the minimumDistance
+	 * @param minimumDistance
+	 *            the minimumDistance
 	 */
 	public void setMinimumDistance(int minimumDistance) {
 		this.minimumDistance = minimumDistance;
@@ -94,18 +98,17 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * @param previous the previous town
+	 * @param previous
+	 *            the previous town
 	 */
 	public void setPrevious(Town previous) {
 		this.previous = previous;
 	}
 
-
 	@Override
 	public int compareTo(Object other) {
 		return getMinimumDistance() - ((Town) other).getMinimumDistance();
 	}
-
 
 	@Override
 	public String toString() {
@@ -127,7 +130,8 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * @param str the string to use to set image
+	 * @param str
+	 *            the string to use to set image
 	 */
 	public void setImage(String str) {
 		filename = str;

@@ -10,8 +10,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 /**
  * Represents a Trader
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Trader extends Person {
 
@@ -139,25 +140,27 @@ public class Trader extends Person {
 	}
 
 	/**
-	 * @param other other person
-	 * @param desiredGood 
-	 * @param quantity 
+	 * @param other
+	 *            other person
+	 * @param desiredGood
+	 * @param quantity
 	 */
 	public void buy(Person other, Item desiredGood, int quantity) {
-		//super.buy(personalMarket, desiredGood, quantity);
+		// super.buy(personalMarket, desiredGood, quantity);
 		other.sell(personalMarket, desiredGood, quantity);
 
 	}
 
 	/**
-	 * @param other other person
+	 * @param other
+	 *            other person
 	 * @param desiredGood
 	 * @param quantity
 	 */
 	public void sell(Person other, Item desiredGood, int quantity) {
-		//super.sell(personalMarket, desiredGood, quantity);
+		// super.sell(personalMarket, desiredGood, quantity);
 		other.buy(personalMarket, desiredGood, quantity);
-		
+
 	}
 
 }

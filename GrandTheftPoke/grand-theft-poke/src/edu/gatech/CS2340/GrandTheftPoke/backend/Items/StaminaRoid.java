@@ -4,8 +4,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * Represents a StaminaRoid
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class StaminaRoid extends Item implements Usable {
 

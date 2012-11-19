@@ -1,10 +1,10 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-
 /**
  * Represents a Charizard
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class Charizard extends Pokemon {
 

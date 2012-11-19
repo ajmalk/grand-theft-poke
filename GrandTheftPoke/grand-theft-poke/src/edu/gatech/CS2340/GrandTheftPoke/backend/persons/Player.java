@@ -7,6 +7,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 
 /**
  * Represents a player
+ * 
  * @author Team Rocket
  */
 @XStreamAlias("Player")

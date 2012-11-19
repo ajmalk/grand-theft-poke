@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -42,16 +41,18 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.SkillPoints;
 import edu.gatech.CS2340.GrandTheftPoke.screens.SplashScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.StarterPokemon;
 import edu.gatech.CS2340.GrandTheftPoke.screens.TownScreen;
+
 /**
  * Controls the entire game
+ * 
  * @author Team Rocket
- *
+ * 
  */
 public class GTPoke extends Game {
 	private static final int INITIAL_RANGE = 80;
 	private static final int INITIAL_CARRY = 30;
 	private static final int INITIAL_HEALTH = 100;
-	
+
 	private String playerName = "";
 	private Player thePlayer;
 	private GlobalItemReference items;
@@ -65,13 +66,14 @@ public class GTPoke extends Game {
 	private static Texture ButtonSprite;
 	private Screen nextScreen, prevScreen;
 	private AtlasRegion healthBar;
-	
+
 	@Override
 	public void create() {
 		items = new GlobalItemReference();
 		xstream = new XStream();
 		saveFile = Gdx.files.local("saves//savegame.xml");
-		atlas = new TextureAtlas(Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
+		atlas = new TextureAtlas(
+				Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
 		map.fillRectangle(0, 0, 150, 600);
@@ -81,47 +83,52 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
-		
-		
+
 		new ArrayList<Person>();
 		theMap = makeMap();
-		
+
 		setScreen(getSplashScreen());
 	}
-	
+
 	/**
 	 * @return boolean
 	 */
-	public boolean update(){
+	public boolean update() {
 		statusBar.clear();
 		statusBar.setSkin(skin);
-		statusBar.setBackground(new TextureRegionDrawable(atlas.findRegion("status-bar")));
+		statusBar.setBackground(new TextureRegionDrawable(atlas
+				.findRegion("status-bar")));
 		statusBar.setSize(678, 64);
-		
+
 		statusBar.pad(25);
-		statusBar.setPosition((Gdx.graphics.getWidth() - statusBar.getWidth())/2, 0);
-		Label health = new Label("Health: " + thePlayer.getHealth().toString(), skin);
+		statusBar.setPosition(
+				(Gdx.graphics.getWidth() - statusBar.getWidth()) / 2, 0);
+		Label health = new Label("Health: " + thePlayer.getHealth().toString(),
+				skin);
 		Label money = new Label("$" + thePlayer.getWallet().getMoney(), skin);
 		health.setColor(Color.BLUE);
 		money.setColor(Color.BLUE);
-		//statusBar.add(health).left();
+		// statusBar.add(health).left();
 		statusBar.add(money).left().width(168);
 		healthBar = atlas.findRegion("health-bar-full");
-		//System.out.println(thePlayer.getHealth() + " " + thePlayer.getMaxHealth());
-		healthBar.setRegionWidth((int) (healthBar.originalWidth/(float)thePlayer.getMaxHealth()*thePlayer.getHealth()));
-		statusBar.add(new Image(healthBar)).expand().uniform().left().padRight(100);
-		//statusBar.pack();
-		//statusBar.center();
+		// System.out.println(thePlayer.getHealth() + " " +
+		// thePlayer.getMaxHealth());
+		healthBar.setRegionWidth((int) (healthBar.originalWidth
+				/ (float) thePlayer.getMaxHealth() * thePlayer.getHealth()));
+		statusBar.add(new Image(healthBar)).expand().uniform().left()
+				.padRight(100);
+		// statusBar.pack();
+		// statusBar.center();
 		return true;
 	}
-	
+
 	/**
 	 * @return statusBar
 	 */
-	public Table getStatusBar(){
+	public Table getStatusBar() {
 		return statusBar;
 	}
-	
+
 	/**
 	 * @return skin
 	 */
@@ -131,32 +138,32 @@ public class GTPoke extends Game {
 		}
 		return skin;
 	}
-	
+
 	/**
 	 * @return atlas
 	 */
-	public TextureAtlas getTextures(){
+	public TextureAtlas getTextures() {
 		return atlas;
 	}
-	
+
 	/**
 	 * @return nextScreen
 	 */
-	public Screen getNextScreen(){
+	public Screen getNextScreen() {
 		return nextScreen;
 	}
-	
+
 	/**
 	 * @return prevScreen
 	 */
-	public Screen getPrevScreen(){
+	public Screen getPrevScreen() {
 		return prevScreen;
 	}
-	
+
 	/**
 	 * initializes variables for new game
 	 */
-	public void newGame(){
+	public void newGame() {
 		theMap = makeMap();
 		thePlayer = new Player();
 		controller = new Turn(theMap, thePlayer, items);
@@ -164,7 +171,7 @@ public class GTPoke extends Game {
 		nextScreen = getNameScreen();
 		setScreen(getNameScreen());
 	}
-	
+
 	/**
 	 * @return savestr
 	 */
@@ -172,13 +179,14 @@ public class GTPoke extends Game {
 		SaveGame save = new SaveGame(thePlayer, theMap, controller);
 		String savestr = xstream.toXML(save);
 		System.out.println(savestr);
-		//savestrs.add(savestr);
+		// savestrs.add(savestr);
 		saveFile.writeString(savestr, false);
 		return savestr;
 	}
 
 	/**
-	 * @param index index to load
+	 * @param index
+	 *            index to load
 	 */
 	public void load(int index) {
 		String savestr = saveFile.readString();
@@ -189,7 +197,8 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	 * @param gamestr string used to load game
+	 * @param gamestr
+	 *            string used to load game
 	 */
 	public void load(String gamestr) {
 		SaveGame game = (SaveGame) xstream.fromXML(gamestr);
@@ -197,24 +206,29 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	 * @param player current player
+	 * @param player
+	 *            current player
 	 */
 	public void setPlayer(Player player) {
 		thePlayer = player;
 	}
 
 	/**
-	 * @param map the current map
+	 * @param map
+	 *            the current map
 	 */
 	public void setMap(GameMap map) {
 		theMap = map;
 	}
+
 	/**
-	 * @param controller the turn controller
+	 * @param controller
+	 *            the turn controller
 	 */
-	public void setController(Turn controller){
+	public void setController(Turn controller) {
 		this.controller = controller;
 	}
+
 	/**
 	 * clears the map and player
 	 */
@@ -223,12 +237,10 @@ public class GTPoke extends Game {
 		thePlayer = null;
 	}
 
-
 	@Override
 	public void dispose() {
 		super.dispose();
 	}
-
 
 	@Override
 	public void render() {
@@ -236,18 +248,15 @@ public class GTPoke extends Game {
 
 	}
 
-
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
-
 	@Override
 	public void pause() {
 		super.pause();
 	}
-
 
 	@Override
 	public void resume() {
@@ -255,7 +264,8 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	 * @param playerName name of player
+	 * @param playerName
+	 *            name of player
 	 */
 	public void setPlayerName(String playerName) {
 		thePlayer.setName(playerName);
@@ -276,7 +286,8 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	 * @param game the current game
+	 * @param game
+	 *            the current game
 	 * @return boolean
 	 */
 	public boolean equals(GTPoke game) {
@@ -349,16 +360,19 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	 * @param theMarket the current market
+	 * @param theMarket
+	 *            the current market
 	 * @return Market screen
 	 */
 	public Screen getMarketScreen(MarketPlace theMarket) {
 		return new Market(this, theMarket);
 	}
-	
+
 	/**
-	 * @param theMarket the current market
-	 * @param other the other trader
+	 * @param theMarket
+	 *            the current market
+	 * @param other
+	 *            the other trader
 	 * @return the market screen
 	 */
 	public Screen getMarketScreen(MarketPlace theMarket, Trader other) {
@@ -389,28 +403,29 @@ public class GTPoke extends Game {
 		}
 		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
-	
+
 	/**
-	 * @param button string to display on button
+	 * @param button
+	 *            string to display on button
 	 * @return the button that was created
 	 */
-	public Button getButton(String button){
-		return new Button(	new TextureRegionDrawable(atlas.findRegion(button)), 
-							new TextureRegionDrawable(atlas.findRegion(button + "-down")));
+	public Button getButton(String button) {
+		return new Button(new TextureRegionDrawable(atlas.findRegion(button)),
+				new TextureRegionDrawable(atlas.findRegion(button + "-down")));
 	}
-	
+
 	/**
 	 * 
 	 * @return a back button
 	 */
-	public Button getBackButton(){
+	public Button getBackButton() {
 		return getButton("back-button");
 	}
-	
+
 	/**
 	 * @return a save button
 	 */
-	public Button getSaveButton(){
+	public Button getSaveButton() {
 		Button saveButton = getButton("save");
 		saveButton.addListener(new ClickListener() {
 			@Override
@@ -422,6 +437,7 @@ public class GTPoke extends Game {
 		});
 		return saveButton;
 	}
+
 	/**
 	 * @return current townScreen
 	 */
@@ -458,7 +474,8 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	 * @param myPerson the current person
+	 * @param myPerson
+	 *            the current person
 	 * @return a Battle
 	 */
 	public Screen getBattleScreen(Person myPerson) {
