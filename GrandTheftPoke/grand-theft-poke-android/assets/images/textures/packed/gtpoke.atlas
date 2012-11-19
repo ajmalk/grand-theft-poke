@@ -71,9 +71,16 @@ gtpoke2.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-market-place
+TradeUI
   rotate: false
   xy: 1, 1
+  size: 1024, 768
+  orig: 1024, 768
+  offset: 0, 0
+  index: -1
+market-place
+  rotate: false
+  xy: 1027, 1
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
