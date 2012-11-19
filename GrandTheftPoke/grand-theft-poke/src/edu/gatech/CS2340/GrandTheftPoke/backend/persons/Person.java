@@ -293,6 +293,7 @@ public abstract class Person {
 						theMarket.buy(desiredGood, quantity);
 						myWallet.updateMoney(-price);
 						myBackpack.place(desiredGood, quantity);
+						System.out.println(myBackpack.getCapacity());
 						return true;
 					}
 				}
@@ -331,8 +332,11 @@ public abstract class Person {
 			int quantity = other.getBackpack().getContents().get(theItem);
 			if (myBackpack.place(theItem, quantity)) {
 				other.getBackpack().remove(theItem, quantity);
-			}
+			}		
 		}
+		float temp = Math.min(other.getWallet().getMoney(), getWallet().getMoney());
+		getWallet().updateMoney(temp);
+		other.getWallet().updateMoney(-temp);
 
 	}
 

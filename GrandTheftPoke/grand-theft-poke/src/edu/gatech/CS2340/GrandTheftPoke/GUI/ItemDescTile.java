@@ -121,7 +121,6 @@ public class ItemDescTile extends Table {
 	private class BuyListener extends ClickListener{
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
-			//customer.buy(market, item, 1);
 			if(otherTrader != null) {
 				if(otherTrader.getBackpack().checkContents(item, 1)) {
 					customer.buy(otherTrader.getMarket(), item, 1);
@@ -131,11 +130,6 @@ public class ItemDescTile extends Table {
 			} else {
 				customer.buy(market, item, 1);
 			}
-//			if(((MarketPlaceItem)market.getStock().get(item)).getStock() == 0)
-//				screen.updateMarket(tile);
-//			if(customer.getBackpack().getContents().get(item) != null && 
-//					customer.getBackpack().getContents().get(item) == 1)
-//				screen.updateBackpack(tile);
 		}
 	}
 	
@@ -143,18 +137,15 @@ public class ItemDescTile extends Table {
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
 			if(otherTrader != null) {
-				customer.sell(otherTrader.getMarket(), item, 1);
-				otherTrader.getBackpack().place(item, 1);
-				System.out.println(otherTrader.getBackpack());
+				if(otherTrader.getWallet().checkAmount(((MarketPlaceItem)(otherTrader.getMarket().getStock().get(item))).getBuyingPrice(1))) {
+					customer.sell(otherTrader.getMarket(), item, 1);
+					otherTrader.getBackpack().place(item, 1);
+					System.out.println(otherTrader.getBackpack());
+				}
 
 			} else {
 				customer.sell(market, item, 1);
 			}
-//			if(((MarketPlaceItem)market.getStock().get(item)).getStock() == 1)
-//				screen.updateMarket(tile);
-//			if(customer.getBackpack().getContents().get(item) != null &&
-//				customer.getBackpack().getContents().get(item) == 0)
-//				screen.updateBackpack(tile);
 		}
 	}
 	
