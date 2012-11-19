@@ -12,7 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * Implementation of Town Factory
  * 
  * @author Team Rocket
- * 
+ * @version 1.0
  */
 public class TownFactoryImplementation implements TownFactory {
 
