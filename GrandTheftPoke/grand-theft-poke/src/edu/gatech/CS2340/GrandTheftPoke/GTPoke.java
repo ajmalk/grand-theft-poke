@@ -23,6 +23,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
@@ -64,14 +65,14 @@ public class GTPoke extends Game {
 	public void create() {
 		items = new GlobalItemReference();
 		xstream = new XStream();
-		saveFile = Gdx.files.local("saves//savegame.xml");
+		saveFile = Gdx.files.local("saves\\savegame.xml");
 		atlas = new TextureAtlas(Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
 		map.fillRectangle(0, 0, 150, 600);
 		map.setColor(Color.BLACK);
 		map.fillRectangle(0, 200, 150, 200);
-		map.setColor(Color.BLUE);
+		map.setColor(Color.RED);
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
@@ -85,7 +86,6 @@ public class GTPoke extends Game {
 	public Table getStatusBar(){
 		statusBar.clear();
 		statusBar.setSkin(skin);
-
 		statusBar.add(thePlayer.getHealth().toString());
 		return statusBar;
 	}
@@ -236,6 +236,10 @@ public class GTPoke extends Game {
 
 	public Screen getMarketScreen(MarketPlace theMarket) {
 		return new Market(this, theMarket);
+	}
+	
+	public Screen getMarketScreen(MarketPlace theMarket, Trader other) {
+		return new Market(this, theMarket, other);
 	}
 
 	public Screen getSkillPointsScreen() {

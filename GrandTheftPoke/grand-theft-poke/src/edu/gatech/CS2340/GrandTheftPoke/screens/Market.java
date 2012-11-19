@@ -29,6 +29,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
 public class Market extends AbstractScreen {
 	private MarketPlace market;
@@ -40,6 +41,7 @@ public class Market extends AbstractScreen {
 	private Button backButton;
 	private Map<Item, ItemTile> backpack, marketplace;
 	private Image background;
+	private Trader otherTrader;
 
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
@@ -58,6 +60,22 @@ public class Market extends AbstractScreen {
 	
 	public Market(GTPoke game) {
 		this(game, game.getCurrentTown().getMarket());
+	}
+	
+	public Market(GTPoke game, MarketPlace market, Trader other) {
+		super(game);
+		this.market = market;
+		playerPack = game.getPlayer().getBackpack();
+		table = new Table();
+		markettable = new Table();
+		backpacktable = new Table();
+		marketItemGroup = new ButtonGroup();
+		backPackItemGroup = new ButtonGroup();
+		marketStock = new ScrollPane(markettable);
+		backpackStock = new ScrollPane(backpacktable);
+		backpack = new HashMap<Item, ItemTile>();
+		marketplace = new HashMap<Item, ItemTile>();
+		otherTrader = other;
 	}
 	
 	@Override
@@ -88,7 +106,7 @@ public class Market extends AbstractScreen {
 		
 		description = new ItemDescTile(((ItemTile)marketItemGroup.getChecked()).getItem(), 
 				((ItemTile)(marketItemGroup.getChecked())).getStockInfo(), game.getPlayer(), 
-				market, this ,(ItemTile) marketItemGroup.getChecked());
+				market, this ,(ItemTile) marketItemGroup.getChecked(), otherTrader);
 		
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
 		ButtonStyle style = new ButtonStyle();

@@ -20,6 +20,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
 
 public class ItemDescTile extends Table {
@@ -33,6 +34,7 @@ public class ItemDescTile extends Table {
 	private ClickListener buyListener, sellListener;
 	private Table buysell;
 	private Person customer;
+	private Trader otherTrader;
 	private MarketPlace market;
 	private Market screen;
 	private ItemTile tile;
@@ -42,12 +44,13 @@ public class ItemDescTile extends Table {
 	}
 
 	// private Table tile;
-	public ItemDescTile(Item item, MarketPlaceItem stockInfo, Person customer, MarketPlace market, Market screen, ItemTile tile) {
+	public ItemDescTile(Item item, MarketPlaceItem stockInfo, Person customer, MarketPlace market, Market screen, ItemTile tile, Trader other) {
 		this.item = item;
 		this.stockInfo = stockInfo;
 		this.customer = customer;
 		this.market = market;
 		this.screen = screen;
+		this.otherTrader = other;
 		
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
 		buy = new Button(new TextureRegionDrawable(new TextureRegion(
@@ -119,6 +122,10 @@ public class ItemDescTile extends Table {
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
 			customer.buy(market, item, 1);
+			if(otherTrader != null) {
+				otherTrader.sell(market, item, 1);
+				System.out.println(otherTrader.getBackpack());
+			}
 //			if(((MarketPlaceItem)market.getStock().get(item)).getStock() == 0)
 //				screen.updateMarket(tile);
 //			if(customer.getBackpack().getContents().get(item) != null && 
@@ -131,6 +138,10 @@ public class ItemDescTile extends Table {
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
 			customer.sell(market, item, 1);
+			if(otherTrader != null) {
+				otherTrader.buy(market, item, 1);
+				System.out.println(otherTrader.getBackpack());
+			}
 //			if(((MarketPlaceItem)market.getStock().get(item)).getStock() == 1)
 //				screen.updateMarket(tile);
 //			if(customer.getBackpack().getContents().get(item) != null &&
