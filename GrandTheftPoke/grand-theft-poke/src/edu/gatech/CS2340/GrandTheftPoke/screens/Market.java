@@ -173,8 +173,9 @@ public class Market extends AbstractScreen {
 			if (item.getValue().getStock() != 0) {
 				markettable.add(item.getValue());
 				marketItemGroup.add(item.getValue());
-				if (col++ % 2 == 1)
+				if (col++ % 2 == 1) {
 					markettable.row();
+				}
 			}
 		}
 
@@ -187,8 +188,9 @@ public class Market extends AbstractScreen {
 			if (item.getValue().getStock() != null) {
 				backpacktable.add(item.getValue());
 				marketItemGroup.add(item.getValue());
-				if (col++ % 2 == 1)
+				if (col++ % 2 == 1) {
 					backpacktable.row();
+				}
 			}
 		}
 	}

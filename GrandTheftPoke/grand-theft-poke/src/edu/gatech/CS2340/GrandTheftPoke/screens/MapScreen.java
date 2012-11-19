@@ -103,8 +103,6 @@ public class MapScreen extends AbstractScreen {
 				lavenderTownButton = new TownTile(theTown, townTileStyle);
 			} else if (theTown.toString().equals("Celadon City")) {
 				celadonCityButton = new TownTile(theTown, townTileStyle);
-			} else {
-
 			}
 
 			int distance = theMap.dijkstras(game.getPlayer().getCurrent(),
@@ -146,8 +144,6 @@ public class MapScreen extends AbstractScreen {
 				} else if (theTown.toString().equals("Celadon City")) {
 					celadonCityButton.setDisabled(true);
 					celadonCityButton.setTouchable(Touchable.disabled);
-				} else {
-
 				}
 			}
 		}
