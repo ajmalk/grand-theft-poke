@@ -11,6 +11,8 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -76,6 +78,7 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
+		statusBar.setSize(Gdx.graphics.getWidth(), 65);
 		
 		gameActors = new ArrayList<Person>();
 		theMap = makeMap();
@@ -83,10 +86,20 @@ public class GTPoke extends Game {
 		setScreen(getSplashScreen());
 	}
 	
-	public Table getStatusBar(){
+	public boolean update(){
 		statusBar.clear();
 		statusBar.setSkin(skin);
-		statusBar.add(thePlayer.getHealth().toString());
+		statusBar.setColor(Color.BLACK);
+		Label health = new Label("Health: " + thePlayer.getHealth().toString(), skin);
+		Label money = new Label(" Money: $" + thePlayer.getWallet().getMoney(), skin);
+		health.setColor(Color.RED);
+		statusBar.add(health).left().expand();
+		statusBar.add(money).right().expand();
+		//statusBar.center();
+		return true;
+	}
+	
+	public Table getStatusBar(){
 		return statusBar;
 	}
 	

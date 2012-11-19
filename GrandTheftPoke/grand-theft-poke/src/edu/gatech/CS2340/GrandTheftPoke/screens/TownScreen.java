@@ -69,7 +69,7 @@ public class TownScreen extends AbstractScreen {
 				// game.setScreen(game.getNameScreen());
 				//System.out.println("health is: "+game.getPlayer().getHealth());
 				//System.out.println("money is: "+game.getPlayer().getWallet().getMoney());
-				if(game.getPlayer().getWallet().getMoney() > 300 && game.getPlayer().getHealth() != game.getPlayer().getMaxHealth()) {
+				if(game.getPlayer().getHealth() != game.getPlayer().getMaxHealth() && game.getPlayer().getWallet().getMoney() >=300) {
 					game.getPlayer().setHealth(game.getPlayer().getMaxHealth() - game.getPlayer().getHealth());
 					game.getPlayer().getWallet().updateMoney(-300);
 				}
@@ -109,7 +109,7 @@ public class TownScreen extends AbstractScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-
+		game.update();
 		table.clear();
 		bp.clear();
 		healthTable.clear();
@@ -131,6 +131,7 @@ public class TownScreen extends AbstractScreen {
 
 		stage.addActor(bp);
 		stage.addActor(game.getStatusBar());
+		game.getStatusBar().debug().drawDebug(stage);
 		// remVal.setText(remainder.toString());
 
 		// table.debug();
