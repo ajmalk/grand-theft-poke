@@ -130,7 +130,7 @@ public class Market extends AbstractScreen {
 		table.add(marketStock).top().width(300);
 		table.add(backpackStock).top().padLeft(25).width(300);
 		table.add(description).padLeft(33).width(300);
-		table.left().setPosition(33, 100);
+		table.left().setPosition(33, 90);
 	}
 	
 	public void addItems(){
@@ -182,7 +182,7 @@ public class Market extends AbstractScreen {
 	
 	public void render(float delta) {
 		super.render(delta);
-		
+		game.update();
 		for (Iterator<Entry <Item, ItemTile>> iter = marketplace.entrySet().iterator(); iter.hasNext(); ) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
@@ -212,6 +212,7 @@ public class Market extends AbstractScreen {
 		description.update(((ItemTile)marketItemGroup.getChecked()), game.getPlayer());
 		table.setSize(1024, 525);
 		stage.addActor(table);
+		stage.addActor(game.getStatusBar());
 		stage.addActor(backButton);
 	}
 }
