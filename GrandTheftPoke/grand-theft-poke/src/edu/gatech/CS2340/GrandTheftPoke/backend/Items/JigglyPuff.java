@@ -16,17 +16,6 @@ public class JigglyPuff extends Pokemon {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		return true;
-	}
-
-	@Override
 	public String toString() {
 		return "Jiggly Puff Pokemon";
 	}

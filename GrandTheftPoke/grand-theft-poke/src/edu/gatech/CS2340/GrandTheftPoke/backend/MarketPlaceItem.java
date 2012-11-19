@@ -121,24 +121,6 @@ public class MarketPlaceItem {
 				* EQIL_STOCK;
 	}
 
-	/**
-	 * checks consumption
-	 * 
-	 * @return float
-	 */
-	private float consumption() {
-		return consumption(price);
-	}
-
-	/**
-	 * checks production
-	 * 
-	 * @return float
-	 */
-	private float production() {
-		return production(price);
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -153,34 +135,46 @@ public class MarketPlaceItem {
 		return result;
 	}
 
+
+
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof MarketPlaceItem)) {
 			return false;
-		final MarketPlaceItem other = (MarketPlaceItem) obj;
+		}
+		MarketPlaceItem other = (MarketPlaceItem) obj;
 		if (Float.floatToIntBits(CONS_ELASTICITY) != Float
-				.floatToIntBits(other.CONS_ELASTICITY))
+				.floatToIntBits(other.CONS_ELASTICITY)) {
 			return false;
+		}
 		if (Float.floatToIntBits(EQIL_PRICE) != Float
-				.floatToIntBits(other.EQIL_PRICE))
+				.floatToIntBits(other.EQIL_PRICE)) {
 			return false;
+		}
 		if (Float.floatToIntBits(EQIL_STOCK) != Float
-				.floatToIntBits(other.EQIL_STOCK))
+				.floatToIntBits(other.EQIL_STOCK)) {
 			return false;
+		}
 		if (Float.floatToIntBits(PROD_ELASTICITY) != Float
-				.floatToIntBits(other.PROD_ELASTICITY))
+				.floatToIntBits(other.PROD_ELASTICITY)) {
 			return false;
+		}
 		if (Float.floatToIntBits(STOCK_RATIO) != Float
-				.floatToIntBits(other.STOCK_RATIO))
+				.floatToIntBits(other.STOCK_RATIO)) {
 			return false;
-		if (Float.floatToIntBits(price) != Float.floatToIntBits(other.price))
+		}
+		if (Float.floatToIntBits(price) != Float.floatToIntBits(other.price)) {
 			return false;
-		if (Float.floatToIntBits(stock) != Float.floatToIntBits(other.stock))
+		}
+		if (Float.floatToIntBits(stock) != Float.floatToIntBits(other.stock)) {
 			return false;
+		}
 		return true;
 	}
 

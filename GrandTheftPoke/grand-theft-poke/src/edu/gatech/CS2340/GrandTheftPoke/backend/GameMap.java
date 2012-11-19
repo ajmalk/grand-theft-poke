@@ -124,19 +124,44 @@ public class GameMap {
 
 	}
 
-	/**
-	 * checks to see if two towns are equal
-	 * 
-	 * @param town
-	 *            the current town
-	 * @return boolean
-	 */
-	public boolean equals(Town town) {
-		if (!startTown.equals(town))
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((startTown == null) ? 0 : startTown.hashCode());
+		result = prime * result + ((townSet == null) ? 0 : townSet.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
 			return false;
-		for (Town t : townSet)
-			if (!town.equals(t))
+		}
+		if (!(obj instanceof GameMap)) {
+			return false;
+		}
+		GameMap other = (GameMap) obj;
+		if (startTown == null) {
+			if (other.startTown != null) {
 				return false;
+			}
+		} else if (!startTown.equals(other.startTown)) {
+			return false;
+		}
+		if (townSet == null) {
+			if (other.townSet != null) {
+				return false;
+			}
+		} else if (!townSet.equals(other.townSet)) {
+			return false;
+		}
 		return true;
 	}
 

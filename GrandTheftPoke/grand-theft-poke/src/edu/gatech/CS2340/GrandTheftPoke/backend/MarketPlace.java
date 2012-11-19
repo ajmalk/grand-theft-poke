@@ -24,22 +24,31 @@ public class MarketPlace {
 		return result;
 	}
 
+
+
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (!(obj instanceof MarketPlace))
+		}
+		if (!(obj instanceof MarketPlace)) {
 			return false;
-		final MarketPlace other = (MarketPlace) obj;
+		}
+		MarketPlace other = (MarketPlace) obj;
 		if (stock == null) {
-			if (other.stock != null)
+			if (other.stock != null) {
 				return false;
-		} else if (!stock.equals(other.stock))
+			}
+		} else if (!stock.equals(other.stock)) {
 			return false;
+		}
 		return true;
 	}
+
+
 
 	@Override
 	public String toString() {

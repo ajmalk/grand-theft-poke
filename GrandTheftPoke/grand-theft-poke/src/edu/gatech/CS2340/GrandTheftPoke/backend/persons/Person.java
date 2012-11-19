@@ -65,77 +65,108 @@ public abstract class Person {
 		return result;
 	}
 
+
+
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof Person)) {
 			return false;
-		final Person other = (Person) obj;
+		}
+		Person other = (Person) obj;
 		if (agility == null) {
-			if (other.agility != null)
+			if (other.agility != null) {
 				return false;
-		} else if (!agility.equals(other.agility))
+			}
+		} else if (!agility.equals(other.agility)) {
 			return false;
+		}
 		if (currentStamina == null) {
-			if (other.currentStamina != null)
+			if (other.currentStamina != null) {
 				return false;
-		} else if (!currentStamina.equals(other.currentStamina))
+			}
+		} else if (!currentStamina.equals(other.currentStamina)) {
 			return false;
+		}
 		if (currentTown == null) {
-			if (other.currentTown != null)
+			if (other.currentTown != null) {
 				return false;
-		} else if (!currentTown.equals(other.currentTown))
+			}
+		} else if (!currentTown.equals(other.currentTown)) {
 			return false;
+		}
 		if (health == null) {
-			if (other.health != null)
+			if (other.health != null) {
 				return false;
-		} else if (!health.equals(other.health))
+			}
+		} else if (!health.equals(other.health)) {
 			return false;
+		}
 		if (maxHealth == null) {
-			if (other.maxHealth != null)
+			if (other.maxHealth != null) {
 				return false;
-		} else if (!maxHealth.equals(other.maxHealth))
+			}
+		} else if (!maxHealth.equals(other.maxHealth)) {
 			return false;
+		}
 		if (myBackpack == null) {
-			if (other.myBackpack != null)
+			if (other.myBackpack != null) {
 				return false;
-		} else if (!myBackpack.equals(other.myBackpack))
+			}
+		} else if (!myBackpack.equals(other.myBackpack)) {
 			return false;
+		}
 		if (myWallet == null) {
-			if (other.myWallet != null)
+			if (other.myWallet != null) {
 				return false;
-		} else if (!myWallet.equals(other.myWallet))
+			}
+		} else if (!myWallet.equals(other.myWallet)) {
 			return false;
+		}
 		if (name == null) {
-			if (other.name != null)
+			if (other.name != null) {
 				return false;
-		} else if (!name.equals(other.name))
+			}
+		} else if (!name.equals(other.name)) {
 			return false;
+		}
 		if (stamina == null) {
-			if (other.stamina != null)
+			if (other.stamina != null) {
 				return false;
-		} else if (!stamina.equals(other.stamina))
+			}
+		} else if (!stamina.equals(other.stamina)) {
 			return false;
+		}
 		if (strength == null) {
-			if (other.strength != null)
+			if (other.strength != null) {
 				return false;
-		} else if (!strength.equals(other.strength))
+			}
+		} else if (!strength.equals(other.strength)) {
 			return false;
+		}
 		if (theMap == null) {
-			if (other.theMap != null)
+			if (other.theMap != null) {
 				return false;
-		} else if (!theMap.equals(other.theMap))
+			}
+		} else if (!theMap.equals(other.theMap)) {
 			return false;
+		}
 		if (trade == null) {
-			if (other.trade != null)
+			if (other.trade != null) {
 				return false;
-		} else if (!trade.equals(other.trade))
+			}
+		} else if (!trade.equals(other.trade)) {
 			return false;
+		}
 		return true;
 	}
+
+
 
 	/**
 	 * Default constructor for person

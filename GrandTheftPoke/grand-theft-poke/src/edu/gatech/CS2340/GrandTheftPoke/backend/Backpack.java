@@ -44,30 +44,41 @@ public class Backpack {
 		return result;
 	}
 
+
+
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof Backpack)) {
 			return false;
-		final Backpack other = (Backpack) obj;
+		}
+		Backpack other = (Backpack) obj;
 		if (capacity == null) {
-			if (other.capacity != null)
+			if (other.capacity != null) {
 				return false;
-		} else if (!capacity.equals(other.capacity))
+			}
+		} else if (!capacity.equals(other.capacity)) {
 			return false;
+		}
 		if (contents == null) {
-			if (other.contents != null)
+			if (other.contents != null) {
 				return false;
-		} else if (!contents.equals(other.contents))
+			}
+		} else if (!contents.equals(other.contents)) {
 			return false;
+		}
 		if (maxRange == null) {
-			if (other.maxRange != null)
+			if (other.maxRange != null) {
 				return false;
-		} else if (!maxRange.equals(other.maxRange))
+			}
+		} else if (!maxRange.equals(other.maxRange)) {
 			return false;
+		}
 		return true;
 	}
 

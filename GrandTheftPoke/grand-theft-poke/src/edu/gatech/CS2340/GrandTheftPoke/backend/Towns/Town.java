@@ -64,42 +64,58 @@ public class Town implements Comparable {
 		return result;
 	}
 
+	
+
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof Town)) {
 			return false;
+		}
 		Town other = (Town) obj;
 		if (adjacencies == null) {
-			if (other.adjacencies != null)
+			if (other.adjacencies != null) {
 				return false;
-		} else if (!adjacencies.equals(other.adjacencies))
+			}
+		} else if (!adjacencies.equals(other.adjacencies)) {
 			return false;
+		}
 		if (filename == null) {
-			if (other.filename != null)
+			if (other.filename != null) {
 				return false;
-		} else if (!filename.equals(other.filename))
+			}
+		} else if (!filename.equals(other.filename)) {
 			return false;
-		if (minimumDistance != other.minimumDistance)
+		}
+		if (minimumDistance != other.minimumDistance) {
 			return false;
+		}
 		if (myMarket == null) {
-			if (other.myMarket != null)
+			if (other.myMarket != null) {
 				return false;
-		} else if (!myMarket.equals(other.myMarket))
+			}
+		} else if (!myMarket.equals(other.myMarket)) {
 			return false;
+		}
 		if (name == null) {
-			if (other.name != null)
+			if (other.name != null) {
 				return false;
-		} else if (!name.equals(other.name))
+			}
+		} else if (!name.equals(other.name)) {
 			return false;
+		}
 		if (previous == null) {
-			if (other.previous != null)
+			if (other.previous != null) {
 				return false;
-		} else if (!previous.equals(other.previous))
+			}
+		} else if (!previous.equals(other.previous)) {
 			return false;
+		}
 		return true;
 	}
 
