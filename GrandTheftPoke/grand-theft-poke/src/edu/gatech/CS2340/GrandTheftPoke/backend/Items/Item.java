@@ -19,7 +19,9 @@ public abstract class Item {
 	public abstract String getFileName();
 
 	@Override
-	public abstract String toString();
+	public String toString() {
+		return "";
+	}
 
 	/**
 	 * returns a description of the item

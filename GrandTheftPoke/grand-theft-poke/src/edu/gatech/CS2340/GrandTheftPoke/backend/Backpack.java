@@ -26,7 +26,7 @@ public class Backpack {
 
 	// @XStreamImplicit(itemFieldName="item")
 	@XStreamOmitField
-	private HashMap<Item, Integer> contents;
+	private final HashMap<Item, Integer> contents;
 
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
@@ -65,7 +65,7 @@ public class Backpack {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Backpack other = (Backpack) obj;
+		final Backpack other = (Backpack) obj;
 		if (capacity == null) {
 			if (other.capacity != null)
 				return false;
@@ -111,12 +111,12 @@ public class Backpack {
 	 * @param quantity
 	 */
 	public boolean place(Item placedItem, int quantity) {
-		int weightDiff = placedItem.getWeight() * quantity;
+		 final int weightDiff = placedItem.getWeight() * quantity;
 		if (checkCapacity(placedItem, quantity)) {
 			if (!(contents.containsKey(placedItem))) {
 				contents.put(placedItem, quantity);
 			} else {
-				int currentItems = contents.get(placedItem);
+				final int currentItems = contents.get(placedItem);
 				contents.put(placedItem, currentItems + quantity);
 			}
 			capacity -= weightDiff;
@@ -153,9 +153,9 @@ public class Backpack {
 	 * @param quantity
 	 */
 	public void remove(Item retrievedItem, int quantity) {
-		int weightDiff = retrievedItem.getWeight() * quantity;
+		final int weightDiff = retrievedItem.getWeight() * quantity;
 		capacity += weightDiff;
-		int netWeight = contents.get(retrievedItem) - weightDiff;
+		final int netWeight = contents.get(retrievedItem) - weightDiff;
 		contents.put(retrievedItem, netWeight);
 		if (contents.get(retrievedItem) == 0) {
 			contents.remove(retrievedItem);
@@ -215,8 +215,8 @@ public class Backpack {
 	@Override
 	public String toString() {
 		String toBeReturned = "Backpack Contents: \n";
-		Set<?> keys = contents.entrySet();
-		for (Iterator<?> it = keys.iterator(); it.hasNext();) {
+		final Set<?> keys = contents.entrySet();
+		for (final Iterator<?> it = keys.iterator(); it.hasNext();) {
 			toBeReturned += it.next() + "\n";
 		}
 		return toBeReturned;

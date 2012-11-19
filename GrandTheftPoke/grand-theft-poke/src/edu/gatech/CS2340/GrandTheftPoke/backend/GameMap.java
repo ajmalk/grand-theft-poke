@@ -31,7 +31,7 @@ public class GameMap {
 	}
 
 	@XStreamImplicit(itemFieldName = "Town")
-	private Set<Town> townSet;
+	private final Set<Town> townSet;
 
 	@XStreamOmitField
 	private Town startTown;
@@ -52,20 +52,20 @@ public class GameMap {
 	public GameMap(GlobalItemReference theReference) {
 		townSet = new HashSet<Town>();
 
-		TownFactoryImplementation townGenerator = new TownFactoryImplementation(
+		final TownFactoryImplementation townGenerator = new TownFactoryImplementation(
 				theReference);
 
-		Town palletTown = townGenerator.makePalletTown();
-		Town viridianCity = townGenerator.makeViridianCity();
-		Town pewterCity = townGenerator.makePewterCity();
-		Town ceruleanCity = townGenerator.makeCeruleanCity();
-		Town vermillionCity = townGenerator.makeVermillionCity();
-		Town lavenderTown = townGenerator.makeLavenderTown();
-		Town celadonCity = townGenerator.makeCeladonCity();
-		Town fuchsiaCity = townGenerator.makeFuchsiaCity();
-		Town saffronCity = townGenerator.makeSaffronCity();
-		Town cinnabarIsland = townGenerator.makeCinnabarIsland();
-		Town powerPlant = townGenerator.makePowerPlant();
+		final Town palletTown = townGenerator.makePalletTown();
+		final Town viridianCity = townGenerator.makeViridianCity();
+		final Town pewterCity = townGenerator.makePewterCity();
+		final Town ceruleanCity = townGenerator.makeCeruleanCity();
+		final Town vermillionCity = townGenerator.makeVermillionCity();
+		final Town lavenderTown = townGenerator.makeLavenderTown();
+		final Town celadonCity = townGenerator.makeCeladonCity();
+		final Town fuchsiaCity = townGenerator.makeFuchsiaCity();
+		final Town saffronCity = townGenerator.makeSaffronCity();
+		final Town cinnabarIsland = townGenerator.makeCinnabarIsland();
+		final Town powerPlant = townGenerator.makePowerPlant();
 
 		palletTown.addConnection(new Path(cinnabarIsland, 100));
 		palletTown.addConnection(new Path(viridianCity, 10));
