@@ -121,10 +121,15 @@ public class ItemDescTile extends Table {
 	private class BuyListener extends ClickListener{
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
-			customer.buy(market, item, 1);
+			//customer.buy(market, item, 1);
 			if(otherTrader != null) {
-				otherTrader.sell(market, item, 1);
-				System.out.println(otherTrader.getBackpack());
+				if(otherTrader.getBackpack().checkContents(item, 1)) {
+					customer.buy(otherTrader.getMarket(), item, 1);
+					otherTrader.getBackpack().remove(item, 1);
+					System.out.println(otherTrader.getBackpack());
+				}
+			} else {
+				customer.buy(market, item, 1);
 			}
 //			if(((MarketPlaceItem)market.getStock().get(item)).getStock() == 0)
 //				screen.updateMarket(tile);
@@ -137,10 +142,13 @@ public class ItemDescTile extends Table {
 	private class SellListener extends ClickListener{
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
-			customer.sell(market, item, 1);
 			if(otherTrader != null) {
-				otherTrader.buy(market, item, 1);
+				customer.sell(otherTrader.getMarket(), item, 1);
+				otherTrader.getBackpack().place(item, 1);
 				System.out.println(otherTrader.getBackpack());
+
+			} else {
+				customer.sell(market, item, 1);
 			}
 //			if(((MarketPlaceItem)market.getStock().get(item)).getStock() == 1)
 //				screen.updateMarket(tile);

@@ -38,7 +38,7 @@ public class MarketPlaceItem {
 	 * @return the price truncated to 2 decimal places
 	 */
 	public Float getPrice() {
-		return ((int) (price * 100)) / 100f; // probably a better way to do this
+		return ((int) (price * 100)) / 10000f; // probably a better way to do this
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return ((int) (price * 100)) / 100f; // probably a better way to do this
+		return ((int) (price * 100)) / 10000f; // probably a better way to do this
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return ((int) (price * 100)) / 100f; // probably a better way to do this
+		return ((int) (price * 100)) / 10000f; // probably a better way to do this
 	}
 
 	/**

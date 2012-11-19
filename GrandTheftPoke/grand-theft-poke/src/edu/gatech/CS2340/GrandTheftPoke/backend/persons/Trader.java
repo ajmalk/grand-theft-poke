@@ -28,7 +28,7 @@ public class Trader extends Person {
 
 	public void compareTrade(Person other) {
 		int theirTrade = other.getTrade();
-		tradeMultiplier = (float) (getTrade()) / theirTrade;
+		tradeMultiplier = ((float) (getTrade())) / theirTrade;
 	}
 
 	public void initializeMarket() {
@@ -111,45 +111,16 @@ public class Trader extends Person {
 		return personalMarket;
 	}
 
-	public boolean buy(Person other, Item desiredGood, int quantity) {
-		float price;
-		if ((personalMarket.getStock().containsKey(desiredGood))
-				&& other.getBackpack().getContents().containsKey(desiredGood)) {
-			price = (1 / tradeMultiplier)
-					* ((MarketPlaceItem) (personalMarket.getStock()
-							.get(desiredGood))).getBuyingPrice(quantity);
-		} else if (other.getBackpack().getContents().containsKey(desiredGood)) {
-			price = (1 / tradeMultiplier) * 100f;
-		} else {
-			price = 0f;
-		}
-
-		if (price != 0) {
-			if (getWallet().checkAmount(price)) {
-				if (getBackpack().checkCapacity(desiredGood, quantity)) {
-					personalMarket.buy(desiredGood, quantity);
-					getWallet().updateMoney(-price);
-					getBackpack().place(desiredGood, quantity);
-					other.getBackpack().remove(desiredGood, quantity);
-					return true;
-				}
-			}
-		}
-
-		return false;
+	public void buy(Person other, Item desiredGood, int quantity) {
+		//super.buy(personalMarket, desiredGood, quantity);
+		other.sell(personalMarket, desiredGood, quantity);
 
 	}
 
-	public boolean sell(Person other, Item desiredGood, int quantity) {
-		if (getBackpack().checkContents(desiredGood, quantity)) {
-			float price = (tradeMultiplier)
-					* personalMarket.sell(desiredGood, quantity);
-			getWallet().updateMoney(price);
-			getBackpack().remove(desiredGood, quantity);
-			other.getBackpack().place(desiredGood, quantity);
-			return true;
-		}
-		return false;
+	public void sell(Person other, Item desiredGood, int quantity) {
+		//super.sell(personalMarket, desiredGood, quantity);
+		other.buy(personalMarket, desiredGood, quantity);
+		
 	}
 
 }
