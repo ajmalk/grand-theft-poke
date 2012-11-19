@@ -102,7 +102,7 @@ public class Turn {
 	}
 
 	/**
-	 * testing method...uses everytihng
+	 * testing method...uses everything
 	 */
 	public void useAll() {
 		/*

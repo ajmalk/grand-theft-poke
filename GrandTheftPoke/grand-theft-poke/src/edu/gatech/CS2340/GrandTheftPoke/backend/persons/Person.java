@@ -56,6 +56,9 @@ public abstract class Person {
 		return false;
 	}
 
+	/**
+	 * Default constructor for person
+	 */
 	public Person() {
 
 	}

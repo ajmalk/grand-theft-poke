@@ -43,10 +43,10 @@ public class StrengthVitamin extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "The Strength Vitamin permanently adds \n "
-				+ "1 strength point to your current standings.\n"
-				+ "Increasing your strength will allow you to\n"
-				+ "dominate your opponents! " + "+1 Strength Point";
+		return "The Strength Vitamin permanently adds "
+				+ "1 strength point to your current standings. "
+				+ "Increasing your strength will allow you to "
+				+ "dominate your opponents! \n" + "+1 Strength Point";
 	}
 
 	@Override

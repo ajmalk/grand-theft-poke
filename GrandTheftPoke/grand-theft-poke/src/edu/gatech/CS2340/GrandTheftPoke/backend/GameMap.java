@@ -181,16 +181,16 @@ public class GameMap {
 		vertexQueue.add(source);
 
 		while (!vertexQueue.isEmpty()) {
-			Town u = vertexQueue.poll();
+			Town town = vertexQueue.poll();
 
-			for (Path e : (Set<Path>) u.getAdjacencies()) {
+			for (Path e : (Set<Path>) town.getAdjacencies()) {
 				Town v = e.getTarget();
 				int weight = e.getWeight();
-				int distanceThroughU = u.getMinimumDistance() + weight;
+				int distanceThroughU = town.getMinimumDistance() + weight;
 				if (distanceThroughU < v.getMinimumDistance()) {
 					vertexQueue.remove(v);
 					v.setMinimumDistance(distanceThroughU);
-					v.setPrevious(u);
+					v.setPrevious(town);
 					vertexQueue.add(v);
 				}
 			}

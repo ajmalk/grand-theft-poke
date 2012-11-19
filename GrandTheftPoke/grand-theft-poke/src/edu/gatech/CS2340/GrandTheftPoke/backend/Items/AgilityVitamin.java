@@ -38,9 +38,9 @@ public class AgilityVitamin extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "The Agiliy Vitamin permanently adds \n "
-				+ "1 agility point to your current standings.\n"
-				+ "This is useful because you can move further \n"
+		return "The Agiliy Vitamin permanently adds  "
+				+ "1 agility point to your current standings. "
+				+ "This is useful because you can move further "
 				+ "distances in 1 turn.\n" + "+1 Agility Point";
 	}
 

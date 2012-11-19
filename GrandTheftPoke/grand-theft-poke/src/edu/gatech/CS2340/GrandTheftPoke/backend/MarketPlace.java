@@ -27,7 +27,7 @@ public class MarketPlace {
 	 * Constructor that creates the market place for each town
 	 * 
 	 * @param stock
-	 *            a hashmap of Items to their MarketPlaceItem economic models
+	 *            a hash map of Items to their MarketPlaceItem economic models
 	 */
 	public MarketPlace(HashMap<Item, MarketPlaceItem> stock) {
 		this.stock = stock;
@@ -90,6 +90,7 @@ public class MarketPlace {
 	 * 
 	 * @return stock the stock of the market
 	 */
+	
 	public HashMap getStock() {
 		return stock;
 	}
