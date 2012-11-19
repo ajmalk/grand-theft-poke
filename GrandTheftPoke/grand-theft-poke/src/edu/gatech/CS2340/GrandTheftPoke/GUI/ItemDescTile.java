@@ -27,6 +27,7 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
  * Represents item tile
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class ItemDescTile extends Table {

@@ -32,6 +32,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  * The Market
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Market extends AbstractScreen {

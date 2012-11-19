@@ -19,6 +19,7 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 /**
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class MainMenu extends AbstractScreen {

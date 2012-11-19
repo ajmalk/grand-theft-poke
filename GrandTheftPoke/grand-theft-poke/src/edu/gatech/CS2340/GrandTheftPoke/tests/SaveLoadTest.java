@@ -9,11 +9,17 @@ import org.junit.Test;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 
+/**
+ * Tests saving and loading
+ * @author Ajmal Kunnummal
+ * @version 1.0
+ *
+ */
 public class SaveLoadTest {
 
 	@Before
 	public void setUp() throws Exception {
-
+		return;
 	}
 
 	public GTPoke makeNewGame(String name, Integer strength, Integer agility,

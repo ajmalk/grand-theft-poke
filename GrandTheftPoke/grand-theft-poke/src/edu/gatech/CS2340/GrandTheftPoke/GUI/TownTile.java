@@ -24,15 +24,23 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * Town Tile
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class TownTile extends Button {
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "TownTile [myTown=" + myTown + "]";
 	}
 
-	private Town myTown;
+	/**
+	 * myTown field
+	 */
+	private final Town myTown;
 
 	/**
 	 * @param myTown
@@ -80,8 +88,8 @@ public class TownTile extends Button {
 	}
 
 	/**
-	 * @return myTown
-	 */
+	
+	 * @return myTown */
 	public Town getTown() {
 		return myTown;
 	}

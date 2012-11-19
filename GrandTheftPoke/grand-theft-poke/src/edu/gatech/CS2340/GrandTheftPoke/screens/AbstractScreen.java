@@ -12,6 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * An Abstract Screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public abstract class AbstractScreen implements Screen {
@@ -45,22 +46,22 @@ public abstract class AbstractScreen implements Screen {
 
 	@Override
 	public void show() {
-
+		return;
 	}
 
 	@Override
 	public void hide() {
-
+		return;
 	}
 
 	@Override
 	public void pause() {
-
+		return;
 	}
 
 	@Override
 	public void resume() {
-
+		return;
 	}
 
 	@Override

@@ -16,6 +16,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 public class TownFactoryImplementation implements TownFactory {
 
+	/**
+	 * itemsInstance field
+	 */
 	private GlobalItemReference itemsInstance;
 
 	/**

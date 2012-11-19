@@ -9,6 +9,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
  * Represents a player
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 @XStreamAlias("Player")
 public class Player extends Person {

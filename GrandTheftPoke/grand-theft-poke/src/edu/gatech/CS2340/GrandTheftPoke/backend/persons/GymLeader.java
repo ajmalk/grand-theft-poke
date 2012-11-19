@@ -6,6 +6,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
  * The GymLeader
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class GymLeader extends Person {

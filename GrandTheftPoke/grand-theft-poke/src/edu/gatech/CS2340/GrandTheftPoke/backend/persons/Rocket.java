@@ -6,6 +6,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
  * Represents a member of Team Rocket
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Rocket extends Person {

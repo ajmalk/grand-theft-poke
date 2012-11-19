@@ -14,6 +14,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
  * The town
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 @XStreamAlias("Town")
 public class Town implements Comparable {

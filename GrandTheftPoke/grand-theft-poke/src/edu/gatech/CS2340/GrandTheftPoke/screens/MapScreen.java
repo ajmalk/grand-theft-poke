@@ -24,6 +24,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * Map Screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class MapScreen extends AbstractScreen {

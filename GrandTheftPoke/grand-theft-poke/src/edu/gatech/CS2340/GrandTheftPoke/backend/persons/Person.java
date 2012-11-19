@@ -18,6 +18,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * Contains shared data and methods for players and NPCs.
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 public abstract class Person {
 	@XStreamAsAttribute

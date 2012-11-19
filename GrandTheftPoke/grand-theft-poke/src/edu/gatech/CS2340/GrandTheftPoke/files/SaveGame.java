@@ -12,6 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
  * The game saving algorithm
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 @XStreamAlias("Game")

@@ -20,6 +20,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  * Encounter Screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class EncounterScreen extends AbstractScreen {

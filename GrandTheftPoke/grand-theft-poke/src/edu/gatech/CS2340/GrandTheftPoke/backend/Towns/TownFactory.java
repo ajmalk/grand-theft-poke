@@ -4,6 +4,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
  * Town Factory
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 public interface TownFactory {
 

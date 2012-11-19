@@ -19,6 +19,7 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * The initial splash screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class SplashScreen extends AbstractScreen {

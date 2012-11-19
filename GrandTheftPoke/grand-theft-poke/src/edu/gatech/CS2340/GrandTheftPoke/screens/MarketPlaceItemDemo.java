@@ -15,6 +15,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
  * The MarketPlaceItems
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class MarketPlaceItemDemo extends AbstractScreen {
@@ -24,6 +25,10 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 	private Vector3 touchPos;
 	ShapeRenderer renderer;
 
+	@Override
+	public String toString() {
+		return "MarketPlaceItemDemo";
+	}
 	/**
 	 * @param game
 	 *            the game being played

@@ -21,6 +21,7 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * Initial input screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Name extends AbstractScreen {

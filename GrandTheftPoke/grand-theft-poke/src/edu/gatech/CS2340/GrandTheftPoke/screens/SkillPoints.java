@@ -27,6 +27,7 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * The skill point allocation screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class SkillPoints extends AbstractScreen {

@@ -16,6 +16,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
  * Town/Navigation screen
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class TownScreen extends AbstractScreen {

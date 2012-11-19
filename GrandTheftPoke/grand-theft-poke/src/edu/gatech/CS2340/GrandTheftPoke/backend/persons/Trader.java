@@ -13,6 +13,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * Represents a Trader
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Trader extends Person {
