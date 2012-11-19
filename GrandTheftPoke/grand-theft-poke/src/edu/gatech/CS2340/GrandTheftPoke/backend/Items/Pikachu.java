@@ -26,7 +26,7 @@ public class Pikachu extends Item {
 		return true;
 	}
 
-	public boolean Use(Person person) {
+	public boolean use(Person person) {
 		return false;
 	}
 

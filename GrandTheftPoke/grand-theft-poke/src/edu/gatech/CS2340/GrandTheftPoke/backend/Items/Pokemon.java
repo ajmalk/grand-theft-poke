@@ -5,8 +5,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 public abstract class Pokemon extends Item implements Usable {
 
 	private int strengthBoost;
+	
 	private int tradeBoost;
+	
 	private int staminaBoost;
+	
 	private int agilityBoost;
 
 	/**

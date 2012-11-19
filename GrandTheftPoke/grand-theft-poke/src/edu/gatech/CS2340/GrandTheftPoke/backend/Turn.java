@@ -24,8 +24,11 @@ public class Turn {
 	}
 
 	private GameMap theMap;
+	
 	private ArrayList<Person> gameActors;
+	
 	private Player thePlayer;
+	
 	private Random rand;
 
 	/**

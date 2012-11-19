@@ -243,7 +243,7 @@ public class GameMap {
 	 * @param source
 	 *            the starting town
 	 */
-	public void Dijkstras(Town source) {
+	public void dijkstras(Town source) {
 		computePaths(source);
 		for (Town x : townSet) {
 			// System.out.println("Distance to " + x + ": "

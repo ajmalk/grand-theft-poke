@@ -11,7 +11,12 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
  */
 @XStreamAlias("Stock")
 public class MarketPlaceItem {
-
+	
+	private final float EQIL_PRICE, EQIL_STOCK, CONS_ELASTICITY,
+						PROD_ELASTICITY, STOCK_RATIO;
+	
+	private float price, stock;
+	
 	@Override
 	public String toString() {
 		return "MarketPlaceItem [price=" + price + ", stock=" + stock
@@ -19,11 +24,6 @@ public class MarketPlaceItem {
 				+ ", CONS_ELASTICITY=" + CONS_ELASTICITY + ", PROD_ELASTICITY="
 				+ PROD_ELASTICITY + ", STOCK_RATIO=" + STOCK_RATIO + "]";
 	}
-
-	private float price, stock;
-	@XStreamOmitField
-	private final float EQIL_PRICE, EQIL_STOCK, CONS_ELASTICITY,
-			PROD_ELASTICITY, STOCK_RATIO;
 
 	/**
 	 * Creates a MarketPlaceItem
@@ -48,7 +48,7 @@ public class MarketPlaceItem {
 	 * @return the price truncated to 2 decimal places
 	 */
 	public Float getPrice() {
-		return ((int) (price * 100)) / 10000f; // probably a better way to do
+		return price / 100f; // probably a better way to do
 												// this
 	}
 
@@ -66,8 +66,7 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return ((int) (price * 100)) / 10000f; // probably a better way to do
-												// this
+		return price / 100f; 
 	}
 
 	/**
@@ -84,8 +83,7 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return ((int) (price * 100)) / 10000f; // probably a better way to do
-												// this
+		return price / 100f; 
 	}
 
 	/**
@@ -94,7 +92,7 @@ public class MarketPlaceItem {
 	 * @return the stock
 	 */
 	public Integer getStock() {
-		return (int) stock - 500;
+		return (int) Math.floor(stock - 500);
 	}
 
 	/**
