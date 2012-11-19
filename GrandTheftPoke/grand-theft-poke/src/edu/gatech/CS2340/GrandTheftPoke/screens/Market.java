@@ -54,6 +54,10 @@ public class Market extends AbstractScreen {
 	 */
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
+		background = new Image(game.getTextures().findRegion("market-place"));
+		background.setFillParent(true);
+		background.getColor().a = 0f;
+		background.addAction(fadeIn(0.75f));
 		this.market = market;
 		playerPack = game.getPlayer().getBackpack();
 		table = new Table();
@@ -84,6 +88,10 @@ public class Market extends AbstractScreen {
 	 */
 	public Market(GTPoke game, MarketPlace market, Trader other) {
 		super(game);
+		background = new Image(game.getTextures().findRegion("trade-screen"));
+		background.setFillParent(true);
+		background.getColor().a = 0f;
+		background.addAction(fadeIn(0.75f));
 		this.market = market;
 		playerPack = game.getPlayer().getBackpack();
 		table = new Table();
@@ -99,10 +107,10 @@ public class Market extends AbstractScreen {
 
 	@Override
 	public void show() {
-		background = new Image(game.getTextures().findRegion("market-place"));
-		background.setFillParent(true);
-		background.getColor().a = 0f;
-		background.addAction(fadeIn(0.75f));
+		//background = new Image(game.getTextures().findRegion("market-place"));
+		//background.setFillParent(true);
+		//background.getColor().a = 0f;
+		//background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
 		updatetables();
