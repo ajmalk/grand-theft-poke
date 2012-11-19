@@ -19,9 +19,16 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 //same story with imports here
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
+/**
+ * @author Team Rocket
+ *
+ */
 public class MainMenu extends AbstractScreen {
 	private Image background;
 
+	/**
+	 * @param game the game being played
+	 */
 	public MainMenu(GTPoke game) {
 		super(game);
 	}
@@ -93,15 +100,18 @@ public class MainMenu extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {

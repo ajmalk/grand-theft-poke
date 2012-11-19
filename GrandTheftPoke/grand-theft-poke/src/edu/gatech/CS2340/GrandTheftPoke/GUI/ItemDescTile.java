@@ -23,6 +23,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
 
+/**
+ * Represents item tile
+ * @author Team Rocket
+ *
+ */
 public class ItemDescTile extends Table {
 	private Item item;
 	private MarketPlaceItem stockInfo;
@@ -39,11 +44,23 @@ public class ItemDescTile extends Table {
 	private Market screen;
 	private ItemTile tile;
 	
+	/**
+	 * @return item
+	 */
 	public Item getItem() {
 		return item;
 	}
 
 	// private Table tile;
+	/**
+	 * @param item item to represent
+	 * @param stockInfo information about stock
+	 * @param customer person buying item
+	 * @param market market in which item exists
+	 * @param screen screen to show to
+	 * @param tile tile containing item
+	 * @param other other trader
+	 */
 	public ItemDescTile(Item item, MarketPlaceItem stockInfo, Person customer, MarketPlace market, Market screen, ItemTile tile, Trader other) {
 		this.item = item;
 		this.stockInfo = stockInfo;
@@ -118,6 +135,11 @@ public class ItemDescTile extends Table {
 		update(item, stockInfo, customer, tile);
 	}
 	
+	/**
+	 * Listener for things being bought
+	 * @author Team Rocket
+	 *
+	 */
 	private class BuyListener extends ClickListener{
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
@@ -133,6 +155,11 @@ public class ItemDescTile extends Table {
 		}
 	}
 	
+	/**
+	 * Listener for sale
+	 * @author Team Rocket
+	 *
+	 */
 	private class SellListener extends ClickListener{
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
@@ -149,6 +176,10 @@ public class ItemDescTile extends Table {
 		}
 	}
 	
+	/**
+	 * @param tile the tile that represents the item
+	 * @param customer the person buying the item
+	 */
 	public void update(ItemTile tile, Person customer){
 		this.item = tile.getItem();
 		this.stockInfo = tile.getStockInfo();
@@ -164,6 +195,12 @@ public class ItemDescTile extends Table {
 		else buysell.add(sell);
 	}
 	
+	/**
+	 * @param item the item to be updated
+	 * @param stockInfo the item in the marketplace
+	 * @param customerthe person with which the item is to be updated
+	 * @param tile the tile that represents the item
+	 */
 	public void update(Item item, MarketPlaceItem stockInfo, Person customer, ItemTile tile){
 		this.item = item;
 		this.stockInfo = stockInfo;
@@ -181,6 +218,12 @@ public class ItemDescTile extends Table {
 		
 	}
 	
+	/**
+	 * @param item to be put in marketplace
+	 * @param stockInfo MarketPlaceItem representing the stock
+	 * @param backpackStock the stock of the backpack
+	 * @param customer the person with whom to trade
+	 */
 	public void update(Item item, MarketPlaceItem stockInfo, Integer backpackStock, Person customer){
 		this.item = item;
 		this.stockInfo = stockInfo;

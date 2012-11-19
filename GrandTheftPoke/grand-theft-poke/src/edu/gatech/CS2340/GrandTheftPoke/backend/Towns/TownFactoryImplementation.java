@@ -7,13 +7,22 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
+/**
+ * Implementation of Town Factory
+ * @author Team Rocket
+ *
+ */
 public class TownFactoryImplementation implements TownFactory {
 
 	private GlobalItemReference itemsInstance;
 
+	/**
+	 * @param theReference globalItemReference for use
+	 */
 	public TownFactoryImplementation(GlobalItemReference theReference) {
 		itemsInstance = theReference;
 	}
+
 
 	@Override
 	public Town makePalletTown() {
@@ -52,6 +61,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 		return myTown;
 	}
+
 
 	@Override
 	public Town makeViridianCity() {
@@ -95,6 +105,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	}
 
+
 	@Override
 	public Town makePewterCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -135,6 +146,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 		return myTown;
 	}
+
 
 	@Override
 	public Town makeCeruleanCity() {
@@ -177,6 +189,7 @@ public class TownFactoryImplementation implements TownFactory {
 		return myTown;
 	}
 
+
 	@Override
 	public Town makeSaffronCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -218,6 +231,7 @@ public class TownFactoryImplementation implements TownFactory {
 		return myTown;
 	}
 
+
 	@Override
 	public Town makeCeladonCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -256,6 +270,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myTown.setImage("celadon-city");
 		return myTown;
 	}
+
 
 	@Override
 	public Town makeLavenderTown() {
@@ -297,6 +312,7 @@ public class TownFactoryImplementation implements TownFactory {
 		return myTown;
 	}
 
+
 	@Override
 	public Town makeVermillionCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -336,6 +352,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 		return myTown;
 	}
+
 
 	@Override
 	public Town makeFuchsiaCity() {
@@ -377,6 +394,7 @@ public class TownFactoryImplementation implements TownFactory {
 		return myTown;
 	}
 
+
 	@Override
 	public Town makeCinnabarIsland() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -415,6 +433,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 		return myTown;
 	}
+
 
 	@Override
 	public Town makePowerPlant() {

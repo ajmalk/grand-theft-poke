@@ -18,6 +18,11 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
+/**
+ * Battle class
+ * @author Team Rocket
+ *
+ */
 public class Battle extends AbstractScreen {
 
 	private GTPoke game;
@@ -33,6 +38,10 @@ public class Battle extends AbstractScreen {
 
 
 	private Table table;
+	/**
+	 * @param game the game being played
+	 * @param opponent the opponent
+	 */
 	public Battle(GTPoke game, Person opponent) {
 		super(game);
 		this.game = game;
@@ -41,6 +50,9 @@ public class Battle extends AbstractScreen {
 		turnCount = 1;
 	}
 	
+	/* (non-Javadoc)
+	 * @see edu.gatech.CS2340.GrandTheftPoke.screens.AbstractScreen#show()
+	 */
 	public void show() {
 		super.show();
 

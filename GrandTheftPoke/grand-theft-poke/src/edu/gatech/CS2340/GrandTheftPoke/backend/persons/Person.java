@@ -37,6 +37,11 @@ public abstract class Person {
 	@XStreamOmitField
 	private GameMap theMap;
 
+	/**
+	 * 
+	 * @param person
+	 * @return boolean
+	 */
 	public boolean equals(Person person) {
 		if (name.equals(person.name) && person.strength == strength
 				&& person.agility == agility && person.trade == trade
@@ -96,12 +101,16 @@ public abstract class Person {
 		return this.name;
 	}
 	
+	/**
+	 * 
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	/**
 	 * 
-	 * @return
+	 * @return strength
 	 */
 	public Integer getStrength() {
 		return this.strength;
@@ -117,7 +126,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return agility
 	 */
 	public Integer getAgility() {
 		return this.agility;
@@ -133,7 +142,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return trade
 	 */
 	public Integer getTrade() {
 		return this.trade;
@@ -149,7 +158,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return stamina
 	 */
 	public Integer getStamina() {
 		return this.stamina;
@@ -157,7 +166,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return maxHealth
 	 */
 	public Integer getMaxHealth() {
 		return maxHealth;
@@ -165,7 +174,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return health
 	 */
 	public Integer getHealth() {
 		return health;
@@ -201,7 +210,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return myBackpack
 	 */
 	public Backpack getBackpack() {
 		return myBackpack;
@@ -209,7 +218,7 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return myWallet
 	 */
 	public Wallet getWallet() {
 		return myWallet;
@@ -217,20 +226,24 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return
+	 * @return currentTown
 	 */
 	public Town getCurrent() {
 		return currentTown;
 	}
 
+	/**
+	 * 
+	 * @param newCurrent
+	 */
 	public void setCurrent(Town newCurrent) {
 		currentTown = newCurrent;
 	}
 
 	/**
 	 * 
-	 * @param other
-	 * @return
+	 * @param turnCount
+	 * @return int
 	 */
 	public int attack(int turnCount) {
 		float fatigue = (float) currentStamina / stamina;
@@ -241,6 +254,10 @@ public abstract class Person {
 
 	}
 
+	/**
+	 * 
+	 * @param incomingDamage
+	 */
 	public void defend(int incomingDamage) {
 		float fatigue = (float) currentStamina / stamina;
 		float dodge = agility / 100;
@@ -255,6 +272,10 @@ public abstract class Person {
 		setHealth(-incomingDamage);
 	}
 
+	/**
+	 * 
+	 * @return boolean
+	 */
 	public boolean flee() {
 		return new Random().nextBoolean();
 	}

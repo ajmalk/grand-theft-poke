@@ -20,9 +20,17 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 //because the gui doesn't function on linux...if they're truly not used, 
 //get rid of them. otherwise, uncomment them
 
+/**
+ * Town Tile
+ * @author Team Rocket
+ *
+ */
 public class TownTile extends Button {
 	private Town myTown;
 
+	/**
+	 * @param myTown the town the player is in
+	 */
 	public TownTile(Town myTown) {
 		super(new TextureRegionDrawable(new TextureRegion(
 				GTPoke.getButtonSprite(), 134, 0, 150, 200)),
@@ -42,6 +50,10 @@ public class TownTile extends Button {
 
 	}
 
+	/**
+	 * @param myTown the town the player is in
+	 * @param myStyle the style of the button
+	 */
 	public TownTile(Town myTown, ButtonStyle myStyle) {
 		super(myStyle);
 		this.myTown = myTown;
@@ -58,6 +70,9 @@ public class TownTile extends Button {
 
 	}
 
+	/**
+	 * @return myTown
+	 */
 	public Town getTown() {
 		return myTown;
 	}

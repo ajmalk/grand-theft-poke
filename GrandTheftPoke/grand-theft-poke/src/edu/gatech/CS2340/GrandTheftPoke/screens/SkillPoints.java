@@ -21,6 +21,11 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
 //import com.badlogic.gdx.scenes.scene2d.ui.Window;
 
+/**
+ * The skill point allocation screen
+ * @author Team Rocket
+ *
+ */
 public class SkillPoints extends AbstractScreen {
 	private Texture background;
 
@@ -33,9 +38,13 @@ public class SkillPoints extends AbstractScreen {
 	private Button ConfirmButton;
 	private Table table;
 
+	/**
+	 * @param game the game being played
+	 */
 	public SkillPoints(GTPoke game) {
 		super(game);
 	}
+
 
 	@Override
 	public void show() {
@@ -149,6 +158,7 @@ public class SkillPoints extends AbstractScreen {
 		slider.setValue(value);
 	}
 
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -190,10 +200,12 @@ public class SkillPoints extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {

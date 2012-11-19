@@ -13,12 +13,21 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 
+/**
+ * Load/Save feature
+ * @author Team Rocket
+ *
+ */
 public class LoadSave extends AbstractScreen {
 	private Texture background;
 
+	/**
+	 * @param game the game being played
+	 */
 	public LoadSave(GTPoke game) {
 		super(game);
 	}
+
 
 	@Override
 	public void show() {
@@ -70,15 +79,18 @@ public class LoadSave extends AbstractScreen {
 
 	}
 
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {

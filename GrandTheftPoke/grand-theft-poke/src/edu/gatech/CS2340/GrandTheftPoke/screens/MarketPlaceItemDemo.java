@@ -12,6 +12,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 
+/**
+ * The MarketPlaceItems
+ * @author Team Rocket
+ *
+ */
 public class MarketPlaceItemDemo extends AbstractScreen {
 	MarketPlaceItem item = new MarketPlaceItem(500f, 500f);
 	Table table = new Table(game.getSkin());
@@ -19,10 +24,14 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 	private Vector3 touchPos;
 	ShapeRenderer renderer;
 
+	/**
+	 * @param game the game being played
+	 */
 	public MarketPlaceItemDemo(GTPoke game) {
 		super(game);
 		renderer = new ShapeRenderer();
 	}
+
 
 	@Override
 	public void show() {
@@ -31,6 +40,9 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		touchPos = new Vector3();
 	}
 
+	/**
+	 * draws curves to screen
+	 */
 	public void drawcurves(){
 		renderer.begin(ShapeType.Line);
 		renderer.setColor(Color.BLACK);
@@ -43,6 +55,7 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		renderer.end();
 	}
 	
+
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -67,10 +80,12 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		 //item.drawcurves();
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void dispose() {
