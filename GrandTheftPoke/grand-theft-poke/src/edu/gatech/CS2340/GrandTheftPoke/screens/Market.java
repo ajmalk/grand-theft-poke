@@ -35,7 +35,7 @@ public class Market extends AbstractScreen {
 	private MarketPlace market;
 	private Backpack playerPack;
 	private Table markettable, backpacktable, table;
-	private ButtonGroup marketItemGroup, backPackItemGroup;
+	private ButtonGroup marketItemGroup;
 	private ScrollPane marketStock, backpackStock;
 	private ItemDescTile description;
 	private Button backButton;
@@ -51,7 +51,6 @@ public class Market extends AbstractScreen {
 		markettable = new Table();
 		backpacktable = new Table();
 		marketItemGroup = new ButtonGroup();
-		backPackItemGroup = new ButtonGroup();
 		marketStock = new ScrollPane(markettable);
 		backpackStock = new ScrollPane(backpacktable);
 		backpack = new HashMap<Item, ItemTile>();
@@ -70,7 +69,6 @@ public class Market extends AbstractScreen {
 		markettable = new Table();
 		backpacktable = new Table();
 		marketItemGroup = new ButtonGroup();
-		backPackItemGroup = new ButtonGroup();
 		marketStock = new ScrollPane(markettable);
 		backpackStock = new ScrollPane(backpacktable);
 		backpack = new HashMap<Item, ItemTile>();
@@ -184,8 +182,9 @@ public class Market extends AbstractScreen {
 	
 	public void render(float delta) {
 		super.render(delta);
-		Iterator<Entry <Item, ItemTile>> iter = marketplace.entrySet().iterator();
-		for (Entry<Item, ItemTile> item = iter.next(); iter.hasNext(); item = iter.next()) {
+		
+		for (Iterator<Entry <Item, ItemTile>> iter = marketplace.entrySet().iterator(); iter.hasNext(); ) {
+			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
 			if(playerPack.getContents().containsKey(item.getKey()) && !backpack.containsKey(item.getKey())){
 				backpack.put(item.getKey(), new ItemTile(market, item.getKey(),
@@ -197,8 +196,8 @@ public class Market extends AbstractScreen {
 				addItems();
 			}
 		}
-		iter = backpack.entrySet().iterator();
-		for (; iter.hasNext(); ) {
+		
+		for (Iterator<Entry <Item, ItemTile>> iter = backpack.entrySet().iterator(); iter.hasNext(); ) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
 			if(((MarketPlaceItem)market.getStock().get(item.getKey())).getStock() != 0 && !marketplace.containsKey(item.getKey())){
