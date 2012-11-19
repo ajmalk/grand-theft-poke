@@ -18,7 +18,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 public class Trader extends Person {
 
 	private MarketPlace personalMarket;
-	Map<Item, MarketPlaceItem> stock;
+	private Map<Item, MarketPlaceItem> stock;
 	float tradeMultiplier;
 	private GlobalItemReference itemsInstance;
 
