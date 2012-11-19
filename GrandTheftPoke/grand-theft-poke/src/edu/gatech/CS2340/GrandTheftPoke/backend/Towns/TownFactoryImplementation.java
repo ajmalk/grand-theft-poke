@@ -1,6 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
@@ -27,7 +28,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	@Override
 	public Town makePalletTown() {
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
 				10f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
@@ -65,7 +66,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	@Override
 	public Town makeViridianCity() {
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
@@ -107,7 +108,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	@Override
 	public Town makePewterCity() {
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
@@ -148,7 +149,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	@Override
 	public Town makeCeruleanCity() {
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
@@ -189,7 +190,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	@Override
 	public Town makeSaffronCity() {
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(30f,
 				30f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(
@@ -230,7 +231,7 @@ public class TownFactoryImplementation implements TownFactory {
 
 	@Override
 	public Town makeCeladonCity() {
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,

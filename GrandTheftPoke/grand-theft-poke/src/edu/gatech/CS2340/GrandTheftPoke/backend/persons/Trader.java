@@ -71,7 +71,7 @@ public class Trader extends Person {
 		 * (float)getBackpack().getContents().get(i))); } }
 		 */
 
-		final HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		final Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(
 				itemsInstance.getHealthPotion(),
 				new MarketPlaceItem(10f, (float) (getBackpack()

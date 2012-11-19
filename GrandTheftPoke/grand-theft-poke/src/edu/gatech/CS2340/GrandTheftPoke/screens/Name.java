@@ -26,7 +26,7 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 public class Name extends AbstractScreen {
 	private Image background;
 	private Button ConfirmButton;
-	private TextField name;
+	private TextField myName;
 	private String playerName = "";
 	private Table table;
 
@@ -54,8 +54,8 @@ public class Name extends AbstractScreen {
 		background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
-		name = new TextField("", game.getSkin());
-		name.setTextFieldListener(new TextFieldListener() {
+		myName = new TextField("", game.getSkin());
+		myName.setTextFieldListener(new TextFieldListener() {
 			@Override
 			public void keyTyped(TextField name, char key) {
 				if (!(key == 14 || key == 15 || key == 0)) {
@@ -120,7 +120,7 @@ public class Name extends AbstractScreen {
 		table.clear();
 
 		table.add("Name:").width(100);
-		table.add(name);
+		table.add(myName);
 		table.row();
 
 		stage.addActor(table);
