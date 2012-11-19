@@ -73,7 +73,7 @@ public abstract class Person {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		final Person other = (Person) obj;
 		if (agility == null) {
 			if (other.agility != null)
 				return false;
@@ -332,7 +332,7 @@ public abstract class Person {
 	 * @return int
 	 */
 	public int attack(int turnCount) {
-		float fatigue = (float) currentStamina / stamina;
+		final float fatigue = (float) currentStamina / stamina;
 		if (currentStamina > 1 && turnCount % 5 == 0) {
 			currentStamina--;
 		}
@@ -345,11 +345,11 @@ public abstract class Person {
 	 * @param incomingDamage
 	 */
 	public void defend(int incomingDamage) {
-		float fatigue = (float) currentStamina / stamina;
-		float dodge = agility / 100;
+		final float fatigue = (float) currentStamina / stamina;
+		final float dodge = agility / 100;
 
-		Random rand = new Random();
-		double chance = rand.nextDouble();
+		final Random rand = new Random();
+		final double chance = rand.nextDouble();
 
 		if (chance < fatigue * dodge) {
 			return;
@@ -372,7 +372,7 @@ public abstract class Person {
 	 */
 	public void move(Town destination) {
 		if (!(currentTown.toString().equals(destination.toString()))) {
-			int range = myBackpack.getMaxRange();
+			final int range = myBackpack.getMaxRange();
 			int distance = theMap
 					.Dijkstras(currentTown, destination.toString());
 			if (range >= distance && health >= distance / 5) {
@@ -420,7 +420,7 @@ public abstract class Person {
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (myBackpack.checkContents(desiredGood, quantity)) {
-			float price = (float) (0.85 + 0.0015 * trade)
+			final float price = (float) (0.85 + 0.0015 * trade)
 					* theMarket.sell(desiredGood, quantity);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);
@@ -434,7 +434,7 @@ public abstract class Person {
 	 * @param other
 	 */
 	public void win(Person other) {
-		Set<Item> theirStuff = other.getBackpack().getContents().keySet();
+		final Set<Item> theirStuff = other.getBackpack().getContents().keySet();
 		for (Item theItem : theirStuff) {
 			int quantity = other.getBackpack().getContents().get(theItem);
 			if (myBackpack.place(theItem, quantity)) {

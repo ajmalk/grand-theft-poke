@@ -36,7 +36,7 @@ public class Pokeball extends Item {
 
 	@Override
 	public int hashCode() {
-		int hash = 5;
+		final int hash = 5;
 		return hash;
 	}
 

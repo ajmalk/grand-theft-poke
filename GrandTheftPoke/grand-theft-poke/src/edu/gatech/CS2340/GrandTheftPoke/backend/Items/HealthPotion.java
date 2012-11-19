@@ -11,8 +11,8 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 public class HealthPotion extends Item implements Usable {
 	@Override
 	public void use(Person person) {
-		int health = person.getHealth();
-		int maxHealth = person.getMaxHealth();
+		final int health = person.getHealth();
+		final int maxHealth = person.getMaxHealth();
 		if (health <= (maxHealth - 20)) {
 			person.setHealth(health + 20);
 		} else {

@@ -5,23 +5,23 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  * @author Team Rocket
  */
 public class GlobalItemReference {
-	private Arcanine myArcanine;
-	private Charizard myCharizard;
-	private JigglyPuff myJigglyPuff;
-	private Pikachu myPikachu;
-	private Squirtle mySquirtle;
-	private HealthPotion myHealthPotion;
-	private AgilityRoid myAgilityRoid;
-	private HealthRoid myHealthRoid;
-	private StaminaRoid myStaminaRoid;
-	private StrengthRoid myStrengthRoid;
-	private TradeRoid myTradeRoid;
-	private AgilityVitamin myAgilityVitamin;
-	private HealthVitamin myHealthVitamin;
-	private StaminaVitamin myStaminaVitamin;
-	private StrengthVitamin myStrengthVitamin;
-	private TradeVitamin myTradeVitamin;
-	private Repel myRepel;
+	final private Arcanine myArcanine;
+	final private Charizard myCharizard;
+	final private JigglyPuff myJigglyPuff;
+	final private Pikachu myPikachu;
+	final private Squirtle mySquirtle;
+	final private HealthPotion myHealthPotion;
+	final private AgilityRoid myAgilityRoid;
+	final private HealthRoid myHealthRoid;
+	final private StaminaRoid myStaminaRoid;
+	final private StrengthRoid myStrengthRoid;
+	final private TradeRoid myTradeRoid;
+	final private AgilityVitamin myAgilityVitamin;
+	final private HealthVitamin myHealthVitamin;
+	final private StaminaVitamin myStaminaVitamin;
+	final private StrengthVitamin myStrengthVitamin;
+	final private TradeVitamin myTradeVitamin;
+	final private Repel myRepel;
 
 	/**
 	 * Empty Constructor

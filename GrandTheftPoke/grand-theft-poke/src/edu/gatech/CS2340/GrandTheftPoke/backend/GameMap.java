@@ -177,7 +177,7 @@ public class GameMap {
 	 */
 	public static void computePaths(Town source) {
 		source.setMinimumDistance(0);
-		PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
+		final PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
 		vertexQueue.add(source);
 
 		while (!vertexQueue.isEmpty()) {
@@ -205,7 +205,7 @@ public class GameMap {
 	 * @return the shortest path
 	 */
 	public static List<Town> getShortestPathTo(Town target) {
-		List<Town> path = new ArrayList<Town>();
+		final List<Town> path = new ArrayList<Town>();
 		for (Town vertex = target; vertex != null; vertex = vertex
 				.getPrevious()) {
 			path.add(vertex);
@@ -245,7 +245,7 @@ public class GameMap {
 	 * @return a random town
 	 */
 	public Town getRandomTown() {
-		Random rand = new Random();
+		final Random rand = new Random();
 		return (Town) townSet.toArray()[rand.nextInt(townSet.size())];
 
 	}
