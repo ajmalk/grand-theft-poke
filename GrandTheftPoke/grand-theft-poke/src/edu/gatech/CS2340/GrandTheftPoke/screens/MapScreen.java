@@ -107,7 +107,7 @@ public class MapScreen extends AbstractScreen {
 
 			}
 
-			int distance = theMap.Dijkstras(game.getPlayer().getCurrent(),
+			int distance = theMap.dijkstras(game.getPlayer().getCurrent(),
 					theTown.toString());
 			int range = game.getPlayer().getBackpack().getMaxRange();
 			int playerHealth = game.getPlayer().getHealth();

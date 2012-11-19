@@ -83,7 +83,6 @@ public class Main {
 		for (final Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move(it.next());
 			System.out.println(testPlayer.getCurrent());
-			map.dijkstras(testPlayer.getCurrent());
 			System.out.println();
 		}
 	}

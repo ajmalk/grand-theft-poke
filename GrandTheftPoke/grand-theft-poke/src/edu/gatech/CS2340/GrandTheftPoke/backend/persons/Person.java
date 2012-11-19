@@ -399,7 +399,7 @@ public abstract class Person {
 		if (!(currentTown.toString().equals(destination.toString()))) {
 			final int range = myBackpack.getMaxRange();
 			int distance = theMap
-					.Dijkstras(currentTown, destination.toString());
+					.dijkstras(currentTown, destination.toString());
 			if (range >= distance && health >= distance / 5) {
 				currentTown = destination;
 				setHealth(-distance / 5);

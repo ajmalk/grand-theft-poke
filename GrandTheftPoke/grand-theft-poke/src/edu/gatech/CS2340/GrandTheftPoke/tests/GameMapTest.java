@@ -67,22 +67,22 @@ public class GameMapTest extends junit.framework.TestCase {
 	public void testDijkstras() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 
-		int distance = fixture.Dijkstras(fixture.getStartTown(), "Pallet Town");
+		int distance = fixture.dijkstras(fixture.getStartTown(), "Pallet Town");
 		assertEquals(distance, 0);
 
-		distance = fixture.Dijkstras(fixture.getStartTown(), "Cinnabar Island");
+		distance = fixture.dijkstras(fixture.getStartTown(), "Cinnabar Island");
 		assertEquals(distance, 100);
 
-		distance = fixture.Dijkstras(fixture.getStartTown(), "Viridian City");
+		distance = fixture.dijkstras(fixture.getStartTown(), "Viridian City");
 		assertEquals(distance, 10);
 
-		distance = fixture.Dijkstras(fixture.getStartTown(), "Pewter City");
+		distance = fixture.dijkstras(fixture.getStartTown(), "Pewter City");
 		assertEquals(distance, 30);
 
-		distance = fixture.Dijkstras(fixture.getStartTown(), "Cerulean City");
+		distance = fixture.dijkstras(fixture.getStartTown(), "Cerulean City");
 		assertEquals(distance, 80);
 
-		distance = fixture.Dijkstras(fixture.getStartTown(), "Power Plant");
+		distance = fixture.dijkstras(fixture.getStartTown(), "Power Plant");
 		assertEquals(distance, 110);
 	}
 
@@ -98,8 +98,6 @@ public class GameMapTest extends junit.framework.TestCase {
 		GameMap fixture = new GameMap();
 		fixture.addTown(new Town("", new MarketPlace(new HashMap())));
 		Town source = new Town("", new MarketPlace(new HashMap()));
-
-		fixture.dijkstras(source);
 	}
 
 	/**
@@ -135,7 +133,7 @@ public class GameMapTest extends junit.framework.TestCase {
 		Town source = new Town("", new MarketPlace(new HashMap()));
 		String townName = "";
 
-		int result = fixture.Dijkstras(source, townName);
+		int result = fixture.dijkstras(source, townName);
 		assertEquals(Integer.MAX_VALUE, result);
 	}
 

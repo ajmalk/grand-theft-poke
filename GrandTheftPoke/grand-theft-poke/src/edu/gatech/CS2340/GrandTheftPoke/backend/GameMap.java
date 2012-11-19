@@ -266,7 +266,7 @@ public class GameMap {
 	 *            the townName
 	 * @return an int computing the distance
 	 */
-	public int Dijkstras(Town source, String townName) {
+	public int dijkstras(Town source, String townName) {
 		computePaths(source);
 		int toBeReturned = Integer.MAX_VALUE;
 		for (Town x : townSet) {
