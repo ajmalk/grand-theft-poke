@@ -49,7 +49,7 @@ public class Trader extends Person {
 	 * @param other
 	 */
 	public void compareTrade(Person other) {
-		int theirTrade = other.getTrade();
+		final int theirTrade = other.getTrade();
 		tradeMultiplier = ((float) (getTrade())) / theirTrade;
 	}
 
@@ -70,7 +70,7 @@ public class Trader extends Person {
 		 * (float)getBackpack().getContents().get(i))); } }
 		 */
 
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		final HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(
 				itemsInstance.getHealthPotion(),
 				new MarketPlaceItem(10f, (float) (getBackpack()
@@ -127,7 +127,7 @@ public class Trader extends Person {
 				itemsInstance.getTradeRoid(),
 				new MarketPlaceItem(2000f, (float) (getBackpack()
 						.getAmount(itemsInstance.getTradeRoid()))));
-		MarketPlace myMarket = new MarketPlace(myStock);
+		final MarketPlace myMarket = new MarketPlace(myStock);
 
 		personalMarket = myMarket;
 	}
