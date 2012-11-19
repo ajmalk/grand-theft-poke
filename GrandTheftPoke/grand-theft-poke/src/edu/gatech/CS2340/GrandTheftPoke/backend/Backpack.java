@@ -22,7 +22,7 @@ public class Backpack {
 
 	// @XStreamImplicit(itemFieldName="item")
 	@XStreamOmitField
-	private final HashMap<Item, Integer> contents;
+	private Map<Item, Integer> contents;
 
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();

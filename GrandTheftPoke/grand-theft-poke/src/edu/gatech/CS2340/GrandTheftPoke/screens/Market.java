@@ -35,7 +35,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  * 
  */
 public class Market extends AbstractScreen {
-	private MarketPlace market;
+	private MarketPlace myMarket;
 	private Backpack playerPack;
 	private Table markettable, backpacktable, table;
 	private ButtonGroup marketItemGroup;
@@ -58,7 +58,7 @@ public class Market extends AbstractScreen {
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
-		this.market = market;
+		this.myMarket = market;
 		playerPack = game.getPlayer().getBackpack();
 		table = new Table();
 		markettable = new Table();
@@ -92,7 +92,7 @@ public class Market extends AbstractScreen {
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
-		this.market = market;
+		this.myMarket = market;
 		playerPack = game.getPlayer().getBackpack();
 		table = new Table();
 		markettable = new Table();
@@ -134,7 +134,7 @@ public class Market extends AbstractScreen {
 		description = new ItemDescTile(
 				((ItemTile) marketItemGroup.getChecked()).getItem(),
 				((ItemTile) (marketItemGroup.getChecked())).getStockInfo(),
-				game.getPlayer(), market, this,
+				game.getPlayer(), myMarket, this,
 				(ItemTile) marketItemGroup.getChecked(), otherTrader);
 
 		Texture ButtonSprite = new Texture("images//button-sprite.png");
@@ -196,20 +196,20 @@ public class Market extends AbstractScreen {
 	 * updates items in the market
 	 */
 	void updatetables() {
-		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = market.iterator(); i
+		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = myMarket.iterator(); i
 				.hasNext();) {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();
 			final ItemTile markettile = new ItemTile(item.getKey(),
 					item.getValue());
 			Integer pack = playerPack.getContents().get(item.getKey());
 			ItemTile backpacktile;
-			backpacktile = new ItemTile(market, item.getKey(), pack, playerPack);
+			backpacktile = new ItemTile(myMarket, item.getKey(), pack, playerPack);
 			marketplace.put(item.getKey(), markettile);
 		}
 		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
 				.getContents().entrySet().iterator(); i.hasNext();) {
 			final java.util.Map.Entry<Item, Integer> item = i.next();
-			ItemTile tile = new ItemTile(market, item.getKey(),
+			ItemTile tile = new ItemTile(myMarket, item.getKey(),
 					item.getValue(), playerPack);
 			backpack.put(item.getKey(), tile);
 
@@ -233,7 +233,7 @@ public class Market extends AbstractScreen {
 			if (playerPack.getContents().containsKey(item.getKey())
 					&& !backpack.containsKey(item.getKey())) {
 				backpack.put(item.getKey(),
-						new ItemTile(market, item.getKey(), playerPack
+						new ItemTile(myMarket, item.getKey(), playerPack
 								.getContents().get(item.getKey()), playerPack));
 				addItems();
 			}
@@ -247,7 +247,7 @@ public class Market extends AbstractScreen {
 				.iterator(); iter.hasNext();) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
-			if (((MarketPlaceItem) market.getStock().get(item.getKey()))
+			if (((MarketPlaceItem) myMarket.getStock().get(item.getKey()))
 					.getStock() != 0 && !marketplace.containsKey(item.getKey())) {
 				marketplace.put(item.getKey(), new ItemTile(item.getKey(), item
 						.getValue().getStockInfo()));

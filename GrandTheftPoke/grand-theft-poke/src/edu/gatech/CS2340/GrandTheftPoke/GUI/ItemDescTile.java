@@ -217,9 +217,9 @@ public class ItemDescTile extends Table {
 		price.setText("$" + ((Float) (1.1f * stockInfo.getPrice())).toString());
 		stock.setText(tile.getStock().toString());
 		buysell.clear();
-		if (tile.isMarketItem())
+		if (tile.isMarketItem()) {
 			buysell.add(buy);
-		else
+		} else
 			buysell.add(sell);
 	}
 

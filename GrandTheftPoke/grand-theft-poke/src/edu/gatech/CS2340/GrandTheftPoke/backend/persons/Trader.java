@@ -1,6 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.persons;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
@@ -17,7 +18,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 public class Trader extends Person {
 
 	private MarketPlace personalMarket;
-	HashMap<Item, MarketPlaceItem> stock;
+	Map<Item, MarketPlaceItem> stock;
 	float tradeMultiplier;
 	private GlobalItemReference itemsInstance;
 
@@ -70,7 +71,7 @@ public class Trader extends Person {
 		 * (float)getBackpack().getContents().get(i))); } }
 		 */
 
-		final HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		final Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(
 				itemsInstance.getHealthPotion(),
 				new MarketPlaceItem(10f, (float) (getBackpack()

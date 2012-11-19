@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +26,7 @@ public class MarketPlaceTest {
 	public void setUp() throws Exception {
 		itemsInstance = new GlobalItemReference();
 
-		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
