@@ -32,15 +32,7 @@ public class Backpack {
 		contents = new HashMap<Item, Integer>();
 	}
 
-	public boolean equals(Backpack pack) {
-		if (pack.capacity != capacity || pack.maxRange != maxRange)
-			return false;
-		for (Entry<Item, Integer> entry : pack.contents.entrySet())
-			if (!(contents.containsKey(entry.getKey()) && contents.get(
-					entry.getKey()).equals(entry.getValue())))
-				return false;
-		return true;
-	}
+
 
 	public int getAmount(Item toBeRetrieved) {
 		if (contents.containsKey(toBeRetrieved)) {
@@ -49,6 +41,50 @@ public class Backpack {
 
 		return 0;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((capacity == null) ? 0 : capacity.hashCode());
+		result = prime * result
+				+ ((contents == null) ? 0 : contents.hashCode());
+		result = prime * result
+				+ ((maxRange == null) ? 0 : maxRange.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Backpack other = (Backpack) obj;
+		if (capacity == null) {
+			if (other.capacity != null)
+				return false;
+		} else if (!capacity.equals(other.capacity))
+			return false;
+		if (contents == null) {
+			if (other.contents != null)
+				return false;
+		} else if (!contents.equals(other.contents))
+			return false;
+		if (maxRange == null) {
+			if (other.maxRange != null)
+				return false;
+		} else if (!maxRange.equals(other.maxRange))
+			return false;
+		return true;
+	}
+
+
 
 	/**
 	 * Creates a backpack with specified maximum range and capacity

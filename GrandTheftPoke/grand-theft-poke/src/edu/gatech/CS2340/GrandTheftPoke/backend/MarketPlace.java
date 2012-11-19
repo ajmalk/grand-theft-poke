@@ -16,6 +16,31 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 @XStreamAlias("Market")
 public class MarketPlace {
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((stock == null) ? 0 : stock.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MarketPlace other = (MarketPlace) obj;
+		if (stock == null) {
+			if (other.stock != null)
+				return false;
+		} else if (!stock.equals(other.stock))
+			return false;
+		return true;
+	}
+
+	@Override
 	public String toString() {
 		return "MarketPlace [stock=" + stock + "]";
 	}
@@ -33,22 +58,7 @@ public class MarketPlace {
 		this.stock = stock;
 	}
 
-	/**
-	 * checks if two markets are equal
-	 * 
-	 * @param market
-	 *            the current market
-	 * @return boolean
-	 */
-	public boolean equals(MarketPlace market) {
-		if (market == null)
-			return false;
-		for (Entry<Item, MarketPlaceItem> entry : stock.entrySet())
-			if (!(market.stock.containsKey(entry.getKey()) && market.stock.get(
-					entry.getKey()).equals(entry.getValue())))
-				return false;
-		return true;
-	}
+
 
 	/**
 	 * buys an item

@@ -137,21 +137,49 @@ public class MarketPlaceItem {
 		return production(price);
 	}
 
-	/**
-	 * checks to see if two items are equal
-	 * 
-	 * @param item
-	 *            item to be checked
-	 * @return boolean
-	 */
-	public boolean equals(MarketPlaceItem item) {
-		if (item.CONS_ELASTICITY == CONS_ELASTICITY
-				&& item.EQIL_PRICE == EQIL_PRICE
-				&& item.EQIL_STOCK == EQIL_STOCK && item.price == price
-				&& item.PROD_ELASTICITY == PROD_ELASTICITY
-				&& item.stock == stock)
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Float.floatToIntBits(CONS_ELASTICITY);
+		result = prime * result + Float.floatToIntBits(EQIL_PRICE);
+		result = prime * result + Float.floatToIntBits(EQIL_STOCK);
+		result = prime * result + Float.floatToIntBits(PROD_ELASTICITY);
+		result = prime * result + Float.floatToIntBits(STOCK_RATIO);
+		result = prime * result + Float.floatToIntBits(price);
+		result = prime * result + Float.floatToIntBits(stock);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		return false;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MarketPlaceItem other = (MarketPlaceItem) obj;
+		if (Float.floatToIntBits(CONS_ELASTICITY) != Float
+				.floatToIntBits(other.CONS_ELASTICITY))
+			return false;
+		if (Float.floatToIntBits(EQIL_PRICE) != Float
+				.floatToIntBits(other.EQIL_PRICE))
+			return false;
+		if (Float.floatToIntBits(EQIL_STOCK) != Float
+				.floatToIntBits(other.EQIL_STOCK))
+			return false;
+		if (Float.floatToIntBits(PROD_ELASTICITY) != Float
+				.floatToIntBits(other.PROD_ELASTICITY))
+			return false;
+		if (Float.floatToIntBits(STOCK_RATIO) != Float
+				.floatToIntBits(other.STOCK_RATIO))
+			return false;
+		if (Float.floatToIntBits(price) != Float.floatToIntBits(other.price))
+			return false;
+		if (Float.floatToIntBits(stock) != Float.floatToIntBits(other.stock))
+			return false;
+		return true;
 	}
 
 	/**

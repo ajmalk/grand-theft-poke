@@ -48,12 +48,57 @@ public class Town implements Comparable {
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (o == null || !(o instanceof Town))
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((adjacencies == null) ? 0 : adjacencies.hashCode());
+		result = prime * result
+				+ ((filename == null) ? 0 : filename.hashCode());
+		result = prime * result + minimumDistance;
+		result = prime * result
+				+ ((myMarket == null) ? 0 : myMarket.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result
+				+ ((previous == null) ? 0 : previous.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-		if (!toString().equals(((Town) o).toString()))
+		if (getClass() != obj.getClass())
 			return false;
-		if (myMarket.equals(((Town) o).getMarket()))
+		Town other = (Town) obj;
+		if (adjacencies == null) {
+			if (other.adjacencies != null)
+				return false;
+		} else if (!adjacencies.equals(other.adjacencies))
+			return false;
+		if (filename == null) {
+			if (other.filename != null)
+				return false;
+		} else if (!filename.equals(other.filename))
+			return false;
+		if (minimumDistance != other.minimumDistance)
+			return false;
+		if (myMarket == null) {
+			if (other.myMarket != null)
+				return false;
+		} else if (!myMarket.equals(other.myMarket))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (previous == null) {
+			if (other.previous != null)
+				return false;
+		} else if (!previous.equals(other.previous))
 			return false;
 		return true;
 	}

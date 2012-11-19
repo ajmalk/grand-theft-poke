@@ -38,22 +38,103 @@ public abstract class Person {
 	@XStreamOmitField
 	private GameMap theMap;
 
-	/**
-	 * 
-	 * @param person
-	 * @return boolean
-	 */
-	public boolean equals(Person person) {
-		if (name.equals(person.name) && person.strength == strength
-				&& person.agility == agility && person.trade == trade
-				&& person.stamina == stamina
-				&& person.currentStamina == currentStamina
-				&& person.maxHealth == maxHealth
-				&& person.health.equals(health)
-				&& person.myWallet.equals(myWallet)
-				&& person.myBackpack.equals(myBackpack))
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((agility == null) ? 0 : agility.hashCode());
+		result = prime * result
+				+ ((currentStamina == null) ? 0 : currentStamina.hashCode());
+		result = prime * result
+				+ ((currentTown == null) ? 0 : currentTown.hashCode());
+		result = prime * result + ((health == null) ? 0 : health.hashCode());
+		result = prime * result
+				+ ((maxHealth == null) ? 0 : maxHealth.hashCode());
+		result = prime * result
+				+ ((myBackpack == null) ? 0 : myBackpack.hashCode());
+		result = prime * result
+				+ ((myWallet == null) ? 0 : myWallet.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((stamina == null) ? 0 : stamina.hashCode());
+		result = prime * result
+				+ ((strength == null) ? 0 : strength.hashCode());
+		result = prime * result + ((theMap == null) ? 0 : theMap.hashCode());
+		result = prime * result + ((trade == null) ? 0 : trade.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		return false;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (agility == null) {
+			if (other.agility != null)
+				return false;
+		} else if (!agility.equals(other.agility))
+			return false;
+		if (currentStamina == null) {
+			if (other.currentStamina != null)
+				return false;
+		} else if (!currentStamina.equals(other.currentStamina))
+			return false;
+		if (currentTown == null) {
+			if (other.currentTown != null)
+				return false;
+		} else if (!currentTown.equals(other.currentTown))
+			return false;
+		if (health == null) {
+			if (other.health != null)
+				return false;
+		} else if (!health.equals(other.health))
+			return false;
+		if (maxHealth == null) {
+			if (other.maxHealth != null)
+				return false;
+		} else if (!maxHealth.equals(other.maxHealth))
+			return false;
+		if (myBackpack == null) {
+			if (other.myBackpack != null)
+				return false;
+		} else if (!myBackpack.equals(other.myBackpack))
+			return false;
+		if (myWallet == null) {
+			if (other.myWallet != null)
+				return false;
+		} else if (!myWallet.equals(other.myWallet))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (stamina == null) {
+			if (other.stamina != null)
+				return false;
+		} else if (!stamina.equals(other.stamina))
+			return false;
+		if (strength == null) {
+			if (other.strength != null)
+				return false;
+		} else if (!strength.equals(other.strength))
+			return false;
+		if (theMap == null) {
+			if (other.theMap != null)
+				return false;
+		} else if (!theMap.equals(other.theMap))
+			return false;
+		if (trade == null) {
+			if (other.trade != null)
+				return false;
+		} else if (!trade.equals(other.trade))
+			return false;
+		return true;
 	}
 
 	/**

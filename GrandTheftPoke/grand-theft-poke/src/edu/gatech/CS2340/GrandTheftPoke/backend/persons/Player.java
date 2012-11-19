@@ -12,8 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
  */
 @XStreamAlias("Player")
 public class Player extends Person {
-	@XStreamOmitField
-	private static final int START_SKILLS = 16;
+
 	@XStreamOmitField
 	private static final Float START_MONEY = 5000f;
 

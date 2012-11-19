@@ -45,11 +45,6 @@ public abstract class Item {
 	}
 
 	@Override
-	protected void finalize() throws Throwable {
-		super.finalize();
-	}
-
-	@Override
 	public int hashCode() {
 		return getFileName().hashCode();
 	}
