@@ -43,8 +43,8 @@ public class HealthPotion extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "Health Potion restores your health to \n"
-				+ "to the maximum. This is allows you\n"
+		return "Health Potion restores your health to "
+				+ "to the maximum. This is allows you "
 				+ "stay alive longer.\n" + "Health = max";
 
 	}

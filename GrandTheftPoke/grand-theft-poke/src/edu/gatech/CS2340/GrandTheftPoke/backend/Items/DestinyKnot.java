@@ -31,8 +31,8 @@ public class DestinyKnot extends Item {
 
 	@Override
 	public String getDescription() {
-		return "The Destiny Knot is an amulet commonly \n"
-				+ "found in large cities but covetted by the \n"
+		return "The Destiny Knot is an amulet commonly "
+				+ "found in large cities but covetted by the "
 				+ "small villages.";
 	}
 

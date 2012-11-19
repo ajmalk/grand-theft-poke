@@ -2,7 +2,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
  * 
- * @author Ben Nuttle
+ * @author Team Rocket
  */
 public class GlobalItemReference {
 	private Arcanine myArcanine;

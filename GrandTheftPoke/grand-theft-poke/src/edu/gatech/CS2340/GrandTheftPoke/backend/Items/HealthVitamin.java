@@ -43,8 +43,7 @@ public class HealthVitamin extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return "Health Vitamin";
+		return "Health Vitamin restores health to max.";
 	}
 
 	@Override

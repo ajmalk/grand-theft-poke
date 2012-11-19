@@ -44,8 +44,8 @@ public class HealthRoid extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "Health Steroids add 25 to your\n"
-				+ "max health, then sets your current\n" + "to the new max.\n"
+		return "Health Steroids add 25 to your "
+				+ "max health, then sets your current\n" + "to the new max. "
 				+ "Max Health + 25\n" + "Restores health to new max.";
 	}
 

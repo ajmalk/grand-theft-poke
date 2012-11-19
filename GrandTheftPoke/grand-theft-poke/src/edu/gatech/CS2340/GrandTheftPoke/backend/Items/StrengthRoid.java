@@ -42,10 +42,10 @@ public class StrengthRoid extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "The Strength Steroid permanently adds \n "
-				+ "2 strength points to your current standings.\n"
-				+ "Increasing your strength will allow you to\n"
-				+ "dominate your opponents! " + "+2 Strength Point";
+		return "The Strength Steroid permanently adds "
+				+ "2 strength points to your current standings. "
+				+ "Increasing your strength will allow you to "
+				+ "dominate your opponents! \n" + "+2 Strength Point";
 	}
 
 	@Override
