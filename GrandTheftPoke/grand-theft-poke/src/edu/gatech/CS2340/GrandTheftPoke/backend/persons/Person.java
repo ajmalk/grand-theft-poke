@@ -332,8 +332,11 @@ public abstract class Person {
 			int quantity = other.getBackpack().getContents().get(theItem);
 			if (myBackpack.place(theItem, quantity)) {
 				other.getBackpack().remove(theItem, quantity);
-			}
+			}		
 		}
+		float temp = Math.min(other.getWallet().getMoney(), getWallet().getMoney());
+		getWallet().updateMoney(temp);
+		other.getWallet().updateMoney(-temp);
 
 	}
 
