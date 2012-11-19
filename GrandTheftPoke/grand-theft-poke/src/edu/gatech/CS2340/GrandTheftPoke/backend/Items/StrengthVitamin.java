@@ -32,7 +32,6 @@ public class StrengthVitamin extends Item implements Usable {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		final StrengthVitamin other = (StrengthVitamin) obj;
 		return true;
 	}
 

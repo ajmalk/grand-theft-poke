@@ -20,7 +20,6 @@ public class Pokeball extends Item {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		final TradeRoid other = (TradeRoid) obj;
 		return true;
 	}
 

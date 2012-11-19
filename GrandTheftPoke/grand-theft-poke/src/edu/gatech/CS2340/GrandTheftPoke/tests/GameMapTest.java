@@ -32,7 +32,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testGameMap_1() throws Exception {
+	public void testGameMap_1() {
 
 		GameMap result = new GameMap();
 
@@ -49,7 +49,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testGameMap_2() throws Exception {
+	public void testGameMap_2() {
 		GlobalItemReference theReference = new GlobalItemReference();
 
 		GameMap result = new GameMap(theReference);
@@ -64,7 +64,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testDijkstras() throws Exception {
+	public void testDijkstras() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 
 		int distance = fixture.Dijkstras(fixture.getStartTown(), "Pallet Town");
@@ -94,7 +94,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testDijkstras_2() throws Exception {
+	public void testDijkstras_2() {
 		GameMap fixture = new GameMap();
 		fixture.addTown(new Town("", new MarketPlace(new HashMap())));
 		Town source = new Town("", new MarketPlace(new HashMap()));
@@ -110,7 +110,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testMovement() throws Exception {
+	public void testMovement() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 		Player testPlayer = new Player("Brock", 4, 4, 4, 4, 100, 80, 20,
 				fixture);
@@ -130,7 +130,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testDijkstras_3() throws Exception {
+	public void testDijkstras_3() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 		Town source = new Town("", new MarketPlace(new HashMap()));
 		String townName = "";
@@ -147,7 +147,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testAddTown_1() throws Exception {
+	public void testAddTown_1() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 		fixture.addTown(new Town("", new MarketPlace(new HashMap())));
 		Town toBeAdded = new Town("", new MarketPlace(new HashMap()));
@@ -163,7 +163,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testComputePaths_1() throws Exception {
+	public void testComputePaths_1() {
 		Town source = new Town("", new MarketPlace(new HashMap()));
 
 		GameMap.computePaths(source);
@@ -177,7 +177,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testGetRandomTown() throws Exception {
+	public void testGetRandomTown() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 
 		Town result = fixture.getRandomTown();
@@ -192,7 +192,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testGetShortestPathTo_1() throws Exception {
+	public void testGetShortestPathTo_1() {
 		Town target = new Town("", new MarketPlace(new HashMap()));
 		target.setPrevious(new Town("", new MarketPlace(new HashMap())));
 
@@ -208,7 +208,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testGetShortestPathTo_2() throws Exception {
+	public void testGetShortestPathTo_2() {
 		Town target = null;
 
 		List<Town> result = GameMap.getShortestPathTo(target);
@@ -224,7 +224,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 * @generatedBy CodePro at 11/14/12 10:18 PM
 	 */
 	@Test
-	public void testGetTownSet() throws Exception {
+	public void testGetTownSet() {
 		GameMap fixture = new GameMap(new GlobalItemReference());
 		Set<Town> result = fixture.getTownSet();
 
@@ -241,7 +241,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 */
 	@Override
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		// add additional set up code here
 	}
 
@@ -255,7 +255,7 @@ public class GameMapTest extends junit.framework.TestCase {
 	 */
 	@Override
 	@After
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		// Add additional tear down code here
 	}
 
