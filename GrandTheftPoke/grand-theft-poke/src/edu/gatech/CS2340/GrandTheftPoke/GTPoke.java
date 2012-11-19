@@ -64,7 +64,7 @@ public class GTPoke extends Game {
 	public void create() {
 		items = new GlobalItemReference();
 		xstream = new XStream();
-		saveFile = Gdx.files.local("saves\\savegame.xml");
+		saveFile = Gdx.files.local("saves//savegame.xml");
 		atlas = new TextureAtlas(Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
 		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
