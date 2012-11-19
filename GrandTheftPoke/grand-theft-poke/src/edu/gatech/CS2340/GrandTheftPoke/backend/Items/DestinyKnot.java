@@ -20,7 +20,6 @@ public class DestinyKnot extends Item {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		final HealthRoid other = (HealthRoid) obj;
 		return true;
 	}
 

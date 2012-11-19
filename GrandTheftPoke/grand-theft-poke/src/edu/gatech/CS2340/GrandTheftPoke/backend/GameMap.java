@@ -238,22 +238,6 @@ public class GameMap {
 	}
 
 	/**
-	 * runs Dijkstra's algorithm on the towns
-	 * 
-	 * @param source
-	 *            the starting town
-	 */
-	public void dijkstras(Town source) {
-		computePaths(source);
-		for (Town x : townSet) {
-			// System.out.println("Distance to " + x + ": "
-			// + x.getMinimumDistance());
-			// List<Town> path = getShortestPathTo(x);
-			// System.out.println("Path: " + path);
-		}
-	}
-
-	/**
 	 * return the start town
 	 * 
 	 * @return startTown

@@ -63,8 +63,6 @@ public class MapScreen extends AbstractScreen {
 		stage.clear();
 
 		theMap = game.getMap();
-		theMap.dijkstras(game.getPlayer().getCurrent());
-		// System.out.println(theMap.getCurrent());
 
 		backgroundImage = new Image(background);
 		backgroundImage.getColor().a = 0f;

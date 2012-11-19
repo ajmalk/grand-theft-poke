@@ -22,7 +22,6 @@ public class Pikachu extends Item {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		final Pikachu other = (Pikachu) obj;
 		return true;
 	}
 
