@@ -293,6 +293,7 @@ public abstract class Person {
 						theMarket.buy(desiredGood, quantity);
 						myWallet.updateMoney(-price);
 						myBackpack.place(desiredGood, quantity);
+						System.out.println(myBackpack.getCapacity());
 						return true;
 					}
 				}
