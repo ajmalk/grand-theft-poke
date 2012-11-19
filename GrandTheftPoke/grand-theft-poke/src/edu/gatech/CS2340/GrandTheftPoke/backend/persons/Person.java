@@ -56,9 +56,6 @@ public abstract class Person {
 		return false;
 	}
 
-	public Person() {
-
-	}
 
 	/**
 	 * Constructs a person with the specified parameters.

@@ -17,12 +17,6 @@ public class Player extends Person {
 	@XStreamOmitField
 	private static final Float START_MONEY = 5000f;
 
-	/**
-	 * empty constructor
-	 */
-	public Player() {
-		super();
-	}
 
 	/**
 	 * 

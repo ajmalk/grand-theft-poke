@@ -22,7 +22,7 @@ public class HealthPotion extends Item implements Usable {
 
 	@Override
 	public void unUse(Person person) {
-		// should be done
+		return;
 	}
 
 	@Override
