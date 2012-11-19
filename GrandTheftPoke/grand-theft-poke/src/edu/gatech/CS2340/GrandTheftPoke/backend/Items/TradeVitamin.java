@@ -38,4 +38,10 @@ public class TradeVitamin extends Item implements Usable {
 				+ "a master trader, thus allowing you to negociate the \n"
 				+ "the most competive pricing!\n" + "+1 Trade Point";
 	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "vitamin5";
+	}
 }

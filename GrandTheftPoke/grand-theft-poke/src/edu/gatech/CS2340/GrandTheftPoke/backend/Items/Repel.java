@@ -39,6 +39,11 @@ public class Repel extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return null;
+		return "Repel";
+	}
+
+	@Override
+	public String getFileName() {
+		return "potion2";
 	}
 }

@@ -32,6 +32,12 @@ public class Pikachu extends Item {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return "I'm a Pikachu!";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "pikachu";
 	}
 }

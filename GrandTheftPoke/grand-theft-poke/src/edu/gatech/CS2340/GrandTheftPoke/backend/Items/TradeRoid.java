@@ -36,10 +36,16 @@ public class TradeRoid extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "The Trade Steriod permently adds \n "
-				+ "2 stamina points to your current standings.\n"
+		return "The Trade Steroid permanently adds \n "
+				+ "2 trade points to your current standings.\n"
 				+ "Increasing trade ability allows you to become \n"
-				+ "a master trader, thus allowing you to negociate the \n"
+				+ "a master trader, thus allowing you to negotiate the \n"
 				+ "the most competive pricing!\n" + "+2 Trade Point";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "steroid5";
 	}
 }

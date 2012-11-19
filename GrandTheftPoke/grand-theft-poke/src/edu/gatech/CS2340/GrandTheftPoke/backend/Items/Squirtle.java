@@ -12,6 +12,12 @@ public class Squirtle extends Pokemon {
 
 	@Override
 	public String getDescription() {
-		return "I'm a squirtle";
+		return "I'm a Squirtle!";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "squirtle";
 	}
 }

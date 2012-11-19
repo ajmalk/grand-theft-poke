@@ -25,7 +25,13 @@ public class Arcanine extends Pokemon {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "I'm an Arcanine!";
 	}
+
+	@Override
+	public String getFileName() {
+		return "arcanine";
+	}
+	
+	
 }

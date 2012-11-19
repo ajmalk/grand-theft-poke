@@ -37,6 +37,12 @@ public class Pokeball extends Item {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return "A pokeball";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "pokeball";
 	}
 }
