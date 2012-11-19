@@ -71,7 +71,7 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 0, 150, 600);
 		map.setColor(Color.BLACK);
 		map.fillRectangle(0, 200, 150, 200);
-		map.setColor(Color.RED);
+		map.setColor(Color.BLUE);
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
@@ -85,6 +85,7 @@ public class GTPoke extends Game {
 	public Table getStatusBar(){
 		statusBar.clear();
 		statusBar.setSkin(skin);
+
 		statusBar.add(thePlayer.getHealth().toString());
 		return statusBar;
 	}
