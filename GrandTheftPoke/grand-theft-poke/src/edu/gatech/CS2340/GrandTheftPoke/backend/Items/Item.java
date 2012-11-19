@@ -9,6 +9,7 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 public abstract class Item {
 	@XStreamOmitField
 	private int weight = 1;
+	public abstract String getFileName();
 
 	@Override
 	public abstract String toString();

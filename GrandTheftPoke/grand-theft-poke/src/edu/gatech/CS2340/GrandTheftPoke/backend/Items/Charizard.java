@@ -15,6 +15,11 @@ public class Charizard extends Pokemon {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return null;
+		return "I'm a Charizard";
+	}
+
+	@Override
+	public String getFileName() {
+		return "charizard";
 	}
 }

@@ -31,14 +31,20 @@ public class StrengthRoid extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		return "Strength Steriod";
+		return "Strength Steroid";
 	}
 
 	@Override
 	public String getDescription() {
-		return "The Strength Steriod permently adds \n "
-				+ "2 stamina points to your current standings.\n"
+		return "The Strength Steroid permanently adds \n "
+				+ "2 strength points to your current standings.\n"
 				+ "Increasing your strength will allow you to\n"
-				+ "dominate your opponents! " + "+2 Strengh Point";
+				+ "dominate your opponents! " + "+2 Strength Point";
+	}
+
+	@Override
+	public String getFileName() {
+		// TODO Auto-generated method stub
+		return "steroid4";
 	}
 }

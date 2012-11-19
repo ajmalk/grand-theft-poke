@@ -4,6 +4,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 public class AgilityRoid extends Item implements Usable {
 
+	
 	@Override
 	public void use(Person person) {
 		person.setAgility(2);
@@ -27,14 +28,19 @@ public class AgilityRoid extends Item implements Usable {
 
 	@Override
 	public String toString() {
-		return "Agility Roid";
+		return "Agility Steroid";
 	}
 
 	@Override
 	public String getDescription() {
-		return "The Agiliy Steriod permently adds \n "
+		return "The Agility Steroid permanently adds \n "
 				+ "2 agility points to your current standings.\n"
 				+ "This is useful because you can move further \n"
 				+ "distances in 1 turn.\n" + "+2 Agility Point";
+	}
+
+	@Override
+	public String getFileName() {
+		return "steroid1";
 	}
 }

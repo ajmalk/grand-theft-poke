@@ -36,10 +36,15 @@ public class StaminaVitamin extends Item implements Usable {
 
 	@Override
 	public String getDescription() {
-		return "The Stamina Steriod permently adds \n "
-				+ "1 stamina points to your current standings.\n"
+		return "The Stamina Vitamin permanently adds \n "
+				+ "1 stamina point to your current standings.\n"
 				+ "Increasing stamina allows you to move more\n"
 				+ "more efficiently from town to town, therefore "
 				+ "conserving health! \n" + "+1 Stamina Point";
+	}
+
+	@Override
+	public String getFileName() {
+		return "vitamin3";
 	}
 }

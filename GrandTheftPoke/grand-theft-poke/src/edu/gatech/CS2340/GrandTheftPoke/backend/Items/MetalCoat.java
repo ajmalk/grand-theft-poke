@@ -29,4 +29,9 @@ public class MetalCoat extends Item {
 				+ "found luxary areas but covetted by the \n"
 				+ "everyone else.";
 	}
+
+	@Override
+	public String getFileName() {
+		return "metalcoat";
+	}
 }
