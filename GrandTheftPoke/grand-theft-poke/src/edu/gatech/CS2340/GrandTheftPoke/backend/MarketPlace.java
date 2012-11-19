@@ -85,6 +85,7 @@ public class MarketPlace {
 	 * 
 	 * @return stock the stock of the market
 	 */
+	
 	public HashMap getStock() {
 		return stock;
 	}
