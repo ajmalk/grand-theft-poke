@@ -2,6 +2,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -29,7 +30,7 @@ public class MarketPlace {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof MarketPlace))
 			return false;
 		final MarketPlace other = (MarketPlace) obj;
 		if (stock == null) {
@@ -46,7 +47,7 @@ public class MarketPlace {
 	}
 
 	// @XStreamImplicit(itemFieldName="Item")
-	HashMap<Item, MarketPlaceItem> stock;
+	Map<Item, MarketPlaceItem> stock;
 
 	/**
 	 * Constructor that creates the market place for each town
@@ -54,11 +55,9 @@ public class MarketPlace {
 	 * @param stock
 	 *            a hash map of Items to their MarketPlaceItem economic models
 	 */
-	public MarketPlace(HashMap<Item, MarketPlaceItem> stock) {
+	public MarketPlace(Map<Item, MarketPlaceItem> stock) {
 		this.stock = stock;
 	}
-
-
 
 	/**
 	 * buys an item
@@ -101,7 +100,7 @@ public class MarketPlace {
 	 * @return stock the stock of the market
 	 */
 	
-	public HashMap getStock() {
+	public Map getStock() {
 		return stock;
 	}
 

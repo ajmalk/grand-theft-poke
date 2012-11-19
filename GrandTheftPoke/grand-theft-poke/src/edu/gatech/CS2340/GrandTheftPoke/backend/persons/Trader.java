@@ -146,7 +146,6 @@ public class Trader extends Person {
 	 * @param quantity
 	 */
 	public void buy(Person other, Item desiredGood, int quantity) {
-		// super.buy(personalMarket, desiredGood, quantity);
 		other.sell(personalMarket, desiredGood, quantity);
 
 	}
