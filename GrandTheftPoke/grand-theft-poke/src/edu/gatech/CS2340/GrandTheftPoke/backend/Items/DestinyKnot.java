@@ -8,11 +8,20 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  * 
  */
 public class DestinyKnot extends Item {
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		return 18;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {
@@ -24,11 +33,19 @@ public class DestinyKnot extends Item {
 		return true;
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Destiny Knot";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "The Destiny Knot is an amulet commonly "
@@ -36,6 +53,10 @@ public class DestinyKnot extends Item {
 				+ "small villages.";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub
