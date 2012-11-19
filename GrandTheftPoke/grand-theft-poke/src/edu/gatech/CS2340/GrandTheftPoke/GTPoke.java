@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -89,7 +88,6 @@ public class GTPoke extends Game {
 	public boolean update(){
 		statusBar.clear();
 		statusBar.setSkin(skin);
-		statusBar.setColor(Color.BLACK);
 		Label health = new Label("Health: " + thePlayer.getHealth().toString(), skin);
 		Label money = new Label(" Money: $" + thePlayer.getWallet().getMoney(), skin);
 		health.setColor(Color.RED);

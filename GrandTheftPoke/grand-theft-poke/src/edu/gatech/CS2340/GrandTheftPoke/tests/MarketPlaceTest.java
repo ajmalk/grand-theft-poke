@@ -22,10 +22,10 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 public class MarketPlaceTest {
 	MarketPlace myMarket;
 	Person p;
-
+	GlobalItemReference itemsInstance;
 	@Before
 	public void setUp() throws Exception {
-		GlobalItemReference itemsInstance = new GlobalItemReference();
+		itemsInstance = new GlobalItemReference();
 
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(),
@@ -65,13 +65,13 @@ public class MarketPlaceTest {
 	public void testBasicBuy() {
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
-		myMarket.buy(new HealthPotion(), 5);
+						.get(itemsInstance.getHealthPotion())).getPrice());
+		myMarket.buy(itemsInstance.getHealthPotion(), 5);
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
+						.get(itemsInstance.getHealthPotion())).getPrice());
 		assertTrue(((MarketPlaceItem) myMarket.getStock().get(
-				new HealthPotion())).getStock().equals(15));
+				itemsInstance.getHealthPotion())).getStock().equals(15));
 		System.out.println("/////////////////////////");
 	}
 
@@ -79,13 +79,13 @@ public class MarketPlaceTest {
 	public void testBasicSell() {
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
-		myMarket.sell(new HealthPotion(), 5);
+						.get(itemsInstance.getHealthPotion())).getPrice());
+		myMarket.sell(itemsInstance.getHealthPotion(), 5);
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
+						.get(itemsInstance.getHealthPotion())).getPrice());
 		assertTrue(((MarketPlaceItem) myMarket.getStock().get(
-				new HealthPotion())).getStock().equals(25));
+				itemsInstance.getHealthPotion())).getStock().equals(25));
 		System.out.println("/////////////////////////");
 	}
 
@@ -93,25 +93,25 @@ public class MarketPlaceTest {
 	public void testBuyAndSell() {
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
-		myMarket.buy(new HealthPotion(), 5);
+						.get(itemsInstance.getHealthPotion())).getPrice());
+		myMarket.buy(itemsInstance.getHealthPotion(), 5);
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
+						.get(itemsInstance.getHealthPotion())).getPrice());
 		assertTrue(((MarketPlaceItem) myMarket.getStock().get(
-				new HealthPotion())).getStock().equals(15));
+				itemsInstance.getHealthPotion())).getStock().equals(15));
 
 		System.out.println("-----------------------------------");
 
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
-		myMarket.sell(new HealthPotion(), 5);
+						.get(itemsInstance.getHealthPotion())).getPrice());
+		myMarket.sell(itemsInstance.getHealthPotion(), 5);
 		System.out.println("price is now: "
 				+ ((MarketPlaceItem) myMarket.getStock()
-						.get(new HealthPotion())).getPrice());
+						.get(itemsInstance.getHealthPotion())).getPrice());
 		assertTrue(((MarketPlaceItem) myMarket.getStock().get(
-				new HealthPotion())).getStock().equals(20));
+				itemsInstance.getHealthPotion())).getStock().equals(20));
 
 	}
 
@@ -120,35 +120,35 @@ public class MarketPlaceTest {
 
 		// test buying
 		// assertTrue(p.getBackpack().getContents().isEmpty());
-		p.buy(myMarket, new Charizard(), 1);
-		p.buy(myMarket, new HealthPotion(), 6);
-		assertTrue(((MarketPlaceItem) myMarket.getStock().get(new Charizard()))
+		p.buy(myMarket, itemsInstance.getCharizard(), 1);
+		p.buy(myMarket, itemsInstance.getHealthPotion(), 6);
+		assertTrue(((MarketPlaceItem) myMarket.getStock().get(itemsInstance.getCharizard()))
 				.getStock().equals(9));
 		assertTrue(((MarketPlaceItem) myMarket.getStock().get(
-				new HealthPotion())).getStock().equals(14));
-		assertTrue(p.getBackpack().checkContents(new Charizard(), 1));
-		assertTrue(p.getBackpack().checkContents(new HealthPotion(), 6));
-		p.buy(myMarket, new Pikachu(), 1);
-		assertTrue(((MarketPlaceItem) myMarket.getStock().get(new Pikachu()))
+				itemsInstance.getHealthPotion())).getStock().equals(14));
+		assertTrue(p.getBackpack().checkContents(itemsInstance.getCharizard(), 1));
+		assertTrue(p.getBackpack().checkContents(itemsInstance.getHealthPotion(), 6));
+		p.buy(myMarket, itemsInstance.getPikachu(), 1);
+		assertTrue(((MarketPlaceItem) myMarket.getStock().get(itemsInstance.getPikachu()))
 				.getStock().equals(10));
-		assertFalse(p.getBackpack().checkContents(new Pikachu(), 1));
-		assertTrue(p.getBackpack().checkContents(new Charizard(), 1));
+		assertFalse(p.getBackpack().checkContents(itemsInstance.getPikachu(), 1));
+		assertTrue(p.getBackpack().checkContents(itemsInstance.getCharizard(), 1));
 		// System.out.println(p.getWallet().getMoney());
 		// assertEquals((int)p.getWallet().getMoney(), 2000);
 
 		// test selling
 
-		p.sell(myMarket, new Charizard(), 1);
+		p.sell(myMarket, itemsInstance.getCharizard(), 1);
 		// code does not allow one to sell more than one has
-		assertTrue(((MarketPlaceItem) myMarket.getStock().get(new Charizard()))
+		assertTrue(((MarketPlaceItem) myMarket.getStock().get(itemsInstance.getCharizard()))
 				.getStock().equals(10));
-		assertFalse(p.getBackpack().checkContents(new Charizard(), 1));
+		assertFalse(p.getBackpack().checkContents(itemsInstance.getCharizard(), 1));
 
-		p.sell(myMarket, new HealthPotion(), 6);
+		p.sell(myMarket, itemsInstance.getHealthPotion(), 6);
 
 		assertTrue(((MarketPlaceItem) myMarket.getStock().get(
-				new HealthPotion())).getStock().equals(20));
-		assertFalse(p.getBackpack().checkContents(new HealthPotion(), 6));
+				itemsInstance.getHealthPotion())).getStock().equals(20));
+		assertFalse(p.getBackpack().checkContents(itemsInstance.getHealthPotion(), 6));
 
 	}
 
