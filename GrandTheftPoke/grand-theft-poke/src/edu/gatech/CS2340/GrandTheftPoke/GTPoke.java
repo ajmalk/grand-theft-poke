@@ -10,10 +10,15 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.thoughtworks.xstream.XStream;
 
@@ -59,6 +64,7 @@ public class GTPoke extends Game {
 	private Skin skin;
 	private static Texture ButtonSprite;
 	private Screen nextScreen, prevScreen;
+	private AtlasRegion healthBar;
 	
 	@Override
 	public void create() {
@@ -95,11 +101,16 @@ public class GTPoke extends Game {
 		statusBar.pad(25);
 		statusBar.setPosition((Gdx.graphics.getWidth() - statusBar.getWidth())/2, 0);
 		Label health = new Label("Health: " + thePlayer.getHealth().toString(), skin);
-		Label money = new Label(" Money: $" + thePlayer.getWallet().getMoney(), skin);
+		Label money = new Label("$" + thePlayer.getWallet().getMoney(), skin);
 		health.setColor(Color.BLUE);
 		money.setColor(Color.BLUE);
-		statusBar.add(health).left().expand();
-		statusBar.add(money).right().expand();
+		//statusBar.add(health).left();
+		statusBar.add(money).left().uniform().expand().padLeft(0);
+		healthBar = atlas.findRegion("health-bar-full");
+		//System.out.println(thePlayer.getHealth() + " " + thePlayer.getMaxHealth());
+		healthBar.setRegionWidth((int) (healthBar.originalWidth/(float)thePlayer.getMaxHealth()*thePlayer.getHealth()));
+		statusBar.add(new Image(healthBar)).expand().uniform().left();
+		
 		//statusBar.center();
 		return true;
 	}
@@ -387,7 +398,30 @@ public class GTPoke extends Game {
 		return new Button(	new TextureRegionDrawable(atlas.findRegion(button)), 
 							new TextureRegionDrawable(atlas.findRegion(button + "-down")));
 	}
-
+	
+	/**
+	 * 
+	 * @return a back button
+	 */
+	public Button getBackButton(){
+		return getButton("back-button");
+	}
+	
+	/**
+	 * @return a save button
+	 */
+	public Button getSaveButton(){
+		Button saveButton = getButton("save");
+		saveButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				save();
+				clear();
+				setScreen(getMainMenuScreen());
+			}
+		});
+		return saveButton;
+	}
 	/**
 	 * @return current townScreen
 	 */

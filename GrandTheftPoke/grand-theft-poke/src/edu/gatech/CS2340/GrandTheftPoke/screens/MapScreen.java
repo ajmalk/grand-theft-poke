@@ -162,26 +162,10 @@ public class MapScreen extends AbstractScreen {
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 0, 69, 320, 70));
 
-		saveButton = new Button(style);
+		saveButton = game.getSaveButton();
 
-		saveButton.setSkin(game.getSkin());
-		saveButton.add("Save");
-		saveButton.setPosition(10, 10);
-
-		saveButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				game.save();
-				game.clear();
-				game.setScreen(game.getMainMenuScreen());
-			}
-		});
-
-		backButton = new Button(style);
-
-		backButton.setSkin(game.getSkin());
-		backButton.add("Back");
-		backButton.setPosition(10, 70);
+		backButton = game.getBackButton();
+		backButton.setPosition(20, 15);
 
 		backButton.addListener(new ClickListener() {
 			@Override
@@ -425,6 +409,7 @@ public class MapScreen extends AbstractScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
+		saveButton.setPosition(900, 15);
 		game.update();
 	}
 

@@ -12,6 +12,7 @@ public class Main {
         settings.maxWidth = 4096;
         settings.maxHeight = 4096;
         settings.pot = false;
+        //settings.rotation = true;
         TexturePacker2.process(settings, "..//grand-theft-poke-android//assets//images//textures//images//", 
         		"..//grand-theft-poke-android//assets//images//textures//packed", "gtpoke");
         

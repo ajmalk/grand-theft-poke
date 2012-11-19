@@ -3,6 +3,74 @@ gtpoke.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+TradeUI
+  rotate: false
+  xy: 1, 1
+  size: 1024, 768
+  orig: 1024, 768
+  offset: 0, 0
+  index: -1
+market-place
+  rotate: false
+  xy: 1027, 1
+  size: 1024, 768
+  orig: 1024, 768
+  offset: 0, 0
+  index: -1
+status-bar
+  rotate: false
+  xy: 2053, 705
+  size: 678, 64
+  orig: 678, 64
+  offset: 0, 0
+  index: -1
+health-bar-empty
+  rotate: false
+  xy: 2053, 678
+  size: 294, 25
+  orig: 294, 25
+  offset: 0, 0
+  index: -1
+health-bar-full
+  rotate: false
+  xy: 2053, 651
+  size: 294, 25
+  orig: 294, 25
+  offset: 0, 0
+  index: -1
+back-button-down
+  rotate: false
+  xy: 2053, 574
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+back-button
+  rotate: false
+  xy: 2053, 497
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+save-down
+  rotate: false
+  xy: 2130, 574
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+save
+  rotate: false
+  xy: 2053, 420
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+
+gtpoke2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
 intro/main-menu
   rotate: false
   xy: 1, 167
@@ -64,32 +132,6 @@ intro/starter-2
   xy: 3732, 112
   size: 331, 768
   orig: 331, 768
-  offset: 0, 0
-  index: -1
-
-gtpoke2.png
-format: RGBA8888
-filter: Nearest,Nearest
-repeat: none
-TradeUI
-  rotate: false
-  xy: 1, 1
-  size: 1024, 768
-  orig: 1024, 768
-  offset: 0, 0
-  index: -1
-market-place
-  rotate: false
-  xy: 1027, 1
-  size: 1024, 768
-  orig: 1024, 768
-  offset: 0, 0
-  index: -1
-status-bar
-  rotate: false
-  xy: 2053, 705
-  size: 678, 64
-  orig: 678, 64
   offset: 0, 0
   index: -1
 

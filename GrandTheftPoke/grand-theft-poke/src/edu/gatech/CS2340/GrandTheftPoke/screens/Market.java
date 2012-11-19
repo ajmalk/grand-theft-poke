@@ -132,12 +132,7 @@ public class Market extends AbstractScreen {
 				0, 69, 320, 70));
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				ButtonSprite, 0, 69, 320, 70));
-		backButton = new Button(style);
-
-		backButton.setSkin(game.getSkin());
-		backButton.add("Back");
-		backButton.setPosition(22, 0);
-
+		backButton = game.getBackButton();
 		backButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -236,6 +231,7 @@ public class Market extends AbstractScreen {
 				addItems();
 			}
 		}
+		backButton.setPosition(20, 15);
 		description.update(((ItemTile)marketItemGroup.getChecked()), game.getPlayer());
 		table.setSize(1024, 525);
 		stage.addActor(table);

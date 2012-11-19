@@ -98,10 +98,6 @@ public class TownScreen extends AbstractScreen {
 			}
 		});
 		backPackButton = game.getButton("town/backpack");
-		//backPackButton = new Button(new TextureRegionDrawable(
-		//		new TextureRegion(BackpackSprite, 408, 270, 99, 117)),
-		//		new TextureRegionDrawable(new TextureRegion(BackpackSprite,
-		//				638, 418, 142, 163)));
 		backPackButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
