@@ -6,6 +6,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  * Represents a HealthRoid
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class HealthRoid extends Item implements Usable {

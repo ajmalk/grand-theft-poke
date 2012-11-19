@@ -6,6 +6,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  * Represents a StaminaVitamin
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class StaminaVitamin extends Item implements Usable {

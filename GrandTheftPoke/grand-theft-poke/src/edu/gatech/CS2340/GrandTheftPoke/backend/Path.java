@@ -6,6 +6,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * The path
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 public class Path {
 

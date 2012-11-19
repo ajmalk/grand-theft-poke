@@ -2,14 +2,31 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
+/**
+ * this class represents a pokemon
+ * @author Team Rocket
+ * @version 1.0
+ */
 public abstract class Pokemon extends Item implements Usable {
 
+	/**
+	 * Field strengthBoost.
+	 */
 	private int strengthBoost;
 	
+	/**
+	 * Field tradeBoost.
+	 */
 	private int tradeBoost;
 	
+	/**
+	 * Field staminaBoost.
+	 */
 	private int staminaBoost;
 	
+	/**
+	 * Field agilityBoost.
+	 */
 	private int agilityBoost;
 
 	/**
@@ -27,6 +44,7 @@ public abstract class Pokemon extends Item implements Usable {
 		agilityBoost = agility;
 	}
 
+
 	@Override
 	public void use(Person person) {
 		person.setStrength(strengthBoost);
@@ -35,6 +53,8 @@ public abstract class Pokemon extends Item implements Usable {
 		person.setTrade(tradeBoost);
 	}
 
+
+	
 	@Override
 	public void unUse(Person person) {
 		person.setStrength(-strengthBoost);

@@ -4,6 +4,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  * Represents an arcanine
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Arcanine extends Pokemon {

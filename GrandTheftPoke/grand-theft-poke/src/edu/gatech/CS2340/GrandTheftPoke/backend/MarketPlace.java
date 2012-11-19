@@ -11,6 +11,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * represents a marketPlace
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 @XStreamAlias("Market")
 public class MarketPlace {

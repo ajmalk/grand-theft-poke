@@ -1,12 +1,12 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
  * Represents the price and stock properties of an item in the marketplace
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 @XStreamAlias("Stock")

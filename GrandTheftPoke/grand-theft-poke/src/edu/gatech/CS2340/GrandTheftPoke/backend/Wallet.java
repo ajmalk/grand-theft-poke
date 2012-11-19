@@ -7,6 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
  * buying and selling goods
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Wallet {

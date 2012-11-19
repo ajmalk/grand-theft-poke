@@ -6,6 +6,7 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
  * Represents an item
  * 
  * @author Team Rocket
+ * @version 1.0
  */
 public abstract class Item {
 	@XStreamOmitField

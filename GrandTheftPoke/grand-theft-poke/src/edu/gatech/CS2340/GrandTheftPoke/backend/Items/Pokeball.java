@@ -5,6 +5,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  * Represents a Pokeball
  * 
  * @author Team Rocket
+ * @version 1.0
  * 
  */
 public class Pokeball extends Item {
