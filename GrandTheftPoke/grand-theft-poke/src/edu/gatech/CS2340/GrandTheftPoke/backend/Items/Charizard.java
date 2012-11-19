@@ -19,7 +19,7 @@ public class Charizard extends Pokemon {
 
 	@Override
 	public String getDescription() {
-		
+
 		return "I'm a Charizard";
 	}
 

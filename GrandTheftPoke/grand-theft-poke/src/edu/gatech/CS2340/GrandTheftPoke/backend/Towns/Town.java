@@ -64,8 +64,6 @@ public class Town implements Comparable {
 		return result;
 	}
 
-	
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

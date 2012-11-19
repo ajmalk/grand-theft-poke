@@ -1,9 +1,7 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -23,8 +21,6 @@ public class MarketPlace {
 		result = prime * result + ((stock == null) ? 0 : stock.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -47,8 +43,6 @@ public class MarketPlace {
 		}
 		return true;
 	}
-
-
 
 	@Override
 	public String toString() {
@@ -108,7 +102,7 @@ public class MarketPlace {
 	 * 
 	 * @return stock the stock of the market
 	 */
-	
+
 	public Map getStock() {
 		return stock;
 	}

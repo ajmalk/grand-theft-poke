@@ -51,7 +51,8 @@ public class Main {
 	public static void testMarketPlace(GameMap map,
 			GlobalItemReference theReference) {
 
-		final Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000, map);
+		final Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000,
+				map);
 		final MarketPlace theMarket = testPlayer.getCurrent().getMarket();
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
@@ -76,8 +77,8 @@ public class Main {
 	 */
 	public static void testMovement(GameMap map) {
 		// Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
-		final Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20,
-				50f, map);
+		final Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80,
+				20, 50f, map);
 		final Set<Town> townSet = map.getTownSet();
 		for (final Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move(it.next());

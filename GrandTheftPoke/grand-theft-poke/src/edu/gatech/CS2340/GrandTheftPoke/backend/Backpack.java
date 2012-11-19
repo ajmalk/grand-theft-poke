@@ -3,7 +3,6 @@ package edu.gatech.CS2340.GrandTheftPoke.backend;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
@@ -43,8 +42,6 @@ public class Backpack {
 				+ ((maxRange == null) ? 0 : maxRange.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -107,7 +104,7 @@ public class Backpack {
 	 * @param quantity
 	 */
 	public boolean place(Item placedItem, int quantity) {
-		 final int weightDiff = placedItem.getWeight() * quantity;
+		final int weightDiff = placedItem.getWeight() * quantity;
 		if (checkCapacity(placedItem, quantity)) {
 			if (!(contents.containsKey(placedItem))) {
 				contents.put(placedItem, quantity);

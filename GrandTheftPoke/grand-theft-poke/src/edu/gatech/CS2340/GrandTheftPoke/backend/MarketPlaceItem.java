@@ -135,8 +135,6 @@ public class MarketPlaceItem {
 		return result;
 	}
 
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -213,7 +211,8 @@ public class MarketPlaceItem {
 		if (Math.abs(price - EQIL_PRICE) < 0.001) {
 			return true;
 		}
-		final float change = (production(price) - consumption(price)) * STOCK_RATIO;
+		final float change = (production(price) - consumption(price))
+				* STOCK_RATIO;
 		price = getNewPrice(change);
 		stock += change;
 		return true;

@@ -107,10 +107,11 @@ public class Market extends AbstractScreen {
 
 	@Override
 	public void show() {
-		//background = new Image(game.getTextures().findRegion("market-place"));
-		//background.setFillParent(true);
-		//background.getColor().a = 0f;
-		//background.addAction(fadeIn(0.75f));
+		// background = new
+		// Image(game.getTextures().findRegion("market-place"));
+		// background.setFillParent(true);
+		// background.getColor().a = 0f;
+		// background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
 		updatetables();
@@ -203,7 +204,8 @@ public class Market extends AbstractScreen {
 					item.getValue());
 			Integer pack = playerPack.getContents().get(item.getKey());
 			ItemTile backpacktile;
-			backpacktile = new ItemTile(myMarket, item.getKey(), pack, playerPack);
+			backpacktile = new ItemTile(myMarket, item.getKey(), pack,
+					playerPack);
 			marketplace.put(item.getKey(), markettile);
 		}
 		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack

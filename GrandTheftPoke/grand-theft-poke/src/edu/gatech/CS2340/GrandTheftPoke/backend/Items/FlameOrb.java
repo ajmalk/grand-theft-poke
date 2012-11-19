@@ -32,8 +32,7 @@ public class FlameOrb extends Item {
 	@Override
 	public String getDescription() {
 		return "The Flame Orb is an amulet commonly "
-				+ "found luxary areas but covetted by the "
-				+ "everyone else.";
+				+ "found luxary areas but covetted by the " + "everyone else.";
 	}
 
 	@Override

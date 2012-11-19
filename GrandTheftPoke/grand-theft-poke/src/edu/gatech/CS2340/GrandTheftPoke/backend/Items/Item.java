@@ -40,7 +40,7 @@ public abstract class Item {
 		}
 		return true;
 	}
-	
+
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
 		return super.clone();
