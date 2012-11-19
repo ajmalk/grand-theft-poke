@@ -1,11 +1,8 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
-//import com.badlogic.gdx.utils.ObjectMap;
-
-//import com.badlogic.gdx.utils.ObjectMap.Entries;
-
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -21,18 +18,13 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 public class Backpack {
 
-	@XStreamAsAttribute
 	private Integer capacity, maxRange;
 
-	// @XStreamImplicit(itemFieldName="item")
-	@XStreamOmitField
-	private HashMap<Item, Integer> contents;
+	private Map<Item, Integer> contents;
 
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
 	}
-
-
 
 	public int getAmount(Item toBeRetrieved) {
 		if (contents.containsKey(toBeRetrieved)) {
@@ -54,8 +46,6 @@ public class Backpack {
 				+ ((maxRange == null) ? 0 : maxRange.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -84,8 +74,6 @@ public class Backpack {
 		return true;
 	}
 
-
-
 	/**
 	 * Creates a backpack with specified maximum range and capacity
 	 * 
@@ -98,7 +86,7 @@ public class Backpack {
 		maxRange = range;
 	}
 
-	public Backpack(int range, int capacity, HashMap<Item, Integer> contents) {
+	public Backpack(int range, int capacity, Map<Item, Integer> contents) {
 		this(range, capacity);
 		this.contents = contents;
 	}
@@ -208,7 +196,7 @@ public class Backpack {
 		this.capacity = capacity;
 	}
 
-	public HashMap<Item, Integer> getContents() {
+	public Map<Item, Integer> getContents() {
 		return contents;
 	}
 
