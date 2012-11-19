@@ -1,6 +1,15 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
+/**
+ * Represents a Squirtle
+ * @author Team Rocket
+ *
+ */
 public class Squirtle extends Pokemon {
+	
+	/**
+	 * Squirtle Constructor
+	 */
 	public Squirtle() {
 		super(3, 3, 2, 2);
 	}

@@ -2,6 +2,11 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
+/**
+ * Represents an AgilitySteroid
+ * @author Team Rocket
+ *
+ */
 public class AgilityRoid extends Item implements Usable {
 
 	

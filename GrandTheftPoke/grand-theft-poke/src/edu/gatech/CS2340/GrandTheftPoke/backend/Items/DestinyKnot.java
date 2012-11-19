@@ -1,5 +1,10 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
+/**
+ * Represents a DestinyKnot
+ * @author Team Rocket
+ *
+ */
 public class DestinyKnot extends Item {
 	@Override
 	public int hashCode() {

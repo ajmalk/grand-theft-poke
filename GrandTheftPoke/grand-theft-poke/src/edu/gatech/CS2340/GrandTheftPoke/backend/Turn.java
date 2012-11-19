@@ -12,7 +12,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Rocket;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
 /**
- * TODO implement this class
+ * Represents a Turn
  * 
  * @author Team Rocket
  */
@@ -22,7 +22,12 @@ public class Turn {
 	private Player thePlayer;
 	private Random rand;
 
-	
+	/**
+	 * Constructor
+	 * @param theMap the current map
+	 * @param gameActors the gameActors
+	 * @param thePlayer the currentPlayer
+	 */
 	public Turn(GameMap theMap, ArrayList<Person> gameActors, Player thePlayer) {
 		this.theMap = theMap;
 		this.gameActors = gameActors;
@@ -30,6 +35,12 @@ public class Turn {
 		rand = new Random();
 	}
 	
+	/**
+	 * Constructor
+	 * @param theMap the current map
+	 * @param player the current player
+	 * @param items the globalItemReference
+	 */
 	public Turn(GameMap theMap, Player player, GlobalItemReference items){
 		gameActors = new ArrayList<Person>();
 		//String name, int strength, int agility, int trade, int stamina, int health, int range, int capacity, Float money, GameMap theMap, GlobalItemReference itemsInstance
@@ -50,6 +61,10 @@ public class Turn {
 		rand = new Random();
 	}
 
+	/**
+	 * runs a turn using the person
+	 * @return encounter
+	 */
 	public Person takeATurn() {
 		useAll();
 		moveAll();
@@ -57,6 +72,9 @@ public class Turn {
 		return encounter(thePlayer);
 	}
 
+	/**
+	 * testing method...uses everytihng
+	 */
 	public void useAll() {
 		/*
 		 * for(Person individual : gameActors) { Set<Item> myStuff =
@@ -68,12 +86,18 @@ public class Turn {
 		 */
 	}
 
+	/**
+	 * moves everyone
+	 */
 	public void moveAll() {
 		for (Person individual : gameActors) {
 			individual.move(theMap.getRandomTown());
 		}
 	}
 
+	/**
+	 * allows trade at random
+	 */
 	public void trade() {
 		MarketPlace currentMarket;
 		Set<Item> currentStock;
@@ -117,6 +141,11 @@ public class Turn {
 		}
 	}
 
+	/**
+	 * represents an encounter
+	 * @param thePlayer the current player
+	 * @return Person who wins
+	 */
 	public Person encounter(Player thePlayer) {
 		for (Person individual : gameActors) {
 			if (individual.getCurrent().toString()

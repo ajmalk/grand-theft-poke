@@ -78,30 +78,53 @@ public class MarketPlaceItem {
 	/**
 	 * The current stock level
 	 * 
-	 * @return
+	 * @return the stock
 	 */
 	public Integer getStock() {
 		return (int) stock - 500;
 	}
 
+	/**
+	 * checks consumption
+	 * @param price the price
+	 * @return float
+	 */
 	public float consumption(float price) {
 		return (float) Math.pow((price / EQIL_PRICE), CONS_ELASTICITY)
 				* EQIL_STOCK;
 	}
 
+	/**
+	 * checks production
+	 * @param price the price
+	 * @return float
+	 */
 	public float production(float price) {
 		return (float) Math.pow((price / EQIL_PRICE), PROD_ELASTICITY)
 				* EQIL_STOCK;
 	}
 
+	/**
+	 * checks consumption
+	 * @return float
+	 */
 	private float consumption() {
 		return consumption(price);
 	}
 
+	/**
+	 * checks production
+	 * @return float
+	 */
 	private float production() {
 		return production(price);
 	}
 
+	/**
+	 * checks to see if two items are equal
+	 * @param item item to be checked
+	 * @return boolean
+	 */
 	public boolean equals(MarketPlaceItem item) {
 		if (item.CONS_ELASTICITY == CONS_ELASTICITY
 				&& item.EQIL_PRICE == EQIL_PRICE
@@ -112,6 +135,11 @@ public class MarketPlaceItem {
 		return false;
 	}
 
+	/**
+	 * gets new price of item
+	 * @param amount price of item
+	 * @return float
+	 */
 	private float getNewPrice(float amount) {
 		float temp, price = this.price;
 		amount += stock - EQIL_STOCK;

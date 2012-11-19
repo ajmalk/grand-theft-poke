@@ -9,6 +9,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 
+/**
+ * represents the Main class
+ * @author Team Rocket
+ *
+ */
 public class Main {
 
 	/**
@@ -22,11 +27,21 @@ public class Main {
 		testMovement(testMap);
 	}
 
+	/**
+	 * creates the game map
+	 * @param theReference the globalItemReference
+	 * @return a gameMap to be used
+	 */
 	public static GameMap makeMap(GlobalItemReference theReference) {
 		GameMap map = new GameMap(theReference);
 		return map;
 	}
 
+	/**
+	 * tests marketPlace
+	 * @param map the current gameMap
+	 * @param theReference the globalItemReference
+	 */
 	public static void testMarketPlace(GameMap map,
 			GlobalItemReference theReference) {
 
@@ -47,6 +62,10 @@ public class Main {
 		System.out.println(testPlayer.getWallet());
 	}
 
+	/**
+	 * tests valid movement
+	 * @param map the current gameMap
+	 */
 	public static void testMovement(GameMap map) {
 		// Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
 		Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20,

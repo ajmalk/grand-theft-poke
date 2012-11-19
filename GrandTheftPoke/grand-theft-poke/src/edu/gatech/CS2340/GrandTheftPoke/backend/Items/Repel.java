@@ -3,7 +3,11 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
-
+/**
+ * Represents a repel
+ * @author Team Rocket
+ *
+ */
 @XStreamAlias("Repel")
 public class Repel extends Item implements Usable {
 	@Override

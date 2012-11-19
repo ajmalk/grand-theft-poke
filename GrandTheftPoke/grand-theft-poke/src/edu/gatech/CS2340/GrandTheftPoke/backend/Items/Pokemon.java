@@ -8,7 +8,14 @@ public abstract class Pokemon extends Item implements Usable {
 	private int tradeBoost;
 	private int staminaBoost;
 	private int agilityBoost;
-
+	
+	/**
+	 * Pokemon Constructor
+	 * @param strength
+	 * @param trade
+	 * @param stamina
+	 * @param agility
+	 */
 	public Pokemon(int strength, int trade, int stamina, int agility) {
 		strengthBoost = strength;
 		tradeBoost = trade;

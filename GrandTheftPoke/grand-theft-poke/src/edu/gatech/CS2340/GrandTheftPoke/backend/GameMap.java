@@ -17,8 +17,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 
 /**
- * This class represents a GameMap
+ * Represents the game map
  * @author Team Rocket
+ *
  */
 @XStreamAlias("Map")
 public class GameMap {
@@ -29,10 +30,17 @@ public class GameMap {
 	@XStreamOmitField
 	private Town startTown;
 
+	/**
+	 * constructor for the game map
+	 */
 	public GameMap() {
 		townSet = new HashSet<Town>();
 	}
 
+	/**
+	 * constructor
+	 * @param theReference the global item reference
+	 */
 	public GameMap(GlobalItemReference theReference) {
 		townSet = new HashSet<Town>();
 
@@ -108,6 +116,11 @@ public class GameMap {
 
 	}
 
+	/**
+	 * checks to see if two towns are equal
+	 * @param town the current town
+	 * @return boolean
+	 */
 	public boolean equals(Town town) {
 		if (!startTown.equals(town))
 			return false;
@@ -117,18 +130,34 @@ public class GameMap {
 		return true;
 	}
 
+	/**
+	 * adds town
+	 * @param toBeAdded town toBeAdded
+	 */
 	public void addTown(Town toBeAdded) {
 		townSet.add(toBeAdded);
 	}
 
+	/**
+	 * gets the set of towns
+	 * @return townSet the set of towns
+	 */
 	public Set<Town> getTownSet() {
 		return townSet;
 	}
 
+	/**
+	 * sets the starting town
+	 * @param startTown the starting town
+	 */
 	public void setStartTown(Town startTown) {
 		this.startTown = startTown;
 	}
 
+	/**
+	 * computes the paths from one town to the others
+	 * @param source the starting town
+	 */
 	public static void computePaths(Town source) {
 		source.setMinimumDistance(0);
 		PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
@@ -151,6 +180,11 @@ public class GameMap {
 		}
 	}
 
+	/**
+	 * returns the shortest path to a town
+	 * @param target the end town
+	 * @return the shortest path
+	 */
 	public static List<Town> getShortestPathTo(Town target) {
 		List<Town> path = new ArrayList<Town>();
 		for (Town vertex = target; vertex != null; vertex = vertex
@@ -161,6 +195,10 @@ public class GameMap {
 		return path;
 	}
 
+	/**
+	 * runs Dijkstra's algorithm on the towns
+	 * @param source the starting town
+	 */
 	public void Dijkstras(Town source) {
 		computePaths(source);
 		for (Town x : townSet) {
@@ -171,16 +209,30 @@ public class GameMap {
 		}
 	}
 
+	/**
+	 * return the start town
+	 * @return startTown
+	 */
 	public Town getStartTown() {
 		return startTown;
 	}
 
+	/**
+	 * returns a random town
+	 * @return a random town
+	 */
 	public Town getRandomTown() {
 		Random rand = new Random();
 		return (Town) townSet.toArray()[rand.nextInt(townSet.size())];
 
 	}
 
+	/**
+	 * returns dijkstra's distances as ints
+	 * @param source the starting town
+	 * @param townName the townName
+	 * @return an int computing the distance
+	 */
 	public int Dijkstras(Town source, String townName) {
 		computePaths(source);
 		int toBeReturned = Integer.MAX_VALUE;
@@ -193,6 +245,10 @@ public class GameMap {
 		return toBeReturned;
 	}
 
+	/**
+	 * resets the minimum distance
+	 * @param toBeReset town toBeReset
+	 */
 	private void resetMinimumDistance(Town toBeReset) {
 		toBeReset.setMinimumDistance(Integer.MAX_VALUE);
 	}

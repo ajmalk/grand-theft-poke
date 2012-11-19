@@ -1,5 +1,10 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
+/**
+ * Represents a FlameOrb
+ * @author Team Rocket
+ *
+ */
 public class FlameOrb extends Item {
 	@Override
 	public int hashCode() {

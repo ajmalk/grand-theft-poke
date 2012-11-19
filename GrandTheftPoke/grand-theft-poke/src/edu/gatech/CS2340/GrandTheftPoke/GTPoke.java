@@ -38,7 +38,7 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.SplashScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.StarterPokemon;
 import edu.gatech.CS2340.GrandTheftPoke.screens.TownScreen;
 /**
- * 
+ * Controls the entire game
  * @author Team Rocket
  *
  */
@@ -85,6 +85,9 @@ public class GTPoke extends Game {
 		setScreen(getSplashScreen());
 	}
 	
+	/**
+	 * @return boolean
+	 */
 	public boolean update(){
 		statusBar.clear();
 		statusBar.setSkin(skin);
@@ -97,10 +100,16 @@ public class GTPoke extends Game {
 		return true;
 	}
 	
+	/**
+	 * @return statusBar
+	 */
 	public Table getStatusBar(){
 		return statusBar;
 	}
 	
+	/**
+	 * @return skin
+	 */
 	public Skin getSkin() {
 		if (skin == null) {
 			skin = new Skin(Gdx.files.internal("skins//uiskin.json"));
@@ -108,18 +117,30 @@ public class GTPoke extends Game {
 		return skin;
 	}
 	
+	/**
+	 * @return atlas
+	 */
 	public TextureAtlas getTextures(){
 		return atlas;
 	}
 	
+	/**
+	 * @return nextScreen
+	 */
 	public Screen getNextScreen(){
 		return nextScreen;
 	}
 	
+	/**
+	 * @return prevScreen
+	 */
 	public Screen getPrevScreen(){
 		return prevScreen;
 	}
 	
+	/**
+	 * initializes variables for new game
+	 */
 	public void newGame(){
 		theMap = makeMap();
 		thePlayer = new Player();
@@ -129,6 +150,9 @@ public class GTPoke extends Game {
 		setScreen(getNameScreen());
 	}
 	
+	/**
+	 * @return savestr
+	 */
 	public String save() {
 		SaveGame save = new SaveGame(thePlayer, theMap, controller);
 		String savestr = xstream.toXML(save);
@@ -138,6 +162,9 @@ public class GTPoke extends Game {
 		return savestr;
 	}
 
+	/**
+	 * @param index index to load
+	 */
 	public void load(int index) {
 		String savestr = saveFile.readString();
 		System.out.println(savestr);
@@ -146,30 +173,47 @@ public class GTPoke extends Game {
 		setScreen(getCurrentTownScreenFromEncounter());
 	}
 
+	/**
+	 * @param gamestr string used to load game
+	 */
 	public void load(String gamestr) {
 		SaveGame game = (SaveGame) xstream.fromXML(gamestr);
 		game.load(this);
 	}
 
+	/**
+	 * @param player current player
+	 */
 	public void setPlayer(Player player) {
 		thePlayer = player;
 	}
 
+	/**
+	 * @param map the current map
+	 */
 	public void setMap(GameMap map) {
 		theMap = map;
 	}
+	/**
+	 * @param controller the turn controller
+	 */
 	public void setController(Turn controller){
 		this.controller = controller;
 	}
+	/**
+	 * clears the map and player
+	 */
 	public void clear() {
 		theMap = null;
 		thePlayer = null;
 	}
 
+
 	@Override
 	public void dispose() {
 		super.dispose();
 	}
+
 
 	@Override
 	public void render() {
@@ -177,26 +221,38 @@ public class GTPoke extends Game {
 
 	}
 
+
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
+
 
 	@Override
 	public void pause() {
 		super.pause();
 	}
 
+
 	@Override
 	public void resume() {
 		super.resume();
 	}
 
+	/**
+	 * @param playerName name of player
+	 */
 	public void setPlayerName(String playerName) {
 		thePlayer.setName(playerName);
 
 	}
 
+	/**
+	 * @param strength
+	 * @param agility
+	 * @param trade
+	 * @param stamina
+	 */
 	public void createPlayer(Integer strength, Integer agility, Integer trade,
 			Integer stamina) {
 		thePlayer = new Player(playerName, strength, agility, trade, stamina,
@@ -204,63 +260,113 @@ public class GTPoke extends Game {
 		controller = new Turn(theMap, thePlayer, items);
 	}
 
+	/**
+	 * @param game the current game
+	 * @return boolean
+	 */
 	public boolean equals(GTPoke game) {
 		return theMap.equals(game.getMap()) && thePlayer.equals(game.thePlayer);
 
 	}
 
+	/**
+	 * @return map to play on
+	 */
 	public GameMap makeMap() {
 		return new GameMap(items);
 	}
 
+	/**
+	 * @return current town
+	 */
 	public Town getCurrentTown() {
 		return thePlayer.getCurrent();
 	}
 
+	/**
+	 * 
+	 * @return buttonSprite
+	 */
 	public static Texture getButtonSprite() {
 		return ButtonSprite;
 	}
 
+	/**
+	 * @return items
+	 */
 	public GlobalItemReference getItems() {
 		return items;
 	}
 
+	/**
+	 * @return returns a splashScreen
+	 */
 	public Screen getSplashScreen() {
 		return new SplashScreen(this);
 	}
 
+	/**
+	 * @return returns a new main menu
+	 */
 	public Screen getMainMenuScreen() {
 		return new MainMenu(this);
 	}
 
+	/**
+	 * @return returns a new starting screen
+	 */
 	public Screen getNameScreen() {
 		return new Name(this);
 	}
 
+	/**
+	 * @return returns a new marketPlace screen
+	 */
 	public Screen getMarketPlaceDemoScreen() {
 		return new MarketPlaceItemDemo(this);
 	}
 
+	/**
+	 * @return returns a new market screen
+	 */
 	public Screen getMarketScreen() {
 		return new Market(this);
 	}
 
+	/**
+	 * @param theMarket the current market
+	 * @return Market screen
+	 */
 	public Screen getMarketScreen(MarketPlace theMarket) {
 		return new Market(this, theMarket);
 	}
 	
+	/**
+	 * @param theMarket the current market
+	 * @param other the other trader
+	 * @return the market screen
+	 */
 	public Screen getMarketScreen(MarketPlace theMarket, Trader other) {
 		return new Market(this, theMarket, other);
 	}
 
+	/**
+	 * @return
+	 */
 	public Screen getSkillPointsScreen() {
 		return new SkillPoints(this);
 	}
 
+	/**
+	 * @return a skill points screen
+	 */
 	public Screen getStarterPokemonScreen() {
 		return new StarterPokemon(this);
 	}
 
+	/**
+	 * @return the current town's screen
+	 */
 	public Screen getCurrentTownScreen() {
 		Person potentialEncounter = controller.takeATurn();
 		if (potentialEncounter != null) {
@@ -269,31 +375,54 @@ public class GTPoke extends Game {
 		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
 	
+	/**
+	 * @param button string to display on button
+	 * @return the button that was created
+	 */
 	public Button getButton(String button){
 		return new Button(	new TextureRegionDrawable(atlas.findRegion(button)), 
 							new TextureRegionDrawable(atlas.findRegion(button + "-down")));
 	}
 
+	/**
+	 * @return current townScreen
+	 */
 	public Screen getCurrentTownScreenFromEncounter() {
 		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
 
+	/**
+	 * @return mapScreen
+	 */
 	public Screen getMapScreen() {
 		return new MapScreen(this);
 	}
 
+	/**
+	 * @return thePlayer
+	 */
 	public Player getPlayer() {
 		return thePlayer;
 	}
 
+	/**
+	 * @return theMap
+	 */
 	public GameMap getMap() {
 		return theMap;
 	}
 
+	/**
+	 * @return xstream
+	 */
 	public XStream getSerializer() {
 		return xstream;
 	}
 
+	/**
+	 * @param myPerson the current person
+	 * @return a Battle
+	 */
 	public Screen getBattleScreen(Person myPerson) {
 		return new Battle(this, myPerson);
 	}

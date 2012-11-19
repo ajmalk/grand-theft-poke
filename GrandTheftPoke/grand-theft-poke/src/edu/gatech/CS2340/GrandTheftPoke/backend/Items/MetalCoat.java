@@ -1,5 +1,10 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
+/**
+ * Represents a MetalCoat
+ * @author Team Rocket
+ *
+ */
 public class MetalCoat extends Item {
 	@Override
 	public int hashCode() {
