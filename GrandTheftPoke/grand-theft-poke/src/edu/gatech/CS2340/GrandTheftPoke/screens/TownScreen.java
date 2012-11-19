@@ -12,6 +12,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
 
 
 /**
@@ -110,7 +112,7 @@ public class TownScreen extends AbstractScreen {
 		gymLeaderButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
+				game.setScreen(game.getBattleScreen(new GymLeader("Brock", 8, 8, 0, 8, 200, 0, 0, 1000f, game.getMap())));
 			}
 		});
 

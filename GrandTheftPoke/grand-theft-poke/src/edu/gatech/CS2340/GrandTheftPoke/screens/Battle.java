@@ -112,11 +112,13 @@ public class Battle extends AbstractScreen {
 				}
 				turnCount++;
 				if(myPerson.getHealth() <= 0) {
-					System.out.println("WIN");
+					game.getPlayer().win(myPerson);
+					game.setScreen(game.getCurrentTownScreenFromEncounter());
 					return;
 				}
 				if(game.getPlayer().getHealth() <= 0) {
-					System.out.println("LOSE");
+					myPerson.win(game.getPlayer());
+					game.setScreen(game.getCurrentTownScreenFromEncounter());
 					return;
 				}
 				System.out.println(game.getPlayer().getHealth());

@@ -79,8 +79,8 @@ public class EncounterScreen extends AbstractScreen {
 				}
 			});
 		} else {
-			trade.setDisabled(false);
-			trade.setTouchable(Touchable.enabled);
+			trade.setDisabled(true);
+			trade.setTouchable(Touchable.disabled);
 		}
 
 		fight = new Button(new TextureRegionDrawable(new TextureRegion(
