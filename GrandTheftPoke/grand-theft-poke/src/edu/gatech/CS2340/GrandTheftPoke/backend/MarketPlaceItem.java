@@ -33,8 +33,10 @@ public class MarketPlaceItem {
 	 * @param stock
 	 */
 	public MarketPlaceItem(Float price, Float stock) {
-		EQIL_PRICE = this.price = price * 100;
-		EQIL_STOCK = this.stock = stock + 500;
+		EQIL_PRICE = price * 100;
+		this.price = EQIL_PRICE;
+		EQIL_STOCK = stock + 500;
+		this.stock = EQIL_STOCK;
 		CONS_ELASTICITY = -1f;
 		PROD_ELASTICITY = 2f;
 		STOCK_RATIO = 0.1f;

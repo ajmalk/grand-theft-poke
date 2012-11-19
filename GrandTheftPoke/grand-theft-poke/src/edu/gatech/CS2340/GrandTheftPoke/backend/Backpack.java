@@ -6,9 +6,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 
 /**
@@ -20,9 +17,7 @@ public class Backpack {
 
 	private Integer capacity, maxRange;
 
-	// @XStreamImplicit(itemFieldName="item")
-	@XStreamOmitField
-	private final HashMap<Item, Integer> contents;
+	private Map<Item, Integer> contents;
 
 	public Backpack() {
 		contents = new HashMap<Item, Integer>();
