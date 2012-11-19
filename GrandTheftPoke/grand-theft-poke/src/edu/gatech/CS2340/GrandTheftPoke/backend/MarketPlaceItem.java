@@ -161,7 +161,7 @@ public class MarketPlaceItem {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		MarketPlaceItem other = (MarketPlaceItem) obj;
+		final MarketPlaceItem other = (MarketPlaceItem) obj;
 		if (Float.floatToIntBits(CONS_ELASTICITY) != Float
 				.floatToIntBits(other.CONS_ELASTICITY))
 			return false;
@@ -219,7 +219,7 @@ public class MarketPlaceItem {
 		if (Math.abs(price - EQIL_PRICE) < 0.001) {
 			return true;
 		}
-		float change = (production(price) - consumption(price)) * STOCK_RATIO;
+		final float change = (production(price) - consumption(price)) * STOCK_RATIO;
 		price = getNewPrice(change);
 		stock += change;
 		return true;
@@ -235,7 +235,7 @@ public class MarketPlaceItem {
 		if (amount < 0 || amount > stock - 500) {
 			return 0f;
 		}
-		float price = getBuyingPrice(amount);
+		final float price = getBuyingPrice(amount);
 		stock -= amount;
 		this.price = getNewPrice(-amount);
 		return price;
@@ -251,7 +251,7 @@ public class MarketPlaceItem {
 		if (amount < 0) {
 			return 0f;
 		}
-		float price = getSellingPrice(amount);
+		final float price = getSellingPrice(amount);
 		stock += amount;
 		this.price = getNewPrice(amount);
 		return price;

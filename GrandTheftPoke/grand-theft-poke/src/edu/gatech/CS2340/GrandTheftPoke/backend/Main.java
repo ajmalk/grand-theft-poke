@@ -21,8 +21,8 @@ public class Main {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		GlobalItemReference theReference = new GlobalItemReference();
-		GameMap testMap = Main.makeMap(theReference);
+		final GlobalItemReference theReference = new GlobalItemReference();
+		final GameMap testMap = Main.makeMap(theReference);
 		// testMap.Dijkstras();
 		// testMarketPlace(testMap, theReference);
 		testMovement(testMap);
@@ -36,7 +36,7 @@ public class Main {
 	 * @return a gameMap to be used
 	 */
 	public static GameMap makeMap(GlobalItemReference theReference) {
-		GameMap map = new GameMap(theReference);
+		final GameMap map = new GameMap(theReference);
 		return map;
 	}
 
@@ -51,8 +51,8 @@ public class Main {
 	public static void testMarketPlace(GameMap map,
 			GlobalItemReference theReference) {
 
-		Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000, map);
-		MarketPlace theMarket = testPlayer.getCurrent().getMarket();
+		final Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000, map);
+		final MarketPlace theMarket = testPlayer.getCurrent().getMarket();
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		System.out.println(testPlayer.buy(theMarket,
@@ -76,10 +76,10 @@ public class Main {
 	 */
 	public static void testMovement(GameMap map) {
 		// Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
-		Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20,
+		final Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80, 20,
 				50f, map);
-		Set<Town> townSet = map.getTownSet();
-		for (Iterator<Town> it = townSet.iterator(); it.hasNext();) {
+		final Set<Town> townSet = map.getTownSet();
+		for (final Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move(it.next());
 			System.out.println(testPlayer.getCurrent());
 			map.Dijkstras(testPlayer.getCurrent());

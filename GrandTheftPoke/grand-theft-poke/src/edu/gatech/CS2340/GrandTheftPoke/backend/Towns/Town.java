@@ -22,7 +22,7 @@ public class Town implements Comparable {
 	private int minimumDistance = Integer.MAX_VALUE;
 
 	@XStreamAsAttribute
-	private String name;
+	final private String name;
 
 	@XStreamOmitField
 	private Town previous;
@@ -33,7 +33,7 @@ public class Town implements Comparable {
 	private String filename;
 
 	@XStreamOmitField
-	private Set<Path> adjacencies;
+	final private Set<Path> adjacencies;
 
 	/**
 	 * @param name
