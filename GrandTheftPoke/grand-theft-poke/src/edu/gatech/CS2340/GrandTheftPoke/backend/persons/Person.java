@@ -56,6 +56,12 @@ public abstract class Person {
 		return false;
 	}
 
+	/**
+	 * Default constructor for person
+	 */
+	public Person() {
+
+	}
 
 	/**
 	 * Constructs a person with the specified parameters.
