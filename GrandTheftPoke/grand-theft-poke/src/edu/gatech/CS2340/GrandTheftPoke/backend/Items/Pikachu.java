@@ -29,7 +29,7 @@ public class Pikachu extends Item {
 		if (obj == null) {
 			return false;
 		}
-		if (getClass() != obj.getClass()) {
+		if (!(getClass().equals(obj.getClass()))) {
 			return false;
 		}
 		return true;

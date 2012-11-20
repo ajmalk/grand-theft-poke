@@ -229,7 +229,7 @@ public class MarketPlaceItem {
 				break;
 			}
 			price = temp;
-		} //while (true);
+		} while (true);
 		return price;
 	}
 
