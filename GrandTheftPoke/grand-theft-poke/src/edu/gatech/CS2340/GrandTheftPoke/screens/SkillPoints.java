@@ -32,6 +32,15 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  */
 public class SkillPoints extends AbstractScreen {
 	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "SkillPoints";
+	}
+	
+	/**
 	 * Field background.
 	 */
 	private Texture background;

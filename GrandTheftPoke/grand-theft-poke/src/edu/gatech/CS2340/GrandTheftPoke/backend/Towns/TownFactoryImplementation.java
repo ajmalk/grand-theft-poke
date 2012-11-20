@@ -17,6 +17,15 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 public class TownFactoryImplementation implements TownFactory {
 
 	/**
+	 * toString method
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "TownFactoryImplementation";
+	}
+	
+	/**
 	 * itemsInstance field
 	 */
 	private GlobalItemReference itemsInstance;
@@ -31,9 +40,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makePalletTown.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makePalletTown()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makePalletTown() */
 	@Override
 	public Town makePalletTown() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -74,9 +83,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeViridianCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeViridianCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeViridianCity() */
 	@Override
 	public Town makeViridianCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -121,9 +130,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makePewterCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makePewterCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makePewterCity() */
 	@Override
 	public Town makePewterCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -167,9 +176,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeCeruleanCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeCeruleanCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeCeruleanCity() */
 	@Override
 	public Town makeCeruleanCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -213,9 +222,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeSaffronCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeSaffronCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeSaffronCity() */
 	@Override
 	public Town makeSaffronCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -259,9 +268,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeCeladonCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeCeladonCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeCeladonCity() */
 	@Override
 	public Town makeCeladonCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -303,9 +312,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeLavenderTown.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeLavenderTown()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeLavenderTown() */
 	@Override
 	public Town makeLavenderTown() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -348,9 +357,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeVermillionCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeVermillionCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeVermillionCity() */
 	@Override
 	public Town makeVermillionCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -393,9 +402,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeFuchsiaCity.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeFuchsiaCity()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeFuchsiaCity() */
 	@Override
 	public Town makeFuchsiaCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -438,9 +447,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makeCinnabarIsland.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeCinnabarIsland()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makeCinnabarIsland() */
 	@Override
 	public Town makeCinnabarIsland() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
@@ -482,9 +491,9 @@ public class TownFactoryImplementation implements TownFactory {
 
 	/**
 	 * Method makePowerPlant.
-	 * @return Town
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makePowerPlant()
-	 */
+	
+	
+	 * @return Town * @see edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactory#makePowerPlant() */
 	@Override
 	public Town makePowerPlant() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();

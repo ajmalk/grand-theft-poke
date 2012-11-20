@@ -23,6 +23,16 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public class SplashScreen extends AbstractScreen {
+	
+	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "SplashScreen";
+	}
+	
 	/**
 	 * Field splashTexture.
 	 */

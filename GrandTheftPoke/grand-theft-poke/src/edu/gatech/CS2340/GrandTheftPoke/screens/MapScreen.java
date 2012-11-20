@@ -28,6 +28,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * 
  */
 public class MapScreen extends AbstractScreen {
+	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "MapScreen";
+	}
 
 	/**
 	 * Field background.

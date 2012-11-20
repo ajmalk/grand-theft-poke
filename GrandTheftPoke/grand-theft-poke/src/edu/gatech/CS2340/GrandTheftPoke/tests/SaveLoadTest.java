@@ -16,12 +16,23 @@ import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
  *
  */
 public class SaveLoadTest {
+	
+	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "SaveLoadTest";
+	}
 
+	
 	/**
 	 * Method setUp.
 	 */
 	@Before
 	public void setUp() {
+		//
 	}
 
 	/**
