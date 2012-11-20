@@ -31,16 +31,70 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public class SkillPoints extends AbstractScreen {
+	/**
+	 * Field background.
+	 */
 	private Texture background;
 
+	/**
+	 * Field max.
+	 */
+	/**
+	 * Field stamina.
+	 */
+	/**
+	 * Field trade.
+	 */
+	/**
+	 * Field agility.
+	 */
+	/**
+	 * Field strength.
+	 */
+	/**
+	 * Field remainder.
+	 */
 	private Integer remainder, strength, agility, trade, stamina, max;
 
+	/**
+	 * Field remVal.
+	 */
+	/**
+	 * Field staminaVal.
+	 */
+	/**
+	 * Field tradeVal.
+	 */
+	/**
+	 * Field agilityVal.
+	 */
+	/**
+	 * Field strengthVal.
+	 */
 	private Label strengthVal, agilityVal, tradeVal, staminaVal, remVal;
 
+	/**
+	 * Field tradeSlider.
+	 */
+	/**
+	 * Field agilitySlider.
+	 */
+	/**
+	 * Field staminaSlider.
+	 */
+	/**
+	 * Field strengthSlider.
+	 */
 	private Slider strengthSlider, staminaSlider, agilitySlider, tradeSlider;
 
+	/**
+	 * Field ConfirmButton.
+	 */
 	private Button ConfirmButton;
 
+	/**
+	 * Field table.
+	 */
 	private Table table;
 
 	/**
@@ -51,6 +105,10 @@ public class SkillPoints extends AbstractScreen {
 		super(game);
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -154,6 +212,11 @@ public class SkillPoints extends AbstractScreen {
 
 	}
 
+	/**
+	 * Method updateRemainder.
+	 * @param slider Slider
+	 * @param value Integer
+	 */
 	private void updateRemainder(Slider slider, Integer value) {
 		ConfirmButton.setDisabled(true);
 		ConfirmButton.setTouchable(Touchable.disabled);
@@ -167,6 +230,11 @@ public class SkillPoints extends AbstractScreen {
 		slider.setValue(value);
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -208,11 +276,21 @@ public class SkillPoints extends AbstractScreen {
 
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();

@@ -23,20 +23,44 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public class StarterPokemon extends AbstractScreen {
+	/**
+	 * Field title.
+	 */
 	private Image title;
 
+	/**
+	 * Field bulbasaur.
+	 */
 	private Button bulbasaur;
 
+	/**
+	 * Field charmander.
+	 */
 	private Button charmander;
 
+	/**
+	 * Field squirtle.
+	 */
 	private Button squirtle;
 
+	/**
+	 * Field ConfirmButton.
+	 */
 	private Button ConfirmButton;
 
+	/**
+	 * Field confirmX.
+	 */
 	private int confirmX = 356;
 
+	/**
+	 * Field confirmY.
+	 */
 	private int confirmY = 10;
 
+	/**
+	 * Field table.
+	 */
 	private Table table;
 
 	/**
@@ -47,6 +71,10 @@ public class StarterPokemon extends AbstractScreen {
 		super(game);
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -125,6 +153,11 @@ public class StarterPokemon extends AbstractScreen {
 		});
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -141,11 +174,21 @@ public class StarterPokemon extends AbstractScreen {
 		stage.addActor(ConfirmButton);
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();

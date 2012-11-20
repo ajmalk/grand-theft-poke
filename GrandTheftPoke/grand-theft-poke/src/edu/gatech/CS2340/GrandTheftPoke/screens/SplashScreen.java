@@ -23,6 +23,9 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public class SplashScreen extends AbstractScreen {
+	/**
+	 * Field splashTexture.
+	 */
 	private Texture splashTexture;
 
 	/**
@@ -33,6 +36,10 @@ public class SplashScreen extends AbstractScreen {
 		super(game);
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -57,6 +64,11 @@ public class SplashScreen extends AbstractScreen {
 		// stage.addActor(new Rectangle(0, 0, 200, 200));
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
@@ -65,11 +77,21 @@ public class SplashScreen extends AbstractScreen {
 		stage.draw();
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();

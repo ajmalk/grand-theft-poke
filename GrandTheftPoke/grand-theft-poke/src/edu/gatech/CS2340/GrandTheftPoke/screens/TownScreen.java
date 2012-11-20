@@ -21,26 +21,59 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
  */
 public class TownScreen extends AbstractScreen {
 
+	/**
+	 * Field table.
+	 */
 	private Table table;
 
+	/**
+	 * Field healthTable.
+	 */
 	private Table healthTable;
 
+	/**
+	 * Field bp.
+	 */
 	private Table bp;
 
+	/**
+	 * Field townImage.
+	 */
 	private Image townImage;
 
+	/**
+	 * Field healthImage.
+	 */
 	private Image healthImage;
 
+	/**
+	 * Field mapButton.
+	 */
 	private Button mapButton;
 
+	/**
+	 * Field pokeCenterButton.
+	 */
 	private Button pokeCenterButton;
 
+	/**
+	 * Field marketPlaceButton.
+	 */
 	private Button marketPlaceButton;
 
+	/**
+	 * Field gymLeaderButton.
+	 */
 	private Button gymLeaderButton;
 
+	/**
+	 * Field backPackButton.
+	 */
 	private Button backPackButton;
 
+	/**
+	 * Field town.
+	 */
 	private String town;
 
 	/**
@@ -54,6 +87,10 @@ public class TownScreen extends AbstractScreen {
 		this.town = town;
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -121,6 +158,11 @@ public class TownScreen extends AbstractScreen {
 
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -143,11 +185,21 @@ public class TownScreen extends AbstractScreen {
 		stage.addActor(game.getStatusBar());
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();

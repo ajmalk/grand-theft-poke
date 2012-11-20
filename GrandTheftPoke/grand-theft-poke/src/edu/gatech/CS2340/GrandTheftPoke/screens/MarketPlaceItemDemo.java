@@ -19,14 +19,30 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
  * 
  */
 public class MarketPlaceItemDemo extends AbstractScreen {
+	/**
+	 * Field item.
+	 */
 	private MarketPlaceItem item = new MarketPlaceItem(500f, 500f);
 
+	/**
+	 * Field table.
+	 */
 	private Table table = new Table(game.getSkin());
 
+	/**
+	 * Field touchPos.
+	 */
 	private Vector3 touchPos;
 
+	/**
+	 * Field renderer.
+	 */
 	ShapeRenderer renderer;
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "MarketPlaceItemDemo";
@@ -41,6 +57,10 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		renderer = new ShapeRenderer();
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -63,6 +83,11 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		renderer.end();
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -91,11 +116,21 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		// item.drawcurves();
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();
