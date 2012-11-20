@@ -307,53 +307,10 @@ public class GTPoke extends Game {
 		thePlayer = null;
 	}
 
-	/**
-	 * Method dispose.
-	 * @see com.badlogic.gdx.ApplicationListener#dispose()
-	 */
-	@Override
-	public void dispose() {
-		super.dispose();
-	}
 
-	/**
-	 * Method render.
-	 * @see com.badlogic.gdx.ApplicationListener#render()
-	 */
-	@Override
-	public void render() {
-		super.render();
 
-	}
 
-	/**
-	 * Method resize.
-	 * @param width int
-	 * @param height int
-	 * @see com.badlogic.gdx.ApplicationListener#resize(int, int)
-	 */
-	@Override
-	public void resize(int width, int height) {
-		super.resize(width, height);
-	}
 
-	/**
-	 * Method pause.
-	 * @see com.badlogic.gdx.ApplicationListener#pause()
-	 */
-	@Override
-	public void pause() {
-		super.pause();
-	}
-
-	/**
-	 * Method resume.
-	 * @see com.badlogic.gdx.ApplicationListener#resume()
-	 */
-	@Override
-	public void resume() {
-		super.resume();
-	}
 
 	/**
 	 * @param playerName
