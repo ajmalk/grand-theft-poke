@@ -167,7 +167,6 @@ public abstract class Person {
 	 * Default constructor for person
 	 */
 	public Person() {
-		super();
 	}
 
 	/**

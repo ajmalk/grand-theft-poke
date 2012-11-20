@@ -25,7 +25,7 @@ public class TownScreen extends AbstractScreen {
 	private Table healthTable;
 	private Table bp;
 	private Image townImage;
-	Image healthImage;
+	private Image healthImage;
 	private Button mapButton;
 	private Button pokeCenterButton;
 	private Button marketPlaceButton;

@@ -51,7 +51,7 @@ public class MarketPlace {
 	}
 
 	// @XStreamImplicit(itemFieldName="Item")
-	Map<Item, MarketPlaceItem> stock;
+	private Map<Item, MarketPlaceItem> stock;
 
 	/**
 	 * Constructor that creates the market place for each town

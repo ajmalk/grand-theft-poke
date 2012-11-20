@@ -23,9 +23,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
  *
  */
 public class MarketPlaceTest {
-	MarketPlace myMarket;
-	Person person;
-	GlobalItemReference itemsInstance;
+	private MarketPlace myMarket;
+	private Person person;
+	private GlobalItemReference itemsInstance;
 
 	@Before
 	public void setUp() throws Exception {

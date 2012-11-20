@@ -199,7 +199,7 @@ public class Market extends AbstractScreen {
 	/**
 	 * updates items in the market
 	 */
-	void updatetables() {
+	private void updatetables() {
 		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = myMarket.iterator(); i
 				.hasNext();) {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();

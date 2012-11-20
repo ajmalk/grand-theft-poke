@@ -55,9 +55,13 @@ public class SkillPoints extends AbstractScreen {
 		super.show();
 		table = new Table(game.getSkin());
 		table.setFillParent(true);
-		strength = stamina = agility = trade = 0;
+		strength = 0;
+		stamina = 0;
+		agility = 0;
+		trade = 0;
 
-		remainder = max = 20;
+		remainder = 20;
+		max = 20;
 		strengthVal = new Label(strength.toString(), game.getSkin());
 		agilityVal = new Label(agility.toString(), game.getSkin());
 		tradeVal = new Label(agility.toString(), game.getSkin());
