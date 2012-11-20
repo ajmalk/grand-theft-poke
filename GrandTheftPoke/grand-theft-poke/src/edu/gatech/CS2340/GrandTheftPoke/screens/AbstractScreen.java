@@ -16,8 +16,17 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public abstract class AbstractScreen implements Screen {
+	/**
+	 * Field game.
+	 */
 	protected final GTPoke game;
+	/**
+	 * Field stage.
+	 */
 	protected final Stage stage;
+	/**
+	 * Field batch.
+	 */
 	private final SpriteBatch batch;
 
 	/**
@@ -31,6 +40,11 @@ public abstract class AbstractScreen implements Screen {
 		Gdx.input.setInputProcessor(stage);
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
@@ -39,27 +53,57 @@ public abstract class AbstractScreen implements Screen {
 		stage.draw();
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		stage.setViewport(width, height, true);
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
+		return;
 	}
 
+	/**
+	 * Method hide.
+	 * @see com.badlogic.gdx.Screen#hide()
+	 */
 	@Override
 	public void hide() {
+		return;
 	}
 
+	/**
+	 * Method pause.
+	 * @see com.badlogic.gdx.Screen#pause()
+	 */
 	@Override
 	public void pause() {
+		return;
 	}
 
+	/**
+	 * Method resume.
+	 * @see com.badlogic.gdx.Screen#resume()
+	 */
 	@Override
 	public void resume() {
+		return;
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		stage.dispose();

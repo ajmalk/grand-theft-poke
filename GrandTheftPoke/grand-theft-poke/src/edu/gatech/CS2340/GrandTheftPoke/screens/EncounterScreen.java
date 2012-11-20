@@ -25,16 +25,40 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  */
 public class EncounterScreen extends AbstractScreen {
 
+	/**
+	 * Field background.
+	 */
 	private Texture background;
+	/**
+	 * Field backgroundImage.
+	 */
 	private Image backgroundImage;
+	/**
+	 * Field game.
+	 */
 	private GTPoke game;
 
+	/**
+	 * Field trade.
+	 */
 	private Button trade;
+	/**
+	 * Field fight.
+	 */
 	private Button fight;
+	/**
+	 * Field flee.
+	 */
 	private Button flee;
 
+	/**
+	 * Field myPerson.
+	 */
 	private Person myPerson;
 
+	/**
+	 * Field table.
+	 */
 	private Table table;
 
 	/**
@@ -52,6 +76,10 @@ public class EncounterScreen extends AbstractScreen {
 		}
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -124,6 +152,11 @@ public class EncounterScreen extends AbstractScreen {
 		stage.addActor(game.getStatusBar());
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);

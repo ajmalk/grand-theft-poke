@@ -10,13 +10,23 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  */
 public class Path {
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Path [target=" + target + ", weight=" + weight + "]";
 	}
 
+	/**
+	 * Field target.
+	 */
 	private final Town target;
 	
+	/**
+	 * Field weight.
+	 */
 	private final int weight;
 
 	/**
@@ -35,8 +45,8 @@ public class Path {
 	/**
 	 * returns the target
 	 * 
-	 * @return target the target
-	 */
+	
+	 * @return target the target */
 	public Town getTarget() {
 		return target;
 	}
@@ -44,8 +54,8 @@ public class Path {
 	/**
 	 * returns the weight
 	 * 
-	 * @return weight the weight
-	 */
+	
+	 * @return weight the weight */
 	public int getWeight() {
 		return weight;
 	}

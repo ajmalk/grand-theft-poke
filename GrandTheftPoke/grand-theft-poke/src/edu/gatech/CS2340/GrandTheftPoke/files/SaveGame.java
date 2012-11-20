@@ -17,16 +17,29 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
  */
 @XStreamAlias("Game")
 public class SaveGame {
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "SaveGame [map=" + map + ", player=" + player + ", controller="
 				+ controller + "]";
 	}
 
+	/**
+	 * Field map.
+	 */
 	private GameMap map;
 
+	/**
+	 * Field player.
+	 */
 	private Player player;
 
+	/**
+	 * Field controller.
+	 */
 	@XStreamOmitField
 	private Turn controller;
 
@@ -53,8 +66,8 @@ public class SaveGame {
 	/**
 	 * @param game
 	 *            the game being played
-	 * @return boolean
-	 */
+	
+	 * @return boolean */
 	public boolean load(GTPoke game) {
 		game.setPlayer(player);
 		game.setMap(map);
@@ -63,15 +76,15 @@ public class SaveGame {
 	}
 
 	/**
-	 * @return player
-	 */
+	
+	 * @return player */
 	public Player getPlayer() {
 		return player;
 	}
 
 	/**
-	 * @return map
-	 */
+	
+	 * @return map */
 	public GameMap getMap() {
 		return map;
 	}

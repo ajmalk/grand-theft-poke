@@ -26,6 +26,10 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  * 
  */
 public class ItemTile extends Button {
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "ItemTile [item=" + item + ", stock=" + stock
@@ -34,21 +38,42 @@ public class ItemTile extends Button {
 				+ pack + "]";
 	}
 
+	/**
+	 * Field item.
+	 */
 	private Item item;
 
+	/**
+	 * Field stock.
+	 */
 	private MarketPlaceItem stock;
 
+	/**
+	 * Field backpackStock.
+	 */
 	private Integer backpackStock;
 
+	/**
+	 * Field icon.
+	 */
 	private Image icon;
 
+	/**
+	 * Field price.
+	 */
+	/**
+	 * Field stockLabel.
+	 */
 	private Label stockLabel, price;
 
+	/**
+	 * Field pack.
+	 */
 	private Backpack pack;
 
 	/**
-	 * @return item
-	 */
+	
+	 * @return item */
 	public Item getItem() {
 		return item;
 	}
@@ -149,22 +174,22 @@ public class ItemTile extends Button {
 	}
 
 	/**
-	 * @return stock
-	 */
+	
+	 * @return stock */
 	public MarketPlaceItem getStockInfo() {
 		return stock;
 	}
 
 	/**
-	 * @return boolean
-	 */
+	
+	 * @return boolean */
 	public boolean isMarketItem() {
 		return backpackStock == -1;
 	}
 
 	/**
-	 * @return stock of item
-	 */
+	
+	 * @return stock of item */
 	public Integer getStock() {
 		if (backpackStock != null && backpackStock == -1) {
 			return stock.getStock();
@@ -173,8 +198,8 @@ public class ItemTile extends Button {
 	}
 
 	/**
-	 * @return update item stock
-	 */
+	
+	 * @return update item stock */
 	public boolean update() {
 		if (backpackStock != null && backpackStock == -1) {
 			stockLabel.setText(stock.getStock().toString());

@@ -19,20 +19,38 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
 @XStreamAlias("Town")
 public class Town implements Comparable {
 
+	/**
+	 * Field minimumDistance.
+	 */
 	@XStreamOmitField
 	private int minimumDistance = Integer.MAX_VALUE;
 
+	/**
+	 * Field name.
+	 */
 	@XStreamAsAttribute
 	final private String name;
 
+	/**
+	 * Field previous.
+	 */
 	@XStreamOmitField
 	private Town previous;
 
+	/**
+	 * Field myMarket.
+	 */
 	protected MarketPlace myMarket;
 
+	/**
+	 * Field filename.
+	 */
 	@XStreamOmitField
 	private String filename;
 
+	/**
+	 * Field adjacencies.
+	 */
 	@XStreamOmitField
 	final private Set<Path> adjacencies;
 
@@ -48,6 +66,10 @@ public class Town implements Comparable {
 		adjacencies = new HashSet<Path>();
 	}
 
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -65,6 +87,11 @@ public class Town implements Comparable {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -129,15 +156,15 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * @return adjacencies
-	 */
+	
+	 * @return adjacencies */
 	public Set getAdjacencies() {
 		return adjacencies;
 	}
 
 	/**
-	 * @return minimumDistance
-	 */
+	
+	 * @return minimumDistance */
 	public int getMinimumDistance() {
 		return minimumDistance;
 	}
@@ -151,8 +178,8 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * @return previous
-	 */
+	
+	 * @return previous */
 	public Town getPrevious() {
 		return previous;
 	}
@@ -165,26 +192,35 @@ public class Town implements Comparable {
 		this.previous = previous;
 	}
 
+	/**
+	 * Method compareTo.
+	 * @param other Object
+	 * @return int
+	 */
 	@Override
 	public int compareTo(Object other) {
 		return getMinimumDistance() - ((Town) other).getMinimumDistance();
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return name;
 	}
 
 	/**
-	 * @return myMarket
-	 */
+	
+	 * @return myMarket */
 	public MarketPlace getMarket() {
 		return myMarket;
 	}
 
 	/**
-	 * @return filename
-	 */
+	
+	 * @return filename */
 	public String getImage() {
 		return filename;
 	}

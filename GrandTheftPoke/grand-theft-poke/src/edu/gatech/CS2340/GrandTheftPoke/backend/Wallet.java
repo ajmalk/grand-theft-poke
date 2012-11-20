@@ -11,6 +11,10 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
  * 
  */
 public class Wallet {
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -19,6 +23,11 @@ public class Wallet {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -41,6 +50,9 @@ public class Wallet {
 		return true;
 	}
 
+	/**
+	 * Field money.
+	 */
 	@XStreamAsAttribute
 	private Float money;
 
@@ -58,8 +70,8 @@ public class Wallet {
 	 * Returns if the inputted wallet is equal to the current wallet
 	 * 
 	 * @param wallet
-	 * @return boolean
-	 */
+	
+	 * @return boolean */
 	public boolean equals(Wallet wallet) {
 		return money == wallet.money;
 	}
@@ -78,8 +90,8 @@ public class Wallet {
 	/**
 	 * Returns the amount in this wallet
 	 * 
-	 * @return money the amount in the wallet
-	 */
+	
+	 * @return money the amount in the wallet */
 	public float getMoney() {
 		return money;
 	}
@@ -90,12 +102,16 @@ public class Wallet {
 	 * 
 	 * @param amount
 	 *            the cost of the item or service
-	 * @return boolean true if you can afford the item
-	 */
+	
+	 * @return boolean true if you can afford the item */
 	public boolean checkAmount(float amount) {
 		return money >= amount;
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Wallet [money=" + money + "]";
