@@ -40,50 +40,47 @@ public class Market extends AbstractScreen {
 	 * Field myMarket.
 	 */
 	private MarketPlace myMarket;
+
 	/**
 	 * Field playerPack.
 	 */
 	private Backpack playerPack;
-	/**
-	 * Field table.
-	 */
-	/**
-	 * Field backpacktable.
-	 */
+
 	/**
 	 * Field markettable.
 	 */
 	private Table markettable, backpacktable, table;
+
 	/**
 	 * Field marketItemGroup.
 	 */
 	private ButtonGroup marketItemGroup;
-	/**
-	 * Field backpackStock.
-	 */
+
 	/**
 	 * Field marketStock.
 	 */
 	private ScrollPane marketStock, backpackStock;
+
 	/**
 	 * Field description.
 	 */
 	private ItemDescTile description;
+
 	/**
 	 * Field backButton.
 	 */
 	private Button backButton;
-	/**
-	 * Field marketplace.
-	 */
+
 	/**
 	 * Field backpack.
 	 */
 	private Map<Item, ItemTile> backpack, marketplace;
+
 	/**
 	 * Field background.
 	 */
 	private Image background;
+
 	/**
 	 * Field otherTrader.
 	 */

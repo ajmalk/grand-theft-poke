@@ -2,6 +2,7 @@ package edu.gatech.CS2340.GrandTheftPoke;
 
 import java.util.ArrayList;
 
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -119,9 +120,9 @@ public class GTPoke extends Game {
 	private Skin skin;
 
 	/**
-	 * Field ButtonSprite.
+	 * Field buttonSprite.
 	 */
-	private static Texture ButtonSprite;
+	private static Texture buttonSprite;
 
 	/**
 	 * Field nextScreen.
@@ -151,7 +152,7 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 200, 150, 200);
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 400, 150, 200);
-		ButtonSprite = new Texture(map);
+		buttonSprite = new Texture(map);
 		statusBar = new Table(skin);
 
 		new ArrayList<Person>();
@@ -307,11 +308,6 @@ public class GTPoke extends Game {
 		thePlayer = null;
 	}
 
-
-
-
-
-
 	/**
 	 * @param playerName
 	 *            name of player
@@ -363,7 +359,7 @@ public class GTPoke extends Game {
 	
 	 * @return buttonSprite */
 	public static Texture getButtonSprite() {
-		return ButtonSprite;
+		return buttonSprite;
 	}
 
 	/**

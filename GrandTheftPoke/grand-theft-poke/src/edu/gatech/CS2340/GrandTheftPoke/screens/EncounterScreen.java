@@ -29,10 +29,12 @@ public class EncounterScreen extends AbstractScreen {
 	 * Field background.
 	 */
 	private Texture background;
+
 	/**
 	 * Field backgroundImage.
 	 */
 	private Image backgroundImage;
+
 	/**
 	 * Field game.
 	 */
@@ -42,10 +44,12 @@ public class EncounterScreen extends AbstractScreen {
 	 * Field trade.
 	 */
 	private Button trade;
+
 	/**
 	 * Field fight.
 	 */
 	private Button fight;
+
 	/**
 	 * Field flee.
 	 */

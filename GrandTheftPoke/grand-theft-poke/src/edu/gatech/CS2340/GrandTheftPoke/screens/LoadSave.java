@@ -88,10 +88,6 @@ public class LoadSave extends AbstractScreen {
 
 	}
 
-	
-
-	
-
 	/**
 	 * Method dispose.
 	 * @see com.badlogic.gdx.Screen#dispose()

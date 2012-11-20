@@ -29,18 +29,22 @@ public class Battle extends AbstractScreen {
 	 * the game
 	 */
 	private GTPoke game;
+
 	/**
 	 * the background
 	 */
 	private Texture background;
+
 	/**
 	 * the backgroundImage
 	 */
 	private Image backgroundImage;
+
 	/**
 	 * myPerson
 	 */
 	private Person myPerson;
+
 	/**
 	 * rand
 	 */
@@ -50,6 +54,7 @@ public class Battle extends AbstractScreen {
 	 * attack button
 	 */
 	private Button attack;
+
 	/**
 	 * flee button
 	 */
