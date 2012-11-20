@@ -11,21 +11,39 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  */
 public class StaminaRoid extends Item implements Usable {
 
+	/**
+	 * Method use.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		person.setStamina(2);
 	}
 
+	/**
+	 * Method unUse.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 		person.setStamina(-2);
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Stamina Steroid";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "The Stamina Steroid permanently adds \n "
@@ -35,6 +53,10 @@ public class StaminaRoid extends Item implements Usable {
 				+ "conserving health! \n" + "+2 Stamina Point";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub

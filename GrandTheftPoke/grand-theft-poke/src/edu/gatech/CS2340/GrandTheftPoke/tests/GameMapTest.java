@@ -240,6 +240,14 @@ public class GameMapTest extends junit.framework.TestCase {
 	@Override
 	@Before
 	public void setUp() {
+		
+		try {
+			super.setUp();
+		}
+		
+		catch(Exception e) {
+			return;
+		}
 		// add additional set up code here
 	}
 

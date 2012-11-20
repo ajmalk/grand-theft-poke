@@ -11,21 +11,39 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  */
 public class TradeVitamin extends Item implements Usable {
 
+	/**
+	 * Method use.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		person.setTrade(1);
 	}
 
+	/**
+	 * Method unUse.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 		person.setTrade(-1);
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Trade Steriod";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "The Trade Steriod permently adds \n "
@@ -35,6 +53,10 @@ public class TradeVitamin extends Item implements Usable {
 				+ "the most competive pricing!\n" + "+1 Trade Point";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub

@@ -8,11 +8,20 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  * 
  */
 public class MetalCoat extends Item {
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		return 20;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {
@@ -24,11 +33,19 @@ public class MetalCoat extends Item {
 		return true;
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Metal Jacket";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "The Metal Jacket is an amulet commonly \n"
@@ -36,6 +53,10 @@ public class MetalCoat extends Item {
 				+ "everyone else.";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		return "metalcoat";

@@ -86,8 +86,8 @@ public class Battle extends AbstractScreen {
 	
 	/**
 	 * toString method
-	 * @return String
-	 */
+	
+	 * @return String */
 	@Override
 	public String toString() {
 		return "Battle";
@@ -97,6 +97,10 @@ public class Battle extends AbstractScreen {
 	 * (non-Javadoc)
 	 * 
 	 * @see edu.gatech.CS2340.GrandTheftPoke.screens.AbstractScreen#show()
+	 */
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
@@ -181,6 +185,11 @@ public class Battle extends AbstractScreen {
 
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);

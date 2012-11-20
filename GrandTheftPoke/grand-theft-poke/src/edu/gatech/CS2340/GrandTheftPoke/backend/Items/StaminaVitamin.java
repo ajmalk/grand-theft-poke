@@ -10,21 +10,40 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  * 
  */
 public class StaminaVitamin extends Item implements Usable {
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		return 4;
 	}
 
+	/**
+	 * Method use.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		person.setStamina(1);
 	}
 
+	/**
+	 * Method unUse.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 		person.setStamina(-1);
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {
@@ -36,11 +55,19 @@ public class StaminaVitamin extends Item implements Usable {
 		return true;
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Stamina Vitamin";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "The Stamina Vitamin permanently adds "
@@ -50,6 +77,10 @@ public class StaminaVitamin extends Item implements Usable {
 				+ "conserving health! \n" + "+1 Stamina Point";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		return "vitamin3";

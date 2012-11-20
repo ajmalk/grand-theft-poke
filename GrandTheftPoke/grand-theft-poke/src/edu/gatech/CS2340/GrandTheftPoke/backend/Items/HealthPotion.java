@@ -10,6 +10,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  * 
  */
 public class HealthPotion extends Item implements Usable {
+	/**
+	 * Method use.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		final int health = person.getHealth();
@@ -21,15 +26,28 @@ public class HealthPotion extends Item implements Usable {
 		}
 	}
 
+	/**
+	 * Method unUse.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Health Potion";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "Health Potion restores your health to "
@@ -38,6 +56,10 @@ public class HealthPotion extends Item implements Usable {
 
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		return "potion1";
