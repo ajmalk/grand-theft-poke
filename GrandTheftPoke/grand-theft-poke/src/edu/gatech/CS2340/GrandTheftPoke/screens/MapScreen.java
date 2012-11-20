@@ -33,10 +33,12 @@ public class MapScreen extends AbstractScreen {
 	 * Field background.
 	 */
 	private Texture background;
+
 	/**
 	 * Field backgroundImage.
 	 */
 	private Image backgroundImage;
+
 	/**
 	 * Field theMap.
 	 */
@@ -46,50 +48,62 @@ public class MapScreen extends AbstractScreen {
 	 * Field palletTownButton.
 	 */
 	private TownTile palletTownButton;
+
 	/**
 	 * Field viridianCityButton.
 	 */
 	private TownTile viridianCityButton;
+
 	/**
 	 * Field pewterCityButton.
 	 */
 	private TownTile pewterCityButton;
+
 	/**
 	 * Field ceruleanCityButton.
 	 */
 	private TownTile ceruleanCityButton;
+
 	/**
 	 * Field vermillionCityButton.
 	 */
 	private TownTile vermillionCityButton;
+
 	/**
 	 * Field lavenderTownButton.
 	 */
 	private TownTile lavenderTownButton;
+
 	/**
 	 * Field fuchsiaCityButton.
 	 */
 	private TownTile fuchsiaCityButton;
+
 	/**
 	 * Field saffronCityButton.
 	 */
 	private TownTile saffronCityButton;
+
 	/**
 	 * Field cinnabarIslandButton.
 	 */
 	private TownTile cinnabarIslandButton;
+
 	/**
 	 * Field powerPlantButton.
 	 */
 	private TownTile powerPlantButton;
+
 	/**
 	 * Field celadonCityButton.
 	 */
 	private TownTile celadonCityButton;
+
 	/**
 	 * Field saveButton.
 	 */
 	private Button saveButton;
+
 	/**
 	 * Field backButton.
 	 */
@@ -129,9 +143,7 @@ public class MapScreen extends AbstractScreen {
 				townTileSprite, 0, 46, 36, 45));
 		townTileStyle.disabled = new TextureRegionDrawable(new TextureRegion(
 				townTileSprite, 0, 91, 36, 45));
-
-		final Iterator<Town> i = game.getMap().getTownSet().iterator();
-		while (i.hasNext()) {
+		for(Iterator<Town> i = game.getMap().getTownSet().iterator(); i.hasNext();) {
 			Town theTown = i.next();
 
 			if (theTown.toString().equals("Pallet Town")) {
