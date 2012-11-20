@@ -68,12 +68,12 @@ public class TownScreen extends AbstractScreen {
 
 		townImage = new Image(game.getTextures().findRegion("town/" + town));
 
-		Texture ButtonSprite = new Texture("images//icons//PalletTown.png");
+		Texture buttonSprite = new Texture("images//icons//PalletTown.png");
 		Texture BackpackSprite = new Texture("images//icons//backpackIcon.png");
 		stage.clear();
 
 		healthImage = new Image(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 183, 707, 667, 63)));
+				buttonSprite, 183, 707, 667, 63)));
 
 		mapButton = game.getButton("town/map");
 
@@ -87,9 +87,6 @@ public class TownScreen extends AbstractScreen {
 		pokeCenterButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
-				// System.out.println("health is: "+game.getPlayer().getHealth());
-				// System.out.println("money is: "+game.getPlayer().getWallet().getMoney());
 				if (game.getPlayer().getHealth() != game.getPlayer()
 						.getMaxHealth()
 						&& game.getPlayer().getWallet().getMoney() >= 300) {
@@ -98,9 +95,6 @@ public class TownScreen extends AbstractScreen {
 									- game.getPlayer().getHealth());
 					game.getPlayer().getWallet().updateMoney(-300);
 				}
-				// System.out.println("health is now: "+game.getPlayer().getHealth());
-				// System.out.println("money is now: "+game.getPlayer().getWallet().getMoney());
-
 			}
 		});
 		marketPlaceButton = game.getButton("town/marketplace");
@@ -114,7 +108,6 @@ public class TownScreen extends AbstractScreen {
 		backPackButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
 			}
 		});
 		gymLeaderButton = game.getButton("town/gymleader");
@@ -141,11 +134,6 @@ public class TownScreen extends AbstractScreen {
 		table.add(pokeCenterButton);
 		table.add(marketPlaceButton);
 		table.add(gymLeaderButton);
-
-		// healthTable.setPosition(0, -350);
-		// healthTable.add(healthImage);
-
-		// stage.addActor(backgroundImage);
 		stage.addActor(table);
 
 		bp.setPosition(-450, 60);
@@ -153,12 +141,6 @@ public class TownScreen extends AbstractScreen {
 
 		stage.addActor(bp);
 		stage.addActor(game.getStatusBar());
-		// game.getStatusBar().debug().drawDebug(stage);
-		// remVal.setText(remainder.toString());
-
-		// table.debug();
-		// table.drawDebug(stage);
-
 	}
 
 	@Override

@@ -43,7 +43,7 @@ public class LoadSave extends AbstractScreen {
 		super.show();
 
 		background = new Texture("images//main-menu.png");
-		Texture ButtonSprite = new Texture("images//button-sprite.png");
+		Texture buttonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
 		Image backgroundImage = new Image(background);
@@ -52,21 +52,21 @@ public class LoadSave extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 		stage.addActor(backgroundImage);
 
-		Button GameButton = new Button(new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 0, 0, 320, 70)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
+		Button gameButton = new Button(new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
+				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		GameButton.setSkin(game.getSkin());
-		GameButton.add("New Game");
+		gameButton.setSkin(game.getSkin());
+		gameButton.add("New Game");
 
 		Button LoadButton = new Button(new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 0, 0, 320, 70)),
-				new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
+				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
+				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
 		LoadButton.setSkin(game.getSkin());
 		LoadButton.add("Load Game");
 
-		GameButton.addListener(new ClickListener() {
+		gameButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setScreen(game.getNameScreen());
@@ -82,7 +82,7 @@ public class LoadSave extends AbstractScreen {
 		Table table = new Table(game.getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
-		table.add(GameButton);
+		table.add(gameButton);
 		table.row();
 		table.add(LoadButton);
 

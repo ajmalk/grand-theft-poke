@@ -52,7 +52,7 @@ public class Name extends AbstractScreen {
 
 		background = new Image(game.getTextures().findRegion("intro/main-menu"));
 
-		Texture ButtonSprite = new Texture("images//button-sprite.png");
+		Texture buttonSprite = new Texture("images//button-sprite.png");
 
 		background.setFillParent(true);
 		background.getColor().a = 0f;
@@ -93,12 +93,12 @@ public class Name extends AbstractScreen {
 		});
 
 		ButtonStyle style = new ButtonStyle();
-		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
+		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 				0, 320, 70));
-		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite,
+		style.down = new TextureRegionDrawable(new TextureRegion(buttonSprite,
 				0, 69, 320, 70));
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 0, 69, 320, 70));
+				buttonSprite, 0, 69, 320, 70));
 
 		ConfirmButton = new Button(style);
 		ConfirmButton.setDisabled(true);
