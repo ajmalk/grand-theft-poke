@@ -185,14 +185,14 @@ public class Market extends AbstractScreen {
 				game.getPlayer(), myMarket, this,
 				(ItemTile) marketItemGroup.getChecked(), otherTrader);
 
-		Texture ButtonSprite = new Texture("images//button-sprite.png");
+		Texture buttonSprite = new Texture("images//button-sprite.png");
 		ButtonStyle style = new ButtonStyle();
-		style.up = new TextureRegionDrawable(new TextureRegion(ButtonSprite, 0,
+		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 				0, 320, 70));
-		style.down = new TextureRegionDrawable(new TextureRegion(ButtonSprite,
+		style.down = new TextureRegionDrawable(new TextureRegion(buttonSprite,
 				0, 69, 320, 70));
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 0, 69, 320, 70));
+				buttonSprite, 0, 69, 320, 70));
 		backButton = game.getBackButton();
 		backButton.addListener(new ClickListener() {
 			@Override

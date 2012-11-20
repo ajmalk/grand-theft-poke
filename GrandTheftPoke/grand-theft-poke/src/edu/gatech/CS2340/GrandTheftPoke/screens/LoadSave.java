@@ -59,12 +59,12 @@ public class LoadSave extends AbstractScreen {
 		gameButton.setSkin(game.getSkin());
 		gameButton.add("New Game");
 
-		Button LoadButton = new Button(new TextureRegionDrawable(
+		Button loadButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		LoadButton.setSkin(game.getSkin());
-		LoadButton.add("Load Game");
+		loadButton.setSkin(game.getSkin());
+		loadButton.add("Load Game");
 
 		gameButton.addListener(new ClickListener() {
 			@Override
@@ -72,7 +72,7 @@ public class LoadSave extends AbstractScreen {
 				game.setScreen(game.getNameScreen());
 			}
 		});
-		LoadButton.addListener(new ClickListener() {
+		loadButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setScreen(game.getMarketScreen());
@@ -84,7 +84,7 @@ public class LoadSave extends AbstractScreen {
 		stage.addActor(table);
 		table.add(gameButton);
 		table.row();
-		table.add(LoadButton);
+		table.add(loadButton);
 
 	}
 

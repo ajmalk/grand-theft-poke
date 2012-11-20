@@ -100,7 +100,7 @@ public class Battle extends AbstractScreen {
 		table = new Table(game.getSkin());
 		table.setFillParent(true);
 
-		Texture ButtonSprite = new Texture("images//icons//battle.png");
+		Texture buttonSprite = new Texture("images//icons//battle.png");
 
 		background = new Texture("images//icons//battle.png");
 
@@ -113,8 +113,8 @@ public class Battle extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 
 		flee = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 480, 586, 179, 44)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 480, 585, 179, 44)));
+				buttonSprite, 480, 586, 179, 44)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 480, 585, 179, 44)));
 		flee.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -125,8 +125,8 @@ public class Battle extends AbstractScreen {
 		});
 
 		attack = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 480, 512, 179, 44)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 480, 511, 179, 44)));
+				buttonSprite, 480, 512, 179, 44)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 480, 511, 179, 44)));
 		attack.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {

@@ -89,7 +89,7 @@ public class EncounterScreen extends AbstractScreen {
 
 		background = new Texture("images//icons//encounter.png");
 
-		Texture ButtonSprite = new Texture("images//icons//encounter.png");
+		Texture buttonSprite = new Texture("images//icons//encounter.png");
 		stage.clear();
 
 		backgroundImage = new Image(background);
@@ -98,8 +98,8 @@ public class EncounterScreen extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 
 		trade = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 75, 97, 283, 555)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 75, 96, 283, 555)));
+				buttonSprite, 75, 97, 283, 555)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 75, 96, 283, 555)));
 		if (myPerson instanceof Trader) {
 			trade.addListener(new ClickListener() {
 				@Override
@@ -114,8 +114,8 @@ public class EncounterScreen extends AbstractScreen {
 		}
 
 		fight = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 358, 97, 283, 555)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 358, 96, 283, 555)));
+				buttonSprite, 358, 97, 283, 555)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 358, 96, 283, 555)));
 		fight.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -124,8 +124,8 @@ public class EncounterScreen extends AbstractScreen {
 		});
 
 		flee = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 641, 97, 283, 555)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 641, 96, 283, 555)));
+				buttonSprite, 641, 97, 283, 555)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 641, 96, 283, 555)));
 		flee.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
