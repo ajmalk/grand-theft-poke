@@ -72,7 +72,7 @@ public class GTPoke extends Game {
 	/**
 	 * Field playerName.
 	 */
-	private final String playerName = "";
+	private String playerName = "";
 
 	/**
 	 * Field thePlayer.

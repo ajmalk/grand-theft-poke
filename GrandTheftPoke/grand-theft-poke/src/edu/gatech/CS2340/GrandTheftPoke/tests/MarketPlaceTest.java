@@ -24,48 +24,18 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
  * 
  */
 public class MarketPlaceTest {
-	/**
-	 * Field myMarket.
-	 */
 	private MarketPlace myMarket;
-<<<<<<< HEAD
-	/**
-	 * Field person.
-	 */
-=======
 
->>>>>>> branch 'master' /**
-  * Field https.
-  */
- of https://github.com/ajmalk/grand-theft-poke.git
-	/**
-	 * Field person.
-	 */
 	private Person person;
-<<<<<<< HEAD
-	/**
-	 * Field itemsInstance.
-	 */
-=======
 
->>>>>>> branch 'master' /**
-  * Field https.
-  */
- of https://github.com/ajmalk/grand-theft-poke.git
-	/**
-	 * Field itemsInstance.
-	 */
 	private GlobalItemReference itemsInstance;
 
-	/**
-	 * Method setUp.
-	
-	 * @throws Exception */
 	@Before
 	public void setUp() {
 		itemsInstance = new GlobalItemReference();
 
-		final HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
+		final HashMap<Item, MarketPlaceItem> myStock = 
+				new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
@@ -104,9 +74,6 @@ public class MarketPlaceTest {
 
 	}
 
-	/**
-	 * Method testBasicBuy.
-	 */
 	@Test
 	/**
 	 * tests basic buy
@@ -126,9 +93,6 @@ public class MarketPlaceTest {
 		System.out.println("/////////////////////////");
 	}
 
-	/**
-	 * Method testBasicSell.
-	 */
 	@Test
 	/**
 	 * tests basic sell
@@ -148,9 +112,6 @@ public class MarketPlaceTest {
 		System.out.println("/////////////////////////");
 	}
 
-	/**
-	 * Method testBuyAndSell.
-	 */
 	@Test
 	/**
 	 * tests buying and selling
@@ -252,22 +213,7 @@ public class MarketPlaceTest {
 						itemsInstance.getHealthPotion(), 6)));
 
 	}
-<<<<<<< HEAD
-	
-	/**
-	 * Method toString.
-	 * @return String
-	 */
-=======
 
->>>>>>> branch 'master' /**
-  * Field https.
-  */
- of https://github.com/ajmalk/grand-theft-poke.git
-	/**
-	 * Method toString.
-	 * @return String
-	 */
 	@Override
 	public String toString() {
 		return "MarketPlaceTest";
