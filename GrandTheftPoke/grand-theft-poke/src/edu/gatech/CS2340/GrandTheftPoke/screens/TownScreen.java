@@ -133,8 +133,8 @@ public class TownScreen extends AbstractScreen {
 		pokeCenterButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				if (game.getPlayer().getHealth() != game.getPlayer()
-						.getMaxHealth()
+				if (!(game.getPlayer().getHealth().equals(game.getPlayer()
+						.getMaxHealth()))
 						&& game.getPlayer().getWallet().getMoney() >= 300) {
 					game.getPlayer().setHealth(
 							game.getPlayer().getMaxHealth()
