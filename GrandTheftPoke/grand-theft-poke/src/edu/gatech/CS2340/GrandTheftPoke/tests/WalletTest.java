@@ -9,11 +9,12 @@ import org.junit.Test;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Wallet;
 
 public class WalletTest extends junit.framework.TestCase {
-	private final float AMOUNT = 10;;
+	private final float AMOUNT = 10;
 	/**
 	 * toString
 	 * @return the name of the class
 	 */
+	@Override
 	public String toString() {
 		return "WalletTest";
 	}
