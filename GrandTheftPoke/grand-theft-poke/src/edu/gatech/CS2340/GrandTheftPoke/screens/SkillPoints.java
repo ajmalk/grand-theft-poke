@@ -40,6 +40,7 @@ public class SkillPoints extends AbstractScreen {
 	private Slider strengthSlider, staminaSlider, agilitySlider, tradeSlider;
 
 	private Button ConfirmButton;
+
 	private Table table;
 
 	/**

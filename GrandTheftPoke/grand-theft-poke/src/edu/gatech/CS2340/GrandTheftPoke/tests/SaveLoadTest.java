@@ -18,7 +18,7 @@ import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 public class SaveLoadTest {
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 	}
 
 	public GTPoke makeNewGame(String name, Integer strength, Integer agility,

@@ -30,21 +30,35 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 public class MapScreen extends AbstractScreen {
 
 	private Texture background;
+
 	private Image backgroundImage;
+
 	private GameMap theMap;
 
 	private TownTile palletTownButton;
+
 	private TownTile viridianCityButton;
+
 	private TownTile pewterCityButton;
+
 	private TownTile ceruleanCityButton;
+
 	private TownTile vermillionCityButton;
+
 	private TownTile lavenderTownButton;
+
 	private TownTile fuchsiaCityButton;
+
 	private TownTile saffronCityButton;
+
 	private TownTile cinnabarIslandButton;
+
 	private TownTile powerPlantButton;
+
 	private TownTile celadonCityButton;
+
 	private Button saveButton;
+
 	private Button backButton;
 
 	/**

@@ -37,14 +37,23 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  */
 public class Market extends AbstractScreen {
 	private MarketPlace myMarket;
+
 	private Backpack playerPack;
+
 	private Table markettable, backpacktable, table;
+
 	private ButtonGroup marketItemGroup;
+
 	private ScrollPane marketStock, backpackStock;
+
 	private ItemDescTile description;
+
 	private Button backButton;
+
 	private Map<Item, ItemTile> backpack, marketplace;
+
 	private Image background;
+
 	private Trader otherTrader;
 
 	/**
@@ -205,10 +214,10 @@ public class Market extends AbstractScreen {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();
 			final ItemTile markettile = new ItemTile(item.getKey(),
 					item.getValue());
-			Integer pack = playerPack.getContents().get(item.getKey());
-			ItemTile backpacktile;
-			backpacktile = new ItemTile(myMarket, item.getKey(), pack,
-					playerPack);
+			//Integer pack = playerPack.getContents().get(item.getKey());
+			//ItemTile backpacktile;
+			//backpacktile = new ItemTile(myMarket, item.getKey(), pack,
+					//playerPack);
 			marketplace.put(item.getKey(), markettile);
 		}
 		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack

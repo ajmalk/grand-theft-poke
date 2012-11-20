@@ -20,14 +20,18 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
  */
 public class MarketPlaceItemDemo extends AbstractScreen {
 	private MarketPlaceItem item = new MarketPlaceItem(500f, 500f);
+
 	private Table table = new Table(game.getSkin());
+
 	private Vector3 touchPos;
+
 	ShapeRenderer renderer;
 
 	@Override
 	public String toString() {
 		return "MarketPlaceItemDemo";
 	}
+
 	/**
 	 * @param game
 	 *            the game being played

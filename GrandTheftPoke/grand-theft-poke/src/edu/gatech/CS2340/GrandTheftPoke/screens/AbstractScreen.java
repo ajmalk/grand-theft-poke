@@ -17,7 +17,9 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  */
 public abstract class AbstractScreen implements Screen {
 	protected final GTPoke game;
+
 	protected final Stage stage;
+
 	private final SpriteBatch batch;
 
 	/**

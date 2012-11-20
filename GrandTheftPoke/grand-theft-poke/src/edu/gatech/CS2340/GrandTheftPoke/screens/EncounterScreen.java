@@ -26,11 +26,15 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 public class EncounterScreen extends AbstractScreen {
 
 	private Texture background;
+
 	private Image backgroundImage;
+
 	private GTPoke game;
 
 	private Button trade;
+
 	private Button fight;
+
 	private Button flee;
 
 	private Person myPerson;

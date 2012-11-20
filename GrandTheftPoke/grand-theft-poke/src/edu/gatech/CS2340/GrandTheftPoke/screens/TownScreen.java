@@ -22,15 +22,25 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
 public class TownScreen extends AbstractScreen {
 
 	private Table table;
+
 	private Table healthTable;
+
 	private Table bp;
+
 	private Image townImage;
+
 	private Image healthImage;
+
 	private Button mapButton;
+
 	private Button pokeCenterButton;
+
 	private Button marketPlaceButton;
+
 	private Button gymLeaderButton;
+
 	private Button backPackButton;
+
 	private String town;
 
 	/**

@@ -21,7 +21,6 @@ public class Trader extends Person {
 	private MarketPlace personalMarket;
 	
 	private GlobalItemReference itemsInstance;
-	
 
 	/**
 	 * @param name

@@ -26,12 +26,17 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 public class Battle extends AbstractScreen {
 
 	private GTPoke game;
+
 	private Texture background;
+
 	private Image backgroundImage;
+
 	private Person myPerson;
+
 	private Random rand;
 
 	private Button attack;
+
 	private Button flee;
 
 	private int turnCount;

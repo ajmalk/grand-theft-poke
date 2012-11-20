@@ -26,9 +26,13 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  */
 public class Name extends AbstractScreen {
 	private Image background;
+
 	private Button ConfirmButton;
+
 	private TextField myName;
+
 	private String playerName = "";
+
 	private Table table;
 
 	/**

@@ -55,11 +55,13 @@ public class GTPoke extends Game {
 	 * (value is 80)
 	 */
 	private static final int INITIAL_RANGE = 80;
+
 	/**
 	 * Field INITIAL_CARRY.
 	 * (value is 30)
 	 */
 	private static final int INITIAL_CARRY = 30;
+
 	/**
 	 * Field INITIAL_HEALTH.
 	 * (value is 100)
@@ -70,53 +72,62 @@ public class GTPoke extends Game {
 	 * Field playerName.
 	 */
 	private String playerName = "";
+
 	/**
 	 * Field thePlayer.
 	 */
 	private Player thePlayer;
+
 	/**
 	 * Field items.
 	 */
 	private GlobalItemReference items;
+
 	/**
 	 * Field theMap.
 	 */
 	private GameMap theMap;
+
 	/**
 	 * Field controller.
 	 */
 	private Turn controller;
+
 	/**
 	 * Field atlas.
 	 */
 	private TextureAtlas atlas;
+
 	/**
 	 * Field xstream.
 	 */
 	private XStream xstream;
+
 	/**
 	 * Field saveFile.
 	 */
 	private FileHandle saveFile;
+
 	/**
 	 * Field statusBar.
 	 */
 	private Table statusBar;
+
 	/**
 	 * Field skin.
 	 */
 	private Skin skin;
+
 	/**
 	 * Field ButtonSprite.
 	 */
 	private static Texture ButtonSprite;
-	/**
-	 * Field prevScreen.
-	 */
+
 	/**
 	 * Field nextScreen.
 	 */
 	private Screen nextScreen, prevScreen;
+
 	/**
 	 * Field healthBar.
 	 */
