@@ -219,7 +219,7 @@ public class Market extends AbstractScreen {
 		int col = 0;
 		markettable.clear();
 		marketItemGroup = new ButtonGroup();
-		for (Iterator<Map.Entry<Item, ItemTile>> i = marketplace.entrySet()
+		for (final Iterator<Map.Entry<Item, ItemTile>> i = marketplace.entrySet()
 				.iterator(); i.hasNext();) {
 			final Map.Entry<Item, ItemTile> item = i.next();
 			if (item.getValue().getStock() != 0) {
@@ -234,7 +234,7 @@ public class Market extends AbstractScreen {
 		col = 0;
 		backpacktable.clear();
 
-		for (Iterator<java.util.Map.Entry<Item, ItemTile>> i = backpack
+		for (final Iterator<java.util.Map.Entry<Item, ItemTile>> i = backpack
 				.entrySet().iterator(); i.hasNext();) {
 			final Entry<Item, ItemTile> item = i.next();
 			if (item.getValue().getStock() != null) {
@@ -251,7 +251,7 @@ public class Market extends AbstractScreen {
 	 * updates items in the market
 	 */
 	private void updatetables() {
-		for (Iterator<Map.Entry<Item, MarketPlaceItem>> i = myMarket.iterator(); i
+		for (final Iterator<Map.Entry<Item, MarketPlaceItem>> i = myMarket.iterator(); i
 				.hasNext();) {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();
 			final ItemTile markettile = new ItemTile(item.getKey(),
@@ -262,7 +262,7 @@ public class Market extends AbstractScreen {
 					//playerPack);
 			marketplace.put(item.getKey(), markettile);
 		}
-		for (Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
+		for (final Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
 				.getContents().entrySet().iterator(); i.hasNext();) {
 			final java.util.Map.Entry<Item, Integer> item = i.next();
 			ItemTile tile = new ItemTile(myMarket, item.getKey(),
@@ -287,7 +287,7 @@ public class Market extends AbstractScreen {
 	public void render(float delta) {
 		super.render(delta);
 		game.update();
-		for (Iterator<Entry<Item, ItemTile>> iter = marketplace.entrySet()
+		for (final Iterator<Entry<Item, ItemTile>> iter = marketplace.entrySet()
 				.iterator(); iter.hasNext();) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
@@ -304,7 +304,7 @@ public class Market extends AbstractScreen {
 			}
 		}
 
-		for (Iterator<Entry<Item, ItemTile>> iter = backpack.entrySet()
+		for (final Iterator<Entry<Item, ItemTile>> iter = backpack.entrySet()
 				.iterator(); iter.hasNext();) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();

@@ -37,7 +37,7 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 	/**
 	 * Field renderer.
 	 */
-	private ShapeRenderer renderer;
+	private final ShapeRenderer renderer;
 
 	/**
 	 * Method toString.

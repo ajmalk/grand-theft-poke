@@ -51,11 +51,6 @@ public class TownScreen extends AbstractScreen {
 	private Image townImage;
 
 	/**
-	 * Field healthImage.
-	 */
-	private Image healthImage;
-
-	/**
 	 * Field mapButton.
 	 */
 	private Button mapButton;
@@ -114,12 +109,11 @@ public class TownScreen extends AbstractScreen {
 
 		townImage = new Image(game.getTextures().findRegion("town/" + town));
 
-		final Texture buttonSprite = new Texture("images//icons//PalletTown.png");
-		final Texture backpackSprite = new Texture("images//icons//backpackIcon.png");
+//		final Texture buttonSprite = new Texture("images//icons//PalletTown.png");
 		stage.clear();
 
-		healthImage = new Image(new TextureRegionDrawable(new TextureRegion(
-				buttonSprite, 183, 707, 667, 63)));
+//		healthImage = new Image(new TextureRegionDrawable(new TextureRegion(
+//				buttonSprite, 183, 707, 667, 63)));
 
 		mapButton = game.getButton("town/map");
 
@@ -151,12 +145,12 @@ public class TownScreen extends AbstractScreen {
 			}
 		});
 		backPackButton = game.getButton("town/backpack");
-		backPackButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				//
-			}
-		});
+//		backPackButton.addListener(new ClickListener() {
+//			@Override
+//			public void clicked(InputEvent event, float x, float y) {
+//				//
+//			}
+//		});
 		gymLeaderButton = game.getButton("town/gymleader");
 		gymLeaderButton.addListener(new ClickListener() {
 			@Override

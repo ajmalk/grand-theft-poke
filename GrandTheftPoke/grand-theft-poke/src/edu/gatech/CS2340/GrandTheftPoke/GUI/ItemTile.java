@@ -64,7 +64,7 @@ public class ItemTile extends Button {
 	/**
 	 * Field stockLabel.
 	 */
-	private Label stockLabel, price;
+	private final Label stockLabel, price;
 
 	/**
 	 * Field pack.
@@ -198,9 +198,8 @@ public class ItemTile extends Button {
 	}
 
 	/**
-	
-	 * @return update item stock */
-	public boolean update() {
+	*/
+	public void update() {
 		if (backpackStock != null && backpackStock == -1) {
 			stockLabel.setText(stock.getStock().toString());
 			price.setText("$" + ((Float) (1.1f * stock.getPrice())).toString());
@@ -208,6 +207,5 @@ public class ItemTile extends Button {
 			stockLabel.setText(pack.getContents().get(item).toString());
 			price.setText("$" + ((Float) (0.9f * stock.getPrice())).toString());
 		}
-		return true;
 	}
 }

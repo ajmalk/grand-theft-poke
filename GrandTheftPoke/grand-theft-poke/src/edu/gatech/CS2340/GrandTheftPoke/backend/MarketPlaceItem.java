@@ -117,7 +117,7 @@ public class MarketPlaceItem {
 	
 	 * @return the stock */
 	public Integer getStock() {
-		return (int) Math.floor(stock - 500);
+		return (int)(stock - 500);
 	}
 
 	/**
@@ -225,11 +225,11 @@ public class MarketPlaceItem {
 					* Math.pow(EQIL_PRICE, CONS_ELASTICITY)
 					* Math.pow(price, PROD_ELASTICITY - 1);
 			temp += price;
-			if (Math.abs(price - temp) < 0.00001) {
-				break;
-			}
+//			if (Math.abs(price - temp) < 0.00001) {
+//				break;
+//			}
 			price = temp;
-		} while (true);
+		} while (Math.abs(price - temp) > 0.00001);
 		return price;
 	}
 

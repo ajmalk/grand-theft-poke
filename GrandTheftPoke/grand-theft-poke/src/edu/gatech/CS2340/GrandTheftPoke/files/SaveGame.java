@@ -30,24 +30,18 @@ public class SaveGame {
 	/**
 	 * Field map.
 	 */
-	private GameMap map;
+	private final GameMap map;
 
 	/**
 	 * Field player.
 	 */
-	private Player player;
+	private final Player player;
 
 	/**
 	 * Field controller.
 	 */
 	@XStreamOmitField
-	private Turn controller;
-
-	/**
-	 * Empty default constructor
-	 */
-	public SaveGame() {
-	}
+	private final Turn controller;
 
 	/**
 	 * @param player

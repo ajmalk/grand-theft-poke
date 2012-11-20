@@ -173,7 +173,7 @@ public class GTPoke extends Game {
 
 		statusBar.pad(25);
 		statusBar.setPosition(
-				(Gdx.graphics.getWidth() - statusBar.getWidth()) / 2, 0);
+				(int)(Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 0);
 		final Label health = new Label("Health: " + thePlayer.getHealth().toString(),
 				skin);
 		final Label money = new Label("$" + thePlayer.getWallet().getMoney(), skin);
@@ -328,16 +328,6 @@ public class GTPoke extends Game {
 		thePlayer = new Player(playerName, strength, agility, trade, stamina,
 				INITIAL_HEALTH, INITIAL_RANGE, INITIAL_CARRY, theMap);
 		controller = new Turn(theMap, thePlayer, items);
-	}
-
-	/**
-	 * @param game
-	 *            the current game
-	
-	 * @return boolean */
-	public boolean equals(GTPoke game) {
-		return theMap.equals(game.getMap()) && thePlayer.equals(game.thePlayer);
-
 	}
 
 	/**

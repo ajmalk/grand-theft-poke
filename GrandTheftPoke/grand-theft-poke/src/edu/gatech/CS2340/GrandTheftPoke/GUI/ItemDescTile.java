@@ -38,7 +38,7 @@ public class ItemDescTile extends Table {
 	@Override
 	public String toString() {
 		return "ItemDescTile [item=" + item + ", stockInfo=" + stockInfo
-				+ ", pack=" + pack + ", backpackStock=" + backpackStock
+				+ ", backpackStock=" + backpackStock
 				+ ", icon=" + icon + ", name=" + name + ", description="
 				+ description + ", stock=" + stock + ", price=" + price
 				+ ", buy=" + buy + ", sell=" + sell + ", buyListener="
@@ -58,10 +58,10 @@ public class ItemDescTile extends Table {
 	 */
 	private MarketPlaceItem stockInfo;
 
-	/**
-	 * Field pack.
-	 */
-	private Backpack pack;
+//	/**
+//	 * Field pack.
+//	 */
+//	private Backpack pack;
 
 	/**
 	 * Field backpackStock.
@@ -76,17 +76,17 @@ public class ItemDescTile extends Table {
 	/**
 	 * Field name.
 	 */
-	private Label name, description, stock, price;
+	private final Label name, description, stock, price;
 
 	/**
 	 * Field buy.
 	 */
-	private Button buy, sell;
+	private final Button buy, sell;
 
 	/**
 	 * Field buyListener.
 	 */
-	private ClickListener buyListener, sellListener;
+	private final ClickListener buyListener, sellListener;
 
 	/**
 	 * Field buysell.
@@ -363,8 +363,6 @@ public class ItemDescTile extends Table {
 		price.setText("$" + ((Float) (1.1f * stockInfo.getPrice())).toString());
 		buysell.clear();
 		buysell.add(sell);
-		// sell.setVisible(true);
-		// buy.setVisible(false);
 	}
 	
 	

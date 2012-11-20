@@ -151,7 +151,7 @@ public class MapScreen extends AbstractScreen {
 				townTileSprite, 0, 46, 36, 45));
 		townTileStyle.disabled = new TextureRegionDrawable(new TextureRegion(
 				townTileSprite, 0, 91, 36, 45));
-		for(Iterator<Town> i = game.getMap().getTownSet().iterator(); i.hasNext();) {
+		for(final Iterator<Town> i = game.getMap().getTownSet().iterator(); i.hasNext();) {
 			Town theTown = i.next();
 
 			if (theTown.toString().equals("Pallet Town")) {
