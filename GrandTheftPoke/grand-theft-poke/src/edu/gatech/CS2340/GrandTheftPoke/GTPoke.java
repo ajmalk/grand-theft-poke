@@ -122,7 +122,7 @@ public class GTPoke extends Game {
 	/**
 	 * Field buttonSprite.
 	 */
-	private static Texture buttonSprite;
+	private static Texture ButtonSprite;
 
 	/**
 	 * Field nextScreen.
@@ -152,7 +152,7 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 200, 150, 200);
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 400, 150, 200);
-		buttonSprite = new Texture(map);
+		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
 
 		new ArrayList<Person>();
@@ -359,7 +359,7 @@ public class GTPoke extends Game {
 	
 	 * @return buttonSprite */
 	public static Texture getButtonSprite() {
-		return buttonSprite;
+		return ButtonSprite;
 	}
 
 	/**

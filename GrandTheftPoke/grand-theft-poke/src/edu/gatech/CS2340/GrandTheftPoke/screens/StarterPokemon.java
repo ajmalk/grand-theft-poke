@@ -56,7 +56,7 @@ public class StarterPokemon extends AbstractScreen {
 	/**
 	 * Field confirmY.
 	 */
-	private static final int confirmY = 10;
+	private static final int COMFIRMY = 10;
 
 	/**
 	 * Field table.
@@ -139,7 +139,7 @@ public class StarterPokemon extends AbstractScreen {
 		confirmButton = new Button(style);
 		confirmButton.setSkin(game.getSkin());
 		confirmButton.add("Confirm");
-		confirmButton.setPosition(confirmX, confirmY);
+		confirmButton.setPosition(confirmX, COMFIRMY);
 		confirmButton.setDisabled(true);
 		confirmButton.setTouchable(Touchable.disabled);
 
@@ -170,7 +170,7 @@ public class StarterPokemon extends AbstractScreen {
 
 		stage.addActor(table);
 		stage.addActor(title);
-		confirmButton.setPosition(confirmX, confirmY);
+		confirmButton.setPosition(confirmX, COMFIRMY);
 		stage.addActor(confirmButton);
 	}
 
