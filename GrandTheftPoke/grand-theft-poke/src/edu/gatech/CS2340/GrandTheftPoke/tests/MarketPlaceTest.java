@@ -178,5 +178,10 @@ public class MarketPlaceTest {
 				itemsInstance.getHealthPotion(), 6)));
 
 	}
+	
+	@Override
+	public String toString() {
+		return "MarketPlaceTest";
+	}
 
 }
