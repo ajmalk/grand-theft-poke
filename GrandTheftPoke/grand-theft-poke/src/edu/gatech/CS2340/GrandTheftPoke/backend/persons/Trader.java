@@ -20,10 +20,6 @@ public class Trader extends Person {
 
 	private MarketPlace personalMarket;
 	
-	private Map<Item, MarketPlaceItem> stock;
-	
-	private float tradeMultiplier;
-	
 	private GlobalItemReference itemsInstance;
 	
 
@@ -47,35 +43,14 @@ public class Trader extends Person {
 				money, theMap);
 
 		super.setCurrent(theMap.getRandomTown());
-		tradeMultiplier = 1;
 		this.itemsInstance = itemsInstance;
-	}
-
-	/**
-	 * @param other
-	 */
-	public void compareTrade(Person other) {
-		final int theirTrade = other.getTrade();
-		tradeMultiplier = ((float) (getTrade())) / theirTrade;
 	}
 
 	/**
 	 * initializes market
 	 */
 	public void initializeMarket() {
-		/*
-		 * Set<Item> marketStock = getBackpack().getContents().keySet();
-		 * if(marketStock.isEmpty()) { personalMarket = new MarketPlace(new
-		 * HashMap<Item, MarketPlaceItem>()); return; } for(Item i :
-		 * marketStock) { MarketPlaceItem townModel =
-		 * (MarketPlaceItem)getCurrent().getMarket().getStock().get(i);
-		 * if(townModel != null) { stock.put(i, new
-		 * MarketPlaceItem((townModel.getPrice()),
-		 * (float)getBackpack().getContents().get(i))); } else { stock.put(i,
-		 * new MarketPlaceItem(100f,
-		 * (float)getBackpack().getContents().get(i))); } }
-		 */
-
+	
 		final Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(
 				itemsInstance.getHealthPotion(),
@@ -163,7 +138,6 @@ public class Trader extends Person {
 	 * @param quantity
 	 */
 	public void sell(Person other, Item desiredGood, int quantity) {
-		// super.sell(personalMarket, desiredGood, quantity);
 		other.buy(personalMarket, desiredGood, quantity);
 
 	}

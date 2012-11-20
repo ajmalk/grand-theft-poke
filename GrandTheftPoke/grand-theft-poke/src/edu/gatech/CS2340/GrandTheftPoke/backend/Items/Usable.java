@@ -15,7 +15,7 @@ public interface Usable {
 	 * @param person
 	 *            the person to use it on
 	 */
-	public void use(Person person);
+	void use(Person person);
 
 	/**
 	 * unuse an item
@@ -23,7 +23,7 @@ public interface Usable {
 	 * @param person
 	 *            the person to unuse on
 	 */
-	public void unUse(Person person);
+	void unUse(Person person);
 	// public boolean checkForUsage();
 	// public void stageForUsage();
 	// public int getTimer();

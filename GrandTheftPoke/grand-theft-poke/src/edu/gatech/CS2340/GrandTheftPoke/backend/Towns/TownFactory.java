@@ -12,65 +12,65 @@ public interface TownFactory {
 	 * 
 	 * @return PalletTown
 	 */
-	public Town makePalletTown();
+	Town makePalletTown();
 
 	/**
 	 * 
 	 * @return ViridianCity
 	 */
-	public Town makeViridianCity();
+	Town makeViridianCity();
 
 	/**
 	 * 
 	 * @return PewterCity
 	 */
-	public Town makePewterCity();
+	Town makePewterCity();
 
 	/**
 	 * 
 	 * @return CeruleanCity
 	 */
-	public Town makeCeruleanCity();
+	Town makeCeruleanCity();
 
 	/**
 	 * 
 	 * @return SaffronCity
 	 */
-	public Town makeSaffronCity();
+	Town makeSaffronCity();
 
 	/**
 	 * 
 	 * @return CeladonCity
 	 */
-	public Town makeCeladonCity();
+	Town makeCeladonCity();
 
 	/**
 	 * 
 	 * @return LavenderTown
 	 */
-	public Town makeLavenderTown();
+	Town makeLavenderTown();
 
 	/**
 	 * 
 	 * @return VermillionCity
 	 */
-	public Town makeVermillionCity();
+	Town makeVermillionCity();
 
 	/**
 	 * 
 	 * @return FuchsiaCity
 	 */
-	public Town makeFuchsiaCity();
+	Town makeFuchsiaCity();
 
 	/**
 	 * 
 	 * @return CinnibarIsland
 	 */
-	public Town makeCinnabarIsland();
+	Town makeCinnabarIsland();
 
 	/**
 	 * 
 	 * @return PowerPlant
 	 */
-	public Town makePowerPlant();
+	Town makePowerPlant();
 }

@@ -19,7 +19,6 @@ public class SaveLoadTest {
 
 	@Before
 	public void setUp() throws Exception {
-		return;
 	}
 
 	public GTPoke makeNewGame(String name, Integer strength, Integer agility,

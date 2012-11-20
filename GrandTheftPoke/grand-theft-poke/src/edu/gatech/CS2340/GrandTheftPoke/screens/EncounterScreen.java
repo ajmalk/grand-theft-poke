@@ -33,7 +33,6 @@ public class EncounterScreen extends AbstractScreen {
 	private Button fight;
 	private Button flee;
 
-	private Texture title;
 	private Person myPerson;
 
 	private Table table;

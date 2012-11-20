@@ -46,22 +46,18 @@ public abstract class AbstractScreen implements Screen {
 
 	@Override
 	public void show() {
-		return;
 	}
 
 	@Override
 	public void hide() {
-		return;
 	}
 
 	@Override
 	public void pause() {
-		return;
 	}
 
 	@Override
 	public void resume() {
-		return;
 	}
 
 	@Override
