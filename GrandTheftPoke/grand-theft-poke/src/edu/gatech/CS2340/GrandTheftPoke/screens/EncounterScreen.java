@@ -38,7 +38,7 @@ public class EncounterScreen extends AbstractScreen {
 	/**
 	 * Field game.
 	 */
-	private final GTPoke game;
+	private final GTPoke myGame;
 
 	/**
 	 * Field trade.
@@ -73,7 +73,7 @@ public class EncounterScreen extends AbstractScreen {
 	 */
 	public EncounterScreen(GTPoke game, Person encounteredPerson) {
 		super(game);
-		this.game = game;
+		this.myGame = game;
 		myPerson = encounteredPerson;
 		if (myPerson instanceof Trader) {
 			((Trader) myPerson).initializeMarket();
@@ -88,7 +88,7 @@ public class EncounterScreen extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		table = new Table(game.getSkin());
+		table = new Table(myGame.getSkin());
 		table.setFillParent(true);
 
 		background = new Texture("images//icons//encounter.png");
@@ -108,7 +108,7 @@ public class EncounterScreen extends AbstractScreen {
 			trade.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
-					game.setScreen(game.getMarketScreen(
+					myGame.setScreen(myGame.getMarketScreen(
 							((Trader) myPerson).getMarket(), (Trader) myPerson));
 				}
 			});
@@ -123,7 +123,7 @@ public class EncounterScreen extends AbstractScreen {
 		fight.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(game.getBattleScreen(myPerson));
+				myGame.setScreen(myGame.getBattleScreen(myPerson));
 			}
 		});
 
@@ -134,11 +134,11 @@ public class EncounterScreen extends AbstractScreen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				if (myPerson instanceof Trader) {
-					game.setScreen(game.getCurrentTownScreenFromEncounter());
+					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
-				if (game.getPlayer().flee()) {
+				if (myGame.getPlayer().flee()) {
 					System.out.println("true");
-					game.setScreen(game.getCurrentTownScreenFromEncounter());
+					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
 			}
 		});
@@ -153,7 +153,7 @@ public class EncounterScreen extends AbstractScreen {
 		flee.setPosition(641, 116);
 		stage.addActor(flee);
 
-		stage.addActor(game.getStatusBar());
+		stage.addActor(myGame.getStatusBar());
 	}
 
 	/**
@@ -164,6 +164,6 @@ public class EncounterScreen extends AbstractScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		game.update();
+		myGame.update();
 	}
 }

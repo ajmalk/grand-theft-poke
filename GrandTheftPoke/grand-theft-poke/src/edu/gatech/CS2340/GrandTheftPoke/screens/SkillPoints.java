@@ -90,7 +90,7 @@ public class SkillPoints extends AbstractScreen {
 	/**
 	 * Field ConfirmButton.
 	 */
-	private Button ConfirmButton;
+	private Button confirmButton;
 
 	/**
 	 * Field table.
@@ -150,17 +150,17 @@ public class SkillPoints extends AbstractScreen {
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				buttonSprite, 0, 69, 320, 70));
 
-		ConfirmButton = new Button(style);
+		confirmButton = new Button(style);
 
-		ConfirmButton.setSkin(game.getSkin());
-		ConfirmButton.add("Confirm");
-		ConfirmButton.setPosition(700, 10);
-		ConfirmButton.setDisabled(true);
-		ConfirmButton.setTouchable(Touchable.disabled);
+		confirmButton.setSkin(game.getSkin());
+		confirmButton.add("Confirm");
+		confirmButton.setPosition(700, 10);
+		confirmButton.setDisabled(true);
+		confirmButton.setTouchable(Touchable.disabled);
 
-		ConfirmButton.setStyle(style);
+		confirmButton.setStyle(style);
 
-		ConfirmButton.addListener(new ClickListener() {
+		confirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.createPlayer(strength, agility, trade, stamina);
@@ -218,14 +218,14 @@ public class SkillPoints extends AbstractScreen {
 	 * @param value Integer
 	 */
 	private void updateRemainder(Slider slider, Integer value) {
-		ConfirmButton.setDisabled(true);
-		ConfirmButton.setTouchable(Touchable.disabled);
+		confirmButton.setDisabled(true);
+		confirmButton.setTouchable(Touchable.disabled);
 		remainder = max - strength - stamina - agility - trade;
 		remVal.setText(remainder.toString());
 		if (remainder <= 0) {
 			value += remainder;
-			ConfirmButton.setDisabled(false);
-			ConfirmButton.setTouchable(Touchable.enabled);
+			confirmButton.setDisabled(false);
+			confirmButton.setTouchable(Touchable.enabled);
 		}
 		slider.setValue(value);
 	}
@@ -272,7 +272,7 @@ public class SkillPoints extends AbstractScreen {
 		// stage.addActor(nameWindow);
 
 		// stage.addActor(table);
-		stage.addActor(ConfirmButton);
+		stage.addActor(confirmButton);
 
 	}
 

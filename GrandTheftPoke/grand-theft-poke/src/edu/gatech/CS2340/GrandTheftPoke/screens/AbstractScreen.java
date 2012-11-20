@@ -72,7 +72,6 @@ public abstract class AbstractScreen implements Screen {
 	 */
 	@Override
 	public void show() {
-		return;
 	}
 
 	/**
@@ -81,7 +80,6 @@ public abstract class AbstractScreen implements Screen {
 	 */
 	@Override
 	public void hide() {
-		return;
 	}
 
 	/**
@@ -90,7 +88,6 @@ public abstract class AbstractScreen implements Screen {
 	 */
 	@Override
 	public void pause() {
-		return;
 	}
 
 	/**
@@ -99,7 +96,6 @@ public abstract class AbstractScreen implements Screen {
 	 */
 	@Override
 	public void resume() {
-		return;
 	}
 
 	/**

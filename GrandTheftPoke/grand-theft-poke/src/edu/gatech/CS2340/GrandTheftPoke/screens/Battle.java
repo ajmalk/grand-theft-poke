@@ -28,7 +28,7 @@ public class Battle extends AbstractScreen {
 	/**
 	 * the game
 	 */
-	private final GTPoke game;
+	private final GTPoke myGame;
 
 	/**
 	 * the background
@@ -78,7 +78,7 @@ public class Battle extends AbstractScreen {
 	 */
 	public Battle(GTPoke game, Person opponent) {
 		super(game);
-		this.game = game;
+		this.myGame = game;
 		myPerson = opponent;
 		rand = new Random();
 		turnCount = 1;
@@ -102,7 +102,7 @@ public class Battle extends AbstractScreen {
 	public void show() {
 		super.show();
 
-		table = new Table(game.getSkin());
+		table = new Table(myGame.getSkin());
 		table.setFillParent(true);
 
 		final Texture buttonSprite = new Texture("images//icons//battle.png");
@@ -123,8 +123,8 @@ public class Battle extends AbstractScreen {
 		flee.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				if (game.getPlayer().flee()) {
-					game.setScreen(game.getCurrentTownScreenFromEncounter());
+				if (myGame.getPlayer().flee()) {
+					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
 			}
 		});
@@ -136,37 +136,37 @@ public class Battle extends AbstractScreen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 
-				final int speed = game.getPlayer().getAgility();
+				final int speed = myGame.getPlayer().getAgility();
 				final int otherSpeed = myPerson.getAgility();
-				final int damage = game.getPlayer().attack(turnCount);
+				final int damage = myGame.getPlayer().attack(turnCount);
 				final int otherDamage = myPerson.attack(turnCount);
 
 				if (speed > otherSpeed) {
 					myPerson.defend(damage);
-					game.getPlayer().defend(otherDamage);
+					myGame.getPlayer().defend(otherDamage);
 				} else if (speed < otherSpeed) {
-					game.getPlayer().defend(otherDamage);
+					myGame.getPlayer().defend(otherDamage);
 					myPerson.defend(damage);
 				} else if (rand.nextBoolean()) {
 					myPerson.defend(damage);
-					game.getPlayer().defend(otherDamage);
+					myGame.getPlayer().defend(otherDamage);
 
 				} else {
-					game.getPlayer().defend(otherDamage);
+					myGame.getPlayer().defend(otherDamage);
 					myPerson.defend(damage);
 				}
 				turnCount++;
 				if (myPerson.getHealth() <= 0) {
-					game.getPlayer().win(myPerson);
-					game.setScreen(game.getCurrentTownScreenFromEncounter());
+					myGame.getPlayer().win(myPerson);
+					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 					return;
 				}
-				if (game.getPlayer().getHealth() <= 0) {
-					myPerson.win(game.getPlayer());
-					game.setScreen(game.getCurrentTownScreenFromEncounter());
+				if (myGame.getPlayer().getHealth() <= 0) {
+					myPerson.win(myGame.getPlayer());
+					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 					return;
 				}
-				System.out.println(game.getPlayer().getHealth());
+				System.out.println(myGame.getPlayer().getHealth());
 				System.out.println(myPerson.getHealth());
 			}
 		});
@@ -177,13 +177,13 @@ public class Battle extends AbstractScreen {
 
 		attack.setPosition(480, 212);
 		stage.addActor(attack);
-		stage.addActor(game.getStatusBar());
+		stage.addActor(myGame.getStatusBar());
 
 	}
 
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		game.update();
+		myGame.update();
 	}
 }

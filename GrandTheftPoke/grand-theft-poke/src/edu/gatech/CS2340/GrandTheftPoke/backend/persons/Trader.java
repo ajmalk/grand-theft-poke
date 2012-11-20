@@ -124,27 +124,4 @@ public class Trader extends Person {
 	public MarketPlace getMarket() {
 		return personalMarket;
 	}
-
-	/**
-	 * @param other
-	 *            other person
-	 * @param desiredGood
-	 * @param quantity
-	 */
-	public void buy(Person other, Item desiredGood, int quantity) {
-		other.sell(personalMarket, desiredGood, quantity);
-
-	}
-
-	/**
-	 * @param other
-	 *            other person
-	 * @param desiredGood
-	 * @param quantity
-	 */
-	public void sell(Person other, Item desiredGood, int quantity) {
-		other.buy(personalMarket, desiredGood, quantity);
-
-	}
-
 }

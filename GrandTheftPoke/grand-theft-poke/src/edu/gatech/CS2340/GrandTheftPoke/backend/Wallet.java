@@ -67,16 +67,6 @@ public class Wallet {
 	}
 
 	/**
-	 * Returns if the inputted wallet is equal to the current wallet
-	 * 
-	 * @param wallet
-	
-	 * @return boolean */
-	public boolean equals(Wallet wallet) {
-		return money == wallet.money;
-	}
-
-	/**
 	 * Adds or subtracts money from the wallet; mostly used for buying and
 	 * selling goods or services.
 	 * 

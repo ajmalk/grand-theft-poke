@@ -46,7 +46,7 @@ public class StarterPokemon extends AbstractScreen {
 	/**
 	 * Field ConfirmButton.
 	 */
-	private Button ConfirmButton;
+	private Button confirmButton;
 
 	/**
 	 * Field confirmX.
@@ -56,7 +56,7 @@ public class StarterPokemon extends AbstractScreen {
 	/**
 	 * Field confirmY.
 	 */
-	private final int confirmY = 10;
+	private static final int confirmY = 10;
 
 	/**
 	 * Field table.
@@ -96,8 +96,8 @@ public class StarterPokemon extends AbstractScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
 				confirmX = 25;
-				ConfirmButton.setDisabled(false);
-				ConfirmButton.setTouchable(Touchable.enabled);
+				confirmButton.setDisabled(false);
+				confirmButton.setTouchable(Touchable.enabled);
 			}
 		});
 
@@ -109,8 +109,8 @@ public class StarterPokemon extends AbstractScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
 				confirmX = 356;
-				ConfirmButton.setDisabled(false);
-				ConfirmButton.setTouchable(Touchable.enabled);
+				confirmButton.setDisabled(false);
+				confirmButton.setTouchable(Touchable.enabled);
 			}
 		});
 
@@ -122,8 +122,8 @@ public class StarterPokemon extends AbstractScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				// game.setScreen(game.getNameScreen());
 				confirmX = 675;
-				ConfirmButton.setDisabled(false);
-				ConfirmButton.setTouchable(Touchable.enabled);
+				confirmButton.setDisabled(false);
+				confirmButton.setTouchable(Touchable.enabled);
 			}
 		});
 
@@ -136,16 +136,16 @@ public class StarterPokemon extends AbstractScreen {
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				confirmButtonSprite, 0, 69, 320, 70));
 
-		ConfirmButton = new Button(style);
-		ConfirmButton.setSkin(game.getSkin());
-		ConfirmButton.add("Confirm");
-		ConfirmButton.setPosition(confirmX, confirmY);
-		ConfirmButton.setDisabled(true);
-		ConfirmButton.setTouchable(Touchable.disabled);
+		confirmButton = new Button(style);
+		confirmButton.setSkin(game.getSkin());
+		confirmButton.add("Confirm");
+		confirmButton.setPosition(confirmX, confirmY);
+		confirmButton.setDisabled(true);
+		confirmButton.setTouchable(Touchable.disabled);
 
-		ConfirmButton.setStyle(style);
+		confirmButton.setStyle(style);
 
-		ConfirmButton.addListener(new ClickListener() {
+		confirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setScreen(game.getCurrentTownScreenFromEncounter());
@@ -170,8 +170,8 @@ public class StarterPokemon extends AbstractScreen {
 
 		stage.addActor(table);
 		stage.addActor(title);
-		ConfirmButton.setPosition(confirmX, confirmY);
-		stage.addActor(ConfirmButton);
+		confirmButton.setPosition(confirmX, confirmY);
+		stage.addActor(confirmButton);
 	}
 
 

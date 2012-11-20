@@ -33,7 +33,7 @@ public class Name extends AbstractScreen {
 	/**
 	 * Field ConfirmButton.
 	 */
-	private Button ConfirmButton;
+	private Button confirmButton;
 
 	/**
 	 * Field myName.
@@ -96,11 +96,11 @@ public class Name extends AbstractScreen {
 					}
 
 					if (checkName(playerName)) {
-						ConfirmButton.setDisabled(false);
-						ConfirmButton.setTouchable(Touchable.enabled);
+						confirmButton.setDisabled(false);
+						confirmButton.setTouchable(Touchable.enabled);
 					} else {
-						ConfirmButton.setDisabled(true);
-						ConfirmButton.setTouchable(Touchable.disabled);
+						confirmButton.setDisabled(true);
+						confirmButton.setTouchable(Touchable.disabled);
 					}
 
 					if (key == 13 && checkName(playerName)) {
@@ -119,15 +119,15 @@ public class Name extends AbstractScreen {
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				buttonSprite, 0, 69, 320, 70));
 
-		ConfirmButton = new Button(style);
-		ConfirmButton.setDisabled(true);
-		ConfirmButton.setTouchable(Touchable.disabled);
+		confirmButton = new Button(style);
+		confirmButton.setDisabled(true);
+		confirmButton.setTouchable(Touchable.disabled);
 
-		ConfirmButton.setSkin(game.getSkin());
-		ConfirmButton.add("Confirm");
-		ConfirmButton.setPosition(700, 10);
+		confirmButton.setSkin(game.getSkin());
+		confirmButton.add("Confirm");
+		confirmButton.setPosition(700, 10);
 
-		ConfirmButton.addListener(new ClickListener() {
+		confirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				game.setPlayerName(playerName);
@@ -153,7 +153,7 @@ public class Name extends AbstractScreen {
 		table.row();
 
 		stage.addActor(table);
-		stage.addActor(ConfirmButton);
+		stage.addActor(confirmButton);
 
 	}
 
