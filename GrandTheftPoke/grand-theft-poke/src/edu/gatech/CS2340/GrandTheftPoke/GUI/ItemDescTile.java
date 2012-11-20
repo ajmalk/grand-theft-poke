@@ -241,6 +241,15 @@ public class ItemDescTile extends Table {
 				customer.buy(market, item, 1);
 			}
 		}
+		
+		/**
+		 * toString
+		 * @return String
+		 */
+		@Override
+		public String toString() {
+			return "listener1";
+		}
 	}
 
 	/**
@@ -270,6 +279,15 @@ public class ItemDescTile extends Table {
 			} else {
 				customer.sell(market, item, 1);
 			}
+		}
+		
+		/**
+		 * toString
+		 * @return String
+		 */
+		@Override
+		public String toString() {
+			return "listener2";
 		}
 	}
 
@@ -348,4 +366,6 @@ public class ItemDescTile extends Table {
 		// sell.setVisible(true);
 		// buy.setVisible(false);
 	}
+	
+	
 }

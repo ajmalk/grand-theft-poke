@@ -527,4 +527,13 @@ public class GTPoke extends Game {
 	public Screen getBattleScreen(Person myPerson) {
 		return new Battle(this, myPerson);
 	}
+	
+	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "GTPoke";
+	}
 }

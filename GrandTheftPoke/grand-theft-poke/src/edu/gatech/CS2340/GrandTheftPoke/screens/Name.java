@@ -26,6 +26,15 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  */
 public class Name extends AbstractScreen {
 	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "Name";
+	}
+	
+	/**
 	 * Field background.
 	 */
 	private Image background;

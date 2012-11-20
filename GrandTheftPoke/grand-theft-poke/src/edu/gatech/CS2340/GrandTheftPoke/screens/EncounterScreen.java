@@ -26,6 +26,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 public class EncounterScreen extends AbstractScreen {
 
 	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "EncounterScreen";
+	}
+	/**
 	 * Field background.
 	 */
 	private Texture background;

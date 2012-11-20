@@ -54,7 +54,6 @@ public class AgilityVitamin extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
-	
 	 * @return String */
 	@Override
 	public String getFileName() {

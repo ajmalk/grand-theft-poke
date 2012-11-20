@@ -24,6 +24,15 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  */
 public class MainMenu extends AbstractScreen {
 	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "MainMenu";
+	}
+	
+	/**
 	 * Field background.
 	 */
 	private Image background;

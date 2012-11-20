@@ -37,6 +37,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  */
 public class Market extends AbstractScreen {
 	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "Market";
+	}
+	/**
 	 * Field myMarket.
 	 */
 	private MarketPlace myMarket;

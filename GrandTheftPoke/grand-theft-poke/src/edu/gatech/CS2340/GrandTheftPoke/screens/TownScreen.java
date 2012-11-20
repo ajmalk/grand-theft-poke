@@ -20,6 +20,15 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
  * 
  */
 public class TownScreen extends AbstractScreen {
+	
+	/**
+	 * toString
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "TownScreen";
+	}
 
 	/**
 	 * Field table.
@@ -145,6 +154,7 @@ public class TownScreen extends AbstractScreen {
 		backPackButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
+				//
 			}
 		});
 		gymLeaderButton = game.getButton("town/gymleader");
