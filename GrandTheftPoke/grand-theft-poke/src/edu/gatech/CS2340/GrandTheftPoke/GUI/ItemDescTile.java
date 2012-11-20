@@ -31,6 +31,10 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
  * 
  */
 public class ItemDescTile extends Table {
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "ItemDescTile [item=" + item + ", stockInfo=" + stockInfo
@@ -44,24 +48,81 @@ public class ItemDescTile extends Table {
 				+ ", tile=" + tile + "]";
 	}
 
+	/**
+	 * Field item.
+	 */
 	private Item item;
+	/**
+	 * Field stockInfo.
+	 */
 	private MarketPlaceItem stockInfo;
+	/**
+	 * Field pack.
+	 */
 	private Backpack pack;
+	/**
+	 * Field backpackStock.
+	 */
 	private Integer backpackStock;
+	/**
+	 * Field icon.
+	 */
 	private Image icon;
+	/**
+	 * Field price.
+	 */
+	/**
+	 * Field stock.
+	 */
+	/**
+	 * Field description.
+	 */
+	/**
+	 * Field name.
+	 */
 	private Label name, description, stock, price;
+	/**
+	 * Field sell.
+	 */
+	/**
+	 * Field buy.
+	 */
 	private Button buy, sell;
+	/**
+	 * Field sellListener.
+	 */
+	/**
+	 * Field buyListener.
+	 */
 	private ClickListener buyListener, sellListener;
+	/**
+	 * Field buysell.
+	 */
 	private Table buysell;
+	/**
+	 * Field customer.
+	 */
 	private Person customer;
+	/**
+	 * Field otherTrader.
+	 */
 	private Trader otherTrader;
+	/**
+	 * Field market.
+	 */
 	private MarketPlace market;
+	/**
+	 * Field screen.
+	 */
 	private Market screen;
+	/**
+	 * Field tile.
+	 */
 	private ItemTile tile;
 
 	/**
-	 * @return item
-	 */
+	
+	 * @return item */
 	public Item getItem() {
 		return item;
 	}
@@ -164,6 +225,12 @@ public class ItemDescTile extends Table {
 	 * 
 	 */
 	private class BuyListener extends ClickListener {
+		/**
+		 * Method clicked.
+		 * @param event InputEvent
+		 * @param x float
+		 * @param y float
+		 */
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
 			if (otherTrader != null) {
@@ -185,6 +252,12 @@ public class ItemDescTile extends Table {
 	 * 
 	 */
 	private class SellListener extends ClickListener {
+		/**
+		 * Method clicked.
+		 * @param event InputEvent
+		 * @param x float
+		 * @param y float
+		 */
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
 			if (otherTrader != null) {
@@ -230,10 +303,10 @@ public class ItemDescTile extends Table {
 	 *            the item to be updated
 	 * @param stockInfo
 	 *            the item in the marketplace
-	 * @param customerthe
-	 *            person with which the item is to be updated
+	
 	 * @param tile
 	 *            the tile that represents the item
+	 * @param customer Person
 	 */
 	public void update(Item item, MarketPlaceItem stockInfo, Person customer,
 			ItemTile tile) {
