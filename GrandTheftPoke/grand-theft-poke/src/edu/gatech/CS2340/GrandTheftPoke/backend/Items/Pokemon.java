@@ -44,6 +44,11 @@ public abstract class Pokemon extends Item implements Usable {
 		agilityBoost = agility;
 	}
 
+	/**
+	 * Method use.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		person.setStrength(strengthBoost);
@@ -52,6 +57,11 @@ public abstract class Pokemon extends Item implements Usable {
 		person.setTrade(tradeBoost);
 	}
 
+	/**
+	 * Method unUse.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 		person.setStrength(-strengthBoost);

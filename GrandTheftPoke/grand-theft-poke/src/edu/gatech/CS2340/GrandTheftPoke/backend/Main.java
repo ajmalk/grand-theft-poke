@@ -18,6 +18,10 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 public class Main {
 
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Main";
@@ -25,6 +29,7 @@ public class Main {
 	
 	/**
 	 * Launch the application.
+	 * @param args String[]
 	 */
 	public static void main(String[] args) {
 		final GlobalItemReference theReference = new GlobalItemReference();
@@ -39,8 +44,8 @@ public class Main {
 	 * 
 	 * @param theReference
 	 *            the globalItemReference
-	 * @return a gameMap to be used
-	 */
+	
+	 * @return a gameMap to be used */
 	public static GameMap makeMap(GlobalItemReference theReference) {
 		final GameMap map = new GameMap(theReference);
 		return map;

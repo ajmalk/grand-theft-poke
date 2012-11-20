@@ -11,6 +11,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  */
 public class HealthRoid extends Item implements Usable {
 
+	/**
+	 * Method use.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		final int maxHealth = person.getMaxHealth();
@@ -18,6 +23,11 @@ public class HealthRoid extends Item implements Usable {
 		person.setHealth(maxHealth);
 	}
 
+	/**
+	 * Method unUse.
+	 * @param person Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 		final int maxHealth = person.getMaxHealth();
@@ -27,11 +37,19 @@ public class HealthRoid extends Item implements Usable {
 		}
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Health Steroid";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "Health Steroids add 25 to your "
@@ -40,6 +58,10 @@ public class HealthRoid extends Item implements Usable {
 				+ "Restores health to new max.";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub

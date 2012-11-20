@@ -17,10 +17,22 @@ import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
  */
 public class SaveLoadTest {
 
+	/**
+	 * Method setUp.
+	 */
 	@Before
 	public void setUp() {
 	}
 
+	/**
+	 * Method makeNewGame.
+	 * @param name String
+	 * @param strength Integer
+	 * @param agility Integer
+	 * @param trade Integer
+	 * @param stamina Integer
+	 * @return GTPoke
+	 */
 	public GTPoke makeNewGame(String name, Integer strength, Integer agility,
 			Integer trade, Integer stamina) {
 		GTPoke game = new GTPoke();
@@ -29,6 +41,9 @@ public class SaveLoadTest {
 		return game;
 	}
 
+	/**
+	 * Method saveloadbasic.
+	 */
 	@Test
 	public final void saveloadbasic() {
 		GTPoke game1 = makeNewGame("Ajmal", 5, 5, 5, 5), game2 = makeNewGame(
@@ -39,6 +54,9 @@ public class SaveLoadTest {
 		assertTrue(game1.equals(game2));
 	}
 
+	/**
+	 * Method saveloadserialized.
+	 */
 	@Test
 	public final void saveloadserialized() {
 		GTPoke game1 = makeNewGame("Ajmal", 5, 5, 5, 5), game2 = makeNewGame(

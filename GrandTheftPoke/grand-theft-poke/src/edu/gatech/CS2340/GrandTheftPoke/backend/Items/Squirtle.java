@@ -16,16 +16,28 @@ public class Squirtle extends Pokemon {
 		super(3, 3, 2, 2);
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Squirtle";
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "I'm a Squirtle!";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub

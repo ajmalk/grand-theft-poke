@@ -11,6 +11,8 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 public class Pokeball extends Item {
 	/**
 	 * empty constructor
+	 * @param obj Object
+	 * @return boolean
 	 */
 
 	@Override
@@ -27,25 +29,37 @@ public class Pokeball extends Item {
 	/**
 	 * Returns a string of the item's name
 	 * 
-	 * @return string name of the item
-	 */
+	
+	 * @return string name of the item */
 	@Override
 	public String toString() {
 		return "Pokeball";
 	}
 
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int hash = 5;
 		return hash;
 	}
 
+	/**
+	 * Method getDescription.
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
 		return "A pokeball";
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub
