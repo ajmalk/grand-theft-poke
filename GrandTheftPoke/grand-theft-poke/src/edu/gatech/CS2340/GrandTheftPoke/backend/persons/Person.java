@@ -20,7 +20,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * @author Team Rocket
  * @version 1.0
  */
-public abstract class Person {
+public class Person {
 	/**
 	 * Field name.
 	 */

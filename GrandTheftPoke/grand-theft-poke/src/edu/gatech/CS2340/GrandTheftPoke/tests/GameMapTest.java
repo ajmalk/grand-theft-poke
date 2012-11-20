@@ -262,7 +262,11 @@ public class GameMapTest extends junit.framework.TestCase {
 	@Override
 	@After
 	public void tearDown() {
-		// Add additional tear down code here
+		try {
+			super.tearDown();
+		} catch (Exception e) {
+			return;
+		}
 	}
 
 	/**
