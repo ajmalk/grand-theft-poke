@@ -1,3 +1,8 @@
+/**
+ * MetalCoat.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -14,7 +19,7 @@ public class MetalCoat extends Item {
 	 */
 	@Override
 	public int hashCode() {
-		return 20;
+		return 20;//hashcode for hashmap
 	}
 
 	/**

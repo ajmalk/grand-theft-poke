@@ -1,3 +1,8 @@
+/**
+ * MarketPlaceItem.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -58,13 +63,13 @@ public class MarketPlaceItem {
 	 * @param stock
 	 */
 	public MarketPlaceItem(Float price, Float stock) {
-		EQIL_PRICE = price * 100;
+		EQIL_PRICE = price * 100;//scaling price
 		this.price = EQIL_PRICE;
-		EQIL_STOCK = stock + 500;
+		EQIL_STOCK = stock + 500;//scaling stock
 		this.stock = EQIL_STOCK;
-		CONS_ELASTICITY = -1f;
-		PROD_ELASTICITY = 2f;
-		STOCK_RATIO = 0.1f;
+		CONS_ELASTICITY = -1f;//scaling elasticity
+		PROD_ELASTICITY = 2f;//scaling elasticity
+		STOCK_RATIO = 0.1f;//scaling ratio
 	}
 
 	/**
@@ -91,7 +96,7 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return price / 100f; 
+		return price / 100f; //scaling back to normal
 	}
 
 	/**
@@ -108,7 +113,7 @@ public class MarketPlaceItem {
 		for (int i = 0; i < amount; i++) {
 			price += getNewPrice(-1);
 		}
-		return price / 100f; 
+		return price / 100f; //scalingn back to normal
 	}
 
 	/**
@@ -117,7 +122,7 @@ public class MarketPlaceItem {
 	
 	 * @return the stock */
 	public Integer getStock() {
-		return (int)(stock - 500);
+		return (int)(stock - 500);//scaling stock
 	}
 
 	/**
@@ -150,7 +155,7 @@ public class MarketPlaceItem {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//prime for hashcode generation
 		int result = 1;
 		result = prime * result + Float.floatToIntBits(CONS_ELASTICITY);
 		result = prime * result + Float.floatToIntBits(EQIL_PRICE);
@@ -229,7 +234,7 @@ public class MarketPlaceItem {
 //				break;
 //			}
 			price = temp;
-		} while (Math.abs(price - temp) > 0.00001);
+		} while (Math.abs(price - temp) > 0.00001);//checking for virtually zero 
 		return price;
 	}
 
@@ -240,7 +245,7 @@ public class MarketPlaceItem {
 	
 	 * @return true if successful */
 	public boolean update() {
-		if (Math.abs(price - EQIL_PRICE) < 0.001) {
+		if (Math.abs(price - EQIL_PRICE) < 0.001) {//checking for virtually zero
 			return true;
 		}
 		final float change = (production(price) - consumption(price))
@@ -257,7 +262,7 @@ public class MarketPlaceItem {
 	
 	 * @return the total price of the transaction */
 	public Float buy(int amount) {
-		if (amount < 0 || amount > stock - 500) {
+		if (amount < 0 || amount > stock - 500) {//checking for buying stock
 			return 0f;
 		}
 		final float price = getBuyingPrice(amount);

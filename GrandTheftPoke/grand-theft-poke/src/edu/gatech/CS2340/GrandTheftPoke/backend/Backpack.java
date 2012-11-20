@@ -54,7 +54,7 @@ public class Backpack {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//prime number to make unique hashcode
 		int result = 1;
 		result = prime * result
 				+ ((capacity == null) ? 0 : capacity.hashCode());

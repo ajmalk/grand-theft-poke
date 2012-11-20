@@ -1,3 +1,7 @@
+/**
+ * TownFactory.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 
 /**

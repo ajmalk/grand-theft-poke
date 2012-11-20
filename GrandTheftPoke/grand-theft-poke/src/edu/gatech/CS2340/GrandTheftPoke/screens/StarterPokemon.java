@@ -1,3 +1,8 @@
+/**
+ * StarterPokemon.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;

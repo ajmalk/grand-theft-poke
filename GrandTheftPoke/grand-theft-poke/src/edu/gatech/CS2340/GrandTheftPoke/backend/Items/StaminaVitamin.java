@@ -1,3 +1,7 @@
+/**
+ * StaminaVitamin.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -16,7 +20,7 @@ public class StaminaVitamin extends Item implements Usable {
 	 */
 	@Override
 	public int hashCode() {
-		return 4;
+		return 4;//hashcode for hashmap
 	}
 
 	/**
@@ -26,7 +30,7 @@ public class StaminaVitamin extends Item implements Usable {
 	 */
 	@Override
 	public void use(Person person) {
-		person.setStamina(1);
+		person.setStamina(1);//adds one to stamina
 	}
 
 	/**
@@ -36,7 +40,7 @@ public class StaminaVitamin extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setStamina(-1);
+		person.setStamina(-1);//subtracts one from stamina
 	}
 
 	/**

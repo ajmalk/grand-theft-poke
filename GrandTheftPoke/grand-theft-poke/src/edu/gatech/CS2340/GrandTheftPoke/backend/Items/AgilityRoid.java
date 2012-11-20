@@ -1,3 +1,7 @@
+/**
+ * AgilityRoid.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -18,7 +22,7 @@ public class AgilityRoid extends Item implements Usable {
 	 */
 	@Override
 	public void use(Person person) {
-		person.setAgility(2);
+		person.setAgility(2);//adds 2 to agility
 	}
 
 	/**
@@ -28,7 +32,7 @@ public class AgilityRoid extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setAgility(-2);
+		person.setAgility(-2);//subtracts two from agility
 	}
 
 	/**

@@ -1,3 +1,8 @@
+/**
+ * DestinyKnot.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -14,7 +19,7 @@ public class DestinyKnot extends Item {
 	 */
 	@Override
 	public int hashCode() {
-		return 18;
+		return 18;//represents hashcode to put in hashmap
 	}
 
 	/**

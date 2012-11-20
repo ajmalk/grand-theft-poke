@@ -1,3 +1,8 @@
+/**
+ * MainMenu.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 //import com.badlogic.gdx.graphics.Color;

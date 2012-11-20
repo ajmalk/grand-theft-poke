@@ -1,3 +1,8 @@
+/**
+ * Charizard.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -13,7 +18,7 @@ public class Charizard extends Pokemon {
 	 * Constructor for Charizard.
 	 */
 	public Charizard() {
-		super(1, 2, 3, 4);
+		super(1, 2, 3, 4);//stats for charizard
 	}
 
 	/**

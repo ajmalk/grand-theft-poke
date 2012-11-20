@@ -1,3 +1,8 @@
+/**
+ * Town.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 
 import java.util.HashSet;
@@ -72,7 +77,7 @@ public class Town implements Comparable {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//prime for hashcode
 		int result = 1;
 		result = prime * result
 				+ ((adjacencies == null) ? 0 : adjacencies.hashCode());

@@ -1,3 +1,7 @@
+/**
+ * StrengthRoid.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -16,7 +20,7 @@ public class StrengthRoid extends Item implements Usable {
 	 */
 	@Override
 	public int hashCode() {
-		return 15;
+		return 15;//hashcode for hashmap
 	}
 
 	/**
@@ -26,7 +30,7 @@ public class StrengthRoid extends Item implements Usable {
 	 */
 	@Override
 	public void use(Person person) {
-		person.setStrength(2);
+		person.setStrength(2);//adds two strength points
 	}
 
 	/**
@@ -36,7 +40,7 @@ public class StrengthRoid extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setStrength(-2);
+		person.setStrength(-2);//subtracts two strength points
 	}
 
 	/**

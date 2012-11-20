@@ -1,3 +1,8 @@
+/**
+ * HealthPotion.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -19,8 +24,8 @@ public class HealthPotion extends Item implements Usable {
 	public void use(Person person) {
 		final int health = person.getHealth();
 		final int maxHealth = person.getMaxHealth();
-		if (health <= (maxHealth - 20)) {
-			person.setHealth(health + 20);
+		if (health <= (maxHealth - 20)) {//checks health
+			person.setHealth(health + 20);//adds health back
 		} else {
 			person.setHealth(maxHealth);
 		}
@@ -33,6 +38,7 @@ public class HealthPotion extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
+		//
 	}
 
 	/**

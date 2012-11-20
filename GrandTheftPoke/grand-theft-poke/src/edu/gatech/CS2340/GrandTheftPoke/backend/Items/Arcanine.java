@@ -1,3 +1,8 @@
+/**
+ * Arcanine.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -13,7 +18,7 @@ public class Arcanine extends Pokemon {
 	 * Arcanine Constructor
 	 */
 	public Arcanine() {
-		super(1, 2, 3, 4);
+		super(1, 2, 3, 4);//stats for arcanine
 	}
 
 	/**

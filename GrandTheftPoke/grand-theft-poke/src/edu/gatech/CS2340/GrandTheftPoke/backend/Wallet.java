@@ -1,3 +1,8 @@
+/**
+ * Wallet.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
@@ -17,7 +22,7 @@ public class Wallet {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//hashcode prime number
 		int result = 1;
 		result = prime * result + ((money == null) ? 0 : money.hashCode());
 		return result;

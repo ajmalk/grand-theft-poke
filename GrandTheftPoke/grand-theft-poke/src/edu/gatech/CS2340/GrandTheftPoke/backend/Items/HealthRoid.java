@@ -1,3 +1,8 @@
+/**
+ * HealthRoid.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -19,7 +24,7 @@ public class HealthRoid extends Item implements Usable {
 	@Override
 	public void use(Person person) {
 		final int maxHealth = person.getMaxHealth();
-		person.setMaxHealth(maxHealth + 25);
+		person.setMaxHealth(maxHealth + 25);//adds 25 health points
 		person.setHealth(maxHealth);
 	}
 
@@ -31,7 +36,7 @@ public class HealthRoid extends Item implements Usable {
 	@Override
 	public void unUse(Person person) {
 		final int maxHealth = person.getMaxHealth();
-		person.setMaxHealth(maxHealth - 25);
+		person.setMaxHealth(maxHealth - 25);//subtracts 25 health points
 		if (person.getMaxHealth() > person.getHealth()) {
 			person.setHealth(maxHealth);
 		}
