@@ -467,7 +467,6 @@ public class MapScreen extends AbstractScreen {
 		stage.addActor(fuchsiaCityButton);
 		fuchsiaCityButton.setPosition(602, 122);
 
-		stage.addActor(game.getSaveButton());
 		stage.addActor(backButton);
 
 		stage.addActor(game.getStatusBar());

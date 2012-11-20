@@ -435,7 +435,6 @@ public class GTPoke extends Game {
 	}
 
 	/**
-	
 	 * @return the current town's screen */
 	public Screen getCurrentTownScreen() {
 		final Person potentialEncounter = controller.takeATurn();
@@ -468,7 +467,7 @@ public class GTPoke extends Game {
 	 * @return a save button */
 	public Button getSaveButton() {
 		final Button saveButton = getButton("save");
-		saveButton.setPosition(900, 15);
+		saveButton.setPosition(920, 400);
 		saveButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
