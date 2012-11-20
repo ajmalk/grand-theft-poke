@@ -128,10 +128,10 @@ public class SkillPoints extends AbstractScreen {
 		remVal = new Label(agility.toString(), game.getSkin());
 		background = new Texture("images//skillpoint.png");
 
-		Texture buttonSprite = new Texture("images//button-sprite.png");
+		final Texture buttonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
-		Image backgroundImage = new Image(background);
+		final Image backgroundImage = new Image(background);
 		backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
@@ -142,7 +142,7 @@ public class SkillPoints extends AbstractScreen {
 		agilitySlider = new Slider(0, 10, 1, false, game.getSkin());
 		tradeSlider = new Slider(0, 10, 1, false, game.getSkin());
 
-		ButtonStyle style = new ButtonStyle();
+		final ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 				0, 320, 70));
 		style.down = new TextureRegionDrawable(new TextureRegion(buttonSprite,

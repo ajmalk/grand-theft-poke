@@ -178,7 +178,7 @@ public class MarketPlaceItem {
 		if (!(obj instanceof MarketPlaceItem)) {
 			return false;
 		}
-		MarketPlaceItem other = (MarketPlaceItem) obj;
+		final MarketPlaceItem other = (MarketPlaceItem) obj;
 		if (Float.floatToIntBits(CONS_ELASTICITY) != Float
 				.floatToIntBits(other.CONS_ELASTICITY)) {
 			return false;

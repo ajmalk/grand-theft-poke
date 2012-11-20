@@ -41,7 +41,7 @@ public class ItemTile extends Button {
 	/**
 	 * Field item.
 	 */
-	private Item item;
+	private final Item item;
 
 	/**
 	 * Field stock.
@@ -51,12 +51,12 @@ public class ItemTile extends Button {
 	/**
 	 * Field backpackStock.
 	 */
-	private Integer backpackStock;
+	private final Integer backpackStock;
 
 	/**
 	 * Field icon.
 	 */
-	private Image icon;
+	private final Image icon;
 
 	/**
 	 * Field price.
@@ -94,7 +94,7 @@ public class ItemTile extends Button {
 						GTPoke.getButtonSprite(), 0, 400, 150, 175)));
 		this.item = item;
 		this.stock = stock;
-		Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
 		map.setColor(Color.BLUE);
 		map.fillRectangle(0, 0, 50, 50);
 		backpackStock = -1;
@@ -109,7 +109,7 @@ public class ItemTile extends Button {
 		row();
 		add(icon).expandX();
 		row();
-		Label name = new Label(item.toString(), new Skin(
+		final Label name = new Label(item.toString(), new Skin(
 				Gdx.files.internal("skins//uiskin.json")));
 		name.setWrap(true);
 		name.setAlignment(Align.center);
@@ -147,7 +147,7 @@ public class ItemTile extends Button {
 		}
 		backpackStock = stock;
 		this.pack = pack;
-		Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
 		stockLabel = new Label("", new Skin(
 				Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
@@ -161,7 +161,7 @@ public class ItemTile extends Button {
 		row();
 		add(icon).expandX();
 		row();
-		Label name = new Label(item.toString(), new Skin(
+		final Label name = new Label(item.toString(), new Skin(
 				Gdx.files.internal("skins//uiskin.json")));
 		name.setWrap(true);
 		name.setAlignment(Align.center);

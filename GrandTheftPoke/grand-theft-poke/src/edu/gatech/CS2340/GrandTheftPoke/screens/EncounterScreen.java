@@ -38,7 +38,7 @@ public class EncounterScreen extends AbstractScreen {
 	/**
 	 * Field game.
 	 */
-	private GTPoke game;
+	private final GTPoke game;
 
 	/**
 	 * Field trade.
@@ -58,7 +58,7 @@ public class EncounterScreen extends AbstractScreen {
 	/**
 	 * Field myPerson.
 	 */
-	private Person myPerson;
+	private final Person myPerson;
 
 	/**
 	 * Field table.
@@ -93,7 +93,7 @@ public class EncounterScreen extends AbstractScreen {
 
 		background = new Texture("images//icons//encounter.png");
 
-		Texture buttonSprite = new Texture("images//icons//encounter.png");
+		final Texture buttonSprite = new Texture("images//icons//encounter.png");
 		stage.clear();
 
 		backgroundImage = new Image(background);

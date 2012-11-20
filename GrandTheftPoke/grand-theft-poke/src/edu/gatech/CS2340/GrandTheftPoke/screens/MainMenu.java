@@ -43,7 +43,7 @@ public class MainMenu extends AbstractScreen {
 	@Override
 	public void show() {
 		super.show();
-		Texture buttonSprite = new Texture("images//button-sprite.png");
+		final Texture buttonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
 		// Image backgroundImage = new Image(background);
@@ -53,14 +53,14 @@ public class MainMenu extends AbstractScreen {
 		background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
-		Button gameButton = new Button(new TextureRegionDrawable(
+		final Button gameButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
 		gameButton.setSkin(game.getSkin());
 		gameButton.add("New Game");
 
-		Button loadButton = new Button(new TextureRegionDrawable(
+		final Button loadButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
@@ -81,7 +81,7 @@ public class MainMenu extends AbstractScreen {
 			}
 		});
 
-		Button debugButton = new Button(new TextureRegionDrawable(
+		final Button debugButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
@@ -95,7 +95,7 @@ public class MainMenu extends AbstractScreen {
 			}
 		});
 
-		Table table = new Table(game.getSkin());
+		final Table table = new Table(game.getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
 		table.add(gameButton);

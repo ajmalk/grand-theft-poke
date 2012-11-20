@@ -66,12 +66,12 @@ public class ItemDescTile extends Table {
 	/**
 	 * Field backpackStock.
 	 */
-	private Integer backpackStock;
+	private final Integer backpackStock;
 
 	/**
 	 * Field icon.
 	 */
-	private Image icon;
+	private final Image icon;
 
 	/**
 	 * Field name.
@@ -91,7 +91,7 @@ public class ItemDescTile extends Table {
 	/**
 	 * Field buysell.
 	 */
-	private Table buysell;
+	private final Table buysell;
 
 	/**
 	 * Field customer.
@@ -101,17 +101,17 @@ public class ItemDescTile extends Table {
 	/**
 	 * Field otherTrader.
 	 */
-	private Trader otherTrader;
+	private final Trader otherTrader;
 
 	/**
 	 * Field market.
 	 */
-	private MarketPlace market;
+	private final MarketPlace market;
 
 	/**
 	 * Field screen.
 	 */
-	private Market screen;
+	private final Market screen;
 
 	/**
 	 * Field tile.
@@ -151,7 +151,7 @@ public class ItemDescTile extends Table {
 		this.screen = screen;
 		this.otherTrader = other;
 
-		Texture buttonSprite = new Texture("images//button-sprite.png");
+		final Texture buttonSprite = new Texture("images//button-sprite.png");
 		buy = new Button(new TextureRegionDrawable(new TextureRegion(
 				buttonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 69, 320, 70)));
@@ -170,11 +170,11 @@ public class ItemDescTile extends Table {
 
 		buysell = new Table();
 
-		Pixmap map = new Pixmap(200, 200, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(200, 200, Pixmap.Format.RGB565);
 		map.setColor(Color.BLUE);
 		map.fillRectangle(0, 0, 200, 200);
 
-		Pixmap map2 = new Pixmap(200, 200, Pixmap.Format.RGB565);
+		final Pixmap map2 = new Pixmap(200, 200, Pixmap.Format.RGB565);
 		map2.setColor(Color.GRAY);
 		map2.fillRectangle(0, 0, 200, 200);
 

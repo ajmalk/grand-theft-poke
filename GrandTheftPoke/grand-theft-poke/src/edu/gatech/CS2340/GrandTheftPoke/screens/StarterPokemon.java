@@ -56,7 +56,7 @@ public class StarterPokemon extends AbstractScreen {
 	/**
 	 * Field confirmY.
 	 */
-	private int confirmY = 10;
+	private final int confirmY = 10;
 
 	/**
 	 * Field table.
@@ -127,8 +127,8 @@ public class StarterPokemon extends AbstractScreen {
 			}
 		});
 
-		Texture confirmButtonSprite = new Texture("images//button-sprite.png");
-		ButtonStyle style = new ButtonStyle();
+		final Texture confirmButtonSprite = new Texture("images//button-sprite.png");
+		final ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(
 				confirmButtonSprite, 0, 0, 320, 70));
 		style.down = new TextureRegionDrawable(new TextureRegion(
