@@ -151,18 +151,18 @@ public class ItemDescTile extends Table {
 		this.screen = screen;
 		this.otherTrader = other;
 
-		Texture ButtonSprite = new Texture("images//button-sprite.png");
+		Texture buttonSprite = new Texture("images//button-sprite.png");
 		buy = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 0, 69, 320, 70)));
+				buttonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 0, 69, 320, 70)));
 		buy.setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 		buy.add("Buy");
 		buyListener = new BuyListener();
 		buy.addListener(buyListener);
 
 		sell = new Button(new TextureRegionDrawable(new TextureRegion(
-				ButtonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
-				new TextureRegion(ButtonSprite, 0, 69, 320, 70)));
+				buttonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
+				new TextureRegion(buttonSprite, 0, 69, 320, 70)));
 		sell.setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 		sell.add("Sell");
 		sellListener = new SellListener();

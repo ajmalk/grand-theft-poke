@@ -69,7 +69,7 @@ public class TownScreen extends AbstractScreen {
 		townImage = new Image(game.getTextures().findRegion("town/" + town));
 
 		Texture buttonSprite = new Texture("images//icons//PalletTown.png");
-		Texture BackpackSprite = new Texture("images//icons//backpackIcon.png");
+		Texture backpackSprite = new Texture("images//icons//backpackIcon.png");
 		stage.clear();
 
 		healthImage = new Image(new TextureRegionDrawable(new TextureRegion(
