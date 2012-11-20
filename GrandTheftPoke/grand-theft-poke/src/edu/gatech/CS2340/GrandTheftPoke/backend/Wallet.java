@@ -39,7 +39,7 @@ public class Wallet {
 		if (!(obj instanceof Wallet)) {
 			return false;
 		}
-		Wallet other = (Wallet) obj;
+		final Wallet other = (Wallet) obj;
 		if (money == null) {
 			if (other.money != null) {
 				return false;

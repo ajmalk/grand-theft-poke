@@ -31,22 +31,22 @@ public class Turn {
 	/**
 	 * Field theMap.
 	 */
-	private GameMap theMap;
+	private final GameMap theMap;
 	
 	/**
 	 * Field gameActors.
 	 */
-	private ArrayList<Person> gameActors;
+	private final ArrayList<Person> gameActors;
 	
 	/**
 	 * Field thePlayer.
 	 */
-	private Player thePlayer;
+	private final Player thePlayer;
 	
 	/**
 	 * Field rand.
 	 */
-	private Random rand;
+	private final Random rand;
 
 	/**
 	 * Constructor
@@ -149,7 +149,7 @@ public class Turn {
 	public void trade() {
 		MarketPlace currentMarket;
 		Set<Item> currentStock;
-		Item[] possibleItems = new Item[17];
+		final Item[] possibleItems = new Item[17];
 		for (Person individual : gameActors) {
 			if (individual instanceof Trader) {
 

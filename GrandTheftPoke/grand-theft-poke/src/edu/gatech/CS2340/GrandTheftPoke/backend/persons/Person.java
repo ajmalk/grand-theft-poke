@@ -120,7 +120,7 @@ public abstract class Person {
 		if (!(obj instanceof Person)) {
 			return false;
 		}
-		Person other = (Person) obj;
+		final Person other = (Person) obj;
 		if (agility == null) {
 			if (other.agility != null) {
 				return false;

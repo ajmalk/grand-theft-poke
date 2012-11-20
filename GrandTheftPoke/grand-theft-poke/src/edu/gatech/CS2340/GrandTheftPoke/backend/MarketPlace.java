@@ -43,7 +43,7 @@ public class MarketPlace {
 		if (!(obj instanceof MarketPlace)) {
 			return false;
 		}
-		MarketPlace other = (MarketPlace) obj;
+		final MarketPlace other = (MarketPlace) obj;
 		if (stock == null) {
 			if (other.stock != null) {
 				return false;
@@ -67,7 +67,7 @@ public class MarketPlace {
 	/**
 	 * Field stock.
 	 */
-	private Map<Item, MarketPlaceItem> stock;
+	private final Map<Item, MarketPlaceItem> stock;
 
 	/**
 	 * Constructor that creates the market place for each town

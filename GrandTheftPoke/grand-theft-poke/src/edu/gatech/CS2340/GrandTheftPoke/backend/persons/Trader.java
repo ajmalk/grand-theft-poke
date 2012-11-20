@@ -26,7 +26,7 @@ public class Trader extends Person {
 	/**
 	 * Field itemsInstance.
 	 */
-	private GlobalItemReference itemsInstance;
+	private final GlobalItemReference itemsInstance;
 
 	/**
 	 * @param name

@@ -164,7 +164,7 @@ public class GameMap {
 		if (!(obj instanceof GameMap)) {
 			return false;
 		}
-		GameMap other = (GameMap) obj;
+		final GameMap other = (GameMap) obj;
 		if (startTown == null) {
 			if (other.startTown != null) {
 				return false;

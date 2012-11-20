@@ -71,7 +71,7 @@ public class GTPoke extends Game {
 	/**
 	 * Field playerName.
 	 */
-	private String playerName = "";
+	private final String playerName = "";
 
 	/**
 	 * Field thePlayer.
@@ -144,7 +144,7 @@ public class GTPoke extends Game {
 		saveFile = Gdx.files.local("saves//savegame.xml");
 		atlas = new TextureAtlas(
 				Gdx.files.internal("images//textures//packed//gtpoke.atlas"));
-		Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(150, 600, Pixmap.Format.RGB565);
 		map.setColor(Color.GRAY);
 		map.fillRectangle(0, 0, 150, 600);
 		map.setColor(Color.BLACK);
@@ -173,9 +173,9 @@ public class GTPoke extends Game {
 		statusBar.pad(25);
 		statusBar.setPosition(
 				(Gdx.graphics.getWidth() - statusBar.getWidth()) / 2, 0);
-		Label health = new Label("Health: " + thePlayer.getHealth().toString(),
+		final Label health = new Label("Health: " + thePlayer.getHealth().toString(),
 				skin);
-		Label money = new Label("$" + thePlayer.getWallet().getMoney(), skin);
+		final Label money = new Label("$" + thePlayer.getWallet().getMoney(), skin);
 		health.setColor(Color.BLUE);
 		money.setColor(Color.BLUE);
 		// statusBar.add(health).left();
@@ -246,8 +246,8 @@ public class GTPoke extends Game {
 	
 	 * @return savestr */
 	public String save() {
-		SaveGame save = new SaveGame(thePlayer, theMap, controller);
-		String savestr = xstream.toXML(save);
+		final SaveGame save = new SaveGame(thePlayer, theMap, controller);
+		final String savestr = xstream.toXML(save);
 		System.out.println(savestr);
 		// savestrs.add(savestr);
 		saveFile.writeString(savestr, false);
@@ -259,9 +259,9 @@ public class GTPoke extends Game {
 	 *            index to load
 	 */
 	public void load(int index) {
-		String savestr = saveFile.readString();
+		final String savestr = saveFile.readString();
 		System.out.println(savestr);
-		SaveGame game = (SaveGame) xstream.fromXML(savestr);
+		final SaveGame game = (SaveGame) xstream.fromXML(savestr);
 		game.load(this);
 		setScreen(getCurrentTownScreenFromEncounter());
 	}
@@ -271,7 +271,7 @@ public class GTPoke extends Game {
 	 *            string used to load game
 	 */
 	public void load(String gamestr) {
-		SaveGame game = (SaveGame) xstream.fromXML(gamestr);
+		final SaveGame game = (SaveGame) xstream.fromXML(gamestr);
 		game.load(this);
 	}
 
@@ -306,11 +306,6 @@ public class GTPoke extends Game {
 		theMap = null;
 		thePlayer = null;
 	}
-
-
-
-
-
 
 	/**
 	 * @param playerName
@@ -447,7 +442,7 @@ public class GTPoke extends Game {
 	
 	 * @return the current town's screen */
 	public Screen getCurrentTownScreen() {
-		Person potentialEncounter = controller.takeATurn();
+		final Person potentialEncounter = controller.takeATurn();
 		if (potentialEncounter != null) {
 			return new EncounterScreen(this, potentialEncounter);
 		}
@@ -476,7 +471,7 @@ public class GTPoke extends Game {
 	
 	 * @return a save button */
 	public Button getSaveButton() {
-		Button saveButton = getButton("save");
+		final Button saveButton = getButton("save");
 		saveButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {

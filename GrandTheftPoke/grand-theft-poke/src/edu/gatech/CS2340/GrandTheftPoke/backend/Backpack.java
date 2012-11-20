@@ -81,7 +81,7 @@ public class Backpack {
 		if (!(obj instanceof Backpack)) {
 			return false;
 		}
-		Backpack other = (Backpack) obj;
+		final Backpack other = (Backpack) obj;
 		if (capacity == null) {
 			if (other.capacity != null) {
 				return false;

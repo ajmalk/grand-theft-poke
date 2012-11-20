@@ -103,7 +103,7 @@ public class Town implements Comparable {
 		if (!(obj instanceof Town)) {
 			return false;
 		}
-		Town other = (Town) obj;
+		final Town other = (Town) obj;
 		if (adjacencies == null) {
 			if (other.adjacencies != null) {
 				return false;
