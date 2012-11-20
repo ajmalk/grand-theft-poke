@@ -72,27 +72,6 @@ public class Town implements Comparable {
 	}
 
 	/**
-	 * Method hashCode.
-	 * @return int
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;//prime for hashcode
-		int result = 1;
-		result = prime * result
-				+ ((adjacencies == null) ? 0 : adjacencies.hashCode());
-		result = prime * result
-				+ ((filename == null) ? 0 : filename.hashCode());
-		result = prime * result + minimumDistance;
-		result = prime * result
-				+ ((myMarket == null) ? 0 : myMarket.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result
-				+ ((previous == null) ? 0 : previous.hashCode());
-		return result;
-	}
-
-	/**
 	 * Method equals.
 	 * @param obj Object
 	 * @return boolean
