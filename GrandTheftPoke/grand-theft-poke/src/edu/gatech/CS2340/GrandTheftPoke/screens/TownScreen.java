@@ -185,23 +185,5 @@ public class TownScreen extends AbstractScreen {
 		stage.addActor(game.getStatusBar());
 	}
 
-	/**
-	 * Method resize.
-	 * @param width int
-	 * @param height int
-	 * @see com.badlogic.gdx.Screen#resize(int, int)
-	 */
-	@Override
-	public void resize(int width, int height) {
-		super.resize(width, height);
-	}
 
-	/**
-	 * Method dispose.
-	 * @see com.badlogic.gdx.Screen#dispose()
-	 */
-	@Override
-	public void dispose() {
-		super.dispose();
-	}
 }
