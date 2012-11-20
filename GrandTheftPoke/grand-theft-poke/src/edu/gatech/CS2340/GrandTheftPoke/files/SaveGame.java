@@ -24,7 +24,9 @@ public class SaveGame {
 	}
 
 	private GameMap map;
+
 	private Player player;
+
 	@XStreamOmitField
 	private Turn controller;
 

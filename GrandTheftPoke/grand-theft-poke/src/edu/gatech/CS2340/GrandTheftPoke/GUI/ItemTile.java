@@ -35,10 +35,15 @@ public class ItemTile extends Button {
 	}
 
 	private Item item;
+
 	private MarketPlaceItem stock;
+
 	private Integer backpackStock;
+
 	private Image icon;
+
 	private Label stockLabel, price;
+
 	private Backpack pack;
 
 	/**

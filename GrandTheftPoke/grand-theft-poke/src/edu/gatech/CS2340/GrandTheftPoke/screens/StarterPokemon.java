@@ -24,12 +24,19 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  */
 public class StarterPokemon extends AbstractScreen {
 	private Image title;
+
 	private Button bulbasaur;
+
 	private Button charmander;
+
 	private Button squirtle;
+
 	private Button ConfirmButton;
+
 	private int confirmX = 356;
+
 	private int confirmY = 10;
+
 	private Table table;
 
 	/**

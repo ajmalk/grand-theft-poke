@@ -52,69 +52,67 @@ public class ItemDescTile extends Table {
 	 * Field item.
 	 */
 	private Item item;
+
 	/**
 	 * Field stockInfo.
 	 */
 	private MarketPlaceItem stockInfo;
+
 	/**
 	 * Field pack.
 	 */
 	private Backpack pack;
+
 	/**
 	 * Field backpackStock.
 	 */
 	private Integer backpackStock;
+
 	/**
 	 * Field icon.
 	 */
 	private Image icon;
-	/**
-	 * Field price.
-	 */
-	/**
-	 * Field stock.
-	 */
-	/**
-	 * Field description.
-	 */
+
 	/**
 	 * Field name.
 	 */
 	private Label name, description, stock, price;
-	/**
-	 * Field sell.
-	 */
+
 	/**
 	 * Field buy.
 	 */
 	private Button buy, sell;
-	/**
-	 * Field sellListener.
-	 */
+
 	/**
 	 * Field buyListener.
 	 */
 	private ClickListener buyListener, sellListener;
+
 	/**
 	 * Field buysell.
 	 */
 	private Table buysell;
+
 	/**
 	 * Field customer.
 	 */
 	private Person customer;
+
 	/**
 	 * Field otherTrader.
 	 */
 	private Trader otherTrader;
+
 	/**
 	 * Field market.
 	 */
 	private MarketPlace market;
+
 	/**
 	 * Field screen.
 	 */
 	private Market screen;
+
 	/**
 	 * Field tile.
 	 */
