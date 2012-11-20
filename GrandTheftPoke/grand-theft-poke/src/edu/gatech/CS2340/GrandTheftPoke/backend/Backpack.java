@@ -26,7 +26,7 @@ public class Backpack {
 	/**
 	 * Field contents.
 	 */
-	private Map<Item, Integer> contents;
+	private final Map<Item, Integer> contents;
 
 	/**
 	 * Constructor for Backpack.
