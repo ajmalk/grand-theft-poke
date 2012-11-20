@@ -1,3 +1,8 @@
+/**
+ * TradeRoid.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -16,7 +21,7 @@ public class TradeRoid extends Item implements Usable {
 	 */
 	@Override
 	public int hashCode() {
-		return 17;
+		return 17;//hashcode for hashmap
 	}
 
 	/**
@@ -26,7 +31,7 @@ public class TradeRoid extends Item implements Usable {
 	 */
 	@Override
 	public void use(Person person) {
-		person.setTrade(2);
+		person.setTrade(2);//adds two points to trade
 	}
 
 	/**
@@ -36,7 +41,7 @@ public class TradeRoid extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setTrade(-2);
+		person.setTrade(-2);//subtracts two points from trade
 	}
 
 	/**

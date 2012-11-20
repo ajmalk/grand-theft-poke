@@ -1,3 +1,8 @@
+/**
+ * Person.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.persons;
 
 import java.util.Random;
@@ -81,7 +86,7 @@ public class Person {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//hashcode for hashmap
 		int result = 1;
 		result = prime * result + ((agility == null) ? 0 : agility.hashCode());
 		result = prime * result
@@ -416,7 +421,7 @@ public class Person {
 	 */
 	public void defend(int incomingDamage) {
 		final float fatigue = (float) currentStamina / stamina;
-		final float dodge = agility / 100;
+		final float dodge = agility / 100;//scaling factor
 
 		final Random rand = new Random();
 		final double chance = rand.nextDouble();
@@ -445,9 +450,9 @@ public class Person {
 			final int range = myBackpack.getMaxRange();
 			int distance = theMap
 					.dijkstras(currentTown, destination.toString());
-			if (range >= distance && health >= distance / 5) {
+			if (range >= distance && health >= distance / 5) {//scaling factor
 				currentTown = destination;
-				setHealth(-distance / 5);
+				setHealth(-distance / 5);//subtracts distance/5 of health
 			}
 		}
 	}
@@ -462,7 +467,7 @@ public class Person {
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (theMarket.getStock().containsKey(desiredGood)) {
-			float price = (float) (1.15 - 0.0015 * trade)
+			float price = (float) (1.15 - 0.0015 * trade)//sets price
 					* ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
 							.getBuyingPrice(quantity);
 			if (price != 0) {
@@ -492,7 +497,7 @@ public class Person {
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (myBackpack.checkContents(desiredGood, quantity)) {
-			final float price = (float) (0.85 + 0.0015 * trade)
+			final float price = (float) (0.85 + 0.0015 * trade)//sets price for selling
 					* theMarket.sell(desiredGood, quantity);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);

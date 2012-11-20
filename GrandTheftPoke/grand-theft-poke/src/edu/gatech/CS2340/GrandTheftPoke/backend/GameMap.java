@@ -1,3 +1,8 @@
+/**
+ * GameMap.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.ArrayList;
@@ -77,44 +82,44 @@ public class GameMap {
 		final Town cinnabarIsland = townGenerator.makeCinnabarIsland();
 		final Town powerPlant = townGenerator.makePowerPlant();
 
-		palletTown.addConnection(new Path(cinnabarIsland, 100));
-		palletTown.addConnection(new Path(viridianCity, 10));
+		palletTown.addConnection(new Path(cinnabarIsland, 100));//distance between island and town
+		palletTown.addConnection(new Path(viridianCity, 10));// distance between town and city
 
-		viridianCity.addConnection(new Path(palletTown, 10));
-		viridianCity.addConnection(new Path(pewterCity, 20));
+		viridianCity.addConnection(new Path(palletTown, 10));//distance between city and town
+		viridianCity.addConnection(new Path(pewterCity, 20));//distance between city and city
 
-		pewterCity.addConnection(new Path(viridianCity, 20));
-		pewterCity.addConnection(new Path(ceruleanCity, 50));
+		pewterCity.addConnection(new Path(viridianCity, 20));//distance between city and city
+		pewterCity.addConnection(new Path(ceruleanCity, 50));//distance between city and city
 
-		ceruleanCity.addConnection(new Path(pewterCity, 50));
-		ceruleanCity.addConnection(new Path(powerPlant, 30));
-		ceruleanCity.addConnection(new Path(saffronCity, 20));
+		ceruleanCity.addConnection(new Path(pewterCity, 50));//distance between city and city
+		ceruleanCity.addConnection(new Path(powerPlant, 30));//distance between city and powerplant
+		ceruleanCity.addConnection(new Path(saffronCity, 20));//distance between city and city
 
-		powerPlant.addConnection(new Path(ceruleanCity, 30));
+		powerPlant.addConnection(new Path(ceruleanCity, 30));//distance between powerplant and city
 
-		saffronCity.addConnection(new Path(ceruleanCity, 20));
-		saffronCity.addConnection(new Path(celadonCity, 10));
-		saffronCity.addConnection(new Path(lavenderTown, 20));
-		saffronCity.addConnection(new Path(vermillionCity, 20));
+		saffronCity.addConnection(new Path(ceruleanCity, 20));//distance between city and city
+		saffronCity.addConnection(new Path(celadonCity, 10));//distance between city and city
+		saffronCity.addConnection(new Path(lavenderTown, 20));//distance between city and town
+		saffronCity.addConnection(new Path(vermillionCity, 20));//distance between city and city
 
-		celadonCity.addConnection(new Path(saffronCity, 10));
-		celadonCity.addConnection(new Path(fuchsiaCity, 50));
+		celadonCity.addConnection(new Path(saffronCity, 10));//distance between city and city
+		celadonCity.addConnection(new Path(fuchsiaCity, 50));//distance between city and city
 
-		lavenderTown.addConnection(new Path(saffronCity, 20));
-		lavenderTown.addConnection(new Path(vermillionCity, 40));
-		lavenderTown.addConnection(new Path(fuchsiaCity, 120));
+		lavenderTown.addConnection(new Path(saffronCity, 20));//distance between city and town
+		lavenderTown.addConnection(new Path(vermillionCity, 40));//distance between city and city
+		lavenderTown.addConnection(new Path(fuchsiaCity, 120));//distance between city and city
 
-		vermillionCity.addConnection(new Path(saffronCity, 20));
-		vermillionCity.addConnection(new Path(lavenderTown, 40));
-		vermillionCity.addConnection(new Path(fuchsiaCity, 80));
+		vermillionCity.addConnection(new Path(saffronCity, 20));//distance between city and city
+		vermillionCity.addConnection(new Path(lavenderTown, 40));//distance between city and town
+		vermillionCity.addConnection(new Path(fuchsiaCity, 80));//distance between city and city
 
-		fuchsiaCity.addConnection(new Path(celadonCity, 50));
-		fuchsiaCity.addConnection(new Path(lavenderTown, 120));
-		fuchsiaCity.addConnection(new Path(vermillionCity, 80));
-		fuchsiaCity.addConnection(new Path(cinnabarIsland, 100));
+		fuchsiaCity.addConnection(new Path(celadonCity, 50));//distance between city and city
+		fuchsiaCity.addConnection(new Path(lavenderTown, 120));//distance between city and town
+		fuchsiaCity.addConnection(new Path(vermillionCity, 80));//distance between city and city
+		fuchsiaCity.addConnection(new Path(cinnabarIsland, 100));//distance between city and island
 
-		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));
-		cinnabarIsland.addConnection(new Path(palletTown, 100));
+		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));//distance between city and city
+		cinnabarIsland.addConnection(new Path(palletTown, 100));//distance between city and town
 
 		// current = palletTown;
 		townSet.add(palletTown);
@@ -140,7 +145,7 @@ public class GameMap {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//prime for hashcode generation
 		int result = 1;
 		result = prime * result
 				+ ((startTown == null) ? 0 : startTown.hashCode());
@@ -218,7 +223,7 @@ public class GameMap {
 	 *            the starting town
 	 */
 	public static void computePaths(Town source) {
-		source.setMinimumDistance(0);
+		source.setMinimumDistance(0);//minimum distance for dijkstra's
 		final PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
 		vertexQueue.add(source);
 

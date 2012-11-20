@@ -1,3 +1,7 @@
+/**
+ * MarketPlace.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.Iterator;
@@ -21,7 +25,7 @@ public class MarketPlace {
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 31;//prime for hashcode generation
 		int result = 1;
 		result = prime * result + ((stock == null) ? 0 : stock.hashCode());
 		return result;

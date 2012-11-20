@@ -1,3 +1,8 @@
+/**
+ * ItemDescTile.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.GUI;
 
 import com.badlogic.gdx.Gdx;
@@ -15,7 +20,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
+
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;

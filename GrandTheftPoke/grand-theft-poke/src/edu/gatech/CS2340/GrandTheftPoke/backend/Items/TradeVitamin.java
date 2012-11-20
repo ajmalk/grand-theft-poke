@@ -1,3 +1,7 @@
+/**
+ * TradeVitamin.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -18,7 +22,7 @@ public class TradeVitamin extends Item implements Usable {
 	 */
 	@Override
 	public void use(Person person) {
-		person.setTrade(1);
+		person.setTrade(1);//adds one point to trade
 	}
 
 	/**
@@ -28,7 +32,7 @@ public class TradeVitamin extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setTrade(-1);
+		person.setTrade(-1);//subtracts one point from trade
 	}
 
 	/**

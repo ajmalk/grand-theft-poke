@@ -1,3 +1,8 @@
+/**
+ * FlameOrb.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -14,7 +19,7 @@ public class FlameOrb extends Item {
 	 */
 	@Override
 	public int hashCode() {
-		return 19;
+		return 19;//hashcode for hashmap
 	}
 
 	/**

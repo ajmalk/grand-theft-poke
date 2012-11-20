@@ -1,3 +1,7 @@
+/**
+ * GymLeader.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.persons;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
@@ -57,8 +61,8 @@ public class GymLeader extends Person {
 	 *            other person
 	 */
 	public void lose(Person other) {
-		getWallet().updateMoney(-2 * stake);
-		other.getWallet().updateMoney(2 * stake);
+		getWallet().updateMoney(-2 * stake);//scaling factor
+		other.getWallet().updateMoney(2 * stake);//scaling factor
 
 		this.stake = 0;
 	}

@@ -1,3 +1,7 @@
+/**
+ * Pokeball.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 //import edu.gatech.CS2340.grandtheftpoke.Person;
@@ -42,7 +46,7 @@ public class Pokeball extends Item {
 	 */
 	@Override
 	public int hashCode() {
-		final int hash = 5;
+		final int hash = 5;//hashcode for hashmap
 		return hash;
 	}
 

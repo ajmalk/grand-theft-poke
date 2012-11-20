@@ -1,3 +1,7 @@
+/**
+ * Main.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.Iterator;
@@ -63,19 +67,19 @@ public class Main {
 			GlobalItemReference theReference) {
 
 		final Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 100, 1000,
-				map);
+				map);//all numbers are stats for player
 		final MarketPlace theMarket = testPlayer.getCurrent().getMarket();
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		System.out.println(testPlayer.buy(theMarket,
-				theReference.getCharizard(), 1));
+				theReference.getCharizard(), 1));//buying one charizard
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		System.out.println(testPlayer.sell(theMarket,
-				theReference.getHealthPotion(), 3));
+				theReference.getHealthPotion(), 3));//buying 3 health potions
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
-		testPlayer.buy(theMarket, theReference.getRepel(), 1);
+		testPlayer.buy(theMarket, theReference.getRepel(), 1);//buying one repel
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 	}
@@ -89,7 +93,7 @@ public class Main {
 	public static void testMovement(GameMap map) {
 		// Player testPlayer = new Player("Ben", 4, 4, 4, 4, 500, 120, 10, map);
 		final Person testPlayer = new GymLeader("Brock", 4, 4, 4, 4, 100, 80,
-				20, 50f, map);
+				20, 50f, map);//all stats for Brock
 		final Set<Town> townSet = map.getTownSet();
 		for (final Iterator<Town> it = townSet.iterator(); it.hasNext();) {
 			testPlayer.move(it.next());

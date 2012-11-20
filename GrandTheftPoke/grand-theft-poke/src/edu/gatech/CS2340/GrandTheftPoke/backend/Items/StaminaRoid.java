@@ -1,3 +1,7 @@
+/**
+ * StaminaRoid.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -18,7 +22,7 @@ public class StaminaRoid extends Item implements Usable {
 	 */
 	@Override
 	public void use(Person person) {
-		person.setStamina(2);
+		person.setStamina(2);//adds two to stamina
 	}
 
 	/**
@@ -28,7 +32,7 @@ public class StaminaRoid extends Item implements Usable {
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setStamina(-2);
+		person.setStamina(-2);//subtracts two from stamina
 	}
 
 	/**

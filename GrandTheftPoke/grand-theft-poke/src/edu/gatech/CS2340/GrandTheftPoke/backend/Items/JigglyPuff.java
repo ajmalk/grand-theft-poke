@@ -1,3 +1,7 @@
+/**
+ * JigglyPuff.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -13,7 +17,7 @@ public class JigglyPuff extends Pokemon {
 	 * JigglyPuff Constructor
 	 */
 	public JigglyPuff() {
-		super(1, 2, 3, 4);
+		super(1, 2, 3, 4);//stats for jigglypuff
 	}
 
 	/**

@@ -1,3 +1,7 @@
+/**
+ * Squirtle.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
@@ -13,7 +17,7 @@ public class Squirtle extends Pokemon {
 	 * Squirtle Constructor
 	 */
 	public Squirtle() {
-		super(3, 3, 2, 2);
+		super(3, 3, 2, 2);//stats for squirtle
 	}
 
 	/**

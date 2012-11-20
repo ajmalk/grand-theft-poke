@@ -1,3 +1,8 @@
+/**
+ * Trader.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.persons;
 
 import java.util.HashMap;
@@ -60,59 +65,59 @@ public class Trader extends Person {
 		myStock.put(
 				itemsInstance.getHealthPotion(),
 				new MarketPlaceItem(10f, (float) (getBackpack()
-						.getAmount(itemsInstance.getHealthPotion()))));
+						.getAmount(itemsInstance.getHealthPotion()))));//starting price
 		myStock.put(
 				itemsInstance.getHealthVitamin(),
 				new MarketPlaceItem(750f, (float) (getBackpack()
-						.getAmount(itemsInstance.getHealthVitamin()))));
+						.getAmount(itemsInstance.getHealthVitamin()))));//starting price
 		myStock.put(
 				itemsInstance.getAgilityVitamin(),
 				new MarketPlaceItem(850f, (float) (getBackpack()
-						.getAmount(itemsInstance.getAgilityVitamin()))));
+						.getAmount(itemsInstance.getAgilityVitamin()))));//starting price
 		myStock.put(
 				itemsInstance.getStrengthVitamin(),
 				new MarketPlaceItem(1000f, (float) (getBackpack()
-						.getAmount(itemsInstance.getStrengthVitamin()))));
+						.getAmount(itemsInstance.getStrengthVitamin()))));//starting price
 		myStock.put(
 				itemsInstance.getStaminaVitamin(),
 				new MarketPlaceItem(500f, (float) (getBackpack()
-						.getAmount(itemsInstance.getStaminaVitamin()))));
+						.getAmount(itemsInstance.getStaminaVitamin()))));//starting price
 		myStock.put(
 				itemsInstance.getTradeVitamin(),
 				new MarketPlaceItem(600f, (float) (getBackpack()
-						.getAmount(itemsInstance.getTradeVitamin()))));
+						.getAmount(itemsInstance.getTradeVitamin()))));//starting price
 		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f,
-				(float) (getBackpack().getAmount(itemsInstance.getRepel()))));
+				(float) (getBackpack().getAmount(itemsInstance.getRepel()))));//starting price
 		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f,
-				(float) (getBackpack().getAmount(itemsInstance.getSquirtle()))));
+				(float) (getBackpack().getAmount(itemsInstance.getSquirtle()))));//starting price
 		myStock.put(
 				itemsInstance.getCharizard(),
 				new MarketPlaceItem(3000f, (float) (getBackpack()
-						.getAmount(itemsInstance.getCharizard()))));
+						.getAmount(itemsInstance.getCharizard()))));//starting price
 		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f,
-				(float) (getBackpack().getAmount(itemsInstance.getPikachu()))));
+				(float) (getBackpack().getAmount(itemsInstance.getPikachu()))));//starting price
 		myStock.put(
 				itemsInstance.getJigglyPuff(),
 				new MarketPlaceItem(500f, (float) (getBackpack()
-						.getAmount(itemsInstance.getJigglyPuff()))));
+						.getAmount(itemsInstance.getJigglyPuff()))));//starting price
 		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f,
-				(float) (getBackpack().getAmount(itemsInstance.getArcanine()))));
+				(float) (getBackpack().getAmount(itemsInstance.getArcanine()))));//starting price
 		myStock.put(
 				itemsInstance.getHealthRoid(),
 				new MarketPlaceItem(2750f, (float) (getBackpack()
-						.getAmount(itemsInstance.getHealthRoid()))));
+						.getAmount(itemsInstance.getHealthRoid()))));//starting price
 		myStock.put(
 				itemsInstance.getAgilityRoid(),
 				new MarketPlaceItem(2500f, (float) (getBackpack()
-						.getAmount(itemsInstance.getAgilityRoid()))));
+						.getAmount(itemsInstance.getAgilityRoid()))));//starting price
 		myStock.put(
 				itemsInstance.getStrengthRoid(),
 				new MarketPlaceItem(3000f, (float) (getBackpack()
-						.getAmount(itemsInstance.getStrengthRoid()))));
+						.getAmount(itemsInstance.getStrengthRoid()))));//starting price
 		myStock.put(
 				itemsInstance.getTradeRoid(),
 				new MarketPlaceItem(2000f, (float) (getBackpack()
-						.getAmount(itemsInstance.getTradeRoid()))));
+						.getAmount(itemsInstance.getTradeRoid()))));//starting price
 		final MarketPlace myMarket = new MarketPlace(myStock);
 
 		personalMarket = myMarket;

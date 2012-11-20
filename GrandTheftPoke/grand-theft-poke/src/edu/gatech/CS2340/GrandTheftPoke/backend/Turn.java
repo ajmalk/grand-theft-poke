@@ -1,3 +1,8 @@
+/**
+ * Turn.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.ArrayList;
@@ -81,29 +86,29 @@ public class Turn {
 		// health, int range, int capacity, Float money, GameMap theMap,
 		// GlobalItemReference itemsInstance
 		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));
+				1000f, theMap, items));//stats for Bob Waters
 		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));
+				1000f, theMap, items));//Stats for Ajmal
 		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));
+				1000f, theMap, items));//stats for Drake
 		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));
+				1000f, theMap, items));//Stats for Henry
 		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));
+				1000f, theMap, items));//Stats for Griffin
 		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));
+				1000f, theMap, items));//stats for your mother
 		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f,
-				theMap, items));
+				theMap, items));//stats for rival
 		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100,
-				20, 1000f, theMap, items));
+				20, 1000f, theMap, items));//stats for ajmal's evil twin
 		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 100, 100, 20,
-				1000f, theMap));
+				1000f, theMap));//stats for Ben Nuttle version2
 		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f,
-				theMap));
+				theMap));//stats for Ho Yin
 		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f,
-				theMap));
+				theMap));//stats for Jill
 		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20,
-				1000f, theMap));
+				1000f, theMap));//stats for Sagar
 		this.theMap = theMap;
 		this.thePlayer = player;
 		rand = new Random();

@@ -1,3 +1,7 @@
+/**
+ * TownFactoryImplementation.java
+ * @version 1.0
+ */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 
 import java.util.HashMap;
@@ -47,33 +51,33 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makePalletTown() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 0f));
+				850f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 0f));
+				1000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 0f));
+				500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				0f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));
-		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));
+				0f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));//starting price and quantity
+		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(),
-				new MarketPlaceItem(3000f, 5f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));
+				new MarketPlaceItem(3000f, 5f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(),
-				new MarketPlaceItem(500f, 0f));
-		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(500f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(),
-				new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Pallet Town", myMarket);
 		myTown.setImage("pallet-town");
@@ -90,36 +94,36 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeViridianCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 20f));
+				850f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 20f));
+				1000f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 20f));
+				500f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				20f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
+				20f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));//starting price and quantity
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2500f, 10f));
+				new MarketPlaceItem(2500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
-				10f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+				10f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2000f, 10f));
+				new MarketPlaceItem(2000f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
-				10f));
+				10f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Viridian City", myMarket);
 		myTown.setImage("viridian-city");
@@ -137,36 +141,36 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makePewterCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 20f));
+				850f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 20f));
+				1000f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 20f));
+				500f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				20f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
+				20f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));//starting price and quantity
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2500f, 10f));
+				new MarketPlaceItem(2500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
-				10f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+				10f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2000f, 10f));
+				new MarketPlaceItem(2000f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
-				10f));
+				10f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Pewter City", myMarket);
 		myTown.setImage("pewter-city");
@@ -183,36 +187,36 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeCeruleanCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 20f));
+				850f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 20f));
+				1000f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 20f));
+				500f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				20f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
+				20f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));//starting price and quantity
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2500f, 10f));
+				new MarketPlaceItem(2500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
-				10f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+				10f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2000f, 10f));
+				new MarketPlaceItem(2000f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
-				10f));
+				10f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Cerulean City", myMarket);
 		myTown.setImage("cerulean-city");
@@ -229,36 +233,36 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeSaffronCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(30f,
-				30f));
+				30f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(
-				1000f, 30f));
+				1000f, 30f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				1100f, 30f));
+				1100f, 30f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1250f, 30f));
+				1250f, 30f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				750f, 30f));
+				750f, 30f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(850f,
-				30f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(450f, 15f));
+				30f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(450f, 15f));//starting price and quantity
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2750f, 15f));
+				new MarketPlaceItem(2750f, 15f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3250f,
-				15f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4750f, 15f));
+				15f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4750f, 15f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(750f,
-				15f));
+				15f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2250f, 15f));
+				new MarketPlaceItem(2250f, 15f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(3000f,
-				15f));
+				15f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2750f,
-				15f));
+				15f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3250f,
-				15f));
+				15f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2250f,
-				15f));
+				15f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Saffron City", myMarket);
 		myTown.setImage("saffron-city");
@@ -275,35 +279,35 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeCeladonCity() {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 20f));
+				850f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 20f));
+				1000f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 20f));
+				500f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				20f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
+				20f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2500f, 10f));
+				new MarketPlaceItem(2500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
-				10f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+				10f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2000f, 10f));
+				new MarketPlaceItem(2000f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
-				10f));
+				10f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Celadon City", myMarket);
 		myTown.setImage("celadon-city");
@@ -319,33 +323,33 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeLavenderTown() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 0f));
+				850f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 0f));
+				1000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 0f));
+				500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				0f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));
-		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));
+				0f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));//starting price and quantity
+		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(),
-				new MarketPlaceItem(3000f, 0f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));
+				new MarketPlaceItem(3000f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(),
-				new MarketPlaceItem(500f, 0f));
-		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(500f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(),
-				new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		System.out
 				.println(myStock.containsKey(itemsInstance.getHealthPotion()));
 		MarketPlace myMarket = new MarketPlace(myStock);
@@ -364,35 +368,35 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeVermillionCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 20f));
+				850f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 20f));
+				1000f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 20f));
+				500f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				20f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
+				20f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2500f, 10f));
+				new MarketPlaceItem(2500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
-				10f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+				10f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2000f, 10f));
+				new MarketPlaceItem(2000f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
-				10f));
+				10f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Vermillion City", myMarket);
 		myTown.setImage("vermillion-city");
@@ -409,35 +413,35 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeFuchsiaCity() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				20f));
+				20f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 20f));
+				850f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 20f));
+				1000f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 20f));
+				500f, 20f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				20f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));
+				20f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(350f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getSquirtle(),
-				new MarketPlaceItem(2500f, 10f));
+				new MarketPlaceItem(2500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
-				10f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
+				10f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getArcanine(),
-				new MarketPlaceItem(2000f, 10f));
+				new MarketPlaceItem(2000f, 10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
-				10f));
+				10f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Fuchsia City", myMarket);
 		myTown.setImage("fuchsia-city");
@@ -454,34 +458,34 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makeCinnabarIsland() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 0f));
+				850f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 0f));
+				1000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 0f));
+				500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				0f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));
+				0f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));//starting price and quantity
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
-		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));
+		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(),
-				new MarketPlaceItem(3000f, 0f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));
+				new MarketPlaceItem(3000f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(),
-				new MarketPlaceItem(500f, 0f));
-		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(500f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(),
-				new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Cinnabar Island", myMarket);
 		myTown.setImage("cinnabar-island.png");
@@ -498,34 +502,34 @@ public class TownFactoryImplementation implements TownFactory {
 	public Town makePowerPlant() {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
-				10f));
+				10f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 0f));
+				850f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 0f));
+				1000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 0f));
+				500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				0f));
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));
+				0f));//starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));//starting price and quantity
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
-		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));
+		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getCharizard(),
-				new MarketPlaceItem(3000f, 0f));
-		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));
+				new MarketPlaceItem(3000f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getJigglyPuff(),
-				new MarketPlaceItem(500f, 0f));
-		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(500f, 0f));//starting price and quantity
+		myStock.put(itemsInstance.getArcanine(), new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		myStock.put(itemsInstance.getHealthRoid(), new MarketPlaceItem(2750f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getAgilityRoid(), new MarketPlaceItem(2500f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getStrengthRoid(), new MarketPlaceItem(3000f,
-				0f));
+				0f));//starting price and quantity
 		myStock.put(itemsInstance.getTradeRoid(),
-				new MarketPlaceItem(2000f, 0f));
+				new MarketPlaceItem(2000f, 0f));//starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Power Plant", myMarket);
 

@@ -1,3 +1,8 @@
+/**
+ * AgilityVitamin.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
@@ -14,7 +19,6 @@ public class AgilityVitamin extends Item implements Usable {
 	/**
 	 * Method use.
 	 * @param person Person
-	
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person) */
 	@Override
 	public void use(Person person) {
@@ -24,7 +28,6 @@ public class AgilityVitamin extends Item implements Usable {
 	/**
 	 * Method unUse.
 	 * @param person Person
-	
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person) */
 	@Override
 	public void unUse(Person person) {
