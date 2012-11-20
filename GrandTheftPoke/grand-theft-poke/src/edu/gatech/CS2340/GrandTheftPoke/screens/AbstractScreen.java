@@ -20,10 +20,12 @@ public abstract class AbstractScreen implements Screen {
 	 * Field game.
 	 */
 	protected final GTPoke game;
+
 	/**
 	 * Field stage.
 	 */
 	protected final Stage stage;
+
 	/**
 	 * Field batch.
 	 */

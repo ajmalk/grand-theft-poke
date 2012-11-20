@@ -276,7 +276,6 @@ public class SkillPoints extends AbstractScreen {
 
 	}
 
-
 	/**
 	 * Method dispose.
 	 * @see com.badlogic.gdx.Screen#dispose()

@@ -157,8 +157,6 @@ public class Name extends AbstractScreen {
 
 	}
 
-
-
 	/**
 	 * Method checkName.
 	 * @param name String
