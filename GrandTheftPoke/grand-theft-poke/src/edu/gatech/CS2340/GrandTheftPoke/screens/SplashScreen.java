@@ -77,7 +77,6 @@ public class SplashScreen extends AbstractScreen {
 		stage.draw();
 	}
 
-
 	/**
 	 * Method dispose.
 	 * @see com.badlogic.gdx.Screen#dispose()
