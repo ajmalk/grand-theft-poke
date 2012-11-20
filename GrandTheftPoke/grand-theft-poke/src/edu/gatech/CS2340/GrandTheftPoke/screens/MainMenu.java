@@ -23,6 +23,9 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public class MainMenu extends AbstractScreen {
+	/**
+	 * Field background.
+	 */
 	private Image background;
 
 	/**
@@ -33,6 +36,10 @@ public class MainMenu extends AbstractScreen {
 		super(game);
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -99,16 +106,31 @@ public class MainMenu extends AbstractScreen {
 
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();

@@ -18,8 +18,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 public class Trader extends Person {
 
+	/**
+	 * Field personalMarket.
+	 */
 	private MarketPlace personalMarket;
 	
+	/**
+	 * Field itemsInstance.
+	 */
 	private GlobalItemReference itemsInstance;
 
 	/**
@@ -113,8 +119,8 @@ public class Trader extends Person {
 	}
 
 	/**
-	 * @return personalMarket
-	 */
+	
+	 * @return personalMarket */
 	public MarketPlace getMarket() {
 		return personalMarket;
 	}

@@ -29,36 +29,70 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  */
 public class MapScreen extends AbstractScreen {
 
+	/**
+	 * Field background.
+	 */
 	private Texture background;
-
+	/**
+	 * Field backgroundImage.
+	 */
 	private Image backgroundImage;
-
+	/**
+	 * Field theMap.
+	 */
 	private GameMap theMap;
 
+	/**
+	 * Field palletTownButton.
+	 */
 	private TownTile palletTownButton;
-
+	/**
+	 * Field viridianCityButton.
+	 */
 	private TownTile viridianCityButton;
-
+	/**
+	 * Field pewterCityButton.
+	 */
 	private TownTile pewterCityButton;
-
+	/**
+	 * Field ceruleanCityButton.
+	 */
 	private TownTile ceruleanCityButton;
-
+	/**
+	 * Field vermillionCityButton.
+	 */
 	private TownTile vermillionCityButton;
-
+	/**
+	 * Field lavenderTownButton.
+	 */
 	private TownTile lavenderTownButton;
-
+	/**
+	 * Field fuchsiaCityButton.
+	 */
 	private TownTile fuchsiaCityButton;
-
+	/**
+	 * Field saffronCityButton.
+	 */
 	private TownTile saffronCityButton;
-
+	/**
+	 * Field cinnabarIslandButton.
+	 */
 	private TownTile cinnabarIslandButton;
-
+	/**
+	 * Field powerPlantButton.
+	 */
 	private TownTile powerPlantButton;
-
+	/**
+	 * Field celadonCityButton.
+	 */
 	private TownTile celadonCityButton;
-
+	/**
+	 * Field saveButton.
+	 */
 	private Button saveButton;
-
+	/**
+	 * Field backButton.
+	 */
 	private Button backButton;
 
 	/**
@@ -69,6 +103,10 @@ public class MapScreen extends AbstractScreen {
 		super(game);
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		super.show();
@@ -417,6 +455,11 @@ public class MapScreen extends AbstractScreen {
 		stage.addActor(game.getStatusBar());
 	}
 
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -424,11 +467,21 @@ public class MapScreen extends AbstractScreen {
 		game.update();
 	}
 
+	/**
+	 * Method resize.
+	 * @param width int
+	 * @param height int
+	 * @see com.badlogic.gdx.Screen#resize(int, int)
+	 */
 	@Override
 	public void resize(int width, int height) {
 		super.resize(width, height);
 	}
 
+	/**
+	 * Method dispose.
+	 * @see com.badlogic.gdx.Screen#dispose()
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();

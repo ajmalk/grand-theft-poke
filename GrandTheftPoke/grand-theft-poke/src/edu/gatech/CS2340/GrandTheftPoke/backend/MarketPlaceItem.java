@@ -12,11 +12,36 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("Stock")
 public class MarketPlaceItem {
 	
+	/**
+	 * Field STOCK_RATIO.
+	 */
+	/**
+	 * Field PROD_ELASTICITY.
+	 */
+	/**
+	 * Field CONS_ELASTICITY.
+	 */
+	/**
+	 * Field EQIL_STOCK.
+	 */
+	/**
+	 * Field EQIL_PRICE.
+	 */
 	private final float EQIL_PRICE, EQIL_STOCK, CONS_ELASTICITY,
 						PROD_ELASTICITY, STOCK_RATIO;
 	
+	/**
+	 * Field stock.
+	 */
+	/**
+	 * Field price.
+	 */
 	private float price, stock;
 	
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "MarketPlaceItem [price=" + price + ", stock=" + stock
@@ -45,8 +70,8 @@ public class MarketPlaceItem {
 	/**
 	 * returns the current retail price
 	 * 
-	 * @return the price truncated to 2 decimal places
-	 */
+	
+	 * @return the price truncated to 2 decimal places */
 	public Float getPrice() {
 		return price / 100f; // probably a better way to do
 												// this
@@ -56,8 +81,8 @@ public class MarketPlaceItem {
 	 * returns the total price if buying a certain amount of the item
 	 * 
 	 * @param amount
-	 * @return the price truncated to 2 decimal places
-	 */
+	
+	 * @return the price truncated to 2 decimal places */
 	public Float getBuyingPrice(int amount) {
 		if (amount < 0) {
 			return 0f;
@@ -73,8 +98,8 @@ public class MarketPlaceItem {
 	 * returns the total price if selling a certain amount of the item
 	 * 
 	 * @param amount
-	 * @return the price truncated to 2 decimal places
-	 */
+	
+	 * @return the price truncated to 2 decimal places */
 	public Float getSellingPrice(int amount) {
 		if (amount < 0) {
 			return 0f;
@@ -89,8 +114,8 @@ public class MarketPlaceItem {
 	/**
 	 * The current stock level
 	 * 
-	 * @return the stock
-	 */
+	
+	 * @return the stock */
 	public Integer getStock() {
 		return (int) Math.floor(stock - 500);
 	}
@@ -100,8 +125,8 @@ public class MarketPlaceItem {
 	 * 
 	 * @param price
 	 *            the price
-	 * @return float
-	 */
+	
+	 * @return float */
 	public float consumption(float price) {
 		return (float) Math.pow((price / EQIL_PRICE), CONS_ELASTICITY)
 				* EQIL_STOCK;
@@ -112,13 +137,17 @@ public class MarketPlaceItem {
 	 * 
 	 * @param price
 	 *            the price
-	 * @return float
-	 */
+	
+	 * @return float */
 	public float production(float price) {
 		return (float) Math.pow((price / EQIL_PRICE), PROD_ELASTICITY)
 				* EQIL_STOCK;
 	}
 
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -133,6 +162,11 @@ public class MarketPlaceItem {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -179,8 +213,8 @@ public class MarketPlaceItem {
 	 * 
 	 * @param amount
 	 *            price of item
-	 * @return float
-	 */
+	
+	 * @return float */
 	private float getNewPrice(float amount) {
 		float temp, price = this.price;
 		amount += stock - EQIL_STOCK;
@@ -203,8 +237,8 @@ public class MarketPlaceItem {
 	 * updates the stock and price level to the next iteration (turn). Should be
 	 * called once every turn.
 	 * 
-	 * @return true if successful
-	 */
+	
+	 * @return true if successful */
 	public boolean update() {
 		if (Math.abs(price - EQIL_PRICE) < 0.001) {
 			return true;
@@ -220,8 +254,8 @@ public class MarketPlaceItem {
 	 * buys "amount" items from the market
 	 * 
 	 * @param amount
-	 * @return the total price of the transaction
-	 */
+	
+	 * @return the total price of the transaction */
 	public Float buy(int amount) {
 		if (amount < 0 || amount > stock - 500) {
 			return 0f;
@@ -236,8 +270,8 @@ public class MarketPlaceItem {
 	 * sells "amount" items to the market
 	 * 
 	 * @param amount
-	 * @return the total price of the transaction
-	 */
+	
+	 * @return the total price of the transaction */
 	public Float sell(int amount) {
 		if (amount < 0) {
 			return 0f;

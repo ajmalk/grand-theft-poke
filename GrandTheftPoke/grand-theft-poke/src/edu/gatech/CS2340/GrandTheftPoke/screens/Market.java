@@ -36,24 +36,57 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
  * 
  */
 public class Market extends AbstractScreen {
+	/**
+	 * Field myMarket.
+	 */
 	private MarketPlace myMarket;
-
+	/**
+	 * Field playerPack.
+	 */
 	private Backpack playerPack;
-
+	/**
+	 * Field table.
+	 */
+	/**
+	 * Field backpacktable.
+	 */
+	/**
+	 * Field markettable.
+	 */
 	private Table markettable, backpacktable, table;
-
+	/**
+	 * Field marketItemGroup.
+	 */
 	private ButtonGroup marketItemGroup;
-
+	/**
+	 * Field backpackStock.
+	 */
+	/**
+	 * Field marketStock.
+	 */
 	private ScrollPane marketStock, backpackStock;
-
+	/**
+	 * Field description.
+	 */
 	private ItemDescTile description;
-
+	/**
+	 * Field backButton.
+	 */
 	private Button backButton;
-
+	/**
+	 * Field marketplace.
+	 */
+	/**
+	 * Field backpack.
+	 */
 	private Map<Item, ItemTile> backpack, marketplace;
-
+	/**
+	 * Field background.
+	 */
 	private Image background;
-
+	/**
+	 * Field otherTrader.
+	 */
 	private Trader otherTrader;
 
 	/**
@@ -115,6 +148,10 @@ public class Market extends AbstractScreen {
 		otherTrader = other;
 	}
 
+	/**
+	 * Method show.
+	 * @see com.badlogic.gdx.Screen#show()
+	 */
 	@Override
 	public void show() {
 		// background = new
@@ -235,6 +272,11 @@ public class Market extends AbstractScreen {
 	 * 
 	 * @see
 	 * edu.gatech.CS2340.GrandTheftPoke.screens.AbstractScreen#render(float)
+	 */
+	/**
+	 * Method render.
+	 * @param delta float
+	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
 	public void render(float delta) {

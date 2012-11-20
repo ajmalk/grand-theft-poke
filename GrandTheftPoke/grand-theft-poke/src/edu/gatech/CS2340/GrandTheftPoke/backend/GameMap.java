@@ -25,14 +25,24 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.TownFactoryImplementation;
 @XStreamAlias("Map")
 public class GameMap {
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "GameMap [townSet=" + townSet + ", startTown=" + startTown + "]";
 	}
 
+	/**
+	 * Field townSet.
+	 */
 	@XStreamImplicit(itemFieldName = "Town")
 	private final Set<Town> townSet;
 
+	/**
+	 * Field startTown.
+	 */
 	@XStreamOmitField
 	private Town startTown;
 
@@ -124,6 +134,10 @@ public class GameMap {
 
 	}
 
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -134,6 +148,11 @@ public class GameMap {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -176,8 +195,8 @@ public class GameMap {
 	/**
 	 * gets the set of towns
 	 * 
-	 * @return townSet the set of towns
-	 */
+	
+	 * @return townSet the set of towns */
 	public Set<Town> getTownSet() {
 		return townSet;
 	}
@@ -225,8 +244,8 @@ public class GameMap {
 	 * 
 	 * @param target
 	 *            the end town
-	 * @return the shortest path
-	 */
+	
+	 * @return the shortest path */
 	public static List<Town> getShortestPathTo(Town target) {
 		final List<Town> path = new ArrayList<Town>();
 		for (Town vertex = target; vertex != null; vertex = vertex
@@ -240,8 +259,8 @@ public class GameMap {
 	/**
 	 * return the start town
 	 * 
-	 * @return startTown
-	 */
+	
+	 * @return startTown */
 	public Town getStartTown() {
 		return startTown;
 	}
@@ -249,8 +268,8 @@ public class GameMap {
 	/**
 	 * returns a random town
 	 * 
-	 * @return a random town
-	 */
+	
+	 * @return a random town */
 	public Town getRandomTown() {
 		final Random rand = new Random();
 		return (Town) townSet.toArray()[rand.nextInt(townSet.size())];
@@ -264,8 +283,8 @@ public class GameMap {
 	 *            the starting town
 	 * @param townName
 	 *            the townName
-	 * @return an int computing the distance
-	 */
+	
+	 * @return an int computing the distance */
 	public int dijkstras(Town source, String townName) {
 		computePaths(source);
 		int toBeReturned = Integer.MAX_VALUE;

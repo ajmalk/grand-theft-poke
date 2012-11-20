@@ -25,22 +25,44 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  */
 public class Battle extends AbstractScreen {
 
+	/**
+	 * the game
+	 */
 	private GTPoke game;
-
+	/**
+	 * the background
+	 */
 	private Texture background;
-
+	/**
+	 * the backgroundImage
+	 */
 	private Image backgroundImage;
-
+	/**
+	 * myPerson
+	 */
 	private Person myPerson;
-
+	/**
+	 * rand
+	 */
 	private Random rand;
 
+	/**
+	 * attack button
+	 */
 	private Button attack;
-
+	/**
+	 * flee button
+	 */
 	private Button flee;
 
+	/**
+	 * turnCount
+	 */
 	private int turnCount;
 
+	/**
+	 * table
+	 */
 	private Table table;
 
 	/**
@@ -55,6 +77,15 @@ public class Battle extends AbstractScreen {
 		myPerson = opponent;
 		rand = new Random();
 		turnCount = 1;
+	}
+	
+	/**
+	 * toString method
+	 * @return String
+	 */
+	@Override
+	public String toString() {
+		return "Battle";
 	}
 
 	/*

@@ -10,6 +10,9 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
  * 
  */
 public class GymLeader extends Person {
+	/**
+	 * Field stake.
+	 */
 	private int stake;
 
 	/**

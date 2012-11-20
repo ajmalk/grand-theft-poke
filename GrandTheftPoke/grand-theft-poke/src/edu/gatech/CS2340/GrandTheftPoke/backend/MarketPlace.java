@@ -15,6 +15,10 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
  */
 @XStreamAlias("Market")
 public class MarketPlace {
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -23,6 +27,11 @@ public class MarketPlace {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -45,12 +54,19 @@ public class MarketPlace {
 		return true;
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "MarketPlace [stock=" + stock + "]";
 	}
 
 	// @XStreamImplicit(itemFieldName="Item")
+	/**
+	 * Field stock.
+	 */
 	private Map<Item, MarketPlaceItem> stock;
 
 	/**
@@ -70,8 +86,8 @@ public class MarketPlace {
 	 *            the good to be bought
 	 * @param quantity
 	 *            quantity to be bought
-	 * @return float
-	 */
+	
+	 * @return float */
 	public float buy(Item good, int quantity) {
 		if (stock.containsKey(good)) {
 			final MarketPlaceItem model = stock.get(good);
@@ -87,8 +103,8 @@ public class MarketPlace {
 	 *            good to be sold
 	 * @param quantity
 	 *            quantity to be sold
-	 * @return float
-	 */
+	
+	 * @return float */
 	public float sell(Item good, int quantity) {
 		if (stock.containsKey(good)) {
 			final MarketPlaceItem model = stock.get(good);
@@ -101,8 +117,8 @@ public class MarketPlace {
 	/**
 	 * getsStock
 	 * 
-	 * @return stock the stock of the market
-	 */
+	
+	 * @return stock the stock of the market */
 
 	public Map getStock() {
 		return stock;
@@ -111,8 +127,8 @@ public class MarketPlace {
 	/**
 	 * marketPlace Iterator
 	 * 
-	 * @return Iterator iterator
-	 */
+	
+	 * @return Iterator iterator */
 	public Iterator iterator() {
 		return stock.entrySet().iterator();
 

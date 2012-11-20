@@ -21,24 +21,64 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
  * @version 1.0
  */
 public abstract class Person {
+	/**
+	 * Field name.
+	 */
 	@XStreamAsAttribute
 	private String name;
 
+	/**
+	 * Field maxHealth.
+	 */
+	/**
+	 * Field currentStamina.
+	 */
+	/**
+	 * Field stamina.
+	 */
+	/**
+	 * Field trade.
+	 */
+	/**
+	 * Field agility.
+	 */
+	/**
+	 * Field strength.
+	 */
 	private Integer strength, agility, trade, stamina, currentStamina,
 			maxHealth;
 
+	/**
+	 * Field health.
+	 */
 	@XStreamAsAttribute
 	private Integer health;
 
+	/**
+	 * Field myWallet.
+	 */
 	private Wallet myWallet;
 
+	/**
+	 * Field currentTown.
+	 */
 	private Town currentTown;
 
+	/**
+	 * Field myBackpack.
+	 */
 	private Backpack myBackpack;
 
+	/**
+	 * Field theMap.
+	 */
 	@XStreamOmitField
 	private GameMap theMap;
 
+	/**
+	 * Method hashCode.
+	 * @return int
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -64,6 +104,11 @@ public abstract class Person {
 		return result;
 	}
 
+	/**
+	 * Method equals.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -182,7 +227,7 @@ public abstract class Person {
 	 * @param capacity
 	 * @param money
 	 * @param theMap
-	 * @param theReference
+	
 	 */
 	public Person(String name, int strength, int agility, int trade,
 			int stamina, int health, int range, int capacity, Float money,
@@ -205,8 +250,8 @@ public abstract class Person {
 	/**
 	 * Gets the name of the person
 	 * 
-	 * @return the person's name.
-	 */
+	
+	 * @return the person's name. */
 	public String getName() {
 		return this.name;
 	}
@@ -221,8 +266,8 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return strength
-	 */
+	
+	 * @return strength */
 	public Integer getStrength() {
 		return this.strength;
 	}
@@ -237,8 +282,8 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return agility
-	 */
+	
+	 * @return agility */
 	public Integer getAgility() {
 		return this.agility;
 	}
@@ -253,8 +298,8 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return trade
-	 */
+	
+	 * @return trade */
 	public Integer getTrade() {
 		return this.trade;
 	}
@@ -269,24 +314,24 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return stamina
-	 */
+	
+	 * @return stamina */
 	public Integer getStamina() {
 		return this.stamina;
 	}
 
 	/**
 	 * 
-	 * @return maxHealth
-	 */
+	
+	 * @return maxHealth */
 	public Integer getMaxHealth() {
 		return maxHealth;
 	}
 
 	/**
 	 * 
-	 * @return health
-	 */
+	
+	 * @return health */
 	public Integer getHealth() {
 		return health;
 	}
@@ -321,24 +366,24 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return myBackpack
-	 */
+	
+	 * @return myBackpack */
 	public Backpack getBackpack() {
 		return myBackpack;
 	}
 
 	/**
 	 * 
-	 * @return myWallet
-	 */
+	
+	 * @return myWallet */
 	public Wallet getWallet() {
 		return myWallet;
 	}
 
 	/**
 	 * 
-	 * @return currentTown
-	 */
+	
+	 * @return currentTown */
 	public Town getCurrent() {
 		return currentTown;
 	}
@@ -354,8 +399,8 @@ public abstract class Person {
 	/**
 	 * 
 	 * @param turnCount
-	 * @return int
-	 */
+	
+	 * @return int */
 	public int attack(int turnCount) {
 		final float fatigue = (float) currentStamina / stamina;
 		if (currentStamina > 1 && turnCount % 5 == 0) {
@@ -385,8 +430,8 @@ public abstract class Person {
 
 	/**
 	 * 
-	 * @return boolean
-	 */
+	
+	 * @return boolean */
 	public boolean flee() {
 		return new Random().nextBoolean();
 	}
@@ -412,7 +457,8 @@ public abstract class Person {
 	 * @param theMarket
 	 * @param desiredGood
 	 * @param quantity
-	 * @return
+	
+	 * @return boolean
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (theMarket.getStock().containsKey(desiredGood)) {
@@ -441,7 +487,8 @@ public abstract class Person {
 	 * @param theMarket
 	 * @param desiredGood
 	 * @param quantity
-	 * @return
+	
+	 * @return boolean
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (myBackpack.checkContents(desiredGood, quantity)) {
@@ -473,6 +520,10 @@ public abstract class Person {
 
 	}
 
+	/**
+	 * Method toString.
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return this.getClass() + "Name:" + getName() + " Strength:"
