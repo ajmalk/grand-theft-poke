@@ -138,16 +138,18 @@ public class Backpack {
 	 * @return boolean
 	 */
 	public boolean place(Item placedItem, int quantity) {
-		final int weightDiff = placedItem.getWeight() * quantity;
-		if (checkCapacity(placedItem, quantity)) {
-			if (!(contents.containsKey(placedItem))) {
-				contents.put(placedItem, quantity);
-			} else {
-				final int currentItems = contents.get(placedItem);
-				contents.put(placedItem, currentItems + quantity);
+		if(placedItem!=null&&quantity>0){
+			final int weightDiff = placedItem.getWeight() * quantity;
+			if (checkCapacity(placedItem, quantity)) {
+				if (!(contents.containsKey(placedItem))) {
+					contents.put(placedItem, quantity);
+				} else {
+					final int currentItems = contents.get(placedItem);
+					contents.put(placedItem, currentItems + quantity);
+				}
+				capacity -= weightDiff;
+				return true;
 			}
-			capacity -= weightDiff;
-			return true;
 		}
 		return false;
 
