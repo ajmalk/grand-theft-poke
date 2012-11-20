@@ -463,6 +463,7 @@ public class GTPoke extends Game {
 	 * @return a save button */
 	public Button getSaveButton() {
 		final Button saveButton = getButton("save");
+		saveButton.setPosition(900, 15);
 		saveButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
