@@ -46,7 +46,7 @@ public class SplashScreen extends AbstractScreen {
 
 		splashTexture = new Texture("images//splash.png");
 		stage.clear();
-		Image splashImage = new Image(splashTexture);
+		final Image splashImage = new Image(splashTexture);
 		splashImage.setFillParent(true);
 
 		splashImage.getColor().a = 0f;

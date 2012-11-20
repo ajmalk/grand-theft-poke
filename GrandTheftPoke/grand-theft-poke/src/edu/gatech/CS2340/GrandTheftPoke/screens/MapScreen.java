@@ -121,8 +121,8 @@ public class MapScreen extends AbstractScreen {
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
 
-		Texture townTileSprite = new Texture("images//icons//newball.png");
-		ButtonStyle townTileStyle = new ButtonStyle();
+		final Texture townTileSprite = new Texture("images//icons//newball.png");
+		final ButtonStyle townTileStyle = new ButtonStyle();
 		townTileStyle.up = new TextureRegionDrawable(new TextureRegion(
 				townTileSprite, 0, 0, 36, 45));
 		townTileStyle.down = new TextureRegionDrawable(new TextureRegion(
@@ -130,7 +130,7 @@ public class MapScreen extends AbstractScreen {
 		townTileStyle.disabled = new TextureRegionDrawable(new TextureRegion(
 				townTileSprite, 0, 91, 36, 45));
 
-		Iterator<Town> i = game.getMap().getTownSet().iterator();
+		final Iterator<Town> i = game.getMap().getTownSet().iterator();
 		while (i.hasNext()) {
 			Town theTown = i.next();
 
@@ -201,8 +201,8 @@ public class MapScreen extends AbstractScreen {
 			}
 		}
 
-		Texture buttonSprite = new Texture("images//button-sprite.png");
-		ButtonStyle style = new ButtonStyle();
+		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 				0, 320, 70));
 		style.down = new TextureRegionDrawable(new TextureRegion(buttonSprite,
@@ -255,7 +255,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -270,7 +270,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -284,7 +284,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -298,7 +298,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
@@ -312,7 +312,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -326,7 +326,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -340,7 +340,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -354,7 +354,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -368,7 +368,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -382,7 +382,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}
@@ -396,7 +396,7 @@ public class MapScreen extends AbstractScreen {
 			}
 
 			private void move(Actor listenerActor) {
-				Town destination = ((TownTile) (listenerActor)).getTown();
+				final Town destination = ((TownTile) (listenerActor)).getTown();
 				game.getPlayer().move(destination);
 				game.setScreen(game.getCurrentTownScreen());
 			}

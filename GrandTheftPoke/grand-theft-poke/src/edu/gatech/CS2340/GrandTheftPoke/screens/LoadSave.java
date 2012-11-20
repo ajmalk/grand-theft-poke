@@ -43,23 +43,23 @@ public class LoadSave extends AbstractScreen {
 		super.show();
 
 		background = new Texture("images//main-menu.png");
-		Texture buttonSprite = new Texture("images//button-sprite.png");
+		final Texture buttonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
-		Image backgroundImage = new Image(background);
+		final Image backgroundImage = new Image(background);
 		backgroundImage.setFillParent(true);
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
 		stage.addActor(backgroundImage);
 
-		Button gameButton = new Button(new TextureRegionDrawable(
+		final Button gameButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
 		gameButton.setSkin(game.getSkin());
 		gameButton.add("New Game");
 
-		Button loadButton = new Button(new TextureRegionDrawable(
+		final Button loadButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
@@ -79,7 +79,7 @@ public class LoadSave extends AbstractScreen {
 			}
 		});
 
-		Table table = new Table(game.getSkin());
+		final Table table = new Table(game.getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
 		table.add(gameButton);

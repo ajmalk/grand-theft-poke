@@ -28,7 +28,7 @@ public class Battle extends AbstractScreen {
 	/**
 	 * the game
 	 */
-	private GTPoke game;
+	private final GTPoke game;
 
 	/**
 	 * the background
@@ -43,12 +43,12 @@ public class Battle extends AbstractScreen {
 	/**
 	 * myPerson
 	 */
-	private Person myPerson;
+	private final Person myPerson;
 
 	/**
 	 * rand
 	 */
-	private Random rand;
+	private final Random rand;
 
 	/**
 	 * attack button
@@ -105,7 +105,7 @@ public class Battle extends AbstractScreen {
 		table = new Table(game.getSkin());
 		table.setFillParent(true);
 
-		Texture buttonSprite = new Texture("images//icons//battle.png");
+		final Texture buttonSprite = new Texture("images//icons//battle.png");
 
 		background = new Texture("images//icons//battle.png");
 
@@ -136,10 +136,10 @@ public class Battle extends AbstractScreen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 
-				int speed = game.getPlayer().getAgility();
-				int otherSpeed = myPerson.getAgility();
-				int damage = game.getPlayer().attack(turnCount);
-				int otherDamage = myPerson.attack(turnCount);
+				final int speed = game.getPlayer().getAgility();
+				final int otherSpeed = myPerson.getAgility();
+				final int damage = game.getPlayer().attack(turnCount);
+				final int otherDamage = myPerson.attack(turnCount);
 
 				if (speed > otherSpeed) {
 					myPerson.defend(damage);

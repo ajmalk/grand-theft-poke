@@ -27,7 +27,7 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 	/**
 	 * Field table.
 	 */
-	private Table table = new Table(game.getSkin());
+	private final Table table = new Table(game.getSkin());
 
 	/**
 	 * Field touchPos.
