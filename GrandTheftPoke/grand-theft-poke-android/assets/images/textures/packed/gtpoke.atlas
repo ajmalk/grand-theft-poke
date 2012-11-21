@@ -3,65 +3,79 @@ gtpoke.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+YouLoseUI
+  rotate: false
+  xy: 1, 1095
+  size: 1024, 768
+  orig: 1024, 768
+  offset: 0, 0
+  index: -1
+YouWinUI
+  rotate: false
+  xy: 1, 325
+  size: 1024, 768
+  orig: 1024, 768
+  offset: 0, 0
+  index: -1
 market-place
   rotate: false
-  xy: 1, 1
+  xy: 1027, 1095
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 trade-screen
   rotate: false
-  xy: 1027, 1
+  xy: 1027, 325
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 status-bar
   rotate: false
-  xy: 2053, 705
+  xy: 1, 259
   size: 678, 64
   orig: 678, 64
   offset: 0, 0
   index: -1
 health-bar-empty
   rotate: false
-  xy: 2053, 678
+  xy: 1, 232
   size: 294, 25
   orig: 294, 25
   offset: 0, 0
   index: -1
 health-bar-full
   rotate: false
-  xy: 2053, 651
+  xy: 681, 298
   size: 294, 25
   orig: 294, 25
   offset: 0, 0
   index: -1
 back-button-down
   rotate: false
-  xy: 2053, 574
+  xy: 1, 155
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 back-button
   rotate: false
-  xy: 2053, 497
+  xy: 1, 78
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 save-down
   rotate: false
-  xy: 2130, 574
+  xy: 78, 155
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 save
   rotate: false
-  xy: 2053, 420
+  xy: 1, 1
   size: 75, 75
   orig: 75, 75
   offset: 0, 0

@@ -60,7 +60,6 @@ public class MainMenu extends AbstractScreen {
 		final Texture buttonSprite = new Texture("images//button-sprite.png");
 		stage.clear();
 
-		// Image backgroundImage = new Image(background);
 		background = new Image(game.getTextures().findRegion("intro/main-menu"));
 		background.setFillParent(true);
 		background.getColor().a = 0f;

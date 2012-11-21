@@ -38,6 +38,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
+import edu.gatech.CS2340.GrandTheftPoke.screens.GameOverScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MainMenu;
 import edu.gatech.CS2340.GrandTheftPoke.screens.MapScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
@@ -418,6 +419,12 @@ public class GTPoke extends Game {
 	public Screen getMarketScreen(MarketPlace theMarket, Trader other) {
 		return new Market(this, theMarket, other);
 	}
+	/**
+	 * 
+	 * @return Game Over Screen */
+	public Screen getGameOverScreen() {
+		return new GameOverScreen(this);
+	}
 
 	/**
 	
@@ -440,6 +447,8 @@ public class GTPoke extends Game {
 		final Person potentialEncounter = controller.takeATurn();
 		if (potentialEncounter != null) {
 			return new EncounterScreen(this, potentialEncounter);
+		} else if(thePlayer.getHealth() <= 0 && thePlayer.getWallet().getMoney() <= 0) {
+			return getGameOverScreen();
 		}
 		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
@@ -483,6 +492,9 @@ public class GTPoke extends Game {
 	
 	 * @return current townScreen */
 	public Screen getCurrentTownScreenFromEncounter() {
+		if(thePlayer.getHealth() <= 0 && thePlayer.getWallet().getMoney() <= 0) {
+			return getGameOverScreen();
+		}
 		return new TownScreen(this, thePlayer.getCurrent().getImage());
 	}
 
