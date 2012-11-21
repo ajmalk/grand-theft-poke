@@ -38,10 +38,6 @@ public class EncounterScreen extends AbstractScreen {
 	public String toString() {
 		return "EncounterScreen";
 	}
-	/**
-	 * Field background.
-	 */
-	private Texture background;
 
 	/**
 	 * Field backgroundImage.
@@ -104,12 +100,10 @@ public class EncounterScreen extends AbstractScreen {
 		table = new Table(myGame.getSkin());
 		table.setFillParent(true);
 
-		background = new Texture("images//icons//encounter.png");
-
 		final Texture buttonSprite = new Texture("images//icons//encounter.png");
 		stage.clear();
 
-		backgroundImage = new Image(background);
+		backgroundImage = new Image(game.getTextures().findRegion("encounter"));
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.setPosition(0, 0);
 		backgroundImage.addAction(fadeIn(0.75f));
