@@ -129,7 +129,7 @@ public class BackpackScreen extends AbstractScreen {
 	@Override
 	public void show() {
 		stage.addActor(background);
-
+		
 		updatetables();
 
 		addItems();
@@ -141,8 +141,7 @@ public class BackpackScreen extends AbstractScreen {
 
 		backpackStock.setScrollingDisabled(true, false);
 
-		backpackStock.setWidth(backpacktable.getWidth());
-		backpackStock.setHeight(stage.getHeight() - 200);
+		
 
 		/*description = new ItemDescTile(
 				((ItemTile) marketItemGroup.getChecked()).getItem(),
@@ -167,14 +166,14 @@ public class BackpackScreen extends AbstractScreen {
 			}
 		});
 
-		table.add(backpackStock).top().padLeft(25).width(300);
+		table.add(backpackStock).top();
 		table.left().setPosition(33, 90);
 		
 		
 		confirmButton = new Button(style);
 		confirmButton.setSkin(game.getSkin());
 		confirmButton.add("Confirm");
-		confirmButton.setPosition(650, 0);
+		confirmButton.setPosition(685, 75);
 		//confirmButton.setDisabled(true);
 		//confirmButton.setTouchable(Touchable.disabled);
 
@@ -196,16 +195,16 @@ public class BackpackScreen extends AbstractScreen {
 	 * adds items to the market
 	 */
 	public void addItems() {
-		int col = 0;
+		int col = 2;
 		backpacktable.clear();
 
 		for (final Iterator<java.util.Map.Entry<Item, ItemTile>> i = backpack
 				.entrySet().iterator(); i.hasNext();) {
 			final Entry<Item, ItemTile> item = i.next();
 			if (item.getValue().getStock() != null) {
-				backpacktable.add(item.getValue());
+				backpacktable.add(item.getValue()).top();
 				marketItemGroup.add(item.getValue());
-				if (col++ % 5 == 1) {
+				if (col++ % 6 == 1) {
 					backpacktable.row();
 				}
 			}
@@ -250,11 +249,19 @@ public class BackpackScreen extends AbstractScreen {
 			}
 		
 		backButton.setPosition(20, 15);
-		table.setSize(1024, 525);
+		table.top();
+		table.setSize(907, 440);
+		table.setPosition(55, 117);
 		stage.addActor(table);
 		stage.addActor(game.getStatusBar());
 		stage.addActor(backButton);
 		stage.addActor(confirmButton);
+		
+		//backpacktable.setSize(500, 500);
+		//backpacktable.pack();
+		//backpacktable.debug().drawDebug(stage);
+		//backpackStock.setSize(937, 440);
+		//table.debug().drawDebug(stage);
 	}
 }
 

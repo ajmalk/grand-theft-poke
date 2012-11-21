@@ -195,7 +195,7 @@ public class ItemDescTile extends Table {
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		icon = new Image(new TextureRegion(new Texture(map), 0, 0, 200, 200));
+		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion("pokeball"), 0, 0, 200, 200));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stock).right().pad(10);

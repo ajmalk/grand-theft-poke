@@ -5,170 +5,184 @@ filter: Nearest,Nearest
 repeat: none
 RocketEncounter
   rotate: false
-  xy: 1, 3280
+  xy: 1, 3169
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 YouLoseUI
   rotate: false
-  xy: 1, 2510
+  xy: 1, 2399
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 YouWinUI
   rotate: false
-  xy: 1027, 3280
+  xy: 1027, 3169
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 battle
   rotate: false
-  xy: 1, 1740
+  xy: 1, 1629
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 encounter
   rotate: false
-  xy: 1027, 2510
+  xy: 1027, 2399
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 map
   rotate: false
-  xy: 2053, 3280
+  xy: 2053, 3169
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 market-place
   rotate: false
-  xy: 1, 970
+  xy: 1, 859
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 skillpoint
   rotate: false
-  xy: 1027, 1740
+  xy: 1027, 1629
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 splash
   rotate: false
-  xy: 2053, 2510
+  xy: 2053, 2399
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 trade-screen
   rotate: false
-  xy: 1, 200
+  xy: 1, 89
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 backpackUI
   rotate: false
-  xy: 3079, 3335
+  xy: 3079, 3224
   size: 1000, 713
   orig: 1000, 713
   offset: 0, 0
   index: -1
 button-sprite
   rotate: false
-  xy: 1027, 1038
+  xy: 1027, 927
   size: 320, 700
   orig: 320, 700
   offset: 0, 0
   index: -1
 market-item-desc
   rotate: false
-  xy: 2053, 1983
+  xy: 2053, 1872
   size: 300, 525
   orig: 300, 525
   offset: 0, 0
   index: -1
 status-bar
   rotate: false
-  xy: 1, 139
+  xy: 1, 28
   size: 655, 59
   orig: 655, 59
   offset: 0, 0
   index: -1
+pokeball
+  rotate: false
+  xy: 3079, 3022
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
 market-item-checked
   rotate: false
-  xy: 3079, 3163
+  xy: 1027, 755
   size: 150, 170
   orig: 150, 170
   offset: 0, 0
   index: -1
 market-item-down
   rotate: false
-  xy: 1027, 866
+  xy: 1349, 1457
   size: 150, 170
   orig: 150, 170
   offset: 0, 0
   index: -1
 market-item-up
   rotate: false
-  xy: 1349, 1568
+  xy: 2053, 1700
   size: 150, 170
   orig: 150, 170
   offset: 0, 0
   index: -1
 health-bar-empty
   rotate: false
-  xy: 2053, 1956
+  xy: 2355, 2372
   size: 294, 25
   orig: 294, 25
   offset: 0, 0
   index: -1
 health-bar-full
   rotate: false
-  xy: 2355, 2483
+  xy: 1, 1
   size: 294, 25
   orig: 294, 25
   offset: 0, 0
   index: -1
 newball
   rotate: false
-  xy: 1, 1
+  xy: 3079, 2884
   size: 36, 136
   orig: 36, 136
   offset: 0, 0
   index: -1
 back-button-down
   rotate: false
-  xy: 3079, 3086
+  xy: 3281, 3147
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 back-button
   rotate: false
-  xy: 3231, 3258
+  xy: 1027, 678
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 save-down
   rotate: false
-  xy: 1027, 789
+  xy: 1179, 850
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 save
   rotate: false
-  xy: 1179, 961
+  xy: 1349, 1380
   size: 75, 75
   orig: 75, 75
+  offset: 0, 0
+  index: -1
+pokeball-small
+  rotate: false
+  xy: 658, 37
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
 

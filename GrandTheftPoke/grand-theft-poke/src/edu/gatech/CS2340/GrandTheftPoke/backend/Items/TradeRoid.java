@@ -84,11 +84,10 @@ public class TradeRoid extends Item implements Usable {
 	 */
 	@Override
 	public String getDescription() {
-		return "The Trade Steroid permanently adds "
+		return "Permanently adds "
 				+ "2 trade points to your current standings. "
-				+ "Increasing trade ability allows you to become "
-				+ "a master trader, thus allowing you to negotiate the "
-				+ "the most competive pricing!\n" + "+2 Trade Point";
+				+ "Increasing trade ability allows you to negotiate the "
+				+ "the best pricing!\n" + "+2 Trade Point";
 	}
 
 	/**
