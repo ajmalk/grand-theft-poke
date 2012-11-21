@@ -177,13 +177,13 @@ public class EncounterScreen extends AbstractScreen {
 
 			stage.addActor(myGame.getStatusBar());
 		} else {
-
-			buttonSprite = GTPoke.getTextures().findRegion("encounter");
-
+			
+			buttonSprite = GTPoke.getTextures().findRegion(
+					"RocketEncounter");
+			
 			fight = new Button(new TextureRegionDrawable(new TextureRegion(
-					buttonSprite, 75, 97, 480, 555)),
-					new TextureRegionDrawable(new TextureRegion(buttonSprite,
-							75, 96, 480, 555)));
+					buttonSprite, 75, 97, 480, 555)), new TextureRegionDrawable(
+					new TextureRegion(buttonSprite, 75, 96, 480, 555)));
 			fight.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
@@ -192,20 +192,17 @@ public class EncounterScreen extends AbstractScreen {
 			});
 
 			flee = new Button(new TextureRegionDrawable(new TextureRegion(
-					buttonSprite, 506, 97, 480, 555)),
-					new TextureRegionDrawable(new TextureRegion(buttonSprite,
-							506, 96, 480, 555)));
+					buttonSprite, 506, 97, 480, 555)), new TextureRegionDrawable(
+					new TextureRegion(buttonSprite, 506, 96, 480, 555)));
 			flee.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
 					if (myPerson instanceof Trader) {
-						myGame.setScreen(myGame
-								.getCurrentTownScreenFromEncounter());
+						myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 					}
 					if (myGame.getPlayer().flee(myPerson)) {
 						System.out.println("true");
-						myGame.setScreen(myGame
-								.getCurrentTownScreenFromEncounter());
+						myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 					}
 				}
 			});
