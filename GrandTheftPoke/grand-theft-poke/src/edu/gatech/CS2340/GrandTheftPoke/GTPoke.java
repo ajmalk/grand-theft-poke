@@ -120,6 +120,9 @@ public class GTPoke extends Game {
 	 */
 	private Table statusBar;
 	
+	/**
+	 * Field saveButton.
+	 */
 	private Button saveButton;
 
 	/**
@@ -142,10 +145,19 @@ public class GTPoke extends Game {
 	 */
 	private AtlasRegion healthBar;
 
+	/**
+	 * Constructor for GTPoke.
+	 */
 	public GTPoke(){
 		super();
 		// default constructor
 	}
+	/**
+	 * Constructor for GTPoke.
+	 * @param map GameMap
+	 * @param player Player
+	 * @param turn Turn
+	 */
 	public GTPoke(GameMap map, Player player, Turn turn){
 		items = new GlobalItemReference();
 		xstream = new XStream();
@@ -154,8 +166,13 @@ public class GTPoke extends Game {
 		this.controller = turn;
 	}
 	
+	/**
+	 * Method isEqualto.
+	 * @param obj Object
+	 * @return boolean
+	 */
 	public boolean isEqualto(Object obj) {
-		if (this == obj) {
+		if (this.equals(obj)) {
 			return true;
 		}
 		if (obj == null) {
@@ -191,8 +208,8 @@ public class GTPoke extends Game {
 	
 	/**
 	 * Method create.
-	 * @see com.badlogic.gdx.ApplicationListener#create()
-	 */
+	
+	 * @see com.badlogic.gdx.ApplicationListener#create() */
 	@Override
 	public void create() {
 		items = new GlobalItemReference();
@@ -330,10 +347,18 @@ public class GTPoke extends Game {
 		setScreen(getCurrentTownScreenFromEncounter());
 	}
 
+	/**
+	 * Method getSaveStr.
+	 * @return String
+	 */
 	public String getSaveStr(){
 		return xstream.toXML(new SaveGame(thePlayer, theMap, controller));
 	}
 	
+	/**
+	 * Method getSave.
+	 * @return SaveGame
+	 */
 	public SaveGame getSave(){
 		return new SaveGame(thePlayer, theMap, controller);
 	}
@@ -492,8 +517,8 @@ public class GTPoke extends Game {
 
 	/**
 	
-	 * @return Screen
-	 */
+	
+	 * @return Screen */
 	public Screen getSkillPointsScreen() {
 		return new SkillPoints(this);
 	}
@@ -591,8 +616,8 @@ public class GTPoke extends Game {
 	
 	/**
 	 * toString
-	 * @return String
-	 */
+	
+	 * @return String */
 	@Override
 	public String toString() {
 		return "GTPoke";

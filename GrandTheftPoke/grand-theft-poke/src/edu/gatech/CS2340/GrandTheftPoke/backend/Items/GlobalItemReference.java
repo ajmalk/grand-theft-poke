@@ -161,6 +161,7 @@ public class GlobalItemReference {
 
 	/**
 	 * getter for charizard
+	 * @return Item
 	 */
 	public Item getCharizard() {
 		return myCharizard;
@@ -258,8 +259,8 @@ public class GlobalItemReference {
 	
 	/**
 	 * Method toString.
-	 * @return String
-	 */
+	
+	 * @return String */
 	@Override
 	public String toString() {
 		return "Global Item Reference";
