@@ -1,3 +1,8 @@
+/**
+ * Backpack.java
+ * @version 1.0
+ */
+
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.HashMap;
@@ -138,7 +143,7 @@ public class Backpack {
 	 * @return boolean
 	 */
 	public boolean place(Item placedItem, int quantity) {
-		if(placedItem!=null&&quantity>0){
+		if(placedItem != null && quantity > 0){
 			final int weightDiff = placedItem.getWeight() * quantity;
 			if (checkCapacity(placedItem, quantity)) {
 				if (!(contents.containsKey(placedItem))) {
