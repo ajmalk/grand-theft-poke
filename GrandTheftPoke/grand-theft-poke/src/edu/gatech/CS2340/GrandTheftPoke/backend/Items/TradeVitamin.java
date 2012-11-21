@@ -46,7 +46,7 @@ public class TradeVitamin extends Item implements Usable {
 	 */
 	@Override
 	public String toString() {
-		return "Trade Steriod";
+		return "Trade Vitamin";
 	}
 
 	/**
@@ -56,11 +56,10 @@ public class TradeVitamin extends Item implements Usable {
 	 */
 	@Override
 	public String getDescription() {
-		return "The Trade Steriod permently adds \n "
-				+ "1 stamina points to your current standings.\n"
-				+ "Increasing trade ability allows you to become \n"
-				+ "a master trader, thus allowing you to negociate the \n"
-				+ "the most competive pricing!\n" + "+1 Trade Point";
+		return "Temporarily adds "
+				+ "2 trade points to your current standings. "
+				+ "Increasing trade ability allows you to negotiate the "
+				+ "the best pricing!\n" + "+2 Trade Point";
 	}
 
 	/**
