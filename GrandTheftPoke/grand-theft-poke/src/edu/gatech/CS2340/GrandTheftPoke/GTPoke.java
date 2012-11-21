@@ -36,6 +36,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
+import edu.gatech.CS2340.GrandTheftPoke.screens.BackpackScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.GameOverScreen;
@@ -255,7 +256,7 @@ public class GTPoke extends Game {
 
 		statusBar.pad(25);
 		statusBar.setPosition(
-				(int)(Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 0);
+				(int) (Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 0);
 		final Label health = new Label("Health: " + thePlayer.getHealth().toString(),
 				skin);
 		final Label money = new Label("$" + thePlayer.getWallet().getMoney(), skin);
@@ -513,6 +514,13 @@ public class GTPoke extends Game {
 	 * @return Game Over Screen */
 	public Screen getGameOverScreen() {
 		return new GameOverScreen(this);
+	}
+	/**
+	 * 
+	 * @return Backpack Screen
+	 */
+	public Screen getBackpackScreen() {
+		return new BackpackScreen(this);
 	}
 
 	/**

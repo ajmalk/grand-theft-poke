@@ -122,7 +122,7 @@ public class MarketPlaceItem {
 	
 	 * @return the stock */
 	public Integer getStock() {
-		return (int)(stock - 500);//scaling stock
+		return (int) (stock - 500);//scaling stock
 	}
 
 	/**

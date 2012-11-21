@@ -150,12 +150,12 @@ public class TownScreen extends AbstractScreen {
 			}
 		});
 		backPackButton = game.getButton("town/backpack");
-//		backPackButton.addListener(new ClickListener() {
-//			@Override
-//			public void clicked(InputEvent event, float x, float y) {
-//				//
-//			}
-//		});
+		backPackButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				game.setScreen(game.getBackpackScreen());
+			}
+		});
 		gymLeaderButton = game.getButton("town/gymleader");
 		gymLeaderButton.addListener(new ClickListener() {
 			@Override

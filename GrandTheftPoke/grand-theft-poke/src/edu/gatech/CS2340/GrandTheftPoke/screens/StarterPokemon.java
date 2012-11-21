@@ -114,7 +114,7 @@ public class StarterPokemon extends AbstractScreen {
 		bulbasaur.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				starter = (Pokemon)game.getItems().getBulbasaur();
+				starter = (Pokemon) game.getItems().getBulbasaur();
 				confirmX = 25;
 				confirmButton.setDisabled(false);
 				confirmButton.setTouchable(Touchable.enabled);
@@ -127,7 +127,7 @@ public class StarterPokemon extends AbstractScreen {
 		charmander.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				starter = (Pokemon)game.getItems().getCharmander();
+				starter = (Pokemon) game.getItems().getCharmander();
 				confirmX = 356;
 				confirmButton.setDisabled(false);
 				confirmButton.setTouchable(Touchable.enabled);
@@ -140,7 +140,7 @@ public class StarterPokemon extends AbstractScreen {
 		squirtle.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				starter = (Pokemon)game.getItems().getSquirtle();
+				starter = (Pokemon) game.getItems().getSquirtle();
 				confirmX = 675;
 				confirmButton.setDisabled(false);
 				confirmButton.setTouchable(Touchable.enabled);
