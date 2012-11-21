@@ -11,7 +11,7 @@ public class Main {
 		Settings settings = new Settings();
 		settings.maxWidth = 4096;
 		settings.maxHeight = 4096;
-		settings.pot = false;
+		settings.pot = true;
 		// settings.rotation = true;
 		TexturePacker2
 				.process(

@@ -74,6 +74,6 @@ public class WalletTest extends junit.framework.TestCase {
 		price = ((MarketPlaceItem) myMarket.getStock().get(items.getTradeRoid())).getPrice();
 		money = wallet.getMoney();
 		test = wallet.checkAmount(price);
-		assertEquals((money>=price),test);
+		assertEquals((money >= price),test);
 	}
 }
