@@ -450,11 +450,19 @@ public class Person {
 
 	/**
 	 * 
-	 * 
-	 * @return boolean
-	 */
-	public boolean flee() {
-		return new Random().nextBoolean();
+	
+	 * @return boolean */
+	public boolean flee(Person other) {
+		final Random rand = new Random();
+		final int mySpeed = rand.nextInt(getAgility());
+		final int theirSpeed = rand.nextInt(other.getAgility());
+		
+		if(mySpeed > theirSpeed) {
+			return true;
+		}
+		
+		defend(other.attack(1));
+		return false;
 	}
 
 	/**
@@ -533,12 +541,19 @@ public class Person {
 	 * @param other
 	 */
 	public void win(Person other) {
-		final Set<Item> theirStuff = other.getBackpack().getContents().keySet();
+		Item tempItem = null;
+		int quantity = 0;
+		Set<Item> theirStuff = other.getBackpack().getContents().keySet();
 		for (Item theItem : theirStuff) {
-			int quantity = other.getBackpack().getContents().get(theItem);
+			quantity = other.getBackpack().getContents().get(theItem);
 			if (myBackpack.place(theItem, quantity)) {
-				other.getBackpack().remove(theItem, quantity);
+				tempItem = theItem;
+				break;
 			}
+		}
+		
+		if(tempItem != null) {
+			other.getBackpack().remove(tempItem, quantity);
 		}
 		float temp = Math.min(other.getWallet().getMoney(), getWallet()
 				.getMoney());

@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Rocket;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
 /**
@@ -102,15 +103,24 @@ public class EncounterScreen extends AbstractScreen {
 		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 
-		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
-				"encounter");
+		Texture buttonSprite = new Texture("images//icons//encounter.png");
 		stage.clear();
-
-		backgroundImage = new Image(GTPoke.getTextures()
-				.findRegion("encounter"));
-		backgroundImage.getColor().a = 0f;
-		backgroundImage.setPosition(0, 0);
-		backgroundImage.addAction(fadeIn(0.75f));
+		
+		if(myPerson instanceof Trader) {
+			backgroundImage = new Image(game.getTextures().findRegion("encounter"));
+			backgroundImage.getColor().a = 0f;
+			backgroundImage.setPosition(0, 0);
+			backgroundImage.addAction(fadeIn(0.75f));
+		}
+		
+		if(myPerson instanceof Rocket) {
+			backgroundImage = new Image(game.getTextures().findRegion("RocketEncounter"));
+			backgroundImage.getColor().a = 0f;
+			backgroundImage.setPosition(0, 0);
+			backgroundImage.addAction(fadeIn(0.75f));
+		}
+		
+		
 
 		trade = new Button(new TextureRegionDrawable(new TextureRegion(
 				buttonSprite, 75, 97, 283, 555)), new TextureRegionDrawable(
@@ -147,7 +157,7 @@ public class EncounterScreen extends AbstractScreen {
 				if (myPerson instanceof Trader) {
 					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
-				if (myGame.getPlayer().flee()) {
+				if (myGame.getPlayer().flee(myPerson)) {
 					System.out.println("true");
 					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
@@ -155,8 +165,54 @@ public class EncounterScreen extends AbstractScreen {
 		});
 		stage.addActor(backgroundImage);
 
-		trade.setPosition(75, 116);
-		trade.addAction(fadeIn(0.75f));
+		if(myPerson instanceof Trader) {
+			trade.setPosition(75, 116);
+			stage.addActor(trade);
+
+			fight.setPosition(358, 116);
+			stage.addActor(fight);
+
+			flee.setPosition(641, 116);
+			stage.addActor(flee);
+
+			stage.addActor(myGame.getStatusBar());
+		} else {
+			
+			buttonSprite = new Texture("images//textures//RocketEncounter.png");
+			
+			fight = new Button(new TextureRegionDrawable(new TextureRegion(
+					buttonSprite, 75, 97, 480, 555)), new TextureRegionDrawable(
+					new TextureRegion(buttonSprite, 75, 96, 480, 555)));
+			fight.addListener(new ClickListener() {
+				@Override
+				public void clicked(InputEvent event, float x, float y) {
+					myGame.setScreen(myGame.getBattleScreen(myPerson));
+				}
+			});
+
+			flee = new Button(new TextureRegionDrawable(new TextureRegion(
+					buttonSprite, 506, 97, 480, 555)), new TextureRegionDrawable(
+					new TextureRegion(buttonSprite, 506, 96, 480, 555)));
+			flee.addListener(new ClickListener() {
+				@Override
+				public void clicked(InputEvent event, float x, float y) {
+					if (myPerson instanceof Trader) {
+						myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
+					}
+					if (myGame.getPlayer().flee(myPerson)) {
+						System.out.println("true");
+						myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
+					}
+				}
+			});
+			
+			fight.setPosition(75, 116);
+			stage.addActor(fight);
+
+			flee.setPosition(506, 116);
+			stage.addActor(flee);
+		}
+		/*trade.setPosition(75, 116);
 		stage.addActor(trade);
 
 		fight.setPosition(358, 116);
@@ -167,7 +223,9 @@ public class EncounterScreen extends AbstractScreen {
 		flee.addAction(fadeIn(0.75f));
 		stage.addActor(flee);
 
-		stage.addActor(myGame.getStatusBar());
+		stage.addActor(myGame.getStatusBar());*/
+		
+		
 	}
 
 	/**

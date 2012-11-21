@@ -29,8 +29,4 @@ public interface Usable {
 	 *            the person to unuse on
 	 */
 	void unUse(Person person);
-	// public boolean checkForUsage();
-	// public void stageForUsage();
-	// public int getTimer();
-
 }

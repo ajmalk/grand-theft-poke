@@ -135,7 +135,7 @@ public class Battle extends AbstractScreen {
 		flee.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				if (myGame.getPlayer().flee()) {
+				if (myGame.getPlayer().flee(myPerson)) {
 					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
 			}

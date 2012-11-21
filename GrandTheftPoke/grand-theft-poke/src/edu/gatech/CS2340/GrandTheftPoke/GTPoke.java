@@ -33,6 +33,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 import edu.gatech.CS2340.GrandTheftPoke.files.SaveGame;
+import edu.gatech.CS2340.GrandTheftPoke.screens.BackpackScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.Battle;
 import edu.gatech.CS2340.GrandTheftPoke.screens.EncounterScreen;
 import edu.gatech.CS2340.GrandTheftPoke.screens.GameOverScreen;
@@ -247,7 +248,7 @@ public class GTPoke extends Game {
 
 	/**
 	 * 
-	 * @return boolean
+	 * @return boolean */
 	 */
 	public boolean update() {
 		statusBar.clear();
@@ -538,6 +539,13 @@ public class GTPoke extends Game {
 	 */
 	public Screen getGameOverScreen() {
 		return new GameOverScreen(this);
+	}
+	/**
+	 * 
+	 * @return Backpack Screen
+	 */
+	public Screen getBackpackScreen() {
+		return new BackpackScreen(this);
 	}
 
 	/**

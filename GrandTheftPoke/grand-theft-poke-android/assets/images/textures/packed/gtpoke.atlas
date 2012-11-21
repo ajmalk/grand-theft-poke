@@ -5,24 +5,21 @@ filter: Nearest,Nearest
 repeat: none
 RocketEncounter
   rotate: false
-  xy: 1, 3280
+  xy: 1, 941
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 YouLoseUI
   rotate: false
-  xy: 1, 2510
+  xy: 1, 171
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 YouWinUI
   rotate: false
-  xy: 1027, 3280
-  size: 1024, 768
-  orig: 1024, 768
-  offset: 0, 0
+  xy: 1027, 941
   index: -1
 battle
   rotate: false
@@ -33,9 +30,6 @@ battle
   index: -1
 encounter
   rotate: false
-  xy: 1027, 2510
-  size: 1024, 768
-  orig: 1024, 768
   offset: 0, 0
   index: -1
 map
@@ -47,16 +41,6 @@ map
   index: -1
 market-place
   rotate: false
-  xy: 1, 970
-  size: 1024, 768
-  orig: 1024, 768
-  offset: 0, 0
-  index: -1
-skillpoint
-  rotate: false
-  xy: 1027, 1740
-  size: 1024, 768
-  orig: 1024, 768
   offset: 0, 0
   index: -1
 splash
