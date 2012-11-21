@@ -152,7 +152,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Viridian City", myMarket);
 		myTown.setImage("viridian-city");
@@ -210,7 +210,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Pewter City", myMarket);
 		myTown.setImage("pewter-city");
@@ -267,7 +267,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Cerulean City", myMarket);
 		myTown.setImage("cerulean-city");
@@ -324,7 +324,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2250f,
 				15f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Saffron City", myMarket);
 		myTown.setImage("saffron-city");
@@ -380,7 +380,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Celadon City", myMarket);
 		myTown.setImage("celadon-city");
@@ -439,7 +439,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(),
 				new MarketPlaceItem(2000f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Lavender Town", myMarket);
 		myTown.setImage("lavender-town");
@@ -495,7 +495,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Vermillion City", myMarket);
 		myTown.setImage("vermillion-city");
@@ -551,7 +551,7 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getTradeRoid(), new MarketPlaceItem(2000f,
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
-				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+				new MarketPlaceItem(3000f, 10f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
 		Town myTown = new Town("Fuchsia City", myMarket);
 		myTown.setImage("fuchsia-city");

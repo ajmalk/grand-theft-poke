@@ -9,11 +9,15 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import java.util.Random;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -49,6 +53,8 @@ public class Battle extends AbstractScreen {
 	 * myPerson
 	 */
 	private final Person myPerson;
+	
+	private AtlasRegion healthBar;
 
 	/**
 	 * rand
@@ -74,6 +80,8 @@ public class Battle extends AbstractScreen {
 	 * table
 	 */
 	private Table table;
+	
+	private Table statusBar;
 
 	/**
 	 * @param game
@@ -115,6 +123,8 @@ public class Battle extends AbstractScreen {
 
 		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
+		
+		statusBar = new Table(GTPoke.getSkin());
 
 		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
 				"button-sprite");
@@ -197,6 +207,9 @@ public class Battle extends AbstractScreen {
 		attack.setPosition(480, 212);
 		stage.addActor(attack);
 		stage.addActor(myGame.getStatusBar());
+		//statusBar.pack();
+		//statusBar.setPosition((int) (Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 700);
+		stage.addActor(statusBar);
 
 	}
 
@@ -211,5 +224,30 @@ public class Battle extends AbstractScreen {
 	public void render(float delta) {
 		super.render(delta);
 		myGame.update();
+		update();
+	}
+	
+	public boolean update() {
+		statusBar.clear();
+		statusBar.setSkin(GTPoke.getSkin());
+		statusBar.setBackground(new TextureRegionDrawable(GTPoke.getTextures()
+				.findRegion("status-bar")));
+		statusBar.setSize(678, 64);
+		
+		statusBar.setPosition((int) (Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 700);
+
+		statusBar.pad(25);
+		final Label health = new Label("Health: "
+				+ myPerson.getHealth().toString(), GTPoke.getSkin());
+		final Label money = new Label("$" + myPerson.getWallet().getMoney(),
+				GTPoke.getSkin());
+		health.setColor(Color.BLUE);
+		money.setColor(Color.BLUE);
+		statusBar.add(money).left().width(168);
+		healthBar = GTPoke.getTextures().findRegion("health-bar-full");
+		TextureRegion temp = new TextureRegion(healthBar, 0, 0, (int) (healthBar.originalWidth
+				/ (float) myPerson.getMaxHealth() * myPerson.getHealth()), healthBar.getRegionHeight());
+		statusBar.add(new Image(temp)).expand().left().padLeft(9);
+		return true;
 	}
 }
