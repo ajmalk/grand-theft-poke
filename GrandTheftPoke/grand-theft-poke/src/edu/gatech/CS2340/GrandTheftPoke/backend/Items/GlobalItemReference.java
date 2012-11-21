@@ -7,6 +7,7 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
  * this is a global item reference
+ * 
  * @author Team Rocket
  * @version 1.0
  */
@@ -15,12 +16,12 @@ public class GlobalItemReference {
 	 * Field myArcanine.
 	 */
 	private final Arcanine myArcanine;
-	
+
 	/**
 	 * Field myCharizard.
 	 */
 	private final Charmander myCharizard;
-	
+
 	/**
 	 * Field myBulbasaur;
 	 */
@@ -29,72 +30,72 @@ public class GlobalItemReference {
 	 * Field myJigglyPuff.
 	 */
 	private final JigglyPuff myJigglyPuff;
-	
+
 	/**
 	 * Field myPikachu.
 	 */
 	private final Pikachu myPikachu;
-	
+
 	/**
 	 * Field mySquirtle.
 	 */
 	private final Squirtle mySquirtle;
-	
+
 	/**
 	 * Field myHealthPotion.
 	 */
 	private final HealthPotion myHealthPotion;
-	
+
 	/**
 	 * Field myAgilityRoid.
 	 */
 	private final AgilityRoid myAgilityRoid;
-	
+
 	/**
 	 * Field myHealthRoid.
 	 */
 	private final HealthRoid myHealthRoid;
-	
+
 	/**
 	 * Field myStaminaRoid.
 	 */
 	private final StaminaRoid myStaminaRoid;
-	
+
 	/**
 	 * Field myStrengthRoid.
 	 */
 	private final StrengthRoid myStrengthRoid;
-	
+
 	/**
 	 * Field myTradeRoid.
 	 */
 	private final TradeRoid myTradeRoid;
-	
+
 	/**
 	 * Field myAgilityVitamin.
 	 */
 	private final AgilityVitamin myAgilityVitamin;
-	
+
 	/**
 	 * Field myHealthVitamin.
 	 */
 	private final HealthVitamin myHealthVitamin;
-	
+
 	/**
 	 * Field myStaminaVitamin.
 	 */
 	private final StaminaVitamin myStaminaVitamin;
-	
+
 	/**
 	 * Field myStrengthVitamin.
 	 */
 	private final StrengthVitamin myStrengthVitamin;
-	
+
 	/**
 	 * Field myTradeVitamin.
 	 */
 	private final TradeVitamin myTradeVitamin;
-	
+
 	/**
 	 * Field myRepel.
 	 */
@@ -125,142 +126,163 @@ public class GlobalItemReference {
 	}
 
 	/**
-	
-	 * @return myArcanine */
+	 * 
+	 * @return myArcanine
+	 */
 	public Item getArcanine() {
 		return myArcanine;
 	}
 
 	/**
-	
-	 * @return myCharizard */
+	 * 
+	 * @return myCharizard
+	 */
 	public Item getCharmander() {
 		return myCharizard;
 	}
-	
+
 	/**
-	 
-	 * @return myBulbasaur */
+	 * 
+	 * @return myBulbasaur
+	 */
 	public Item getBulbasaur() {
 		return myBulbasaur;
 	}
 
 	/**
-	
-	 * @return myJigglyPuff */
+	 * 
+	 * @return myJigglyPuff
+	 */
 	public Item getJigglyPuff() {
 		return myJigglyPuff;
 	}
 
 	/**
-	
-	 * @return myPikachu */
+	 * 
+	 * @return myPikachu
+	 */
 	public Item getPikachu() {
 		return myPikachu;
 	}
 
 	/**
 	 * getter for charizard
+	 * 
 	 * @return Item
 	 */
 	public Item getCharizard() {
 		return myCharizard;
 	}
+
 	/**
-	
-	 * @return mySquirtle */
+	 * 
+	 * @return mySquirtle
+	 */
 	public Item getSquirtle() {
 		return mySquirtle;
 	}
 
 	/**
-	
-	 * @return myHealthPotion */
+	 * 
+	 * @return myHealthPotion
+	 */
 	public Item getHealthPotion() {
 		return myHealthPotion;
 	}
 
 	/**
-	
-	 * @return myAgilityRoid */
+	 * 
+	 * @return myAgilityRoid
+	 */
 	public Item getAgilityRoid() {
 		return myAgilityRoid;
 	}
 
 	/**
-	
-	 * @return myHealthRoid */
+	 * 
+	 * @return myHealthRoid
+	 */
 	public Item getHealthRoid() {
 		return myHealthRoid;
 	}
 
 	/**
-	
-	 * @return myStaminaRoid */
+	 * 
+	 * @return myStaminaRoid
+	 */
 	public Item getStaminaRoid() {
 		return myStaminaRoid;
 	}
 
 	/**
-	
-	 * @return myStrengthRoid */
+	 * 
+	 * @return myStrengthRoid
+	 */
 	public Item getStrengthRoid() {
 		return myStrengthRoid;
 	}
 
 	/**
-	
-	 * @return myTradeRoid */
+	 * 
+	 * @return myTradeRoid
+	 */
 	public Item getTradeRoid() {
 		return myTradeRoid;
 	}
 
 	/**
-	
-	 * @return myAgilityVitamin */
+	 * 
+	 * @return myAgilityVitamin
+	 */
 	public Item getAgilityVitamin() {
 		return myAgilityVitamin;
 	}
 
 	/**
-	
-	 * @return myHealthVitamin */
+	 * 
+	 * @return myHealthVitamin
+	 */
 	public HealthVitamin getHealthVitamin() {
 		return myHealthVitamin;
 	}
 
 	/**
-	
-	 * @return myStaminaVitamin */
+	 * 
+	 * @return myStaminaVitamin
+	 */
 	public Item getStaminaVitamin() {
 		return myStaminaVitamin;
 	}
 
 	/**
-	
-	 * @return myStrengthVitamin */
+	 * 
+	 * @return myStrengthVitamin
+	 */
 	public Item getStrengthVitamin() {
 		return myStrengthVitamin;
 	}
 
 	/**
-	
-	 * @return myTradeVitamin */
+	 * 
+	 * @return myTradeVitamin
+	 */
 	public Item getTradeVitamin() {
 		return myTradeVitamin;
 	}
 
 	/**
-	
-	 * @return myRepel */
+	 * 
+	 * @return myRepel
+	 */
 	public Item getRepel() {
 		return myRepel;
 	}
-	
+
 	/**
 	 * Method toString.
-	
-	 * @return String */
+	 * 
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Global Item Reference";

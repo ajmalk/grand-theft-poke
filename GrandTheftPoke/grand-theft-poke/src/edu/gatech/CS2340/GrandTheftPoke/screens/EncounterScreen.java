@@ -7,7 +7,7 @@ package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -32,6 +32,7 @@ public class EncounterScreen extends AbstractScreen {
 
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -91,19 +92,22 @@ public class EncounterScreen extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
 
-		table = new Table(myGame.getSkin());
+		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 
-		final Texture buttonSprite = new Texture("images//icons//encounter.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"encounter");
 		stage.clear();
 
-		backgroundImage = new Image(game.getTextures().findRegion("encounter"));
+		backgroundImage = new Image(GTPoke.getTextures()
+				.findRegion("encounter"));
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.setPosition(0, 0);
 		backgroundImage.addAction(fadeIn(0.75f));
@@ -152,12 +156,15 @@ public class EncounterScreen extends AbstractScreen {
 		stage.addActor(backgroundImage);
 
 		trade.setPosition(75, 116);
+		trade.addAction(fadeIn(0.75f));
 		stage.addActor(trade);
 
 		fight.setPosition(358, 116);
+		fight.addAction(fadeIn(0.75f));
 		stage.addActor(fight);
 
 		flee.setPosition(641, 116);
+		flee.addAction(fadeIn(0.75f));
 		stage.addActor(flee);
 
 		stage.addActor(myGame.getStatusBar());
@@ -165,7 +172,9 @@ public class EncounterScreen extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override

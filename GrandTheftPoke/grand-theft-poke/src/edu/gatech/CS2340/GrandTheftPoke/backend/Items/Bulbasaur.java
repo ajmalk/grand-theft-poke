@@ -18,11 +18,12 @@ public class Bulbasaur extends Pokemon {
 	 * Constructor for Bulbasaur.
 	 */
 	public Bulbasaur() {
-		super(1, 1, 4, 4);//stats for bulbasaur
+		super(1, 1, 4, 4);// stats for bulbasaur
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -32,6 +33,7 @@ public class Bulbasaur extends Pokemon {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -42,6 +44,7 @@ public class Bulbasaur extends Pokemon {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

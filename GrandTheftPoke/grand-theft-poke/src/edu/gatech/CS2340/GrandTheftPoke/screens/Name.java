@@ -7,7 +7,7 @@ package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -32,13 +32,14 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 public class Name extends AbstractScreen {
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "Name";
 	}
-	
+
 	/**
 	 * Field background.
 	 */
@@ -74,25 +75,28 @@ public class Name extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
 		// stage.clear();
-		table = new Table(game.getSkin());
+		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 
-		background = new Image(game.getTextures().findRegion("intro/main-menu"));
+		background = new Image(GTPoke.getTextures().findRegion(
+				"intro/main-menu"));
 
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
-		myName = new TextField("", game.getSkin());
+		myName = new TextField("", GTPoke.getSkin());
 		myName.setTextFieldListener(new TextFieldListener() {
 			@Override
 			public void keyTyped(TextField name, char key) {
@@ -137,7 +141,7 @@ public class Name extends AbstractScreen {
 		confirmButton.setDisabled(true);
 		confirmButton.setTouchable(Touchable.disabled);
 
-		confirmButton.setSkin(game.getSkin());
+		confirmButton.setSkin(GTPoke.getSkin());
 		confirmButton.add("Confirm");
 		confirmButton.setPosition(700, 10);
 
@@ -153,7 +157,9 @@ public class Name extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -173,7 +179,9 @@ public class Name extends AbstractScreen {
 
 	/**
 	 * Method checkName.
-	 * @param name String
+	 * 
+	 * @param name
+	 *            String
 	 * @return boolean
 	 */
 	private boolean checkName(String name) {

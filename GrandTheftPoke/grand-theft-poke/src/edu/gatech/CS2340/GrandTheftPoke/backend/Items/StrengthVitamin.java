@@ -16,36 +16,43 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 public class StrengthVitamin extends Item implements Usable {
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		return 3;//hashcode for hashmap
+		return 3;// hashcode for hashmap
 	}
 
 	/**
 	 * Method use.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
 	 */
 	@Override
 	public void use(Person person) {
-		person.setStrength(2);//adds two strength points
+		person.setStrength(2);// adds two strength points
 	}
 
 	/**
 	 * Method unUse.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setStrength(-2);//subtracts two strength points
+		person.setStrength(-2);// subtracts two strength points
 	}
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -61,6 +68,7 @@ public class StrengthVitamin extends Item implements Usable {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -70,6 +78,7 @@ public class StrengthVitamin extends Item implements Usable {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -82,6 +91,7 @@ public class StrengthVitamin extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

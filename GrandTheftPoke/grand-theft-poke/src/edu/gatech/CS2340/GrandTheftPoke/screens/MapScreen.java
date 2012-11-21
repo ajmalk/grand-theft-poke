@@ -9,7 +9,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import java.util.Iterator;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -35,6 +35,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 public class MapScreen extends AbstractScreen {
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -45,7 +46,7 @@ public class MapScreen extends AbstractScreen {
 	/**
 	 * Field background.
 	 */
-	private Texture background;
+	private AtlasRegion background;
 
 	/**
 	 * Field backgroundImage.
@@ -127,13 +128,14 @@ public class MapScreen extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
 
-		background = new Texture("images//map.png");
+		background = GTPoke.getTextures().findRegion("map");
 
 		stage.clear();
 
@@ -143,7 +145,8 @@ public class MapScreen extends AbstractScreen {
 		backgroundImage.getColor().a = 0f;
 		backgroundImage.addAction(fadeIn(0.75f));
 
-		final Texture townTileSprite = new Texture("images//icons//newball.png");
+		final AtlasRegion townTileSprite = GTPoke.getTextures().findRegion(
+				"newball");
 		final ButtonStyle townTileStyle = new ButtonStyle();
 		townTileStyle.up = new TextureRegionDrawable(new TextureRegion(
 				townTileSprite, 0, 0, 36, 45));
@@ -151,7 +154,8 @@ public class MapScreen extends AbstractScreen {
 				townTileSprite, 0, 46, 36, 45));
 		townTileStyle.disabled = new TextureRegionDrawable(new TextureRegion(
 				townTileSprite, 0, 91, 36, 45));
-		for(final Iterator<Town> i = game.getMap().getTownSet().iterator(); i.hasNext();) {
+		for (final Iterator<Town> i = game.getMap().getTownSet().iterator(); i
+				.hasNext();) {
 			Town theTown = i.next();
 
 			if (theTown.toString().equals("Pallet Town")) {
@@ -221,7 +225,8 @@ public class MapScreen extends AbstractScreen {
 			}
 		}
 
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 		final ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 				0, 320, 70));
@@ -239,31 +244,18 @@ public class MapScreen extends AbstractScreen {
 				game.setScreen(game.getCurrentTownScreenFromEncounter());
 			}
 		});
-		// return true;
 
-		viridianCityButton.setStyle(style);
-		palletTownButton.setStyle(style);
-		powerPlantButton.setStyle(style);
-		pewterCityButton.setStyle(style);
-		ceruleanCityButton.setStyle(style);
-		fuchsiaCityButton.setStyle(style);
-		cinnabarIslandButton.setStyle(style);
-		saffronCityButton.setStyle(style);
-		vermillionCityButton.setStyle(style);
-		lavenderTownButton.setStyle(style);
-		celadonCityButton.setStyle(style);
-
-		viridianCityButton.setSkin(game.getSkin());
-		palletTownButton.setSkin(game.getSkin());
-		powerPlantButton.setSkin(game.getSkin());
-		pewterCityButton.setSkin(game.getSkin());
-		ceruleanCityButton.setSkin(game.getSkin());
-		fuchsiaCityButton.setSkin(game.getSkin());
-		cinnabarIslandButton.setSkin(game.getSkin());
-		saffronCityButton.setSkin(game.getSkin());
-		vermillionCityButton.setSkin(game.getSkin());
-		lavenderTownButton.setSkin(game.getSkin());
-		celadonCityButton.setSkin(game.getSkin());
+		viridianCityButton.setSkin(GTPoke.getSkin());
+		palletTownButton.setSkin(GTPoke.getSkin());
+		powerPlantButton.setSkin(GTPoke.getSkin());
+		pewterCityButton.setSkin(GTPoke.getSkin());
+		ceruleanCityButton.setSkin(GTPoke.getSkin());
+		fuchsiaCityButton.setSkin(GTPoke.getSkin());
+		cinnabarIslandButton.setSkin(GTPoke.getSkin());
+		saffronCityButton.setSkin(GTPoke.getSkin());
+		vermillionCityButton.setSkin(GTPoke.getSkin());
+		lavenderTownButton.setSkin(GTPoke.getSkin());
+		celadonCityButton.setSkin(GTPoke.getSkin());
 
 		viridianCityButton.addListener(new ClickListener() {
 			@Override
@@ -317,7 +309,7 @@ public class MapScreen extends AbstractScreen {
 
 			private void move(Actor listenerActor) {
 				final Town destination = ((TownTile) (listenerActor)).getTown();
-				System.out.println(destination);
+				// System.out.println(destination);
 				game.getPlayer().move(destination);
 			}
 
@@ -474,7 +466,9 @@ public class MapScreen extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -482,6 +476,5 @@ public class MapScreen extends AbstractScreen {
 		super.render(delta);
 		game.update();
 	}
-
 
 }

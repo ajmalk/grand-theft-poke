@@ -46,6 +46,7 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -64,6 +65,7 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
@@ -90,7 +92,9 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -120,6 +124,5 @@ public class MarketPlaceItemDemo extends AbstractScreen {
 		drawcurves();
 		// item.drawcurves();
 	}
-
 
 }

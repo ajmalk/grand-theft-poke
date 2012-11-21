@@ -18,11 +18,12 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 public class Wallet {
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;//hashcode prime number
+		final int prime = 31;// hashcode prime number
 		int result = 1;
 		result = prime * result + ((money == null) ? 0 : money.hashCode());
 		return result;
@@ -30,7 +31,9 @@ public class Wallet {
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -85,8 +88,9 @@ public class Wallet {
 	/**
 	 * Returns the amount in this wallet
 	 * 
-	
-	 * @return money the amount in the wallet */
+	 * 
+	 * @return money the amount in the wallet
+	 */
 	public float getMoney() {
 		return money;
 	}
@@ -97,14 +101,16 @@ public class Wallet {
 	 * 
 	 * @param amount
 	 *            the cost of the item or service
-	
-	 * @return boolean true if you can afford the item */
+	 * 
+	 * @return boolean true if you can afford the item
+	 */
 	public boolean checkAmount(float amount) {
 		return money >= amount;
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override

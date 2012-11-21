@@ -35,6 +35,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 public class TownTile extends Button {
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -79,22 +80,17 @@ public class TownTile extends Button {
 	public TownTile(Town myTown, ButtonStyle myStyle) {
 		super(myStyle);
 		this.myTown = myTown;
-
-		/*
-		 * Texture confirmButtonSprite = new
-		 * Texture("images//icons//newball.png"); ButtonStyle style = new
-		 * ButtonStyle(); style.up = new TextureRegionDrawable(new
-		 * TextureRegion(confirmButtonSprite, 134, 16, 18, 18)); style.down =
-		 * new TextureRegionDrawable(new TextureRegion(confirmButtonSprite, 134,
-		 * 64, 18, 18)); style.disabled = new TextureRegionDrawable(new
-		 * TextureRegion( confirmButtonSprite, 134, 115, 18, 18));
-		 */
-
+		// Label name = new Label(myTown.toString(), GTPoke.getSkin());
+		// name.setColor(.9f, .5f, .5f, 1);
+		add().height(40);
+		row();
+		add().height(50);
 	}
 
 	/**
-	
-	 * @return myTown */
+	 * 
+	 * @return myTown
+	 */
 	public Town getTown() {
 		return myTown;
 	}

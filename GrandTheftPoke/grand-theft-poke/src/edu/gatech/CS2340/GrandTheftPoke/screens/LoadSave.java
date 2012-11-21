@@ -29,12 +29,14 @@ public class LoadSave extends AbstractScreen {
 
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "LoadSave";
 	}
+
 	/**
 	 * Field background.
 	 */
@@ -50,6 +52,7 @@ public class LoadSave extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
@@ -70,14 +73,14 @@ public class LoadSave extends AbstractScreen {
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		gameButton.setSkin(game.getSkin());
+		gameButton.setSkin(GTPoke.getSkin());
 		gameButton.add("New Game");
 
 		final Button loadButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		loadButton.setSkin(game.getSkin());
+		loadButton.setSkin(GTPoke.getSkin());
 		loadButton.add("Load Game");
 
 		gameButton.addListener(new ClickListener() {
@@ -93,7 +96,7 @@ public class LoadSave extends AbstractScreen {
 			}
 		});
 
-		final Table table = new Table(game.getSkin());
+		final Table table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
 		table.add(gameButton);
@@ -104,6 +107,7 @@ public class LoadSave extends AbstractScreen {
 
 	/**
 	 * Method dispose.
+	 * 
 	 * @see com.badlogic.gdx.Screen#dispose()
 	 */
 	@Override

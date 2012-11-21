@@ -17,15 +17,17 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 public class HealthPotion extends Item implements Usable {
 	/**
 	 * Method use.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
 	 */
 	@Override
 	public void use(Person person) {
 		final int health = person.getHealth();
 		final int maxHealth = person.getMaxHealth();
-		if (health <= (maxHealth - 20)) {//checks health
-			person.setHealth(health + 20);//adds health back
+		if (health <= (maxHealth - 20)) {// checks health
+			person.setHealth(health + 20);// adds health back
 		} else {
 			person.setHealth(maxHealth);
 		}
@@ -33,7 +35,9 @@ public class HealthPotion extends Item implements Usable {
 
 	/**
 	 * Method unUse.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
 	 */
 	@Override
@@ -43,6 +47,7 @@ public class HealthPotion extends Item implements Usable {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -52,6 +57,7 @@ public class HealthPotion extends Item implements Usable {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -64,6 +70,7 @@ public class HealthPotion extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

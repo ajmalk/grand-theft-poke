@@ -23,6 +23,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 public class SaveGame {
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -64,8 +65,9 @@ public class SaveGame {
 	/**
 	 * @param game
 	 *            the game being played
-	
-	 * @return boolean */
+	 * 
+	 * @return boolean
+	 */
 	public boolean load(GTPoke game) {
 		game.setPlayer(player);
 		game.setMap(map);
@@ -74,15 +76,17 @@ public class SaveGame {
 	}
 
 	/**
-	
-	 * @return player */
+	 * 
+	 * @return player
+	 */
 	public Player getPlayer() {
 		return player;
 	}
 
 	/**
-	
-	 * @return map */
+	 * 
+	 * @return map
+	 */
 	public GameMap getMap() {
 		return map;
 	}

@@ -8,7 +8,7 @@ package edu.gatech.CS2340.GrandTheftPoke.screens;
 //import com.badlogic.gdx.graphics.Color;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -30,13 +30,14 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 public class MainMenu extends AbstractScreen {
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "MainMenu";
 	}
-	
+
 	/**
 	 * Field background.
 	 */
@@ -52,15 +53,18 @@ public class MainMenu extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 		stage.clear();
 
-		background = new Image(game.getTextures().findRegion("intro/main-menu"));
+		background = new Image(GTPoke.getTextures().findRegion(
+				"intro/main-menu"));
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
@@ -70,15 +74,15 @@ public class MainMenu extends AbstractScreen {
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		gameButton.setSkin(game.getSkin());
+		gameButton.setSkin(GTPoke.getSkin());
 		gameButton.add("New Game");
 
 		final Button loadButton = new Button(new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		loadButton.setSkin(game.getSkin());
-		loadButton.add("Load Game");
+		loadButton.setSkin(GTPoke.getSkin());
+		loadButton.add("Continue Game");
 
 		gameButton.addListener(new ClickListener() {
 			@Override
@@ -98,7 +102,7 @@ public class MainMenu extends AbstractScreen {
 				new TextureRegion(buttonSprite, 0, 0, 320, 70)),
 				new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 						69, 320, 70)));
-		debugButton.setSkin(game.getSkin());
+		debugButton.setSkin(GTPoke.getSkin());
 		debugButton.add("Debug Game");
 
 		debugButton.addListener(new ClickListener() {
@@ -108,7 +112,7 @@ public class MainMenu extends AbstractScreen {
 			}
 		});
 
-		final Table table = new Table(game.getSkin());
+		final Table table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 		stage.addActor(table);
 		table.add(gameButton);

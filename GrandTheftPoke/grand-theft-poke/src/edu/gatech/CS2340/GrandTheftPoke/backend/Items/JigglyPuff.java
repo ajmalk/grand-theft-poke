@@ -17,11 +17,12 @@ public class JigglyPuff extends Pokemon {
 	 * JigglyPuff Constructor
 	 */
 	public JigglyPuff() {
-		super(0, 3, 1, 0);//stats for jigglypuff
+		super(0, 3, 1, 0);// stats for jigglypuff
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -31,6 +32,7 @@ public class JigglyPuff extends Pokemon {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -41,6 +43,7 @@ public class JigglyPuff extends Pokemon {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

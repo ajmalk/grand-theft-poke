@@ -22,7 +22,7 @@ public class Main {
 
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "grand-theft-poke";
-		cfg.useGL20 = true;
+		cfg.useGL20 = false;
 		cfg.width = 1024;
 		cfg.height = 768;
 		cfg.resizable = false;

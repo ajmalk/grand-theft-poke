@@ -16,6 +16,7 @@ public class Path {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -27,7 +28,7 @@ public class Path {
 	 * Field target.
 	 */
 	private final Town target;
-	
+
 	/**
 	 * Field weight.
 	 */
@@ -49,8 +50,9 @@ public class Path {
 	/**
 	 * returns the target
 	 * 
-	
-	 * @return target the target */
+	 * 
+	 * @return target the target
+	 */
 	public Town getTarget() {
 		return target;
 	}
@@ -58,8 +60,9 @@ public class Path {
 	/**
 	 * returns the weight
 	 * 
-	
-	 * @return weight the weight */
+	 * 
+	 * @return weight the weight
+	 */
 	public int getWeight() {
 		return weight;
 	}

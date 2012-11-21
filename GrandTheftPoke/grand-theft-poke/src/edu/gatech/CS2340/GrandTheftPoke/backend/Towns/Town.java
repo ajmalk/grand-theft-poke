@@ -73,7 +73,9 @@ public class Town implements Comparable {
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -140,15 +142,17 @@ public class Town implements Comparable {
 	}
 
 	/**
-	
-	 * @return adjacencies */
+	 * 
+	 * @return adjacencies
+	 */
 	public Set getAdjacencies() {
 		return adjacencies;
 	}
 
 	/**
-	
-	 * @return minimumDistance */
+	 * 
+	 * @return minimumDistance
+	 */
 	public int getMinimumDistance() {
 		return minimumDistance;
 	}
@@ -162,8 +166,9 @@ public class Town implements Comparable {
 	}
 
 	/**
-	
-	 * @return previous */
+	 * 
+	 * @return previous
+	 */
 	public Town getPrevious() {
 		return previous;
 	}
@@ -178,7 +183,9 @@ public class Town implements Comparable {
 
 	/**
 	 * Method compareTo.
-	 * @param other Object
+	 * 
+	 * @param other
+	 *            Object
 	 * @return int
 	 */
 	@Override
@@ -188,6 +195,7 @@ public class Town implements Comparable {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -196,15 +204,17 @@ public class Town implements Comparable {
 	}
 
 	/**
-	
-	 * @return myMarket */
+	 * 
+	 * @return myMarket
+	 */
 	public MarketPlace getMarket() {
 		return myMarket;
 	}
 
 	/**
-	
-	 * @return filename */
+	 * 
+	 * @return filename
+	 */
 	public String getImage() {
 		return filename;
 	}

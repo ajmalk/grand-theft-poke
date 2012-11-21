@@ -18,11 +18,12 @@ public class Arcanine extends Pokemon {
 	 * Arcanine Constructor
 	 */
 	public Arcanine() {
-		super(3, 0, 2, 1);//stats for arcanine
+		super(3, 0, 2, 1);// stats for arcanine
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -32,6 +33,7 @@ public class Arcanine extends Pokemon {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -41,6 +43,7 @@ public class Arcanine extends Pokemon {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

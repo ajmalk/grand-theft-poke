@@ -25,6 +25,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 public class Turn {
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -37,17 +38,17 @@ public class Turn {
 	 * Field theMap.
 	 */
 	private final GameMap theMap;
-	
+
 	/**
 	 * Field gameActors.
 	 */
 	private final ArrayList<Person> gameActors;
-	
+
 	/**
 	 * Field thePlayer.
 	 */
 	private final Player thePlayer;
-	
+
 	/**
 	 * Field rand.
 	 */
@@ -86,29 +87,29 @@ public class Turn {
 		// health, int range, int capacity, Float money, GameMap theMap,
 		// GlobalItemReference itemsInstance
 		gameActors.add(new Trader("Bob Waters", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//stats for Bob Waters
+				1000f, theMap, items));// stats for Bob Waters
 		gameActors.add(new Trader("Ajmal Kunnummal", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//Stats for Ajmal
+				1000f, theMap, items));// Stats for Ajmal
 		gameActors.add(new Trader("Drake Stephens", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//stats for Drake
+				1000f, theMap, items));// stats for Drake
 		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//Stats for Henry
+				1000f, theMap, items));// Stats for Henry
 		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//Stats for Griffin
+				1000f, theMap, items));// Stats for Griffin
 		gameActors.add(new Trader("Your Mother", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//stats for your mother
+				1000f, theMap, items));// stats for your mother
 		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f,
-				theMap, items));//stats for rival
+				theMap, items));// stats for rival
 		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100,
-				20, 1000f, theMap, items));//stats for ajmal's evil twin
+				20, 1000f, theMap, items));// stats for ajmal's evil twin
 		gameActors.add(new Rocket("Ben Nuttle V2", 6, 4, 2, 4, 100, 100, 20,
-				1000f, theMap));//stats for Ben Nuttle version2
+				1000f, theMap));// stats for Ben Nuttle version2
 		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 500, 100, 20, 1000f,
-				theMap));//stats for Ho Yin
+				theMap));// stats for Ho Yin
 		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f,
-				theMap));//stats for Jill
+				theMap));// stats for Jill
 		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20,
-				1000f, theMap));//stats for Sagar
+				1000f, theMap));// stats for Sagar
 		this.theMap = theMap;
 		this.thePlayer = player;
 		rand = new Random();
@@ -117,7 +118,8 @@ public class Turn {
 	/**
 	 * runs a turn using the person
 	 * 
-	 * @return encounter */
+	 * @return encounter
+	 */
 	public Person takeATurn() {
 		useAll();
 		moveAll();
@@ -199,8 +201,9 @@ public class Turn {
 	 * 
 	 * @param thePlayer
 	 *            the current player
-	
-	 * @return Person who wins */
+	 * 
+	 * @return Person who wins
+	 */
 	public Person encounter(Player thePlayer) {
 		for (Person individual : gameActors) {
 			if (individual.getCurrent().toString()

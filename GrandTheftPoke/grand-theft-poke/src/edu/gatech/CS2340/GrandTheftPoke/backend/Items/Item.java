@@ -22,12 +22,14 @@ public abstract class Item {
 	/**
 	 * returns a string to use to find the corresponding image
 	 * 
-	
-	 * @return String imageName */
+	 * 
+	 * @return String imageName
+	 */
 	public abstract String getFileName();
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -38,13 +40,16 @@ public abstract class Item {
 	/**
 	 * returns a description of the item
 	 * 
-	
-	 * @return a description */
+	 * 
+	 * @return a description
+	 */
 	public abstract String getDescription();
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -60,6 +65,7 @@ public abstract class Item {
 
 	/**
 	 * Method clone.
+	 * 
 	 * @return Object
 	 * @throws CloneNotSupportedException
 	 */
@@ -70,6 +76,7 @@ public abstract class Item {
 
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
@@ -80,8 +87,9 @@ public abstract class Item {
 	/**
 	 * returns the weight
 	 * 
-	
-	 * @return the weight */
+	 * 
+	 * @return the weight
+	 */
 	public int getWeight() {
 		return weight;
 	}

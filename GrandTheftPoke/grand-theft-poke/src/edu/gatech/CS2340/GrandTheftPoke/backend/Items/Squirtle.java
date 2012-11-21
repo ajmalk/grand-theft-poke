@@ -17,11 +17,12 @@ public class Squirtle extends Pokemon {
 	 * Squirtle Constructor
 	 */
 	public Squirtle() {
-		super(3, 2, 2, 3);//stats for squirtle
+		super(3, 2, 2, 3);// stats for squirtle
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -31,6 +32,7 @@ public class Squirtle extends Pokemon {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -40,6 +42,7 @@ public class Squirtle extends Pokemon {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

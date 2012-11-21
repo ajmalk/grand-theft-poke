@@ -32,6 +32,7 @@ public class GameMap {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -82,44 +83,95 @@ public class GameMap {
 		final Town cinnabarIsland = townGenerator.makeCinnabarIsland();
 		final Town powerPlant = townGenerator.makePowerPlant();
 
-		palletTown.addConnection(new Path(cinnabarIsland, 100));//distance between island and town
-		palletTown.addConnection(new Path(viridianCity, 10));// distance between town and city
+		palletTown.addConnection(new Path(cinnabarIsland, 100));// distance
+																// between
+																// island and
+																// town
+		palletTown.addConnection(new Path(viridianCity, 10));// distance between
+																// town and city
 
-		viridianCity.addConnection(new Path(palletTown, 10));//distance between city and town
-		viridianCity.addConnection(new Path(pewterCity, 20));//distance between city and city
+		viridianCity.addConnection(new Path(palletTown, 10));// distance between
+																// city and town
+		viridianCity.addConnection(new Path(pewterCity, 20));// distance between
+																// city and city
 
-		pewterCity.addConnection(new Path(viridianCity, 20));//distance between city and city
-		pewterCity.addConnection(new Path(ceruleanCity, 50));//distance between city and city
+		pewterCity.addConnection(new Path(viridianCity, 20));// distance between
+																// city and city
+		pewterCity.addConnection(new Path(ceruleanCity, 50));// distance between
+																// city and city
 
-		ceruleanCity.addConnection(new Path(pewterCity, 50));//distance between city and city
-		ceruleanCity.addConnection(new Path(powerPlant, 30));//distance between city and powerplant
-		ceruleanCity.addConnection(new Path(saffronCity, 20));//distance between city and city
+		ceruleanCity.addConnection(new Path(pewterCity, 50));// distance between
+																// city and city
+		ceruleanCity.addConnection(new Path(powerPlant, 30));// distance between
+																// city and
+																// powerplant
+		ceruleanCity.addConnection(new Path(saffronCity, 20));// distance
+																// between city
+																// and city
 
-		powerPlant.addConnection(new Path(ceruleanCity, 30));//distance between powerplant and city
+		powerPlant.addConnection(new Path(ceruleanCity, 30));// distance between
+																// powerplant
+																// and city
 
-		saffronCity.addConnection(new Path(ceruleanCity, 20));//distance between city and city
-		saffronCity.addConnection(new Path(celadonCity, 10));//distance between city and city
-		saffronCity.addConnection(new Path(lavenderTown, 20));//distance between city and town
-		saffronCity.addConnection(new Path(vermillionCity, 20));//distance between city and city
+		saffronCity.addConnection(new Path(ceruleanCity, 20));// distance
+																// between city
+																// and city
+		saffronCity.addConnection(new Path(celadonCity, 10));// distance between
+																// city and city
+		saffronCity.addConnection(new Path(lavenderTown, 20));// distance
+																// between city
+																// and town
+		saffronCity.addConnection(new Path(vermillionCity, 20));// distance
+																// between city
+																// and city
 
-		celadonCity.addConnection(new Path(saffronCity, 10));//distance between city and city
-		celadonCity.addConnection(new Path(fuchsiaCity, 50));//distance between city and city
+		celadonCity.addConnection(new Path(saffronCity, 10));// distance between
+																// city and city
+		celadonCity.addConnection(new Path(fuchsiaCity, 50));// distance between
+																// city and city
 
-		lavenderTown.addConnection(new Path(saffronCity, 20));//distance between city and town
-		lavenderTown.addConnection(new Path(vermillionCity, 40));//distance between city and city
-		lavenderTown.addConnection(new Path(fuchsiaCity, 120));//distance between city and city
+		lavenderTown.addConnection(new Path(saffronCity, 20));// distance
+																// between city
+																// and town
+		lavenderTown.addConnection(new Path(vermillionCity, 40));// distance
+																	// between
+																	// city and
+																	// city
+		lavenderTown.addConnection(new Path(fuchsiaCity, 120));// distance
+																// between city
+																// and city
 
-		vermillionCity.addConnection(new Path(saffronCity, 20));//distance between city and city
-		vermillionCity.addConnection(new Path(lavenderTown, 40));//distance between city and town
-		vermillionCity.addConnection(new Path(fuchsiaCity, 80));//distance between city and city
+		vermillionCity.addConnection(new Path(saffronCity, 20));// distance
+																// between city
+																// and city
+		vermillionCity.addConnection(new Path(lavenderTown, 40));// distance
+																	// between
+																	// city and
+																	// town
+		vermillionCity.addConnection(new Path(fuchsiaCity, 80));// distance
+																// between city
+																// and city
 
-		fuchsiaCity.addConnection(new Path(celadonCity, 50));//distance between city and city
-		fuchsiaCity.addConnection(new Path(lavenderTown, 120));//distance between city and town
-		fuchsiaCity.addConnection(new Path(vermillionCity, 80));//distance between city and city
-		fuchsiaCity.addConnection(new Path(cinnabarIsland, 100));//distance between city and island
+		fuchsiaCity.addConnection(new Path(celadonCity, 50));// distance between
+																// city and city
+		fuchsiaCity.addConnection(new Path(lavenderTown, 120));// distance
+																// between city
+																// and town
+		fuchsiaCity.addConnection(new Path(vermillionCity, 80));// distance
+																// between city
+																// and city
+		fuchsiaCity.addConnection(new Path(cinnabarIsland, 100));// distance
+																	// between
+																	// city and
+																	// island
 
-		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));//distance between city and city
-		cinnabarIsland.addConnection(new Path(palletTown, 100));//distance between city and town
+		cinnabarIsland.addConnection(new Path(fuchsiaCity, 100));// distance
+																	// between
+																	// city and
+																	// city
+		cinnabarIsland.addConnection(new Path(palletTown, 100));// distance
+																// between city
+																// and town
 
 		// current = palletTown;
 		townSet.add(palletTown);
@@ -141,11 +193,12 @@ public class GameMap {
 
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;//prime for hashcode generation
+		final int prime = 31;// prime for hashcode generation
 		int result = 1;
 		result = prime * result
 				+ ((startTown == null) ? 0 : startTown.hashCode());
@@ -155,7 +208,9 @@ public class GameMap {
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -200,8 +255,9 @@ public class GameMap {
 	/**
 	 * gets the set of towns
 	 * 
-	
-	 * @return townSet the set of towns */
+	 * 
+	 * @return townSet the set of towns
+	 */
 	public Set<Town> getTownSet() {
 		return townSet;
 	}
@@ -223,7 +279,7 @@ public class GameMap {
 	 *            the starting town
 	 */
 	public static void computePaths(Town source) {
-		source.setMinimumDistance(0);//minimum distance for dijkstra's
+		source.setMinimumDistance(0);// minimum distance for dijkstra's
 		final PriorityQueue<Town> vertexQueue = new PriorityQueue<Town>();
 		vertexQueue.add(source);
 
@@ -249,8 +305,9 @@ public class GameMap {
 	 * 
 	 * @param target
 	 *            the end town
-	
-	 * @return the shortest path */
+	 * 
+	 * @return the shortest path
+	 */
 	public static List<Town> getShortestPathTo(Town target) {
 		final List<Town> path = new ArrayList<Town>();
 		for (Town vertex = target; vertex != null; vertex = vertex
@@ -264,8 +321,9 @@ public class GameMap {
 	/**
 	 * return the start town
 	 * 
-	
-	 * @return startTown */
+	 * 
+	 * @return startTown
+	 */
 	public Town getStartTown() {
 		return startTown;
 	}
@@ -273,8 +331,9 @@ public class GameMap {
 	/**
 	 * returns a random town
 	 * 
-	
-	 * @return a random town */
+	 * 
+	 * @return a random town
+	 */
 	public Town getRandomTown() {
 		final Random rand = new Random();
 		return (Town) townSet.toArray()[rand.nextInt(townSet.size())];
@@ -288,8 +347,9 @@ public class GameMap {
 	 *            the starting town
 	 * @param townName
 	 *            the townName
-	
-	 * @return an int computing the distance */
+	 * 
+	 * @return an int computing the distance
+	 */
 	public int dijkstras(Town source, String townName) {
 		computePaths(source);
 		int toBeReturned = Integer.MAX_VALUE;

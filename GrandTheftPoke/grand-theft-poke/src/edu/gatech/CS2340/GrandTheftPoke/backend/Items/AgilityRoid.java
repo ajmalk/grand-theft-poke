@@ -17,26 +17,31 @@ public class AgilityRoid extends Item implements Usable {
 
 	/**
 	 * Method use.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
 	 */
 	@Override
 	public void use(Person person) {
-		person.setAgility(2);//adds 2 to agility
+		person.setAgility(2);// adds 2 to agility
 	}
 
 	/**
 	 * Method unUse.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
 	 */
 	@Override
 	public void unUse(Person person) {
-		person.setAgility(-2);//subtracts two from agility
+		person.setAgility(-2);// subtracts two from agility
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -46,6 +51,7 @@ public class AgilityRoid extends Item implements Usable {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -58,6 +64,7 @@ public class AgilityRoid extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

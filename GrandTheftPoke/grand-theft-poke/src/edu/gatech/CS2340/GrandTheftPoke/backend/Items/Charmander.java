@@ -18,11 +18,12 @@ public class Charmander extends Pokemon {
 	 * Constructor for Charmander.
 	 */
 	public Charmander() {
-		super(5, 3, 1, 1);//stats for charizard
+		super(5, 3, 1, 1);// stats for charizard
 	}
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -32,6 +33,7 @@ public class Charmander extends Pokemon {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -42,6 +44,7 @@ public class Charmander extends Pokemon {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

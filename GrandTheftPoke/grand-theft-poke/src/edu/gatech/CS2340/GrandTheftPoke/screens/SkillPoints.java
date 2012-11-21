@@ -9,7 +9,7 @@ package edu.gatech.CS2340.GrandTheftPoke.screens;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -38,17 +38,18 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 public class SkillPoints extends AbstractScreen {
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "SkillPoints";
 	}
-	
+
 	/**
 	 * Field background.
 	 */
-	private Texture background;
+	private AtlasRegion background;
 
 	/**
 	 * Field max.
@@ -121,12 +122,13 @@ public class SkillPoints extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
-		table = new Table(game.getSkin());
+		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 		strength = 0;
 		stamina = 0;
@@ -135,14 +137,15 @@ public class SkillPoints extends AbstractScreen {
 
 		remainder = 20;
 		max = 20;
-		strengthVal = new Label(strength.toString(), game.getSkin());
-		agilityVal = new Label(agility.toString(), game.getSkin());
-		tradeVal = new Label(agility.toString(), game.getSkin());
-		staminaVal = new Label(agility.toString(), game.getSkin());
-		remVal = new Label(agility.toString(), game.getSkin());
-		background = new Texture("images//skillpoint.png");
+		strengthVal = new Label(strength.toString(), GTPoke.getSkin());
+		agilityVal = new Label(agility.toString(), GTPoke.getSkin());
+		tradeVal = new Label(agility.toString(), GTPoke.getSkin());
+		staminaVal = new Label(agility.toString(), GTPoke.getSkin());
+		remVal = new Label(agility.toString(), GTPoke.getSkin());
+		background = GTPoke.getTextures().findRegion("skillpoint");
 
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 		stage.clear();
 
 		final Image backgroundImage = new Image(background);
@@ -151,10 +154,10 @@ public class SkillPoints extends AbstractScreen {
 		backgroundImage.addAction(fadeIn(0.75f));
 		stage.addActor(backgroundImage);
 
-		strengthSlider = new Slider(0, 10, 1, false, game.getSkin());
-		staminaSlider = new Slider(0, 10, 1, false, game.getSkin());
-		agilitySlider = new Slider(0, 10, 1, false, game.getSkin());
-		tradeSlider = new Slider(0, 10, 1, false, game.getSkin());
+		strengthSlider = new Slider(0, 10, 1, false, GTPoke.getSkin());
+		staminaSlider = new Slider(0, 10, 1, false, GTPoke.getSkin());
+		agilitySlider = new Slider(0, 10, 1, false, GTPoke.getSkin());
+		tradeSlider = new Slider(0, 10, 1, false, GTPoke.getSkin());
 
 		final ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
@@ -166,7 +169,7 @@ public class SkillPoints extends AbstractScreen {
 
 		confirmButton = new Button(style);
 
-		confirmButton.setSkin(game.getSkin());
+		confirmButton.setSkin(GTPoke.getSkin());
 		confirmButton.add("Confirm");
 		confirmButton.setPosition(700, 10);
 		confirmButton.setDisabled(true);
@@ -228,8 +231,11 @@ public class SkillPoints extends AbstractScreen {
 
 	/**
 	 * Method updateRemainder.
-	 * @param slider Slider
-	 * @param value Integer
+	 * 
+	 * @param slider
+	 *            Slider
+	 * @param value
+	 *            Integer
 	 */
 	private void updateRemainder(Slider slider, Integer value) {
 		confirmButton.setDisabled(true);
@@ -246,7 +252,9 @@ public class SkillPoints extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -292,11 +300,11 @@ public class SkillPoints extends AbstractScreen {
 
 	/**
 	 * Method dispose.
+	 * 
 	 * @see com.badlogic.gdx.Screen#dispose()
 	 */
 	@Override
 	public void dispose() {
 		super.dispose();
-		background.dispose();
 	}
 }

@@ -15,16 +15,19 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 public class DestinyKnot extends Item {
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		return 18;//represents hashcode to put in hashmap
+		return 18;// represents hashcode to put in hashmap
 	}
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -40,6 +43,7 @@ public class DestinyKnot extends Item {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -49,6 +53,7 @@ public class DestinyKnot extends Item {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -60,6 +65,7 @@ public class DestinyKnot extends Item {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

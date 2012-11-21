@@ -18,8 +18,11 @@ public class AgilityVitamin extends Item implements Usable {
 
 	/**
 	 * Method use.
-	 * @param person Person
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person) */
+	 * 
+	 * @param person
+	 *            Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
+	 */
 	@Override
 	public void use(Person person) {
 		person.setAgility(1);
@@ -27,8 +30,11 @@ public class AgilityVitamin extends Item implements Usable {
 
 	/**
 	 * Method unUse.
-	 * @param person Person
-	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person) */
+	 * 
+	 * @param person
+	 *            Person
+	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
+	 */
 	@Override
 	public void unUse(Person person) {
 		person.setAgility(-1);
@@ -36,8 +42,9 @@ public class AgilityVitamin extends Item implements Usable {
 
 	/**
 	 * Method toString.
-	
-	 * @return String */
+	 * 
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Agility Vitamin";
@@ -45,8 +52,9 @@ public class AgilityVitamin extends Item implements Usable {
 
 	/**
 	 * Method getDescription.
-	
-	 * @return String */
+	 * 
+	 * @return String
+	 */
 	@Override
 	public String getDescription() {
 		return "The Agiliy Vitamin permanently adds  "
@@ -57,7 +65,9 @@ public class AgilityVitamin extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
-	 * @return String */
+	 * 
+	 * @return String
+	 */
 	@Override
 	public String getFileName() {
 		// TODO Auto-generated method stub

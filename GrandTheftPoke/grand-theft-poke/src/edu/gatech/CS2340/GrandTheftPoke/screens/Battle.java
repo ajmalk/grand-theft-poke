@@ -9,7 +9,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
 
 import java.util.Random;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -38,7 +38,7 @@ public class Battle extends AbstractScreen {
 	/**
 	 * the background
 	 */
-	private Texture background;
+	private AtlasRegion background;
 
 	/**
 	 * the backgroundImage
@@ -88,11 +88,12 @@ public class Battle extends AbstractScreen {
 		rand = new Random();
 		turnCount = 1;
 	}
-	
+
 	/**
 	 * toString method
-	
-	 * @return String */
+	 * 
+	 * @return String
+	 */
 	@Override
 	public String toString() {
 		return "Battle";
@@ -105,18 +106,20 @@ public class Battle extends AbstractScreen {
 	 */
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
 
-		table = new Table(myGame.getSkin());
+		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 
-		final Texture buttonSprite = new Texture("images//icons//battle.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 
-		background = new Texture("images//icons//battle.png");
+		background = GTPoke.getTextures().findRegion("battle");
 
 		// Texture ButtonSprite = new Texture("images//icons//encounter.png");
 		stage.clear();
@@ -172,7 +175,8 @@ public class Battle extends AbstractScreen {
 					return;
 				}
 				if (myGame.getPlayer().getHealth() <= 0) {
-					myGame.getPlayer().setHealth(-1 * myGame.getPlayer().getHealth());
+					myGame.getPlayer().setHealth(
+							-1 * myGame.getPlayer().getHealth());
 					myPerson.win(myGame.getPlayer());
 					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 					return;
@@ -192,7 +196,9 @@ public class Battle extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override

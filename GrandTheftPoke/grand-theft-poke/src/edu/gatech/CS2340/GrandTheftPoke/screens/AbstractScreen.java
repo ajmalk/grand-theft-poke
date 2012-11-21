@@ -48,7 +48,9 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -61,8 +63,11 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method resize.
-	 * @param width int
-	 * @param height int
+	 * 
+	 * @param width
+	 *            int
+	 * @param height
+	 *            int
 	 * @see com.badlogic.gdx.Screen#resize(int, int)
 	 */
 	@Override
@@ -72,6 +77,7 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
@@ -80,6 +86,7 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method hide.
+	 * 
 	 * @see com.badlogic.gdx.Screen#hide()
 	 */
 	@Override
@@ -88,6 +95,7 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method pause.
+	 * 
 	 * @see com.badlogic.gdx.Screen#pause()
 	 */
 	@Override
@@ -96,6 +104,7 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method resume.
+	 * 
 	 * @see com.badlogic.gdx.Screen#resume()
 	 */
 	@Override
@@ -104,6 +113,7 @@ public abstract class AbstractScreen implements Screen {
 
 	/**
 	 * Method dispose.
+	 * 
 	 * @see com.badlogic.gdx.Screen#dispose()
 	 */
 	@Override

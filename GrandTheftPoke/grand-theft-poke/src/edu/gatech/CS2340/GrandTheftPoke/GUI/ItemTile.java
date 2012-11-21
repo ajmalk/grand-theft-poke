@@ -33,6 +33,7 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 public class ItemTile extends Button {
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -77,8 +78,9 @@ public class ItemTile extends Button {
 	private Backpack pack;
 
 	/**
-	
-	 * @return item */
+	 * 
+	 * @return item
+	 */
 	public Item getItem() {
 		return item;
 	}
@@ -91,15 +93,14 @@ public class ItemTile extends Button {
 	 *            the stock of the item in the marketplace
 	 */
 	public ItemTile(Item item, MarketPlaceItem stock) {
-		super(new TextureRegionDrawable(new TextureRegion(
-				GTPoke.getButtonSprite(), 0, 0, 150, 175)),
-				new TextureRegionDrawable(new TextureRegion(
-						GTPoke.getButtonSprite(), 0, 200, 150, 175)),
-				new TextureRegionDrawable(new TextureRegion(
-						GTPoke.getButtonSprite(), 0, 400, 150, 175)));
+		super(new TextureRegionDrawable(GTPoke.getTextures().findRegion(
+				"market-item-up")), new TextureRegionDrawable(GTPoke
+				.getTextures().findRegion("market-item-down")),
+				new TextureRegionDrawable(GTPoke.getTextures().findRegion(
+						"market-item-checked")));
 		this.item = item;
 		this.stock = stock;
-		final Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(64, 64, Pixmap.Format.RGB565);
 		map.setColor(Color.BLUE);
 		map.fillRectangle(0, 0, 50, 50);
 		backpackStock = -1;
@@ -107,7 +108,7 @@ public class ItemTile extends Button {
 				Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		icon = new Image(new Texture(map));
+		icon = new Image(new TextureRegion(new Texture(map), 0, 0, 50, 50));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stockLabel).right();
@@ -138,12 +139,11 @@ public class ItemTile extends Button {
 	 */
 	public ItemTile(MarketPlace theMarket, Item item, Integer stock,
 			Backpack pack) {
-		super(new TextureRegionDrawable(new TextureRegion(
-				GTPoke.getButtonSprite(), 0, 0, 150, 170)),
-				new TextureRegionDrawable(new TextureRegion(
-						GTPoke.getButtonSprite(), 0, 200, 150, 170)),
-				new TextureRegionDrawable(new TextureRegion(
-						GTPoke.getButtonSprite(), 0, 400, 150, 170)));
+		super(new TextureRegionDrawable(GTPoke.getTextures().findRegion(
+				"market-item-up")), new TextureRegionDrawable(GTPoke
+				.getTextures().findRegion("market-item-down")),
+				new TextureRegionDrawable(GTPoke.getTextures().findRegion(
+						"market-item-checked")));
 		this.item = item;
 		if (theMarket.getStock().containsKey(item)) {
 			this.stock = (MarketPlaceItem) theMarket.getStock().get(item);
@@ -152,14 +152,14 @@ public class ItemTile extends Button {
 		}
 		backpackStock = stock;
 		this.pack = pack;
-		final Pixmap map = new Pixmap(50, 50, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(64, 64, Pixmap.Format.RGB565);
 		stockLabel = new Label("", new Skin(
 				Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 0, 50, 50);
-		icon = new Image(new Texture(map));
+		icon = new Image(new TextureRegion(new Texture(map), 0, 0, 50, 50));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stockLabel).right();
@@ -179,22 +179,25 @@ public class ItemTile extends Button {
 	}
 
 	/**
-	
-	 * @return stock */
+	 * 
+	 * @return stock
+	 */
 	public MarketPlaceItem getStockInfo() {
 		return stock;
 	}
 
 	/**
-	
-	 * @return boolean */
+	 * 
+	 * @return boolean
+	 */
 	public boolean isMarketItem() {
 		return backpackStock == -1;
 	}
 
 	/**
-	
-	 * @return stock of item */
+	 * 
+	 * @return stock of item
+	 */
 	public Integer getStock() {
 		if (backpackStock != null && backpackStock == -1) {
 			return stock.getStock();

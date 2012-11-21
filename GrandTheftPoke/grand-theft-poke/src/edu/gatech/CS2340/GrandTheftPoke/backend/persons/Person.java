@@ -84,11 +84,12 @@ public class Person {
 
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;//hashcode for hashmap
+		final int prime = 31;// hashcode for hashmap
 		int result = 1;
 		result = prime * result + ((agility == null) ? 0 : agility.hashCode());
 		result = prime * result
@@ -113,7 +114,9 @@ public class Person {
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -234,7 +237,6 @@ public class Person {
 	 * @param capacity
 	 * @param money
 	 * @param theMap
-	
 	 */
 	public Person(String name, int strength, int agility, int trade,
 			int stamina, int health, int range, int capacity, Float money,
@@ -257,8 +259,9 @@ public class Person {
 	/**
 	 * Gets the name of the person
 	 * 
-	
-	 * @return the person's name. */
+	 * 
+	 * @return the person's name.
+	 */
 	public String getName() {
 		return this.name;
 	}
@@ -273,8 +276,9 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return strength */
+	 * 
+	 * @return strength
+	 */
 	public Integer getStrength() {
 		return this.strength;
 	}
@@ -289,8 +293,9 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return agility */
+	 * 
+	 * @return agility
+	 */
 	public Integer getAgility() {
 		return this.agility;
 	}
@@ -305,8 +310,9 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return trade */
+	 * 
+	 * @return trade
+	 */
 	public Integer getTrade() {
 		return this.trade;
 	}
@@ -321,24 +327,27 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return stamina */
+	 * 
+	 * @return stamina
+	 */
 	public Integer getStamina() {
 		return this.stamina;
 	}
 
 	/**
 	 * 
-	
-	 * @return maxHealth */
+	 * 
+	 * @return maxHealth
+	 */
 	public Integer getMaxHealth() {
 		return maxHealth;
 	}
 
 	/**
 	 * 
-	
-	 * @return health */
+	 * 
+	 * @return health
+	 */
 	public Integer getHealth() {
 		return health;
 	}
@@ -373,24 +382,27 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return myBackpack */
+	 * 
+	 * @return myBackpack
+	 */
 	public Backpack getBackpack() {
 		return myBackpack;
 	}
 
 	/**
 	 * 
-	
-	 * @return myWallet */
+	 * 
+	 * @return myWallet
+	 */
 	public Wallet getWallet() {
 		return myWallet;
 	}
 
 	/**
 	 * 
-	
-	 * @return currentTown */
+	 * 
+	 * @return currentTown
+	 */
 	public Town getCurrent() {
 		return currentTown;
 	}
@@ -406,8 +418,9 @@ public class Person {
 	/**
 	 * 
 	 * @param turnCount
-	
-	 * @return int */
+	 * 
+	 * @return int
+	 */
 	public int attack(int turnCount) {
 		final float fatigue = (float) currentStamina / stamina;
 		if (currentStamina > 1 && turnCount % 5 == 0) {
@@ -423,7 +436,7 @@ public class Person {
 	 */
 	public void defend(int incomingDamage) {
 		final float fatigue = (float) currentStamina / stamina;
-		final float dodge = agility / 100;//scaling factor
+		final float dodge = agility / 100;// scaling factor
 
 		final Random rand = new Random();
 		final double chance = rand.nextDouble();
@@ -437,8 +450,9 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return boolean */
+	 * 
+	 * @return boolean
+	 */
 	public boolean flee() {
 		return new Random().nextBoolean();
 	}
@@ -452,9 +466,9 @@ public class Person {
 			final int range = myBackpack.getMaxRange();
 			int distance = theMap
 					.dijkstras(currentTown, destination.toString());
-			if (range >= distance && health >= distance / 5) {//scaling factor
+			if (range >= distance && health >= distance / 5) {// scaling factor
 				currentTown = destination;
-				setHealth(-distance / 5);//subtracts distance/5 of health
+				setHealth(-distance / 5);// subtracts distance/5 of health
 			}
 		}
 	}
@@ -464,12 +478,12 @@ public class Person {
 	 * @param theMarket
 	 * @param desiredGood
 	 * @param quantity
-	
+	 * 
 	 * @return boolean
 	 */
 	public boolean buy(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (theMarket.getStock().containsKey(desiredGood)) {
-			float price = (float) (1.15 - 0.0015 * trade)//sets price
+			float price = (float) (1.15 - 0.0015 * trade)// sets price
 					* ((MarketPlaceItem) (theMarket.getStock().get(desiredGood)))
 							.getBuyingPrice(quantity);
 			if (price != 0) {
@@ -478,7 +492,7 @@ public class Person {
 						theMarket.buy(desiredGood, quantity);
 						myWallet.updateMoney(-price);
 						myBackpack.place(desiredGood, quantity);
-						if(desiredGood instanceof Pokemon) {
+						if (desiredGood instanceof Pokemon) {
 							((Usable) desiredGood).use(this);
 						}
 						return true;
@@ -496,16 +510,17 @@ public class Person {
 	 * @param theMarket
 	 * @param desiredGood
 	 * @param quantity
-	
+	 * 
 	 * @return boolean
 	 */
 	public boolean sell(MarketPlace theMarket, Item desiredGood, int quantity) {
 		if (myBackpack.checkContents(desiredGood, quantity)) {
-			final float price = (float) (0.85 + 0.0015 * trade)//sets price for selling
+			final float price = (float) (0.85 + 0.0015 * trade)// sets price for
+																// selling
 					* theMarket.sell(desiredGood, quantity);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);
-			if(desiredGood instanceof Pokemon) {
+			if (desiredGood instanceof Pokemon) {
 				((Usable) desiredGood).unUse(this);
 			}
 			return true;
@@ -534,6 +549,7 @@ public class Person {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override

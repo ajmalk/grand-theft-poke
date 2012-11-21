@@ -11,7 +11,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
@@ -27,20 +27,21 @@ import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
  * 
  */
 public class SplashScreen extends AbstractScreen {
-	
+
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "SplashScreen";
 	}
-	
+
 	/**
 	 * Field splashTexture.
 	 */
-	private Texture splashTexture;
+	private AtlasRegion splashTexture;
 
 	/**
 	 * @param game
@@ -52,13 +53,14 @@ public class SplashScreen extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		super.show();
 
-		splashTexture = new Texture("images//splash.png");
+		splashTexture = GTPoke.getTextures().findRegion("splash");
 		stage.clear();
 		final Image splashImage = new Image(splashTexture);
 		splashImage.setFillParent(true);
@@ -80,7 +82,9 @@ public class SplashScreen extends AbstractScreen {
 
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -93,11 +97,11 @@ public class SplashScreen extends AbstractScreen {
 
 	/**
 	 * Method dispose.
+	 * 
 	 * @see com.badlogic.gdx.Screen#dispose()
 	 */
 	@Override
 	public void dispose() {
 		super.dispose();
-		splashTexture.dispose();
 	}
 }

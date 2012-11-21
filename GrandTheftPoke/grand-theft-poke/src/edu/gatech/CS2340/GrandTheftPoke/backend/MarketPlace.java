@@ -21,11 +21,12 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 public class MarketPlace {
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;//prime for hashcode generation
+		final int prime = 31;// prime for hashcode generation
 		int result = 1;
 		result = prime * result + ((stock == null) ? 0 : stock.hashCode());
 		return result;
@@ -33,7 +34,9 @@ public class MarketPlace {
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -60,6 +63,7 @@ public class MarketPlace {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -90,8 +94,9 @@ public class MarketPlace {
 	 *            the good to be bought
 	 * @param quantity
 	 *            quantity to be bought
-	
-	 * @return float */
+	 * 
+	 * @return float
+	 */
 	public float buy(Item good, int quantity) {
 		if (stock.containsKey(good)) {
 			final MarketPlaceItem model = stock.get(good);
@@ -107,8 +112,9 @@ public class MarketPlace {
 	 *            good to be sold
 	 * @param quantity
 	 *            quantity to be sold
-	
-	 * @return float */
+	 * 
+	 * @return float
+	 */
 	public float sell(Item good, int quantity) {
 		if (stock.containsKey(good)) {
 			final MarketPlaceItem model = stock.get(good);
@@ -121,8 +127,9 @@ public class MarketPlace {
 	/**
 	 * getsStock
 	 * 
-	
-	 * @return stock the stock of the market */
+	 * 
+	 * @return stock the stock of the market
+	 */
 
 	public Map getStock() {
 		return stock;
@@ -131,8 +138,9 @@ public class MarketPlace {
 	/**
 	 * marketPlace Iterator
 	 * 
-	
-	 * @return Iterator iterator */
+	 * 
+	 * @return Iterator iterator
+	 */
 	public Iterator iterator() {
 		return stock.entrySet().iterator();
 

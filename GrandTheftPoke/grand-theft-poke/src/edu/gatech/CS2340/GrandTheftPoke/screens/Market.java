@@ -12,17 +12,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemDescTile;
@@ -43,12 +39,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 public class Market extends AbstractScreen {
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "Market";
 	}
+
 	/**
 	 * Field myMarket.
 	 */
@@ -107,7 +105,7 @@ public class Market extends AbstractScreen {
 	 */
 	public Market(GTPoke game, MarketPlace market) {
 		super(game);
-		background = new Image(game.getTextures().findRegion("market-place"));
+		background = new Image(GTPoke.getTextures().findRegion("market-place"));
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
@@ -141,7 +139,7 @@ public class Market extends AbstractScreen {
 	 */
 	public Market(GTPoke game, MarketPlace market, Trader other) {
 		super(game);
-		background = new Image(game.getTextures().findRegion("trade-screen"));
+		background = new Image(GTPoke.getTextures().findRegion("trade-screen"));
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
@@ -160,15 +158,11 @@ public class Market extends AbstractScreen {
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
-		// background = new
-		// Image(game.getTextures().findRegion("market-place"));
-		// background.setFillParent(true);
-		// background.getColor().a = 0f;
-		// background.addAction(fadeIn(0.75f));
 		stage.addActor(background);
 
 		updatetables();
@@ -195,14 +189,6 @@ public class Market extends AbstractScreen {
 				game.getPlayer(), myMarket, this,
 				(ItemTile) marketItemGroup.getChecked(), otherTrader);
 
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
-		final ButtonStyle style = new ButtonStyle();
-		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
-				0, 320, 70));
-		style.down = new TextureRegionDrawable(new TextureRegion(buttonSprite,
-				0, 69, 320, 70));
-		style.disabled = new TextureRegionDrawable(new TextureRegion(
-				buttonSprite, 0, 69, 320, 70));
 		backButton = game.getBackButton();
 		backButton.addListener(new ClickListener() {
 			@Override
@@ -224,8 +210,8 @@ public class Market extends AbstractScreen {
 		int col = 0;
 		markettable.clear();
 		marketItemGroup = new ButtonGroup();
-		for (final Iterator<Map.Entry<Item, ItemTile>> i = marketplace.entrySet()
-				.iterator(); i.hasNext();) {
+		for (final Iterator<Map.Entry<Item, ItemTile>> i = marketplace
+				.entrySet().iterator(); i.hasNext();) {
 			final Map.Entry<Item, ItemTile> item = i.next();
 			if (item.getValue().getStock() != 0) {
 				markettable.add(item.getValue());
@@ -256,15 +242,15 @@ public class Market extends AbstractScreen {
 	 * updates items in the market
 	 */
 	private void updatetables() {
-		for (final Iterator<Map.Entry<Item, MarketPlaceItem>> i = myMarket.iterator(); i
-				.hasNext();) {
+		for (final Iterator<Map.Entry<Item, MarketPlaceItem>> i = myMarket
+				.iterator(); i.hasNext();) {
 			final Map.Entry<Item, MarketPlaceItem> item = i.next();
 			final ItemTile markettile = new ItemTile(item.getKey(),
 					item.getValue());
-			//Integer pack = playerPack.getContents().get(item.getKey());
-			//ItemTile backpacktile;
-			//backpacktile = new ItemTile(myMarket, item.getKey(), pack,
-					//playerPack);
+			// Integer pack = playerPack.getContents().get(item.getKey());
+			// ItemTile backpacktile;
+			// backpacktile = new ItemTile(myMarket, item.getKey(), pack,
+			// playerPack);
 			marketplace.put(item.getKey(), markettile);
 		}
 		for (final Iterator<java.util.Map.Entry<Item, Integer>> i = playerPack
@@ -285,15 +271,17 @@ public class Market extends AbstractScreen {
 	 */
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
 		game.update();
-		for (final Iterator<Entry<Item, ItemTile>> iter = marketplace.entrySet()
-				.iterator(); iter.hasNext();) {
+		for (final Iterator<Entry<Item, ItemTile>> iter = marketplace
+				.entrySet().iterator(); iter.hasNext();) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
 			if (playerPack.getContents().containsKey(item.getKey())

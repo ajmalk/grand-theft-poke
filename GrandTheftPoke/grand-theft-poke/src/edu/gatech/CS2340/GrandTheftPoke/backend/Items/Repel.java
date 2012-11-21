@@ -19,16 +19,19 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 public class Repel extends Item implements Usable {
 	/**
 	 * Method hashCode.
+	 * 
 	 * @return int
 	 */
 	@Override
 	public int hashCode() {
-		return 6;//hashcode for hashmap
+		return 6;// hashcode for hashmap
 	}
 
 	/**
 	 * Method equals.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	@Override
@@ -44,7 +47,9 @@ public class Repel extends Item implements Usable {
 
 	/**
 	 * Method use.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
 	 */
 	@Override
@@ -54,7 +59,9 @@ public class Repel extends Item implements Usable {
 
 	/**
 	 * Method unUse.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
 	 */
 	@Override
@@ -64,6 +71,7 @@ public class Repel extends Item implements Usable {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -73,6 +81,7 @@ public class Repel extends Item implements Usable {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -82,6 +91,7 @@ public class Repel extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

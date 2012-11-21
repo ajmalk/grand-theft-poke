@@ -18,24 +18,28 @@ public class HealthVitamin extends Item implements Usable {
 
 	/**
 	 * Method use.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#use(Person)
 	 */
 	@Override
 	public void use(Person person) {
 		final int maxHealth = person.getMaxHealth();
-		person.setMaxHealth(maxHealth + 25);//adds 25 health points
+		person.setMaxHealth(maxHealth + 25);// adds 25 health points
 	}
 
 	/**
 	 * Method unUse.
-	 * @param person Person
+	 * 
+	 * @param person
+	 *            Person
 	 * @see edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable#unUse(Person)
 	 */
 	@Override
 	public void unUse(Person person) {
 		final int maxHealth = person.getMaxHealth();
-		person.setMaxHealth(maxHealth - 25);//subtracts 25 health points
+		person.setMaxHealth(maxHealth - 25);// subtracts 25 health points
 		if (person.getMaxHealth() > person.getHealth()) {
 			person.setHealth(maxHealth);
 		}
@@ -43,6 +47,7 @@ public class HealthVitamin extends Item implements Usable {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -52,6 +57,7 @@ public class HealthVitamin extends Item implements Usable {
 
 	/**
 	 * Method getDescription.
+	 * 
 	 * @return String
 	 */
 	@Override
@@ -61,6 +67,7 @@ public class HealthVitamin extends Item implements Usable {
 
 	/**
 	 * Method getFileName.
+	 * 
 	 * @return String
 	 */
 	@Override

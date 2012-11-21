@@ -46,8 +46,7 @@ public class MarketPlaceTest {
 	public void setUp() {
 		itemsInstance = new GlobalItemReference();
 
-		final HashMap<Item, MarketPlaceItem> myStock = 
-				new HashMap<Item, MarketPlaceItem>();
+		final HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(20f,
 				20f));
 		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
@@ -104,7 +103,8 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getHealthPotion())).getStock().equals(new Integer(15))));
+						itemsInstance.getHealthPotion())).getStock()
+						.equals(new Integer(15))));
 		System.out.println("/////////////////////////");
 	}
 
@@ -126,7 +126,8 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getHealthPotion())).getStock().equals(new Integer(25))));
+						itemsInstance.getHealthPotion())).getStock()
+						.equals(new Integer(25))));
 		System.out.println("/////////////////////////");
 	}
 
@@ -148,7 +149,8 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getHealthPotion())).getStock().equals(new Integer(15))));
+						itemsInstance.getHealthPotion())).getStock()
+						.equals(new Integer(15))));
 
 		System.out.println("-----------------------------------");
 
@@ -173,18 +175,20 @@ public class MarketPlaceTest {
 
 		// test buying
 		// assertTrue(p.getBackpack().getContents().isEmpty());
-		final boolean buy1 = person.buy(myMarket, itemsInstance.getCharmander(),
-				1);
+		final boolean buy1 = person.buy(myMarket,
+				itemsInstance.getCharmander(), 1);
 		final boolean buy2 = person.buy(myMarket,
 				itemsInstance.getHealthPotion(), 6);
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getCharmander())).getStock().equals(new Integer(9))));
+						itemsInstance.getCharmander())).getStock()
+						.equals(new Integer(9))));
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getHealthPotion())).getStock().equals(new Integer(14))));
+						itemsInstance.getHealthPotion())).getStock()
+						.equals(new Integer(14))));
 		assertTrue(
 				"You've made a mistake",
 				(person.getBackpack().checkContents(
@@ -198,7 +202,8 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getPikachu())).getStock().equals(new Integer(10))));
+						itemsInstance.getPikachu())).getStock()
+						.equals(new Integer(10))));
 		assertFalse("You've made a mistake",
 				(person.getBackpack().checkContents(itemsInstance.getPikachu(),
 						1)));
@@ -217,7 +222,8 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getCharmander())).getStock().equals(new Integer(10))));
+						itemsInstance.getCharmander())).getStock()
+						.equals(new Integer(10))));
 		assertFalse(person.getBackpack().checkContents(
 				itemsInstance.getCharmander(), 1));
 
@@ -227,7 +233,8 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getHealthPotion())).getStock().equals(new Integer(20))));
+						itemsInstance.getHealthPotion())).getStock()
+						.equals(new Integer(20))));
 		assertFalse(
 				"You've made a mistake",
 				(person.getBackpack().checkContents(
@@ -237,6 +244,7 @@ public class MarketPlaceTest {
 
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override

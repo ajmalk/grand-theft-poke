@@ -9,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -20,7 +21,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-
+import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
@@ -38,19 +39,20 @@ import edu.gatech.CS2340.GrandTheftPoke.screens.Market;
 public class ItemDescTile extends Table {
 	/**
 	 * Method toString.
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "ItemDescTile [item=" + item + ", stockInfo=" + stockInfo
-				+ ", backpackStock=" + backpackStock
-				+ ", icon=" + icon + ", name=" + name + ", description="
-				+ description + ", stock=" + stock + ", price=" + price
-				+ ", buy=" + buy + ", sell=" + sell + ", buyListener="
-				+ buyListener + ", sellListener=" + sellListener + ", buysell="
-				+ buysell + ", customer=" + customer + ", otherTrader="
-				+ otherTrader + ", market=" + market + ", screen=" + screen
-				+ ", tile=" + tile + "]";
+				+ ", backpackStock=" + backpackStock + ", icon=" + icon
+				+ ", name=" + name + ", description=" + description
+				+ ", stock=" + stock + ", price=" + price + ", buy=" + buy
+				+ ", sell=" + sell + ", buyListener=" + buyListener
+				+ ", sellListener=" + sellListener + ", buysell=" + buysell
+				+ ", customer=" + customer + ", otherTrader=" + otherTrader
+				+ ", market=" + market + ", screen=" + screen + ", tile="
+				+ tile + "]";
 	}
 
 	/**
@@ -63,10 +65,10 @@ public class ItemDescTile extends Table {
 	 */
 	private MarketPlaceItem stockInfo;
 
-//	/**
-//	 * Field pack.
-//	 */
-//	private Backpack pack;
+	// /**
+	// * Field pack.
+	// */
+	// private Backpack pack;
 
 	/**
 	 * Field backpackStock.
@@ -124,8 +126,9 @@ public class ItemDescTile extends Table {
 	private ItemTile tile;
 
 	/**
-	
-	 * @return item */
+	 * 
+	 * @return item
+	 */
 	public Item getItem() {
 		return item;
 	}
@@ -156,7 +159,8 @@ public class ItemDescTile extends Table {
 		this.screen = screen;
 		this.otherTrader = other;
 
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 		buy = new Button(new TextureRegionDrawable(new TextureRegion(
 				buttonSprite, 0, 0, 320, 70)), new TextureRegionDrawable(
 				new TextureRegion(buttonSprite, 0, 69, 320, 70)));
@@ -175,13 +179,13 @@ public class ItemDescTile extends Table {
 
 		buysell = new Table();
 
-		final Pixmap map = new Pixmap(200, 200, Pixmap.Format.RGB565);
+		final Pixmap map = new Pixmap(256, 256, Pixmap.Format.RGB565);
 		map.setColor(Color.BLUE);
 		map.fillRectangle(0, 0, 200, 200);
 
-		final Pixmap map2 = new Pixmap(200, 200, Pixmap.Format.RGB565);
-		map2.setColor(Color.GRAY);
-		map2.fillRectangle(0, 0, 200, 200);
+		final Pixmap map2 = new Pixmap(1024, 1024, Pixmap.Format.RGB565);
+		map2.setColor(Color.BLACK);
+		map2.fillRectangle(0, 0, 1024, 1024);
 
 		backpackStock = -1;
 		name = new Label("", new Skin(Gdx.files.internal("skins//uiskin.json")));
@@ -191,7 +195,7 @@ public class ItemDescTile extends Table {
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		icon = new Image(new Texture(map));
+		icon = new Image(new TextureRegion(new Texture(map), 0, 0, 200, 200));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stock).right().pad(10);
@@ -201,6 +205,7 @@ public class ItemDescTile extends Table {
 
 		name.setWrap(true);
 		name.setAlignment(Align.center);
+		// name.setColor(Color.DARK_GRAY);
 		add(name).width(250).padTop(5);
 		row();
 
@@ -214,9 +219,10 @@ public class ItemDescTile extends Table {
 
 		top();
 		setSize(300, 525);
+		pack();
 
-		setBackground(new TextureRegionDrawable(new TextureRegion(new Texture(
-				map2), 0, 0, 300, 525)));
+		setBackground(new TextureRegionDrawable(GTPoke.getTextures()
+				.findRegion("market-item-desc")));
 
 		update(item, stockInfo, customer, tile);
 	}
@@ -230,9 +236,13 @@ public class ItemDescTile extends Table {
 	private class BuyListener extends ClickListener {
 		/**
 		 * Method clicked.
-		 * @param event InputEvent
-		 * @param x float
-		 * @param y float
+		 * 
+		 * @param event
+		 *            InputEvent
+		 * @param x
+		 *            float
+		 * @param y
+		 *            float
 		 */
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
@@ -246,9 +256,10 @@ public class ItemDescTile extends Table {
 				customer.buy(market, item, 1);
 			}
 		}
-		
+
 		/**
 		 * toString
+		 * 
 		 * @return String
 		 */
 		@Override
@@ -266,9 +277,13 @@ public class ItemDescTile extends Table {
 	private class SellListener extends ClickListener {
 		/**
 		 * Method clicked.
-		 * @param event InputEvent
-		 * @param x float
-		 * @param y float
+		 * 
+		 * @param event
+		 *            InputEvent
+		 * @param x
+		 *            float
+		 * @param y
+		 *            float
 		 */
 		@Override
 		public void clicked(InputEvent event, float x, float y) {
@@ -285,9 +300,10 @@ public class ItemDescTile extends Table {
 				customer.sell(market, item, 1);
 			}
 		}
-		
+
 		/**
 		 * toString
+		 * 
 		 * @return String
 		 */
 		@Override
@@ -324,10 +340,11 @@ public class ItemDescTile extends Table {
 	 *            the item to be updated
 	 * @param stockInfo
 	 *            the item in the marketplace
-	
+	 * 
 	 * @param tile
 	 *            the tile that represents the item
-	 * @param customer Person
+	 * @param customer
+	 *            Person
 	 */
 	public void update(Item item, MarketPlaceItem stockInfo, Person customer,
 			ItemTile tile) {
@@ -369,6 +386,5 @@ public class ItemDescTile extends Table {
 		buysell.clear();
 		buysell.add(sell);
 	}
-	
-	
+
 }
