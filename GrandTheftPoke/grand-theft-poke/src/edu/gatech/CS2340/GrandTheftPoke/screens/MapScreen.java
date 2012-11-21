@@ -113,11 +113,6 @@ public class MapScreen extends AbstractScreen {
 	private TownTile celadonCityButton;
 
 	/**
-	 * Field saveButton.
-	 */
-	private Button saveButton;
-
-	/**
 	 * Field backButton.
 	 */
 	private Button backButton;
@@ -234,8 +229,6 @@ public class MapScreen extends AbstractScreen {
 				0, 69, 320, 70));
 		style.disabled = new TextureRegionDrawable(new TextureRegion(
 				buttonSprite, 0, 69, 320, 70));
-
-		saveButton = game.getSaveButton();
 
 		backButton = game.getBackButton();
 		backButton.setPosition(20, 15);
@@ -474,7 +467,6 @@ public class MapScreen extends AbstractScreen {
 		stage.addActor(fuchsiaCityButton);
 		fuchsiaCityButton.setPosition(602, 122);
 
-		stage.addActor(saveButton);
 		stage.addActor(backButton);
 
 		stage.addActor(game.getStatusBar());
@@ -488,7 +480,6 @@ public class MapScreen extends AbstractScreen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		saveButton.setPosition(900, 15);
 		game.update();
 	}
 

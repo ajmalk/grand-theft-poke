@@ -191,6 +191,7 @@ public class TownScreen extends AbstractScreen {
 		bp.add(backPackButton);
 
 		stage.addActor(bp);
+		stage.addActor(game.getSaveButton());
 		stage.addActor(game.getStatusBar());
 	}
 
