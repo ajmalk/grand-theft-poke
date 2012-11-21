@@ -119,6 +119,8 @@ public class GTPoke extends Game {
 	 * Field statusBar.
 	 */
 	private Table statusBar;
+	
+	private Button saveButton;
 
 	/**
 	 * Field skin.
@@ -140,6 +142,53 @@ public class GTPoke extends Game {
 	 */
 	private AtlasRegion healthBar;
 
+	public GTPoke(){
+		super();
+		// default constructor
+	}
+	public GTPoke(GameMap map, Player player, Turn turn){
+		items = new GlobalItemReference();
+		xstream = new XStream();
+		this.theMap = map;
+		thePlayer = player;
+		this.controller = turn;
+	}
+	
+	public boolean isEqualto(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof GTPoke)) {
+			return false;
+		}
+		GTPoke other = (GTPoke) obj;
+		if (controller == null) {
+			if (other.controller != null) {
+				return false;
+			}
+		} else if (!controller.equals(other.controller)) {
+			return false;
+		}
+		if (theMap == null) {
+			if (other.theMap != null) {
+				return false;
+			}
+		} else if (!theMap.equals(other.theMap)) {
+			return false;
+		}
+		if (thePlayer == null) {
+			if (other.thePlayer != null) {
+				return false;
+			}
+		} else if (!thePlayer.equals(other.thePlayer)) {
+			return false;
+		}
+		return true;
+	}
+	
 	/**
 	 * Method create.
 	 * @see com.badlogic.gdx.ApplicationListener#create()
@@ -160,8 +209,18 @@ public class GTPoke extends Game {
 		map.fillRectangle(0, 400, 150, 200);
 		ButtonSprite = new Texture(map);
 		statusBar = new Table(skin);
-
-		new ArrayList<Person>();
+		
+		saveButton = getButton("save");
+		saveButton.setPosition(920, 400);
+		saveButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				save();
+				clear();
+				setScreen(getMainMenuScreen());
+			}
+		});
+		
 		theMap = makeMap();
 
 		setScreen(getSplashScreen());
@@ -255,8 +314,6 @@ public class GTPoke extends Game {
 	public String save() {
 		final SaveGame save = new SaveGame(thePlayer, theMap, controller);
 		final String savestr = xstream.toXML(save);
-		System.out.println(savestr);
-		// savestrs.add(savestr);
 		saveFile.writeString(savestr, false);
 		return savestr;
 	}
@@ -273,6 +330,13 @@ public class GTPoke extends Game {
 		setScreen(getCurrentTownScreenFromEncounter());
 	}
 
+	public String getSaveStr(){
+		return xstream.toXML(new SaveGame(thePlayer, theMap, controller));
+	}
+	
+	public SaveGame getSave(){
+		return new SaveGame(thePlayer, theMap, controller);
+	}
 	/**
 	 * @param gamestr
 	 *            string used to load game
@@ -475,16 +539,6 @@ public class GTPoke extends Game {
 	
 	 * @return a save button */
 	public Button getSaveButton() {
-		final Button saveButton = getButton("save");
-		saveButton.setPosition(920, 400);
-		saveButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				save();
-				clear();
-				setScreen(getMainMenuScreen());
-			}
-		});
 		return saveButton;
 	}
 
