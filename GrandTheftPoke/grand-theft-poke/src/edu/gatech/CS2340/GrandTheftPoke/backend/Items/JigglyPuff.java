@@ -17,7 +17,7 @@ public class JigglyPuff extends Pokemon {
 	 * JigglyPuff Constructor
 	 */
 	public JigglyPuff() {
-		super(1, 2, 3, 4);//stats for jigglypuff
+		super(0, 3, 1, 0);//stats for jigglypuff
 	}
 
 	/**

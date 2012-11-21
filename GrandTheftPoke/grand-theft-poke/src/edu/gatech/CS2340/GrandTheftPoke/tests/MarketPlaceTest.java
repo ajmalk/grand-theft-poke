@@ -64,7 +64,7 @@ public class MarketPlaceTest {
 		// myStock.put(new Pokeball(), new MarketPlaceItem());
 		myStock.put(itemsInstance.getSquirtle(),
 				new MarketPlaceItem(2500f, 10f));
-		myStock.put(itemsInstance.getCharizard(), new MarketPlaceItem(3000f,
+		myStock.put(itemsInstance.getCharmander(), new MarketPlaceItem(3000f,
 				10f));
 		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 10f));
 		myStock.put(itemsInstance.getJigglyPuff(), new MarketPlaceItem(500f,
@@ -173,14 +173,14 @@ public class MarketPlaceTest {
 
 		// test buying
 		// assertTrue(p.getBackpack().getContents().isEmpty());
-		final boolean buy1 = person.buy(myMarket, itemsInstance.getCharizard(),
+		final boolean buy1 = person.buy(myMarket, itemsInstance.getCharmander(),
 				1);
 		final boolean buy2 = person.buy(myMarket,
 				itemsInstance.getHealthPotion(), 6);
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getCharizard())).getStock().equals(new Integer(9))));
+						itemsInstance.getCharmander())).getStock().equals(new Integer(9))));
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
@@ -188,7 +188,7 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(person.getBackpack().checkContents(
-						itemsInstance.getCharizard(), 1)));
+						itemsInstance.getCharmander(), 1)));
 		assertTrue(
 				"You've made a mistake",
 				(person.getBackpack().checkContents(
@@ -205,21 +205,21 @@ public class MarketPlaceTest {
 		assertTrue(
 				"You've made a mistake",
 				(person.getBackpack().checkContents(
-						itemsInstance.getCharizard(), 1)));
+						itemsInstance.getCharmander(), 1)));
 		// System.out.println(p.getWallet().getMoney());
 		// assertEquals((int)p.getWallet().getMoney(), 2000);
 
 		// test selling
 
 		final boolean sell1 = person.sell(myMarket,
-				itemsInstance.getCharizard(), 1);
+				itemsInstance.getCharmander(), 1);
 		// code does not allow one to sell more than one has
 		assertTrue(
 				"You've made a mistake",
 				(((MarketPlaceItem) myMarket.getStock().get(
-						itemsInstance.getCharizard())).getStock().equals(new Integer(10))));
+						itemsInstance.getCharmander())).getStock().equals(new Integer(10))));
 		assertFalse(person.getBackpack().checkContents(
-				itemsInstance.getCharizard(), 1));
+				itemsInstance.getCharmander(), 1));
 
 		final boolean sell2 = person.sell(myMarket,
 				itemsInstance.getHealthPotion(), 6);

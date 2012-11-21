@@ -91,9 +91,9 @@ public class Trader extends Person {
 		myStock.put(itemsInstance.getSquirtle(), new MarketPlaceItem(2500f,
 				(float) (getBackpack().getAmount(itemsInstance.getSquirtle()))));//starting price
 		myStock.put(
-				itemsInstance.getCharizard(),
+				itemsInstance.getCharmander(),
 				new MarketPlaceItem(3000f, (float) (getBackpack()
-						.getAmount(itemsInstance.getCharizard()))));//starting price
+						.getAmount(itemsInstance.getCharmander()))));//starting price
 		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f,
 				(float) (getBackpack().getAmount(itemsInstance.getPikachu()))));//starting price
 		myStock.put(
@@ -118,6 +118,9 @@ public class Trader extends Person {
 				itemsInstance.getTradeRoid(),
 				new MarketPlaceItem(2000f, (float) (getBackpack()
 						.getAmount(itemsInstance.getTradeRoid()))));//starting price
+		myStock.put(itemsInstance.getBulbasaur(),
+				new MarketPlaceItem(3000f, (float) (getBackpack()
+						.getAmount(itemsInstance.getTradeRoid()))));//starting price and quantity
 		final MarketPlace myMarket = new MarketPlace(myStock);
 
 		personalMarket = myMarket;

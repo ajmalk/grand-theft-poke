@@ -17,7 +17,7 @@ public class Squirtle extends Pokemon {
 	 * Squirtle Constructor
 	 */
 	public Squirtle() {
-		super(3, 3, 2, 2);//stats for squirtle
+		super(3, 2, 2, 3);//stats for squirtle
 	}
 
 	/**

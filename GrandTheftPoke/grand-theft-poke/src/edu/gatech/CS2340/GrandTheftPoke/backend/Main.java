@@ -72,7 +72,7 @@ public class Main {
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		System.out.println(testPlayer.buy(theMarket,
-				theReference.getCharizard(), 1));//buying one charizard
+				theReference.getCharmander(), 1));//buying one charizard
 		System.out.println(testPlayer.getBackpack());
 		System.out.println(testPlayer.getWallet());
 		System.out.println(testPlayer.sell(theMarket,

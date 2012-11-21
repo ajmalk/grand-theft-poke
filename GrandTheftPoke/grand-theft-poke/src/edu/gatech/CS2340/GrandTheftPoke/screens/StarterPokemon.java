@@ -19,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Pokemon;
 
 /**
  * Starter screen
@@ -37,7 +38,11 @@ public class StarterPokemon extends AbstractScreen {
 	public String toString() {
 		return "StarterPokemon";
 	}
-	
+	/**
+	 *  Field starter.
+	 */
+	private Pokemon starter;
+
 	/**
 	 * Field title.
 	 */
@@ -109,7 +114,7 @@ public class StarterPokemon extends AbstractScreen {
 		bulbasaur.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
+				starter = (Pokemon)game.getItems().getBulbasaur();
 				confirmX = 25;
 				confirmButton.setDisabled(false);
 				confirmButton.setTouchable(Touchable.enabled);
@@ -122,7 +127,7 @@ public class StarterPokemon extends AbstractScreen {
 		charmander.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
+				starter = (Pokemon)game.getItems().getCharmander();
 				confirmX = 356;
 				confirmButton.setDisabled(false);
 				confirmButton.setTouchable(Touchable.enabled);
@@ -135,7 +140,7 @@ public class StarterPokemon extends AbstractScreen {
 		squirtle.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				// game.setScreen(game.getNameScreen());
+				starter = (Pokemon)game.getItems().getSquirtle();
 				confirmX = 675;
 				confirmButton.setDisabled(false);
 				confirmButton.setTouchable(Touchable.enabled);
@@ -163,6 +168,9 @@ public class StarterPokemon extends AbstractScreen {
 		confirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
+				game.getPlayer().getBackpack().place(starter, 1);
+				starter.use(game.getPlayer());
+				System.out.println(game.getPlayer());
 				game.setScreen(game.getCurrentTownScreenFromEncounter());
 			}
 		});

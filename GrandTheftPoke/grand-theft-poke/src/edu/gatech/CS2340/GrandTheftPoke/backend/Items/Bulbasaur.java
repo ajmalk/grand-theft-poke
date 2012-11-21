@@ -6,19 +6,19 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
- * Represents a Charizard
+ * Represents a Bulbasaur
  * 
  * @author Team Rocket
  * @version 1.0
  * 
  */
-public class Charizard extends Pokemon {
+public class Bulbasaur extends Pokemon {
 
 	/**
-	 * Constructor for Charizard.
+	 * Constructor for Bulbasaur.
 	 */
-	public Charizard() {
-		super(1, 2, 3, 4);//stats for charizard
+	public Bulbasaur() {
+		super(1, 1, 4, 4);//stats for bulbasaur
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class Charizard extends Pokemon {
 	 */
 	@Override
 	public String toString() {
-		return "Charizard Pokemon";
+		return "Bulbasaur Pokemon";
 	}
 
 	/**
@@ -37,7 +37,7 @@ public class Charizard extends Pokemon {
 	@Override
 	public String getDescription() {
 
-		return "I'm a Charizard";
+		return "I'm a Bulbasaur";
 	}
 
 	/**
@@ -46,6 +46,6 @@ public class Charizard extends Pokemon {
 	 */
 	@Override
 	public String getFileName() {
-		return "charizard";
+		return "bulbasaur";
 	}
 }

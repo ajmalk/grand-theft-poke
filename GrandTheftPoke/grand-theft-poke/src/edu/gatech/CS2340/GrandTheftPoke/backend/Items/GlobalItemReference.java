@@ -19,8 +19,12 @@ public class GlobalItemReference {
 	/**
 	 * Field myCharizard.
 	 */
-	private final Charizard myCharizard;
+	private final Charmander myCharizard;
 	
+	/**
+	 * Field myBulbasaur;
+	 */
+	private final Bulbasaur myBulbasaur;
 	/**
 	 * Field myJigglyPuff.
 	 */
@@ -101,7 +105,8 @@ public class GlobalItemReference {
 	 */
 	public GlobalItemReference() {
 		myArcanine = new Arcanine();
-		myCharizard = new Charizard();
+		myCharizard = new Charmander();
+		myBulbasaur = new Bulbasaur();
 		myJigglyPuff = new JigglyPuff();
 		myPikachu = new Pikachu();
 		mySquirtle = new Squirtle();
@@ -129,8 +134,15 @@ public class GlobalItemReference {
 	/**
 	
 	 * @return myCharizard */
-	public Item getCharizard() {
+	public Item getCharmander() {
 		return myCharizard;
+	}
+	
+	/**
+	 
+	 * @return myBulbasaur */
+	public Item getBulbasaur() {
+		return myBulbasaur;
 	}
 
 	/**

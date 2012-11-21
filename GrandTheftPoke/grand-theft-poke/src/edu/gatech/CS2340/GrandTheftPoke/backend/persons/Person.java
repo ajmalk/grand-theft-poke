@@ -17,6 +17,8 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Wallet;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Pokemon;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 
 /**
@@ -476,7 +478,9 @@ public class Person {
 						theMarket.buy(desiredGood, quantity);
 						myWallet.updateMoney(-price);
 						myBackpack.place(desiredGood, quantity);
-						System.out.println(myBackpack.getCapacity());
+						if(desiredGood instanceof Pokemon) {
+							((Usable) desiredGood).use(this);
+						}
 						return true;
 					}
 				}
@@ -501,6 +505,9 @@ public class Person {
 					* theMarket.sell(desiredGood, quantity);
 			myWallet.updateMoney(price);
 			myBackpack.remove(desiredGood, quantity);
+			if(desiredGood instanceof Pokemon) {
+				((Usable) desiredGood).unUse(this);
+			}
 			return true;
 		}
 		return false;

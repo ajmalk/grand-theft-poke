@@ -1,24 +1,24 @@
 /**
- * Arcanine.java
+ * Charizard.java
  * @version 1.0
  */
 
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
 /**
- * Represents an arcanine
+ * Represents a Charmander
  * 
  * @author Team Rocket
  * @version 1.0
  * 
  */
-public class Arcanine extends Pokemon {
+public class Charmander extends Pokemon {
 
 	/**
-	 * Arcanine Constructor
+	 * Constructor for Charmander.
 	 */
-	public Arcanine() {
-		super(3, 0, 2, 1);//stats for arcanine
+	public Charmander() {
+		super(5, 3, 1, 1);//stats for charizard
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class Arcanine extends Pokemon {
 	 */
 	@Override
 	public String toString() {
-		return "Arcanine Pokemon";
+		return "Charmander Pokemon";
 	}
 
 	/**
@@ -36,7 +36,8 @@ public class Arcanine extends Pokemon {
 	 */
 	@Override
 	public String getDescription() {
-		return "I'm an Arcanine!";
+
+		return "I'm a Charmander";
 	}
 
 	/**
@@ -45,7 +46,6 @@ public class Arcanine extends Pokemon {
 	 */
 	@Override
 	public String getFileName() {
-		return "arcanine";
+		return "charmander";
 	}
-
 }
