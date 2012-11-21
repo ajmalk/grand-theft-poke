@@ -181,6 +181,7 @@ public class BackpackScreen extends AbstractScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				ItemTile currentChecked = (ItemTile) marketItemGroup
 						.getChecked();
+				System.out.println(currentChecked.getItem());
 				if (currentChecked.getItem() instanceof Usable
 						&& (!((Usable) currentChecked.getItem() instanceof Pokemon))) {
 					((Usable) currentChecked.getItem()).use(game.getPlayer());
@@ -243,12 +244,11 @@ public class BackpackScreen extends AbstractScreen {
 		super.render(delta);
 		game.update();
 
-		for (final Iterator<Entry<Item, ItemTile>> iter = backpack.entrySet()
-				.iterator(); iter.hasNext();) {
-			Entry<Item, ItemTile> item = iter.next();
-			item.getValue().update();
-			addItems();
-		}
+		//for (final Iterator<Entry<Item, ItemTile>> iter = backpack.entrySet()
+		//		.iterator(); iter.hasNext();) {
+		//	Entry<Item, ItemTile> item = iter.next();
+		//	item.getValue().update();
+		//}
 
 		backButton.setPosition(20, 15);
 		table.top();
