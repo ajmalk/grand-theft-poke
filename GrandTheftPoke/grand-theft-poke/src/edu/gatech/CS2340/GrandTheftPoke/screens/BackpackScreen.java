@@ -188,6 +188,14 @@ public class BackpackScreen extends AbstractScreen {
 					game.getPlayer().getBackpack()
 							.remove(currentChecked.getItem(), 1);
 				}
+				
+				for (final Iterator<Entry<Item, ItemTile>> iter = backpack.entrySet()
+						.iterator(); iter.hasNext();) {
+					Entry<Item, ItemTile> item = iter.next();
+					item.getValue().update();
+				}
+				updatetables();
+				addItems();
 			}
 		});
 	}
@@ -243,12 +251,6 @@ public class BackpackScreen extends AbstractScreen {
 	public void render(float delta) {
 		super.render(delta);
 		game.update();
-
-		//for (final Iterator<Entry<Item, ItemTile>> iter = backpack.entrySet()
-		//		.iterator(); iter.hasNext();) {
-		//	Entry<Item, ItemTile> item = iter.next();
-		//	item.getValue().update();
-		//}
 
 		backButton.setPosition(20, 15);
 		table.top();
