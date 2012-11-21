@@ -4,8 +4,6 @@
  */
 package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
 
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
-
 /**
  * Represents a Pikachu
  * 
@@ -13,7 +11,11 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
  * @version 1.0
  * 
  */
-public class Pikachu extends Item {
+public class Pikachu extends Pokemon {
+	
+	public Pikachu() {
+		super(4,4,2,2);
+	}
 	/**
 	 * Method hashCode.
 	 * @return int
@@ -37,15 +39,6 @@ public class Pikachu extends Item {
 			return false;
 		}
 		return true;
-	}
-
-	/**
-	 * Method use.
-	 * @param person Person
-	 * @return boolean
-	 */
-	public boolean use(Person person) {
-		return false;
 	}
 
 	/**

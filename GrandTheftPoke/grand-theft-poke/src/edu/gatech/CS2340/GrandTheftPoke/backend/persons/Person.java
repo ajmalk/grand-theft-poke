@@ -439,8 +439,17 @@ public class Person {
 	 * 
 	
 	 * @return boolean */
-	public boolean flee() {
-		return new Random().nextBoolean();
+	public boolean flee(Person other) {
+		final Random rand = new Random();
+		final int mySpeed = rand.nextInt(getAgility());
+		final int theirSpeed = rand.nextInt(other.getAgility());
+		
+		if(mySpeed > theirSpeed) {
+			return true;
+		}
+		
+		defend(other.attack(1));
+		return false;
 	}
 
 	/**

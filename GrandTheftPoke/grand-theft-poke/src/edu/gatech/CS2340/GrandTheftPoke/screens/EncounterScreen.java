@@ -149,7 +149,7 @@ public class EncounterScreen extends AbstractScreen {
 				if (myPerson instanceof Trader) {
 					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
-				if (myGame.getPlayer().flee()) {
+				if (myGame.getPlayer().flee(myPerson)) {
 					System.out.println("true");
 					myGame.setScreen(myGame.getCurrentTownScreenFromEncounter());
 				}
