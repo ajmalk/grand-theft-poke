@@ -160,6 +160,12 @@ public class GlobalItemReference {
 	}
 
 	/**
+	 * getter for charizard
+	 */
+	public Item getCharizard() {
+		return myCharizard;
+	}
+	/**
 	
 	 * @return mySquirtle */
 	public Item getSquirtle() {
