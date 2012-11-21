@@ -3,93 +3,100 @@ gtpoke.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+RocketEncounter
+  rotate: false
+  xy: 1, 941
+  size: 1024, 768
+  orig: 1024, 768
+  offset: 0, 0
+  index: -1
 YouLoseUI
   rotate: false
-  xy: 1, 991
+  xy: 1, 171
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 YouWinUI
   rotate: false
-  xy: 1, 221
+  xy: 1027, 941
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 encounter
   rotate: false
-  xy: 1027, 991
+  xy: 1027, 171
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 market-place
   rotate: false
-  xy: 1027, 221
+  xy: 2053, 941
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 trade-screen
   rotate: false
-  xy: 2053, 991
+  xy: 2053, 171
   size: 1024, 768
   orig: 1024, 768
   offset: 0, 0
   index: -1
 backpackUI
   rotate: false
-  xy: 2053, 276
+  xy: 3079, 996
   size: 1000, 713
   orig: 1000, 713
   offset: 0, 0
   index: -1
 status-bar
   rotate: false
-  xy: 1, 155
+  xy: 1, 105
   size: 678, 64
   orig: 678, 64
   offset: 0, 0
   index: -1
 health-bar-empty
   rotate: false
-  xy: 3079, 1734
+  xy: 3079, 969
   size: 294, 25
   orig: 294, 25
   offset: 0, 0
   index: -1
 health-bar-full
   rotate: false
-  xy: 2053, 249
+  xy: 1, 78
   size: 294, 25
   orig: 294, 25
   offset: 0, 0
   index: -1
 back-button-down
   rotate: false
-  xy: 1, 78
+  xy: 3079, 892
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 back-button
   rotate: false
-  xy: 3079, 1657
+  xy: 1, 1
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 save-down
   rotate: false
-  xy: 1, 1
+  xy: 3079, 815
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
   index: -1
 save
   rotate: false
-  xy: 78, 78
+  xy: 3156, 892
   size: 75, 75
   orig: 75, 75
   offset: 0, 0
