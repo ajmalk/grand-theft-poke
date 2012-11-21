@@ -103,7 +103,7 @@ public class EncounterScreen extends AbstractScreen {
 		table = new Table(GTPoke.getSkin());
 		table.setFillParent(true);
 
-		Texture buttonSprite = new Texture("images//icons//encounter.png");
+		AtlasRegion buttonSprite = GTPoke.getTextures().findRegion("encounter");
 		stage.clear();
 		
 		if(myPerson instanceof Trader) {
@@ -178,7 +178,7 @@ public class EncounterScreen extends AbstractScreen {
 			stage.addActor(myGame.getStatusBar());
 		} else {
 			
-			buttonSprite = new Texture("images//textures//RocketEncounter.png");
+			buttonSprite = GTPoke.getTextures().findRegion("encounter");
 			
 			fight = new Button(new TextureRegionDrawable(new TextureRegion(
 					buttonSprite, 75, 97, 480, 555)), new TextureRegionDrawable(

@@ -248,7 +248,7 @@ public class GTPoke extends Game {
 
 	/**
 	 * 
-	 * @return boolean */
+	 * @return boolean 
 	 */
 	public boolean update() {
 		statusBar.clear();

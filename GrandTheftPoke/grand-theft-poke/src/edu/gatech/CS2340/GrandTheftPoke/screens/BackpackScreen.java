@@ -14,6 +14,7 @@ import java.util.Map.Entry;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -149,7 +150,8 @@ public class BackpackScreen extends AbstractScreen {
 				game.getPlayer(), myMarket, (Market)game.getMarketScreen(),
 				(ItemTile) marketItemGroup.getChecked(), otherTrader);*/
 
-		final Texture buttonSprite = new Texture("images//button-sprite.png");
+		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
+				"button-sprite");
 		final ButtonStyle style = new ButtonStyle();
 		style.up = new TextureRegionDrawable(new TextureRegion(buttonSprite, 0,
 				0, 320, 70));
