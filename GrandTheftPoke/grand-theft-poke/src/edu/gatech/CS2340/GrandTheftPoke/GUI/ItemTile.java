@@ -8,7 +8,6 @@ package edu.gatech.CS2340.GrandTheftPoke.GUI;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -108,7 +107,8 @@ public class ItemTile extends Button {
 				Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion("pokeball-small"), 0, 0, 50, 50));
+		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion(
+				"pokeball-small"), 0, 0, 50, 50));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stockLabel).right();
@@ -159,7 +159,8 @@ public class ItemTile extends Button {
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		map.setColor(Color.RED);
 		map.fillRectangle(0, 0, 50, 50);
-		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion("pokeball-small"), 0, 0, 50, 50));
+		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion(
+				"pokeball-small"), 0, 0, 50, 50));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stockLabel).right();

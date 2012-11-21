@@ -6,7 +6,6 @@
 package edu.gatech.CS2340.GrandTheftPoke.backend;
 
 import java.util.ArrayList;
-
 import java.util.Random;
 import java.util.Set;
 
@@ -55,7 +54,7 @@ public class Turn {
 	 * Field rand.
 	 */
 	private final Random rand;
-	
+
 	/**
 	 * Field items
 	 */
@@ -95,11 +94,11 @@ public class Turn {
 		// health, int range, int capacity, Float money, GameMap theMap,
 		// GlobalItemReference itemsInstance
 		gameActors.add(new Trader("Bob Waters", 5, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//stats for Bob Waters
+				1000f, theMap, items));// stats for Bob Waters
 		gameActors.add(new Trader("Ajmal Kunnummal", 8, 4, 6, 2, 100, 100, 20,
-				1000f, theMap, items));//Stats for Ajmal
-		gameActors.add(new Trader("Misty", 2, 4, 6, 4, 100, 100, 20,
-				1000f, theMap, items));//stats for Drake
+				1000f, theMap, items));// Stats for Ajmal
+		gameActors.add(new Trader("Misty", 2, 4, 6, 4, 100, 100, 20, 1000f,
+				theMap, items));// stats for Drake
 		gameActors.add(new Trader("Henry Tullis", 2, 4, 6, 4, 100, 100, 20,
 				1000f, theMap, items));// Stats for Henry
 		gameActors.add(new Trader("Griffin Asher", 2, 4, 6, 4, 100, 100, 20,
@@ -109,11 +108,11 @@ public class Turn {
 		gameActors.add(new Trader("Rival", 2, 4, 6, 4, 100, 100, 20, 1000f,
 				theMap, items));// stats for rival
 		gameActors.add(new Trader("Ajmal's Evil Twin", 2, 4, 6, 4, 100, 100,
-				20, 1000f, theMap, items));//stats for ajmal's evil twin
-		gameActors.add(new Rocket("Giovanni", 6, 4, 2, 4, 100, 100, 20,
-				1000f, theMap));//stats for Giovanni
+				20, 1000f, theMap, items));// stats for ajmal's evil twin
+		gameActors.add(new Rocket("Giovanni", 6, 4, 2, 4, 100, 100, 20, 1000f,
+				theMap));// stats for Giovanni
 		gameActors.add(new Rocket("Ho Yin", 6, 4, 2, 4, 100, 100, 20, 1000f,
-				theMap));//stats for Ho Yin
+				theMap));// stats for Ho Yin
 		gameActors.add(new Rocket("Jill Cagz", 6, 4, 2, 4, 100, 100, 20, 1000f,
 				theMap));// stats for Jill
 		gameActors.add(new Rocket("Sagar Laud", 6, 4, 2, 4, 100, 100, 20,
@@ -151,35 +150,38 @@ public class Turn {
 	}
 
 	/**
-	 * String name, int strength, int agility, int trade,
-			int stamina, int health, int range, int capacity, Float money,
-			GameMap theMap, GlobalItemReference itemsInstance)
-	 * moves everyone
+	 * String name, int strength, int agility, int trade, int stamina, int
+	 * health, int range, int capacity, Float money, GameMap theMap,
+	 * GlobalItemReference itemsInstance) moves everyone
 	 */
 	public void moveAll() {
 		Person toBeReincarnated = null;
 		for (Person individual : gameActors) {
-			if(individual.getHealth() > 0) {
+			if (individual.getHealth() > 0) {
 				individual.move(theMap.getRandomTown());
 			} else {
 				toBeReincarnated = individual;
 				break;
 			}
 		}
-		if(toBeReincarnated != null) {
+		if (toBeReincarnated != null) {
 			Person individual = toBeReincarnated;
 			gameActors.remove(individual);
-			if(individual instanceof Trader) {
-				individual = new Trader(individual.getName(), individual.getStrength(), individual.getAgility(), 
-						individual.getTrade(), individual.getStamina(), individual.getMaxHealth(), 
-						individual.getBackpack().getMaxRange(), individual.getBackpack().getCapacity(), 
-						1000f, theMap, items);
+			if (individual instanceof Trader) {
+				individual = new Trader(individual.getName(),
+						individual.getStrength(), individual.getAgility(),
+						individual.getTrade(), individual.getStamina(),
+						individual.getMaxHealth(), individual.getBackpack()
+								.getMaxRange(), individual.getBackpack()
+								.getCapacity(), 1000f, theMap, items);
 			}
-			if(individual instanceof Rocket) {
-				individual = new Rocket(individual.getName(), individual.getStrength(), individual.getAgility(), 
-						individual.getTrade(), individual.getStamina(), individual.getMaxHealth(), 
-						individual.getBackpack().getMaxRange(), individual.getBackpack().getCapacity(), 
-						1000f, theMap);
+			if (individual instanceof Rocket) {
+				individual = new Rocket(individual.getName(),
+						individual.getStrength(), individual.getAgility(),
+						individual.getTrade(), individual.getStamina(),
+						individual.getMaxHealth(), individual.getBackpack()
+								.getMaxRange(), individual.getBackpack()
+								.getCapacity(), 1000f, theMap);
 			}
 			gameActors.add(individual);
 		}
@@ -209,7 +211,7 @@ public class Turn {
 								possibleItems[randomIndex], randomNum);
 					}
 
-				} else if(rand.nextBoolean()){
+				} else if (rand.nextBoolean()) {
 					currentMarket = individual.getCurrent().getMarket();
 					currentStock = individual.getBackpack().getContents()
 							.keySet();
@@ -230,11 +232,12 @@ public class Turn {
 							.keySet();
 					currentStock.toArray(possibleItems);
 					Item toBeConsumed = possibleItems[rand
-					  							.nextInt(possibleItems.length)];
-					if (individual.getBackpack().checkContents(toBeConsumed, 1) && (toBeConsumed instanceof Usable)) {
+							.nextInt(possibleItems.length)];
+					if (individual.getBackpack().checkContents(toBeConsumed, 1)
+							&& (toBeConsumed instanceof Usable)) {
 						((Usable) toBeConsumed).use(individual);
 						individual.getBackpack().remove(toBeConsumed, 1);
-						
+
 					}
 				}
 

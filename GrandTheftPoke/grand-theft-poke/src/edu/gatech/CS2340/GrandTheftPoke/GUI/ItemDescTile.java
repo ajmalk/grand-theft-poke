@@ -8,7 +8,6 @@ package edu.gatech.CS2340.GrandTheftPoke.GUI;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -195,7 +194,8 @@ public class ItemDescTile extends Table {
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
 		price = new Label("",
 				new Skin(Gdx.files.internal("skins//uiskin.json")));
-		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion("pokeball"), 0, 0, 200, 200));
+		icon = new Image(new TextureRegion(GTPoke.getTextures().findRegion(
+				"pokeball"), 0, 0, 200, 200));
 		setSkin(new Skin(Gdx.files.internal("skins//uiskin.json")));
 
 		add(stock).right().pad(10);

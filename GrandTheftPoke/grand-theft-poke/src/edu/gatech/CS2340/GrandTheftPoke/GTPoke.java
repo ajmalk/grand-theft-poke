@@ -248,7 +248,7 @@ public class GTPoke extends Game {
 
 	/**
 	 * 
-	 * @return boolean 
+	 * @return boolean
 	 */
 	public boolean update() {
 		statusBar.clear();
@@ -540,6 +540,7 @@ public class GTPoke extends Game {
 	public Screen getGameOverScreen() {
 		return new GameOverScreen(this);
 	}
+
 	/**
 	 * 
 	 * @return Backpack Screen

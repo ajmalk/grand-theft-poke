@@ -12,10 +12,11 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Items;
  * 
  */
 public class Pikachu extends Pokemon {
-	
+
 	public Pikachu() {
-		super(4,4,2,2);
+		super(4, 4, 2, 2);
 	}
+
 	/**
 	 * Method hashCode.
 	 * 

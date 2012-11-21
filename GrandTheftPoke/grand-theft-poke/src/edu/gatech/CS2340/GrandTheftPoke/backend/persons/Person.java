@@ -450,17 +450,18 @@ public class Person {
 
 	/**
 	 * 
-	
-	 * @return boolean */
+	 * 
+	 * @return boolean
+	 */
 	public boolean flee(Person other) {
 		final Random rand = new Random();
 		final int mySpeed = rand.nextInt(getAgility());
 		final int theirSpeed = rand.nextInt(other.getAgility());
-		
-		if(mySpeed > theirSpeed) {
+
+		if (mySpeed > theirSpeed) {
 			return true;
 		}
-		
+
 		defend(other.attack(1));
 		return false;
 	}
@@ -551,8 +552,8 @@ public class Person {
 				break;
 			}
 		}
-		
-		if(tempItem != null) {
+
+		if (tempItem != null) {
 			other.getBackpack().remove(tempItem, quantity);
 		}
 		float temp = Math.min(other.getWallet().getMoney(), getWallet()

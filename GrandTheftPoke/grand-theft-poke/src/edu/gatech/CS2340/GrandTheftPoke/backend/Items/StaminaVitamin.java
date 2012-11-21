@@ -86,8 +86,7 @@ public class StaminaVitamin extends Item implements Usable {
 		return "Permanently adds "
 				+ "1 stamina point to your current standings. "
 				+ "Increasing stamina allows conserve health "
-				+ "while moving from town to town.\n" 
-				+ "+1 Stamina Point";
+				+ "while moving from town to town.\n" + "+1 Stamina Point";
 	}
 
 	/**

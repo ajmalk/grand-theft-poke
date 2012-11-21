@@ -12,11 +12,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
@@ -27,15 +25,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 import edu.gatech.CS2340.GrandTheftPoke.GTPoke;
-import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemDescTile;
 import edu.gatech.CS2340.GrandTheftPoke.GUI.ItemTile;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Backpack;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
-import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Pokemon;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
-import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 
 /**
  * The Market
@@ -47,12 +42,14 @@ import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Trader;
 public class BackpackScreen extends AbstractScreen {
 	/**
 	 * toString
+	 * 
 	 * @return String
 	 */
 	@Override
 	public String toString() {
 		return "Market";
 	}
+
 	/**
 	 * Field myMarket.
 	 */
@@ -106,30 +103,31 @@ public class BackpackScreen extends AbstractScreen {
 	 */
 	public BackpackScreen(GTPoke game) {
 		super(game);
-		background = new Image(game.getTextures().findRegion("backpackUI"));
+		background = new Image(GTPoke.getTextures().findRegion("backpackUI"));
 		background.setFillParent(true);
 		background.getColor().a = 0f;
 		background.addAction(fadeIn(0.75f));
 		playerPack = game.getPlayer().getBackpack();
 		table = new Table();
-		//markettable = new Table();
+		// markettable = new Table();
 		backpacktable = new Table();
 		marketItemGroup = new ButtonGroup();
-		//marketStock = new ScrollPane(markettable);
+		// marketStock = new ScrollPane(markettable);
 		backpackStock = new ScrollPane(backpacktable);
 		backpack = new HashMap<Item, ItemTile>();
-		//marketplace = new HashMap<Item, ItemTile>();
+		// marketplace = new HashMap<Item, ItemTile>();
 		myMarket = game.getCurrentTown().getMarket();
-	}   
+	}
 
 	/**
 	 * Method show.
+	 * 
 	 * @see com.badlogic.gdx.Screen#show()
 	 */
 	@Override
 	public void show() {
 		stage.addActor(background);
-		
+
 		updatetables();
 
 		addItems();
@@ -141,13 +139,13 @@ public class BackpackScreen extends AbstractScreen {
 
 		backpackStock.setScrollingDisabled(true, false);
 
-		
-
-		/*description = new ItemDescTile(
-				((ItemTile) marketItemGroup.getChecked()).getItem(),
-				((ItemTile) (marketItemGroup.getChecked())).getStockInfo(),
-				game.getPlayer(), myMarket, (Market)game.getMarketScreen(),
-				(ItemTile) marketItemGroup.getChecked(), otherTrader);*/
+		/*
+		 * description = new ItemDescTile( ((ItemTile)
+		 * marketItemGroup.getChecked()).getItem(), ((ItemTile)
+		 * (marketItemGroup.getChecked())).getStockInfo(), game.getPlayer(),
+		 * myMarket, (Market)game.getMarketScreen(), (ItemTile)
+		 * marketItemGroup.getChecked(), otherTrader);
+		 */
 
 		final AtlasRegion buttonSprite = GTPoke.getTextures().findRegion(
 				"button-sprite");
@@ -168,24 +166,26 @@ public class BackpackScreen extends AbstractScreen {
 
 		table.add(backpackStock).top();
 		table.left().setPosition(33, 90);
-		
-		
+
 		confirmButton = new Button(style);
-		confirmButton.setSkin(game.getSkin());
+		confirmButton.setSkin(GTPoke.getSkin());
 		confirmButton.add("Confirm");
 		confirmButton.setPosition(685, 75);
-		//confirmButton.setDisabled(true);
-		//confirmButton.setTouchable(Touchable.disabled);
+		// confirmButton.setDisabled(true);
+		// confirmButton.setTouchable(Touchable.disabled);
 
 		confirmButton.setStyle(style);
 
 		confirmButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				ItemTile currentChecked = (ItemTile) marketItemGroup.getChecked();
-				if(currentChecked.getItem() instanceof Usable && (!((Usable) currentChecked.getItem() instanceof Pokemon))) {
+				ItemTile currentChecked = (ItemTile) marketItemGroup
+						.getChecked();
+				if (currentChecked.getItem() instanceof Usable
+						&& (!((Usable) currentChecked.getItem() instanceof Pokemon))) {
 					((Usable) currentChecked.getItem()).use(game.getPlayer());
-					game.getPlayer().getBackpack().remove(currentChecked.getItem(), 1);
+					game.getPlayer().getBackpack()
+							.remove(currentChecked.getItem(), 1);
 				}
 			}
 		});
@@ -233,7 +233,9 @@ public class BackpackScreen extends AbstractScreen {
 	 */
 	/**
 	 * Method render.
-	 * @param delta float
+	 * 
+	 * @param delta
+	 *            float
 	 * @see com.badlogic.gdx.Screen#render(float)
 	 */
 	@Override
@@ -245,9 +247,9 @@ public class BackpackScreen extends AbstractScreen {
 				.iterator(); iter.hasNext();) {
 			Entry<Item, ItemTile> item = iter.next();
 			item.getValue().update();
-				addItems();
-			}
-		
+			addItems();
+		}
+
 		backButton.setPosition(20, 15);
 		table.top();
 		table.setSize(907, 440);
@@ -256,12 +258,11 @@ public class BackpackScreen extends AbstractScreen {
 		stage.addActor(game.getStatusBar());
 		stage.addActor(backButton);
 		stage.addActor(confirmButton);
-		
-		//backpacktable.setSize(500, 500);
-		//backpacktable.pack();
-		//backpacktable.debug().drawDebug(stage);
-		//backpackStock.setSize(937, 440);
-		//table.debug().drawDebug(stage);
+
+		// backpacktable.setSize(500, 500);
+		// backpacktable.pack();
+		// backpacktable.debug().drawDebug(stage);
+		// backpackStock.setSize(937, 440);
+		// table.debug().drawDebug(stage);
 	}
 }
-
