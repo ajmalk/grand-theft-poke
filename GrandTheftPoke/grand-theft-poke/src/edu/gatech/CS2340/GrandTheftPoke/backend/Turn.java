@@ -12,6 +12,7 @@ import java.util.Set;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Usable;
+import edu.gatech.CS2340.GrandTheftPoke.backend.Towns.Town;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Player;
 import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Rocket;
@@ -132,6 +133,9 @@ public class Turn {
 		useAll();
 		moveAll();
 		trade();
+//		for(Town town: theMap.getTownSet()){
+//			town.getMarket().update();
+//		}
 		return encounter(thePlayer);
 	}
 

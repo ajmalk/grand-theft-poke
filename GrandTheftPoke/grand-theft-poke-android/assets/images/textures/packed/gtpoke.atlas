@@ -97,8 +97,8 @@ market-item-desc
 status-bar
   rotate: false
   xy: 1, 28
-  size: 655, 59
-  orig: 655, 59
+  size: 725, 59
+  orig: 725, 59
   offset: 0, 0
   index: -1
 pokeball
@@ -180,7 +180,7 @@ save
   index: -1
 pokeball-small
   rotate: false
-  xy: 658, 37
+  xy: 728, 37
   size: 50, 50
   orig: 50, 50
   offset: 0, 0

@@ -232,8 +232,8 @@ public class Battle extends AbstractScreen {
 		statusBar.setSkin(GTPoke.getSkin());
 		statusBar.setBackground(new TextureRegionDrawable(GTPoke.getTextures()
 				.findRegion("status-bar")));
-		statusBar.setSize(678, 64);
-		
+		//statusBar.setSize(678, 64);
+		statusBar.pack();
 		statusBar.setPosition((int) (Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 700);
 
 		statusBar.pad(25);
@@ -247,7 +247,19 @@ public class Battle extends AbstractScreen {
 		healthBar = GTPoke.getTextures().findRegion("health-bar-full");
 		TextureRegion temp = new TextureRegion(healthBar, 0, 0, (int) (healthBar.originalWidth
 				/ (float) myPerson.getMaxHealth() * myPerson.getHealth()), healthBar.getRegionHeight());
-		statusBar.add(new Image(temp)).expand().left().padLeft(9);
+		statusBar.add(new Image(temp)).expand().left().padLeft(1);
+		Label strength = new Label("ST: " + myPerson.getStrength().toString(), GTPoke.getSkin());
+		Label agility = new Label("AG: " + myPerson.getAgility().toString(), GTPoke.getSkin());
+		Label trade = new Label("TR: " + myPerson.getTrade().toString(), GTPoke.getSkin());
+		Label stamina = new Label("SM: " + myPerson.getStamina().toString(), GTPoke.getSkin());
+		strength.setColor(Color.RED);
+		agility.setColor(Color.BLUE);
+		trade.setColor(Color.GREEN);
+		stamina.setColor(Color.CYAN);
+		statusBar.add(strength).width(55);
+		statusBar.add(agility).width(55);
+		statusBar.add(trade).width(55);
+		statusBar.add(stamina).width(55).padRight(-30);
 		return true;
 	}
 }

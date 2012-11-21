@@ -255,8 +255,8 @@ public class GTPoke extends Game {
 		statusBar.setSkin(skin);
 		statusBar.setBackground(new TextureRegionDrawable(atlas
 				.findRegion("status-bar")));
-		statusBar.setSize(678, 64);
-
+		//statusBar.setSize(678, 64);
+		statusBar.pack();
 		statusBar.pad(25);
 		statusBar.setPosition(
 				(int) (Gdx.graphics.getWidth() - statusBar.getWidth()) >> 1, 0);
@@ -273,7 +273,19 @@ public class GTPoke extends Game {
 		// thePlayer.getMaxHealth());
 		healthBar.setRegionWidth((int) (healthBar.originalWidth
 				/ (float) thePlayer.getMaxHealth() * thePlayer.getHealth()));
-		statusBar.add(new Image(healthBar)).expand().left().padLeft(9);
+		statusBar.add(new Image(healthBar)).expand().left().padLeft(1);
+		Label strength = new Label("ST: " + thePlayer.getStrength().toString(), skin);
+		Label agility = new Label("AG: " + thePlayer.getAgility().toString(), skin);
+		Label trade = new Label("TR: " + thePlayer.getTrade().toString(), skin);
+		Label stamina = new Label("SM: " + thePlayer.getStamina().toString(), skin);
+		strength.setColor(Color.RED);
+		agility.setColor(Color.BLUE);
+		trade.setColor(Color.GREEN);
+		stamina.setColor(Color.CYAN);
+		statusBar.add(strength).width(55);
+		statusBar.add(agility).width(55);
+		statusBar.add(trade).width(55);
+		statusBar.add(stamina).width(55).padRight(-30);
 		// statusBar.pack();
 		// statusBar.center();
 		return true;
