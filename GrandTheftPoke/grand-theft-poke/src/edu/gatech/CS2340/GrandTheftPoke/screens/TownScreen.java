@@ -160,8 +160,7 @@ public class TownScreen extends AbstractScreen {
 		gymLeaderButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				game.setScreen(game.getBattleScreen(new GymLeader("Brock", 8,
-						8, 0, 8, 200, 0, 0, 1000f, game.getMap())));
+				game.setScreen(game.getBattleScreen(game.getCurrentTown().getGymLeader()));
 			}
 		});
 

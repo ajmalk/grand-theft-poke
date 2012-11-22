@@ -14,6 +14,8 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Path;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.Person;
 
 /**
  * The town
@@ -46,6 +48,8 @@ public class Town implements Comparable {
 	 * Field myMarket.
 	 */
 	protected MarketPlace myMarket;
+	
+	private GymLeader theGymLeader;
 
 	/**
 	 * Field filename.
@@ -65,9 +69,10 @@ public class Town implements Comparable {
 	 * @param myMarket
 	 *            the market being used
 	 */
-	public Town(String name, MarketPlace myMarket) {
+	public Town(String name, MarketPlace myMarket, GymLeader theLeader) {
 		this.name = name;
 		this.myMarket = myMarket;
+		theGymLeader = theLeader;
 		adjacencies = new HashSet<Path>();
 	}
 
@@ -217,6 +222,10 @@ public class Town implements Comparable {
 	 */
 	public String getImage() {
 		return filename;
+	}
+	
+	public Person getGymLeader() {
+		return theGymLeader;
 	}
 
 	/**

@@ -7,10 +7,12 @@ package edu.gatech.CS2340.GrandTheftPoke.backend.Towns;
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.gatech.CS2340.GrandTheftPoke.backend.GameMap;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlace;
 import edu.gatech.CS2340.GrandTheftPoke.backend.MarketPlaceItem;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.GlobalItemReference;
 import edu.gatech.CS2340.GrandTheftPoke.backend.Items.Item;
+import edu.gatech.CS2340.GrandTheftPoke.backend.persons.GymLeader;
 
 /**
  * Implementation of Town Factory
@@ -34,13 +36,15 @@ public class TownFactoryImplementation implements TownFactory {
 	 * itemsInstance field
 	 */
 	private GlobalItemReference itemsInstance;
+	private GameMap theMap;
 
 	/**
 	 * @param theReference
 	 *            globalItemReference for use
 	 */
-	public TownFactoryImplementation(GlobalItemReference theReference) {
+	public TownFactoryImplementation(GlobalItemReference theReference, GameMap theMap) {
 		itemsInstance = theReference;
+		this.theMap = theMap;
 	}
 
 	/**
@@ -56,17 +60,17 @@ public class TownFactoryImplementation implements TownFactory {
 		Map<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
 				10f));// starting price and quantity
-		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				0f));// starting price and quantity
+		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(500f,
+				3f));// starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 0f));// starting price and quantity
+				500f, 3f));// starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 0f));// starting price and quantity
+				650f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 0f));// starting price and quantity
+				500f, 3f));// starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				0f));// starting price and quantity
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));// starting
+				3f));// starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(125f, 10f));// starting
 																				// price
 																				// and
 																				// quantity
@@ -75,7 +79,7 @@ public class TownFactoryImplementation implements TownFactory {
 																					// and
 																					// quantity
 		myStock.put(itemsInstance.getCharmander(), new MarketPlaceItem(3000f,
-				5f));// starting price and quantity
+				0f));// starting price and quantity
 		myStock.put(itemsInstance.getPikachu(), new MarketPlaceItem(4500f, 0f));// starting
 																				// price
 																				// and
@@ -96,8 +100,10 @@ public class TownFactoryImplementation implements TownFactory {
 				new MarketPlaceItem(2000f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Pallet Town", myMarket);
+		GymLeader leader = new GymLeader("", 4, 4, 0, 4, 100, 0, 0, 500f, theMap);
+		Town myTown = new Town("Pallet Town", myMarket, leader);
 		myTown.setImage("pallet-town");
 
 		return myTown;
@@ -153,8 +159,10 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Viridian City", myMarket);
+		GymLeader leader = new GymLeader("", 8, 8, 0, 8, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Viridian City", myMarket, leader);
 		myTown.setImage("viridian-city");
 
 		return myTown;
@@ -211,8 +219,11 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Pewter City", myMarket);
+		
+		GymLeader leader = new GymLeader("", 8, 8, 0, 8, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Pewter City", myMarket, leader);
 		myTown.setImage("pewter-city");
 
 		return myTown;
@@ -268,8 +279,10 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Cerulean City", myMarket);
+		GymLeader leader = new GymLeader("", 8, 8, 0, 8, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Cerulean City", myMarket, leader);
 		myTown.setImage("cerulean-city");
 
 		return myTown;
@@ -325,8 +338,10 @@ public class TownFactoryImplementation implements TownFactory {
 				15f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 1f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Saffron City", myMarket);
+		GymLeader leader = new GymLeader("", 8, 8, 0, 8, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Saffron City", myMarket, leader);
 		myTown.setImage("saffron-city");
 
 		return myTown;
@@ -381,8 +396,10 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Celadon City", myMarket);
+		GymLeader leader = new GymLeader("", 8, 8, 0, 8, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Celadon City", myMarket, leader);
 		myTown.setImage("celadon-city");
 		return myTown;
 	}
@@ -400,17 +417,17 @@ public class TownFactoryImplementation implements TownFactory {
 		HashMap<Item, MarketPlaceItem> myStock = new HashMap<Item, MarketPlaceItem>();
 		myStock.put(itemsInstance.getHealthPotion(), new MarketPlaceItem(10f,
 				10f));// starting price and quantity
-		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(750f,
-				0f));// starting price and quantity
+		myStock.put(itemsInstance.getHealthVitamin(), new MarketPlaceItem(500f,
+				3f));// starting price and quantity
 		myStock.put(itemsInstance.getAgilityVitamin(), new MarketPlaceItem(
-				850f, 0f));// starting price and quantity
+				500f, 3f));// starting price and quantity
 		myStock.put(itemsInstance.getStrengthVitamin(), new MarketPlaceItem(
-				1000f, 0f));// starting price and quantity
+				650f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getStaminaVitamin(), new MarketPlaceItem(
-				500f, 0f));// starting price and quantity
+				500f, 3f));// starting price and quantity
 		myStock.put(itemsInstance.getTradeVitamin(), new MarketPlaceItem(600f,
-				0f));// starting price and quantity
-		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(250f, 5f));// starting
+				3f));// starting price and quantity
+		myStock.put(itemsInstance.getRepel(), new MarketPlaceItem(125f, 10f));// starting
 																				// price
 																				// and
 																				// quantity
@@ -440,8 +457,10 @@ public class TownFactoryImplementation implements TownFactory {
 				new MarketPlaceItem(2000f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Lavender Town", myMarket);
+		GymLeader leader = new GymLeader("", 4, 4, 0, 4, 100, 0, 0, 500f, theMap);
+		Town myTown = new Town("Lavender Town", myMarket, leader);
 		myTown.setImage("lavender-town");
 
 		return myTown;
@@ -496,8 +515,10 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Vermillion City", myMarket);
+		GymLeader leader = new GymLeader("", 8, 8, 0, 8, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Vermillion City", myMarket, leader);
 		myTown.setImage("vermillion-city");
 
 		return myTown;
@@ -552,8 +573,10 @@ public class TownFactoryImplementation implements TownFactory {
 				10f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 10f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Fuchsia City", myMarket);
+		GymLeader leader = new GymLeader("", 10, 4, 0, 10, 200, 0, 0, 2000f, theMap);
+		Town myTown = new Town("Fuchsia City", myMarket, leader);
 		myTown.setImage("fuchsia-city");
 
 		return myTown;
@@ -613,8 +636,10 @@ public class TownFactoryImplementation implements TownFactory {
 				new MarketPlaceItem(2000f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Cinnabar Island", myMarket);
+		GymLeader leader = new GymLeader("", 16, 16, 0, 16, 400, 0, 0, 5000f, theMap);
+		Town myTown = new Town("Cinnabar Island", myMarket, leader);
 		myTown.setImage("cinnabar-island.png");
 
 		return myTown;
@@ -675,7 +700,8 @@ public class TownFactoryImplementation implements TownFactory {
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 0f));// starting price and quantity
 		MarketPlace myMarket = new MarketPlace(myStock);
-		Town myTown = new Town("Power Plant", myMarket);
+		GymLeader leader = new GymLeader("", 6, 12, 0, 10, 200, 0, 0, 1000f, theMap);
+		Town myTown = new Town("Power Plant", myMarket, leader);
 
 		return myTown;
 	}

@@ -100,6 +100,8 @@ public class GlobalItemReference {
 	 * Field myRepel.
 	 */
 	private final Repel myRepel;
+	
+	private final DistancePack myDistancePack;
 
 	/**
 	 * Empty Constructor
@@ -123,6 +125,8 @@ public class GlobalItemReference {
 		myStrengthVitamin = new StrengthVitamin();
 		myTradeVitamin = new TradeVitamin();
 		myRepel = new Repel();
+		myDistancePack = new DistancePack();
+		System.out.println(myDistancePack);
 	}
 
 	/**
@@ -276,6 +280,11 @@ public class GlobalItemReference {
 	 */
 	public Item getRepel() {
 		return myRepel;
+	}
+	
+	
+	public Item getDistancePack() {
+		return myDistancePack;
 	}
 
 	/**

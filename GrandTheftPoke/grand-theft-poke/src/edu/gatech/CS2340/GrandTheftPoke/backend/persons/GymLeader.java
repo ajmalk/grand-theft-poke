@@ -37,7 +37,7 @@ public class GymLeader extends Person {
 		super(name, strength, agility, trade, stamina, health, range, capacity,
 				money, theMap);
 
-		super.setCurrent(theMap.getRandomTown());
+		//super.setCurrent(theMap.getRandomTown());
 		stake = 0;
 	}
 

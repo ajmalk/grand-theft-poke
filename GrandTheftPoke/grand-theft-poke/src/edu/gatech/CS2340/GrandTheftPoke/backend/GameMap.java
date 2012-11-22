@@ -69,7 +69,7 @@ public class GameMap {
 		townSet = new HashSet<Town>();
 
 		final TownFactoryImplementation townGenerator = new TownFactoryImplementation(
-				theReference);
+				theReference, this);
 
 		final Town palletTown = townGenerator.makePalletTown();
 		final Town viridianCity = townGenerator.makeViridianCity();
