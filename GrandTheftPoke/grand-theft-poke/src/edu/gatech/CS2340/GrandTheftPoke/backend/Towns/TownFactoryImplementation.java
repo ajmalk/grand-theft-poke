@@ -699,6 +699,7 @@ public class TownFactoryImplementation implements TownFactory {
 				new MarketPlaceItem(2000f, 0f));// starting price and quantity
 		myStock.put(itemsInstance.getBulbasaur(),
 				new MarketPlaceItem(3000f, 0f));// starting price and quantity
+		myStock.put(itemsInstance.getDistancePack(), new MarketPlaceItem(4000f, 0f));
 		MarketPlace myMarket = new MarketPlace(myStock);
 		GymLeader leader = new GymLeader("", 6, 12, 0, 10, 200, 0, 0, 1000f, theMap);
 		Town myTown = new Town("Power Plant", myMarket, leader);

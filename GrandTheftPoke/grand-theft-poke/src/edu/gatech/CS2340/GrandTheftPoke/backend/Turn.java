@@ -197,7 +197,7 @@ public class Turn {
 	public void trade() {
 		MarketPlace currentMarket;
 		Set<Item> currentStock;
-		final Item[] possibleItems = new Item[17];
+		final Item[] possibleItems = new Item[18];
 		for (Person individual : gameActors) {
 			if (individual instanceof Trader) {
 
@@ -208,8 +208,9 @@ public class Turn {
 					int randomIndex = rand.nextInt(possibleItems.length);
 					int randomNum = rand.nextInt(10);
 
+					System.out.println(individual.getCurrent());
 					if (((MarketPlaceItem) (currentMarket.getStock()
-							.get(possibleItems[randomNum]))).getStock() != 0
+							.get(possibleItems[randomIndex]))).getStock() != 0
 							&& randomNum != 0) {
 						individual.buy(currentMarket,
 								possibleItems[randomIndex], randomNum);
