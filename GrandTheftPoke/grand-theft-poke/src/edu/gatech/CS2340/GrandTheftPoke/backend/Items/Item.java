@@ -64,17 +64,6 @@ public abstract class Item {
 	}
 
 	/**
-	 * Method clone.
-	 * 
-	 * @return Object
-	 * @throws CloneNotSupportedException
-	 */
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
-
-	/**
 	 * Method hashCode.
 	 * 
 	 * @return int
